@@ -1,0 +1,164 @@
+---FILES---
+circle.h
+circle.cpp
+main.cpp
+
+---circle.h---
+#ifndef CIRCLE_H
+#define CIRCLE_H
+#include "oval.h"
+
+class Circle : public Oval
+{
+public:
+    Circle() = default;
+    Circle(double radius,std::string_view description);
+    ~Circle();
+
+    void draw() const{
+        std::cout << "Circle::draw() called. Drawing " << m_description <<
+            " with radius : " << get_x_rad() << std::endl;
+    }
+
+};
+
+#endif // CIRCLE_H
+
+---circle.cpp---
+#include "circle.h"
+
+Circle::Circle(double radius , std::string_view description)
+    : Oval(radius,radius,description)
+{
+}
+
+Circle::~Circle()
+{
+}
+
+---main.cpp---
+#include <iostream>
+
+int main(){
+
+    //Braced initializers
+    /*
+    //Variable may contain random garbage value . WARNING
+    int elephant_count;
+
+    int lion_count{};//Initializes to zero
+
+    int dog_count {10}; //Initializes to 10
+
+    int cat_count {15}; //Initializes to 15
+
+    //Can use expression as initializer
+    int domesticated_animals { dog_count + cat_count };
+
+    //int new_number{doesnt_exist};
+    // int narrowing_conversion {2.9};//Compiler error
+
+    std::cout << "Elephant count : " << elephant_count << std::endl;
+    std::cout << "Lion count : " << lion_count << std::endl;
+    std::cout << "Dog count : " << dog_count << std::endl;
+    std::cout << "Cat count : " << cat_count << std::endl;
+    std::cout << "Domesticated animal count : " << domesticated_animals << std::endl;
+   */
+
+   //Functional Initialization
+   /*
+    int apple_count(5);
+    int orange_count(10);
+    int fruit_count (apple_count + orange_count);
+    //int bad_initialization ( doesnt_exist3 + doesnt_exist4 );
+
+    //Information lost. less safe than braced initializers
+    int narrowing_conversion_functional (2.9);
+
+
+    std::cout << "Apple count : " << apple_count << std::endl;
+    std::cout << "Orange count : " << orange_count << std::endl;
+    std::cout << "Fruit count : " << fruit_count << std::endl;
+    std::cout << "Narrowing conversion : " << narrowing_conversion_functional << std::endl;//Will loose info
+    */
+
+   //Assignment notation
+
+    int bike_count = 2;
+    int truck_count = 7;
+    int vehicle_count = bike_count +truck_count;
+    int narrowing_conversion_assignment = 2.9;
+
+    std::cout << "Bike count : " << bike_count << std::endl;
+    std::cout << "Truck count : " << truck_count << std::endl;
+    std::cout << "Vehicle count : " << vehicle_count << std::endl;
+    std::cout << "Narrowing conversion : " << narrowing_conversion_assignment << std::endl;
+
+
+    //Check the size with sizeof
+    std::cout << "sizeof int : " << sizeof(int) << std::endl;
+    std::cout << "sizeof truck_count : " << sizeof(truck_count) << std::endl;
+    return 0;
+}
+
+---RESULT---
+Elephant count : 0
+Lion count : 0
+Dog count : 10
+Cat count : 15
+Domesticated animal count : 25
+Apple count : 5
+Orange count : 10
+Fruit count : 15
+Narrowing conversion : 2
+Bike count : 2
+Truck count : 7
+Vehicle count : 9
+Narrowing conversion : 2
+sizeof int : 4
+sizeof truck_count : 4
+
+
+---EXPLANATION---
+La inicialización en C++ puede realizarse de varias maneras, y las diferencias entre ellas son importantes para entender cómo y cuándo usar cada una. Aquí te explico las diferencias entre la inicialización con llaves (Braced initializer), la inicialización funcional (Functional Initialization) y la inicialización mediante asignación (Assignment notation):
+
+### Inicialización con Llaves (Braced Initializer)
+
+La inicialización con llaves, introducida en C++11, es también conocida como inicialización uniforme o inicialización de lista. Este método de inicialización utiliza llaves `{}` y ofrece varias ventajas, como prevenir el estrechamiento de conversiones, inicializar contenedores y ser uniforme para todos los tipos de datos.
+
+- **Sintaxis:** `Tipo nombre{valor};`
+- **Ejemplo:** `int a{5};`
+- **Ventajas:**
+  - Previene conversiones no seguras.
+  - Puede usarse para inicializar todos los tipos de datos, incluidos los primitivos, los objetos y los contenedores.
+  - Soporta la inicialización de listas para contenedores y objetos de clases.
+
+### Inicialización Funcional
+
+La inicialización funcional se parece a la llamada a una función, utilizando paréntesis `()` en lugar de llaves `{}`. Este estilo de inicialización es más antiguo pero aún se utiliza, especialmente para tipos primitivos y cuando se instancia un objeto de una clase.
+
+- **Sintaxis:** `Tipo nombre(valor);`
+- **Ejemplo:** `int b(5);`
+- **Ventajas:**
+  - Sintaxis familiar para quienes vienen de otros lenguajes de programación.
+  - Funciona bien para la inicialización de objetos y tipos primitivos.
+  - En algunos contextos, puede ser más claro o más natural de usar que la inicialización con llaves.
+
+### Inicialización mediante Asignación (Assignment Notation)
+
+Este método utiliza el operador de asignación `=` para inicializar una variable. Aunque es ampliamente utilizado y entendido, no es una forma de inicialización en el sentido estricto, sino una asignación.
+
+- **Sintaxis:** `Tipo nombre = valor;`
+- **Ejemplo:** `int c = 5;`
+- **Ventajas:**
+  - Muy claro y familiar para la mayoría de los programadores.
+  - Funciona bien para tipos primitivos y es ampliamente utilizado en código más antiguo.
+
+### Diferencias Clave
+
+1. **Prevención de Estrechamiento:** La inicialización con llaves previene el estrechamiento (por ejemplo, de `double` a `int` sin una conversión explícita), mientras que los otros métodos no.
+2. **Uniformidad:** La inicialización con llaves se puede utilizar de manera uniforme para todos los tipos, incluidos los agregados y los contenedores, lo que no es siempre posible con los otros métodos.
+3. **Sintaxis y Estilo:** La elección entre estos métodos a menudo depende del estilo de codificación, las prácticas recomendadas y la legibilidad en el contexto específico del código.
+
+Cada método tiene su lugar dependiendo de la situación y las preferencias del programador. La inicialización con llaves es generalmente preferida en C++ moderno debido a su seguridad y flexibilidad.
+

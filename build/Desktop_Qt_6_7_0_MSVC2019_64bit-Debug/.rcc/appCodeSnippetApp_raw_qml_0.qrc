@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/CodeSnippetApp/">
+    <file alias="Main.qml">D:/Personal/Qt/CodeSnippetApp/Main.qml</file>
+    <file alias="MyGroupbox.qml">D:/Personal/Qt/CodeSnippetApp/MyGroupbox.qml</file>
+    <file alias="CodeDisplayPage.qml">D:/Personal/Qt/CodeSnippetApp/CodeDisplayPage.qml</file>
+    <file alias="Components/CustomTextArea.qml">D:/Personal/Qt/CodeSnippetApp/Components/CustomTextArea.qml</file>
+    <file alias="Modules/ListsOfModels/DataTypesModel.qml">D:/Personal/Qt/CodeSnippetApp/Modules/ListsOfModels/DataTypesModel.qml</file>
+    <file alias="Modules/ListsOfModels/ControlFlowModels.qml">D:/Personal/Qt/CodeSnippetApp/Modules/ListsOfModels/ControlFlowModels.qml</file>
+    <file alias="Modules/ListsOfModels/MapOfAssociations.qml">D:/Personal/Qt/CodeSnippetApp/Modules/ListsOfModels/MapOfAssociations.qml</file>
+    <file alias="Modules/Utils/FileReader.qml">D:/Personal/Qt/CodeSnippetApp/Modules/Utils/FileReader.qml</file>
+  </qresource>
+</RCC>
+

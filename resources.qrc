@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Code">
+        <file>Assets/Code/CPlusPlus/IntegerModifiers.txt</file>
+        <file>Assets/Code/CPlusPlus/Number system.txt</file>
+        <file>Assets/Code/CPlusPlus/Varibable initialization.txt</file>
+    </qresource>
+</RCC>

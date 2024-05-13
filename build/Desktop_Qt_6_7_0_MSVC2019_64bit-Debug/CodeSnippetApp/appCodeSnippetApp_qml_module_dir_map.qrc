@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/CodeSnippetApp">D:/Personal/Qt/CodeSnippetApp/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/CodeSnippetApp</file>
+
+  </qresource>
+</RCC>
