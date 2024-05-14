@@ -29,7 +29,8 @@ qt_add_qml_module(appCodeSnippetApp
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
     QML_FILES ScrollViewTopics.qml
     RESOURCES ScrollViewNotes
-    QML_FILES CustonButtomMenu.qml
+    QML_FILES CustomButton.qml
+    QML_FILES CustomListView.qml
 
 )
 

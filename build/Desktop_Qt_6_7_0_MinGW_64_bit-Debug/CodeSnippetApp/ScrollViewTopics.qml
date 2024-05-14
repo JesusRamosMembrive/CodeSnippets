@@ -18,35 +18,19 @@ ScrollView {
         spacing: 10
 
 
-        CustonButtomMenu {
-            id: custonButtomMenu
+        CustomButton
+        {
+            id: dataTypeButton
+            width: columnTopics.width * 0.8
+            height: 40
             buttonText: "Variables & Data Types"
-
         }
 
-        ListView {
+        CustomListView {
             id: dataTypeList
             width: parent.width
-            height: custonButtomMenu.checked ? contentHeight : 0
-            visible: custonButtomMenu.checked
-            model: dataTypesModel.dataTypes  // Utiliza el modelo de dataTypesModel
-            delegate: ItemDelegate {
-                width: parent.width
-                text: modelData
-                font.pixelSize: 16
-                onClicked: {
-                    console.log("Clicked on", modelData)
-                    loadFile(modelData)
-                    // Agregar más acciones aquí si es necesario
-                }
-            }
-
-            Behavior on height {
-                NumberAnimation {
-                    duration: 350
-                    easing.type: Easing.OutExpo
-                }
-            }
+            customModel: dataTypesModel.dataTypes  // Pasa el modelo al CustomListView
+            customButton: dataTypeButton  // Pasa el botón al CustomListView para controlar la visibilidad
         }
     }
 }

@@ -9,7 +9,8 @@
     <file alias="Modules/ListsOfModels/MapOfAssociations.qml">C:/Users/jesus/Documents/Git/CodeSnippets/Modules/ListsOfModels/MapOfAssociations.qml</file>
     <file alias="Modules/Utils/FileReader.qml">C:/Users/jesus/Documents/Git/CodeSnippets/Modules/Utils/FileReader.qml</file>
     <file alias="ScrollViewTopics.qml">C:/Users/jesus/Documents/Git/CodeSnippets/ScrollViewTopics.qml</file>
-    <file alias="CustonButtomMenu.qml">C:/Users/jesus/Documents/Git/CodeSnippets/CustonButtomMenu.qml</file>
+    <file alias="CustomButton.qml">C:/Users/jesus/Documents/Git/CodeSnippets/CustomButton.qml</file>
+    <file alias="CustomListView.qml">C:/Users/jesus/Documents/Git/CodeSnippets/CustomListView.qml</file>
     <file alias="ScrollViewNotes">C:/Users/jesus/Documents/Git/CodeSnippets/ScrollViewNotes</file>
   </qresource>
 </RCC>

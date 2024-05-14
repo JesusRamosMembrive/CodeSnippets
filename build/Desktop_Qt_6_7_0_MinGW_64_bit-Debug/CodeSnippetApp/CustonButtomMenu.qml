@@ -32,7 +32,7 @@ Button {
             contentItem: Text {
                 id: buttonTextItem
                 color: custonButtomMenu.buttonTextColor
-                text: "Change for the correct"
+                text: "Change for the correct text"
                 anchors.centerIn: parent
                 font.pointSize: 12
                 font.family: "Roboto"
