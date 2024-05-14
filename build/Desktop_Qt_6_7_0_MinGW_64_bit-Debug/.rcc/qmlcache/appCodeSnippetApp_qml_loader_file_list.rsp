@@ -1,0 +1,14 @@
+--resource
+C:/Users/jesus/Documents/Git/CodeSnippets/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/qmake_CodeSnippetApp.qrc
+--resource
+C:/Users/jesus/Documents/Git/CodeSnippets/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/.rcc/appCodeSnippetApp_raw_qml_0.qrc
+/CodeSnippetApp/Main.qml
+/CodeSnippetApp/MyGroupbox.qml
+/CodeSnippetApp/CodeDisplayPage.qml
+/CodeSnippetApp/Components/CustomTextArea.qml
+/CodeSnippetApp/Modules/ListsOfModels/DataTypesModel.qml
+/CodeSnippetApp/Modules/ListsOfModels/ControlFlowModels.qml
+/CodeSnippetApp/Modules/ListsOfModels/MapOfAssociations.qml
+/CodeSnippetApp/Modules/Utils/FileReader.qml
+/CodeSnippetApp/ScrollViewTopics.qml
+/CodeSnippetApp/CustonButtomMenu.qml

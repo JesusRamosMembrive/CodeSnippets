@@ -1,0 +1,14 @@
+module CodeSnippetApp
+typeinfo appCodeSnippetApp.qmltypes
+prefer :/CodeSnippetApp/
+Main 1.0 Main.qml
+MyGroupbox 1.0 MyGroupbox.qml
+CodeDisplayPage 1.0 CodeDisplayPage.qml
+CustomTextArea 1.0 Components/CustomTextArea.qml
+DataTypesModel 1.0 Modules/ListsOfModels/DataTypesModel.qml
+ControlFlowModels 1.0 Modules/ListsOfModels/ControlFlowModels.qml
+MapOfAssociations 1.0 Modules/ListsOfModels/MapOfAssociations.qml
+FileReader 1.0 Modules/Utils/FileReader.qml
+ScrollViewTopics 1.0 ScrollViewTopics.qml
+CustonButtomMenu 1.0 CustonButtomMenu.qml
+
