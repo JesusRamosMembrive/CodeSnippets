@@ -61,6 +61,13 @@ namespace _0x5f_CodeSnippetApp_Modules_Utils_FileReader_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _0x5f_CodeSnippetApp_ScrollViewTopics_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -83,6 +90,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/Modules/ListsOfModels/ControlFlowModels.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_Modules_ListsOfModels_ControlFlowModels_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/Modules/ListsOfModels/MapOfAssociations.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_Modules_ListsOfModels_MapOfAssociations_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/Modules/Utils/FileReader.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_Modules_Utils_FileReader_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/ScrollViewTopics.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_ScrollViewTopics_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

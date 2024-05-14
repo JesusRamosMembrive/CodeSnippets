@@ -1,0 +1,100 @@
+// import QtQuick 2.15
+// import QtQuick.Window 2.15
+// import QtQuick.Controls 2.15
+// import QtQuick.Layouts 1.15
+// import QtQuick.Controls.Material 2.15
+// import "./Modules/ListsOfModels"
+// import "./Modules/Utils"
+
+// ScrollView {
+//     id: scrollViewTopics
+//     width: parent.width
+//     height: parent.height
+
+//     Column {
+//         id: columnTopics
+//         width: scrollViewTopics.width
+//         height: scrollViewTopics.height
+//         spacing: 10
+
+//         Rectangle {
+//             id: backGroundButton
+//             width: columnTopics.width * 0.8
+//             height: 40
+//             radius: 20
+//             anchors.horizontalCenter: parent.horizontalCenter
+
+//             Button {
+//                 id: dataTypeButton
+//                 height: backGroundButton.height
+//                 width: backGroundButton.width
+//                 anchors.fill: backGroundButton
+//                 checkable: true
+
+//                 background: Rectangle {
+//                     color: "#00ffffff"
+//                     radius: 20
+//                     border.color: "#00ffffff"
+//                 }
+
+//                 contentItem: Text {
+//                     color: dataTypeButton.down ? "#ffffff" : "#000000"
+//                     text: "Variables & Data Types"
+//                     anchors.verticalCenter: parent.verticalCenter
+//                     anchors.horizontalCenter: parent.horizontalCenter
+//                     font.pointSize: 12
+//                     font.family: "Roboto"
+//                 }
+//             }
+//         }
+
+//         ListView {
+//             id: dataTypeList
+//             width: parent.width
+//             height: visible ? contentHeight : 0
+//             visible: dataTypeButton.checked
+//             model: dataTypesModel.dataTypes  // Utiliza el modelo de dataTypesModel
+//             delegate: ItemDelegate {
+//                 width: parent.width
+//                 text: modelData
+//                 font.pixelSize: 16
+//                 onClicked: {
+//                     console.log("Clicked on", modelData)
+//                     loadFile(modelData)
+//                     // Agregar más acciones aquí si es necesario
+//                 }
+//             }
+//         }
+
+//         // Button {
+//         //     id: controlFlowButton
+//         //     width: parent.width
+//         //     text: "Control Flow"
+//         //     font.pointSize: 12
+//         //     font.family: "Roboto"
+//         //     checkable: true
+//         //     background: Rectangle {
+//         //         color: controlFlowButton.checked ? "#4CAF50" : "#f0f0f0"
+//         //         radius: 20
+//         //         border.color: "#00000000"
+//         //     }
+//         // }
+
+//         // ListView {
+//         //     id: controlFlowList
+//         //     width: parent.width
+//         //     height: visible ? contentHeight : 0
+//         //     visible: controlFlowButton.checked
+//         //     model: controlFlowModel.controlFlowTypes  // Utiliza el modelo de dataTypesModel
+//         //     delegate: ItemDelegate {
+//         //         width: parent.width
+//         //         text: modelData
+//         //         font.pixelSize: 16
+//         //         onClicked: {
+//         //             console.log("Clicked on", modelData)
+//         //             loadFile(modelData)
+//         //         }
+//         //     }
+//         // }
+//     }
+// }

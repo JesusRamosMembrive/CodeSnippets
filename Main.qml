@@ -51,8 +51,8 @@ Window {
 
     MyGroupbox {
         id: groupboxLanguage
-        x: 20
-        y: 47
+        x: 50
+        y: 21
         height: parent.height * 0.10
         width: parent.width *0.15
 
@@ -65,6 +65,7 @@ Window {
             font.bold: true
             anchors.horizontalCenter: groupboxLanguage.horizontalCenter
         }
+
         ComboBox {
             id: comboBox
             width: groupboxLanguage.width *0.9
@@ -78,89 +79,17 @@ Window {
 
     MyGroupbox {
         id: groupboxTopics
-        x: 12
-        y: 133
+        y: 120
+
         width: parent.width *0.20
         height: parent.height*0.85
 
-        ScrollView {
-                            id: scrollViewTopics
-                            anchors.fill: parent
-
-                            Column {
-                                id: columnTopics
-                                width: parent.width
-                                spacing: 10
-                                ToolButton {
-                                    id: dataTypeButton
-                                    width: parent.width
-                                    text: "Variables & Data Types"
-                                    contentItem: Text {
-                                        color: dataTypeButton.down ? "#ffffff" : "#000000"
-                                        text: dataTypeButton.text
-                                    }
-                                    checkable: true
-                                    background: Rectangle {
-                                        color: dataTypeButton.checked ? "#4CAF50" : "#f0f0f0"
-                                        radius: 5
-                                    }
-                                }
-
-                                ListView {
-                                    id: dataTypeList
-                                    width: parent.width
-                                    height: visible ? contentHeight : 0
-                                    visible: dataTypeButton.checked
-                                    model: dataTypesModel.dataTypes  // Utiliza el modelo de dataTypesModel
-                                    delegate: ItemDelegate {
-                                        width: parent.width
-                                        text: modelData
-                                        font.pixelSize: 16
-                                        onClicked: {
-                                            console.log("Clicked on", modelData)
-                                            loadFile(modelData)
-                                            // Agregar más acciones aquí si es necesario
-                                        }
-                                    }
-                                }
-
-                                ToolButton {
-                                    id: controlFlowButton
-                                    width: parent.width
-                                    text: "Control Flow"
-                                    contentItem: Text {
-                                        color: controlFlowButton.down ? "#ffffff" : "#000000"
-                                        text: controlFlowButton.text
-                                    }
-                                    checkable: true
-                                    background: Rectangle {
-                                        color: controlFlowButton.checked ? "#4CAF50" : "#f0f0f0"
-                                        radius: 5
-                                    }
-                                }
-
-
-                                ListView {
-                                    id: controlFlowList
-                                    width: parent.width
-                                    height: visible ? contentHeight : 0
-                                    visible: controlFlowButton.checked
-                                    model: controlFlowModel.controlFlowTypes  // Utiliza el modelo de dataTypesModel
-                                    delegate: ItemDelegate {
-                                        width: parent.width
-                                        text: modelData
-                                        font.pixelSize: 16
-                                        onClicked: {
-                                            console.log("Clicked on", modelData)
-                                            loadFile(modelData)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        anchors.horizontalCenterOffset: 0
-                        anchors.horizontalCenter: parent.horizontalCenter
-
+        ScrollViewTopics {
+            id: scrollViewTopics
+            anchors.fill: parent
+        }
+        anchors.horizontalCenterOffset: -460
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     StackView {
@@ -196,26 +125,26 @@ Window {
 //     id:columnLayoutCode
 //     width: parent.width
 //     height: parent.height
-    // StackView {
-    //     id: stackView
-    //     initialItem: "CodeDisplayPage.qml"
-    //     Layout.preferredWidth: 1017
-    //     Layout.preferredHeight: 713
-    // }
+// StackView {
+//     id: stackView
+//     initialItem: "CodeDisplayPage.qml"
+//     Layout.preferredWidth: 1017
+//     Layout.preferredHeight: 713
+// }
 
-    // Button {
-    //     id: buttonExplanation
-    //     text: qsTr("Explanation")
-    //     highlighted: false
-    //     flat: false
-    //     antialiasing: true
-    //     Layout.preferredWidth: 114
-    //     Layout.preferredHeight: 42
-    //     onClicked: {
-    //         fileProcessor.processFile(":/Code/Assets/Code/CPlusPlus/Varibable initialization.txt");
-    //     }
+// Button {
+//     id: buttonExplanation
+//     text: qsTr("Explanation")
+//     highlighted: false
+//     flat: false
+//     antialiasing: true
+//     Layout.preferredWidth: 114
+//     Layout.preferredHeight: 42
+//     onClicked: {
+//         fileProcessor.processFile(":/Code/Assets/Code/CPlusPlus/Varibable initialization.txt");
+//     }
 
-    // }
+// }
 //     Layout.preferredWidth: 1017
 //     Layout.preferredHeight: 787
 // }

@@ -2,10 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 
 project(CodeSnippetApp VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
-set(CMAKE_AUTORCC ON)
 
 qt_standard_project_setup()
 
@@ -26,8 +27,9 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES Modules/ListsOfModels/MapOfAssociations.qml
     QML_FILES Modules/Utils/FileReader.qml
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
-    # RESOURCES resources.qrc
-    SOURCES
+    QML_FILES ScrollViewTopics.qml
+    RESOURCES ScrollViewNotes
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

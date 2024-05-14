@@ -8,6 +8,8 @@
     <file alias="Modules/ListsOfModels/ControlFlowModels.qml">D:/Personal/Qt/CodeSnippetApp/Modules/ListsOfModels/ControlFlowModels.qml</file>
     <file alias="Modules/ListsOfModels/MapOfAssociations.qml">D:/Personal/Qt/CodeSnippetApp/Modules/ListsOfModels/MapOfAssociations.qml</file>
     <file alias="Modules/Utils/FileReader.qml">D:/Personal/Qt/CodeSnippetApp/Modules/Utils/FileReader.qml</file>
+    <file alias="ScrollViewTopics.qml">D:/Personal/Qt/CodeSnippetApp/ScrollViewTopics.qml</file>
+    <file alias="ScrollViewNotes">D:/Personal/Qt/CodeSnippetApp/ScrollViewNotes</file>
   </qresource>
 </RCC>
 
