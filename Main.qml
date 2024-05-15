@@ -104,7 +104,7 @@ Window {
         y: 60
 
         width: parent.width *0.20
-        height: parent.height*0.85
+        height: parent.height*0.80
 
         label: Label {
             color: "#ffffff"
@@ -122,24 +122,37 @@ Window {
             anchors.fill: parent
             anchors.topMargin: 35
         }
-        anchors.horizontalCenterOffset: -475
+        anchors.horizontalCenterOffset: -470
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    StackView {
-        id: stackView
-        x: 290
-        y: 30
-        initialItem: "CodeDisplayPage.qml"
-        width: 894
-        height: 600
+    Rectangle
+    {
+        id:backGroundStackView
+        x: 264
+        y: 60
+        width: parent.width * 0.75
+        height: parent.height *0.80
+        radius:15
+        StackView {
+            id: stackView
+            anchors.fill: parent
+            anchors.centerIn: parent
+            initialItem: "CodeDisplayPage.qml"
+            width: 914
+            height: 721
+
+        }
 
     }
 
+
     Button {
         id: buttonExplanation
-        x: 604
-        y: 723
+        x: 49
+        y: 714
+        width: 163
+        height: 67
         text: qsTr("Explanation")
         highlighted: false
         flat: false
@@ -149,7 +162,6 @@ Window {
         onClicked: {
             fileProcessor.processFile(":/Code/Assets/Code/CPlusPlus/Varibable initialization.txt");
         }
-
     }
 }
 

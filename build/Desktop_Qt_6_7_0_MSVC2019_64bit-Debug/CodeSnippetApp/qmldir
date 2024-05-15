@@ -10,4 +10,7 @@ ControlFlowModels 1.0 Modules/ListsOfModels/ControlFlowModels.qml
 MapOfAssociations 1.0 Modules/ListsOfModels/MapOfAssociations.qml
 FileReader 1.0 Modules/Utils/FileReader.qml
 ScrollViewTopics 1.0 ScrollViewTopics.qml
+CustomButton 1.0 CustomButton.qml
+CustomListView 1.0 CustomListView.qml
+FilesListView 1.0 FilesListView.qml
 

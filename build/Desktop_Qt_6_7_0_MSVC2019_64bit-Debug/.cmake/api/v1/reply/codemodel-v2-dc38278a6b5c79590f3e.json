@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d524dda43d99a7589c2f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CodeSnippetApp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-34a8fa7f5e625af88d80.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-56cada91fa46f56b7bf3.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-ed47cf3127277b5fa526.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-00632547b56817b1560b.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp-Debug-a69c42c6e11ceed649a0.json",
+					"name" : "appCodeSnippetApp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_autogen-Debug-00d02e9399a2a8023950.json",
+					"name" : "appCodeSnippetApp_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_autogen_timestamp_deps-Debug-bcbc1720fc348e74150d.json",
+					"name" : "appCodeSnippetApp_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_qmlimportscan-Debug-3c457c2d696cba7bf52c.json",
+					"name" : "appCodeSnippetApp_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_qmllint-Debug-defbf57eef5e3b1350af.json",
+					"name" : "appCodeSnippetApp_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_qmllint_json-Debug-8e9dd14b0571e319cac6.json",
+					"name" : "appCodeSnippetApp_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_qmllint_module-Debug-f4aa499adfc4120b389f.json",
+					"name" : "appCodeSnippetApp_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_qmltyperegistration-Debug-1afc65d4512c5353fbd1.json",
+					"name" : "appCodeSnippetApp_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCodeSnippetApp_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCodeSnippetApp_tooling-Debug-c55fe10eaf9ce3d510a1.json",
+					"name" : "appCodeSnippetApp_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Personal/Qt/CodeSnippetApp/build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug",
+		"source" : "D:/Personal/Qt/CodeSnippetApp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
