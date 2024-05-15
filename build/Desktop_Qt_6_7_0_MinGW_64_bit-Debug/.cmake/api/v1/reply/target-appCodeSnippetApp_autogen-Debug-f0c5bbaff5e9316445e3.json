@@ -18,14 +18,14 @@
 	[
 		{
 			"backtrace" : 0,
-			"id" : "appCodeSnippetApp_qmlimportscan::@6890427a1f51a3e7e1df"
+			"id" : "appCodeSnippetApp_tooling::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "appCodeSnippetApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
-			"id" : "appCodeSnippetApp_tooling::@6890427a1f51a3e7e1df"
+			"id" : "appCodeSnippetApp_qmlimportscan::@6890427a1f51a3e7e1df"
 		}
 	],
 	"folder" : 
