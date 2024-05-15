@@ -7,8 +7,8 @@ import "./Components"
 Item {
     Rectangle{
         anchors.fill: parent
+        radius:15
         color: "black"
-
     }
 
     Column {
@@ -44,22 +44,14 @@ Item {
                 anchors.topMargin: 20
             }
 
-            ScrollView
-            {
-                Rectangle{
-                    anchors.fill: parent
-                    width: columnCodeDisplay.width * 0.1
-                    height: columnCodeDisplay.height * 0.8
-                    radius: 15
-                }
-
-                width: columnCodeDisplay.width * 0.1
+            FilesListView {
+                id:filesListView
+                width: columnCodeDisplay.width * 0.2
                 height: columnCodeDisplay.height * 0.8
                 anchors.left: textAreaCode.right
                 anchors.top: parent.top
                 anchors.leftMargin: 10
                 anchors.topMargin: 20
-
             }
         }
     }

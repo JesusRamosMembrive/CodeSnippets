@@ -11,7 +11,9 @@
     <file alias="ScrollViewTopics.qml">C:/Users/jesus/Documents/Git/CodeSnippets/ScrollViewTopics.qml</file>
     <file alias="CustomButton.qml">C:/Users/jesus/Documents/Git/CodeSnippets/CustomButton.qml</file>
     <file alias="CustomListView.qml">C:/Users/jesus/Documents/Git/CodeSnippets/CustomListView.qml</file>
+    <file alias="FilesListView.qml">C:/Users/jesus/Documents/Git/CodeSnippets/FilesListView.qml</file>
     <file alias="ScrollViewNotes">C:/Users/jesus/Documents/Git/CodeSnippets/ScrollViewNotes</file>
+    <file alias="Modules/Notes/MyGroupBoxComponent">C:/Users/jesus/Documents/Git/CodeSnippets/Modules/Notes/MyGroupBoxComponent</file>
   </qresource>
 </RCC>
 

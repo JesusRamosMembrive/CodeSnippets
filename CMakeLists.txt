@@ -31,6 +31,8 @@ qt_add_qml_module(appCodeSnippetApp
     RESOURCES ScrollViewNotes
     QML_FILES CustomButton.qml
     QML_FILES CustomListView.qml
+    QML_FILES FilesListView.qml
+    RESOURCES Modules/Notes/MyGroupBoxComponent
 
 )
 

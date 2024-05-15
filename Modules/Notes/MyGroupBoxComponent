@@ -1,0 +1,28 @@
+
+MyGroupbox {
+    id: groupboxLanguage
+    x: 50
+    y: 21
+    height: parent.height * 0.10
+    width: parent.width *0.15
+
+    label: Label {
+        color: "#ffffff"
+        text: "Lenguage"
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        font.pointSize: 11
+        font.bold: true
+        anchors.horizontalCenter: groupboxLanguage.horizontalCenter
+    }
+
+    ComboBox {
+        id: comboBox
+        width: groupboxLanguage.width *0.9
+        height: groupboxLanguage.height *0.5
+        anchors.top: parent.top
+        anchors.topMargin: 30
+        anchors.horizontalCenter: parent.horizontalCenter
+        model: ["C++"]
+    }
+}
