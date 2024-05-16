@@ -1,8 +1,8 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls.Material 2.15
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Controls.Material
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 
@@ -15,16 +15,23 @@ ScrollView {
         id: columnTopics
         width: scrollViewTopics.width
         height: scrollViewTopics.height
-        spacing: 10
+        spacing: 20
+
+
+        Rectangle{
+            id:fakeRectangle
+            width:80
+            height: 40
+            color:"transparent"
+        }
 
         CustomButton
         {
             id: dataTypeButton
             width: columnTopics.width * 0.8
             height: 40
-            anchors.top: parent.top
-            anchors.topMargin: 50
             buttonText: "Variables & Data Types"
+
         }
 
         CustomListView {
