@@ -2,84 +2,108 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
+
 import "./Components"
 
 Rectangle {
-       width: parent.width
-       height: parent.height
-       color: "black"  // Fondo negro para el área de código
+    width: parent.width
+    height: parent.height
+    radius: 15
+    color: "#231f1f"
 
-       GridLayout {
-           id: mainLayout
-           anchors.fill: parent
-           columns: 2
-           rowSpacing: 10
-           columnSpacing: 20
-           margins: 20
+    GridLayout {
+        id: mainLayout
+        anchors.fill: parent
+        columns: 2
+        rowSpacing: 10
+        columnSpacing: 20
 
-           // Área de código
-           ColumnLayout {
-               Layout.row: 0
-               Layout.column: 0
+        // Área de código
+        Column {
+            id: column
+            Layout.row: 0
+            Layout.column: 0
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-               Text {
-                   text: "Code Area"
-                   font.pointSize: 20
-                   color: "white"
-               }
+            Text {
+                text: "Code Area"
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pointSize: 20
+                color: "white"
+            }
 
-               Rectangle {
-                   width: parent.width
-                   height: parent.height
-                   color: "white"
-                   radius: 25
-                   border.width: 2
-                   border.color: "black"
+            Rectangle {
+                width: parent.width
+                height: parent.height *0.92
+                color: "white"
+                radius: 20
+                border.width: 2
+                anchors.left: parent.left
+                anchors.leftMargin: 10
+                border.color: "black"
 
-                   ScrollView {
-                       anchors.fill: parent
-                       anchors.margins: 10
+                ScrollView {
+                    anchors.fill: parent
+                    anchors.margins: 10
 
-                       TextArea {
-                           id: textAreaCode
-                           wrapMode: Text.WordWrap
-                           textFormat: Text.MarkdownText
-                           readOnly: true
-                           text: "Aqui va a ir el codigo"
-                           font.pointSize: 22
-                           font.family: "Bookerly"
-                           placeholderText: qsTr("Text Area")
-                           color: "#000000"
-                           background: Rectangle {
-                               color: "transparent"
-                               radius: 20
-                           }
-                       }
-                   }
-               }
-           }
+                    TextArea {
+                        id: textAreaCode
+                        wrapMode: Text.WordWrap
+                        textFormat: Text.MarkdownText
+                        readOnly: true
+                        text: "Aqui va a ir el codigo"
+                        font.pointSize: 22
+                        font.family: "Bookerly"
+                        placeholderText: qsTr("Text Area")
+                        color: "#000000"
+                        background: Rectangle {
+                            color: "transparent"
+                            radius: 20
+                        }
+                    }
+                }
+            }
+        }
 
-           // Área de archivos
-           ColumnLayout {
-               Layout.row: 0
-               Layout.column: 1
+        // Área de archivos
+        Column {
+            id: column1
+            Layout.minimumWidth: 110
+            Layout.minimumHeight: 0
+            Layout.row: 0
+            Layout.column: 1
+            // Layout.fillWidth: true
+            Layout.fillHeight: true
 
-               Text {
-                   text: "Files"
-                   font.pointSize: 20
-                   color: "white"
-               }
+            Text {
+                text: "Files"
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pointSize: 20
+                color: "white"
+                anchors.rightMargin: 10
+            }
 
-               CustomListView {
-                   id: fileListView
-                   width: parent.width * 0.8
-                   height: parent.height * 0.8
-                   customModel: dataTypesModel.dataTypes  // Pasa el modelo al CustomListView
-                   customButton: dataTypeButton  // Pasa el botón al CustomListView para controlar la visibilidad
-               }
-           }
-       }
-   }
+            Rectangle{
+                id:backGroundFileListView
+                color: "white"
+                height: parent.height * 0.92
+                width: parent.width
+                radius: 20
+                anchors.right: parent.right
+                anchors.rightMargin: 10
+
+                CustomListView {
+                    id: fileListView
+                    width: parent.width
+                    height: parent.height
+                    customModel: dataTypesModel.dataTypes  // Pasa el modelo al CustomListView
+                    customButton: dataTypeButton  // Pasa el botón al CustomListView para controlar la visibilidad
+                }
+            }
+        }
+    }
+}
 
 
 
