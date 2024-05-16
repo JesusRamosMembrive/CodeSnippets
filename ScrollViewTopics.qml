@@ -23,6 +23,8 @@ ScrollView {
             id: dataTypeButton
             width: columnTopics.width * 0.8
             height: 40
+            anchors.top: parent.top
+            anchors.topMargin: 50
             buttonText: "Variables & Data Types"
         }
 

@@ -17,7 +17,7 @@ Column {
         border.color: "gray"
         border.width: 1
         anchors.horizontalCenter: parent.horizontalCenter
-        radius: 10
+        radius: 15
 
         ListView {
             id: customListView

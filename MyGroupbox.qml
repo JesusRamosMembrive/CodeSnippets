@@ -8,8 +8,8 @@ GroupBox {
     id: groupbox
     width: 130
     height: 90
-    anchors.verticalCenterOffset: 196
-    anchors.horizontalCenterOffset: -23
+    // anchors.verticalCenterOffset: 196
+    // anchors.horizontalCenterOffset: -23
 
 
     // Personalizando el fondo del GroupBox
