@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickWindow>
+
 #include "./Modules/FileProcessor/fileprocessor.h"
 
 int main(int argc, char *argv[])

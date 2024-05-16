@@ -1,17 +1,17 @@
 // CustomListView.qml
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 
 Column {
     id: listViewContainer
-    width: parent.width * 0.8
+    width: parent.width
     height: parent.height
 
     property var customModel
     property var customButton
 
     Rectangle {
-        width: parent.width *0.8
+        width: parent.width
         height: customButton && customButton.checked ? customListView.contentHeight : 0
         color: customButton.checked ? "#f0f0f0" : "transparent"  // Cambia el color del fondo según el estado del botón
         border.color: "gray"
@@ -22,6 +22,7 @@ Column {
         ListView {
             id: customListView
             width: parent.width
+
             height: customButton && customButton.checked ? contentHeight : 0
             visible: customButton && customButton.checked
             clip: true

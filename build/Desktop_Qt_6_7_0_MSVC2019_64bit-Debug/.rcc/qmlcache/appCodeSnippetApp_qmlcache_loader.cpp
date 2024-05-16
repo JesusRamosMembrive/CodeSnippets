@@ -89,6 +89,13 @@ namespace _0x5f_CodeSnippetApp_FilesListView_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _0x5f_CodeSnippetApp_DialogExit_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -115,6 +122,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/CustomButton.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_CustomButton_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/CustomListView.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_CustomListView_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/FilesListView.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_FilesListView_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/CodeSnippetApp/DialogExit.qml"), &QmlCacheGeneratedCode::_0x5f_CodeSnippetApp_DialogExit_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

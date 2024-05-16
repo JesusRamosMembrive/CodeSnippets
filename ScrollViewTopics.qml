@@ -17,7 +17,6 @@ ScrollView {
         height: scrollViewTopics.height
         spacing: 10
 
-
         CustomButton
         {
             id: dataTypeButton

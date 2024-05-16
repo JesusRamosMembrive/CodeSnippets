@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Controls.Material
 import QtQuick.Effects
+import QtQuick.Dialogs
 
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
@@ -19,6 +20,43 @@ Window {
     Material.accent: Material.Orange
 
     flags: Qt.FramelessWindowHint | Qt.WA_TranslucentBackground
+    DragHandler {
+        onActiveChanged: if(active) startSystemMove();
+    }
+
+    MouseArea {
+        id: mouseAreaResize
+        anchors.fill: parent
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton
+
+        property int edges: 0;
+        property int edgeOffest: 5;
+
+        function setEdges(x, y) {
+            edges = 0;
+            if(x < edgeOffest) edges |= Qt.LeftEdge;
+            if(x > (width - edgeOffest))  edges |= Qt.RightEdge;
+            if(y < edgeOffest) edges |= Qt.TopEdge;
+            if(y > (height - edgeOffest)) edges |= Qt.BottomEdge;
+        }
+
+        cursorShape: {
+            return !containsMouse ? Qt.ArrowCursor:
+                                    edges == 3 || edges == 12 ? Qt.SizeFDiagCursor :
+                                                                edges == 5 || edges == 10 ? Qt.SizeBDiagCursor :
+                                                                                            edges & 9 ? Qt.SizeVerCursor :
+                                                                                                        edges & 6 ? Qt.SizeHorCursor : Qt.ArrowCursor;
+        }
+
+        onPositionChanged: setEdges(mouseX, mouseY);
+        onPressed: {
+            setEdges(mouseX, mouseY);
+            if(edges && containsMouse) {
+                startSystemResize(edges);
+            }
+        }
+    }
 
     ControlFlowModels {id: controlFlowModel}
     DataTypesModel {id: dataTypesModel}
@@ -72,6 +110,10 @@ Window {
         }
     }
 
+    DialogExit {
+        id: messageDialog
+    }
+
     Component.onCompleted: {
         filesMap = createFilesMap();  // Reconstruir el mapa cuando se inicia la aplicación
     }
@@ -100,6 +142,27 @@ Window {
                     }
                 }
 
+                // Botón de maximizar
+                Button {
+                    id: maximizeButton
+                    width: 70
+                    height: 45
+                    anchors.top: parent.top
+                    anchors.right: closeButton.left
+                    text: "+"
+                    onClicked: {
+                        if (appWindow.visibility === Window.Maximized) {
+                            appWindow.visibility = Window.Windowed
+                        } else {
+                            appWindow.visibility = Window.Maximized
+                        }
+                    }
+                    background: Rectangle {
+                        color: "#00ff00"
+                        radius: 20
+                    }
+                }
+
                 // Botón de cierre
                 Button {
                     id: closeButton
@@ -109,7 +172,7 @@ Window {
                     anchors.right: parent.right
                     text: "X"
                     onClicked: {
-                        Qt.quit()
+                        messageDialog.open()
                     }
                     background: Rectangle {
                         id: bgCloseButton
@@ -157,7 +220,7 @@ Window {
                 MyGroupbox {
                     id: groupboxTopics
                     width: parent.width
-                    height: parent.height
+                    height: parent.height *0.89
                     anchors.top: parent.top
                     anchors.topMargin: 10
 
@@ -199,9 +262,7 @@ Window {
                 }
             }
 
-
-
-           Rectangle
+            Rectangle
             {
                 id:backGroundStackView
                 height: mainLayout.height *0.87
@@ -226,94 +287,6 @@ Window {
                 }
             }
         }
-
-
-
-
-
-        // Areas for resizing the window
-        MouseArea {
-            anchors.top: parent.top
-            anchors.left: parent.left
-            width: 10
-            height: 10
-            cursorShape: Qt.SizeFDiagCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.TopLeftCorner)
-            }
-        }
-
-        MouseArea {
-            anchors.top: parent.top
-            anchors.right: parent.right
-            width: 10
-            height: 10
-            cursorShape: Qt.SizeBDiagCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.TopRightCorner)
-            }
-        }
-
-        MouseArea {
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            width: 10
-            height: 10
-            cursorShape: Qt.SizeBDiagCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.BottomLeftCorner)
-            }
-        }
-
-        MouseArea {
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-            width: 10
-            height: 10
-            cursorShape: Qt.SizeFDiagCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.BottomRightCorner)
-            }
-        }
-
-        MouseArea {
-            anchors.bottom: parent.bottom
-            width: parent.width
-            height: 10
-            cursorShape: Qt.SizeVerCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.BottomEdge)
-            }
-        }
-
-        MouseArea {
-            anchors.right: parent.right
-            width: 10
-            height: parent.height
-            cursorShape: Qt.SizeHorCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.RightEdge)
-            }
-        }
-
-        MouseArea {
-            anchors.left: parent.left
-            width: 10
-            height: parent.height
-            cursorShape: Qt.SizeHorCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.LeftEdge)
-            }
-        }
-
-        MouseArea {
-            anchors.top: parent.top
-            width: parent.width
-            height: 10
-            cursorShape: Qt.SizeVerCursor
-            onPressed: {
-                appWindow.startSystemResize(Qt.TopEdge)
-            }
-        }
     }
 }
+
