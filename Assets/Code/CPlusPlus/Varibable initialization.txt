@@ -2,6 +2,7 @@
 circle.h
 circle.cpp
 main.cpp
+result
 
 ---circle.h---
 #ifndef CIRCLE_H
@@ -101,7 +102,7 @@ int main(){
     return 0;
 }
 
----RESULT---
+---result---
 Elephant count : 0
 Lion count : 0
 Dog count : 10

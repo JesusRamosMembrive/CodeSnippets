@@ -37,6 +37,7 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES CustomMouseAreaResize.qml
     QML_FILES MyTitleBar.qml
     QML_FILES MyMenuBar.qml
+    QML_FILES ExplanationPage.qml
 
 )
 

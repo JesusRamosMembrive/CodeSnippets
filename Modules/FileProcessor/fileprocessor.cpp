@@ -14,12 +14,9 @@ void FileProcessor::processFile(const QString &filePath)
     QString content = in.readAll();
     file.close();
 
-    // Extraer RESULT y EXPLANATION
-    extractSection(content, "---RESULT---", "---EXPLANATION---", m_result);
-    extractSection(content, "---EXPLANATION---", "---FILES---", m_explanation);
+    // Extraer EXPLANATION
+    extractSection(content, "---EXPLANATION---", "---", m_explanation);
 
-    qDebug() << "m_result: " << m_result;
-    qInfo() << "=======================";
     qDebug() << "m_explanation: " << m_explanation;
     qInfo() << "=======================";
 
@@ -45,7 +42,6 @@ void FileProcessor::processFile(const QString &filePath)
     }
 
     // Emitir las señales para actualizar QML
-    emit resultChanged();
     emit explanationChanged();
     emit filesChanged();
 }

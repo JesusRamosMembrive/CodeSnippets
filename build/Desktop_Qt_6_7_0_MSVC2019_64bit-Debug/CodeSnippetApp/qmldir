@@ -17,4 +17,5 @@ DialogExit 1.0 DialogExit.qml
 CustomMouseAreaResize 1.0 CustomMouseAreaResize.qml
 MyTitleBar 1.0 MyTitleBar.qml
 MyMenuBar 1.0 MyMenuBar.qml
+ExplanationPage 1.0 ExplanationPage.qml
 

@@ -34,20 +34,6 @@
                         "designable": true,
                         "final": false,
                         "index": 0,
-                        "name": "result",
-                        "notify": "resultChanged",
-                        "read": "result",
-                        "required": false,
-                        "scriptable": true,
-                        "stored": true,
-                        "type": "QString",
-                        "user": false
-                    },
-                    {
-                        "constant": false,
-                        "designable": true,
-                        "final": false,
-                        "index": 1,
                         "name": "explanation",
                         "notify": "explanationChanged",
                         "read": "explanation",
@@ -61,7 +47,7 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 2,
+                        "index": 1,
                         "name": "files",
                         "notify": "filesChanged",
                         "read": "files",
@@ -74,11 +60,6 @@
                 ],
                 "qualifiedClassName": "FileProcessor",
                 "signals": [
-                    {
-                        "access": "public",
-                        "name": "resultChanged",
-                        "returnType": "void"
-                    },
                     {
                         "access": "public",
                         "name": "explanationChanged",
