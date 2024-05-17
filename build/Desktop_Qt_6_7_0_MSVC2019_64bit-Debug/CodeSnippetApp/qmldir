@@ -14,4 +14,7 @@ CustomButton 1.0 CustomButton.qml
 CustomListView 1.0 CustomListView.qml
 FilesListView 1.0 FilesListView.qml
 DialogExit 1.0 DialogExit.qml
+CustomMouseAreaResize 1.0 CustomMouseAreaResize.qml
+MyTitleBar 1.0 MyTitleBar.qml
+MyMenuBar 1.0 MyMenuBar.qml
 

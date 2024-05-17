@@ -14,6 +14,17 @@
                         ],
                         "name": "processFile",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileName",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "getFileContent",
+                        "returnType": "QString"
                     }
                 ],
                 "object": true,
@@ -57,7 +68,7 @@
                         "required": false,
                         "scriptable": true,
                         "stored": true,
-                        "type": "QVariantMap",
+                        "type": "QVariantList",
                         "user": false
                     }
                 ],
@@ -76,6 +87,21 @@
                     {
                         "access": "public",
                         "name": "filesChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "fileName",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "fileContent",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "fileSelected",
                         "returnType": "void"
                     }
                 ],

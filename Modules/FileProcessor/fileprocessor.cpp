@@ -30,6 +30,9 @@ void FileProcessor::processFile(const QString &filePath)
     qInfo() << "filesSection: " << filesSection;
     QStringList fileNames = filesSection.split('\n', Qt::SkipEmptyParts);
 
+    m_files.clear();
+    m_filesList.clear();
+
     for (const QString &fileName : fileNames) {
         QString trimmedName = fileName.trimmed();
         QString fileStartTag = "---" + trimmedName + "---";
@@ -38,17 +41,22 @@ void FileProcessor::processFile(const QString &filePath)
         int fileEndIndex = content.indexOf("---", fileStartIndex);
         fileData = content.mid(fileStartIndex, fileEndIndex - fileStartIndex).trimmed();
         m_files[trimmedName] = fileData;
+        m_filesList.append(trimmedName);
     }
 
-    // qInfo() << m_files;
-
-    for (auto it = m_files.begin(); it != m_files.end(); ++it) {
-        qDebug() << it.key() << ": " << it.value();
-    }
-
+    // Emitir las señales para actualizar QML
     emit resultChanged();
     emit explanationChanged();
     emit filesChanged();
+}
+
+QString FileProcessor::getFileContent(const QString &fileName)
+{
+    if (m_files.contains(fileName)) {
+        emit fileSelected(fileName, m_files[fileName]);
+        return m_files[fileName];
+    }
+    return QString();
 }
 
 void FileProcessor::extractSection(const QString &text, const QString &startMarker, const QString &endMarker, QString &section)

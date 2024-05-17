@@ -34,6 +34,9 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES FilesListView.qml
     RESOURCES Modules/Notes/MyGroupBoxComponent
     QML_FILES DialogExit.qml
+    QML_FILES CustomMouseAreaResize.qml
+    QML_FILES MyTitleBar.qml
+    QML_FILES MyMenuBar.qml
 
 )
 

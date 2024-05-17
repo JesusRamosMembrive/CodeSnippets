@@ -13,6 +13,9 @@
     <file alias="CustomListView.qml">D:/Personal/Qt/CodeSnippetApp/CustomListView.qml</file>
     <file alias="FilesListView.qml">D:/Personal/Qt/CodeSnippetApp/FilesListView.qml</file>
     <file alias="DialogExit.qml">D:/Personal/Qt/CodeSnippetApp/DialogExit.qml</file>
+    <file alias="CustomMouseAreaResize.qml">D:/Personal/Qt/CodeSnippetApp/CustomMouseAreaResize.qml</file>
+    <file alias="MyTitleBar.qml">D:/Personal/Qt/CodeSnippetApp/MyTitleBar.qml</file>
+    <file alias="MyMenuBar.qml">D:/Personal/Qt/CodeSnippetApp/MyMenuBar.qml</file>
     <file alias="ScrollViewNotes">D:/Personal/Qt/CodeSnippetApp/ScrollViewNotes</file>
     <file alias="Modules/Notes/MyGroupBoxComponent">D:/Personal/Qt/CodeSnippetApp/Modules/Notes/MyGroupBoxComponent</file>
   </qresource>

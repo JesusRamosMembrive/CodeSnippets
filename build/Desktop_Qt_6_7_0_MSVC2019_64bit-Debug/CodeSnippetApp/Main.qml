@@ -24,38 +24,8 @@ Window {
         onActiveChanged: if(active) startSystemMove();
     }
 
-    MouseArea {
+    CustomMouseAreaResize {
         id: mouseAreaResize
-        anchors.fill: parent
-        hoverEnabled: true
-        acceptedButtons: Qt.LeftButton
-
-        property int edges: 0;
-        property int edgeOffest: 5;
-
-        function setEdges(x, y) {
-            edges = 0;
-            if(x < edgeOffest) edges |= Qt.LeftEdge;
-            if(x > (width - edgeOffest))  edges |= Qt.RightEdge;
-            if(y < edgeOffest) edges |= Qt.TopEdge;
-            if(y > (height - edgeOffest)) edges |= Qt.BottomEdge;
-        }
-
-        cursorShape: {
-            return !containsMouse ? Qt.ArrowCursor:
-                                    edges == 3 || edges == 12 ? Qt.SizeFDiagCursor :
-                                                                edges == 5 || edges == 10 ? Qt.SizeBDiagCursor :
-                                                                                            edges & 9 ? Qt.SizeVerCursor :
-                                                                                                        edges & 6 ? Qt.SizeHorCursor : Qt.ArrowCursor;
-        }
-
-        onPositionChanged: setEdges(mouseX, mouseY);
-        onPressed: {
-            setEdges(mouseX, mouseY);
-            if(edges && containsMouse) {
-                startSystemResize(edges);
-            }
-        }
     }
 
     ControlFlowModels {id: controlFlowModel}
@@ -69,12 +39,12 @@ Window {
         var map = {};
         for (var i = 0; i < dataTypesModel.dataTypes.count; i++) {
             var item = dataTypesModel.dataTypes.get(i);
-            map[item.name] = "qrc:/Code/Assets/Code/CPlusPlus/VariblesAndDataTypes/" + item.name + ".txt";
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/" + item.name + ".txt";
         }
 
         for (var j = 0; j < controlFlowModel.controlFlowTypes.count; j++) {
             var item = controlFlowModel.controlFlowTypes.get(j);
-            map[item.name] = "qrc:/Code/Assets/Code/CPlusPlus/VariblesAndDataTypes/" + item.name + ".txt";
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/" + item.name + ".txt";
         }
 
         for (var key in map) {
@@ -89,18 +59,11 @@ Window {
         return file;
     }
 
-    // Ejemplo de un modelo con una lista de nombres de archivos
-    ListModel {
-        id: fileListModel
-        ListElement { name: "main.cpp" }
-        ListElement { name: "circle.h" }
-        ListElement { name: "circle.cpp" }
-    }
-
-    // Función ficticia para cargar el contenido del archivo
     function loadFileContent(fileName) {
-        // Aquí puedes implementar la lógica para cargar y mostrar el contenido del archivo
-        console.log("Loading content for", fileName)
+        // Asegúrate de que fileName esté correcto
+        var filePath = loadFile(fileName);
+        console.log("Loading content for", filePath);
+        fileProcessor.processFile(filePath);  // Llamada al método processFile de fileProcessor
     }
 
     function updateFileList(files) {
@@ -127,80 +90,14 @@ Window {
             Layout.fillHeight: true
             Layout.fillWidth: true
             Layout.preferredHeight: 45
-            Rectangle {
+            MyTitleBar {
                 id: titleBar
-                Layout.fillWidth: true
-                Layout.preferredHeight: 45
-                color: "#dd000000"
-                opacity: 0.5
-
-                MouseArea {
-                    id: mouseArea
-                    anchors.fill: parent
-                    onPressed: {
-                        appWindow.startSystemMove()
-                    }
-                }
-
-                // Botón de maximizar
-                Button {
-                    id: maximizeButton
-                    width: 70
-                    height: 45
-                    anchors.top: parent.top
-                    anchors.right: closeButton.left
-                    text: "+"
-                    onClicked: {
-                        if (appWindow.visibility === Window.Maximized) {
-                            appWindow.visibility = Window.Windowed
-                        } else {
-                            appWindow.visibility = Window.Maximized
-                        }
-                    }
-                    background: Rectangle {
-                        color: "#00ff00"
-                        radius: 20
-                    }
-                }
-
-                // Botón de cierre
-                Button {
-                    id: closeButton
-                    width: 70
-                    height: 45
-                    anchors.top: parent.top
-                    anchors.right: parent.right
-                    text: "X"
-                    onClicked: {
-                        messageDialog.open()
-                    }
-                    background: Rectangle {
-                        id: bgCloseButton
-                        color: "#ff0000"
-                        radius: 20
-                    }
-                }
             }
         }
 
         // Menu Bar
-        MenuBar {
+        MyMenuBar {
             id: menuBar
-            Layout.fillWidth: true
-            Menu {
-                title: "Archivo"
-                Action {
-                    text: "Nuevo"
-                    // Conecte la señal "triggered" a su función de manejo
-                }
-            }
-            Menu {
-                title: "Editar"
-                Action {
-                    text: "Deshacer"
-                    // Conecte la señal "triggered" a su función de manejo
-                }
-            }
         }
 
         Row{
@@ -254,11 +151,10 @@ Window {
                     highlighted: false
                     flat: false
                     antialiasing: true
-                    // Layout.preferredWidth: 114
-                    // Layout.preferredHeight: 42
-                    onClicked: {
-                        fileProcessor.processFile(":/Code/Assets/Code/CPlusPlus/Varibable initialization.txt");
-                    }
+
+                    // onClicked: {
+                    //     loadFileContent("IntegerModifiers");
+                    // }
                 }
             }
 
@@ -266,8 +162,6 @@ Window {
             {
                 id:backGroundStackView
                 height: mainLayout.height *0.87
-
-
                 color: "#00ffffff"
                 radius:15
                 anchors.left: leftMainContent.right
@@ -288,5 +182,7 @@ Window {
             }
         }
     }
+
+
 }
 

@@ -1,12 +1,12 @@
 appCodeSnippetApp_autogen/timestamp: \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/QDebug \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/QFile \
+  C:/Qt/6.7.0/msvc2019_64/include/QtCore/QList \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/QMap \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/QObject \
-  C:/Qt/6.7.0/msvc2019_64/include/QtCore/QString \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/QTextStream \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/QVariant \
-  C:/Qt/6.7.0/msvc2019_64/include/QtCore/QVariantMap \
+  C:/Qt/6.7.0/msvc2019_64/include/QtCore/QVariantList \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/q20type_traits.h \
@@ -117,7 +117,7 @@ appCodeSnippetApp_autogen/timestamp: \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/qtypes.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/qvariant.h \
-  C:/Qt/6.7.0/msvc2019_64/include/QtCore/qvariantmap.h \
+  C:/Qt/6.7.0/msvc2019_64/include/QtCore/qvariantlist.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.7.0/msvc2019_64/include/QtCore/qxptype_traits.h \

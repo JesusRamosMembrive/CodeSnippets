@@ -31,7 +31,6 @@ ScrollView {
             width: columnTopics.width * 0.8
             height: 40
             buttonText: "Variables & Data Types"
-
         }
 
         CustomListView {
