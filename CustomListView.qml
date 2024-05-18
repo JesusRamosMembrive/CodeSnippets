@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import "./Modules/ListsOfModels"
-import "./Modules/Utils"
+import QtQuick.Layouts
 
 Column {
     id: listViewContainer
@@ -9,6 +8,17 @@ Column {
 
     property var customModel
     property var customButton
+    property string searchFilter: ""
+
+    function filterModel() {
+        filteredModel.clear();
+        for (var i = 0; i < customModel.count; i++) {
+            var item = customModel.get(i);
+            if (item.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
+                filteredModel.append(item);
+            }
+        }
+    }
 
     Rectangle {
         width: parent.width
@@ -25,7 +35,10 @@ Column {
             visible: customButton && customButton.checked
             clip: true
 
-            model: customModel
+            model: ListModel {
+                id: filteredModel
+            }
+
             delegate: ItemDelegate {
                 width: parent.width
                 height: 40
@@ -38,7 +51,7 @@ Column {
 
                     Text {
                         anchors.centerIn: parent
-                        text: modelData
+                        text: model.name
                         font.pixelSize: 16
                     }
 
@@ -46,18 +59,18 @@ Column {
                         id: itemMouseArea
                         anchors.fill: parent
                         onClicked: {
-                            console.log("Clicked on", modelData)
-                            loadFileContent(modelData)
+                            console.log("Clicked on", model.name)
+                            appWindow.loadFileContent(model.name)
                         }
                     }
                 }
             }
 
-            Behavior on height {
-                NumberAnimation {
-                    duration: 350
-                    easing.type: Easing.OutExpo
-                }
+            Component.onCompleted: filterModel()
+
+            Connections {
+                target: listViewContainer
+                onSearchFilterChanged: filterModel()
             }
         }
 
@@ -66,6 +79,13 @@ Column {
                 duration: 350
                 easing.type: Easing.OutExpo
             }
+        }
+    }
+
+    Behavior on height {
+        NumberAnimation {
+            duration: 350
+            easing.type: Easing.OutExpo
         }
     }
 }

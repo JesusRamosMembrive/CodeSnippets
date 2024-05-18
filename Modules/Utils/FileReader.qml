@@ -1,5 +1,5 @@
 // FileReader.qml
-import QtQuick 2.0
+import QtQuick
 
 Item {
     function read(fileUrl) {
