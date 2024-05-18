@@ -23,6 +23,7 @@ ScrollView {
             width:80
             height: 40
             color:"transparent"
+            border.color: "#00000000"
         }
 
         CustomButton

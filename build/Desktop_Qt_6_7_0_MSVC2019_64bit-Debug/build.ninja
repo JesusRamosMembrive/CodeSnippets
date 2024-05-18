@@ -863,7 +863,7 @@ build .qt_plugins\Qt6_QmlPlugins_Imports_appCodeSnippetApp.cmake | ${cmake_ninja
 #############################################
 # Phony custom command for CMakeFiles\appCodeSnippetApp_autogen_timestamp_deps
 
-build CMakeFiles\appCodeSnippetApp_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles\appCodeSnippetApp_autogen_timestamp_deps: phony C$:\Qt\6.7.0\msvc2019_64\.\bin\moc.exe C$:\Qt\6.7.0\msvc2019_64\lib\Qt6Quickd.lib C$:\Qt\6.7.0\msvc2019_64\lib\Qt6Qmld.lib
+build CMakeFiles\appCodeSnippetApp_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles\appCodeSnippetApp_autogen_timestamp_deps: phony C$:\Qt\6.7.0\msvc2019_64\.\bin\moc.exe C$:\Qt\6.7.0\msvc2019_64\lib\Qt6Qmld.lib C$:\Qt\6.7.0\msvc2019_64\lib\Qt6Quickd.lib
 
 
 #############################################
