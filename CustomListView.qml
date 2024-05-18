@@ -53,6 +53,8 @@ Column {
                         anchors.centerIn: parent
                         text: model.name
                         font.pixelSize: 16
+                        font.family: "Roboto"
+
                     }
 
                     MouseArea {

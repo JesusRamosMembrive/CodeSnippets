@@ -14,25 +14,28 @@ ScrollView {
         id: columnTopics
         width: scrollViewTopics.width
         height: scrollViewTopics.height
-        spacing: 5
-
-        Rectangle {
-            id: fakeRectangle
-            width: 80
-            height: 40
-            color: "transparent"
-        }
+        topPadding: 30
+        spacing:10
 
         TextField {
             id: textField
             width: columnTopics.width * 0.8
             height: 50
             horizontalAlignment: Text.AlignLeft
+            font.family: "Roboto"
             anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: qsTr("Search a topic")
             onTextChanged: {
                 appWindow.filterTopics(text);
             }
+        }
+
+        Rectangle {
+            id: lineSeparatorTopics
+            width: parent.width * 0.9
+            height: 1  // Altura fina para el separador
+            color: "white"  // Color blanco
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomButton {

@@ -46,7 +46,7 @@ Rectangle {
                     readOnly: true
                     text: explanationText
                     font.pointSize: 13
-                    font.family: "Bookerly"
+                    font.family: "Roboto"
                     placeholderText: qsTr("Text Area")
                     color: "#000000"
 

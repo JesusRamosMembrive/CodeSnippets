@@ -146,7 +146,7 @@ Window {
                         text: "Topics"
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignTop
-                        font.family: "Roboto Mono"
+                        font.family: "Roboto"
                         anchors.horizontalCenter: parent.horizontalCenter
                         font.pointSize: 16
                         font.bold: true

@@ -26,6 +26,7 @@ Rectangle {
 
             Text {
                 text: "Code Area"
+                font.family: "Roboto"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pointSize: 20
                 color: "white"
@@ -54,9 +55,9 @@ Rectangle {
                         renderType: Text.QtRendering
                         textFormat: Text.PlainText
                         readOnly: true
-                        text: "Aquí va a ir el código"
+                        text: "No example loaded"
                         font.pointSize: 13
-                        font.family: "Bookerly"
+                        font.family: "Roboto"
                         placeholderText: qsTr("Text Area")
                         color: "#000000"
 
@@ -84,6 +85,7 @@ Rectangle {
                 font.pointSize: 20
                 color: "white"
                 anchors.rightMargin: 10
+                font.family: "Roboto"
             }
 
             Rectangle {
@@ -116,6 +118,7 @@ Rectangle {
                                 anchors.centerIn: parent
                                 text: modelData
                                 font.pixelSize: 16
+                                font.family: "Roboto"
                                 color: "black"
                             }
 
