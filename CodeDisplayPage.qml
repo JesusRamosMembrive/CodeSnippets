@@ -35,12 +35,12 @@ Rectangle {
             Rectangle {
                 width: parent.width
                 height: parent.height * 0.92
-                color: "white"
+                color: "#1e1e1e"
                 radius: 20
                 border.width: 2
                 anchors.left: parent.left
                 anchors.leftMargin: 10
-                border.color: "black"
+                border.color: "#d8323232"
 
                 ScrollView {
                     anchors.fill: parent
@@ -59,7 +59,7 @@ Rectangle {
                         font.pointSize: 13
                         font.family: "Roboto"
                         placeholderText: qsTr("Text Area")
-                        color: "#000000"
+                        color: "#e0e0e0"
 
                         background: Rectangle {
                             color: "transparent"
@@ -90,17 +90,19 @@ Rectangle {
 
             Rectangle {
                 id: backGroundFileListView
-                color: "white"
+                color: "#1e1e1e"
                 height: parent.height * 0.92
                 width: parent.width
                 radius: 20
+                border.color: "#d8323232"
                 anchors.right: parent.right
-                anchors.rightMargin: 10
+                anchors.rightMargin: 5
 
                 ListView {
                     id: fileListView
                     width: parent.width
                     height: parent.height
+                    anchors.horizontalCenter: parent.horizontalCenter
                     model: fileProcessor.files
                     delegate: Item {
                         width: parent.width
@@ -110,7 +112,7 @@ Rectangle {
                             width: parent.width
                             height: parent.height
                             color: "#ffffff"
-                            border.color: "lightgray"
+                            border.color: "#d8323232"
                             border.width: 1
                             radius: 20
 
@@ -119,7 +121,7 @@ Rectangle {
                                 text: modelData
                                 font.pixelSize: 16
                                 font.family: "Roboto"
-                                color: "black"
+                                color: "#000000"
                             }
 
                             MouseArea {
@@ -139,7 +141,6 @@ Rectangle {
     Connections {
         target: fileProcessor
         onFileSelected: {
-            console.log("=============SE ACTIVA????=================");
             textAreaCode.text = fileContent;
         }
     }

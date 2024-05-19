@@ -15,7 +15,7 @@ qt_add_executable(appCodeSnippetApp
     resources.qrc
 )
 
-qt_add_qml_module(appCodeSnippetApp
+qt6_add_qml_module(appCodeSnippetApp
     URI CodeSnippetApp
     VERSION 1.0
     QML_FILES Main.qml
@@ -38,6 +38,7 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES MyTitleBar.qml
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
+    QML_FILES Theme.qml
 
 )
 

@@ -26,13 +26,13 @@ Rectangle {
 
         Rectangle {
             height: parent.height *0.92
-            color: "white"
+            color: "#1e1e1e"
             radius: 20
             border.width: 2
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.leftMargin: 0
-            border.color: "black"
+            border.color: "#d8323232"
 
             ScrollView {
                 anchors.fill: parent
@@ -47,8 +47,8 @@ Rectangle {
                     text: explanationText
                     font.pointSize: 13
                     font.family: "Roboto"
-                    placeholderText: qsTr("Text Area")
-                    color: "#000000"
+                    placeholderText: qsTr("")
+                    color: "#e0e0e0"
 
                     background: Rectangle {
                         color: "transparent"
