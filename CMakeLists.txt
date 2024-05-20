@@ -38,7 +38,7 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES MyTitleBar.qml
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
-    QML_FILES Theme.qml
+    QML_FILES Modules/Style/Theme.qml
 
 )
 
