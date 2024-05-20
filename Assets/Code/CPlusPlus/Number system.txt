@@ -1,6 +1,8 @@
+---FILES---
+main.cpp
+result
 
----CODE---
-
+---main.cpp---
 int main(){
    
    int number1 = 15; // Decimal
@@ -16,14 +18,11 @@ int main(){
     return 0;
 }
 
----RESULT---
+---result---
 number1 : 15
 number2 : 15
 number3 : 15
 number4 : 15
 
-###EXPLANATION
+---EXPLANATION---
 Different ways to represent the same number.
-
-###FILES
-main.cpp

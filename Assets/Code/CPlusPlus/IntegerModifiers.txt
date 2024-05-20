@@ -1,6 +1,9 @@
----CODE---
-#include <iostream>
+---FILES---
+main.cpp
+result
 
+---main.cpp---
+#include <iostream>
 
 int main(){
 
@@ -41,23 +44,22 @@ int main(){
     unsigned long long int unsigned_long_long_int{1234};
 
 
-        std::cout << "Short variable : " << short_var<<  " , size : "
-        << sizeof (short) << " bytes" << std::endl;
+    std::cout << "Short variable : " << short_var<<  " , size : "
+    << sizeof (short) << " bytes" << std::endl;
 
-        std::cout << "Short Int : " << short_int << " , size : "
-        << sizeof (short int) << " bytes" << std::endl;
+    std::cout << "Short Int : " << short_int << " , size : "
+    << sizeof (short int) << " bytes" << std::endl;
 
-        std::cout << "Signed short : " << signed_short
-        << " , size : " << sizeof (signed short) << " bytes" << std::endl;
+    std::cout << "Signed short : " << signed_short
+    << " , size : " << sizeof (signed short) << " bytes" << std::endl;
 
-        std::cout << "Signed short int :  " << signed_short_int
-        <<  " , size : " << sizeof (signed short int) << " bytes" << std::endl;
-        
-        std::cout << "unsigned short int :  " << unsigned_short_int
-        <<  " , size : " << sizeof (unsigned short int) << " bytes" << std::endl;
-        
-        std::cout << "---------------------" << std::endl;
+    std::cout << "Signed short int :  " << signed_short_int
+    <<  " , size : " << sizeof (signed short int) << " bytes" << std::endl;
 
+    std::cout << "unsigned short int :  " << unsigned_short_int
+    <<  " , size : " << sizeof (unsigned short int) << " bytes" << std::endl;
+
+    std::cout << "---------------------" << std::endl;
 
 
 
@@ -74,6 +76,7 @@ int main(){
         << sizeof (unsigned int) << " bytes" << std::endl;
         
     std::cout << "---------------------" << std::endl;
+
 
 
     std::cout << "Long variable :  " << long_var << " , size : "
@@ -115,7 +118,7 @@ int main(){
     return 0;
 }
 
----RESULT---
+---result---
 value1 : 10
 value2 : -300
 sizeof(value1) : 4
@@ -144,7 +147,59 @@ Signed long long int : 1234 , size : 8 bytes
 unsigned long long int : 1234 , size : 8 bytes
 ---------------------
 
-###EXPLANATION
+---EXPLANATION---
+# Explicación del Código en C++
 
-###FILES
-main.cpp
+El siguiente código en C++ ilustra el uso de varios tipos de datos enteros, tanto con signo como sin signo, así como sus tamaños en bytes. Se incluye una variedad de declaraciones de variables y la impresión de sus valores y tamaños.
+
+## Código
+
+### Declaraciones de Variables
+
+1. **Variables con signo (signed)**
+    ```cpp
+    signed int value1 {10};
+    signed int value2 {-300};
+    ```
+    Estas son variables enteras con signo que pueden almacenar valores positivos y negativos.
+
+2. **Variables sin signo (unsigned)**
+    ```cpp
+    unsigned int value3 {4};
+    // unsigned int value4{-5}; // Compiler error.
+    ```
+    Las variables enteras sin signo solo pueden almacenar valores positivos. Intentar asignar un valor negativo resulta en un error de compilación.
+
+3. **Tipos de variables short y long**
+    ```cpp
+    short short_var {-32768}; // 2 Bytes
+    short int short_int {455};
+    signed short signed_short {122};
+    signed short int signed_short_int {-456};
+    unsigned short int unsigned_short_int {456};
+
+    int int_var {55}; // 4 bytes
+    signed signed_var {66};
+    signed int signed_int {77};
+    unsigned int unsigned_int{77};
+
+    long long_var {88}; // 4 OR 8 Bytes
+    long int long_int {33};
+    signed long signed_long {44};
+    signed long int signed_long_int {44};
+    unsigned long int unsigned_long_int{44};
+
+    long long long_long {888}; // 8 Bytes
+    long long int long_long_int {999};
+    signed long long signed_long_long {444};
+    signed long long int signed_long_long_int{1234};
+    unsigned long long int unsigned_long_long_int{1234};
+    ```
+### Valores y Tamaños
+
+1. **Short:** Generalmente ocupa 2 bytes.
+2. **Int:** Generalmente ocupa 4 bytes.
+3. **Long:** Puede ocupar 4 u 8 bytes dependiendo del sistema.
+4. **Long Long:** Generalmente ocupa 8 bytes.
+
+Este código muestra cómo declarar variables enteras con diferentes especificadores de tipo, y cómo usar `sizeof` para determinar el tamaño en bytes de cada tipo de dato. Además, ilustra la diferencia entre variables con signo y sin signo.

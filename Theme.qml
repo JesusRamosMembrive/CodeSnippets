@@ -1,5 +1,4 @@
-import QtQuick 2.15
-
+import QtQuick
 QtObject {
     property color primaryColor: "#1e1e1e"
     property color textColor: "#e0e0e0"

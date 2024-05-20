@@ -54,3 +54,11 @@ compile_commands.json
 *_qmlcache.qrc
 
 build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/
+
+build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/.cmake/api/v1/reply/
+
+build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/.qt/
+
+build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/.qtc/package-manager/
+
+build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/

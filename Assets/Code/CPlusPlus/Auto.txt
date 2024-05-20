@@ -1,0 +1,91 @@
+---FILES---
+main.cpp
+result
+
+---main.cpp---
+#include <iostream>
+
+
+int main(){
+
+	auto var1 {12};
+    auto var2 {13.0};
+    auto var3 {14.0f};
+    auto var4 {15.0l};
+    auto var5 {'e'};
+    
+    //int modifier suffixes
+    auto var6 { 123u}; // unsigned
+    auto var7 { 123ul}; //unsigned long
+    auto var8 { 123ll}; // long long
+
+    std::cout << "var1 occupies : " << sizeof(var1) << " bytes" << std::endl;
+    std::cout << "var2 occupies : " << sizeof(var2) << " bytes" << std::endl;
+    std::cout << "var3 occupies : " << sizeof(var3) << " bytes" << std::endl;
+    std::cout << "var4 occupies : " << sizeof(var4) << " bytes" << std::endl;
+    std::cout << "var5 occupies : " << sizeof(var5) << " bytes" << std::endl;
+    std::cout << "var6 occupies : " << sizeof(var6) << " bytes" << std::endl;
+    std::cout << "var7 occupies : " << sizeof(var7) << " bytes" << std::endl;
+    std::cout << "var8 occupies : " << sizeof(var8) << " bytes" << std::endl;
+   
+    return 0;
+}
+---result---
+var1 occupies : 4 bytes
+var2 occupies : 8 bytes
+var3 occupies : 4 bytes
+var4 occupies : 16 bytes
+var5 occupies : 1 bytes
+var6 occupies : 4 bytes
+var7 occupies : 4 bytes
+var8 occupies : 8 bytes
+
+---EXPLANATION---
+### Uso de la Inferencia de Tipos con `auto` en C++
+
+En C++, la palabra clave `auto` permite la inferencia automática de tipos por parte del compilador, lo que puede simplificar la declaración de variables y hacer que el código sea más legible y menos propenso a errores de tipo. A continuación, se explica cómo se utiliza `auto` y se muestran ejemplos con distintos tipos de datos.
+
+#### Declaración e Inicialización con `auto`
+
+Cuando se utiliza `auto`, el compilador deduce el tipo de la variable a partir de la expresión que se le asigna. Aquí hay algunos ejemplos:
+
+- **`auto var1 {12};`**: El compilador deduce que `var1` es de tipo `int`.
+- **`auto var2 {13.0};`**: El compilador deduce que `var2` es de tipo `double`.
+- **`auto var3 {14.0f};`**: El compilador deduce que `var3` es de tipo `float`.
+- **`auto var4 {15.0l};`**: El compilador deduce que `var4` es de tipo `long double`.
+- **`auto var5 {'e'};`**: El compilador deduce que `var5` es de tipo `char`.
+
+#### Modificadores de Sufijo en Enteros
+
+Los sufijos pueden modificar el tipo de datos enteros para indicar que son sin signo (`unsigned`), largos (`long`), o largos largos (`long long`).
+
+- **`auto var6 {123u};`**: El sufijo `u` indica que `var6` es de tipo `unsigned int`.
+- **`auto var7 {123ul};`**: El sufijo `ul` indica que `var7` es de tipo `unsigned long`.
+- **`auto var8 {123ll};`**: El sufijo `ll` indica que `var8` es de tipo `long long`.
+
+#### Tamaño de las Variables
+
+La función `sizeof` se utiliza para determinar el tamaño en bytes de cada variable inferida. Los resultados muestran cuántos bytes ocupa cada tipo de datos en memoria.
+
+```cpp
+std::cout << "var1 ocupa : " << sizeof(var1) << " bytes" << std::endl;
+std::cout << "var2 ocupa : " << sizeof(var2) << " bytes" << std::endl;
+std::cout << "var3 ocupa : " << sizeof(var3) << " bytes" << std::endl;
+std::cout << "var4 ocupa : " << sizeof(var4) << " bytes" << std::endl;
+std::cout << "var5 ocupa : " << sizeof(var5) << " bytes" << std::endl;
+std::cout << "var6 ocupa : " << sizeof(var6) << " bytes" << std::endl;
+std::cout << "var7 ocupa : " << sizeof(var7) << " bytes" << std::endl;
+std::cout << "var8 ocupa : " << sizeof(var8) << " bytes" << std::endl;
+
+#### Resultados Esperados
+- **`var1 (int): 4 bytes`
+- **`var2 (double): 8 bytes`
+- **`var3 (float): 4 bytes`
+- **`var4 (long double): Puede variar (8, 12 o 16 bytes dependiendo de la implementación)`
+- **`var5 (char): 1 byte`
+- **`var6 (unsigned int): 4 bytes`
+- **`var7 (unsigned long): 8 bytes en sistemas de 64 bits`
+- **`var8 (long long): 8 bytes`
+
+#### Conclusión
+El uso de auto en C++ permite que el compilador deduzca el tipo de una variable automáticamente, lo cual puede simplificar el código y mejorar la legibilidad. Sin embargo, es importante entender los tipos subyacentes para evitar confusiones y asegurar que el código se comporte como se espera. Utilizar auto junto con la función sizeof ayuda a verificar y entender los tamaños de los tipos de datos inferidos.

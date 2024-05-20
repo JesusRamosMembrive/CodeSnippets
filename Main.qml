@@ -5,6 +5,7 @@ import QtQuick.Layouts
 import QtQuick.Controls.Material
 import QtQuick.Effects
 import QtQuick.Dialogs
+import QtQuick.Controls.Windows
 
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
@@ -19,6 +20,7 @@ Window {
     title: qsTr("Code Snippets")
     Material.theme: Material.Dark
     Material.accent: Material.Orange
+
 
     DragHandler {
         onActiveChanged: if (active) startSystemMove();
