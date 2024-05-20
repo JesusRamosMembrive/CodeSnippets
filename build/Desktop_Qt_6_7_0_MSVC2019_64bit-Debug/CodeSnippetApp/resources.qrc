@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>IntegerModifiers2.txt</file>
-        <file>Assets/Images/imagen.jpg</file>
-    </qresource>
-</RCC>
-

@@ -54,3 +54,17 @@ compile_commands.json
 *_qmlcache.qrc
 
 build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/Testing/Temporary/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/.cmake/api/v1/reply.prev/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/.cmake/api/v1/reply/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Debug/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Release/.cmake/api/v1/query/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Release/.cmake/api/v1/reply/
+
+build/Desktop_Qt_6_7_0_MSVC2019_64bit-Release/
