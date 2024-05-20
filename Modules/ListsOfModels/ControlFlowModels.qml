@@ -2,9 +2,9 @@ import QtQuick
 
 Item {
     property ListModel controlFlowTypes: ListModel {
-        ListElement { name: "For Loops" }
-        ListElement { name: "While" }
-        ListElement { name: "Do While" }
-        ListElement { name: "Other" }
+        ListElement { name: "IfElse" }
+        ListElement { name: "shortcircuitEvaluation" }
+        ListElement { name: "SwitchCase" }
+        ListElement { name: "TernaryOperator" }
     }
 }

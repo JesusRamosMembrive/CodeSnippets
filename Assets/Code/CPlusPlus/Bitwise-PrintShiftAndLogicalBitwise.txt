@@ -1,0 +1,221 @@
+---FILES---
+main.cpp
+result
+
+---main.cpp---
+#include <iostream>
+#include <bitset>
+#include <iomanip>
+
+
+int main(){
+
+    // Print integer in decimal, octal, hex and binary
+    unsigned short int data {15};
+
+    std::cout << "data (dec) : " <<std::showbase <<  std::dec << data << std::endl;
+    std::cout << "data (oct) : " <<std::showbase <<  std::oct << data << std::endl;
+    std::cout << "data (hex) : " <<std::showbase <<  std::hex << data << std::endl;
+    std::cout << "data (bin) : " << std::bitset<16>(data) << std::endl;
+
+    // Shift operator
+    unsigned short int value {0xff0u};
+
+    std::cout << "Size of short int " << sizeof(short int) <<  std::endl;//  16 bits
+
+    std::cout << "value : " << std::bitset<16>(value)
+              << ", dec : " << value << std::endl;
+
+    //Shift left by one bit
+    value = static_cast<unsigned short int>(value << 1);
+    std::cout << "value : " << std::bitset<16>(value)
+              << ", dec : " << value << std::endl;
+
+    //Shift left by one bit
+    value = static_cast<unsigned short int>(value << 1);
+    std::cout << "value : " << std::bitset<16>(value)
+              << ", dec : " << value << std::endl;
+
+    //Shift left by one bit
+    value = static_cast<unsigned short int>(value << 1);
+    std::cout << "value : " << std::bitset<16>(value)
+              << ", dec : " << value << std::endl;
+
+    //Shift by multiple bits in one go
+    //Shift right by four bits
+    value = static_cast<unsigned short int>(value >> 4);
+    std::cout << "value : " << std::bitset<16>(value)
+              << ", dec : " << value << std::endl;
+
+    //LogicalBitwise operator
+    int COLUMN_WIDTH {20};
+    unsigned char value1 {0x3}; // 0000 0011
+    unsigned char value2 {0x5}; // 0000 0101
+
+
+    std::cout << std::setw(COLUMN_WIDTH) << "value1 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1) << std::endl;
+
+    std::cout << std::setw(COLUMN_WIDTH) << "value2 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(value2) << std::endl;
+
+    //AND
+    std::cout << std::endl;
+    std::cout << "Bitwise AND :  " << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "value1 & value2 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1 & value2) << std::endl;
+    std::cout << std::endl;
+
+    //OR
+    std::cout << std::endl;
+    std::cout << "Bitwise OR :  " << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "value1 | value2 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1 | value2) << std::endl;
+    std::cout << std::endl;
+
+
+    //NOT
+    std::cout << std::endl;
+    std::cout << "Bitwise NOT " << std::endl;
+
+    std::cout << std::setw(COLUMN_WIDTH) << "~value1 : "
+              << std::setw(COLUMN_WIDTH) <<  std::bitset<8>(~value1) << std::endl;
+
+    std::cout << std::setw(COLUMN_WIDTH) << "~value2 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(~value2) << std::endl;
+
+    std::cout << std::setw(COLUMN_WIDTH) << "~01011001 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(~0b01011001) << std::endl;//Using bin literal
+
+    std::cout << std::setw(COLUMN_WIDTH) << "~01011001 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(~0x59) << std::endl;//Using hex literal
+    std::cout << std::endl;
+
+
+    //XOR
+    std::cout << std::endl;
+    std::cout << "Bitwise XOR :  " << std::endl;
+    std::cout << std::setw(COLUMN_WIDTH) << "value1 ^ value2 : "
+              << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1 ^ value2) << std::endl;
+    std::cout << std::endl;
+
+    return 0;
+}
+
+
+---result---
+data (dec) : 15
+data (oct) : 017
+data (hex) : 0xf
+data (bin) : 0000000000001111
+Size of short int 0x2
+value : 0000111111110000, dec : 0xff0
+value : 0001111111100000, dec : 0x1fe0
+value : 0011111111000000, dec : 0x3fc0
+value : 0111111110000000, dec : 0x7f80
+value : 0000011111111000, dec : 0x7f8
+           value1 :             00000011
+           value2 :             00000101
+
+Bitwise AND :  
+  value1 & value2 :             00000001
+
+
+Bitwise OR :  
+  value1 | value2 :             00000111
+
+
+Bitwise NOT 
+          ~value1 :             11111100
+          ~value2 :             11111010
+        ~01011001 :             10100110
+        ~01011001 :             10100110
+
+
+Bitwise XOR :  
+  value1 ^ value2 :             00000110
+
+
+---EXPLANATION---
+### Imprimir enteros en diferentes bases
+
+1. **Impresión de enteros en decimal, octal, hexadecimal y binario:**
+   ```cpp
+   unsigned short int data {15};
+
+   std::cout << "data (dec) : " << std::showbase <<  std::dec << data << std::endl;
+   std::cout << "data (oct) : " << std::showbase <<  std::oct << data << std::endl;
+   std::cout << "data (hex) : " << std::showbase <<  std::hex << data << std::endl;
+   std::cout << "data (bin) : " << std::bitset<16>(data) << std::endl;
+   ```
+   - `std::showbase` asegura que los prefijos de base (`0`, `0x`) se muestren para octal y hexadecimal.
+   - `std::dec`, `std::oct`, `std::hex` configuran la base de la salida.
+   - `std::bitset<16>(data)` convierte el valor a binario con 16 bits.
+
+### Operadores de desplazamiento (Shift Operators)
+
+2. **Uso de operadores de desplazamiento:**
+   ```cpp
+   unsigned short int value {0xff0u};
+
+   std::cout << "Size of short int " << sizeof(short int) <<  std::endl;
+
+   std::cout << "value : " << std::bitset<16>(value)
+             << ", dec : " << value << std::endl;
+
+   value = static_cast<unsigned short int>(value << 1);
+   std::cout << "value : " << std::bitset<16>(value)
+             << ", dec : " << value << std::endl;
+
+   value = static_cast<unsigned short int>(value << 1);
+   std::cout << "value : " << std::bitset<16>(value)
+             << ", dec : " << value << std::endl;
+
+   value = static_cast<unsigned short int>(value << 1);
+   std::cout << "value : " << std::bitset<16>(value)
+             << ", dec : " << value << std::endl;
+
+   value = static_cast<unsigned short int>(value >> 4);
+   std::cout << "value : " << std::bitset<16>(value)
+             << ", dec : " << value << std::endl;
+   ```
+   - `value << 1` desplaza los bits de `value` a la izquierda en 1 posición, duplicando el valor numérico.
+   - `value >> 4` desplaza los bits de `value` a la derecha en 4 posiciones, dividiendo el valor numérico por 16.
+
+### Operadores bit a bit (Bitwise Operators)
+
+3. **Operadores AND, OR, NOT y XOR:**
+   ```cpp
+   unsigned char value1 {0x3}; // 0000 0011
+   unsigned char value2 {0x5}; // 0000 0101
+
+   std::cout << "Bitwise AND :  " << std::endl;
+   std::cout << std::setw(COLUMN_WIDTH) << "value1 & value2 : "
+             << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1 & value2) << std::endl;
+
+   std::cout << "Bitwise OR :  " << std::endl;
+   std::cout << std::setw(COLUMN_WIDTH) << "value1 | value2 : "
+             << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1 | value2) << std::endl;
+
+   std::cout << "Bitwise NOT " << std::endl;
+   std::cout << std::setw(COLUMN_WIDTH) << "~value1 : "
+             << std::setw(COLUMN_WIDTH) <<  std::bitset<8>(~value1) << std::endl;
+
+   std::cout << std::setw(COLUMN_WIDTH) << "~value2 : "
+             << std::setw(COLUMN_WIDTH) << std::bitset<8>(~value2) << std::endl;
+
+   std::cout << std::setw(COLUMN_WIDTH) << "~01011001 : "
+             << std::setw(COLUMN_WIDTH) << std::bitset<8>(~0b01011001) << std::endl;
+
+   std::cout << "Bitwise XOR :  " << std::endl;
+   std::cout << std::setw(COLUMN_WIDTH) << "value1 ^ value2 : "
+             << std::setw(COLUMN_WIDTH) << std::bitset<8>(value1 ^ value2) << std::endl;
+   ```
+   - `value1 & value2`: Operación AND bit a bit.
+   - `value1 | value2`: Operación OR bit a bit.
+   - `~value1`, `~value2`: Operación NOT bit a bit (complemento).
+   - `value1 ^ value2`: Operación XOR bit a bit.
+
+### Conclusión
+
+El código demuestra cómo imprimir valores en diferentes bases (decimal, octal, hexadecimal y binario) y cómo usar operadores de desplazamiento y bit a bit en C++. Estas operaciones son fundamentales para la manipulación de bits, que es una técnica común en programación de bajo nivel y en aplicaciones que requieren un control preciso sobre el hardware o la memoria. El uso de `std::bitset` facilita la visualización de los bits individuales, lo cual es muy útil para depuración y comprensión de las operaciones bit a bit.

@@ -1,7 +1,35 @@
 <RCC>
     <qresource prefix="/Code">
-        <file>Assets/Code/CPlusPlus/IntegerModifiers.txt</file>
-        <file>Assets/Code/CPlusPlus/Number system.txt</file>
-        <file>Assets/Code/CPlusPlus/Varibable initialization.txt</file>
+        <file>Assets/Code/CPlusPlus/Bitwise-maskBitwise.txt</file>
+        <file>Assets/Code/CPlusPlus/Bitwise-PrintShiftAndLogicalBitwise.txt</file>
+        <file>Assets/Code/CPlusPlus/FlowControl-IfElse.txt</file>
+        <file>Assets/Code/CPlusPlus/FlowControl-shortcircuitEvaluation.txt</file>
+        <file>Assets/Code/CPlusPlus/FlowControl-SwitchCase.txt</file>
+        <file>Assets/Code/CPlusPlus/FlowControl-TernaryOperator.txt</file>
+        <file>Assets/Code/CPlusPlus/LiteralAndConst-constExpression.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-BreakAndContinues.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-CommaOperator.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-DoWhile.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-ExampleInfiniteLoop.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-For.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-IncreasingDecreasingLoops.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-NestedLoops.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-RangeBasedLoops.txt</file>
+        <file>Assets/Code/CPlusPlus/Loops-While.txt</file>
+        <file>Assets/Code/CPlusPlus/OverflowAndUnderflow-General.txt</file>
+        <file>Assets/Code/CPlusPlus/OverflowAndUnderflow-ImplicitExplicitConversion.txt</file>
+        <file>Assets/Code/CPlusPlus/template.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-Auto.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-CompoundAssignmentOperators.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-constinit.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-Fractional Numbers.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-IntegerModifiers.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-LogicalOperators.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-Number system.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-NumericalLimits.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-OutputFormatting.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-RelationalOperators.txt</file>
+        <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-Varibable initialization.txt</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

@@ -1,6 +1,6 @@
 // CustomButton.qml
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 
 Control {
     id: customButton
@@ -41,6 +41,8 @@ Control {
     contentItem: Rectangle {
         anchors.fill: parent
         color: "transparent"
+        radius:20
+
 
         Text {
             id: buttonTextItem

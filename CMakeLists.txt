@@ -24,7 +24,7 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES Components/CustomTextArea.qml
     QML_FILES Modules/ListsOfModels/DataTypesModel.qml
     QML_FILES Modules/ListsOfModels/ControlFlowModels.qml
-    QML_FILES Modules/ListsOfModels/MapOfAssociations.qml
+    QML_FILES
     QML_FILES Modules/Utils/FileReader.qml
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
     QML_FILES ScrollViewTopics.qml
@@ -39,6 +39,10 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
     QML_FILES Modules/Style/Theme.qml
+    QML_FILES Modules/ListsOfModels/Bitwise.qml
+    QML_FILES Modules/ListsOfModels/LiteralConstants.qml
+    QML_FILES Modules/ListsOfModels/Loops.qml
+    QML_FILES Modules/ListsOfModels/OverFlow.qml
 
 )
 

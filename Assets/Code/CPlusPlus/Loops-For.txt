@@ -1,0 +1,277 @@
+---FILES---
+main.cpp
+result
+
+---main.cpp---
+#include <iostream>
+
+int main(){
+
+    #include <iostream>
+
+int main(){
+
+    //Print I love C++ 10 times : The bad way
+
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+    // std::cout << "I love C++" << std::endl;
+
+
+    //for loop : the good way
+    for( unsigned int i{0} ; i < 10 ;++i){
+        //Whatever we want the loop to run
+        std::cout << i <<  " : I love C++" << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+
+
+    //Use size_t : a representation of some unsigned int for positive numbers [sizes]
+    for(size_t i{0} ; i < 10 ; ++i){
+        std::cout << i << " : I love C++" << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+
+
+    //sizeof(size_t)
+    std::cout << "sizeof(size_t) : " << sizeof(size_t) << std::endl;
+
+
+
+    //Scope of the iterator
+    for(size_t i{0} ; i < 10 ; ++i){
+        std::cout << i << " : I love C++" << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+    // std::cout << "i : " << i << std::endl;Compiler error : i is not in scope
+
+
+
+    //Iterator declared outside the loop
+    size_t i{0}; // Iterator defined outside
+
+    for(i ; i < 10 ; ++i){
+        std::cout << i << " : I love C++" << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+    std::cout << "i : " << i << std::endl;
+
+    //Leave out the iterator declaration part
+    size_t i2{0}; // Iterator defined outside
+
+    for(  ; i2 < 10 ; ++i2){
+        std::cout << i2 << " : I love C++" << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+    std::cout << "i2 : " << i2 << std::endl;
+
+
+    //Don't hard code values : BAD!
+    const size_t COUNT{10};
+
+    for(size_t i{0} ; i < COUNT ; ++i){
+        std::cout << i << " : I love C++" << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+	
+
+    for (size_t i{0} , x {5}, y{22} ; y > 15 ; ++i , x+=5 , y-=1){
+    std::cout << "i: " << i << ", x : " << x << ", y : " << y << std::endl;
+	}
+
+    return 0;
+}
+
+
+---result---
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+sizeof(size_t) : 8
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+i : 10
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+i2 : 10
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+
+i: 0, x : 5, y : 22
+i: 1, x : 10, y : 21
+i: 2, x : 15, y : 20
+i: 3, x : 20, y : 19
+i: 4, x : 25, y : 18
+i: 5, x : 30, y : 17
+i: 6, x : 35, y : 16
+
+---EXPLANATION---
+### Uso de Bucle `for`
+
+1. **Imprimir un mensaje varias veces:**
+   ```cpp
+   //Print I love C++ 10 times : The bad way
+
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   // std::cout << "I love C++" << std::endl;
+   ```
+   - Este enfoque es repetitivo y poco eficiente. En su lugar, se debe usar un bucle `for`.
+
+2. **Bucle `for` para imprimir un mensaje 10 veces:**
+   ```cpp
+   for( unsigned int i{0} ; i < 10 ;++i){
+       std::cout << i <<  " : I love C++" << std::endl;
+   }
+   std::cout << "Loop done!" << std::endl;
+   ```
+   - Este es el enfoque correcto y eficiente. El bucle `for` se usa para repetir la impresión 10 veces.
+
+3. **Uso de `size_t`:**
+   ```cpp
+   for(size_t i{0} ; i < 10 ; ++i){
+       std::cout << i << " : I love C++" << std::endl;
+   }
+   std::cout << "Loop done!" << std::endl;
+   ```
+   - `size_t` es un tipo de dato recomendado para tamaños y conteos que siempre son positivos.
+
+4. **Mostrar el tamaño de `size_t`:**
+   ```cpp
+   std::cout << "sizeof(size_t) : " << sizeof(size_t) << std::endl;
+   ```
+   - Muestra el tamaño de `size_t` en bytes. Este tamaño puede variar según la plataforma.
+
+### Alcance del Iterador
+
+5. **Alcance del iterador dentro del bucle:**
+   ```cpp
+   for(size_t i{0} ; i < 10 ; ++i){
+       std::cout << i << " : I love C++" << std::endl;
+   }
+   std::cout << "Loop done!" << std::endl;
+   // std::cout << "i : " << i << std::endl; // Error del compilador: i no está en el alcance
+   ```
+   - El iterador `i` solo está en el alcance dentro del bucle `for`.
+
+6. **Iterador declarado fuera del bucle:**
+   ```cpp
+   size_t i{0}; // Iterador definido fuera
+
+   for(i ; i < 10 ; ++i){
+       std::cout << i << " : I love C++" << std::endl;
+   }
+   std::cout << "Loop done!" << std::endl;
+   std::cout << "i : " << i << std::endl;
+   ```
+   - Aquí, el iterador `i` se declara fuera del bucle y se puede usar después del bucle.
+
+7. **Omitir la declaración del iterador en el bucle:**
+   ```cpp
+   size_t i2{0}; // Iterador definido fuera
+
+   for(  ; i2 < 10 ; ++i2){
+       std::cout << i2 << " : I love C++" << std::endl;
+   }
+   std::cout << "Loop done!" << std::endl;
+   std::cout << "i2 : " << i2 << std::endl;
+   ```
+   - En este caso, se omite la inicialización del iterador en la declaración del bucle porque ya está declarado fuera.
+
+### Buenas Prácticas
+
+8. **No codificar valores directamente:**
+   ```cpp
+   const size_t COUNT{10};
+
+   for(size_t i{0} ; i < COUNT ; ++i){
+       std::cout << i << " : I love C++" << std::endl;
+   }
+   std::cout << "Loop done!" << std::endl;
+   ```
+   - Usar constantes (`const`) en lugar de valores codificados directamente para mejorar la mantenibilidad del código.
+
+### Bucle `for` con múltiples variables
+
+9. **Bucle `for` con múltiples variables:**
+   ```cpp
+   for (size_t i{0} , x {5}, y{22} ; y > 15 ; ++i , x+=5 , y-=1){
+       std::cout << "i: " << i << ", x : " << x << ", y : " << y << std::endl;
+   }
+   ```
+   - Se pueden inicializar y actualizar múltiples variables dentro de un bucle `for`. Este bucle continuará mientras `y > 15`.
+
+### Conclusión
+
+El uso del bucle `for` en C++ es una herramienta poderosa para realizar iteraciones de manera eficiente. Se recomienda usar `size_t` para iteradores de bucles que representan tamaños o conteos y evitar valores codificados directamente, utilizando constantes en su lugar. Además, declarar iteradores dentro del bucle limita su alcance, lo que es una buena práctica para evitar errores. Los bucles `for` también permiten la inicialización y actualización de múltiples variables, lo que proporciona flexibilidad adicional.

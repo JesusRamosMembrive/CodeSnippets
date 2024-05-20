@@ -1,0 +1,39 @@
+---FILES---
+main.cpp
+result
+
+---main.cpp---
+#include <iostream>
+
+int main(){
+
+    const size_t COUNT{10};
+    size_t i{0}; // Iterator declaration
+
+    while(i < COUNT ){ // Test
+        std::cout << i << " : I love C++" << std::endl;
+
+        ++i; // Incrementation
+    }
+    std::cout << "Loop done!" << std::endl;
+
+    return 0;
+}
+
+
+---result---
+0 : I love C++
+1 : I love C++
+2 : I love C++
+3 : I love C++
+4 : I love C++
+5 : I love C++
+6 : I love C++
+7 : I love C++
+8 : I love C++
+9 : I love C++
+Loop done!
+
+---EXPLANATION---
+The while loop loops through a block of code as long as a specified condition is true:
+

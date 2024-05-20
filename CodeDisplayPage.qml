@@ -3,7 +3,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "./Modules/Style"
 
-
 Rectangle {
     id: codeDisplayPage
     width: parent.width
@@ -12,7 +11,7 @@ Rectangle {
     color: theme.backGroundCodeDisplayPageColor
 
     property Theme theme: Theme {}
-
+    property string newTitleAreaCode: "Code area"
 
     GridLayout {
         id: mainLayout
@@ -30,7 +29,8 @@ Rectangle {
             Layout.fillHeight: true
 
             Text {
-                text: "Code Area"
+                id: titleCodeArea
+                text: newTitleAreaCode
                 font.family: "Roboto"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pointSize: 20
@@ -60,7 +60,7 @@ Rectangle {
                         textFormat: Text.PlainText
                         readOnly: true
                         text: "No example loaded"
-                        font.pointSize: 13
+                        font.pixelSize: 15
                         font.family: "Roboto"
                         placeholderText: qsTr("Text Area")
                         color: theme.letterToReadColor
@@ -146,6 +146,7 @@ Rectangle {
         target: fileProcessor
         onFileSelected: {
             textAreaCode.text = fileContent;
+            newTitleAreaCode = fileTitle;
         }
     }
 }

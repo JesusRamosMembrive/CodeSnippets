@@ -22,7 +22,6 @@ Window {
     Material.theme: Material.Dark
     Material.accent: Material.Orange
 
-
     DragHandler {
         onActiveChanged: if (active) startSystemMove();
     }
@@ -33,11 +32,16 @@ Window {
 
     ControlFlowModels { id: controlFlowModel }
     DataTypesModel { id: dataTypesModel }
+    Bitwise { id: bitWiseType }
+    LiteralConstants { id: literalConstants }
+    Loops { id: loops }
+    OverFlow { id: overflow }
     FileReader { id: fileReader }
 
     property var filesMap: createFilesMap()
     property var combinedTopics: []
     property string explanationText: ""
+    property string currentTopic: ""
     property Theme theme: Theme {}
 
     ListModel {
@@ -49,13 +53,37 @@ Window {
         var topics = [];
         for (var i = 0; i < dataTypesModel.dataTypes.count; i++) {
             var item = dataTypesModel.dataTypes.get(i);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/" + item.name + ".txt";
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/VariablesAndDataTypes-" + item.name + ".txt";
             topics.push(item.name);
         }
 
         for (var j = 0; j < controlFlowModel.controlFlowTypes.count; j++) {
             var item = controlFlowModel.controlFlowTypes.get(j);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/" + item.name + ".txt";
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/FlowControl-" + item.name + ".txt";
+            topics.push(item.name);
+        }
+
+        for (var j = 0; j < bitWiseType.bitWiseModel.count; j++) {
+            var item = bitWiseType.bitWiseModel.get(j);
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/Bitwise-" + item.name + ".txt";
+            topics.push(item.name);
+        }
+
+        for (var j = 0; j < literalConstants.literalConstantsType.count; j++) {
+            var item = literalConstants.literalConstantsType.get(j);
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/LiteralAndConst-" + item.name + ".txt";
+            topics.push(item.name);
+        }
+
+        for (var j = 0; j < loops.loopsTypeModel.count; j++) {
+            var item = loops.loopsTypeModel.get(j);
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/Loops-" + item.name + ".txt";
+            topics.push(item.name);
+        }
+
+        for (var j = 0; j < overflow.overFlowTypes.count; j++) {
+            var item = overflow.overFlowTypes.get(j);
+            map[item.name] = ":/Code/Assets/Code/CPlusPlus/OverflowAndUnderflow-" + item.name + ".txt";
             topics.push(item.name);
         }
 
@@ -68,6 +96,7 @@ Window {
 
     function loadFile(fileName) {
         var file = filesMap[fileName];
+        currentTopic = fileName;
         console.log("Loading file", file);
         return file;
     }
@@ -146,16 +175,6 @@ Window {
                     anchors.top: parent.top
                     anchors.topMargin: 10
 
-                    label: Label {
-                        color: theme.titleColor
-                        text: "Topics"
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignTop
-                        font.family: "Roboto"
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        font.pointSize: 16
-                        font.bold: true
-                    }
                     ScrollViewTopics {
                         id: scrollViewTopics
                         anchors.fill: groupboxTopics
@@ -165,6 +184,7 @@ Window {
                         anchors.bottomMargin: 0
                     }
                 }
+
                 Button {
                     id: buttonExplanation
                     x: 48

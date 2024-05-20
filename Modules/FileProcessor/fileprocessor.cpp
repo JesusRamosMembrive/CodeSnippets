@@ -10,6 +10,8 @@ void FileProcessor::processFile(const QString &filePath)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
 
+    getFileTitle(filePath);
+
     QTextStream in(&file);
     QString content = in.readAll();
     file.close();
@@ -17,14 +19,10 @@ void FileProcessor::processFile(const QString &filePath)
     // Extraer EXPLANATION
     extractSection(content, "---EXPLANATION---", "---", m_explanation);
 
-    qDebug() << "m_explanation: " << m_explanation;
-    qInfo() << "=======================";
-
     // Extraer el listado de archivos y su contenido
     QString filesSection;
     extractSection(content, "---FILES---", "---", filesSection);
-    qInfo() << "=======================";
-    qInfo() << "filesSection: " << filesSection;
+
     QStringList fileNames = filesSection.split('\n', Qt::SkipEmptyParts);
 
     m_files.clear();
@@ -44,15 +42,30 @@ void FileProcessor::processFile(const QString &filePath)
     // Emitir las señales para actualizar QML
     emit explanationChanged();
     emit filesChanged();
+    emit titleChanged();
+
+    // Emitir el contenido de main.cpp si existe
+    if (m_files.contains("main.cpp")) {
+        emit fileSelected("main.cpp", m_files["main.cpp"], m_title);
+    }
 }
 
 QString FileProcessor::getFileContent(const QString &fileName)
 {
     if (m_files.contains(fileName)) {
-        emit fileSelected(fileName, m_files[fileName]);
+        emit fileSelected(fileName, m_files[fileName], m_title);
         return m_files[fileName];
     }
     return QString();
+}
+
+QString FileProcessor::getFileTitle(const QString &fileName)
+{
+    QStringList metaTitle = fileName.split("/");
+    QStringList titleTmp = metaTitle.back().split(".");
+    m_title = titleTmp[0];
+    qInfo() << "Title: " << m_title;
+    return m_title;
 }
 
 void FileProcessor::extractSection(const QString &text, const QString &startMarker, const QString &endMarker, QString &section)

@@ -1,0 +1,106 @@
+---FILES---
+main.cpp
+result
+
+---main.cpp---
+#include <iostream>
+
+
+int main(){
+
+	constexpr int SOME_LIB_MAJOR_VERSION {1237};
+	
+	constexpr int eye_count {2};
+	
+	constexpr double PI {3.14};
+
+    //eye_count = 4;
+	
+	std::cout << "eye count : " << eye_count << std::endl;
+	std::cout << "PI : " << PI << std::endl;
+
+
+	//int leg_count {2}; // Non constexpr
+	                    // leg_count is not known at compile time
+	//constexpr int arm_count{leg_count}; // Error 
+
+
+	constexpr int room_count{10};
+	constexpr int door_count{room_count};// OK
+	
+	const int table_count{5};
+	constexpr int chair_count{ table_count * 5};// Works
+
+
+   // static_assert( SOME_LIB_MAJOR_VERSION == 123);
+
+   // int age = 5;
+   // static_assert( age == 5);
+
+    std::cout << "App doing its thing..." << std::endl;
+
+
+   
+    return 0;
+}
+
+---result---
+eye count : 2
+PI : 3.14
+App doing its thing...
+
+---EXPLANATION---
+### `constexpr` en C++
+
+El especificador `constexpr` en C++ se utiliza para declarar que la evaluación de una expresión puede y debe realizarse en tiempo de compilación. Esto permite la optimización y garantiza que ciertos valores sean conocidos antes de que el programa se ejecute. Las variables marcadas como `constexpr` deben ser inicializadas con valores constantes y determinables en tiempo de compilación.
+
+### Ejemplos en el Código
+
+1. **Declaración de constantes con `constexpr`:**
+   ```cpp
+   constexpr int SOME_LIB_MAJOR_VERSION {1237};
+   constexpr int eye_count {2};
+   constexpr double PI {3.14};
+   ```
+   - Estas declaraciones crean constantes que son evaluadas en tiempo de compilación. `SOME_LIB_MAJOR_VERSION`, `eye_count` y `PI` son valores fijos y no pueden ser modificados.
+
+2. **Uso de las constantes:**
+   ```cpp
+   std::cout << "eye count : " << eye_count << std::endl;
+   std::cout << "PI : " << PI << std::endl;
+   ```
+   - Se imprimen las constantes `eye_count` y `PI`. Estas constantes garantizan valores inmutables conocidos en tiempo de compilación.
+
+3. **Errores de tiempo de compilación con `constexpr`:**
+   ```cpp
+   // int leg_count {2}; // Non constexpr
+   // leg_count is not known at compile time
+   // constexpr int arm_count{leg_count}; // Error 
+   ```
+   - `leg_count` no puede ser declarado como `constexpr` porque su valor no es determinable en tiempo de compilación. Por lo tanto, intentar usar `leg_count` para inicializar otra constante `constexpr` (`arm_count`) resulta en un error de compilación.
+
+4. **Inicialización de constantes con otras constantes `constexpr`:**
+   ```cpp
+   constexpr int room_count{10};
+   constexpr int door_count{room_count};// OK
+   ```
+   - `door_count` se inicializa con `room_count`, ambos son `constexpr`, por lo que no hay problema.
+
+5. **Combinación de `constexpr` y `const`:**
+   ```cpp
+   const int table_count{5};
+   constexpr int chair_count{ table_count * 5}; // Works
+   ```
+   - `table_count` es `const`, lo que significa que su valor es constante en tiempo de ejecución. `chair_count` se puede evaluar en tiempo de compilación porque `table_count` es `const` y su valor es conocido y fijo.
+
+6. **Aserciones estáticas con `constexpr`:**
+   ```cpp
+   // static_assert( SOME_LIB_MAJOR_VERSION == 123);
+   // int age = 5;
+   // static_assert( age == 5);
+   ```
+   - `static_assert` se utiliza para verificar condiciones en tiempo de compilación. La primera aserción está comentada, pero verifica que `SOME_LIB_MAJOR_VERSION` es igual a `123`. La segunda aserción da error porque `age` no es `constexpr` y su valor no se conoce en tiempo de compilación.
+
+### Conclusión
+
+El uso de `constexpr` en C++ permite definir constantes y realizar evaluaciones en tiempo de compilación, lo que puede mejorar la eficiencia del programa y garantizar la inmutabilidad de ciertos valores críticos. `constexpr` es especialmente útil para valores que deben ser conocidos y verificados antes de la ejecución del programa, facilitando la detección temprana de errores y optimizando el código generado.

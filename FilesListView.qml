@@ -25,7 +25,6 @@ ScrollView {
                 font.pixelSize: 16
                 onClicked: {
                     // Lógica para manejar el clic en el archivo
-                    console.log("Clicked on", modelData)
                     loadFileContent(modelData)
                 }
             }

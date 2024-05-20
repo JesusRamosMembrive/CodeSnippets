@@ -5,6 +5,7 @@ import QtQuick.Layouts
 Column {
     id: listViewContainer
     width: parent.width
+    spacing: 10
 
     property var customModel
     property var customButton
@@ -21,47 +22,55 @@ Column {
     }
 
     Rectangle {
-        width: parent.width
+        id: rectangle
+        width: parent.width * 0.9
         height: customButton && customButton.checked ? customListView.contentHeight : 0
-        color: customButton.checked ? "#f0f0f0" : "transparent"
-        border.color: "gray"
+        border.color: "#00ffffff"
+        color: "#000000"
         border.width: 1
-        radius: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+        radius: 20
 
         ListView {
             id: customListView
             width: parent.width
             height: customButton && customButton.checked ? contentHeight : 0
             visible: customButton && customButton.checked
-            clip: true
+            layer.mipmap: false
+            antialiasing: true
+            anchors.horizontalCenter: parent.horizontalCenter
+            clip: true            
 
             model: ListModel {
                 id: filteredModel
             }
 
             delegate: ItemDelegate {
+                id: itemDelegate
                 width: parent.width
                 height: 40
+                icon.color: "#00ffffff"
+
                 Rectangle {
                     width: parent.width
                     height: parent.height
-                    color: "#ffffff"
-                    border.color: "lightgray"
-                    border.width: 1
+                    color: "#00ffffff"
+                    border.color: "#000000"
+                    border.width: 2
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    radius: 10
 
                     Text {
                         anchors.centerIn: parent
                         text: model.name
-                        font.pixelSize: 16
+                        font.pixelSize: 14
                         font.family: "Roboto"
-
                     }
 
                     MouseArea {
                         id: itemMouseArea
                         anchors.fill: parent
                         onClicked: {
-                            console.log("Clicked on", model.name)
                             appWindow.loadFileContent(model.name)
                         }
                     }
@@ -78,16 +87,16 @@ Column {
 
         Behavior on height {
             NumberAnimation {
-                duration: 350
-                easing.type: Easing.OutExpo
+                duration: 150
+                easing.type: Easing.InOutCubic
             }
         }
     }
 
     Behavior on height {
         NumberAnimation {
-            duration: 350
-            easing.type: Easing.OutExpo
+            duration: 150
+            easing.type: Easing.InOutCubic
         }
     }
 }

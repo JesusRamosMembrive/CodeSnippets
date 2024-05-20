@@ -1,0 +1,183 @@
+---FILES---
+main.cpp
+result
+
+---main.cpp---
+#include <iostream>
+
+
+int main(){
+    // break and continue : for loops
+    const size_t COUNT{20};
+
+
+    for(size_t i{0} ; i < COUNT ; ++i ){
+
+        if(i==5)
+            continue;
+
+        if(i == 11)
+            break; // Breaks out of the loop
+        std::cout << "i : " << i << std::endl;
+    }
+    std::cout << "Loop done!" << std::endl;
+
+
+    // break and continue : while loop
+
+    size_t i{0};
+
+    while (i < 20){
+
+        if(i==5){
+            ++i;
+            continue;
+        }
+
+        if(i==11)
+            break;
+
+
+        std::cout << "i : " << i << std::endl;
+        ++i;
+
+    }
+    std::cout << "Loop done!" << std::endl;
+
+
+
+    //break and continue : do while loop
+    i = 0;
+
+    do{
+        if(i==5){
+            ++i;
+            continue;
+        }
+
+        if(i==11)
+            break;
+
+
+        std::cout << "i : " << i << std::endl;
+        ++i;
+
+    }while(i <20);
+
+    return 0;
+}
+
+
+---result---
+i : 0
+i : 1
+i : 2
+i : 3
+i : 4
+i : 6
+i : 7
+i : 8
+i : 9
+i : 10
+Loop done!
+i : 0
+i : 1
+i : 2
+i : 3
+i : 4
+i : 6
+i : 7
+i : 8
+i : 9
+i : 10
+Loop done!
+i : 0
+i : 1
+i : 2
+i : 3
+i : 4
+i : 6
+i : 7
+i : 8
+i : 9
+i : 10
+
+---EXPLANATION---
+### Declaración `break` y `continue`
+
+- **`break`:** Termina inmediatamente el bucle en el que se encuentra y pasa a la siguiente instrucción después del bucle.
+- **`continue`:** Salta a la siguiente iteración del bucle, omitiendo el código restante dentro del bucle para la iteración actual.
+
+### Uso en Bucle `for`
+
+```cpp
+const size_t COUNT{20};
+
+for(size_t i{0} ; i < COUNT ; ++i ){
+    if(i == 5)
+        continue; // Salta la iteración cuando i es 5
+
+    if(i == 11)
+        break; // Termina el bucle cuando i es 11
+
+    std::cout << "i : " << i << std::endl;
+}
+std::cout << "Loop done!" << std::endl;
+```
+- El bucle `for` se ejecuta desde 0 hasta 19 (`COUNT`).
+- `continue` se encuentra cuando `i` es 5, saltando esa iteración.
+- `break` se encuentra cuando `i` es 11, terminando el bucle.
+
+### Uso en Bucle `while`
+
+```cpp
+size_t i{0};
+
+while (i < 20){
+    if(i == 5){
+        ++i;
+        continue; // Salta la iteración cuando i es 5
+    }
+
+    if(i == 11)
+        break; // Termina el bucle cuando i es 11
+
+    std::cout << "i : " << i << std::endl;
+    ++i;
+}
+std::cout << "Loop done!" << std::endl;
+```
+- El bucle `while` se ejecuta mientras `i` sea menor que 20.
+- `continue` se encuentra cuando `i` es 5, incrementa `i` y salta esa iteración.
+- `break` se encuentra cuando `i` es 11, terminando el bucle.
+
+### Uso en Bucle `do-while`
+
+```cpp
+size_t i{0};
+
+do{
+    if(i == 5){
+        ++i;
+        continue; // Salta la iteración cuando i es 5
+    }
+
+    if(i == 11)
+        break; // Termina el bucle cuando i es 11
+
+    std::cout << "i : " << i << std::endl;
+    ++i;
+} while(i < 20);
+```
+- El bucle `do-while` se ejecuta al menos una vez y continúa mientras `i` sea menor que 20.
+- `continue` se encuentra cuando `i` es 5, incrementa `i` y salta esa iteración.
+- `break` se encuentra cuando `i` es 11, terminando el bucle.
+
+### Conclusión
+
+El uso de `break` y `continue` permite controlar el flujo de los bucles de manera precisa:
+
+- `continue` se utiliza para saltar el resto de la iteración actual y continuar con la siguiente iteración del bucle.
+- `break` se utiliza para salir completamente del bucle.
+
+Estos controles son útiles para manejar condiciones específicas que requieren detener el bucle o saltar ciertas iteraciones.
