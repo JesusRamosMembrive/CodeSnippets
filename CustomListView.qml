@@ -25,11 +25,9 @@ Column {
         id: rectangle
         width: parent.width * 0.9
         height: customButton && customButton.checked ? customListView.contentHeight : 0
-        border.color: "#00ffffff"
-        color: "#000000"
-        border.width: 1
+        color: customButton.checked ? "#00000000" : "#00000000"
         anchors.horizontalCenter: parent.horizontalCenter
-        radius: 20
+        border.color: "#00000000"
 
         ListView {
             id: customListView
@@ -39,7 +37,7 @@ Column {
             layer.mipmap: false
             antialiasing: true
             anchors.horizontalCenter: parent.horizontalCenter
-            clip: true            
+            clip: true
 
             model: ListModel {
                 id: filteredModel
@@ -49,18 +47,29 @@ Column {
                 id: itemDelegate
                 width: parent.width
                 height: 40
-                icon.color: "#00ffffff"
 
                 Rectangle {
                     width: parent.width
                     height: parent.height
-                    color: "#00ffffff"
-                    border.color: "#000000"
+                    color: "#ffffff"
+                    border.color: "#da000000"
                     border.width: 2
+                    gradient: Gradient {
+                        GradientStop {
+                            position: 0
+                            color: "#09203f"
+                        }
+
+                        GradientStop {
+                            position: 1
+                            color: "#537895"
+                        }
+                        orientation: Gradient.Horizontal
+                    }
                     anchors.horizontalCenter: parent.horizontalCenter
-                    radius: 10
 
                     Text {
+                        color: "#ffffff"
                         anchors.centerIn: parent
                         text: model.name
                         font.pixelSize: 14

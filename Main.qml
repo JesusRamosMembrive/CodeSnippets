@@ -134,10 +134,14 @@ Window {
         filterTopics(""); // Inicializar el modelo filtrado con todos los temas
     }
 
-    ColumnLayout {
+    Column {
         id: mainLayout
-        anchors.fill: parent
-        anchors.centerIn: parent
+        // anchors.fill: parent
+        // anchors.centerIn: parent
+        height: parent.height
+        padding: 0
+        spacing: 15
+        width: parent.width
 
         // RowLayout {
         //     id: titleBarRow
@@ -152,6 +156,7 @@ Window {
         // Menu Bar
         MyMenuBar {
             id: menuBar
+            width: parent.width
         }
 
         Row {
@@ -159,51 +164,56 @@ Window {
             Layout.fillHeight: true
             Layout.fillWidth: true
             height: parent.height
+            width: parent.width
+            padding: 15
             spacing: 30
 
             Column {
                 id: leftMainContent
-                width: 240
-                height: parent.height
-                anchors.left: parent.left
-                anchors.leftMargin: 15
+                width: 230
+                height: parent.height *0.92
+                padding: 0
+
+                // anchors.left: parent.left
+                // anchors.leftMargin: 15
 
                 MyGroupbox {
                     id: groupboxTopics
-                    width: parent.width
-                    height: parent.height * 0.89
+                    height: parent.height * 0.92
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                     anchors.top: parent.top
-                    anchors.topMargin: 10
+                    anchors.leftMargin: 10
+                    anchors.rightMargin: 10
+                    anchors.topMargin: 0
 
                     ScrollViewTopics {
                         id: scrollViewTopics
-                        anchors.fill: groupboxTopics
-                        anchors.leftMargin: 0
-                        anchors.rightMargin: 0
-                        anchors.topMargin: 35
-                        anchors.bottomMargin: 0
+                        height: groupboxTopics.height
+                        width: groupboxTopics.width
+                        // anchors.fill: groupboxTopics
+
                     }
                 }
 
                 Button {
                     id: buttonExplanation
-                    x: 48
-                    width: 163
-                    height: 67
-                    text: qsTr("Explanation")
+                    width: 150
+                    height: 55
+                    text: qsTr("Code")
+                    anchors.horizontalCenter: parent.horizontalCenter
                     anchors.top: groupboxTopics.bottom
                     anchors.topMargin: 10
                     highlighted: false
                     flat: false
                     antialiasing: true
-
                     onClicked: {
                         if (stackView.depth === 1) {
-                            stackView.push("ExplanationPage.qml")
-                            buttonExplanation.text = qsTr("Code")
+                            stackView.push("CodeDisplayPage.qml")
+                            buttonExplanation.text = qsTr("Explanation")
                         } else {
                             stackView.pop()
-                            buttonExplanation.text = qsTr("Explanation")
+                            buttonExplanation.text = qsTr("Code")
                         }
                     }
                 }
@@ -218,15 +228,15 @@ Window {
                 anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.leftMargin: 5
-                anchors.rightMargin: 5
-                anchors.topMargin: 10
+                anchors.rightMargin: 10
+                anchors.topMargin: 0
                 StackView {
                     id: stackView
-                    anchors.fill: parent
-                    anchors.centerIn: parent
-                    initialItem: "CodeDisplayPage.qml"
-                    width: 950
-                    height: 750
+                    // anchors.fill: parent
+                    // anchors.centerIn: parent
+                    initialItem: "ExplanationPage.qml"
+                    width: parent.width
+                    height: parent.height
 
                     pushEnter: Transition {
                         PropertyAnimation { property: "x"; from: stackView.height; to: 0; duration: 400; easing.type: Easing.InOutQuad }

@@ -9,15 +9,17 @@ ScrollView {
     id: scrollViewTopics
     width: parent.width
     height: parent.height
-    layer.wrapMode: ShaderEffectSource.Repeat
     antialiasing: true
     font.family: "Roboto"
+
+    property int widthButtons: columnTopics.width * 0.9
+
 
     Column {
         id: columnTopics
         width: scrollViewTopics.width
         height: scrollViewTopics.height
-        topPadding: 10
+        topPadding: 5
         spacing: 10
 
         Label {
@@ -46,7 +48,7 @@ ScrollView {
 
         Rectangle {
             id: lineSeparatorTopics
-            width: parent.width * 0.9
+            width: widthButtons
             height: 1  // Altura fina para el separador
             color: "white"  // Color blanco
             anchors.horizontalCenter: parent.horizontalCenter
@@ -54,9 +56,10 @@ ScrollView {
 
         CustomButton {
             id: dataTypeButton
-            width: columnTopics.width * 0.8
+            width: widthButtons
             height: 40
             buttonText: "Variables & Data Types"
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
@@ -69,9 +72,10 @@ ScrollView {
 
         CustomButton {
             id: literalAndConstantsButton
-            width: columnTopics.width * 0.8
+            width: widthButtons
             height: 40
             buttonText: "Literal and constants"
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
@@ -84,9 +88,10 @@ ScrollView {
 
         CustomButton {
             id: flowControlButton
-            width: columnTopics.width * 0.8
+            width: widthButtons
             height: 40
             buttonText: "Flow control"
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
@@ -99,9 +104,10 @@ ScrollView {
 
         CustomButton {
             id: bitWiseButton
-            width: columnTopics.width * 0.8
+            width: widthButtons
             height: 40
             buttonText: "Bitwise"
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
@@ -114,9 +120,10 @@ ScrollView {
 
         CustomButton {
             id: loopsButton
-            width: columnTopics.width * 0.8
+            width: widthButtons
             height: 40
             buttonText: "Loops"
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
@@ -129,9 +136,10 @@ ScrollView {
 
         CustomButton {
             id: overflowButton
-            width: columnTopics.width * 0.8
+            width: widthButtons
             height: 40
-            buttonText: "OverflowButton"
+            buttonText: "Overflow"
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
@@ -143,4 +151,3 @@ ScrollView {
         }
     }
 }
-

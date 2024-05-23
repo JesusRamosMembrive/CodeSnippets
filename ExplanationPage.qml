@@ -66,4 +66,12 @@ Rectangle {
     Component.onCompleted: {
         textExplanationCode.text = appWindow.explanationText;
     }
+
+
+    Connections {
+        target: fileProcessor
+        onFileSelected: {
+            textExplanationCode.text = appWindow.explanationText;
+        }
+    }
 }

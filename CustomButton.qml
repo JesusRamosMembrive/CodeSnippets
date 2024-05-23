@@ -1,4 +1,3 @@
-// CustomButton.qml
 import QtQuick
 import QtQuick.Controls
 
@@ -28,29 +27,23 @@ Control {
 
     MouseArea {
         id: mouseArea
-        anchors.left: parent.left
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.fill: parent
         onClicked: {
             customButton.checked = !customButton.checked
         }
     }
 
-
     contentItem: Rectangle {
         anchors.fill: parent
         color: "transparent"
-        radius:20
-
+        radius: 20
 
         Text {
             id: buttonTextItem
             color: customButton.buttonTextColor
             anchors.centerIn: parent
-            font.pointSize: 12
+            font.pointSize: 13
             font.family: "Roboto"
-            text: "This text should be replaced"
         }
     }
 
