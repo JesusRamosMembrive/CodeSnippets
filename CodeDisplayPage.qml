@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtWebEngine
 import "./Modules/Style"
 
 Rectangle {
@@ -47,30 +48,31 @@ Rectangle {
                 anchors.leftMargin: 10
                 border.color: theme.borderGroupBoxColor
 
-                ScrollView {
-                    anchors.fill: parent
-                    anchors.margins: 10
+                // ScrollView {
+                //     anchors.fill: parent
+                //     anchors.margins: 10
 
-                    TextArea {
-                        id: textAreaCode
-                        x: 0
-                        y: 0
-                        hoverEnabled: false
-                        renderType: Text.QtRendering
-                        textFormat: Text.PlainText
-                        readOnly: true
-                        text: "No example loaded"
-                        font.pixelSize: 15
-                        font.family: "Roboto"
-                        placeholderText: qsTr("Text Area")
-                        color: theme.letterToReadColor
+                //     TextArea {
+                //         id: textAreaCode
+                //         x: 0
+                //         y: 0
+                //         hoverEnabled: false
+                //         renderType: Text.QtRendering
+                //         textFormat: Text.MarkdownText
+                //         readOnly: true
+                //         text: "No example loaded"
+                //         font.pixelSize: 15
+                //         antialiasing: true
+                //         font.family: "Roboto"
+                //         placeholderText: qsTr("Text Area")
+                //         color: theme.letterToReadColor
 
-                        background: Rectangle {
-                            color: "transparent"
-                            radius: 20
-                        }
-                    }
-                }
+                //         background: Rectangle {
+                //             color: "transparent"
+                //             radius: 20
+                //         }
+                //     }
+                // }
             }
         }
 

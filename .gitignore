@@ -76,3 +76,21 @@ build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/.qt/
 build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/.qtc/package-manager/
 
 build/Desktop_Qt_6_7_0_MinGW_64_bit-Release/
+
+build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/
+
+build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/.qtc_clangd/.cache/clangd/index/
+
+build/Desktop_Qt_6_7_0_llvm_mingw_64_bit-Debug/
+
+build/Qt_for_UWP_64bit_MSVC_2019-Debug/CMakeFiles/3.27.7/
+
+*.check_cache
+
+*.yaml
+
+build/Qt_for_UWP_64bit_MSVC_2019-Debug/
+
+build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/.cmake/api/v1/query/
+
+build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/

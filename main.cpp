@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickWindow>
+// #include <QtWebEngineQuick/qtwebenginequickglobal.h>
 
 #include "./Modules/FileProcessor/fileprocessor.h"
 
@@ -10,6 +11,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+    // QtWebEngineQuick::initialize();
 
     qDebug() << "ResourceReader creado"; // Mover el debug aquí para confirmar la creación
     FileProcessor fileProcessor;

@@ -2,15 +2,17 @@ import QtQuick
 
 Item {
     property ListModel dataTypes: ListModel {
-        ListElement { name: "Auto" }
-        ListElement { name: "CompoundAssignmentOperators" }
-        ListElement { name: "constinit" }
-        ListElement { name: "Fractional Numbers" }
-        ListElement { name: "IntegerModifiers" }
-        ListElement { name: "LogicalOperators" }
-        ListElement { name: "Number system" }
-        ListElement { name: "NumericalLimits" }
-        ListElement { name: "OutputFormatting" }
+        ListElement { name: "Estructura basica" }
+        ListElement { name: "Tipos datos basicos" }
+        ListElement { name: "Tipo de dato Auto" }
+        ListElement { name: "Variables y constantes" }
+        ListElement { name: "Rango y size de los Tipos de Datos" }
+        ListElement { name: "Entrada y salida de datos" }
+        ListElement { name: "Constexpr y Constinit" }
+        ListElement { name: "Inicializacion de variables" }
+        ListElement { name: "Literales" }
+        ListElement { name: "Operadores Aritmeticos, Logicos y Relacionales" }
+        ListElement { name: "Overflow y underflow" }
         ListElement { name: "RelationalOperators" }
         ListElement { name: "Varibable initialization" }
     }

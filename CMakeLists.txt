@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml)
+# find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml WebEngineQuick)
 
 qt_standard_project_setup()
 
@@ -15,7 +17,7 @@ qt_add_executable(appCodeSnippetApp
     resources.qrc
 )
 
-qt6_add_qml_module(appCodeSnippetApp
+qt_add_qml_module(appCodeSnippetApp
     URI CodeSnippetApp
     VERSION 1.0
     QML_FILES Main.qml

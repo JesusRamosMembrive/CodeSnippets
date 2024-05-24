@@ -5,10 +5,10 @@ Control {
     id: customButton
     width: parent.width * 0.8
     height: 40
+    font.family: "Roboto"
     anchors.horizontalCenter: parent.horizontalCenter
 
     property alias buttonText: buttonTextItem.text
-
     property color buttonTextColor: customButton.checked ? "#ffffff" : "#000000"
     property color startColor: "#ffffff"
     property color endColor: "#f0f0f0"
@@ -27,15 +27,15 @@ Control {
 
     MouseArea {
         id: mouseArea
-        anchors.fill: parent
+        anchors.fill: buttonBackground
         onClicked: {
             customButton.checked = !customButton.checked
         }
     }
 
     contentItem: Rectangle {
-        anchors.fill: parent
-        color: "transparent"
+        anchors.fill: customButton
+        color: "#00ffffff"
         radius: 20
 
         Text {
@@ -118,4 +118,5 @@ Control {
             }
         }
     ]
+
 }

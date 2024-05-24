@@ -31,5 +31,17 @@
         <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-RelationalOperators.txt</file>
         <file>Assets/Code/CPlusPlus/VariablesAndDataTypes-Varibable initialization.txt</file>
     </qresource>
-    <qresource prefix="/"/>
+    <qresource prefix="/">
+        <file>Assets/Code/CPlusPlus/Fundamentos/Constexpr y Constinit.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Entrada y salida de datos.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Estructura basica.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Inicializacion de variables.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Literales.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Overflow y underflow.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Tipo de dato Auto.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Tipos datos basicos.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Variables y constantes.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Operadores Aritmeticos, Logicos y Relacionales.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Rango y size de los Tipos de Datos.txt</file>
+    </qresource>
 </RCC>

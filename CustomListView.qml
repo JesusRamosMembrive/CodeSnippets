@@ -21,13 +21,22 @@ Column {
         }
     }
 
+    // function changeColorBGListViewButtons(){
+    //     console.log("Ejectuo la funcion")
+    //     if(bgListViewButtons.height !== 0 || bgListViewButtons.width !==0){
+    //         console.log("Entro dentro del if")
+    //         bgListViewButtons.color = "#ef0523";
+    //         bgListViewButtons.border.color = "#ef0523";
+    //         bgListViewButtons.radius =  20;
+    //     }
+    // }
+
     Rectangle {
-        id: rectangle
+        id: bgListViewButtons
         width: parent.width * 0.9
         height: customButton && customButton.checked ? customListView.contentHeight : 0
-        color: customButton.checked ? "#00000000" : "#00000000"
         anchors.horizontalCenter: parent.horizontalCenter
-        border.color: "#00000000"
+        border.color: "#00ffffff"
 
         ListView {
             id: customListView
@@ -45,15 +54,23 @@ Column {
 
             delegate: ItemDelegate {
                 id: itemDelegate
-                width: parent.width
+                width: customListView.width
                 height: 40
+                font.pointSize: 12
+                icon.color: "#00ffffff"
+                antialiasing: true
+                smooth: true
+                enabled: true
+                font.family: "Roboto"
 
                 Rectangle {
                     width: parent.width
                     height: parent.height
                     color: "#ffffff"
-                    border.color: "#da000000"
+                    border.color: "#c42b3d5f"
                     border.width: 2
+                    layer.wrapMode: ShaderEffectSource.Repeat
+                    layer.enabled: false
                     gradient: Gradient {
                         GradientStop {
                             position: 0
@@ -70,10 +87,20 @@ Column {
 
                     Text {
                         color: "#ffffff"
-                        anchors.centerIn: parent
+                        width: parent.width
+                        height: parent.height
                         text: model.name
-                        font.pixelSize: 14
+                        font.pixelSize: 16
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
                         font.family: "Roboto"
+                        wrapMode: Text.WordWrap
+                        layer.enabled: true
+                        styleColor: "#00ffffff"
+                        font.italic: false
+                        fontSizeMode: Text.Fit
+                        renderTypeQuality: Text.VeryHighRenderTypeQuality
+                        textFormat: Text.RichText
                     }
 
                     MouseArea {
@@ -81,6 +108,7 @@ Column {
                         anchors.fill: parent
                         onClicked: {
                             appWindow.loadFileContent(model.name)
+                            // changeColorBGListViewButtons()
                         }
                     }
                 }
@@ -100,6 +128,7 @@ Column {
                 easing.type: Easing.InOutCubic
             }
         }
+        color: "#00000000"
     }
 
     Behavior on height {

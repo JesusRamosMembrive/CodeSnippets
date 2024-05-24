@@ -53,7 +53,7 @@ Window {
         var topics = [];
         for (var i = 0; i < dataTypesModel.dataTypes.count; i++) {
             var item = dataTypesModel.dataTypes.get(i);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/VariablesAndDataTypes-" + item.name + ".txt";
+            map[item.name] = ":/Assets/Code/CPlusPlus/Fundamentos/" + item.name + ".txt";
             topics.push(item.name);
         }
 

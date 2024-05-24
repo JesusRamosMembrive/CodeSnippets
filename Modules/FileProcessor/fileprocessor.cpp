@@ -1,3 +1,4 @@
+
 #include "FileProcessor.h"
 
 FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
@@ -17,11 +18,11 @@ void FileProcessor::processFile(const QString &filePath)
     file.close();
 
     // Extraer EXPLANATION
-    extractSection(content, "---EXPLANATION---", "---", m_explanation);
+    extractSection(content, "<---EXPLANATION--->", "<---", m_explanation);
 
     // Extraer el listado de archivos y su contenido
     QString filesSection;
-    extractSection(content, "---FILES---", "---", filesSection);
+    extractSection(content, "<---FILES--->", "<---", filesSection);
 
     QStringList fileNames = filesSection.split('\n', Qt::SkipEmptyParts);
 
@@ -30,10 +31,10 @@ void FileProcessor::processFile(const QString &filePath)
 
     for (const QString &fileName : fileNames) {
         QString trimmedName = fileName.trimmed();
-        QString fileStartTag = "---" + trimmedName + "---";
+        QString fileStartTag = "<---" + trimmedName + "--->";
         QString fileData;
         int fileStartIndex = content.indexOf(fileStartTag) + fileStartTag.length();
-        int fileEndIndex = content.indexOf("---", fileStartIndex);
+        int fileEndIndex = content.indexOf("<---", fileStartIndex);
         fileData = content.mid(fileStartIndex, fileEndIndex - fileStartIndex).trimmed();
         m_files[trimmedName] = fileData;
         m_filesList.append(trimmedName);
@@ -66,6 +67,32 @@ QString FileProcessor::getFileTitle(const QString &fileName)
     m_title = titleTmp[0];
     qInfo() << "Title: " << m_title;
     return m_title;
+}
+
+QString FileProcessor::markdownToHtml(const QString &markdown) {
+    QTextDocument document;
+    document.setMarkdown(markdown);
+    return document.toHtml();
+}
+
+QString FileProcessor::createHtmlFile()
+{
+    QString htmlContent = markdownToHtml(m_explanation);
+
+    QDir tempDir = QDir::temp();
+    QString tempFilePath = tempDir.filePath("markdown.html");
+    QFile tempFile(tempFilePath);
+    if (tempFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&tempFile);
+        out << "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"qrc:/markdown/style.css\"></head><body>";
+        out << htmlContent;
+        out << "</body></html>";
+        tempFile.close();
+        return tempFilePath;
+    } else {
+        qWarning() << "Could not write to temporary file";
+        return QString();
+    }
 }
 
 void FileProcessor::extractSection(const QString &text, const QString &startMarker, const QString &endMarker, QString &section)

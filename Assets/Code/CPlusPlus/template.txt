@@ -1,11 +1,11 @@
----FILES---
+<---FILES--->
 main.cpp
 result
 
----main.cpp---
+<---main.cpp--->
 
 
----result---
+<---result--->
 
 
----EXPLANATION---
+<---EXPLANATION--->
