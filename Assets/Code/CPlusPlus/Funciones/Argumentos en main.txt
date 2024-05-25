@@ -1,0 +1,190 @@
+<---FILES--->
+main.cpp
+result
+
+<---main.cpp--->
+#include <iostream>
+#include <string>
+#include <cstdlib> // Para atoi y atof
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc < 4) {
+        cout << "Uso: " << argv[0] << " <entero> <flotante> <cadena>" << endl;
+        return 1;
+    }
+
+    // Conversión de argumentos
+    int entero = atoi(argv[1]);
+    double flotante = atof(argv[2]);
+    string cadena = argv[3];
+
+    // Imprimir valores convertidos
+    cout << "Entero: " << entero << endl;
+    cout << "Flotante: " << flotante << endl;
+    cout << "Cadena: " << cadena << endl;
+
+    return 0;
+}
+
+
+<---result--->
+Uso: D:\Personal\C++\ExecutePlainC++Code\ExecutingExamples\build\Desktop_Qt_6_7_0_MinGW_64_bit-Release\release\ExecutingExamples.exe <entero> <flotante> <cadena>
+
+
+<---EXPLANATION--->
+```markdown
+### Pasar Argumentos a la Función `main` del Programa en C++
+
+En C++, es posible pasar argumentos a la función `main` del programa, lo que permite que el programa reciba información desde la línea de comandos al momento de ser ejecutado. Esto es particularmente útil para programas que requieren parámetros de configuración, nombres de archivos, o cualquier otro tipo de entrada del usuario.
+
+#### Definición de la Función `main` con Argumentos
+
+La función `main` puede definirse para aceptar dos argumentos: `argc` y `argv`.
+
+```cpp
+int main(int argc, char* argv[]) {
+    // Código del programa
+}
+```
+
+- `argc` (argument count): Es un entero que representa el número de argumentos pasados al programa desde la línea de comandos, incluido el nombre del programa.
+- `argv` (argument vector): Es un array de punteros a caracteres que apunta a cada uno de los argumentos pasados.
+
+#### Ejemplo Básico de Uso de Argumentos en `main`
+
+A continuación se muestra un ejemplo de cómo usar estos argumentos en un programa simple que imprime los argumentos recibidos:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    cout << "Número de argumentos: " << argc << endl;
+    for (int i = 0; i < argc; ++i) {
+        cout << "Argumento " << i << ": " << argv[i] << endl;
+    }
+    return 0;
+}
+```
+
+En este ejemplo, el programa imprimirá el número de argumentos recibidos y luego listará cada argumento con su índice correspondiente.
+
+#### Conversión de Argumentos
+
+Los argumentos recibidos en `argv` son de tipo `char*`, es decir, cadenas de caracteres. A menudo es necesario convertir estos argumentos a otros tipos de datos, como enteros o flotantes. Para esto se pueden utilizar funciones de la biblioteca estándar como `atoi` para convertir a enteros y `atof` para convertir a flotantes.
+
+##### Ejemplo de Conversión de Argumentos
+
+```cpp
+#include <iostream>
+#include <cstdlib> // Para atoi y atof
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc < 3) {
+        cout << "Uso: " << argv[0] << " <entero> <flotante>" << endl;
+        return 1;
+    }
+
+    int entero = atoi(argv[1]);
+    double flotante = atof(argv[2]);
+
+    cout << "Entero: " << entero << endl;
+    cout << "Flotante: " << flotante << endl;
+
+    return 0;
+}
+```
+
+En este ejemplo, el programa espera recibir un entero y un flotante como argumentos y los convierte usando `atoi` y `atof`, respectivamente.
+
+#### Manejo de Argumentos con `std::string`
+
+Para una manipulación más conveniente de las cadenas de caracteres, se puede utilizar la clase `std::string` de la biblioteca estándar de C++. 
+
+##### Ejemplo de Uso de `std::string` para Argumentos
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        cout << "Uso: " << argv[0] << " <cadena>" << endl;
+        return 1;
+    }
+
+    string cadena = argv[1];
+    cout << "Cadena recibida: " << cadena << endl;
+
+    return 0;
+}
+```
+
+En este ejemplo, el programa convierte el primer argumento a un `std::string` y lo imprime.
+
+### Consideraciones y Buenas Prácticas
+
+1. **Verificación de Argumentos**: Siempre verifica que el número adecuado de argumentos haya sido pasado antes de intentar utilizarlos.
+   
+    ```cpp
+    if (argc < 2) {
+        cout << "Uso: " << argv[0] << " <argumentos>" << endl;
+        return 1;
+    }
+    ```
+
+2. **Manejo de Errores**: Maneja posibles errores en la conversión de tipos para evitar comportamientos inesperados.
+   
+    ```cpp
+    int valor;
+    try {
+        valor = stoi(argv[1]);
+    } catch (invalid_argument& e) {
+        cout << "Argumento inválido: " << argv[1] << endl;
+        return 1;
+    }
+    ```
+
+3. **Documentación del Uso del Programa**: Proporciona una guía clara sobre cómo usar el programa, especialmente si se requieren múltiples argumentos.
+
+    ```cpp
+    cout << "Uso: " << argv[0] << " <argumento1> <argumento2>" << endl;
+    ```
+
+### Ejemplo Completo
+
+A continuación, un ejemplo completo que ilustra cómo manejar argumentos en la función `main`, realizar conversiones de tipo, y verificar la cantidad de argumentos.
+
+```cpp
+#include <iostream>
+#include <string>
+#include <cstdlib> // Para atoi y atof
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc < 4) {
+        cout << "Uso: " << argv[0] << " <entero> <flotante> <cadena>" << endl;
+        return 1;
+    }
+
+    // Conversión de argumentos
+    int entero = atoi(argv[1]);
+    double flotante = atof(argv[2]);
+    string cadena = argv[3];
+
+    // Imprimir valores convertidos
+    cout << "Entero: " << entero << endl;
+    cout << "Flotante: " << flotante << endl;
+    cout << "Cadena: " << cadena << endl;
+
+    return 0;
+}
+```
+
+### Conclusión
+
+Pasar argumentos a la función `main` en C++ es una técnica esencial para crear programas flexibles que pueden recibir información desde la línea de comandos. Con las herramientas y prácticas adecuadas, se pueden manejar y convertir estos argumentos de manera segura y eficiente, permitiendo que los programas sean más dinámicos y útiles en una variedad de contextos.
+```
