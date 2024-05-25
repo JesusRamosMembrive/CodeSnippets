@@ -59,7 +59,7 @@ Window {
 
         for (var j = 0; j < controlFlowModel.controlFlowTypes.count; j++) {
             var item = controlFlowModel.controlFlowTypes.get(j);
-            map[item.name] = ":/POO/Assets/Code/CPlusPlus/POO/" + item.name + ".txt";
+            map[item.name] = ":/Assets/Code/CPlusPlus/POO/" + item.name + ".txt";
             topics.push(item.name);
         }
 

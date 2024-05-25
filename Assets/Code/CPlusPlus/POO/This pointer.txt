@@ -216,16 +216,16 @@ El puntero `this` en C++ es una herramienta poderosa que permite a los programad
 
 
 <---FILES--->
-Ejemplo Básico
-Ejemplo Básico_Result
-Ejemplo de Encadenamiento de Métodos
-Ejemplo de Encadenamiento de Métodos_Result
-Ejemplo con Función Constante
-Ejemplo con Función Constante_Result
-Ejemplo de Prevención de Auto-Asignación
-Ejemplo de Prevención de Auto-Asignación_Result
+Básico
+Básico_Result
+ncadenamiento de Métodos
+Encadenamiento de Métodos_Result
+Función Constante
+Función Constante_Result
+Prevención de Auto-Asignación
+Prevención de Auto-Asignación_Result
 
-<---Ejemplo Básico--->
+<---Básico--->
 #include <iostream>
 using namespace std;
 
@@ -260,11 +260,11 @@ int main() {
 }
 
 
-<---Ejemplo Básico_Result--->
+<---Básico_Result--->
 Punto(10, 20)
 Punto(30, 40)
 
-<---Ejemplo de Encadenamiento de Métodos--->
+<---Encadenamiento de Métodos--->
 #include <iostream>
 using namespace std;
 
@@ -301,11 +301,11 @@ int main() {
     return 0;
 }
 
-<---Ejemplo de Encadenamiento de Métodos_Result--->
+<---Encadenamiento de Métodos_Result--->
 Rectangulo(10, 20)
 
 
-<---Ejemplo con Función Constante--->
+<---Función Constante--->
 #include <iostream>
 using namespace std;
 
@@ -344,11 +344,11 @@ int main() {
 }
 
 
-<---Ejemplo con Función Constante_Result--->
+<---Función Constante_Result--->
 Circulo con radio: 5
 Circulo con radio: 10
 
-<---Ejemplo de Prevención de Auto-Asignación--->
+<---Prevención de Auto-Asignación--->
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -405,7 +405,7 @@ int main() {
 }
 
 
-<---Ejemplo de Prevención de Auto-Asignación_Result--->
+<---Prevención de Auto-Asignación_Result--->
 Cadena: Hola
 Cadena: Mundo
 Cadena: Hola

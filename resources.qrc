@@ -43,8 +43,6 @@
         <file>Assets/Code/CPlusPlus/Fundamentos/Variables y constantes.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Operadores Aritmeticos, Logicos y Relacionales.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Rango y size de los Tipos de Datos.txt</file>
-    </qresource>
-    <qresource prefix="/POO">
         <file>Assets/Code/CPlusPlus/POO/This pointer.txt</file>
     </qresource>
 </RCC>
