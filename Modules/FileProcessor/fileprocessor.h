@@ -6,9 +6,6 @@
 #include <QMap>
 #include <QVariant>
 #include <QVariantList>
-#include <QTextDocument>
-#include <QByteArray>
-#include <QDir>
 
 class FileProcessor : public QObject
 {
@@ -23,8 +20,6 @@ public:
     Q_INVOKABLE void processFile(const QString &filePath);
     Q_INVOKABLE QString getFileContent(const QString &fileName);
     Q_INVOKABLE QString getFileTitle(const QString &fileName);
-    Q_INVOKABLE QString markdownToHtml(const QString &markdown);
-    Q_INVOKABLE QString createHtmlFile();
 
     QString explanation() const { return m_explanation; }
     QString title() const { return m_title; }

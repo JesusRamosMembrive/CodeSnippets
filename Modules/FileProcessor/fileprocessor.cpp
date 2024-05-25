@@ -1,4 +1,3 @@
-
 #include "FileProcessor.h"
 
 FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
@@ -19,6 +18,8 @@ void FileProcessor::processFile(const QString &filePath)
 
     // Extraer EXPLANATION
     extractSection(content, "<---EXPLANATION--->", "<---", m_explanation);
+
+    qInfo() << "EXPLANATION: " << m_explanation;
 
     // Extraer el listado de archivos y su contenido
     QString filesSection;
@@ -45,9 +46,12 @@ void FileProcessor::processFile(const QString &filePath)
     emit filesChanged();
     emit titleChanged();
 
-    // Emitir el contenido de main.cpp si existe
-    if (m_files.contains("main.cpp")) {
-        emit fileSelected("main.cpp", m_files["main.cpp"], m_title);
+    // Emitir el contenido de todos los archivos procesados
+    for (const QString &fileName : fileNames) {
+        QString trimmedName = fileName.trimmed();
+        if (m_files.contains(trimmedName)) {
+            emit fileSelected(trimmedName, m_files[trimmedName], m_title);
+        }
     }
 }
 
@@ -67,32 +71,6 @@ QString FileProcessor::getFileTitle(const QString &fileName)
     m_title = titleTmp[0];
     qInfo() << "Title: " << m_title;
     return m_title;
-}
-
-QString FileProcessor::markdownToHtml(const QString &markdown) {
-    QTextDocument document;
-    document.setMarkdown(markdown);
-    return document.toHtml();
-}
-
-QString FileProcessor::createHtmlFile()
-{
-    QString htmlContent = markdownToHtml(m_explanation);
-
-    QDir tempDir = QDir::temp();
-    QString tempFilePath = tempDir.filePath("markdown.html");
-    QFile tempFile(tempFilePath);
-    if (tempFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QTextStream out(&tempFile);
-        out << "<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><link rel=\"stylesheet\" href=\"qrc:/markdown/style.css\"></head><body>";
-        out << htmlContent;
-        out << "</body></html>";
-        tempFile.close();
-        return tempFilePath;
-    } else {
-        qWarning() << "Could not write to temporary file";
-        return QString();
-    }
 }
 
 void FileProcessor::extractSection(const QString &text, const QString &startMarker, const QString &endMarker, QString &section)
