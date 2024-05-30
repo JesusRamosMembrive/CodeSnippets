@@ -1,0 +1,261 @@
+<---EXPLANATION--->
+### Plantillas Variádicas en C++
+
+Las plantillas variádicas son una característica avanzada de C++ que permite definir funciones y clases que pueden aceptar un número variable de parámetros. Introducidas en C++11, las plantillas variádicas facilitan la creación de código genérico y flexible sin necesidad de sobrecarga de funciones o múltiples especializaciones de plantillas.
+
+#### Definición y Sintaxis
+
+Las plantillas variádicas utilizan el operador de tres puntos (`...`) para indicar un número variable de parámetros. Pueden aplicarse tanto a plantillas de funciones como a plantillas de clases.
+
+##### Plantillas de Funciones Variádicas
+
+Una plantilla de función variádica permite definir una función que puede aceptar un número arbitrario de argumentos.
+
+###### Sintaxis
+
+```cpp
+template <typename... Args>
+void funcionVariadica(Args... args) {
+    // Implementación
+}
+```
+
+###### Ejemplo Básico
+
+```cpp
+#include <iostream>
+
+// Plantilla de función variádica
+template <typename... Args>
+void imprimir(Args... args) {
+    (std::cout << ... << args) << std::endl;
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+```
+
+En este ejemplo:
+- La función `imprimir` acepta un número variable de argumentos de cualquier tipo.
+- La expresión `(std::cout << ... << args)` es una expansión de plegado que imprime cada argumento en `std::cout`.
+
+##### Plantillas de Clases Variádicas
+
+Una plantilla de clase variádica permite definir una clase que puede aceptar un número variable de parámetros de plantilla.
+
+###### Sintaxis
+
+```cpp
+template <typename... Args>
+class ClaseVariadica {
+    // Implementación
+};
+```
+
+###### Ejemplo Básico
+
+```cpp
+#include <tuple>
+#include <iostream>
+
+// Plantilla de clase variádica
+template <typename... Args>
+class MiClase {
+    std::tuple<Args...> datos; // Almacena los argumentos en un tuple
+
+public:
+    MiClase(Args... args) : datos(args...) {}
+
+    void imprimir() {
+        imprimirTupla(datos, std::index_sequence_for<Args...>{});
+    }
+
+private:
+    template <typename Tuple, std::size_t... I>
+    void imprimirTupla(const Tuple& t, std::index_sequence<I...>) {
+        ((std::cout << std::get<I>(t) << " "), ...) << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int, double, std::string> obj(1, 2.5, "hola");
+    obj.imprimir();
+    return 0;
+}
+```
+
+En este ejemplo:
+- La clase `MiClase` acepta un número variable de parámetros de plantilla y los almacena en un `std::tuple`.
+- La función `imprimir` imprime los valores almacenados en el `tuple`.
+
+#### Expansión de Plantillas Variádicas
+
+La expansión de plantillas variádicas permite desempaquetar los parámetros y aplicar operaciones sobre ellos. Las expansiones pueden realizarse en diferentes contextos, como llamadas a funciones, inicialización de estructuras, y más.
+
+##### Ejemplo de Expansión en Funciones
+
+```cpp
+#include <iostream>
+
+template <typename T>
+void imprimirUno(T t) {
+    std::cout << t << " ";
+}
+
+template <typename... Args>
+void imprimir(Args... args) {
+    (imprimirUno(args), ...); // Expansión de plegado usando coma
+    std::cout << std::endl;
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+```
+
+En este ejemplo:
+- La función `imprimir` llama a `imprimirUno` para cada argumento utilizando una expansión de plegado con la coma.
+
+##### Ejemplo de Expansión en Constructores
+
+```cpp
+#include <tuple>
+#include <iostream>
+
+template <typename... Args>
+class MiClase {
+    std::tuple<Args...> datos;
+
+public:
+    MiClase(Args... args) : datos(args...) {}
+
+    void imprimir() {
+        imprimirTupla(datos, std::index_sequence_for<Args...>{});
+    }
+
+private:
+    template <typename Tuple, std::size_t... I>
+    void imprimirTupla(const Tuple& t, std::index_sequence<I...>) {
+        ((std::cout << std::get<I>(t) << " "), ...) << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int, double, std::string> obj(1, 2.5, "hola");
+    obj.imprimir();
+    return 0;
+}
+```
+
+En este ejemplo:
+- La clase `MiClase` utiliza una expansión de plegado para imprimir los valores almacenados en el `std::tuple`.
+
+### Conclusión
+
+Las plantillas variádicas en C++ son una característica poderosa que permite definir funciones y clases genéricas que pueden aceptar un número variable de argumentos. Facilitan la creación de código flexible y reutilizable, eliminando la necesidad de múltiples sobrecargas y especializaciones. Las expansiones de plantillas variádicas, especialmente las expansiones de plegado, simplifican la aplicación de operaciones sobre múltiples argumentos, mejorando la claridad y concisión del código.
+<---FILES--->
+Plantillas de Funciones Variádicas
+Plantillas de Funciones Variádicas Result
+Sintaxis
+Sintaxis Result
+Ejemplo Básico
+Ejemplo Básico Result
+Plantillas de Clases Variádicas
+Plantillas de Clases Variádicas Result
+Ejemplo de Expansión en Funciones
+Ejemplo de Expansión en Funciones Result
+Ejemplo de Expansión en Constructores
+Ejemplo de Expansión en Constructores Result
+<---Plantillas de Funciones Variádicas--->
+<---Plantillas de Funciones Variádicas Result--->
+<---Sintaxis--->
+```cpp
+template <typename... Args>
+class ClaseVariadica {
+    // Implementación
+};
+<---Sintaxis Result--->
+<---Ejemplo Básico--->
+```cpp
+#include <tuple>
+#include <iostream>
+
+// Plantilla de clase variádica
+template <typename... Args>
+class MiClase {
+    std::tuple<Args...> datos; // Almacena los argumentos en un tuple
+
+public:
+    MiClase(Args... args) : datos(args...) {}
+
+    void imprimir() {
+        imprimirTupla(datos, std::index_sequence_for<Args...>{});
+    }
+
+private:
+    template <typename Tuple, std::size_t... I>
+    void imprimirTupla(const Tuple& t, std::index_sequence<I...>) {
+        ((std::cout << std::get<I>(t) << " "), ...) << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int, double, std::string> obj(1, 2.5, "hola");
+    obj.imprimir();
+    return 0;
+}
+<---Ejemplo Básico Result--->
+<---Plantillas de Clases Variádicas--->
+<---Plantillas de Clases Variádicas Result--->
+<---Ejemplo de Expansión en Funciones--->
+```cpp
+#include <iostream>
+
+template <typename T>
+void imprimirUno(T t) {
+    std::cout << t << " ";
+}
+
+template <typename... Args>
+void imprimir(Args... args) {
+    (imprimirUno(args), ...); // Expansión de plegado usando coma
+    std::cout << std::endl;
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+<---Ejemplo de Expansión en Funciones Result--->
+<---Ejemplo de Expansión en Constructores--->
+```cpp
+#include <tuple>
+#include <iostream>
+
+template <typename... Args>
+class MiClase {
+    std::tuple<Args...> datos;
+
+public:
+    MiClase(Args... args) : datos(args...) {}
+
+    void imprimir() {
+        imprimirTupla(datos, std::index_sequence_for<Args...>{});
+    }
+
+private:
+    template <typename Tuple, std::size_t... I>
+    void imprimirTupla(const Tuple& t, std::index_sequence<I...>) {
+        ((std::cout << std::get<I>(t) << " "), ...) << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int, double, std::string> obj(1, 2.5, "hola");
+    obj.imprimir();
+    return 0;
+}
+<---Ejemplo de Expansión en Constructores Result--->

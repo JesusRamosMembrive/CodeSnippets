@@ -55,99 +55,119 @@ ScrollView {
         }
 
         CustomButton {
-            id: dataTypeButton
+            id: fundamentosButton
             width: widthButtons
             height: 40
-            buttonText: "Variables & Data Types"
+            buttonText: "Fundamentos"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
             id: dataTypeList
             width: parent.width
-            customModel: dataTypesModel.dataTypes
-            customButton: dataTypeButton
+            customModel: fundamentosModel.fundamentosType
+            customButton: fundamentosButton
             searchFilter: textField.text
         }
 
         CustomButton {
-            id: literalAndConstantsButton
+            id: controlDeFlujoButton
             width: widthButtons
             height: 40
-            buttonText: "Literal and constants"
+            buttonText: "Control de flujo"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
-            id: literalAndConstantsList
+            id: controlDeFlujoList
             width: parent.width
-            customModel: literalConstants.literalConstantsType
-            customButton: literalAndConstantsButton
+            customModel: controlDeFlujoModel.controlDeFlujoType
+            customButton: controlDeFlujoButton
             searchFilter: textField.text
         }
 
         CustomButton {
-            id: flowControlButton
+            id: estructurasDeDatosButton
             width: widthButtons
             height: 40
-            buttonText: "Flow control"
+            buttonText: "Funciones"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
-            id: flowControlsList
+            id: estructurasDeDatosList
             width: parent.width
-            customModel: controlFlowModel.controlFlowTypes
-            customButton: flowControlButton
+            customModel: estructurasDeDatosModel.estructurasDeDatosType
+            customButton: estructurasDeDatosButton
             searchFilter: textField.text
         }
 
         CustomButton {
-            id: bitWiseButton
+            id: funcionesButton
             width: widthButtons
             height: 40
-            buttonText: "Bitwise"
+            buttonText: "Funciones"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
-            id: bitWiseList
+            id: funcionesList
             width: parent.width
-            customModel: bitWiseType.bitWiseModel
-            customButton: bitWiseButton
+            customModel: funcionesModel.funcionesType
+            customButton: funcionesButton
             searchFilter: textField.text
         }
 
         CustomButton {
-            id: loopsButton
+            id: clasesButton
             width: widthButtons
             height: 40
-            buttonText: "Loops"
+            buttonText: "Clases"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
-            id: loopsList
+            id: clasesList
             width: parent.width
-            customModel: loops.loopsTypeModel
-            customButton: loopsButton
+            customModel: pooModel.pooType
+            customButton: clasesButton
             searchFilter: textField.text
         }
 
         CustomButton {
-            id: overflowButton
+            id: herenciaYPolimorfismoButton
             width: widthButtons
             height: 40
-            buttonText: "Overflow"
+            buttonText: "Herencia y polimorfismo"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
         CustomListView {
-            id: overflowList
+            id: herenciaYPolimorfismoList
             width: parent.width
-            customModel: overflow.overFlowTypes
-            customButton: overflowButton
+            customModel: herenciaYPolimorfismoModel.herenciaYPolimorfismoType
+            customButton: herenciaYPolimorfismoButton
             searchFilter: textField.text
         }
+
+        CustomButton {
+            id: friendsButton
+            width: widthButtons
+            height: 40
+            buttonText: "Herencia y polimorfismo"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: friendsList
+            width: parent.width
+            customModel: friendsModel.friendsType
+            customButton: friendsButton
+            searchFilter: textField.text
+        }
+
+
+
+
     }
 }

@@ -24,9 +24,6 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES MyGroupbox.qml
     QML_FILES CodeDisplayPage.qml
     QML_FILES Components/CustomTextArea.qml
-    QML_FILES Modules/ListsOfModels/DataTypesModel.qml
-    QML_FILES Modules/ListsOfModels/ControlFlowModels.qml
-    QML_FILES
     QML_FILES Modules/Utils/FileReader.qml
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
     QML_FILES ScrollViewTopics.qml
@@ -41,11 +38,7 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
     QML_FILES Modules/Style/Theme.qml
-    QML_FILES Modules/ListsOfModels/Bitwise.qml
-    QML_FILES Modules/ListsOfModels/LiteralConstants.qml
-    QML_FILES Modules/ListsOfModels/Loops.qml
-    QML_FILES Modules/ListsOfModels/OverFlow.qml
-
+    QML_FILES Modules/ListsOfModels/Concepts.qml Modules/ListsOfModels/ConstYMiembrosEstaticos.qml Modules/ListsOfModels/ControlDeFlujo.qml Modules/ListsOfModels/Corutinas.qml Modules/ListsOfModels/EstructurasDeDatos.qml Modules/ListsOfModels/ExpresionesDeRango.qml Modules/ListsOfModels/Friends.qml Modules/ListsOfModels/Funciones.qml Modules/ListsOfModels/FuncionesComoEntidades.qml Modules/ListsOfModels/Fundamentos.qml Modules/ListsOfModels/HerenciaYPolimorfismo.qml Modules/ListsOfModels/Iteradores.qml Modules/ListsOfModels/ManejoMemoria.qml Modules/ListsOfModels/Namespaces.qml Modules/ListsOfModels/OperadorSobrecarga.qml Modules/ListsOfModels/PlantillasYGenericas.qml Modules/ListsOfModels/Poo.qml Modules/ListsOfModels/Semantics.qml Modules/ListsOfModels/StdAlgoritmos.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

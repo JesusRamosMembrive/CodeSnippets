@@ -6,6 +6,7 @@ FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
 
 void FileProcessor::processFile(const QString &filePath)
 {
+    qInfo() << "Processing file: " << filePath;
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;

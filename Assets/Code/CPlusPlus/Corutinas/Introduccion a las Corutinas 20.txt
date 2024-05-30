@@ -1,0 +1,157 @@
+<---EXPLANATION--->
+### Introducción a las Corutinas en C++20
+
+C++20 introdujo el soporte para corutinas, una característica poderosa que permite escribir código asíncrono de manera más natural y legible. Las corutinas son funciones que pueden suspender su ejecución y luego reanudarla, lo que facilita la implementación de generadores, tareas asíncronas y otros patrones de control de flujo avanzados.
+
+#### ¿Qué es una Corutina?
+
+Una corutina es una función especial que puede pausar su ejecución (suspenderse) y luego reanudarla más tarde, manteniendo su estado. Esto permite escribir código que puede realizar operaciones asíncronas o generadoras sin bloquear el hilo de ejecución.
+
+#### Características Clave de las Corutinas en C++20
+
+1. **Palabras Clave de Corutina:** `co_await`, `co_yield`, `co_return`
+2. **Promesas:** Un mecanismo para manejar el estado y la comunicación con la corutina.
+3. **Manejadores de Corutinas:** Estructuras que controlan el ciclo de vida de las corutinas.
+
+### Sintaxis Básica de las Corutinas
+
+Para definir una corutina, utilizamos las palabras clave `co_await`, `co_yield` y `co_return`.
+
+#### Palabras Clave de Corutina
+
+- **`co_await`:** Suspende la corutina hasta que el objeto awaitable esté listo.
+- **`co_yield`:** Produce un valor desde la corutina y la suspende.
+- **`co_return`:** Finaliza la corutina y devuelve un valor.
+
+#### Ejemplo Básico de Corutina
+
+Vamos a implementar un generador simple usando corutinas.
+
+```cpp
+#include <iostream>
+#include <coroutine>
+#include <vector>
+
+template<typename T>
+struct Generator {
+    struct promise_type {
+        T current_value;
+        std::suspend_always yield_value(T value) {
+            current_value = value;
+            return {};
+        }
+        std::suspend_always initial_suspend() { return {}; }
+        std::suspend_always final_suspend() noexcept { return {}; }
+        Generator get_return_object() { return Generator{ std::coroutine_handle<promise_type>::from_promise(*this) }; }
+        void return_void() {}
+        void unhandled_exception() { std::terminate(); }
+    };
+
+    std::coroutine_handle<promise_type> handle;
+
+    Generator(std::coroutine_handle<promise_type> h) : handle(h) {}
+    ~Generator() { if (handle) handle.destroy(); }
+
+    bool move_next() {
+        handle.resume();
+        return !handle.done();
+    }
+
+    T current() { return handle.promise().current_value; }
+};
+
+Generator<int> counter(int max) {
+    for (int i = 1; i <= max; ++i) {
+        co_yield i;
+    }
+}
+
+int main() {
+    auto gen = counter(5);
+
+    while (gen.move_next()) {
+        std::cout << gen.current() << " ";
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `Generator<int>` es una estructura que define un generador de enteros utilizando corutinas.
+- La función `counter` es una corutina que produce una secuencia de números del 1 al `max` usando `co_yield`.
+
+### Detalles de Implementación
+
+#### Promesas y `promise_type`
+
+La `promise_type` es una estructura que define cómo se comporta la corutina. Contiene los métodos y miembros necesarios para manejar el ciclo de vida de la corutina y la comunicación de valores.
+
+- **`yield_value`:** Produce un valor desde la corutina y la suspende.
+- **`initial_suspend`:** Define el comportamiento al inicio de la corutina.
+- **`final_suspend`:** Define el comportamiento al final de la corutina.
+- **`get_return_object`:** Devuelve el objeto asociado a la corutina.
+- **`return_void`:** Finaliza la corutina sin devolver un valor.
+- **`unhandled_exception`:** Maneja excepciones no capturadas.
+
+#### Manejadores de Corutinas
+
+El manejador de corutinas (`std::coroutine_handle<promise_type>`) es un objeto que controla el ciclo de vida de la corutina. Permite reanudar, destruir y verificar el estado de la corutina.
+
+### Uso de `co_await`
+
+El operador `co_await` se utiliza para suspender la ejecución de la corutina hasta que un objeto awaitable esté listo.
+
+#### Ejemplo con `co_await`
+
+```cpp
+#include <iostream>
+#include <coroutine>
+#include <chrono>
+#include <thread>
+
+struct Sleeper {
+    std::chrono::milliseconds duration;
+
+    bool await_ready() const noexcept { return false; }
+    void await_suspend(std::coroutine_handle<> handle) const noexcept {
+        std::thread([handle, this]() {
+            std::this_thread::sleep_for(duration);
+            handle.resume();
+        }).detach();
+    }
+    void await_resume() const noexcept {}
+};
+
+struct Task {
+    struct promise_type {
+        Task get_return_object() { return {}; }
+        std::suspend_never initial_suspend() noexcept { return {}; }
+        std::suspend_never final_suspend() noexcept { return {}; }
+        void return_void() noexcept {}
+        void unhandled_exception() { std::terminate(); }
+    };
+};
+
+Task delay_print(const std::string& message, std::chrono::milliseconds duration) {
+    co_await Sleeper{duration};
+    std::cout << message << std::endl;
+}
+
+int main() {
+    delay_print("Hello after 1 second", std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::seconds(2)); // Give time for the coroutines to complete
+    return 0;
+}
+```
+
+En este ejemplo:
+- `Sleeper` es un objeto awaitable que suspende la corutina por una duración especificada.
+- La función `delay_print` es una corutina que usa `co_await` para esperar antes de imprimir un mensaje.
+
+### Conclusión
+
+Las corutinas en C++20 proporcionan una forma eficiente y legible de escribir código asíncrono y de generación de secuencias. Utilizando palabras clave como `co_await`, `co_yield` y `co_return`, junto con promesas y manejadores de corutinas, es posible implementar patrones avanzados de control de flujo. Las corutinas facilitan la implementación de generadores, tareas asíncronas y otras operaciones que requieren suspender y reanudar la ejecución, mejorando la legibilidad y mantenibilidad del código.
+<---FILES--->

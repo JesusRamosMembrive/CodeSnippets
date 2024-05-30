@@ -30,12 +30,25 @@ Window {
         id: mouseAreaResize
     }
 
-    ControlFlowModels { id: controlFlowModel }
-    DataTypesModel { id: dataTypesModel }
-    Bitwise { id: bitWiseType }
-    LiteralConstants { id: literalConstants }
-    Loops { id: loops }
-    OverFlow { id: overflow }
+    Fundamentos { id: fundamentosModel }
+    ControlDeFlujo { id: controlDeFlujoModel }
+    EstructurasDeDatos { id: estructurasDeDatosModel }
+    Funciones { id: funcionesModel }
+    Poo { id: pooModel }
+    HerenciaYPolimorfismo { id: herenciaYPolimorfismoModel }
+    Friends { id: friendsModel }
+    ConstYMiembrosEstaticos { id: constYMiembrosEstaticosModel }
+    Namespaces { id: namespacesModel }
+    ManejoMemoria { id: manejoMemoriaModel }
+    OperadorSobrecarga { id: operadorSobrecargaModel }
+    PlantillasYGenericas { id: plantillasYGenericasModel }
+    Concepts { id: conceptsModel }
+    Semantics { id: semanticsModel }
+    FuncionesComoEntidades { id: funcionesComoEntidadesModel }
+    Iteradores { id: iteradoresModel }
+    StdAlgoritmos { id: stdAlgoritmosModel }
+    Corutinas { id: corutinasModel }
+
     FileReader { id: fileReader }
 
     property var filesMap: createFilesMap()
@@ -51,44 +64,103 @@ Window {
     function createFilesMap() {
         var map = {};
         var topics = [];
-        for (var i = 0; i < dataTypesModel.dataTypes.count; i++) {
-            var item = dataTypesModel.dataTypes.get(i);
+        console.log("===============createFilesMap==================");
+        for (var i = 0; i < fundamentosModel.fundamentosType.count; i++) {
+            var item = fundamentosModel.fundamentosType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Fundamentos/" + item.name + ".txt";
             topics.push(item.name);
         }
-
-        for (var j = 0; j < controlFlowModel.controlFlowTypes.count; j++) {
-            var item = controlFlowModel.controlFlowTypes.get(j);
+        for (var i = 0; i < controlDeFlujoModel.controlDeFlujoType.count; i++) {
+            var item = controlDeFlujoModel.controlDeFlujoType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Control de flujo/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < estructurasDeDatosModel.estructurasDeDatosType.count; i++) {
+            var item = estructurasDeDatosModel.estructurasDeDatosType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Estructuras de datos/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < funcionesModel.funcionesType.count; i++) {
+            var item = funcionesModel.funcionesType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Funciones/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < pooModel.pooType.count; i++) {
+            var item = pooModel.pooType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/POO/" + item.name + ".txt";
             topics.push(item.name);
         }
-
-        for (var j = 0; j < bitWiseType.bitWiseModel.count; j++) {
-            var item = bitWiseType.bitWiseModel.get(j);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/Bitwise-" + item.name + ".txt";
+        for (var i = 0; i < herenciaYPolimorfismoModel.herenciaYPolimorfismoType.count; i++) {
+            var item = herenciaYPolimorfismoModel.herenciaYPolimorfismoType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < friendsModel.friendsType.count; i++) {
+            var item = friendsModel.friendsType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Friends/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < constYMiembrosEstaticosModel.constYMiembrosEstaticosType.count; i++) {
+            var item = constYMiembrosEstaticosModel.constYMiembrosEstaticosType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Const y miembros estaticos/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < namespacesModel.namespacesType.count; i++) {
+            var item = namespacesModel.namespacesType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/namespaces/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < manejoMemoriaModel.manejoMemoriaType.count; i++) {
+            var item = manejoMemoriaModel.manejoMemoriaType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Manejo de memoria/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < operadorSobrecargaModel.operadorSobrecargaType.count; i++) {
+            var item = operadorSobrecargaModel.operadorSobrecargaType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Operador sobrecarga/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < plantillasYGenericasModel.plantillasYGenericasType.count; i++) {
+            var item = plantillasYGenericasModel.plantillasYGenericasType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Plantillas y genericas/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < conceptsModel.conceptsType.count; i++) {
+            var item = conceptsModel.conceptsType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Concepts/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < semanticsModel.semanticsType.count; i++) {
+            var item = semanticsModel.semanticsType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Semantics/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < funcionesComoEntidadesModel.funcionesComoEntidadesType.count; i++) {
+            var item = funcionesComoEntidadesModel.funcionesComoEntidadesType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Funciones como entidades/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < iteradoresModel.iteradoresType.count; i++) {
+            var item = iteradoresModel.iteradoresType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Iteradores/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < stdAlgoritmosModel.stdAlgoritmosType.count; i++) {
+            var item = stdAlgoritmosModel.stdAlgoritmosType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/StdAlgoritmos/" + item.name + ".txt";
+            topics.push(item.name);
+        }
+        for (var i = 0; i < corutinasModel.corutinasType.count; i++) {
+            var item = corutinasModel.corutinasType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Corutinas/" + item.name + ".txt";
             topics.push(item.name);
         }
 
-        for (var j = 0; j < literalConstants.literalConstantsType.count; j++) {
-            var item = literalConstants.literalConstantsType.get(j);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/LiteralAndConst-" + item.name + ".txt";
-            topics.push(item.name);
-        }
-
-        for (var j = 0; j < loops.loopsTypeModel.count; j++) {
-            var item = loops.loopsTypeModel.get(j);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/Loops-" + item.name + ".txt";
-            topics.push(item.name);
-        }
-
-        for (var j = 0; j < overflow.overFlowTypes.count; j++) {
-            var item = overflow.overFlowTypes.get(j);
-            map[item.name] = ":/Code/Assets/Code/CPlusPlus/OverflowAndUnderflow-" + item.name + ".txt";
-            topics.push(item.name);
-        }
 
         combinedTopics = topics;
+        console.log("=================================");
         for (var key in map) {
+            console.log("=================================");
             console.log(key, map[key]);
         }
         return map;

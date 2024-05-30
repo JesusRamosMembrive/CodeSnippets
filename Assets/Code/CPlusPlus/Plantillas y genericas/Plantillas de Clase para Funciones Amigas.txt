@@ -1,0 +1,254 @@
+<---EXPLANATION--->
+### Plantillas de Clase para Funciones Amigas en C++
+
+En C++, las funciones amigas permiten que ciertas funciones accedan a los miembros privados y protegidos de una clase. Cuando se combinan plantillas de clase con funciones amigas, se pueden crear clases y funciones amigas genéricas y flexibles. Esto es útil para definir operaciones que necesitan acceso directo a los datos internos de una clase plantilla.
+
+#### Definición y Uso de Funciones Amigas con Plantillas de Clase
+
+##### Plantillas de Clase con Funciones Amigas
+
+Las funciones amigas pueden ser declaradas dentro de una clase plantilla y también pueden ser plantillas. Hay dos enfoques principales: hacer que las funciones amigas sean plantillas independientes o hacer que sean miembros amigos de la clase plantilla.
+
+##### Ejemplo 1: Función Amiga Plantilla Independiente
+
+En este enfoque, la función amiga es una plantilla independiente y se declara amiga de la clase plantilla.
+
+###### Definición de la Clase Plantilla y Función Amiga
+
+```cpp
+#include <iostream>
+
+// Declaración adelantada de la clase plantilla
+template <typename T>
+class MiClase;
+
+// Definición de la función amiga plantilla
+template <typename T>
+void mostrar(const MiClase<T>& obj);
+
+// Definición de la clase plantilla
+template <typename T>
+class MiClase {
+private:
+    T valor;
+
+public:
+    MiClase(T v) : valor(v) {}
+
+    // Declarar la función plantilla como amiga
+    friend void mostrar<T>(const MiClase<T>& obj);
+};
+
+// Implementación de la función amiga plantilla
+template <typename T>
+void mostrar(const MiClase<T>& obj) {
+    std::cout << "Valor: " << obj.valor << std::endl;
+}
+
+int main() {
+    MiClase<int> obj(10);
+    mostrar(obj); // Llama a la función amiga
+
+    MiClase<std::string> obj2("Hola");
+    mostrar(obj2); // Llama a la función amiga
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `MiClase` es una clase plantilla con un miembro privado `valor`.
+- `mostrar` es una función plantilla que se declara amiga de `MiClase` y puede acceder a su miembro privado `valor`.
+
+##### Ejemplo 2: Función Amiga Como Miembro de la Clase Plantilla
+
+En este enfoque, la función amiga se define dentro de la clase plantilla.
+
+###### Definición de la Clase Plantilla y Función Amiga
+
+```cpp
+#include <iostream>
+
+// Definición de la clase plantilla
+template <typename T>
+class MiClase {
+private:
+    T valor;
+
+public:
+    MiClase(T v) : valor(v) {}
+
+    // Definición de la función amiga dentro de la clase plantilla
+    friend void mostrar(const MiClase& obj) {
+        std::cout << "Valor: " << obj.valor << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int> obj(10);
+    mostrar(obj); // Llama a la función amiga
+
+    MiClase<std::string> obj2("Hola");
+    mostrar(obj2); // Llama a la función amiga
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `mostrar` se define como una función amiga dentro de la clase plantilla `MiClase`.
+- La función amiga puede acceder a los miembros privados de `MiClase`.
+
+#### Ejemplo Avanzado con Plantillas de Clase y Funciones Amigas Plantilla
+
+##### Definición de la Clase Plantilla y Función Amiga Plantilla
+
+```cpp
+#include <iostream>
+
+// Declaración adelantada de la clase plantilla
+template <typename T, typename U>
+class MiClase;
+
+// Definición de la función amiga plantilla
+template <typename T, typename U>
+void mostrar(const MiClase<T, U>& obj);
+
+// Definición de la clase plantilla
+template <typename T, typename U>
+class MiClase {
+private:
+    T valor1;
+    U valor2;
+
+public:
+    MiClase(T v1, U v2) : valor1(v1), valor2(v2) {}
+
+    // Declarar la función plantilla como amiga
+    friend void mostrar<T, U>(const MiClase<T, U>& obj);
+};
+
+// Implementación de la función amiga plantilla
+template <typename T, typename U>
+void mostrar(const MiClase<T, U>& obj) {
+    std::cout << "Valor1: " << obj.valor1 << ", Valor2: " << obj.valor2 << std::endl;
+}
+
+int main() {
+    MiClase<int, double> obj(10, 20.5);
+    mostrar(obj); // Llama a la función amiga
+
+    MiClase<std::string, int> obj2("Hola", 42);
+    mostrar(obj2); // Llama a la función amiga
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `MiClase` es una clase plantilla que acepta dos tipos genéricos, `T` y `U`.
+- `mostrar` es una función plantilla que se declara amiga de `MiClase` y puede acceder a sus miembros privados `valor1` y `valor2`.
+
+### Consideraciones al Usar Plantillas de Clase con Funciones Amigas
+
+1. **Declaraciones Adelantadas:** Es importante declarar las funciones amigas plantillas antes de definir la clase plantilla para asegurar que el compilador las reconozca como amigas.
+2. **Especialización:** Las funciones amigas pueden especializarse para manejar casos específicos, proporcionando implementaciones adaptadas a tipos concretos.
+3. **Acceso a Miembros Privados:** Las funciones amigas tienen acceso a los miembros privados y protegidos de la clase, lo que puede ser útil para realizar operaciones que requieren acceso directo a los datos internos.
+
+### Ventajas de Usar Plantillas de Clase con Funciones Amigas
+
+1. **Flexibilidad:** Permiten definir operaciones genéricas que pueden trabajar con múltiples tipos.
+2. **Reutilización del Código:** Facilitan la reutilización del código al permitir que las funciones amigas trabajen con diferentes instancias de la clase plantilla.
+3. **Modularidad:** Mejoran la modularidad del código al separar la lógica de acceso a los datos internos de la clase en funciones amigas.
+
+### Conclusión
+
+Las plantillas de clase para funciones amigas en C++ son una herramienta poderosa para crear clases y funciones genéricas y flexibles. Permiten definir operaciones que requieren acceso directo a los miembros privados de una clase plantilla, facilitando la creación de código reutilizable y modular. Comprender cómo declarar y definir funciones amigas en el contexto de plantillas de clase es esencial para aprovechar al máximo las capacidades de C++ en el diseño orientado a objetos.
+<---FILES--->
+Plantillas de Clase con Funciones Amigas
+Plantillas de Clase con Funciones Amigas Result
+Ejemplo 1: Función Amiga Plantilla Independiente
+Ejemplo 1: Función Amiga Plantilla Independiente Result
+Definición de la Clase Plantilla y Función Amiga
+Definición de la Clase Plantilla y Función Amiga Result
+Ejemplo 2: Función Amiga Como Miembro de la Clase Plantilla
+Ejemplo 2: Función Amiga Como Miembro de la Clase Plantilla Result
+Definición de la Clase Plantilla y Función Amiga Plantilla
+Definición de la Clase Plantilla y Función Amiga Plantilla Result
+<---Plantillas de Clase con Funciones Amigas--->
+<---Plantillas de Clase con Funciones Amigas Result--->
+<---Ejemplo 1: Función Amiga Plantilla Independiente--->
+<---Ejemplo 1: Función Amiga Plantilla Independiente Result--->
+<---Definición de la Clase Plantilla y Función Amiga--->
+```cpp
+#include <iostream>
+
+// Definición de la clase plantilla
+template <typename T>
+class MiClase {
+private:
+    T valor;
+
+public:
+    MiClase(T v) : valor(v) {}
+
+    // Definición de la función amiga dentro de la clase plantilla
+    friend void mostrar(const MiClase& obj) {
+        std::cout << "Valor: " << obj.valor << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int> obj(10);
+    mostrar(obj); // Llama a la función amiga
+
+    MiClase<std::string> obj2("Hola");
+    mostrar(obj2); // Llama a la función amiga
+
+    return 0;
+}
+<---Definición de la Clase Plantilla y Función Amiga Result--->
+<---Ejemplo 2: Función Amiga Como Miembro de la Clase Plantilla--->
+<---Ejemplo 2: Función Amiga Como Miembro de la Clase Plantilla Result--->
+<---Definición de la Clase Plantilla y Función Amiga Plantilla--->
+```cpp
+#include <iostream>
+
+// Declaración adelantada de la clase plantilla
+template <typename T, typename U>
+class MiClase;
+
+// Definición de la función amiga plantilla
+template <typename T, typename U>
+void mostrar(const MiClase<T, U>& obj);
+
+// Definición de la clase plantilla
+template <typename T, typename U>
+class MiClase {
+private:
+    T valor1;
+    U valor2;
+
+public:
+    MiClase(T v1, U v2) : valor1(v1), valor2(v2) {}
+
+    // Declarar la función plantilla como amiga
+    friend void mostrar<T, U>(const MiClase<T, U>& obj);
+};
+
+// Implementación de la función amiga plantilla
+template <typename T, typename U>
+void mostrar(const MiClase<T, U>& obj) {
+    std::cout << "Valor1: " << obj.valor1 << ", Valor2: " << obj.valor2 << std::endl;
+}
+
+int main() {
+    MiClase<int, double> obj(10, 20.5);
+    mostrar(obj); // Llama a la función amiga
+
+    MiClase<std::string, int> obj2("Hola", 42);
+    mostrar(obj2); // Llama a la función amiga
+
+    return 0;
+}
+<---Definición de la Clase Plantilla y Función Amiga Plantilla Result--->

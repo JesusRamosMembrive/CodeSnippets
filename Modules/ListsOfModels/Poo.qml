@@ -1,0 +1,24 @@
+import QtQuick
+Item{
+property ListModel pooType: ListModel{
+
+ListElement{ name: "Clases Sanitizadas"}
+ListElement{ name: "Constructor de Copia"}
+ListElement{ name: "Constructor de Movimiento"}
+ListElement{ name: "Constructores Explicitos"}
+ListElement{ name: "Constructores"}
+ListElement{ name: "Conversiones Implicitas en Funciones y Paso de Argumentos"}
+ListElement{ name: "Destructor"}
+ListElement{ name: "Destructores"}
+ListElement{ name: "El Puntero this"}
+ListElement{ name: "Encapsulamiento"}
+ListElement{ name: "Funciones con Valor de Retorno y Sin Valor de Retorno"}
+ListElement{ name: "Funciones Miembro Estaticas"}
+ListElement{ name: "Funciones que Devuelven Referencias o Punteros"}
+ListElement{ name: "Miembros Constantes en una Clase"}
+ListElement{ name: "Objetos Constantes"}
+ListElement{ name: "Programacion Orientada a Objetos Clases y Objetos"}
+ListElement{ name: "Setters y Getters en una Clase"}
+ListElement{ name: "Sobrecarga de Operadores"}
+}
+}
