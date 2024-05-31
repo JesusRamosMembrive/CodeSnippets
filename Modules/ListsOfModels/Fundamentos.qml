@@ -2,7 +2,7 @@ import QtQuick
 Item{
 property ListModel fundamentosType: ListModel{
 
-ListElement{ name: "Alcance de las Variables (Scope)"}
+ListElement{ name: "Alcance de las Variables"}
 ListElement{ name: "Constexpr y Constinit"}
 ListElement{ name: "Entrada y Salida de Datos"}
 ListElement{ name: "Estructura de un Programa"}

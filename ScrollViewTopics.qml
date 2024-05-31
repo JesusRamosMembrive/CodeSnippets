@@ -154,7 +154,7 @@ ScrollView {
             id: friendsButton
             width: widthButtons
             height: 40
-            buttonText: "Herencia y polimorfismo"
+            buttonText: "Friends"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 

@@ -20,7 +20,6 @@
         <file>Assets/Code/CPlusPlus/Funciones como entidades/Callbacks.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones como entidades/Funtores con Lambdas.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones como entidades/Funtores.txt</file>
-        <file>Assets/Code/CPlusPlus/Fundamentos/Alcance de las Variables (Scope).txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Constexpr y Constinit.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Entrada y Salida de Datos.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Estructura de un Programa.txt</file>
@@ -184,5 +183,6 @@
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase.txt</file>
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas en Funciones con Multiples Tipos de Datos.txt</file>
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Uso de Plantillas en Funciones.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Alcance de las Variables.txt</file>
     </qresource>
 </RCC>
