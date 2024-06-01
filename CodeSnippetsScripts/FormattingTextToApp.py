@@ -39,8 +39,12 @@ def create_files_section(file_map: dict) -> str:
         files_header += key + "\n"
 
     if not files_header:
+<<<<<<< Updated upstream
         files_header = "<---FILES--->" + "\n" + "NA" + "\n"
 
+=======
+        files_header = "<---FILES--->" + "\n" + "No files found." + "\n"
+>>>>>>> Stashed changes
     return files_header
 
 
@@ -62,7 +66,11 @@ def form_final_text(explanation: str, files: str, examples: str) -> str:
 def save_final_text(final_text: str, title: str) -> None:
     """Save the final text to a file with the title provided."""
     # title = title.replace(" ", "_")
+<<<<<<< Updated upstream
     with open(fr"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\Code/{title}.txt", "w",
+=======
+    with open(fr"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code\Concepts/{title}.txt", "w",
+>>>>>>> Stashed changes
               encoding='utf-8') as f:
         f.write(final_text)
 
@@ -173,7 +181,27 @@ def listar_archivos_en_carpetas(ruta_base, carpetas):
     return archivos_por_carpeta
 
 
+def list_all_files(folder_path: str) -> list:
+    """List all files in the given folder."""
+    files_list = []
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            files_list.append(os.path.join(file))
+    return files_list
+
+
+def ensure_folder_exists(folder_path: str) -> None:
+    """Check if a folder exists, and create it if it does not."""
+    print(f"Checking if folder '{folder_path}' exists.")
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print(f"Folder '{folder_path}' created.")
+    else:
+        print(f"Folder '{folder_path}' already exists.")
+
+
 def main():
+<<<<<<< Updated upstream
     text_to_analyze: str = open_txt_file("textToTransform.txt")
 
     extraer_texto_entre_users(text_to_analyze)
@@ -186,6 +214,29 @@ def main():
     dict_of_topics = listar_archivos_en_carpetas(
         r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\Code", folders)
     create_QML_file(dict_of_topics)
+=======
+    files = list_all_files(r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TextToProcess")
+
+    for file in files:
+        file = file.split(".txt")[0]
+
+        print(f"File: {file}")
+        ensure_folder_exists(rf"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code\{file}")
+
+
+    # text_to_analyze: str = open_txt_file("conceptsToProcess.txt")
+    #
+    # extraer_texto_entre_users(text_to_analyze)
+    # counter: int = 0
+    # for index, text in enumerate(extraer_texto_entre_users(text_to_analyze)):
+    #     print(f"Text {index}")
+    #     create_a_file(text)
+    #     counter += index
+    # folders = listar_carpetas(r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code")
+    # dict_of_topics = listar_archivos_en_carpetas(
+    #     r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code", folders)
+    # create_QML_file(dict_of_topics)
+>>>>>>> Stashed changes
 
 
 if __name__ == "__main__":
