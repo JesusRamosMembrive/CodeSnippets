@@ -1,7 +1,7 @@
-from dataclasses import dataclass, field
 import re
-
 import unicodedata
+from dataclasses import dataclass, field
+import FolderAndPathsUtils as fpu
 
 
 @dataclass
@@ -78,15 +78,18 @@ class TextProcessor:
 
     def __get_file_title(self, file_text: str) -> str:
         """Get the title of the file."""
+        # print(f"File text: {file_text}")
         try:
             for line in file_text.split("\n"):
+                print(f"Line: {line}")
                 title: str = line.split("###")[1].strip()
                 self.__clean_file_name(title)
+                break
         except Exception as e:
-            print(e)
+            # print(e)
             return "Untitled"
 
-    def __extract_text_between_users(self, content: str) -> None:
+    def __extract_text_between_users(self, content: str) -> list[str]:
         block = content.split("User")
 
         for internal_block in block:
@@ -95,20 +98,40 @@ class TextProcessor:
                 if len(parts) > 1:
                     goal_text = parts[1].strip()
                     self.extracted_text.append(goal_text)
+        return self.extracted_text
 
     def set_path_to_save_final_text(self, path: str) -> None:
         self.path_to_save_final_text = path
 
     def create_a_file_algorithm(self, text_to_analyze: str) -> None:
         """Create a file with the explanation, files, and examples."""
-        self.__get_file_title(text_to_analyze)
-        self.__create_explanation_section(text_to_analyze)
-        self.__create_file_dict(text_to_analyze)
-        self.__create_files_section()
-        self.__create_examples_section()
-        self.__form_final_text()
-        self.__save_final_text()
+        counter: int = 0
+
+        for index, text_extracted in enumerate(self.__extract_text_between_users(text_to_analyze)):
+            title = self.__get_file_title(text_extracted)
+            if title == "Untitled":
+                print(f"Skipping file creation for extracted text {index} due to untitled")
+                continue
+            self.__create_explanation_section(text_extracted)
+            self.__create_file_dict(text_extracted)
+            self.__create_files_section()
+            self.__create_examples_section()
+            self.__form_final_text()
+            self.__save_final_text()
+            counter += 1
 
     @staticmethod
-    def generate_file(self):
+    def generate_file(text_to_analyze: str, path: str) -> None:
         processor = TextProcessor()
+        processor.set_path_to_save_final_text(path)
+        processor.create_a_file_algorithm(text_to_analyze)
+
+
+if __name__ == "__main__":
+    text_to_analyze: str = fpu.open_txt_file(
+        r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\BackUp/Amigas.txt")
+    path = r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TestZone"
+
+    processor = TextProcessor()
+    processor.set_path_to_save_final_text(path)
+    processor.create_a_file_algorithm(text_to_analyze)

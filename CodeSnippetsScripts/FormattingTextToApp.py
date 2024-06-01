@@ -1,14 +1,14 @@
 import os
 import re
 import unicodedata
-import ProcessText
-
-
-
-
+from ProcessText import TextProcessor
+import FolderAndPathsUtils as fpu
 
 
 def main():
+    text_to_analyze: str = fpu.open_txt_file(r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TextToProcess/Amigas.txt")
+    path = r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TestZone"
+    TextProcessor().generate_file(text_to_analyze, path)
 
     # files = list_all_files(r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TextToProcess")
     #
@@ -18,8 +18,6 @@ def main():
     #     print(f"File: {file}")
     #     ensure_folder_exists(rf"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code\{file}")
 
-
-    # text_to_analyze: str = open_txt_file("conceptsToProcess.txt")
     #
     # extraer_texto_entre_users(text_to_analyze)
     # counter: int = 0
