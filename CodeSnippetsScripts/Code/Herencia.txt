@@ -1,41 +1,41 @@
 <---EXPLANATION--->
 ### Herencia en C++
 
-La herencia es uno de los pilares fundamentales de la programación orientada a objetos (POO). En C++, la herencia permite crear nuevas clases a partir de clases existentes, lo que facilita la reutilización del código y la creación de jerarquías de clases.
+La herencia es uno de los pilares fundamentales de la programaciÃ³n orientada a objetos (POO). En C++, la herencia permite crear nuevas clases a partir de clases existentes, lo que facilita la reutilizaciÃ³n del cÃ³digo y la creaciÃ³n de jerarquÃ­as de clases.
 
-#### Definición de Herencia
+#### DefiniciÃ³n de Herencia
 
-La herencia es un mecanismo mediante el cual una clase (llamada clase derivada o subclase) puede heredar atributos y métodos de otra clase (llamada clase base o superclase). La clase derivada puede extender o modificar el comportamiento de la clase base.
+La herencia es un mecanismo mediante el cual una clase (llamada clase derivada o subclase) puede heredar atributos y mÃ©todos de otra clase (llamada clase base o superclase). La clase derivada puede extender o modificar el comportamiento de la clase base.
 
-- **Clase Base (Superclase):** La clase original que proporciona atributos y métodos a otras clases.
-- **Clase Derivada (Subclase):** La nueva clase que hereda atributos y métodos de la clase base.
+- **Clase Base (Superclase):** La clase original que proporciona atributos y mÃ©todos a otras clases.
+- **Clase Derivada (Subclase):** La nueva clase que hereda atributos y mÃ©todos de la clase base.
 
 #### Ventajas de la Herencia
 
-1. **Reutilización de Código:** La herencia permite reutilizar el código existente, lo que reduce la duplicación de código y facilita el mantenimiento.
-2. **Extensibilidad:** Las clases derivadas pueden añadir nuevas funcionalidades o modificar las existentes sin cambiar el código de la clase base.
-3. **Jerarquía y Organización:** La herencia permite organizar el código en jerarquías lógicas, facilitando la comprensión y gestión del mismo.
+1. **ReutilizaciÃ³n de CÃ³digo:** La herencia permite reutilizar el cÃ³digo existente, lo que reduce la duplicaciÃ³n de cÃ³digo y facilita el mantenimiento.
+2. **Extensibilidad:** Las clases derivadas pueden aÃ±adir nuevas funcionalidades o modificar las existentes sin cambiar el cÃ³digo de la clase base.
+3. **JerarquÃ­a y OrganizaciÃ³n:** La herencia permite organizar el cÃ³digo en jerarquÃ­as lÃ³gicas, facilitando la comprensiÃ³n y gestiÃ³n del mismo.
 4. **Polimorfismo:** La herencia facilita el uso del polimorfismo, permitiendo que una misma interfaz se utilice para diferentes tipos de objetos.
 
-#### Sintaxis Básica de la Herencia
+#### Sintaxis BÃ¡sica de la Herencia
 
-La sintaxis básica para definir una clase derivada en C++ es la siguiente:
+La sintaxis bÃ¡sica para definir una clase derivada en C++ es la siguiente:
 
 ```cpp
 class ClaseBase {
 public:
-    // Atributos y métodos de la clase base
+    // Atributos y mÃ©todos de la clase base
 };
 
 class ClaseDerivada : public ClaseBase {
 public:
-    // Atributos y métodos adicionales de la clase derivada
+    // Atributos y mÃ©todos adicionales de la clase derivada
 };
 ```
 
-- **`public`** indica que todos los miembros públicos de la clase base son accesibles como públicos en la clase derivada. Existen otros modos de herencia (`protected` y `private`), pero `public` es el más común.
+- **`public`** indica que todos los miembros pÃºblicos de la clase base son accesibles como pÃºblicos en la clase derivada. Existen otros modos de herencia (`protected` y `private`), pero `public` es el mÃ¡s comÃºn.
 
-##### Ejemplo Básico de Herencia
+##### Ejemplo BÃ¡sico de Herencia
 
 ```cpp
 #include <iostream>
@@ -44,35 +44,35 @@ using namespace std;
 class Animal {
 public:
     void comer() {
-        cout << "El animal está comiendo." << endl;
+        cout << "El animal estÃ¡ comiendo." << endl;
     }
 };
 
 class Perro : public Animal {
 public:
     void ladrar() {
-        cout << "El perro está ladrando." << endl;
+        cout << "El perro estÃ¡ ladrando." << endl;
     }
 };
 
 int main() {
     Perro miPerro;
-    miPerro.comer(); // Método heredado de la clase base
-    miPerro.ladrar(); // Método de la clase derivada
+    miPerro.comer(); // MÃ©todo heredado de la clase base
+    miPerro.ladrar(); // MÃ©todo de la clase derivada
 
     return 0;
 }
 ```
 
 En este ejemplo:
-- `Animal` es la clase base que define un método `comer`.
-- `Perro` es la clase derivada que hereda de `Animal` y añade un método `ladrar`.
+- `Animal` es la clase base que define un mÃ©todo `comer`.
+- `Perro` es la clase derivada que hereda de `Animal` y aÃ±ade un mÃ©todo `ladrar`.
 
 #### Tipos de Herencia
 
-1. **Herencia Pública (`public`):** Los miembros públicos y protegidos de la clase base se convierten en públicos y protegidos en la clase derivada, respectivamente.
-2. **Herencia Protegida (`protected`):** Los miembros públicos y protegidos de la clase base se convierten en protegidos en la clase derivada.
-3. **Herencia Privada (`private`):** Los miembros públicos y protegidos de la clase base se convierten en privados en la clase derivada.
+1. **Herencia PÃºblica (`public`):** Los miembros pÃºblicos y protegidos de la clase base se convierten en pÃºblicos y protegidos en la clase derivada, respectivamente.
+2. **Herencia Protegida (`protected`):** Los miembros pÃºblicos y protegidos de la clase base se convierten en protegidos en la clase derivada.
+3. **Herencia Privada (`private`):** Los miembros pÃºblicos y protegidos de la clase base se convierten en privados en la clase derivada.
 
 ##### Ejemplo de Diferentes Modos de Herencia
 
@@ -125,17 +125,17 @@ int main() {
 }
 ```
 
-En este ejemplo, se muestra cómo los diferentes modos de herencia afectan la accesibilidad de los miembros de la clase base en la clase derivada.
+En este ejemplo, se muestra cÃ³mo los diferentes modos de herencia afectan la accesibilidad de los miembros de la clase base en la clase derivada.
 
-### Conclusión
+### ConclusiÃ³n
 
-La herencia es una característica poderosa de la programación orientada a objetos que permite crear nuevas clases basadas en clases existentes. Ofrece numerosas ventajas, como la reutilización de código, la extensibilidad y el uso de polimorfismo. La sintaxis de herencia en C++ es sencilla y permite definir jerarquías claras y organizadas, facilitando el desarrollo y mantenimiento del software. Entender los diferentes modos de herencia y cómo afectan la accesibilidad de los miembros es crucial para aprovechar al máximo esta característica.
+La herencia es una caracterÃ­stica poderosa de la programaciÃ³n orientada a objetos que permite crear nuevas clases basadas en clases existentes. Ofrece numerosas ventajas, como la reutilizaciÃ³n de cÃ³digo, la extensibilidad y el uso de polimorfismo. La sintaxis de herencia en C++ es sencilla y permite definir jerarquÃ­as claras y organizadas, facilitando el desarrollo y mantenimiento del software. Entender los diferentes modos de herencia y cÃ³mo afectan la accesibilidad de los miembros es crucial para aprovechar al mÃ¡ximo esta caracterÃ­stica.
 <---FILES--->
-Ejemplo Básico de Herencia
-Ejemplo Básico de Herencia Result
+Ejemplo BÃ¡sico de Herencia
+Ejemplo BÃ¡sico de Herencia Result
 Ejemplo de Diferentes Modos de Herencia
 Ejemplo de Diferentes Modos de Herencia Result
-<---Ejemplo Básico de Herencia--->
+<---Ejemplo BÃ¡sico de Herencia--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -143,25 +143,25 @@ using namespace std;
 class Animal {
 public:
     void comer() {
-        cout << "El animal está comiendo." << endl;
+        cout << "El animal estÃ¡ comiendo." << endl;
     }
 };
 
 class Perro : public Animal {
 public:
     void ladrar() {
-        cout << "El perro está ladrando." << endl;
+        cout << "El perro estÃ¡ ladrando." << endl;
     }
 };
 
 int main() {
     Perro miPerro;
-    miPerro.comer(); // Método heredado de la clase base
-    miPerro.ladrar(); // Método de la clase derivada
+    miPerro.comer(); // MÃ©todo heredado de la clase base
+    miPerro.ladrar(); // MÃ©todo de la clase derivada
 
     return 0;
 }
-<---Ejemplo Básico de Herencia Result--->
+<---Ejemplo BÃ¡sico de Herencia Result--->
 <---Ejemplo de Diferentes Modos de Herencia--->
 ```cpp
 #include <iostream>

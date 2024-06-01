@@ -1,22 +1,22 @@
 <---EXPLANATION--->
 ### Funtores con Lambdas en C++
 
-Las expresiones lambda en C++ son una forma concisa y poderosa de crear funtores. Introducidas en C++11, las lambdas permiten definir funciones anÛnimas en lÌnea que pueden capturar variables del ·mbito circundante. Son especialmente ˙tiles en algoritmos de la biblioteca est·ndar y en casos donde se necesitan funciones ligeras y r·pidas.
+Las expresiones lambda en C++ son una forma concisa y poderosa de crear funtores. Introducidas en C++11, las lambdas permiten definir funciones an√≥nimas en l√≠nea que pueden capturar variables del √°mbito circundante. Son especialmente √∫tiles en algoritmos de la biblioteca est√°ndar y en casos donde se necesitan funciones ligeras y r√°pidas.
 
-#### DefiniciÛn y Uso de Lambdas
+#### Definici√≥n y Uso de Lambdas
 
-Una lambda en C++ se define utilizando la siguiente sintaxis b·sica:
+Una lambda en C++ se define utilizando la siguiente sintaxis b√°sica:
 
 ```cpp
 [captures](parameters) -> return_type { body }
 ```
 
-- **captures:** Especifica quÈ variables del ·mbito circundante se capturan y cÛmo (por valor `[=]` o por referencia `[&]`).
-- **parameters:** Lista de par·metros de la lambda (puede ser omitida si no hay par·metros).
-- **return_type:** Tipo de retorno de la lambda (puede deducirse autom·ticamente y, por tanto, omitirse en la mayorÌa de los casos).
+- **captures:** Especifica qu√© variables del √°mbito circundante se capturan y c√≥mo (por valor `[=]` o por referencia `[&]`).
+- **parameters:** Lista de par√°metros de la lambda (puede ser omitida si no hay par√°metros).
+- **return_type:** Tipo de retorno de la lambda (puede deducirse autom√°ticamente y, por tanto, omitirse en la mayor√≠a de los casos).
 - **body:** El cuerpo de la lambda.
 
-##### Ejemplo B·sico de Lambda
+##### Ejemplo B√°sico de Lambda
 
 ```cpp
 #include <iostream>
@@ -37,7 +37,7 @@ En este ejemplo:
 
 #### Captura de Variables en Lambdas
 
-Las lambdas pueden capturar variables del ·mbito circundante, lo que las hace muy flexibles.
+Las lambdas pueden capturar variables del √°mbito circundante, lo que las hace muy flexibles.
 
 ##### Ejemplo de Captura por Valor y por Referencia
 
@@ -69,9 +69,9 @@ En este ejemplo:
 - `capturarPorValor` captura `x` y `y` por valor.
 - `capturarPorReferencia` captura `x` y `y` por referencia, permitiendo modificarlos.
 
-#### Uso de Lambdas en Algoritmos de la Biblioteca Est·ndar
+#### Uso de Lambdas en Algoritmos de la Biblioteca Est√°ndar
 
-Las lambdas son especialmente ˙tiles en combinaciÛn con algoritmos de la biblioteca est·ndar como `std::sort`, `std::for_each`, `std::transform`, etc.
+Las lambdas son especialmente √∫tiles en combinaci√≥n con algoritmos de la biblioteca est√°ndar como `std::sort`, `std::for_each`, `std::transform`, etc.
 
 ##### Ejemplo con `std::sort`
 
@@ -125,11 +125,11 @@ int main() {
 En este ejemplo:
 - Se utiliza una lambda para multiplicar cada elemento del vector por 2 en `std::for_each`.
 
-#### Lambdas con Par·metros de Plantilla
+#### Lambdas con Par√°metros de Plantilla
 
-Las lambdas pueden ser genÈricas, utilizando la sintaxis de plantillas.
+Las lambdas pueden ser gen√©ricas, utilizando la sintaxis de plantillas.
 
-##### Ejemplo de Lambda GenÈrica
+##### Ejemplo de Lambda Gen√©rica
 
 ```cpp
 #include <iostream>
@@ -149,23 +149,23 @@ int main() {
 ```
 
 En este ejemplo:
-- `multiplicar` es una lambda genÈrica que puede multiplicar valores de cualquier tipo compatible.
+- `multiplicar` es una lambda gen√©rica que puede multiplicar valores de cualquier tipo compatible.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las lambdas en C++ son una herramienta poderosa para crear funtores ligeros y flexibles. Permiten definir funciones anÛnimas en lÌnea, capturar variables del ·mbito circundante y utilizarlas en algoritmos de la biblioteca est·ndar. Adem·s, las lambdas pueden ser genÈricas, lo que aumenta su versatilidad. Comprender y utilizar lambdas adecuadamente es esencial para aprovechar al m·ximo las capacidades de C++ moderno, facilitando la escritura de cÛdigo m·s limpio y eficiente.
+Las lambdas en C++ son una herramienta poderosa para crear funtores ligeros y flexibles. Permiten definir funciones an√≥nimas en l√≠nea, capturar variables del √°mbito circundante y utilizarlas en algoritmos de la biblioteca est√°ndar. Adem√°s, las lambdas pueden ser gen√©ricas, lo que aumenta su versatilidad. Comprender y utilizar lambdas adecuadamente es esencial para aprovechar al m√°ximo las capacidades de C++ moderno, facilitando la escritura de c√≥digo m√°s limpio y eficiente.
 <---FILES--->
-Ejemplo B·sico de Lambda
-Ejemplo B·sico de Lambda Result
+Ejemplo B√°sico de Lambda
+Ejemplo B√°sico de Lambda Result
 Ejemplo de Captura por Valor y por Referencia
 Ejemplo de Captura por Valor y por Referencia Result
 Ejemplo con `std::sort`
 Ejemplo con `std::sort` Result
 Ejemplo con `std::for_each`
 Ejemplo con `std::for_each` Result
-Ejemplo de Lambda GenÈrica
-Ejemplo de Lambda GenÈrica Result
-<---Ejemplo B·sico de Lambda--->
+Ejemplo de Lambda Gen√©rica
+Ejemplo de Lambda Gen√©rica Result
+<---Ejemplo B√°sico de Lambda--->
 ```cpp
 #include <iostream>
 
@@ -178,7 +178,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico de Lambda Result--->
+<---Ejemplo B√°sico de Lambda Result--->
 <---Ejemplo de Captura por Valor y por Referencia--->
 ```cpp
 #include <iostream>
@@ -245,7 +245,7 @@ int main() {
     return 0;
 }
 <---Ejemplo con `std::for_each` Result--->
-<---Ejemplo de Lambda GenÈrica--->
+<---Ejemplo de Lambda Gen√©rica--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -261,4 +261,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Lambda GenÈrica Result--->
+<---Ejemplo de Lambda Gen√©rica Result--->

@@ -1,31 +1,31 @@
 <---EXPLANATION--->
-### Plantillas Vari醖icas en C++
+### Plantillas Vari谩dicas en C++
 
-Las plantillas vari醖icas son una caracter韘tica avanzada de C++ que permite definir funciones y clases que pueden aceptar un n鷐ero variable de par醡etros. Introducidas en C++11, las plantillas vari醖icas facilitan la creaci髇 de c骴igo gen閞ico y flexible sin necesidad de sobrecarga de funciones o m鷏tiples especializaciones de plantillas.
+Las plantillas vari谩dicas son una caracter铆stica avanzada de C++ que permite definir funciones y clases que pueden aceptar un n煤mero variable de par谩metros. Introducidas en C++11, las plantillas vari谩dicas facilitan la creaci贸n de c贸digo gen茅rico y flexible sin necesidad de sobrecarga de funciones o m煤ltiples especializaciones de plantillas.
 
-#### Definici髇 y Sintaxis
+#### Definici贸n y Sintaxis
 
-Las plantillas vari醖icas utilizan el operador de tres puntos (`...`) para indicar un n鷐ero variable de par醡etros. Pueden aplicarse tanto a plantillas de funciones como a plantillas de clases.
+Las plantillas vari谩dicas utilizan el operador de tres puntos (`...`) para indicar un n煤mero variable de par谩metros. Pueden aplicarse tanto a plantillas de funciones como a plantillas de clases.
 
-##### Plantillas de Funciones Vari醖icas
+##### Plantillas de Funciones Vari谩dicas
 
-Una plantilla de funci髇 vari醖ica permite definir una funci髇 que puede aceptar un n鷐ero arbitrario de argumentos.
+Una plantilla de funci贸n vari谩dica permite definir una funci贸n que puede aceptar un n煤mero arbitrario de argumentos.
 
 ###### Sintaxis
 
 ```cpp
 template <typename... Args>
 void funcionVariadica(Args... args) {
-    // Implementaci髇
+    // Implementaci贸n
 }
 ```
 
-###### Ejemplo B醩ico
+###### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
 
-// Plantilla de funci髇 vari醖ica
+// Plantilla de funci贸n vari谩dica
 template <typename... Args>
 void imprimir(Args... args) {
     (std::cout << ... << args) << std::endl;
@@ -38,29 +38,29 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `imprimir` acepta un n鷐ero variable de argumentos de cualquier tipo.
-- La expresi髇 `(std::cout << ... << args)` es una expansi髇 de plegado que imprime cada argumento en `std::cout`.
+- La funci贸n `imprimir` acepta un n煤mero variable de argumentos de cualquier tipo.
+- La expresi贸n `(std::cout << ... << args)` es una expansi贸n de plegado que imprime cada argumento en `std::cout`.
 
-##### Plantillas de Clases Vari醖icas
+##### Plantillas de Clases Vari谩dicas
 
-Una plantilla de clase vari醖ica permite definir una clase que puede aceptar un n鷐ero variable de par醡etros de plantilla.
+Una plantilla de clase vari谩dica permite definir una clase que puede aceptar un n煤mero variable de par谩metros de plantilla.
 
 ###### Sintaxis
 
 ```cpp
 template <typename... Args>
 class ClaseVariadica {
-    // Implementaci髇
+    // Implementaci贸n
 };
 ```
 
-###### Ejemplo B醩ico
+###### Ejemplo B谩sico
 
 ```cpp
 #include <tuple>
 #include <iostream>
 
-// Plantilla de clase vari醖ica
+// Plantilla de clase vari谩dica
 template <typename... Args>
 class MiClase {
     std::tuple<Args...> datos; // Almacena los argumentos en un tuple
@@ -87,14 +87,14 @@ int main() {
 ```
 
 En este ejemplo:
-- La clase `MiClase` acepta un n鷐ero variable de par醡etros de plantilla y los almacena en un `std::tuple`.
-- La funci髇 `imprimir` imprime los valores almacenados en el `tuple`.
+- La clase `MiClase` acepta un n煤mero variable de par谩metros de plantilla y los almacena en un `std::tuple`.
+- La funci贸n `imprimir` imprime los valores almacenados en el `tuple`.
 
-#### Expansi髇 de Plantillas Vari醖icas
+#### Expansi贸n de Plantillas Vari谩dicas
 
-La expansi髇 de plantillas vari醖icas permite desempaquetar los par醡etros y aplicar operaciones sobre ellos. Las expansiones pueden realizarse en diferentes contextos, como llamadas a funciones, inicializaci髇 de estructuras, y m醩.
+La expansi贸n de plantillas vari谩dicas permite desempaquetar los par谩metros y aplicar operaciones sobre ellos. Las expansiones pueden realizarse en diferentes contextos, como llamadas a funciones, inicializaci贸n de estructuras, y m谩s.
 
-##### Ejemplo de Expansi髇 en Funciones
+##### Ejemplo de Expansi贸n en Funciones
 
 ```cpp
 #include <iostream>
@@ -106,7 +106,7 @@ void imprimirUno(T t) {
 
 template <typename... Args>
 void imprimir(Args... args) {
-    (imprimirUno(args), ...); // Expansi髇 de plegado usando coma
+    (imprimirUno(args), ...); // Expansi贸n de plegado usando coma
     std::cout << std::endl;
 }
 
@@ -117,9 +117,9 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `imprimir` llama a `imprimirUno` para cada argumento utilizando una expansi髇 de plegado con la coma.
+- La funci贸n `imprimir` llama a `imprimirUno` para cada argumento utilizando una expansi贸n de plegado con la coma.
 
-##### Ejemplo de Expansi髇 en Constructores
+##### Ejemplo de Expansi贸n en Constructores
 
 ```cpp
 #include <tuple>
@@ -151,39 +151,39 @@ int main() {
 ```
 
 En este ejemplo:
-- La clase `MiClase` utiliza una expansi髇 de plegado para imprimir los valores almacenados en el `std::tuple`.
+- La clase `MiClase` utiliza una expansi贸n de plegado para imprimir los valores almacenados en el `std::tuple`.
 
-### Conclusi髇
+### Conclusi贸n
 
-Las plantillas vari醖icas en C++ son una caracter韘tica poderosa que permite definir funciones y clases gen閞icas que pueden aceptar un n鷐ero variable de argumentos. Facilitan la creaci髇 de c骴igo flexible y reutilizable, eliminando la necesidad de m鷏tiples sobrecargas y especializaciones. Las expansiones de plantillas vari醖icas, especialmente las expansiones de plegado, simplifican la aplicaci髇 de operaciones sobre m鷏tiples argumentos, mejorando la claridad y concisi髇 del c骴igo.
+Las plantillas vari谩dicas en C++ son una caracter铆stica poderosa que permite definir funciones y clases gen茅ricas que pueden aceptar un n煤mero variable de argumentos. Facilitan la creaci贸n de c贸digo flexible y reutilizable, eliminando la necesidad de m煤ltiples sobrecargas y especializaciones. Las expansiones de plantillas vari谩dicas, especialmente las expansiones de plegado, simplifican la aplicaci贸n de operaciones sobre m煤ltiples argumentos, mejorando la claridad y concisi贸n del c贸digo.
 <---FILES--->
-Plantillas de Funciones Vari醖icas
-Plantillas de Funciones Vari醖icas Result
+Plantillas de Funciones Vari谩dicas
+Plantillas de Funciones Vari谩dicas Result
 Sintaxis
 Sintaxis Result
-Ejemplo B醩ico
-Ejemplo B醩ico Result
-Plantillas de Clases Vari醖icas
-Plantillas de Clases Vari醖icas Result
-Ejemplo de Expansi髇 en Funciones
-Ejemplo de Expansi髇 en Funciones Result
-Ejemplo de Expansi髇 en Constructores
-Ejemplo de Expansi髇 en Constructores Result
-<---Plantillas de Funciones Vari醖icas--->
-<---Plantillas de Funciones Vari醖icas Result--->
+Ejemplo B谩sico
+Ejemplo B谩sico Result
+Plantillas de Clases Vari谩dicas
+Plantillas de Clases Vari谩dicas Result
+Ejemplo de Expansi贸n en Funciones
+Ejemplo de Expansi贸n en Funciones Result
+Ejemplo de Expansi贸n en Constructores
+Ejemplo de Expansi贸n en Constructores Result
+<---Plantillas de Funciones Vari谩dicas--->
+<---Plantillas de Funciones Vari谩dicas Result--->
 <---Sintaxis--->
 ```cpp
 template <typename... Args>
 class ClaseVariadica {
-    // Implementaci髇
+    // Implementaci贸n
 };
 <---Sintaxis Result--->
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <tuple>
 #include <iostream>
 
-// Plantilla de clase vari醖ica
+// Plantilla de clase vari谩dica
 template <typename... Args>
 class MiClase {
     std::tuple<Args...> datos; // Almacena los argumentos en un tuple
@@ -207,10 +207,10 @@ int main() {
     obj.imprimir();
     return 0;
 }
-<---Ejemplo B醩ico Result--->
-<---Plantillas de Clases Vari醖icas--->
-<---Plantillas de Clases Vari醖icas Result--->
-<---Ejemplo de Expansi髇 en Funciones--->
+<---Ejemplo B谩sico Result--->
+<---Plantillas de Clases Vari谩dicas--->
+<---Plantillas de Clases Vari谩dicas Result--->
+<---Ejemplo de Expansi贸n en Funciones--->
 ```cpp
 #include <iostream>
 
@@ -221,7 +221,7 @@ void imprimirUno(T t) {
 
 template <typename... Args>
 void imprimir(Args... args) {
-    (imprimirUno(args), ...); // Expansi髇 de plegado usando coma
+    (imprimirUno(args), ...); // Expansi贸n de plegado usando coma
     std::cout << std::endl;
 }
 
@@ -229,8 +229,8 @@ int main() {
     imprimir(1, 2.5, "hola", 'A');
     return 0;
 }
-<---Ejemplo de Expansi髇 en Funciones Result--->
-<---Ejemplo de Expansi髇 en Constructores--->
+<---Ejemplo de Expansi贸n en Funciones Result--->
+<---Ejemplo de Expansi贸n en Constructores--->
 ```cpp
 #include <tuple>
 #include <iostream>
@@ -258,4 +258,4 @@ int main() {
     obj.imprimir();
     return 0;
 }
-<---Ejemplo de Expansi髇 en Constructores Result--->
+<---Ejemplo de Expansi贸n en Constructores Result--->

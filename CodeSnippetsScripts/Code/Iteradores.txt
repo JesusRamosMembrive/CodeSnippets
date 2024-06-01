@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Iteradores en C++
 
-Los iteradores son una abstracción fundamental en C++ que permiten recorrer y manipular elementos en contenedores (como arrays, vectores, listas, etc.). Funcionan de manera similar a los punteros y proporcionan una interfaz unificada para acceder a los elementos de los contenedores de la biblioteca estándar de C++.
+Los iteradores son una abstracciÃ³n fundamental en C++ que permiten recorrer y manipular elementos en contenedores (como arrays, vectores, listas, etc.). Funcionan de manera similar a los punteros y proporcionan una interfaz unificada para acceder a los elementos de los contenedores de la biblioteca estÃ¡ndar de C++.
 
-#### Introducción a los Iteradores
+#### IntroducciÃ³n a los Iteradores
 
-Un iterador es un objeto que apunta a un elemento dentro de un contenedor y permite recorrer los elementos del contenedor de una manera secuencial. Los iteradores se utilizan de manera extensiva en los algoritmos de la biblioteca estándar de C++ (STL).
+Un iterador es un objeto que apunta a un elemento dentro de un contenedor y permite recorrer los elementos del contenedor de una manera secuencial. Los iteradores se utilizan de manera extensiva en los algoritmos de la biblioteca estÃ¡ndar de C++ (STL).
 
 ##### Tipos de Iteradores
 
@@ -15,7 +15,7 @@ Un iterador es un objeto que apunta a un elemento dentro de un contenedor y perm
 4. **Bidirectional Iterators:** Permiten avanzar y retroceder en la secuencia.
 5. **Random Access Iterators:** Permiten acceso aleatorio a cualquier elemento en la secuencia.
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -41,13 +41,13 @@ int main() {
 En este ejemplo:
 - `std::vector<int>::iterator` es el tipo de iterador para `std::vector<int>`.
 - `vec.begin()` devuelve un iterador al primer elemento del vector.
-- `vec.end()` devuelve un iterador al elemento después del último elemento del vector.
+- `vec.end()` devuelve un iterador al elemento despuÃ©s del Ãºltimo elemento del vector.
 - `*it` desreferencia el iterador para acceder al valor del elemento.
 
 #### Beneficios de Usar Iteradores
 
-1. **Abstracción:** Proporcionan una interfaz unificada para acceder y manipular elementos en diferentes tipos de contenedores sin necesidad de conocer la implementación interna del contenedor.
-2. **Flexibilidad:** Permiten recorrer contenedores de manera eficiente, utilizando el mismo código para diferentes tipos de contenedores.
+1. **AbstracciÃ³n:** Proporcionan una interfaz unificada para acceder y manipular elementos en diferentes tipos de contenedores sin necesidad de conocer la implementaciÃ³n interna del contenedor.
+2. **Flexibilidad:** Permiten recorrer contenedores de manera eficiente, utilizando el mismo cÃ³digo para diferentes tipos de contenedores.
 3. **Compatibilidad con Algoritmos STL:** Los iteradores se integran perfectamente con los algoritmos de la STL, como `std::sort`, `std::find`, `std::for_each`, etc.
 4. **Encapsulamiento:** Ocultan los detalles de la estructura del contenedor, proporcionando una forma segura y conveniente de acceder a sus elementos.
 
@@ -111,21 +111,21 @@ int main() {
 En este ejemplo:
 - `std::vector<int>::const_iterator` es el tipo de iterador constante para `std::vector<int>`.
 - `vec.cbegin()` devuelve un iterador constante al primer elemento del vector.
-- `vec.cend()` devuelve un iterador constante al elemento después del último elemento del vector.
+- `vec.cend()` devuelve un iterador constante al elemento despuÃ©s del Ãºltimo elemento del vector.
 
-### Conclusión
+### ConclusiÃ³n
 
-Los iteradores son una herramienta poderosa y flexible en C++ que permiten recorrer y manipular elementos en contenedores de manera eficiente y abstracta. Proporcionan una interfaz unificada que facilita la compatibilidad con los algoritmos de la STL y permite escribir código genérico que funciona con diferentes tipos de contenedores. Entender y utilizar iteradores correctamente es esencial para aprovechar al máximo las capacidades de la biblioteca estándar de C++ y escribir código limpio y eficiente.
+Los iteradores son una herramienta poderosa y flexible en C++ que permiten recorrer y manipular elementos en contenedores de manera eficiente y abstracta. Proporcionan una interfaz unificada que facilita la compatibilidad con los algoritmos de la STL y permite escribir cÃ³digo genÃ©rico que funciona con diferentes tipos de contenedores. Entender y utilizar iteradores correctamente es esencial para aprovechar al mÃ¡ximo las capacidades de la biblioteca estÃ¡ndar de C++ y escribir cÃ³digo limpio y eficiente.
 <---FILES--->
 Tipos de Iteradores
 Tipos de Iteradores Result
-Ejemplo Básico
-Ejemplo Básico Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
 Ejemplo de Iteradores Constantes
 Ejemplo de Iteradores Constantes Result
 <---Tipos de Iteradores--->
 <---Tipos de Iteradores Result--->
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -167,7 +167,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Básico Result--->
+<---Ejemplo BÃ¡sico Result--->
 <---Ejemplo de Iteradores Constantes--->
 ```cpp
 #include <iostream>

@@ -1,30 +1,30 @@
 <---EXPLANATION--->
 ### `consteval` en Funciones en C++
 
-La palabra clave `consteval` es una característica introducida en C++20 que se utiliza para declarar funciones que deben ser evaluadas en tiempo de compilación. A diferencia de `constexpr`, que permite la evaluación en tiempo de compilación pero también puede ser evaluada en tiempo de ejecución si es necesario, `consteval` garantiza que la función solo se puede evaluar en tiempo de compilación. Esto asegura que cualquier llamada a una función `consteval` se resuelva completamente durante la compilación.
+La palabra clave `consteval` es una caracterÃ­stica introducida en C++20 que se utiliza para declarar funciones que deben ser evaluadas en tiempo de compilaciÃ³n. A diferencia de `constexpr`, que permite la evaluaciÃ³n en tiempo de compilaciÃ³n pero tambiÃ©n puede ser evaluada en tiempo de ejecuciÃ³n si es necesario, `consteval` garantiza que la funciÃ³n solo se puede evaluar en tiempo de compilaciÃ³n. Esto asegura que cualquier llamada a una funciÃ³n `consteval` se resuelva completamente durante la compilaciÃ³n.
 
-#### Características de `consteval`
+#### CaracterÃ­sticas de `consteval`
 
-- **Evaluación en Tiempo de Compilación:** Las funciones declaradas como `consteval` deben ser evaluadas en tiempo de compilación. Intentar llamarlas en tiempo de ejecución resultará en un error de compilación.
-- **Uso en Contextos Constantes:** Las funciones `consteval` son útiles para cálculos que deben resolverse completamente en tiempo de compilación, como la inicialización de constantes y el cálculo de valores que dependen de parámetros conocidos en tiempo de compilación.
+- **EvaluaciÃ³n en Tiempo de CompilaciÃ³n:** Las funciones declaradas como `consteval` deben ser evaluadas en tiempo de compilaciÃ³n. Intentar llamarlas en tiempo de ejecuciÃ³n resultarÃ¡ en un error de compilaciÃ³n.
+- **Uso en Contextos Constantes:** Las funciones `consteval` son Ãºtiles para cÃ¡lculos que deben resolverse completamente en tiempo de compilaciÃ³n, como la inicializaciÃ³n de constantes y el cÃ¡lculo de valores que dependen de parÃ¡metros conocidos en tiempo de compilaciÃ³n.
 
 #### Sintaxis
 
 ```cpp
 consteval tipo_retorno nombre_funcion(lista_de_parametros) {
-    // Cuerpo de la función
+    // Cuerpo de la funciÃ³n
 }
 ```
 
-#### Ejemplo de Función `consteval`
+#### Ejemplo de FunciÃ³n `consteval`
 
-Un ejemplo sencillo de una función `consteval` es el cálculo del factorial de un número.
+Un ejemplo sencillo de una funciÃ³n `consteval` es el cÃ¡lculo del factorial de un nÃºmero.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Función consteval para calcular el factorial de un número
+// FunciÃ³n consteval para calcular el factorial de un nÃºmero
 consteval int factorial(int n) {
     if (n <= 1) {
         return 1;
@@ -34,19 +34,19 @@ consteval int factorial(int n) {
 }
 
 int main() {
-    constexpr int resultado = factorial(5); // Evaluado en tiempo de compilación
+    constexpr int resultado = factorial(5); // Evaluado en tiempo de compilaciÃ³n
     cout << "El factorial de 5 es: " << resultado << endl;
-    // int runtime_result = factorial(5); // Error: no se puede evaluar en tiempo de ejecución
+    // int runtime_result = factorial(5); // Error: no se puede evaluar en tiempo de ejecuciÃ³n
     return 0;
 }
 ```
 
-En este ejemplo, la función `factorial` es declarada con `consteval`, lo que asegura que cualquier llamada a `factorial` debe ser evaluada en tiempo de compilación.
+En este ejemplo, la funciÃ³n `factorial` es declarada con `consteval`, lo que asegura que cualquier llamada a `factorial` debe ser evaluada en tiempo de compilaciÃ³n.
 
 #### Diferencias entre `consteval` y `constexpr`
 
-- **`constexpr`:** Permite que la función sea evaluada en tiempo de compilación o en tiempo de ejecución, dependiendo de cómo se utilice.
-- **`consteval`:** Obliga a que la función sea evaluada en tiempo de compilación, y no permite su evaluación en tiempo de ejecución.
+- **`constexpr`:** Permite que la funciÃ³n sea evaluada en tiempo de compilaciÃ³n o en tiempo de ejecuciÃ³n, dependiendo de cÃ³mo se utilice.
+- **`consteval`:** Obliga a que la funciÃ³n sea evaluada en tiempo de compilaciÃ³n, y no permite su evaluaciÃ³n en tiempo de ejecuciÃ³n.
 
 ##### Ejemplo Comparativo
 
@@ -54,34 +54,34 @@ En este ejemplo, la función `factorial` es declarada con `consteval`, lo que ase
 #include <iostream>
 using namespace std;
 
-// Función constexpr
+// FunciÃ³n constexpr
 constexpr int cuadrado(int x) {
     return x * x;
 }
 
-// Función consteval
+// FunciÃ³n consteval
 consteval int cubo(int x) {
     return x * x * x;
 }
 
 int main() {
-    constexpr int valor1 = cuadrado(4); // Puede ser evaluado en tiempo de compilación o ejecución
+    constexpr int valor1 = cuadrado(4); // Puede ser evaluado en tiempo de compilaciÃ³n o ejecuciÃ³n
     cout << "Cuadrado de 4: " << valor1 << endl;
 
-    constexpr int valor2 = cubo(3); // Debe ser evaluado en tiempo de compilación
+    constexpr int valor2 = cubo(3); // Debe ser evaluado en tiempo de compilaciÃ³n
     cout << "Cubo de 3: " << valor2 << endl;
 
-    // int runtime_val = cubo(3); // Error: no se puede evaluar en tiempo de ejecución
+    // int runtime_val = cubo(3); // Error: no se puede evaluar en tiempo de ejecuciÃ³n
 
     return 0;
 }
 ```
 
-En este ejemplo, la función `cuadrado` puede ser evaluada en tiempo de compilación o en tiempo de ejecución, mientras que la función `cubo` debe ser evaluada en tiempo de compilación debido a la palabra clave `consteval`.
+En este ejemplo, la funciÃ³n `cuadrado` puede ser evaluada en tiempo de compilaciÃ³n o en tiempo de ejecuciÃ³n, mientras que la funciÃ³n `cubo` debe ser evaluada en tiempo de compilaciÃ³n debido a la palabra clave `consteval`.
 
-#### Uso de `consteval` en Inicialización Constante
+#### Uso de `consteval` en InicializaciÃ³n Constante
 
-Las funciones `consteval` son especialmente útiles para inicializar constantes que deben ser evaluadas en tiempo de compilación.
+Las funciones `consteval` son especialmente Ãºtiles para inicializar constantes que deben ser evaluadas en tiempo de compilaciÃ³n.
 
 ```cpp
 #include <array>
@@ -92,24 +92,24 @@ consteval int fibonacci(int n) {
 }
 
 int main() {
-    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilación
-    std::array<int, fibonacci(5)> fib_array; // El tamaño del array es evaluado en tiempo de compilación
-    std::cout << "El décimo término de Fibonacci es: " << fib_10 << std::endl;
+    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilaciÃ³n
+    std::array<int, fibonacci(5)> fib_array; // El tamaÃ±o del array es evaluado en tiempo de compilaciÃ³n
+    std::cout << "El dÃ©cimo tÃ©rmino de Fibonacci es: " << fib_10 << std::endl;
     return 0;
 }
 ```
 
-En este ejemplo, la función `fibonacci` es utilizada para inicializar una constante y para determinar el tamaño de un array, ambos evaluados en tiempo de compilación.
+En este ejemplo, la funciÃ³n `fibonacci` es utilizada para inicializar una constante y para determinar el tamaÃ±o de un array, ambos evaluados en tiempo de compilaciÃ³n.
 
 ### Ventajas de `consteval`
 
-1. **Garantía de Tiempo de Compilación:** Asegura que los cálculos se realicen en tiempo de compilación, lo que puede mejorar el rendimiento en tiempo de ejecución y detectar errores antes.
-2. **Optimización:** Permite al compilador realizar más optimizaciones, ya que los valores constantes se conocen en tiempo de compilación.
-3. **Seguridad del Tipo:** Ayuda a evitar errores relacionados con el tipo en tiempo de ejecución al resolver expresiones en tiempo de compilación.
+1. **GarantÃ­a de Tiempo de CompilaciÃ³n:** Asegura que los cÃ¡lculos se realicen en tiempo de compilaciÃ³n, lo que puede mejorar el rendimiento en tiempo de ejecuciÃ³n y detectar errores antes.
+2. **OptimizaciÃ³n:** Permite al compilador realizar mÃ¡s optimizaciones, ya que los valores constantes se conocen en tiempo de compilaciÃ³n.
+3. **Seguridad del Tipo:** Ayuda a evitar errores relacionados con el tipo en tiempo de ejecuciÃ³n al resolver expresiones en tiempo de compilaciÃ³n.
 
 ### Ejemplo Completo
 
-A continuación, un ejemplo completo que ilustra el uso de funciones `consteval` en diferentes contextos:
+A continuaciÃ³n, un ejemplo completo que ilustra el uso de funciones `consteval` en diferentes contextos:
 
 ```cpp
 #include <iostream>
@@ -130,13 +130,13 @@ consteval int multiplicar(int a, int b) {
 }
 
 int main() {
-    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilación
-    constexpr int suma = sumar(7, 3); // Evaluado en tiempo de compilación
-    constexpr int producto = multiplicar(4, 5); // Evaluado en tiempo de compilación
+    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilaciÃ³n
+    constexpr int suma = sumar(7, 3); // Evaluado en tiempo de compilaciÃ³n
+    constexpr int producto = multiplicar(4, 5); // Evaluado en tiempo de compilaciÃ³n
 
-    std::array<int, fibonacci(5)> fib_array; // Tamaño del array evaluado en tiempo de compilación
+    std::array<int, fibonacci(5)> fib_array; // TamaÃ±o del array evaluado en tiempo de compilaciÃ³n
 
-    cout << "El décimo término de Fibonacci es: " << fib_10 << endl;
+    cout << "El dÃ©cimo tÃ©rmino de Fibonacci es: " << fib_10 << endl;
     cout << "La suma de 7 y 3 es: " << suma << endl;
     cout << "El producto de 4 y 5 es: " << producto << endl;
 
@@ -144,9 +144,9 @@ int main() {
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-La palabra clave `consteval` en C++20 proporciona una manera de asegurar que ciertas funciones sean evaluadas exclusivamente en tiempo de compilación. Esto permite optimizaciones adicionales y ayuda a garantizar la corrección del programa al detectar errores en una etapa temprana. Comprender y utilizar `consteval` puede mejorar significativamente la eficiencia y la seguridad del código en C++.
+La palabra clave `consteval` en C++20 proporciona una manera de asegurar que ciertas funciones sean evaluadas exclusivamente en tiempo de compilaciÃ³n. Esto permite optimizaciones adicionales y ayuda a garantizar la correcciÃ³n del programa al detectar errores en una etapa temprana. Comprender y utilizar `consteval` puede mejorar significativamente la eficiencia y la seguridad del cÃ³digo en C++.
 <---FILES--->
 Ejemplo Comparativo
 Ejemplo Comparativo Result
@@ -155,24 +155,24 @@ Ejemplo Comparativo Result
 #include <iostream>
 using namespace std;
 
-// Función constexpr
+// FunciÃ³n constexpr
 constexpr int cuadrado(int x) {
     return x * x;
 }
 
-// Función consteval
+// FunciÃ³n consteval
 consteval int cubo(int x) {
     return x * x * x;
 }
 
 int main() {
-    constexpr int valor1 = cuadrado(4); // Puede ser evaluado en tiempo de compilación o ejecución
+    constexpr int valor1 = cuadrado(4); // Puede ser evaluado en tiempo de compilaciÃ³n o ejecuciÃ³n
     cout << "Cuadrado de 4: " << valor1 << endl;
 
-    constexpr int valor2 = cubo(3); // Debe ser evaluado en tiempo de compilación
+    constexpr int valor2 = cubo(3); // Debe ser evaluado en tiempo de compilaciÃ³n
     cout << "Cubo de 3: " << valor2 << endl;
 
-    // int runtime_val = cubo(3); // Error: no se puede evaluar en tiempo de ejecución
+    // int runtime_val = cubo(3); // Error: no se puede evaluar en tiempo de ejecuciÃ³n
 
     return 0;
 }
@@ -185,9 +185,9 @@ consteval int fibonacci(int n) {
 }
 
 int main() {
-    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilación
-    std::array<int, fibonacci(5)> fib_array; // El tamaño del array es evaluado en tiempo de compilación
-    std::cout << "El décimo término de Fibonacci es: " << fib_10 << std::endl;
+    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilaciÃ³n
+    std::array<int, fibonacci(5)> fib_array; // El tamaÃ±o del array es evaluado en tiempo de compilaciÃ³n
+    std::cout << "El dÃ©cimo tÃ©rmino de Fibonacci es: " << fib_10 << std::endl;
     return 0;
 }
 ```cpp
@@ -209,13 +209,13 @@ consteval int multiplicar(int a, int b) {
 }
 
 int main() {
-    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilación
-    constexpr int suma = sumar(7, 3); // Evaluado en tiempo de compilación
-    constexpr int producto = multiplicar(4, 5); // Evaluado en tiempo de compilación
+    constexpr int fib_10 = fibonacci(10); // Evaluado en tiempo de compilaciÃ³n
+    constexpr int suma = sumar(7, 3); // Evaluado en tiempo de compilaciÃ³n
+    constexpr int producto = multiplicar(4, 5); // Evaluado en tiempo de compilaciÃ³n
 
-    std::array<int, fibonacci(5)> fib_array; // Tamaño del array evaluado en tiempo de compilación
+    std::array<int, fibonacci(5)> fib_array; // TamaÃ±o del array evaluado en tiempo de compilaciÃ³n
 
-    cout << "El décimo término de Fibonacci es: " << fib_10 << endl;
+    cout << "El dÃ©cimo tÃ©rmino de Fibonacci es: " << fib_10 << endl;
     cout << "La suma de 7 y 3 es: " << suma << endl;
     cout << "El producto de 4 y 5 es: " << producto << endl;
 

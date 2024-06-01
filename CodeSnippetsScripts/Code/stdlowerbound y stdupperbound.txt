@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmos de la Biblioteca Estándar: `std::lower_bound` y `std::upper_bound`
+### Algoritmos de la Biblioteca EstÃ¡ndar: `std::lower_bound` y `std::upper_bound`
 
-Los algoritmos `std::lower_bound` y `std::upper_bound` son parte de la biblioteca estándar de C++ y se utilizan para realizar búsquedas en contenedores ordenados. Estas funciones permiten encontrar posiciones específicas de elementos en rangos ordenados de manera eficiente utilizando la búsqueda binaria. Son parte del encabezado `<algorithm>`.
+Los algoritmos `std::lower_bound` y `std::upper_bound` son parte de la biblioteca estÃ¡ndar de C++ y se utilizan para realizar bÃºsquedas en contenedores ordenados. Estas funciones permiten encontrar posiciones especÃ­ficas de elementos en rangos ordenados de manera eficiente utilizando la bÃºsqueda binaria. Son parte del encabezado `<algorithm>`.
 
 #### `std::lower_bound`
 
@@ -20,13 +20,13 @@ ForwardIt lower_bound(ForwardIt first, ForwardIt last, const T& value, Compare c
 ```
 
 - **`ForwardIt first`**: Iterador al primer elemento del rango.
-- **`ForwardIt last`**: Iterador al elemento después del último en el rango.
+- **`ForwardIt last`**: Iterador al elemento despuÃ©s del Ãºltimo en el rango.
 - **`const T& value`**: Valor que se busca.
-- **`Compare comp`**: (Opcional) Función de comparación que toma dos argumentos.
+- **`Compare comp`**: (Opcional) FunciÃ³n de comparaciÃ³n que toma dos argumentos.
 
-##### Descripción
+##### DescripciÃ³n
 
-`std::lower_bound` realiza una búsqueda binaria en el rango `[first, last)` para encontrar el primer elemento que no es menor que `value`. Si `comp` se proporciona, se utiliza como función de comparación en lugar del operador `<`.
+`std::lower_bound` realiza una bÃºsqueda binaria en el rango `[first, last)` para encontrar el primer elemento que no es menor que `value`. Si `comp` se proporciona, se utiliza como funciÃ³n de comparaciÃ³n en lugar del operador `<`.
 
 #### Ejemplo de Uso de `std::lower_bound`
 
@@ -45,7 +45,7 @@ int main() {
     if (it != vec.end()) {
         std::cout << "El primer elemento no menor que 5 es: " << *it << std::endl;
     } else {
-        std::cout << "No se encontró un elemento no menor que 5" << std::endl;
+        std::cout << "No se encontrÃ³ un elemento no menor que 5" << std::endl;
     }
 
     return 0;
@@ -72,13 +72,13 @@ ForwardIt upper_bound(ForwardIt first, ForwardIt last, const T& value, Compare c
 ```
 
 - **`ForwardIt first`**: Iterador al primer elemento del rango.
-- **`ForwardIt last`**: Iterador al elemento después del último en el rango.
+- **`ForwardIt last`**: Iterador al elemento despuÃ©s del Ãºltimo en el rango.
 - **`const T& value`**: Valor que se busca.
-- **`Compare comp`**: (Opcional) Función de comparación que toma dos argumentos.
+- **`Compare comp`**: (Opcional) FunciÃ³n de comparaciÃ³n que toma dos argumentos.
 
-##### Descripción
+##### DescripciÃ³n
 
-`std::upper_bound` realiza una búsqueda binaria en el rango `[first, last)` para encontrar el primer elemento que es mayor que `value`. Si `comp` se proporciona, se utiliza como función de comparación en lugar del operador `<`.
+`std::upper_bound` realiza una bÃºsqueda binaria en el rango `[first, last)` para encontrar el primer elemento que es mayor que `value`. Si `comp` se proporciona, se utiliza como funciÃ³n de comparaciÃ³n en lugar del operador `<`.
 
 #### Ejemplo de Uso de `std::upper_bound`
 
@@ -97,7 +97,7 @@ int main() {
     if (it != vec.end()) {
         std::cout << "El primer elemento mayor que 5 es: " << *it << std::endl;
     } else {
-        std::cout << "No se encontró un elemento mayor que 5" << std::endl;
+        std::cout << "No se encontrÃ³ un elemento mayor que 5" << std::endl;
     }
 
     return 0;
@@ -109,9 +109,9 @@ En este ejemplo:
 
 ### Uso con Comparaciones Personalizadas
 
-Tanto `std::lower_bound` como `std::upper_bound` pueden utilizar una función de comparación personalizada para realizar búsquedas en rangos ordenados según un criterio específico.
+Tanto `std::lower_bound` como `std::upper_bound` pueden utilizar una funciÃ³n de comparaciÃ³n personalizada para realizar bÃºsquedas en rangos ordenados segÃºn un criterio especÃ­fico.
 
-##### Ejemplo con Comparación Personalizada
+##### Ejemplo con ComparaciÃ³n Personalizada
 
 ```cpp
 #include <iostream>
@@ -133,16 +133,16 @@ int main() {
     // Ordenar las personas por edad
     std::sort(personas.begin(), personas.end(), compararPorEdad);
 
-    Persona p = {"", 28}; // Solo la edad importa para la búsqueda
+    Persona p = {"", 28}; // Solo la edad importa para la bÃºsqueda
 
-    // Usar std::lower_bound con comparación personalizada
+    // Usar std::lower_bound con comparaciÃ³n personalizada
     auto it = std::lower_bound(personas.begin(), personas.end(), p, compararPorEdad);
 
     // Mostrar el resultado
     if (it != personas.end()) {
         std::cout << "Primera persona con edad no menor que 28: " << it->nombre << " (" << it->edad << ")" << std::endl;
     } else {
-        std::cout << "No se encontró una persona con edad no menor que 28" << std::endl;
+        std::cout << "No se encontrÃ³ una persona con edad no menor que 28" << std::endl;
     }
 
     return 0;
@@ -150,24 +150,24 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::lower_bound(personas.begin(), personas.end(), p, compararPorEdad)` utiliza una función de comparación personalizada para encontrar la primera persona cuya edad no es menor que `28`.
+- `std::lower_bound(personas.begin(), personas.end(), p, compararPorEdad)` utiliza una funciÃ³n de comparaciÃ³n personalizada para encontrar la primera persona cuya edad no es menor que `28`.
 
 ### Consideraciones
 
-- **Rendimiento:** Tanto `std::lower_bound` como `std::upper_bound` tienen un rendimiento logarítmico (`O(log n)`) debido a la búsqueda binaria.
-- **Orden:** Los rangos de entrada deben estar ordenados según el criterio de comparación utilizado (ya sea por el operador `<` o una función de comparación personalizada).
-- **Iteradores:** Estos algoritmos requieren iteradores de avance o mejor, ya que utilizan operaciones de búsqueda binaria.
+- **Rendimiento:** Tanto `std::lower_bound` como `std::upper_bound` tienen un rendimiento logarÃ­tmico (`O(log n)`) debido a la bÃºsqueda binaria.
+- **Orden:** Los rangos de entrada deben estar ordenados segÃºn el criterio de comparaciÃ³n utilizado (ya sea por el operador `<` o una funciÃ³n de comparaciÃ³n personalizada).
+- **Iteradores:** Estos algoritmos requieren iteradores de avance o mejor, ya que utilizan operaciones de bÃºsqueda binaria.
 
-### Conclusión
+### ConclusiÃ³n
 
-`std::lower_bound` y `std::upper_bound` son algoritmos de búsqueda binaria eficientes de la biblioteca estándar de C++ que permiten encontrar posiciones específicas de elementos en rangos ordenados. Son fundamentales para trabajar con contenedores ordenados y pueden utilizar comparaciones personalizadas para realizar búsquedas según criterios específicos. Comprender y utilizar estos algoritmos es esencial para realizar búsquedas rápidas y eficientes en contenedores en C++.
+`std::lower_bound` y `std::upper_bound` son algoritmos de bÃºsqueda binaria eficientes de la biblioteca estÃ¡ndar de C++ que permiten encontrar posiciones especÃ­ficas de elementos en rangos ordenados. Son fundamentales para trabajar con contenedores ordenados y pueden utilizar comparaciones personalizadas para realizar bÃºsquedas segÃºn criterios especÃ­ficos. Comprender y utilizar estos algoritmos es esencial para realizar bÃºsquedas rÃ¡pidas y eficientes en contenedores en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Descripción
-Descripción Result
-Ejemplo con Comparación Personalizada
-Ejemplo con Comparación Personalizada Result
+DescripciÃ³n
+DescripciÃ³n Result
+Ejemplo con ComparaciÃ³n Personalizada
+Ejemplo con ComparaciÃ³n Personalizada Result
 <---Sintaxis--->
 ```cpp
 #include <algorithm>
@@ -178,7 +178,7 @@ ForwardIt upper_bound(ForwardIt first, ForwardIt last, const T& value);
 template <class ForwardIt, class T, class Compare>
 ForwardIt upper_bound(ForwardIt first, ForwardIt last, const T& value, Compare comp);
 <---Sintaxis Result--->
-<---Descripción--->
+<---DescripciÃ³n--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -194,13 +194,13 @@ int main() {
     if (it != vec.end()) {
         std::cout << "El primer elemento mayor que 5 es: " << *it << std::endl;
     } else {
-        std::cout << "No se encontró un elemento mayor que 5" << std::endl;
+        std::cout << "No se encontrÃ³ un elemento mayor que 5" << std::endl;
     }
 
     return 0;
 }
-<---Descripción Result--->
-<---Ejemplo con Comparación Personalizada--->
+<---DescripciÃ³n Result--->
+<---Ejemplo con ComparaciÃ³n Personalizada--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -221,18 +221,18 @@ int main() {
     // Ordenar las personas por edad
     std::sort(personas.begin(), personas.end(), compararPorEdad);
 
-    Persona p = {"", 28}; // Solo la edad importa para la búsqueda
+    Persona p = {"", 28}; // Solo la edad importa para la bÃºsqueda
 
-    // Usar std::lower_bound con comparación personalizada
+    // Usar std::lower_bound con comparaciÃ³n personalizada
     auto it = std::lower_bound(personas.begin(), personas.end(), p, compararPorEdad);
 
     // Mostrar el resultado
     if (it != personas.end()) {
         std::cout << "Primera persona con edad no menor que 28: " << it->nombre << " (" << it->edad << ")" << std::endl;
     } else {
-        std::cout << "No se encontró una persona con edad no menor que 28" << std::endl;
+        std::cout << "No se encontrÃ³ una persona con edad no menor que 28" << std::endl;
     }
 
     return 0;
 }
-<---Ejemplo con Comparación Personalizada Result--->
+<---Ejemplo con ComparaciÃ³n Personalizada Result--->

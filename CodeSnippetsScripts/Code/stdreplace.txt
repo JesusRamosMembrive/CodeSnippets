@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Est·ndar: `std::replace`
+### Algoritmo de la Biblioteca Est√°ndar: `std::replace`
 
-La funciÛn `std::replace` es un algoritmo de la biblioteca est·ndar de C++ que se utiliza para reemplazar todos los elementos de un rango que son iguales a un valor especÌfico por otro valor. Es parte del encabezado `<algorithm>` y es muy ˙til para modificar elementos de contenedores en base a una condiciÛn de igualdad.
+La funci√≥n `std::replace` es un algoritmo de la biblioteca est√°ndar de C++ que se utiliza para reemplazar todos los elementos de un rango que son iguales a un valor espec√≠fico por otro valor. Es parte del encabezado `<algorithm>` y es muy √∫til para modificar elementos de contenedores en base a una condici√≥n de igualdad.
 
 #### Sintaxis de `std::replace`
 
@@ -13,17 +13,17 @@ void replace(ForwardIt first, ForwardIt last, const T& old_value, const T& new_v
 ```
 
 - **`ForwardIt first`**: Iterador al primer elemento del rango.
-- **`ForwardIt last`**: Iterador al elemento despuÈs del ˙ltimo en el rango.
-- **`const T& old_value`**: Valor que ser· reemplazado.
-- **`const T& new_value`**: Valor que reemplazar· a `old_value`.
+- **`ForwardIt last`**: Iterador al elemento despu√©s del √∫ltimo en el rango.
+- **`const T& old_value`**: Valor que ser√° reemplazado.
+- **`const T& new_value`**: Valor que reemplazar√° a `old_value`.
 
-#### DescripciÛn
+#### Descripci√≥n
 
 `std::replace` reemplaza cada elemento en el rango `[first, last)` que es igual a `old_value` por `new_value`.
 
 #### Ejemplo de Uso de `std::replace`
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -37,7 +37,7 @@ int main() {
     std::replace(vec.begin(), vec.end(), 2, 9);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace: ";
+    std::cout << "Elementos del vector despu√©s de std::replace: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -68,7 +68,7 @@ int main() {
     std::replace(lst.begin(), lst.end(), 2, 9);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos de la lista despuÈs de std::replace: ";
+    std::cout << "Elementos de la lista despu√©s de std::replace: ";
     for (int elem : lst) {
         std::cout << elem << " ";
     }
@@ -97,7 +97,7 @@ int main() {
     std::replace(vec.begin(), vec.begin() + vec.size() / 2, 2, 9);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace en la primera mitad: ";
+    std::cout << "Elementos del vector despu√©s de std::replace en la primera mitad: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -112,7 +112,7 @@ En este ejemplo:
 
 ### Variantes: `std::replace_if`
 
-Adem·s de `std::replace`, existe una variante llamada `std::replace_if` que reemplaza los elementos basados en un predicado.
+Adem√°s de `std::replace`, existe una variante llamada `std::replace_if` que reemplaza los elementos basados en un predicado.
 
 #### Sintaxis de `std::replace_if`
 
@@ -124,13 +124,13 @@ void replace_if(ForwardIt first, ForwardIt last, UnaryPredicate p, const T& new_
 ```
 
 - **`ForwardIt first`**: Iterador al primer elemento del rango.
-- **`ForwardIt last`**: Iterador al elemento despuÈs del ˙ltimo en el rango.
-- **`UnaryPredicate p`**: Predicado que define la condiciÛn de reemplazo.
-- **`const T& new_value`**: Valor que reemplazar· a los elementos que satisfacen el predicado.
+- **`ForwardIt last`**: Iterador al elemento despu√©s del √∫ltimo en el rango.
+- **`UnaryPredicate p`**: Predicado que define la condici√≥n de reemplazo.
+- **`const T& new_value`**: Valor que reemplazar√° a los elementos que satisfacen el predicado.
 
 #### Ejemplo de Uso de `std::replace_if`
 
-##### Ejemplo B·sico con `std::replace_if`
+##### Ejemplo B√°sico con `std::replace_if`
 
 ```cpp
 #include <iostream>
@@ -144,11 +144,11 @@ bool esPar(int n) {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::replace_if para reemplazar todos los n˙meros pares por 0
+    // Usar std::replace_if para reemplazar todos los n√∫meros pares por 0
     std::replace_if(vec.begin(), vec.end(), esPar, 0);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace_if: ";
+    std::cout << "Elementos del vector despu√©s de std::replace_if: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -159,7 +159,7 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::replace_if(vec.begin(), vec.end(), esPar, 0)` reemplaza todos los n˙meros pares en el vector `vec` con `0`.
+- `std::replace_if(vec.begin(), vec.end(), esPar, 0)` reemplaza todos los n√∫meros pares en el vector `vec` con `0`.
 
 ##### Ejemplo con Lambda
 
@@ -171,11 +171,11 @@ En este ejemplo:
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::replace_if con una lambda para reemplazar todos los n˙meros mayores que 3 por 99
+    // Usar std::replace_if con una lambda para reemplazar todos los n√∫meros mayores que 3 por 99
     std::replace_if(vec.begin(), vec.end(), [](int n) { return n > 3; }, 99);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace_if: ";
+    std::cout << "Elementos del vector despu√©s de std::replace_if: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -186,27 +186,27 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::replace_if(vec.begin(), vec.end(), [](int n) { return n > 3; }, 99)` reemplaza todos los n˙meros mayores que `3` en el vector `vec` con `99`.
+- `std::replace_if(vec.begin(), vec.end(), [](int n) { return n > 3; }, 99)` reemplaza todos los n√∫meros mayores que `3` en el vector `vec` con `99`.
 
 ### Consideraciones
 
 - **Rendimiento:** `std::replace` y `std::replace_if` tienen un rendimiento lineal (`O(n)`), ya que necesitan recorrer todo el rango de elementos.
-- **Flexibilidad:** `std::replace` es ˙til para reemplazar valores especÌficos, mientras que `std::replace_if` proporciona mayor flexibilidad al permitir reemplazos basados en un predicado.
-- **Uso de Predicados:** `std::replace_if` puede utilizar funciones, funtores y lambdas como predicados, lo que lo hace extremadamente vers·til.
+- **Flexibilidad:** `std::replace` es √∫til para reemplazar valores espec√≠ficos, mientras que `std::replace_if` proporciona mayor flexibilidad al permitir reemplazos basados en un predicado.
+- **Uso de Predicados:** `std::replace_if` puede utilizar funciones, funtores y lambdas como predicados, lo que lo hace extremadamente vers√°til.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::replace` y `std::replace_if` son algoritmos de la biblioteca est·ndar de C++ que proporcionan formas eficientes y flexibles de reemplazar elementos en contenedores. `std::replace` se usa para reemplazar valores especÌficos, mientras que `std::replace_if` permite realizar reemplazos basados en condiciones m·s complejas definidas por predicados. Comprender y utilizar estos algoritmos es esencial para escribir cÛdigo C++ claro, eficiente y f·cil de mantener.
+`std::replace` y `std::replace_if` son algoritmos de la biblioteca est√°ndar de C++ que proporcionan formas eficientes y flexibles de reemplazar elementos en contenedores. `std::replace` se usa para reemplazar valores espec√≠ficos, mientras que `std::replace_if` permite realizar reemplazos basados en condiciones m√°s complejas definidas por predicados. Comprender y utilizar estos algoritmos es esencial para escribir c√≥digo C++ claro, eficiente y f√°cil de mantener.
 <---FILES--->
-Ejemplo B·sico
-Ejemplo B·sico Result
+Ejemplo B√°sico
+Ejemplo B√°sico Result
 Ejemplo con `std::list`
 Ejemplo con `std::list` Result
-Ejemplo B·sico con `std::replace_if`
-Ejemplo B·sico con `std::replace_if` Result
+Ejemplo B√°sico con `std::replace_if`
+Ejemplo B√°sico con `std::replace_if` Result
 Ejemplo con Lambda
 Ejemplo con Lambda Result
-<---Ejemplo B·sico--->
+<---Ejemplo B√°sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -219,7 +219,7 @@ int main() {
     std::replace(vec.begin(), vec.end(), 2, 9);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace: ";
+    std::cout << "Elementos del vector despu√©s de std::replace: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -227,7 +227,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico Result--->
+<---Ejemplo B√°sico Result--->
 <---Ejemplo con `std::list`--->
 ```cpp
 #include <iostream>
@@ -241,7 +241,7 @@ int main() {
     std::replace(lst.begin(), lst.end(), 2, 9);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos de la lista despuÈs de std::replace: ";
+    std::cout << "Elementos de la lista despu√©s de std::replace: ";
     for (int elem : lst) {
         std::cout << elem << " ";
     }
@@ -261,7 +261,7 @@ int main() {
     std::replace(vec.begin(), vec.begin() + vec.size() / 2, 2, 9);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace en la primera mitad: ";
+    std::cout << "Elementos del vector despu√©s de std::replace en la primera mitad: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -275,7 +275,7 @@ int main() {
 template <class ForwardIt, class UnaryPredicate, class T>
 void replace_if(ForwardIt first, ForwardIt last, UnaryPredicate p, const T& new_value);
 <---Ejemplo con `std::list` Result--->
-<---Ejemplo B·sico con `std::replace_if`--->
+<---Ejemplo B√°sico con `std::replace_if`--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -288,11 +288,11 @@ bool esPar(int n) {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::replace_if para reemplazar todos los n˙meros pares por 0
+    // Usar std::replace_if para reemplazar todos los n√∫meros pares por 0
     std::replace_if(vec.begin(), vec.end(), esPar, 0);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace_if: ";
+    std::cout << "Elementos del vector despu√©s de std::replace_if: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -300,7 +300,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico con `std::replace_if` Result--->
+<---Ejemplo B√°sico con `std::replace_if` Result--->
 <---Ejemplo con Lambda--->
 ```cpp
 #include <iostream>
@@ -310,11 +310,11 @@ int main() {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::replace_if con una lambda para reemplazar todos los n˙meros mayores que 3 por 99
+    // Usar std::replace_if con una lambda para reemplazar todos los n√∫meros mayores que 3 por 99
     std::replace_if(vec.begin(), vec.end(), [](int n) { return n > 3; }, 99);
 
     // Mostrar los elementos modificados
-    std::cout << "Elementos del vector despuÈs de std::replace_if: ";
+    std::cout << "Elementos del vector despu√©s de std::replace_if: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }

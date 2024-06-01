@@ -1,34 +1,34 @@
 <---EXPLANATION--->
 ### Clases Amigas en C++
 
-En C++, las clases amigas son una característica que permite a una clase acceder a los miembros privados y protegidos de otra clase. Esto es útil en situaciones donde dos clases necesitan operar estrechamente y compartir datos de manera directa, sin tener que proporcionar métodos públicos para el acceso.
+En C++, las clases amigas son una caracterÃ­stica que permite a una clase acceder a los miembros privados y protegidos de otra clase. Esto es Ãºtil en situaciones donde dos clases necesitan operar estrechamente y compartir datos de manera directa, sin tener que proporcionar mÃ©todos pÃºblicos para el acceso.
 
-#### Definición de Clase Amiga
+#### DefiniciÃ³n de Clase Amiga
 
-Una clase se declara amiga de otra clase utilizando la palabra clave `friend`. Esto se hace dentro de la definición de la clase que otorga la amistad. La amistad no es recíproca automáticamente; si la clase A declara amiga a la clase B, B tiene acceso a los miembros privados y protegidos de A, pero no viceversa a menos que se declare explícitamente.
+Una clase se declara amiga de otra clase utilizando la palabra clave `friend`. Esto se hace dentro de la definiciÃ³n de la clase que otorga la amistad. La amistad no es recÃ­proca automÃ¡ticamente; si la clase A declara amiga a la clase B, B tiene acceso a los miembros privados y protegidos de A, pero no viceversa a menos que se declare explÃ­citamente.
 
 ##### Sintaxis
 
 ```cpp
-class ClaseB; // Declaración adelantada
+class ClaseB; // DeclaraciÃ³n adelantada
 
 class ClaseA {
-    friend class ClaseB; // Declaración de ClaseB como amiga
+    friend class ClaseB; // DeclaraciÃ³n de ClaseB como amiga
     // Miembros de la clase A
 };
 ```
 
 #### Ejemplo de Clases Amigas
 
-Consideremos un ejemplo donde `ClaseA` tiene un dato privado, y `ClaseB` necesita acceder a ese dato para realizar una operación.
+Consideremos un ejemplo donde `ClaseA` tiene un dato privado, y `ClaseB` necesita acceder a ese dato para realizar una operaciÃ³n.
 
-##### Ejemplo de Implementación
+##### Ejemplo de ImplementaciÃ³n
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-class ClaseB; // Declaración adelantada de ClaseB
+class ClaseB; // DeclaraciÃ³n adelantada de ClaseB
 
 class ClaseA {
 private:
@@ -37,7 +37,7 @@ private:
 public:
     ClaseA(int a) : datoA(a) {}
 
-    // Declaración de ClaseB como amiga
+    // DeclaraciÃ³n de ClaseB como amiga
     friend class ClaseB;
 };
 
@@ -64,20 +64,20 @@ En este ejemplo:
 #### Aplicaciones y Beneficios de Clases Amigas
 
 **Aplicaciones:**
-1. **Acceso Directo a Datos:** Permiten que una clase tenga acceso directo a los datos privados de otra, lo cual es útil en operaciones donde se requiere una interacción estrecha entre las clases.
+1. **Acceso Directo a Datos:** Permiten que una clase tenga acceso directo a los datos privados de otra, lo cual es Ãºtil en operaciones donde se requiere una interacciÃ³n estrecha entre las clases.
 2. **Sobrecarga de Operadores:** Facilitan la sobrecarga de operadores que necesitan acceder a datos privados de dos clases diferentes.
-3. **Facilitación de Implementación:** Simplifican la implementación de ciertas funcionalidades que de otra manera requerirían múltiples métodos de acceso públicos.
+3. **FacilitaciÃ³n de ImplementaciÃ³n:** Simplifican la implementaciÃ³n de ciertas funcionalidades que de otra manera requerirÃ­an mÃºltiples mÃ©todos de acceso pÃºblicos.
 
 **Beneficios:**
-1. **Mayor Flexibilidad:** Ofrecen una manera flexible de implementar interacciones estrechas entre clases sin comprometer demasiado la encapsulación.
-2. **Reducción de Métodos Públicos:** Reducen la necesidad de métodos públicos adicionales para acceder a los datos privados, manteniendo la interfaz de la clase más limpia.
-3. **Mejor Colaboración entre Clases:** Facilitan la colaboración entre clases que deben trabajar juntas estrechamente.
+1. **Mayor Flexibilidad:** Ofrecen una manera flexible de implementar interacciones estrechas entre clases sin comprometer demasiado la encapsulaciÃ³n.
+2. **ReducciÃ³n de MÃ©todos PÃºblicos:** Reducen la necesidad de mÃ©todos pÃºblicos adicionales para acceder a los datos privados, manteniendo la interfaz de la clase mÃ¡s limpia.
+3. **Mejor ColaboraciÃ³n entre Clases:** Facilitan la colaboraciÃ³n entre clases que deben trabajar juntas estrechamente.
 
-#### Consideraciones y Buenas Prácticas
+#### Consideraciones y Buenas PrÃ¡cticas
 
-1. **Uso Moderado:** Las clases amigas deben usarse con moderación para evitar comprometer el principio de encapsulamiento. Es recomendable limitar el número de clases amigas para mantener el diseño limpio y manejable.
-2. **Documentación:** Es importante documentar adecuadamente el uso de clases amigas para que otros desarrolladores comprendan por qué se ha otorgado la amistad y cómo se utiliza.
-3. **Consistencia:** Mantener la consistencia en el uso de la amistad entre clases para asegurar que el diseño del software sea coherente y fácil de mantener.
+1. **Uso Moderado:** Las clases amigas deben usarse con moderaciÃ³n para evitar comprometer el principio de encapsulamiento. Es recomendable limitar el nÃºmero de clases amigas para mantener el diseÃ±o limpio y manejable.
+2. **DocumentaciÃ³n:** Es importante documentar adecuadamente el uso de clases amigas para que otros desarrolladores comprendan por quÃ© se ha otorgado la amistad y cÃ³mo se utiliza.
+3. **Consistencia:** Mantener la consistencia en el uso de la amistad entre clases para asegurar que el diseÃ±o del software sea coherente y fÃ¡cil de mantener.
 
 ##### Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas
 
@@ -85,11 +85,11 @@ En este ejemplo:
 #include <iostream>
 using namespace std;
 
-class Complejo; // Declaración adelantada de Complejo
+class Complejo; // DeclaraciÃ³n adelantada de Complejo
 
 class Matematicas {
 public:
-    // Declaración de la función amiga para la sobrecarga del operador +
+    // DeclaraciÃ³n de la funciÃ³n amiga para la sobrecarga del operador +
     friend Complejo operator+(const Complejo& c1, const Complejo& c2);
 };
 
@@ -100,7 +100,7 @@ private:
 public:
     Complejo(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
 
-    // Declaración de la función amiga para la sobrecarga del operador +
+    // DeclaraciÃ³n de la funciÃ³n amiga para la sobrecarga del operador +
     friend Complejo operator+(const Complejo& c1, const Complejo& c2);
 
     void mostrar() const {
@@ -108,14 +108,14 @@ public:
     }
 };
 
-// Definición de la función amiga para la sobrecarga del operador +
+// DefiniciÃ³n de la funciÃ³n amiga para la sobrecarga del operador +
 Complejo operator+(const Complejo& c1, const Complejo& c2) {
     return Complejo(c1.real + c2.real, c1.imag + c2.imag);
 }
 
 int main() {
     Complejo c1(3.0, 4.0), c2(1.0, 2.0);
-    Complejo c3 = c1 + c2; // Llama a la función amiga
+    Complejo c3 = c1 + c2; // Llama a la funciÃ³n amiga
     c3.mostrar(); // Muestra: (4.0, 6.0i)
     return 0;
 }
@@ -123,34 +123,34 @@ int main() {
 
 En este ejemplo:
 - `Complejo` tiene miembros privados `real` e `imag`.
-- La función `operator+` es declarada como amiga de `Complejo` y puede acceder a sus miembros privados para sumar dos números complejos.
-- `Matematicas` también puede ser amiga para acceder a la sobrecarga si se necesita.
+- La funciÃ³n `operator+` es declarada como amiga de `Complejo` y puede acceder a sus miembros privados para sumar dos nÃºmeros complejos.
+- `Matematicas` tambiÃ©n puede ser amiga para acceder a la sobrecarga si se necesita.
 
-### Conclusión
+### ConclusiÃ³n
 
-Las clases amigas en C++ permiten un acceso controlado y directo a los miembros privados y protegidos de otras clases, facilitando la implementación de operaciones complejas y la sobrecarga de operadores. Aunque poderosas, deben usarse con moderación y cuidado para no comprometer la encapsulación y mantener un diseño de software limpio y mantenible. Entender y aplicar adecuadamente las clases amigas es esencial para aprovechar al máximo las capacidades de la programación orientada a objetos en C++.
+Las clases amigas en C++ permiten un acceso controlado y directo a los miembros privados y protegidos de otras clases, facilitando la implementaciÃ³n de operaciones complejas y la sobrecarga de operadores. Aunque poderosas, deben usarse con moderaciÃ³n y cuidado para no comprometer la encapsulaciÃ³n y mantener un diseÃ±o de software limpio y mantenible. Entender y aplicar adecuadamente las clases amigas es esencial para aprovechar al mÃ¡ximo las capacidades de la programaciÃ³n orientada a objetos en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo de Implementación
-Ejemplo de Implementación Result
+Ejemplo de ImplementaciÃ³n
+Ejemplo de ImplementaciÃ³n Result
 Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas
 Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas Result
 <---Sintaxis--->
 ```cpp
-class ClaseB; // Declaración adelantada
+class ClaseB; // DeclaraciÃ³n adelantada
 
 class ClaseA {
-    friend class ClaseB; // Declaración de ClaseB como amiga
+    friend class ClaseB; // DeclaraciÃ³n de ClaseB como amiga
     // Miembros de la clase A
 };
 <---Sintaxis Result--->
-<---Ejemplo de Implementación--->
+<---Ejemplo de ImplementaciÃ³n--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-class ClaseB; // Declaración adelantada de ClaseB
+class ClaseB; // DeclaraciÃ³n adelantada de ClaseB
 
 class ClaseA {
 private:
@@ -159,7 +159,7 @@ private:
 public:
     ClaseA(int a) : datoA(a) {}
 
-    // Declaración de ClaseB como amiga
+    // DeclaraciÃ³n de ClaseB como amiga
     friend class ClaseB;
 };
 
@@ -177,17 +177,17 @@ int main() {
     b.mostrarA(a); // Muestra: Dato de ClaseA: 10
     return 0;
 }
-<---Ejemplo de Implementación Result--->
+<---Ejemplo de ImplementaciÃ³n Result--->
 <---Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-class Complejo; // Declaración adelantada de Complejo
+class Complejo; // DeclaraciÃ³n adelantada de Complejo
 
 class Matematicas {
 public:
-    // Declaración de la función amiga para la sobrecarga del operador +
+    // DeclaraciÃ³n de la funciÃ³n amiga para la sobrecarga del operador +
     friend Complejo operator+(const Complejo& c1, const Complejo& c2);
 };
 
@@ -198,7 +198,7 @@ private:
 public:
     Complejo(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
 
-    // Declaración de la función amiga para la sobrecarga del operador +
+    // DeclaraciÃ³n de la funciÃ³n amiga para la sobrecarga del operador +
     friend Complejo operator+(const Complejo& c1, const Complejo& c2);
 
     void mostrar() const {
@@ -206,14 +206,14 @@ public:
     }
 };
 
-// Definición de la función amiga para la sobrecarga del operador +
+// DefiniciÃ³n de la funciÃ³n amiga para la sobrecarga del operador +
 Complejo operator+(const Complejo& c1, const Complejo& c2) {
     return Complejo(c1.real + c2.real, c1.imag + c2.imag);
 }
 
 int main() {
     Complejo c1(3.0, 4.0), c2(1.0, 2.0);
-    Complejo c3 = c1 + c2; // Llama a la función amiga
+    Complejo c3 = c1 + c2; // Llama a la funciÃ³n amiga
     c3.mostrar(); // Muestra: (4.0, 6.0i)
     return 0;
 }

@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Estándar: `std::for_each`
+### Algoritmo de la Biblioteca EstÃ¡ndar: `std::for_each`
 
-El algoritmo `std::for_each` de la biblioteca estándar de C++ se utiliza para aplicar una función a cada elemento de un rango. Es una herramienta útil para realizar operaciones repetitivas en cada elemento de un contenedor.
+El algoritmo `std::for_each` de la biblioteca estÃ¡ndar de C++ se utiliza para aplicar una funciÃ³n a cada elemento de un rango. Es una herramienta Ãºtil para realizar operaciones repetitivas en cada elemento de un contenedor.
 
 #### Sintaxis de `std::for_each`
 
@@ -13,16 +13,16 @@ UnaryFunction for_each(InputIt first, InputIt last, UnaryFunction f);
 ```
 
 - **`InputIt first`**: Iterador al primer elemento del rango.
-- **`InputIt last`**: Iterador al elemento después del último en el rango.
-- **`UnaryFunction f`**: Una función o función objeto que se aplicará a cada elemento en el rango.
+- **`InputIt last`**: Iterador al elemento despuÃ©s del Ãºltimo en el rango.
+- **`UnaryFunction f`**: Una funciÃ³n o funciÃ³n objeto que se aplicarÃ¡ a cada elemento en el rango.
 
-#### Descripción
+#### DescripciÃ³n
 
-`std::for_each` aplica la función `f` a cada elemento en el rango `[first, last)`. La función `f` puede ser una función regular, un objeto de función (functor) o una lambda.
+`std::for_each` aplica la funciÃ³n `f` a cada elemento en el rango `[first, last)`. La funciÃ³n `f` puede ser una funciÃ³n regular, un objeto de funciÃ³n (functor) o una lambda.
 
 #### Ejemplo de Uso de `std::for_each`
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -45,8 +45,8 @@ int main() {
 ```
 
 En este ejemplo:
-- `imprimir` es una función que toma un entero y lo imprime.
-- `std::for_each(vec.begin(), vec.end(), imprimir)` aplica la función `imprimir` a cada elemento del vector.
+- `imprimir` es una funciÃ³n que toma un entero y lo imprime.
+- `std::for_each(vec.begin(), vec.end(), imprimir)` aplica la funciÃ³n `imprimir` a cada elemento del vector.
 
 ##### Ejemplo con Lambda
 
@@ -69,9 +69,9 @@ int main() {
 ```
 
 En este ejemplo:
-- Se usa una expresión lambda para definir la operación de impresión en línea.
+- Se usa una expresiÃ³n lambda para definir la operaciÃ³n de impresiÃ³n en lÃ­nea.
 
-### Más Ejemplos
+### MÃ¡s Ejemplos
 
 #### Incrementar Cada Elemento de un Contenedor
 
@@ -134,18 +134,18 @@ En este ejemplo:
 
 ### Consideraciones
 
-- **Rendimiento:** `std::for_each` es eficiente y generalmente se compila a código similar al de un bucle `for` explícito.
-- **Modificabilidad:** La función o lambda pasada a `std::for_each` puede modificar los elementos del contenedor si se pasan por referencia.
+- **Rendimiento:** `std::for_each` es eficiente y generalmente se compila a cÃ³digo similar al de un bucle `for` explÃ­cito.
+- **Modificabilidad:** La funciÃ³n o lambda pasada a `std::for_each` puede modificar los elementos del contenedor si se pasan por referencia.
 
-### Conclusión
+### ConclusiÃ³n
 
-`std::for_each` es un algoritmo de la biblioteca estándar de C++ que proporciona una forma conveniente y expresiva de aplicar una operación a cada elemento de un rango. Su uso con funciones, funtores y lambdas ofrece gran flexibilidad, y es una herramienta valiosa para escribir código conciso y claro en C++.
+`std::for_each` es un algoritmo de la biblioteca estÃ¡ndar de C++ que proporciona una forma conveniente y expresiva de aplicar una operaciÃ³n a cada elemento de un rango. Su uso con funciones, funtores y lambdas ofrece gran flexibilidad, y es una herramienta valiosa para escribir cÃ³digo conciso y claro en C++.
 <---FILES--->
-Ejemplo Básico
-Ejemplo Básico Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
 Ejemplo con Lambda
 Ejemplo con Lambda Result
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -164,7 +164,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Básico Result--->
+<---Ejemplo BÃ¡sico Result--->
 <---Ejemplo con Lambda--->
 ```cpp
 #include <iostream>

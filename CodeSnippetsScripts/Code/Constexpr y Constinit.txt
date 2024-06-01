@@ -1,24 +1,24 @@
 <---EXPLANATION--->
 ### Constexpr y Constinit en C++
 
-C++ introduce `constexpr` y `constinit` como mecanismos para definir y asegurar constantes en tiempo de compilaci髇. Estas dos palabras clave ayudan a mejorar la eficiencia y la seguridad del c骴igo al garantizar que ciertas expresiones sean evaluadas y ciertas variables sean inicializadas en tiempo de compilaci髇.
+C++ introduce `constexpr` y `constinit` como mecanismos para definir y asegurar constantes en tiempo de compilaci贸n. Estas dos palabras clave ayudan a mejorar la eficiencia y la seguridad del c贸digo al garantizar que ciertas expresiones sean evaluadas y ciertas variables sean inicializadas en tiempo de compilaci贸n.
 
 #### 1. **`constexpr`**
 
-`constexpr` se utiliza para definir variables y funciones que son evaluadas en tiempo de compilaci髇. Esto garantiza que las expresiones `constexpr` sean constantes y permite optimizaciones m醩 agresivas por parte del compilador.
+`constexpr` se utiliza para definir variables y funciones que son evaluadas en tiempo de compilaci贸n. Esto garantiza que las expresiones `constexpr` sean constantes y permite optimizaciones m谩s agresivas por parte del compilador.
 
 ##### Variables `constexpr`
 
-Una variable `constexpr` debe ser inicializada con una expresi髇 constante en tiempo de compilaci髇.
+Una variable `constexpr` debe ser inicializada con una expresi贸n constante en tiempo de compilaci贸n.
 
 ```cpp
-constexpr int tama駉Array = 10;
+constexpr int tama帽oArray = 10;
 constexpr double pi = 3.14159;
 ```
 
 ##### Funciones `constexpr`
 
-Una funci髇 `constexpr` puede ser evaluada en tiempo de compilaci髇 si sus argumentos son constantes. Si se llama a la funci髇 con valores que no son constantes, la funci髇 se eval鷄 en tiempo de ejecuci髇.
+Una funci贸n `constexpr` puede ser evaluada en tiempo de compilaci贸n si sus argumentos son constantes. Si se llama a la funci贸n con valores que no son constantes, la funci贸n se eval煤a en tiempo de ejecuci贸n.
 
 ```cpp
 constexpr int cuadrado(int x) {
@@ -26,41 +26,41 @@ constexpr int cuadrado(int x) {
 }
 
 int main() {
-    constexpr int valor = cuadrado(5); // Evaluada en tiempo de compilaci髇
-    int resultado = cuadrado(5);       // Evaluada en tiempo de ejecuci髇
+    constexpr int valor = cuadrado(5); // Evaluada en tiempo de compilaci贸n
+    int resultado = cuadrado(5);       // Evaluada en tiempo de ejecuci贸n
     return 0;
 }
 ```
 
 #### 2. **`constinit`**
 
-`constinit` se utiliza para garantizar que una variable de almacenamiento est醫ico sea inicializada en tiempo de compilaci髇. Esto es 鷗il para evitar inicializaciones m鷏tiples en el contexto de variables est醫icas y garantiza que la inicializaci髇 ocurra antes de cualquier uso de la variable.
+`constinit` se utiliza para garantizar que una variable de almacenamiento est谩tico sea inicializada en tiempo de compilaci贸n. Esto es 煤til para evitar inicializaciones m煤ltiples en el contexto de variables est谩ticas y garantiza que la inicializaci贸n ocurra antes de cualquier uso de la variable.
 
 ##### Ejemplo de `constinit`
 
 ```cpp
-constinit int valorGlobal = 42; // Garantiza inicializaci髇 en tiempo de compilaci髇
+constinit int valorGlobal = 42; // Garantiza inicializaci贸n en tiempo de compilaci贸n
 
 int main() {
-    constinit static int valorEstatico = 100; // Garantiza inicializaci髇 en tiempo de compilaci髇
+    constinit static int valorEstatico = 100; // Garantiza inicializaci贸n en tiempo de compilaci贸n
     return 0;
 }
 ```
 
-### Comparaci髇 y Usos
+### Comparaci贸n y Usos
 
-- **`constexpr`** se utiliza tanto para variables como para funciones y asegura que las expresiones sean evaluadas en tiempo de compilaci髇 siempre que sea posible.
-- **`constinit`** se utiliza para asegurar que una variable de almacenamiento est醫ico se inicialice solo una vez en tiempo de compilaci髇, evitando problemas de inicializaci髇 m鷏tiple.
+- **`constexpr`** se utiliza tanto para variables como para funciones y asegura que las expresiones sean evaluadas en tiempo de compilaci贸n siempre que sea posible.
+- **`constinit`** se utiliza para asegurar que una variable de almacenamiento est谩tico se inicialice solo una vez en tiempo de compilaci贸n, evitando problemas de inicializaci贸n m煤ltiple.
 
 ### Ejemplo Completo
 
-A continuaci髇, se muestra un ejemplo que utiliza tanto `constexpr` como `constinit` para declarar variables y funciones:
+A continuaci贸n, se muestra un ejemplo que utiliza tanto `constexpr` como `constinit` para declarar variables y funciones:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 constexpr
+// Funci贸n constexpr
 constexpr int suma(int a, int b) {
     return a + b;
 }
@@ -72,11 +72,11 @@ constexpr int valorConstante = 10;
 constinit int contadorGlobal = 0;
 
 int main() {
-    // Uso de constexpr para evaluar en tiempo de compilaci髇
+    // Uso de constexpr para evaluar en tiempo de compilaci贸n
     constexpr int resultado = suma(3, 4);
     cout << "Resultado constexpr: " << resultado << endl;
 
-    // Uso de constinit para asegurar inicializaci髇 est醫ica
+    // Uso de constinit para asegurar inicializaci贸n est谩tica
     constinit static int contadorLocal = 100;
     contadorLocal++;
     cout << "Contador local: " << contadorLocal << endl;
@@ -92,10 +92,10 @@ int main() {
 
 #### Funciones `constexpr` y Limitaciones
 
-- Las funciones `constexpr` pueden contener una sola sentencia `return` si est醤 definidas en C++11, pero desde C++14, pueden contener m醩 l骻ica, incluyendo bucles y condiciones.
-- Las funciones `constexpr` no pueden tener efectos secundarios, como modificar variables globales o est醫icas.
+- Las funciones `constexpr` pueden contener una sola sentencia `return` si est谩n definidas en C++11, pero desde C++14, pueden contener m谩s l贸gica, incluyendo bucles y condiciones.
+- Las funciones `constexpr` no pueden tener efectos secundarios, como modificar variables globales o est谩ticas.
 
-##### Ejemplo de Funci髇 `constexpr` Compleja (C++14 y Posterior)
+##### Ejemplo de Funci贸n `constexpr` Compleja (C++14 y Posterior)
 
 ```cpp
 constexpr int factorial(int n) {
@@ -107,7 +107,7 @@ constexpr int factorial(int n) {
 }
 
 int main() {
-    constexpr int valorFactorial = factorial(5); // Evaluado en tiempo de compilaci髇
+    constexpr int valorFactorial = factorial(5); // Evaluado en tiempo de compilaci贸n
     cout << "Factorial constexpr: " << valorFactorial << endl;
     return 0;
 }
@@ -115,7 +115,7 @@ int main() {
 
 #### Uso de `constinit` en Contextos de Multithreading
 
-El uso de `constinit` puede ser particularmente beneficioso en entornos de multithreading, donde asegurar que una variable est醫ica se inicializa correctamente antes de su uso concurrente es crucial para evitar condiciones de carrera.
+El uso de `constinit` puede ser particularmente beneficioso en entornos de multithreading, donde asegurar que una variable est谩tica se inicializa correctamente antes de su uso concurrente es crucial para evitar condiciones de carrera.
 
 ##### Ejemplo de `constinit` en Multithreading
 
@@ -143,9 +143,9 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Tanto `constexpr` como `constinit` son herramientas poderosas en C++ que mejoran la seguridad y la eficiencia del c骴igo al garantizar la evaluaci髇 y la inicializaci髇 en tiempo de compilaci髇. Utilizar estas palabras clave adecuadamente puede ayudar a prevenir errores y optimizar el rendimiento de los programas.
+Tanto `constexpr` como `constinit` son herramientas poderosas en C++ que mejoran la seguridad y la eficiencia del c贸digo al garantizar la evaluaci贸n y la inicializaci贸n en tiempo de compilaci贸n. Utilizar estas palabras clave adecuadamente puede ayudar a prevenir errores y optimizar el rendimiento de los programas.
 <---FILES--->
 Variables `constexpr`
 Variables `constexpr` Result
@@ -153,13 +153,13 @@ Funciones `constexpr`
 Funciones `constexpr` Result
 Ejemplo de `constinit`
 Ejemplo de `constinit` Result
-Ejemplo de Funci髇 `constexpr` Compleja (C++14 y Posterior)
-Ejemplo de Funci髇 `constexpr` Compleja (C++14 y Posterior) Result
+Ejemplo de Funci贸n `constexpr` Compleja (C++14 y Posterior)
+Ejemplo de Funci贸n `constexpr` Compleja (C++14 y Posterior) Result
 Ejemplo de `constinit` en Multithreading
 Ejemplo de `constinit` en Multithreading Result
 <---Variables `constexpr`--->
 ```cpp
-constexpr int tama駉Array = 10;
+constexpr int tama帽oArray = 10;
 constexpr double pi = 3.14159;
 <---Variables `constexpr` Result--->
 <---Funciones `constexpr`--->
@@ -169,24 +169,24 @@ constexpr int cuadrado(int x) {
 }
 
 int main() {
-    constexpr int valor = cuadrado(5); // Evaluada en tiempo de compilaci髇
-    int resultado = cuadrado(5);       // Evaluada en tiempo de ejecuci髇
+    constexpr int valor = cuadrado(5); // Evaluada en tiempo de compilaci贸n
+    int resultado = cuadrado(5);       // Evaluada en tiempo de ejecuci贸n
     return 0;
 }
 <---Funciones `constexpr` Result--->
 <---Ejemplo de `constinit`--->
 ```cpp
-constinit int valorGlobal = 42; // Garantiza inicializaci髇 en tiempo de compilaci髇
+constinit int valorGlobal = 42; // Garantiza inicializaci贸n en tiempo de compilaci贸n
 
 int main() {
-    constinit static int valorEstatico = 100; // Garantiza inicializaci髇 en tiempo de compilaci髇
+    constinit static int valorEstatico = 100; // Garantiza inicializaci贸n en tiempo de compilaci贸n
     return 0;
 }
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 constexpr
+// Funci贸n constexpr
 constexpr int suma(int a, int b) {
     return a + b;
 }
@@ -198,11 +198,11 @@ constexpr int valorConstante = 10;
 constinit int contadorGlobal = 0;
 
 int main() {
-    // Uso de constexpr para evaluar en tiempo de compilaci髇
+    // Uso de constexpr para evaluar en tiempo de compilaci贸n
     constexpr int resultado = suma(3, 4);
     cout << "Resultado constexpr: " << resultado << endl;
 
-    // Uso de constinit para asegurar inicializaci髇 est醫ica
+    // Uso de constinit para asegurar inicializaci贸n est谩tica
     constinit static int contadorLocal = 100;
     contadorLocal++;
     cout << "Contador local: " << contadorLocal << endl;
@@ -213,7 +213,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de `constinit` Result--->
-<---Ejemplo de Funci髇 `constexpr` Compleja (C++14 y Posterior)--->
+<---Ejemplo de Funci贸n `constexpr` Compleja (C++14 y Posterior)--->
 ```cpp
 constexpr int factorial(int n) {
     int resultado = 1;
@@ -224,11 +224,11 @@ constexpr int factorial(int n) {
 }
 
 int main() {
-    constexpr int valorFactorial = factorial(5); // Evaluado en tiempo de compilaci髇
+    constexpr int valorFactorial = factorial(5); // Evaluado en tiempo de compilaci贸n
     cout << "Factorial constexpr: " << valorFactorial << endl;
     return 0;
 }
-<---Ejemplo de Funci髇 `constexpr` Compleja (C++14 y Posterior) Result--->
+<---Ejemplo de Funci贸n `constexpr` Compleja (C++14 y Posterior) Result--->
 <---Ejemplo de `constinit` en Multithreading--->
 ```cpp
 #include <iostream>

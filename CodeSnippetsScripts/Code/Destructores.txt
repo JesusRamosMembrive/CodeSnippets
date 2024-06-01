@@ -1,14 +1,14 @@
 <---EXPLANATION--->
 ### Destructores en C++
 
-Un destructor es una funciÛn miembro especial de una clase que se llama autom·ticamente cuando un objeto de esa clase se destruye. Los destructores se utilizan para liberar recursos que el objeto pueda haber adquirido durante su vida, como memoria din·mica, archivos abiertos, o conexiones de red. El uso adecuado de destructores asegura que los recursos se gestionen de manera correcta, evitando fugas de memoria y otros problemas.
+Un destructor es una funci√≥n miembro especial de una clase que se llama autom√°ticamente cuando un objeto de esa clase se destruye. Los destructores se utilizan para liberar recursos que el objeto pueda haber adquirido durante su vida, como memoria din√°mica, archivos abiertos, o conexiones de red. El uso adecuado de destructores asegura que los recursos se gestionen de manera correcta, evitando fugas de memoria y otros problemas.
 
-#### CaracterÌsticas del Destructor
+#### Caracter√≠sticas del Destructor
 
 1. **Mismo Nombre que la Clase:** El destructor tiene el mismo nombre que la clase, precedido por un tilde (`~`).
-2. **Sin Par·metros:** Un destructor no toma par·metros ni tiene un tipo de retorno.
-3. **Autom·tico:** Se llama autom·ticamente cuando un objeto sale de alcance o se elimina.
-4. **⁄nico:** Una clase puede tener solo un destructor.
+2. **Sin Par√°metros:** Un destructor no toma par√°metros ni tiene un tipo de retorno.
+3. **Autom√°tico:** Se llama autom√°ticamente cuando un objeto sale de alcance o se elimina.
+4. **√önico:** Una clase puede tener solo un destructor.
 
 ##### Sintaxis del Destructor
 
@@ -21,11 +21,11 @@ public:
     // Destructor
     ~NombreClase();
 
-    // Otros mÈtodos y atributos
+    // Otros m√©todos y atributos
 };
 ```
 
-##### Ejemplo B·sico de Destructor
+##### Ejemplo B√°sico de Destructor
 
 ```cpp
 #include <iostream>
@@ -50,20 +50,20 @@ int main() {
     Persona juan("Juan");
     {
         Persona maria("Maria");
-    } // Destructor llamado para maria aquÌ
+    } // Destructor llamado para maria aqu√≠
 
     cout << "Fin del main" << endl;
-    return 0; // Destructor llamado para juan aquÌ
+    return 0; // Destructor llamado para juan aqu√≠
 }
 ```
 
-En este ejemplo, el destructor se llama autom·ticamente cuando los objetos `juan` y `maria` salen de su alcance.
+En este ejemplo, el destructor se llama autom√°ticamente cuando los objetos `juan` y `maria` salen de su alcance.
 
-#### Destructores y Recursos Din·micos
+#### Destructores y Recursos Din√°micos
 
-Los destructores son especialmente importantes cuando una clase maneja recursos din·micos, como memoria asignada din·micamente, archivos, o conexiones de red. El destructor asegura que estos recursos se liberen correctamente cuando el objeto ya no se necesita.
+Los destructores son especialmente importantes cuando una clase maneja recursos din√°micos, como memoria asignada din√°micamente, archivos, o conexiones de red. El destructor asegura que estos recursos se liberen correctamente cuando el objeto ya no se necesita.
 
-##### Ejemplo con Recursos Din·micos
+##### Ejemplo con Recursos Din√°micos
 
 ```cpp
 #include <iostream>
@@ -77,24 +77,24 @@ private:
 public:
     // Constructor
     Array(int s) : size(s) {
-        data = new int[size]; // Asignar memoria din·mica
-        cout << "Array de tamaÒo " << size << " creado." << endl;
+        data = new int[size]; // Asignar memoria din√°mica
+        cout << "Array de tama√±o " << size << " creado." << endl;
     }
 
     // Destructor
     ~Array() {
-        delete[] data; // Liberar memoria din·mica
-        cout << "Array de tamaÒo " << size << " destruido." << endl;
+        delete[] data; // Liberar memoria din√°mica
+        cout << "Array de tama√±o " << size << " destruido." << endl;
     }
 
-    // MÈtodo para establecer un valor en el array
+    // M√©todo para establecer un valor en el array
     void setValue(int index, int value) {
         if (index >= 0 && index < size) {
             data[index] = value;
         }
     }
 
-    // MÈtodo para obtener un valor del array
+    // M√©todo para obtener un valor del array
     int getValue(int index) const {
         if (index >= 0 && index < size) {
             return data[index];
@@ -107,18 +107,18 @@ int main() {
     Array arr(5);
     arr.setValue(0, 10);
     arr.setValue(1, 20);
-    cout << "Valor en la posiciÛn 0: " << arr.getValue(0) << endl;
-    cout << "Valor en la posiciÛn 1: " << arr.getValue(1) << endl;
+    cout << "Valor en la posici√≥n 0: " << arr.getValue(0) << endl;
+    cout << "Valor en la posici√≥n 1: " << arr.getValue(1) << endl;
 
     return 0;
 }
 ```
 
-En este ejemplo, el destructor de la clase `Array` se asegura de liberar la memoria asignada din·micamente cuando el objeto `arr` se destruye.
+En este ejemplo, el destructor de la clase `Array` se asegura de liberar la memoria asignada din√°micamente cuando el objeto `arr` se destruye.
 
 #### Destructores en Clases Derivadas
 
-En una jerarquÌa de herencia, los destructores de las clases base y derivadas se llaman en el orden correcto. Si una clase base tiene un destructor virtual, asegura que el destructor de la clase derivada se llame correctamente cuando se elimina un objeto a travÈs de un puntero a la clase base.
+En una jerarqu√≠a de herencia, los destructores de las clases base y derivadas se llaman en el orden correcto. Si una clase base tiene un destructor virtual, asegura que el destructor de la clase derivada se llame correctamente cuando se elimina un objeto a trav√©s de un puntero a la clase base.
 
 ##### Ejemplo con Herencia
 
@@ -160,11 +160,11 @@ int main() {
 }
 ```
 
-En este ejemplo, el destructor de `Base` es virtual, asegurando que el destructor de `Derivada` se llame correctamente cuando el objeto se elimina a travÈs de un puntero a la clase base.
+En este ejemplo, el destructor de `Base` es virtual, asegurando que el destructor de `Derivada` se llame correctamente cuando el objeto se elimina a trav√©s de un puntero a la clase base.
 
 #### Regla de Tres, Cinco y Cero
 
-La "regla de tres" establece que si una clase necesita un destructor explÌcito, probablemente tambiÈn necesite un constructor de copia y un operador de asignaciÛn de copia. La "regla de cinco" extiende esto a las operaciones de movimiento en C++11 y posteriores. La "regla de cero" sugiere usar tipos RAII (Resource Acquisition Is Initialization) para manejar recursos autom·ticamente, evitando la necesidad de destructores personalizados, constructores de copia, y operadores de asignaciÛn.
+La "regla de tres" establece que si una clase necesita un destructor expl√≠cito, probablemente tambi√©n necesite un constructor de copia y un operador de asignaci√≥n de copia. La "regla de cinco" extiende esto a las operaciones de movimiento en C++11 y posteriores. La "regla de cero" sugiere usar tipos RAII (Resource Acquisition Is Initialization) para manejar recursos autom√°ticamente, evitando la necesidad de destructores personalizados, constructores de copia, y operadores de asignaci√≥n.
 
 ##### Regla de Tres
 
@@ -190,7 +190,7 @@ public:
         // Copiar datos...
     }
 
-    // Operador de asignaciÛn de copia
+    // Operador de asignaci√≥n de copia
     Ejemplo& operator=(const Ejemplo& other) {
         if (this != &other) {
             delete[] data;
@@ -226,7 +226,7 @@ public:
         // Copiar datos...
     }
 
-    // Operador de asignaciÛn de copia
+    // Operador de asignaci√≥n de copia
     Ejemplo& operator=(const Ejemplo& other) {
         if (this != &other) {
             delete[] data;
@@ -241,7 +241,7 @@ public:
         other.data = nullptr;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Ejemplo& operator=(Ejemplo&& other) noexcept {
         if (this != &other) {
             delete[] data;
@@ -253,16 +253,16 @@ public:
 };
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los destructores son una parte esencial de la administraciÛn de recursos en C++. Aseguran que los recursos adquiridos por un objeto se liberen adecuadamente cuando el objeto ya no se necesita. Entender cÛmo y cu·ndo implementar destructores, junto con las reglas de tres, cinco y cero, permite a los desarrolladores escribir cÛdigo m·s seguro y eficiente, gestionando correctamente la memoria y otros recursos.
+Los destructores son una parte esencial de la administraci√≥n de recursos en C++. Aseguran que los recursos adquiridos por un objeto se liberen adecuadamente cuando el objeto ya no se necesita. Entender c√≥mo y cu√°ndo implementar destructores, junto con las reglas de tres, cinco y cero, permite a los desarrolladores escribir c√≥digo m√°s seguro y eficiente, gestionando correctamente la memoria y otros recursos.
 <---FILES--->
 Sintaxis del Destructor
 Sintaxis del Destructor Result
-Ejemplo B·sico de Destructor
-Ejemplo B·sico de Destructor Result
-Ejemplo con Recursos Din·micos
-Ejemplo con Recursos Din·micos Result
+Ejemplo B√°sico de Destructor
+Ejemplo B√°sico de Destructor Result
+Ejemplo con Recursos Din√°micos
+Ejemplo con Recursos Din√°micos Result
 Ejemplo con Herencia
 Ejemplo con Herencia Result
 Regla de Tres
@@ -279,10 +279,10 @@ public:
     // Destructor
     ~NombreClase();
 
-    // Otros mÈtodos y atributos
+    // Otros m√©todos y atributos
 };
 <---Sintaxis del Destructor Result--->
-<---Ejemplo B·sico de Destructor--->
+<---Ejemplo B√°sico de Destructor--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -306,13 +306,13 @@ int main() {
     Persona juan("Juan");
     {
         Persona maria("Maria");
-    } // Destructor llamado para maria aquÌ
+    } // Destructor llamado para maria aqu√≠
 
     cout << "Fin del main" << endl;
-    return 0; // Destructor llamado para juan aquÌ
+    return 0; // Destructor llamado para juan aqu√≠
 }
-<---Ejemplo B·sico de Destructor Result--->
-<---Ejemplo con Recursos Din·micos--->
+<---Ejemplo B√°sico de Destructor Result--->
+<---Ejemplo con Recursos Din√°micos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -325,24 +325,24 @@ private:
 public:
     // Constructor
     Array(int s) : size(s) {
-        data = new int[size]; // Asignar memoria din·mica
-        cout << "Array de tamaÒo " << size << " creado." << endl;
+        data = new int[size]; // Asignar memoria din√°mica
+        cout << "Array de tama√±o " << size << " creado." << endl;
     }
 
     // Destructor
     ~Array() {
-        delete[] data; // Liberar memoria din·mica
-        cout << "Array de tamaÒo " << size << " destruido." << endl;
+        delete[] data; // Liberar memoria din√°mica
+        cout << "Array de tama√±o " << size << " destruido." << endl;
     }
 
-    // MÈtodo para establecer un valor en el array
+    // M√©todo para establecer un valor en el array
     void setValue(int index, int value) {
         if (index >= 0 && index < size) {
             data[index] = value;
         }
     }
 
-    // MÈtodo para obtener un valor del array
+    // M√©todo para obtener un valor del array
     int getValue(int index) const {
         if (index >= 0 && index < size) {
             return data[index];
@@ -355,12 +355,12 @@ int main() {
     Array arr(5);
     arr.setValue(0, 10);
     arr.setValue(1, 20);
-    cout << "Valor en la posiciÛn 0: " << arr.getValue(0) << endl;
-    cout << "Valor en la posiciÛn 1: " << arr.getValue(1) << endl;
+    cout << "Valor en la posici√≥n 0: " << arr.getValue(0) << endl;
+    cout << "Valor en la posici√≥n 1: " << arr.getValue(1) << endl;
 
     return 0;
 }
-<---Ejemplo con Recursos Din·micos Result--->
+<---Ejemplo con Recursos Din√°micos Result--->
 <---Ejemplo con Herencia--->
 ```cpp
 #include <iostream>
@@ -422,7 +422,7 @@ public:
         // Copiar datos...
     }
 
-    // Operador de asignaciÛn de copia
+    // Operador de asignaci√≥n de copia
     Ejemplo& operator=(const Ejemplo& other) {
         if (this != &other) {
             delete[] data;
@@ -456,7 +456,7 @@ public:
         // Copiar datos...
     }
 
-    // Operador de asignaciÛn de copia
+    // Operador de asignaci√≥n de copia
     Ejemplo& operator=(const Ejemplo& other) {
         if (this != &other) {
             delete[] data;
@@ -471,7 +471,7 @@ public:
         other.data = nullptr;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Ejemplo& operator=(Ejemplo&& other) noexcept {
         if (this != &other) {
             delete[] data;

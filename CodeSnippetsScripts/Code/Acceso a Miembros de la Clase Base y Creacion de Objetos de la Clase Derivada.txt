@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Acceso a Miembros de la Clase Base y Creaci髇 de Objetos de la Clase Derivada en C++
+### Acceso a Miembros de la Clase Base y Creaci贸n de Objetos de la Clase Derivada en C++
 
-En la programaci髇 orientada a objetos en C++, la herencia permite que las clases derivadas accedan a los miembros de la clase base y extiendan su funcionalidad. Entender c髆o se accede a estos miembros y c髆o se crean objetos de clases derivadas es crucial para aprovechar al m醲imo la herencia.
+En la programaci贸n orientada a objetos en C++, la herencia permite que las clases derivadas accedan a los miembros de la clase base y extiendan su funcionalidad. Entender c贸mo se accede a estos miembros y c贸mo se crean objetos de clases derivadas es crucial para aprovechar al m谩ximo la herencia.
 
 #### Acceso a Miembros de la Clase Base
 
@@ -9,9 +9,9 @@ En C++, los miembros de una clase base pueden tener diferentes niveles de acceso
 
 ##### Especificadores de Acceso
 
-- **`public`:** Los miembros p鷅licos de la clase base se mantienen p鷅licos en la clase derivada. Los miembros protegidos de la clase base se mantienen protegidos en la clase derivada.
-- **`protected`:** Los miembros p鷅licos y protegidos de la clase base se convierten en protegidos en la clase derivada.
-- **`private`:** Los miembros p鷅licos y protegidos de la clase base se convierten en privados en la clase derivada.
+- **`public`:** Los miembros p煤blicos de la clase base se mantienen p煤blicos en la clase derivada. Los miembros protegidos de la clase base se mantienen protegidos en la clase derivada.
+- **`protected`:** Los miembros p煤blicos y protegidos de la clase base se convierten en protegidos en la clase derivada.
+- **`private`:** Los miembros p煤blicos y protegidos de la clase base se convierten en privados en la clase derivada.
 
 ##### Ejemplo de Acceso a Miembros de la Clase Base
 
@@ -77,17 +77,17 @@ int main() {
 }
 ```
 
-En este ejemplo, mostramos c髆o los miembros de la clase base son accesibles en clases derivadas dependiendo del especificador de acceso utilizado en la herencia.
+En este ejemplo, mostramos c贸mo los miembros de la clase base son accesibles en clases derivadas dependiendo del especificador de acceso utilizado en la herencia.
 
-#### Creaci髇 de Objetos de la Clase Derivada
+#### Creaci贸n de Objetos de la Clase Derivada
 
-La creaci髇 de objetos de la clase derivada sigue las mismas reglas b醩icas que la creaci髇 de objetos de cualquier clase en C++. Sin embargo, es importante entender c髆o se inicializan los miembros de la clase base durante la construcci髇 de un objeto derivado.
+La creaci贸n de objetos de la clase derivada sigue las mismas reglas b谩sicas que la creaci贸n de objetos de cualquier clase en C++. Sin embargo, es importante entender c贸mo se inicializan los miembros de la clase base durante la construcci贸n de un objeto derivado.
 
 ##### Constructores de Clases Derivadas
 
-Cuando se crea un objeto de una clase derivada, el constructor de la clase base se llama autom醫icamente antes de que se ejecute el constructor de la clase derivada. La lista de inicializaci髇 del constructor de la clase derivada se puede utilizar para inicializar los miembros de la clase base.
+Cuando se crea un objeto de una clase derivada, el constructor de la clase base se llama autom谩ticamente antes de que se ejecute el constructor de la clase derivada. La lista de inicializaci贸n del constructor de la clase derivada se puede utilizar para inicializar los miembros de la clase base.
 
-##### Ejemplo de Creaci髇 de Objetos de la Clase Derivada
+##### Ejemplo de Creaci贸n de Objetos de la Clase Derivada
 
 ```cpp
 #include <iostream>
@@ -134,13 +134,13 @@ int main() {
 
 En este ejemplo:
 - La clase `Base` tiene un constructor que inicializa `baseVar`.
-- La clase `Derivada` hereda de `Base` y su constructor inicializa tanto `baseVar` (a trav閟 de la lista de inicializaci髇) como `derivadaVar`.
+- La clase `Derivada` hereda de `Base` y su constructor inicializa tanto `baseVar` (a trav茅s de la lista de inicializaci贸n) como `derivadaVar`.
 
-#### Invocaci髇 de Constructores de la Clase Base
+#### Invocaci贸n de Constructores de la Clase Base
 
-El constructor de la clase base se llama autom醫icamente antes de que se ejecute el constructor de la clase derivada. Esto asegura que todos los miembros de la clase base se inicialicen correctamente antes de inicializar los miembros de la clase derivada.
+El constructor de la clase base se llama autom谩ticamente antes de que se ejecute el constructor de la clase derivada. Esto asegura que todos los miembros de la clase base se inicialicen correctamente antes de inicializar los miembros de la clase derivada.
 
-##### Ejemplo de Invocaci髇 de Constructores
+##### Ejemplo de Invocaci贸n de Constructores
 
 ```cpp
 #include <iostream>
@@ -179,11 +179,11 @@ int main() {
 }
 ```
 
-En este ejemplo, vemos c髆o el constructor de la clase base se llama autom醫icamente antes del constructor de la clase derivada. Cuando se crea `obj2` con un valor, el constructor parametrizado de `Base` se invoca con el valor proporcionado.
+En este ejemplo, vemos c贸mo el constructor de la clase base se llama autom谩ticamente antes del constructor de la clase derivada. Cuando se crea `obj2` con un valor, el constructor parametrizado de `Base` se invoca con el valor proporcionado.
 
-### Conclusi髇
+### Conclusi贸n
 
-La herencia en C++ permite que las clases derivadas accedan a los miembros de la clase base y extiendan su funcionalidad. Los especificadores de acceso (`public`, `protected`, `private`) juegan un papel crucial en determinar c髆o los miembros de la clase base son accesibles en la clase derivada. La creaci髇 de objetos de la clase derivada implica la llamada autom醫ica al constructor de la clase base, asegurando que todos los miembros se inicialicen correctamente. Entender estos conceptos es esencial para dise馻r jerarqu韆s de clases efectivas y aprovechar al m醲imo la programaci髇 orientada a objetos en C++.
+La herencia en C++ permite que las clases derivadas accedan a los miembros de la clase base y extiendan su funcionalidad. Los especificadores de acceso (`public`, `protected`, `private`) juegan un papel crucial en determinar c贸mo los miembros de la clase base son accesibles en la clase derivada. La creaci贸n de objetos de la clase derivada implica la llamada autom谩tica al constructor de la clase base, asegurando que todos los miembros se inicialicen correctamente. Entender estos conceptos es esencial para dise帽ar jerarqu铆as de clases efectivas y aprovechar al m谩ximo la programaci贸n orientada a objetos en C++.
 <---FILES--->
 Especificadores de Acceso
 Especificadores de Acceso Result
@@ -191,10 +191,10 @@ Ejemplo de Acceso a Miembros de la Clase Base
 Ejemplo de Acceso a Miembros de la Clase Base Result
 Constructores de Clases Derivadas
 Constructores de Clases Derivadas Result
-Ejemplo de Creaci髇 de Objetos de la Clase Derivada
-Ejemplo de Creaci髇 de Objetos de la Clase Derivada Result
-Ejemplo de Invocaci髇 de Constructores
-Ejemplo de Invocaci髇 de Constructores Result
+Ejemplo de Creaci贸n de Objetos de la Clase Derivada
+Ejemplo de Creaci贸n de Objetos de la Clase Derivada Result
+Ejemplo de Invocaci贸n de Constructores
+Ejemplo de Invocaci贸n de Constructores Result
 <---Especificadores de Acceso--->
 <---Especificadores de Acceso Result--->
 <---Ejemplo de Acceso a Miembros de la Clase Base--->
@@ -261,7 +261,7 @@ int main() {
 <---Ejemplo de Acceso a Miembros de la Clase Base Result--->
 <---Constructores de Clases Derivadas--->
 <---Constructores de Clases Derivadas Result--->
-<---Ejemplo de Creaci髇 de Objetos de la Clase Derivada--->
+<---Ejemplo de Creaci贸n de Objetos de la Clase Derivada--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -303,8 +303,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Creaci髇 de Objetos de la Clase Derivada Result--->
-<---Ejemplo de Invocaci髇 de Constructores--->
+<---Ejemplo de Creaci贸n de Objetos de la Clase Derivada Result--->
+<---Ejemplo de Invocaci贸n de Constructores--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -340,4 +340,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Invocaci髇 de Constructores Result--->
+<---Ejemplo de Invocaci贸n de Constructores Result--->

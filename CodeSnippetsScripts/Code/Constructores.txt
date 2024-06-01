@@ -1,7 +1,7 @@
 <---EXPLANATION--->
 ### Constructores en C++
 
-Los constructores son funciones especiales de las clases en C++ que se utilizan para inicializar objetos. Un constructor tiene el mismo nombre que la clase y no tiene tipo de retorno, ni siquiera `void`. Los constructores pueden sobrecargarse, lo que significa que una clase puede tener m·s de un constructor con diferentes listas de par·metros.
+Los constructores son funciones especiales de las clases en C++ que se utilizan para inicializar objetos. Un constructor tiene el mismo nombre que la clase y no tiene tipo de retorno, ni siquiera `void`. Los constructores pueden sobrecargarse, lo que significa que una clase puede tener m√°s de un constructor con diferentes listas de par√°metros.
 
 #### Tipos de Constructores
 
@@ -12,7 +12,7 @@ Los constructores son funciones especiales de las clases en C++ que se utilizan 
 
 #### Constructor por Defecto
 
-El constructor por defecto es un constructor que se llama autom·ticamente cuando se crea un objeto sin pasar argumentos. Si no se define explÌcitamente un constructor por defecto, el compilador genera uno implÌcitamente.
+El constructor por defecto es un constructor que se llama autom√°ticamente cuando se crea un objeto sin pasar argumentos. Si no se define expl√≠citamente un constructor por defecto, el compilador genera uno impl√≠citamente.
 
 ##### Ejemplo de Constructor por Defecto
 
@@ -48,7 +48,7 @@ En este ejemplo, el constructor por defecto inicializa `nombre` a "Desconocido" 
 
 #### Constructor Parametrizado
 
-Un constructor parametrizado permite inicializar un objeto con valores especÌficos al momento de su creaciÛn.
+Un constructor parametrizado permite inicializar un objeto con valores espec√≠ficos al momento de su creaci√≥n.
 
 ##### Ejemplo de Constructor Parametrizado
 
@@ -145,7 +145,7 @@ public:
 
     // Constructor de movimiento
     Persona(Persona&& p) noexcept : nombre(move(p.nombre)), edad(p.edad) {
-        p.edad = 0; // Opcional: Dejar el objeto fuente en un estado v·lido
+        p.edad = 0; // Opcional: Dejar el objeto fuente en un estado v√°lido
     }
 
     void mostrarInformacion() {
@@ -158,8 +158,8 @@ int main() {
     Persona p2 = move(p1);   // Llama al constructor de movimiento
     p2.mostrarInformacion();
 
-    // p1 est· en un estado indefinido, pero v·lido
-    cout << "DespuÈs de mover, p1: ";
+    // p1 est√° en un estado indefinido, pero v√°lido
+    cout << "Despu√©s de mover, p1: ";
     p1.mostrarInformacion();
 
     return 0;
@@ -168,11 +168,11 @@ int main() {
 
 En este ejemplo, el constructor de movimiento transfiere los recursos de `p1` a `p2`, evitando una copia completa.
 
-#### InicializaciÛn de Miembros (Lista de InicializaciÛn)
+#### Inicializaci√≥n de Miembros (Lista de Inicializaci√≥n)
 
-Es una buena pr·ctica inicializar los miembros de la clase en la lista de inicializaciÛn del constructor, especialmente para miembros constantes y referencias.
+Es una buena pr√°ctica inicializar los miembros de la clase en la lista de inicializaci√≥n del constructor, especialmente para miembros constantes y referencias.
 
-##### Ejemplo con Lista de InicializaciÛn
+##### Ejemplo con Lista de Inicializaci√≥n
 
 ```cpp
 #include <iostream>
@@ -183,7 +183,7 @@ public:
     const int x;
     const int y;
 
-    // Constructor con lista de inicializaciÛn
+    // Constructor con lista de inicializaci√≥n
     Punto(int a, int b) : x(a), y(b) {}
 
     void mostrarInformacion() {
@@ -192,18 +192,18 @@ public:
 };
 
 int main() {
-    Punto p(10, 20);  // Llama al constructor con lista de inicializaciÛn
+    Punto p(10, 20);  // Llama al constructor con lista de inicializaci√≥n
     p.mostrarInformacion();
 
     return 0;
 }
 ```
 
-En este ejemplo, los miembros `x` y `y` se inicializan en la lista de inicializaciÛn del constructor.
+En este ejemplo, los miembros `x` y `y` se inicializan en la lista de inicializaci√≥n del constructor.
 
 #### Constructores Predeterminados por el Compilador
 
-Si no se definen constructores, el compilador proporciona un constructor por defecto, un constructor de copia y un operador de asignaciÛn de copia. Estos constructores realizan inicializaciones y copias miembro a miembro.
+Si no se definen constructores, el compilador proporciona un constructor por defecto, un constructor de copia y un operador de asignaci√≥n de copia. Estos constructores realizan inicializaciones y copias miembro a miembro.
 
 ### Ejemplo Completo con Diferentes Constructores
 
@@ -253,19 +253,19 @@ int main() {
     Persona p4 = move(p2);
     p4.mostrarInformacion();
 
-    // Estado despuÈs del movimiento
-    cout << "DespuÈs de mover, p2: ";
+    // Estado despu√©s del movimiento
+    cout << "Despu√©s de mover, p2: ";
     p2.mostrarInformacion();
 
     return 0;
 }
 ```
 
-En este ejemplo, la clase `Persona` define todos los tipos principales de constructores, y el programa demuestra cÛmo usarlos.
+En este ejemplo, la clase `Persona` define todos los tipos principales de constructores, y el programa demuestra c√≥mo usarlos.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los constructores son fundamentales para la inicializaciÛn de objetos en C++. La capacidad de definir diferentes tipos de constructores (por defecto, parametrizados, de copia y de movimiento) proporciona flexibilidad y control sobre cÛmo se crean e inicializan los objetos. Utilizar correctamente estos constructores puede mejorar la eficiencia y la robustez del cÛdigo, asegurando que los objetos se encuentren en estados v·lidos desde su creaciÛn.
+Los constructores son fundamentales para la inicializaci√≥n de objetos en C++. La capacidad de definir diferentes tipos de constructores (por defecto, parametrizados, de copia y de movimiento) proporciona flexibilidad y control sobre c√≥mo se crean e inicializan los objetos. Utilizar correctamente estos constructores puede mejorar la eficiencia y la robustez del c√≥digo, asegurando que los objetos se encuentren en estados v√°lidos desde su creaci√≥n.
 <---FILES--->
 Ejemplo de Constructor por Defecto
 Ejemplo de Constructor por Defecto Result
@@ -275,8 +275,8 @@ Ejemplo de Constructor de Copia
 Ejemplo de Constructor de Copia Result
 Ejemplo de Constructor de Movimiento
 Ejemplo de Constructor de Movimiento Result
-Ejemplo con Lista de InicializaciÛn
-Ejemplo con Lista de InicializaciÛn Result
+Ejemplo con Lista de Inicializaci√≥n
+Ejemplo con Lista de Inicializaci√≥n Result
 <---Ejemplo de Constructor por Defecto--->
 ```cpp
 #include <iostream>
@@ -383,7 +383,7 @@ public:
 
     // Constructor de movimiento
     Persona(Persona&& p) noexcept : nombre(move(p.nombre)), edad(p.edad) {
-        p.edad = 0; // Opcional: Dejar el objeto fuente en un estado v·lido
+        p.edad = 0; // Opcional: Dejar el objeto fuente en un estado v√°lido
     }
 
     void mostrarInformacion() {
@@ -396,14 +396,14 @@ int main() {
     Persona p2 = move(p1);   // Llama al constructor de movimiento
     p2.mostrarInformacion();
 
-    // p1 est· en un estado indefinido, pero v·lido
-    cout << "DespuÈs de mover, p1: ";
+    // p1 est√° en un estado indefinido, pero v√°lido
+    cout << "Despu√©s de mover, p1: ";
     p1.mostrarInformacion();
 
     return 0;
 }
 <---Ejemplo de Constructor de Movimiento Result--->
-<---Ejemplo con Lista de InicializaciÛn--->
+<---Ejemplo con Lista de Inicializaci√≥n--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -413,7 +413,7 @@ public:
     const int x;
     const int y;
 
-    // Constructor con lista de inicializaciÛn
+    // Constructor con lista de inicializaci√≥n
     Punto(int a, int b) : x(a), y(b) {}
 
     void mostrarInformacion() {
@@ -422,7 +422,7 @@ public:
 };
 
 int main() {
-    Punto p(10, 20);  // Llama al constructor con lista de inicializaciÛn
+    Punto p(10, 20);  // Llama al constructor con lista de inicializaci√≥n
     p.mostrarInformacion();
 
     return 0;
@@ -473,10 +473,10 @@ int main() {
     Persona p4 = move(p2);
     p4.mostrarInformacion();
 
-    // Estado despuÈs del movimiento
-    cout << "DespuÈs de mover, p2: ";
+    // Estado despu√©s del movimiento
+    cout << "Despu√©s de mover, p2: ";
     p2.mostrarInformacion();
 
     return 0;
 }
-<---Ejemplo con Lista de InicializaciÛn Result--->
+<---Ejemplo con Lista de Inicializaci√≥n Result--->

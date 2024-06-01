@@ -1,19 +1,19 @@
 <---EXPLANATION--->
-### Operaciones Permitidas en el Ámbito de Contenedores en C++
+### Operaciones Permitidas en el Ãmbito de Contenedores en C++
 
-Los contenedores en C++ proporcionan una variedad de operaciones que permiten la manipulación eficiente de los elementos que almacenan. Estas operaciones incluyen la inserción, eliminación, acceso y modificación de elementos, así como la consulta del tamaño y la capacidad del contenedor. Aquí se describen las operaciones comunes disponibles para los contenedores estándar en C++.
+Los contenedores en C++ proporcionan una variedad de operaciones que permiten la manipulaciÃ³n eficiente de los elementos que almacenan. Estas operaciones incluyen la inserciÃ³n, eliminaciÃ³n, acceso y modificaciÃ³n de elementos, asÃ­ como la consulta del tamaÃ±o y la capacidad del contenedor. AquÃ­ se describen las operaciones comunes disponibles para los contenedores estÃ¡ndar en C++.
 
 #### Operaciones Comunes para Todos los Contenedores
 
-1. **Inserción de Elementos**
-2. **Eliminación de Elementos**
+1. **InserciÃ³n de Elementos**
+2. **EliminaciÃ³n de Elementos**
 3. **Acceso a Elementos**
-4. **Modificación de Elementos**
-5. **Consulta de Tamaño y Capacidad**
+4. **ModificaciÃ³n de Elementos**
+5. **Consulta de TamaÃ±o y Capacidad**
 6. **Iteradores**
-7. **Otras Operaciones Específicas de Contenedores**
+7. **Otras Operaciones EspecÃ­ficas de Contenedores**
 
-### 1. Inserción de Elementos
+### 1. InserciÃ³n de Elementos
 
 ##### `push_back()`
 
@@ -40,7 +40,7 @@ int main() {
 
 ##### `insert()`
 
-Inserta un elemento o un rango de elementos en una posición específica.
+Inserta un elemento o un rango de elementos en una posiciÃ³n especÃ­fica.
 
 ```cpp
 #include <list>
@@ -61,11 +61,11 @@ int main() {
 }
 ```
 
-### 2. Eliminación de Elementos
+### 2. EliminaciÃ³n de Elementos
 
 ##### `pop_back()`
 
-Elimina el último elemento del contenedor.
+Elimina el Ãºltimo elemento del contenedor.
 
 ```cpp
 #include <vector>
@@ -86,7 +86,7 @@ int main() {
 
 ##### `erase()`
 
-Elimina un elemento o un rango de elementos de una posición específica.
+Elimina un elemento o un rango de elementos de una posiciÃ³n especÃ­fica.
 
 ```cpp
 #include <list>
@@ -127,7 +127,7 @@ int main() {
 
 ##### `back()`
 
-Accede al último elemento del contenedor.
+Accede al Ãºltimo elemento del contenedor.
 
 ```cpp
 #include <deque>
@@ -135,7 +135,7 @@ Accede al último elemento del contenedor.
 
 int main() {
     std::deque<int> deq = {1, 2, 3};
-    std::cout << "Último elemento: " << deq.back() << std::endl;
+    std::cout << "Ãšltimo elemento: " << deq.back() << std::endl;
 
     return 0;
 }
@@ -143,7 +143,7 @@ int main() {
 
 ##### `operator[]` y `at()`
 
-Acceden a un elemento en una posición específica (sólo para contenedores con acceso aleatorio como `std::vector` y `std::deque`).
+Acceden a un elemento en una posiciÃ³n especÃ­fica (sÃ³lo para contenedores con acceso aleatorio como `std::vector` y `std::deque`).
 
 ```cpp
 #include <vector>
@@ -151,16 +151,16 @@ Acceden a un elemento en una posición específica (sólo para contenedores con acc
 
 int main() {
     std::vector<int> vec = {1, 2, 3};
-    std::cout << "Elemento en la posición 1: " << vec[1] << std::endl;
-    std::cout << "Elemento en la posición 2: " << vec.at(2) << std::endl;
+    std::cout << "Elemento en la posiciÃ³n 1: " << vec[1] << std::endl;
+    std::cout << "Elemento en la posiciÃ³n 2: " << vec.at(2) << std::endl;
 
     return 0;
 }
 ```
 
-### 4. Modificación de Elementos
+### 4. ModificaciÃ³n de Elementos
 
-Los elementos pueden ser modificados directamente a través de los iteradores o referencias obtenidas mediante `front()`, `back()`, `operator[]`, `at()`, o iteradores.
+Los elementos pueden ser modificados directamente a travÃ©s de los iteradores o referencias obtenidas mediante `front()`, `back()`, `operator[]`, `at()`, o iteradores.
 
 ```cpp
 #include <vector>
@@ -179,11 +179,11 @@ int main() {
 }
 ```
 
-### 5. Consulta de Tamaño y Capacidad
+### 5. Consulta de TamaÃ±o y Capacidad
 
 ##### `size()`
 
-Devuelve el número de elementos en el contenedor.
+Devuelve el nÃºmero de elementos en el contenedor.
 
 ```cpp
 #include <vector>
@@ -191,7 +191,7 @@ Devuelve el número de elementos en el contenedor.
 
 int main() {
     std::vector<int> vec = {1, 2, 3};
-    std::cout << "Tamaño: " << vec.size() << std::endl;
+    std::cout << "TamaÃ±o: " << vec.size() << std::endl;
 
     return 0;
 }
@@ -199,7 +199,7 @@ int main() {
 
 ##### `capacity()`
 
-Devuelve la capacidad actual del contenedor (sólo para `std::vector` y `std::deque`).
+Devuelve la capacidad actual del contenedor (sÃ³lo para `std::vector` y `std::deque`).
 
 ```cpp
 #include <vector>
@@ -215,7 +215,7 @@ int main() {
 
 ##### `empty()`
 
-Comprueba si el contenedor está vacío.
+Comprueba si el contenedor estÃ¡ vacÃ­o.
 
 ```cpp
 #include <vector>
@@ -223,7 +223,7 @@ Comprueba si el contenedor está vacío.
 
 int main() {
     std::vector<int> vec;
-    std::cout << "Está vacío: " << vec.empty() << std::endl;
+    std::cout << "EstÃ¡ vacÃ­o: " << vec.empty() << std::endl;
 
     return 0;
 }
@@ -233,7 +233,7 @@ int main() {
 
 ##### `begin()` y `end()`
 
-Devuelven iteradores al primer elemento y al elemento después del último, respectivamente.
+Devuelven iteradores al primer elemento y al elemento despuÃ©s del Ãºltimo, respectivamente.
 
 ```cpp
 #include <vector>
@@ -253,7 +253,7 @@ int main() {
 
 ##### `cbegin()` y `cend()`
 
-Devuelven iteradores constantes al primer elemento y al elemento después del último, respectivamente.
+Devuelven iteradores constantes al primer elemento y al elemento despuÃ©s del Ãºltimo, respectivamente.
 
 ```cpp
 #include <vector>
@@ -271,12 +271,12 @@ int main() {
 }
 ```
 
-### 7. Otras Operaciones Específicas de Contenedores
+### 7. Otras Operaciones EspecÃ­ficas de Contenedores
 
 ##### `std::map` y `std::set`
 
-- **`find()`**: Busca un elemento con una clave específica.
-- **`count()`**: Devuelve el número de elementos con una clave específica.
+- **`find()`**: Busca un elemento con una clave especÃ­fica.
+- **`count()`**: Devuelve el nÃºmero de elementos con una clave especÃ­fica.
 
 ```cpp
 #include <map>
@@ -289,7 +289,7 @@ int main() {
         std::cout << "Encontrado: " << it->second << std::endl;
     }
 
-    std::cout << "Número de elementos con clave 2: " << mapa.count(2) << std::endl;
+    std::cout << "NÃºmero de elementos con clave 2: " << mapa.count(2) << std::endl;
 
     return 0;
 }
@@ -312,15 +312,15 @@ int main() {
 
     std::cout << "Frente: " << q.front() << std::endl;
     q.pop();
-    std::cout << "Frente después de pop: " << q.front() << std::endl;
+    std::cout << "Frente despuÃ©s de pop: " << q.front() << std::endl;
 
     return 0;
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-Los contenedores de la biblioteca estándar de C++ proporcionan una amplia gama de operaciones para manipular sus elementos de manera eficiente y segura. Comprender cómo usar estas operaciones es esencial para escribir código C++ robusto y eficiente. Estas operaciones permiten la inserción, eliminación, acceso, modificación de elementos, consulta de tamaño y capacidad, y el uso de iteradores para recorrer los elementos de los contenedores.
+Los contenedores de la biblioteca estÃ¡ndar de C++ proporcionan una amplia gama de operaciones para manipular sus elementos de manera eficiente y segura. Comprender cÃ³mo usar estas operaciones es esencial para escribir cÃ³digo C++ robusto y eficiente. Estas operaciones permiten la inserciÃ³n, eliminaciÃ³n, acceso, modificaciÃ³n de elementos, consulta de tamaÃ±o y capacidad, y el uso de iteradores para recorrer los elementos de los contenedores.
 <---FILES--->
 `push_back()`
 `push_back()` Result
@@ -443,7 +443,7 @@ int main() {
 
 int main() {
     std::deque<int> deq = {1, 2, 3};
-    std::cout << "Último elemento: " << deq.back() << std::endl;
+    std::cout << "Ãšltimo elemento: " << deq.back() << std::endl;
 
     return 0;
 }
@@ -455,8 +455,8 @@ int main() {
 
 int main() {
     std::vector<int> vec = {1, 2, 3};
-    std::cout << "Elemento en la posición 1: " << vec[1] << std::endl;
-    std::cout << "Elemento en la posición 2: " << vec.at(2) << std::endl;
+    std::cout << "Elemento en la posiciÃ³n 1: " << vec[1] << std::endl;
+    std::cout << "Elemento en la posiciÃ³n 2: " << vec.at(2) << std::endl;
 
     return 0;
 }
@@ -483,7 +483,7 @@ int main() {
 
 int main() {
     std::vector<int> vec = {1, 2, 3};
-    std::cout << "Tamaño: " << vec.size() << std::endl;
+    std::cout << "TamaÃ±o: " << vec.size() << std::endl;
 
     return 0;
 }
@@ -507,7 +507,7 @@ int main() {
 
 int main() {
     std::vector<int> vec;
-    std::cout << "Está vacío: " << vec.empty() << std::endl;
+    std::cout << "EstÃ¡ vacÃ­o: " << vec.empty() << std::endl;
 
     return 0;
 }
@@ -556,7 +556,7 @@ int main() {
         std::cout << "Encontrado: " << it->second << std::endl;
     }
 
-    std::cout << "Número de elementos con clave 2: " << mapa.count(2) << std::endl;
+    std::cout << "NÃºmero de elementos con clave 2: " << mapa.count(2) << std::endl;
 
     return 0;
 }
@@ -574,7 +574,7 @@ int main() {
 
     std::cout << "Frente: " << q.front() << std::endl;
     q.pop();
-    std::cout << "Frente después de pop: " << q.front() << std::endl;
+    std::cout << "Frente despuÃ©s de pop: " << q.front() << std::endl;
 
     return 0;
 }

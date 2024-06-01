@@ -37,6 +37,10 @@ def create_files_section(file_map: dict) -> str:
     files_header: str = "<---FILES--->" + "\n"
     for key, value in file_map.items():
         files_header += key + "\n"
+
+    if not files_header:
+        files_header = "<---FILES--->" + "\n" + "NA" + "\n"
+
     return files_header
 
 
@@ -58,7 +62,8 @@ def form_final_text(explanation: str, files: str, examples: str) -> str:
 def save_final_text(final_text: str, title: str) -> None:
     """Save the final text to a file with the title provided."""
     # title = title.replace(" ", "_")
-    with open(fr"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code\Concepts/{title}.txt", "w") as f:
+    with open(fr"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\Code/{title}.txt", "w",
+              encoding='utf-8') as f:
         f.write(final_text)
 
 
@@ -142,7 +147,7 @@ def create_QML_file(topics: dict) -> None:
             print(f"Element: {element}")
         final_text = "import QtQuick" + "\n"
         final_text = final_text + "Item{" + "\n" + property_line + "\n" + listElement_lines + "}" + "\n" + "}"
-        with open(fr"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\QMLFiles/{key_camelCase}.qml", "w",
+        with open(fr"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\QMLFiles/{key_camelCase}.qml", "w",
                   encoding='utf-8') as f:
             f.write(final_text)
 
@@ -169,17 +174,17 @@ def listar_archivos_en_carpetas(ruta_base, carpetas):
 
 
 def main():
-    # text_to_analyze: str = open_txt_file("conceptsToProcess.txt")
-    #
-    # extraer_texto_entre_users(text_to_analyze)
-    # counter: int = 0
-    # for index, text in enumerate(extraer_texto_entre_users(text_to_analyze)):
-    #     print(f"Text {index}")
-    #     create_a_file(text)
-    #     counter += index
-    folders = listar_carpetas(r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code")
+    text_to_analyze: str = open_txt_file("textToTransform.txt")
+
+    extraer_texto_entre_users(text_to_analyze)
+    counter: int = 0
+    for index, text in enumerate(extraer_texto_entre_users(text_to_analyze)):
+        print(f"Text {index}")
+        create_a_file(text)
+        counter += index
+    folders = listar_carpetas(r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\Code")
     dict_of_topics = listar_archivos_en_carpetas(
-        r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code", folders)
+        r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\Code", folders)
     create_QML_file(dict_of_topics)
 
 

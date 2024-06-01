@@ -1,30 +1,30 @@
 <---EXPLANATION--->
-### Plantillas Vari醖icas en Funciones y Clases en C++
+### Plantillas Vari谩dicas en Funciones y Clases en C++
 
-Las plantillas vari醖icas son una poderosa caracter韘tica introducida en C++11 que permite definir funciones y clases que pueden aceptar un n鷐ero variable de par醡etros de plantilla. Esto facilita la creaci髇 de c骴igo gen閞ico y reutilizable sin la necesidad de sobrecargar funciones o definir m鷏tiples especializaciones de plantilla.
+Las plantillas vari谩dicas son una poderosa caracter铆stica introducida en C++11 que permite definir funciones y clases que pueden aceptar un n煤mero variable de par谩metros de plantilla. Esto facilita la creaci贸n de c贸digo gen茅rico y reutilizable sin la necesidad de sobrecargar funciones o definir m煤ltiples especializaciones de plantilla.
 
-#### Plantillas Vari醖icas en Funciones
+#### Plantillas Vari谩dicas en Funciones
 
-Las plantillas vari醖icas permiten definir funciones que pueden aceptar un n鷐ero variable de argumentos de distintos tipos.
+Las plantillas vari谩dicas permiten definir funciones que pueden aceptar un n煤mero variable de argumentos de distintos tipos.
 
 ##### Sintaxis
 
 ```cpp
 template <typename... Args>
 void funcionVariadica(Args... args) {
-    // Implementaci髇
+    // Implementaci贸n
 }
 ```
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
 
-// Plantilla de funci髇 vari醖ica
+// Plantilla de funci贸n vari谩dica
 template <typename... Args>
 void imprimir(Args... args) {
-    (std::cout << ... << args) << std::endl; // Expansi髇 de plegado
+    (std::cout << ... << args) << std::endl; // Expansi贸n de plegado
 }
 
 int main() {
@@ -34,12 +34,12 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `imprimir` acepta un n鷐ero variable de argumentos de cualquier tipo.
-- La expresi髇 `(std::cout << ... << args)` es una expansi髇 de plegado que imprime cada argumento.
+- La funci贸n `imprimir` acepta un n煤mero variable de argumentos de cualquier tipo.
+- La expresi贸n `(std::cout << ... << args)` es una expansi贸n de plegado que imprime cada argumento.
 
-##### Ejemplo de Funci髇 Recursiva
+##### Ejemplo de Funci贸n Recursiva
 
-Las plantillas vari醖icas a menudo se implementan de manera recursiva para procesar cada argumento individualmente.
+Las plantillas vari谩dicas a menudo se implementan de manera recursiva para procesar cada argumento individualmente.
 
 ```cpp
 #include <iostream>
@@ -49,7 +49,7 @@ void imprimir() {
     std::cout << std::endl;
 }
 
-// Plantilla de funci髇 vari醖ica
+// Plantilla de funci贸n vari谩dica
 template <typename T, typename... Args>
 void imprimir(T primero, Args... args) {
     std::cout << primero << " ";
@@ -63,28 +63,28 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `imprimir` se llama recursivamente, procesando un argumento en cada llamada hasta que no quedan m醩 argumentos.
+- La funci贸n `imprimir` se llama recursivamente, procesando un argumento en cada llamada hasta que no quedan m谩s argumentos.
 
-#### Plantillas Vari醖icas en Clases
+#### Plantillas Vari谩dicas en Clases
 
-Las plantillas vari醖icas tambi閚 permiten definir clases que pueden aceptar un n鷐ero variable de par醡etros de plantilla.
+Las plantillas vari谩dicas tambi茅n permiten definir clases que pueden aceptar un n煤mero variable de par谩metros de plantilla.
 
 ##### Sintaxis
 
 ```cpp
 template <typename... Args>
 class ClaseVariadica {
-    // Implementaci髇
+    // Implementaci贸n
 };
 ```
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <tuple>
 #include <iostream>
 
-// Plantilla de clase vari醖ica
+// Plantilla de clase vari谩dica
 template <typename... Args>
 class MiClase {
     std::tuple<Args...> datos; // Almacena los argumentos en un tuple
@@ -111,8 +111,8 @@ int main() {
 ```
 
 En este ejemplo:
-- La clase `MiClase` acepta un n鷐ero variable de par醡etros de plantilla y los almacena en un `std::tuple`.
-- La funci髇 `imprimir` imprime los valores almacenados en el `tuple` utilizando una expansi髇 de plegado.
+- La clase `MiClase` acepta un n煤mero variable de par谩metros de plantilla y los almacena en un `std::tuple`.
+- La funci贸n `imprimir` imprime los valores almacenados en el `tuple` utilizando una expansi贸n de plegado.
 
 ##### Ejemplo Avanzado con Herencia
 
@@ -128,7 +128,7 @@ public:
     }
 };
 
-// Clase derivada vari醖ica
+// Clase derivada vari谩dica
 template <typename... Args>
 class Derivada : public Base<Args>... {
 public:
@@ -145,26 +145,26 @@ int main() {
 ```
 
 En este ejemplo:
-- `Derivada` hereda de m鷏tiples instancias de `Base`, una por cada tipo en `Args`.
-- La funci髇 `mostrar` llama a `Base<Args>::mostrar` para cada base utilizando una expansi髇 de plegado.
+- `Derivada` hereda de m煤ltiples instancias de `Base`, una por cada tipo en `Args`.
+- La funci贸n `mostrar` llama a `Base<Args>::mostrar` para cada base utilizando una expansi贸n de plegado.
 
-#### Expansi髇 de Plantillas Vari醖icas
+#### Expansi贸n de Plantillas Vari谩dicas
 
-La expansi髇 de plantillas vari醖icas permite desempaquetar los par醡etros y aplicar operaciones sobre ellos.
+La expansi贸n de plantillas vari谩dicas permite desempaquetar los par谩metros y aplicar operaciones sobre ellos.
 
-##### Expansi髇 de Plegado
+##### Expansi贸n de Plegado
 
-Las expansiones de plegado simplifican la aplicaci髇 de operaciones sobre m鷏tiples argumentos.
+Las expansiones de plegado simplifican la aplicaci贸n de operaciones sobre m煤ltiples argumentos.
 
-###### Ejemplo con Expansi髇 de Plegado
+###### Ejemplo con Expansi贸n de Plegado
 
 ```cpp
 #include <iostream>
 
-// Plantilla de funci髇 vari醖ica
+// Plantilla de funci贸n vari谩dica
 template <typename... Args>
 void imprimir(Args... args) {
-    (std::cout << ... << args) << std::endl; // Expansi髇 de plegado con operador de salida
+    (std::cout << ... << args) << std::endl; // Expansi贸n de plegado con operador de salida
 }
 
 int main() {
@@ -177,39 +177,39 @@ En este ejemplo, `(std::cout << ... << args)` imprime cada argumento.
 
 #### Beneficios y Usos
 
-1. **Flexibilidad:** Permiten escribir funciones y clases que pueden manejar diferentes tipos y n鷐eros de argumentos.
-2. **Reutilizaci髇 de C骴igo:** Facilitan la creaci髇 de c骴igo gen閞ico y reutilizable.
-3. **Simplicidad:** Simplifican el manejo de argumentos m鷏tiples y diversos en comparaci髇 con m閠odos tradicionales como las sobrecargas de funciones.
+1. **Flexibilidad:** Permiten escribir funciones y clases que pueden manejar diferentes tipos y n煤meros de argumentos.
+2. **Reutilizaci贸n de C贸digo:** Facilitan la creaci贸n de c贸digo gen茅rico y reutilizable.
+3. **Simplicidad:** Simplifican el manejo de argumentos m煤ltiples y diversos en comparaci贸n con m茅todos tradicionales como las sobrecargas de funciones.
 
-### Conclusi髇
+### Conclusi贸n
 
-Las plantillas vari醖icas en C++ son una herramienta poderosa para escribir c骴igo gen閞ico, flexible y reutilizable. Permiten definir funciones y clases que pueden aceptar un n鷐ero variable de argumentos, simplificando la creaci髇 de bibliotecas y aplicaciones gen閞icas. Comprender c髆o implementar y utilizar plantillas vari醖icas, incluyendo t閏nicas como la expansi髇 de plegado y la recursi髇, es esencial para aprovechar al m醲imo esta caracter韘tica avanzada del lenguaje.
+Las plantillas vari谩dicas en C++ son una herramienta poderosa para escribir c贸digo gen茅rico, flexible y reutilizable. Permiten definir funciones y clases que pueden aceptar un n煤mero variable de argumentos, simplificando la creaci贸n de bibliotecas y aplicaciones gen茅ricas. Comprender c贸mo implementar y utilizar plantillas vari谩dicas, incluyendo t茅cnicas como la expansi贸n de plegado y la recursi贸n, es esencial para aprovechar al m谩ximo esta caracter铆stica avanzada del lenguaje.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo B醩ico
-Ejemplo B醩ico Result
-Ejemplo de Funci髇 Recursiva
-Ejemplo de Funci髇 Recursiva Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
+Ejemplo de Funci贸n Recursiva
+Ejemplo de Funci贸n Recursiva Result
 Ejemplo Avanzado con Herencia
 Ejemplo Avanzado con Herencia Result
-Expansi髇 de Plegado
-Expansi髇 de Plegado Result
-Ejemplo con Expansi髇 de Plegado
-Ejemplo con Expansi髇 de Plegado Result
+Expansi贸n de Plegado
+Expansi贸n de Plegado Result
+Ejemplo con Expansi贸n de Plegado
+Ejemplo con Expansi贸n de Plegado Result
 <---Sintaxis--->
 ```cpp
 template <typename... Args>
 class ClaseVariadica {
-    // Implementaci髇
+    // Implementaci贸n
 };
 <---Sintaxis Result--->
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <tuple>
 #include <iostream>
 
-// Plantilla de clase vari醖ica
+// Plantilla de clase vari谩dica
 template <typename... Args>
 class MiClase {
     std::tuple<Args...> datos; // Almacena los argumentos en un tuple
@@ -233,8 +233,8 @@ int main() {
     obj.imprimir();
     return 0;
 }
-<---Ejemplo B醩ico Result--->
-<---Ejemplo de Funci髇 Recursiva--->
+<---Ejemplo B谩sico Result--->
+<---Ejemplo de Funci贸n Recursiva--->
 ```cpp
 #include <iostream>
 
@@ -243,7 +243,7 @@ void imprimir() {
     std::cout << std::endl;
 }
 
-// Plantilla de funci髇 vari醖ica
+// Plantilla de funci贸n vari谩dica
 template <typename T, typename... Args>
 void imprimir(T primero, Args... args) {
     std::cout << primero << " ";
@@ -254,7 +254,7 @@ int main() {
     imprimir(1, 2.5, "hola", 'A');
     return 0;
 }
-<---Ejemplo de Funci髇 Recursiva Result--->
+<---Ejemplo de Funci贸n Recursiva Result--->
 <---Ejemplo Avanzado con Herencia--->
 ```cpp
 #include <iostream>
@@ -268,7 +268,7 @@ public:
     }
 };
 
-// Clase derivada vari醖ica
+// Clase derivada vari谩dica
 template <typename... Args>
 class Derivada : public Base<Args>... {
 public:
@@ -283,20 +283,20 @@ int main() {
     return 0;
 }
 <---Ejemplo Avanzado con Herencia Result--->
-<---Expansi髇 de Plegado--->
-<---Expansi髇 de Plegado Result--->
-<---Ejemplo con Expansi髇 de Plegado--->
+<---Expansi贸n de Plegado--->
+<---Expansi贸n de Plegado Result--->
+<---Ejemplo con Expansi贸n de Plegado--->
 ```cpp
 #include <iostream>
 
-// Plantilla de funci髇 vari醖ica
+// Plantilla de funci贸n vari谩dica
 template <typename... Args>
 void imprimir(Args... args) {
-    (std::cout << ... << args) << std::endl; // Expansi髇 de plegado con operador de salida
+    (std::cout << ... << args) << std::endl; // Expansi贸n de plegado con operador de salida
 }
 
 int main() {
     imprimir(1, 2.5, "hola", 'A');
     return 0;
 }
-<---Ejemplo con Expansi髇 de Plegado Result--->
+<---Ejemplo con Expansi贸n de Plegado Result--->

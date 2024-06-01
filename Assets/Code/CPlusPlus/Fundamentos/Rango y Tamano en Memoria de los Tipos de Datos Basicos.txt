@@ -123,3 +123,4 @@ unsigned long long miMuyLargoSinSigno = 18446744073709551615ULL;
 
 El conocimiento del rango y tamaño en memoria de los distintos tipos de datos básicos es crucial para la programación eficiente y segura en C++. Elegir el tipo de dato adecuado puede ayudar a optimizar el uso de memoria y asegurar que los valores se manejen correctamente dentro del rango permitido por cada tipo.
 <---FILES--->
+NA

@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Est·ndar: `std::nth_element`
+### Algoritmo de la Biblioteca Est√°ndar: `std::nth_element`
 
-La funciÛn `std::nth_element` es un algoritmo de la biblioteca est·ndar de C++ que se utiliza para reorganizar los elementos de un rango de manera que el elemento en la posiciÛn n (Ìndice) sea el que estarÌa en esa posiciÛn si el rango estuviera completamente ordenado. Todos los elementos precedentes al n-Èsimo son menores o iguales, y todos los elementos posteriores son mayores o iguales. Es parte del encabezado `<algorithm>`.
+La funci√≥n `std::nth_element` es un algoritmo de la biblioteca est√°ndar de C++ que se utiliza para reorganizar los elementos de un rango de manera que el elemento en la posici√≥n n (√≠ndice) sea el que estar√≠a en esa posici√≥n si el rango estuviera completamente ordenado. Todos los elementos precedentes al n-√©simo son menores o iguales, y todos los elementos posteriores son mayores o iguales. Es parte del encabezado `<algorithm>`.
 
 #### Sintaxis de `std::nth_element`
 
@@ -16,17 +16,17 @@ void nth_element(RandomIt first, RandomIt nth, RandomIt last, Compare comp);
 ```
 
 - **`RandomIt first`**: Iterador al primer elemento del rango.
-- **`RandomIt nth`**: Iterador al elemento que ser· el n-Èsimo en el rango ordenado.
-- **`RandomIt last`**: Iterador al elemento despuÈs del ˙ltimo en el rango.
-- **`Compare comp`**: (Opcional) FunciÛn de comparaciÛn que toma dos argumentos.
+- **`RandomIt nth`**: Iterador al elemento que ser√° el n-√©simo en el rango ordenado.
+- **`RandomIt last`**: Iterador al elemento despu√©s del √∫ltimo en el rango.
+- **`Compare comp`**: (Opcional) Funci√≥n de comparaci√≥n que toma dos argumentos.
 
-#### DescripciÛn
+#### Descripci√≥n
 
-`std::nth_element` reorganiza los elementos en el rango `[first, last)` de manera que el elemento en la posiciÛn `nth` sea el mismo que estarÌa en esa posiciÛn si el rango estuviera ordenado. Todos los elementos precedentes a `nth` ser·n menores o iguales que el elemento en `nth`, y todos los elementos posteriores ser·n mayores o iguales.
+`std::nth_element` reorganiza los elementos en el rango `[first, last)` de manera que el elemento en la posici√≥n `nth` sea el mismo que estar√≠a en esa posici√≥n si el rango estuviera ordenado. Todos los elementos precedentes a `nth` ser√°n menores o iguales que el elemento en `nth`, y todos los elementos posteriores ser√°n mayores o iguales.
 
 #### Ejemplo de Uso de `std::nth_element`
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -36,14 +36,14 @@ void nth_element(RandomIt first, RandomIt nth, RandomIt last, Compare comp);
 int main() {
     std::vector<int> vec = {10, 4, 5, 8, 6, 11, 26};
 
-    // Encontrar el tercer elemento m·s pequeÒo (Ìndice 2)
+    // Encontrar el tercer elemento m√°s peque√±o (√≠ndice 2)
     std::nth_element(vec.begin(), vec.begin() + 2, vec.end());
 
-    // Mostrar el tercer elemento m·s pequeÒo
-    std::cout << "El tercer elemento m·s pequeÒo es: " << vec[2] << std::endl;
+    // Mostrar el tercer elemento m√°s peque√±o
+    std::cout << "El tercer elemento m√°s peque√±o es: " << vec[2] << std::endl;
 
     // Mostrar todos los elementos
-    std::cout << "Elementos del vector despuÈs de std::nth_element: ";
+    std::cout << "Elementos del vector despu√©s de std::nth_element: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -54,13 +54,13 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::nth_element(vec.begin(), vec.begin() + 2, vec.end())` coloca el tercer elemento m·s pequeÒo en la posiciÛn `vec[2]`.
+- `std::nth_element(vec.begin(), vec.begin() + 2, vec.end())` coloca el tercer elemento m√°s peque√±o en la posici√≥n `vec[2]`.
 
-### Uso con ComparaciÛn Personalizada
+### Uso con Comparaci√≥n Personalizada
 
-Puedes utilizar `std::nth_element` con una funciÛn de comparaciÛn personalizada para ordenar seg˙n un criterio especÌfico.
+Puedes utilizar `std::nth_element` con una funci√≥n de comparaci√≥n personalizada para ordenar seg√∫n un criterio espec√≠fico.
 
-##### Ejemplo con ComparaciÛn Personalizada
+##### Ejemplo con Comparaci√≥n Personalizada
 
 ```cpp
 #include <iostream>
@@ -79,14 +79,14 @@ bool compararPorEdad(const Persona& a, const Persona& b) {
 int main() {
     std::vector<Persona> personas = {{"Ana", 25}, {"Luis", 30}, {"Carlos", 22}, {"Maria", 28}, {"Jose", 24}};
 
-    // Encontrar la tercera persona m·s joven
+    // Encontrar la tercera persona m√°s joven
     std::nth_element(personas.begin(), personas.begin() + 2, personas.end(), compararPorEdad);
 
-    // Mostrar la tercera persona m·s joven
-    std::cout << "La tercera persona m·s joven es: " << personas[2].nombre << " (" << personas[2].edad << ")" << std::endl;
+    // Mostrar la tercera persona m√°s joven
+    std::cout << "La tercera persona m√°s joven es: " << personas[2].nombre << " (" << personas[2].edad << ")" << std::endl;
 
     // Mostrar todas las personas
-    std::cout << "Personas despuÈs de std::nth_element: ";
+    std::cout << "Personas despu√©s de std::nth_element: ";
     for (const auto& persona : personas) {
         std::cout << persona.nombre << " (" << persona.edad << "), ";
     }
@@ -97,23 +97,23 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::nth_element(personas.begin(), personas.begin() + 2, personas.end(), compararPorEdad)` coloca la tercera persona m·s joven en la posiciÛn `personas[2]`.
+- `std::nth_element(personas.begin(), personas.begin() + 2, personas.end(), compararPorEdad)` coloca la tercera persona m√°s joven en la posici√≥n `personas[2]`.
 
 ### Consideraciones
 
 - **Rendimiento:** `std::nth_element` tiene una complejidad promedio de `O(n)`, pero en el peor de los casos puede ser `O(n log n)`.
-- **Uso de Comparadores:** Se puede utilizar una funciÛn de comparaciÛn personalizada para ordenar seg˙n criterios especÌficos.
-- **Requisitos de Iteradores:** `std::nth_element` requiere iteradores de acceso aleatorio, por lo que no puede utilizarse con contenedores que solo proporcionan iteradores de una sola direcciÛn o bidireccionales, como `std::list`.
+- **Uso de Comparadores:** Se puede utilizar una funci√≥n de comparaci√≥n personalizada para ordenar seg√∫n criterios espec√≠ficos.
+- **Requisitos de Iteradores:** `std::nth_element` requiere iteradores de acceso aleatorio, por lo que no puede utilizarse con contenedores que solo proporcionan iteradores de una sola direcci√≥n o bidireccionales, como `std::list`.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::nth_element` es un algoritmo eficiente de la biblioteca est·ndar de C++ que permite encontrar y colocar el n-Èsimo elemento en su posiciÛn correspondiente en un rango ordenado, asegurando que todos los elementos anteriores sean menores o iguales y todos los posteriores sean mayores o iguales. Su uso con comparaciones personalizadas proporciona flexibilidad para ordenar seg˙n criterios especÌficos. Comprender y utilizar `std::nth_element` es esencial para realizar operaciones de selecciÛn eficientes en contenedores en C++.
+`std::nth_element` es un algoritmo eficiente de la biblioteca est√°ndar de C++ que permite encontrar y colocar el n-√©simo elemento en su posici√≥n correspondiente en un rango ordenado, asegurando que todos los elementos anteriores sean menores o iguales y todos los posteriores sean mayores o iguales. Su uso con comparaciones personalizadas proporciona flexibilidad para ordenar seg√∫n criterios espec√≠ficos. Comprender y utilizar `std::nth_element` es esencial para realizar operaciones de selecci√≥n eficientes en contenedores en C++.
 <---FILES--->
-Ejemplo B·sico
-Ejemplo B·sico Result
-Ejemplo con ComparaciÛn Personalizada
-Ejemplo con ComparaciÛn Personalizada Result
-<---Ejemplo B·sico--->
+Ejemplo B√°sico
+Ejemplo B√°sico Result
+Ejemplo con Comparaci√≥n Personalizada
+Ejemplo con Comparaci√≥n Personalizada Result
+<---Ejemplo B√°sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -122,14 +122,14 @@ Ejemplo con ComparaciÛn Personalizada Result
 int main() {
     std::vector<int> vec = {10, 4, 5, 8, 6, 11, 26};
 
-    // Encontrar el tercer elemento m·s pequeÒo (Ìndice 2)
+    // Encontrar el tercer elemento m√°s peque√±o (√≠ndice 2)
     std::nth_element(vec.begin(), vec.begin() + 2, vec.end());
 
-    // Mostrar el tercer elemento m·s pequeÒo
-    std::cout << "El tercer elemento m·s pequeÒo es: " << vec[2] << std::endl;
+    // Mostrar el tercer elemento m√°s peque√±o
+    std::cout << "El tercer elemento m√°s peque√±o es: " << vec[2] << std::endl;
 
     // Mostrar todos los elementos
-    std::cout << "Elementos del vector despuÈs de std::nth_element: ";
+    std::cout << "Elementos del vector despu√©s de std::nth_element: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -137,8 +137,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico Result--->
-<---Ejemplo con ComparaciÛn Personalizada--->
+<---Ejemplo B√°sico Result--->
+<---Ejemplo con Comparaci√≥n Personalizada--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -156,14 +156,14 @@ bool compararPorEdad(const Persona& a, const Persona& b) {
 int main() {
     std::vector<Persona> personas = {{"Ana", 25}, {"Luis", 30}, {"Carlos", 22}, {"Maria", 28}, {"Jose", 24}};
 
-    // Encontrar la tercera persona m·s joven
+    // Encontrar la tercera persona m√°s joven
     std::nth_element(personas.begin(), personas.begin() + 2, personas.end(), compararPorEdad);
 
-    // Mostrar la tercera persona m·s joven
-    std::cout << "La tercera persona m·s joven es: " << personas[2].nombre << " (" << personas[2].edad << ")" << std::endl;
+    // Mostrar la tercera persona m√°s joven
+    std::cout << "La tercera persona m√°s joven es: " << personas[2].nombre << " (" << personas[2].edad << ")" << std::endl;
 
     // Mostrar todas las personas
-    std::cout << "Personas despuÈs de std::nth_element: ";
+    std::cout << "Personas despu√©s de std::nth_element: ";
     for (const auto& persona : personas) {
         std::cout << persona.nombre << " (" << persona.edad << "), ";
     }
@@ -171,4 +171,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con ComparaciÛn Personalizada Result--->
+<---Ejemplo con Comparaci√≥n Personalizada Result--->

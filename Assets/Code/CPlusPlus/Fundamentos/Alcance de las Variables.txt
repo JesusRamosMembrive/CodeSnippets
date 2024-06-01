@@ -156,3 +156,4 @@ int main() {
 
 El alcance de las variables es una parte fundamental de la programación en C++, ya que determina dónde y cuándo una variable es accesible. Comprender los diferentes tipos de alcance ayuda a escribir código más seguro y libre de errores, evitando conflictos de nombres y asegurando que las variables se utilicen de manera adecuada dentro de sus contextos específicos.
 <---FILES--->
+NA

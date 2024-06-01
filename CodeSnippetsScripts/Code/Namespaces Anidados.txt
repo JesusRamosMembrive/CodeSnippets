@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Namespaces Anidados en C++
 
-Los namespaces (espacios de nombres) anidados en C++ permiten organizar el cÛdigo de manera jer·rquica y modular. Utilizando namespaces anidados, se puede crear una estructura clara y coherente para los nombres de clases, funciones, y otras entidades, evitando conflictos de nombres y mejorando la legibilidad del cÛdigo.
+Los namespaces (espacios de nombres) anidados en C++ permiten organizar el c√≥digo de manera jer√°rquica y modular. Utilizando namespaces anidados, se puede crear una estructura clara y coherente para los nombres de clases, funciones, y otras entidades, evitando conflictos de nombres y mejorando la legibilidad del c√≥digo.
 
-#### DefiniciÛn de Namespaces Anidados
+#### Definici√≥n de Namespaces Anidados
 
-Un namespace anidado es simplemente un namespace que se declara dentro de otro namespace. Esto crea una jerarquÌa de namespaces que pueden contener definiciones m·s especÌficas dentro de un contexto m·s general.
+Un namespace anidado es simplemente un namespace que se declara dentro de otro namespace. Esto crea una jerarqu√≠a de namespaces que pueden contener definiciones m√°s espec√≠ficas dentro de un contexto m√°s general.
 
 ##### Sintaxis de Namespaces Anidados
 
@@ -42,14 +42,14 @@ En este ejemplo:
 - `Empresa` es el namespace padre.
 - `Departamento` es un namespace anidado dentro de `Empresa`.
 - `Proyecto` es un namespace anidado dentro de `Departamento`.
-- La funciÛn `mostrarMensaje` se define dentro de `Proyecto` y se accede usando el operador de resoluciÛn de ·mbito `::` con todos los niveles del namespace.
+- La funci√≥n `mostrarMensaje` se define dentro de `Proyecto` y se accede usando el operador de resoluci√≥n de √°mbito `::` con todos los niveles del namespace.
 
 #### Ventajas de Usar Namespaces Anidados
 
-1. **OrganizaciÛn Jer·rquica:** Facilitan la organizaciÛn jer·rquica del cÛdigo, lo que es especialmente ˙til en proyectos grandes.
-2. **Evitar Conflictos de Nombres:** Ayudan a evitar conflictos de nombres al agrupar definiciones relacionadas bajo nombres de espacios de nombres especÌficos.
-3. **Modularidad:** Permiten definir mÛdulos y submÛdulos de manera clara y estructurada.
-4. **Claridad:** Mejoran la claridad del cÛdigo al dejar claro a quÈ contexto pertenece cada definiciÛn.
+1. **Organizaci√≥n Jer√°rquica:** Facilitan la organizaci√≥n jer√°rquica del c√≥digo, lo que es especialmente √∫til en proyectos grandes.
+2. **Evitar Conflictos de Nombres:** Ayudan a evitar conflictos de nombres al agrupar definiciones relacionadas bajo nombres de espacios de nombres espec√≠ficos.
+3. **Modularidad:** Permiten definir m√≥dulos y subm√≥dulos de manera clara y estructurada.
+4. **Claridad:** Mejoran la claridad del c√≥digo al dejar claro a qu√© contexto pertenece cada definici√≥n.
 
 #### Alias para Namespaces Anidados
 
@@ -74,7 +74,7 @@ namespace Empresa {
 namespace ProyectoAlias = Empresa::Departamento::Proyecto;
 
 int main() {
-    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funciÛn
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funci√≥n
     return 0;
 }
 ```
@@ -108,13 +108,13 @@ int main() {
 }
 ```
 
-En este ejemplo, `using namespace Empresa::Departamento::Proyecto` trae todos los miembros de `Proyecto` al ·mbito actual, permitiendo el uso directo de `mostrarMensaje`.
+En este ejemplo, `using namespace Empresa::Departamento::Proyecto` trae todos los miembros de `Proyecto` al √°mbito actual, permitiendo el uso directo de `mostrarMensaje`.
 
-#### Namespaces AnÛnimos en Contexto Anidado
+#### Namespaces An√≥nimos en Contexto Anidado
 
-Los namespaces anÛnimos se utilizan para definir miembros que deben tener un alcance de archivo (file scope) y no deben ser accesibles desde otros archivos, evitando conflictos de nombres.
+Los namespaces an√≥nimos se utilizan para definir miembros que deben tener un alcance de archivo (file scope) y no deben ser accesibles desde otros archivos, evitando conflictos de nombres.
 
-##### Ejemplo de Namespaces AnÛnimos Anidados
+##### Ejemplo de Namespaces An√≥nimos Anidados
 
 ```cpp
 #include <iostream>
@@ -123,24 +123,24 @@ namespace Empresa {
     namespace Departamento {
         namespace {
             void funcionPrivada() {
-                std::cout << "FunciÛn en el namespace anÛnimo dentro de Proyecto" << std::endl;
+                std::cout << "Funci√≥n en el namespace an√≥nimo dentro de Proyecto" << std::endl;
             }
         }
     }
 }
 
 int main() {
-    Empresa::Departamento::funcionPrivada(); // Llamada v·lida dentro del mismo archivo
+    Empresa::Departamento::funcionPrivada(); // Llamada v√°lida dentro del mismo archivo
     return 0;
 }
 ```
 
 En este ejemplo:
-- `funcionPrivada` est· en un namespace anÛnimo dentro de `Departamento`, y solo es accesible dentro del archivo en el que se define.
+- `funcionPrivada` est√° en un namespace an√≥nimo dentro de `Departamento`, y solo es accesible dentro del archivo en el que se define.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los namespaces anidados en C++ son una herramienta poderosa para organizar y modularizar el cÛdigo en proyectos grandes. Permiten crear una estructura jer·rquica clara, evitando conflictos de nombres y mejorando la legibilidad del cÛdigo. El uso de alias y la directiva `using` puede simplificar el acceso a miembros de namespaces anidados, haciendo el cÛdigo m·s manejable y f·cil de entender. Comprender y utilizar namespaces anidados de manera efectiva es crucial para escribir cÛdigo C++ bien estructurado y mantenible.
+Los namespaces anidados en C++ son una herramienta poderosa para organizar y modularizar el c√≥digo en proyectos grandes. Permiten crear una estructura jer√°rquica clara, evitando conflictos de nombres y mejorando la legibilidad del c√≥digo. El uso de alias y la directiva `using` puede simplificar el acceso a miembros de namespaces anidados, haciendo el c√≥digo m√°s manejable y f√°cil de entender. Comprender y utilizar namespaces anidados de manera efectiva es crucial para escribir c√≥digo C++ bien estructurado y mantenible.
 <---FILES--->
 Sintaxis de Namespaces Anidados
 Sintaxis de Namespaces Anidados Result
@@ -150,8 +150,8 @@ Ejemplo de Alias para Namespaces Anidados
 Ejemplo de Alias para Namespaces Anidados Result
 Ejemplo con `using`
 Ejemplo con `using` Result
-Ejemplo de Namespaces AnÛnimos Anidados
-Ejemplo de Namespaces AnÛnimos Anidados Result
+Ejemplo de Namespaces An√≥nimos Anidados
+Ejemplo de Namespaces An√≥nimos Anidados Result
 <---Sintaxis de Namespaces Anidados--->
 ```cpp
 namespace NamespacePadre {
@@ -197,7 +197,7 @@ namespace Empresa {
 namespace ProyectoAlias = Empresa::Departamento::Proyecto;
 
 int main() {
-    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funciÛn
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funci√≥n
     return 0;
 }
 <---Ejemplo de Alias para Namespaces Anidados Result--->
@@ -222,7 +222,7 @@ int main() {
     return 0;
 }
 <---Ejemplo con `using` Result--->
-<---Ejemplo de Namespaces AnÛnimos Anidados--->
+<---Ejemplo de Namespaces An√≥nimos Anidados--->
 ```cpp
 #include <iostream>
 
@@ -230,14 +230,14 @@ namespace Empresa {
     namespace Departamento {
         namespace {
             void funcionPrivada() {
-                std::cout << "FunciÛn en el namespace anÛnimo dentro de Proyecto" << std::endl;
+                std::cout << "Funci√≥n en el namespace an√≥nimo dentro de Proyecto" << std::endl;
             }
         }
     }
 }
 
 int main() {
-    Empresa::Departamento::funcionPrivada(); // Llamada v·lida dentro del mismo archivo
+    Empresa::Departamento::funcionPrivada(); // Llamada v√°lida dentro del mismo archivo
     return 0;
 }
-<---Ejemplo de Namespaces AnÛnimos Anidados Result--->
+<---Ejemplo de Namespaces An√≥nimos Anidados Result--->

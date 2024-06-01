@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Setters y Getters en una Clase
 
-Los setters y getters son m閠odos en una clase que se utilizan para controlar el acceso y la modificaci髇 de los atributos privados. Estos m閠odos ayudan a mantener el principio de encapsulaci髇, permitiendo el acceso controlado a los datos de la clase y protegiendo la integridad de los atributos.
+Los setters y getters son m茅todos en una clase que se utilizan para controlar el acceso y la modificaci贸n de los atributos privados. Estos m茅todos ayudan a mantener el principio de encapsulaci贸n, permitiendo el acceso controlado a los datos de la clase y protegiendo la integridad de los atributos.
 
-#### Encapsulaci髇
+#### Encapsulaci贸n
 
-La encapsulaci髇 es uno de los pilares de la programaci髇 orientada a objetos. Consiste en ocultar los detalles internos de una clase y proporcionar m閠odos p鷅licos para acceder y modificar los datos. Esto mejora la seguridad y la integridad del estado del objeto.
+La encapsulaci贸n es uno de los pilares de la programaci贸n orientada a objetos. Consiste en ocultar los detalles internos de una clase y proporcionar m茅todos p煤blicos para acceder y modificar los datos. Esto mejora la seguridad y la integridad del estado del objeto.
 
-##### Definici髇 de Atributos Privados
+##### Definici贸n de Atributos Privados
 
 En C++, los atributos de una clase se pueden declarar como privados utilizando el modificador de acceso `private`. Esto significa que estos atributos solo pueden ser accedidos y modificados desde dentro de la propia clase.
 
@@ -18,13 +18,13 @@ private:
     int edad;
 
 public:
-    // M閠odos p鷅licos
+    // M茅todos p煤blicos
 };
 ```
 
-#### M閠odos Getters
+#### M茅todos Getters
 
-Los m閠odos getters se utilizan para acceder a los valores de los atributos privados. Generalmente, los getters son funciones constantes (`const`) porque no modifican el estado del objeto.
+Los m茅todos getters se utilizan para acceder a los valores de los atributos privados. Generalmente, los getters son funciones constantes (`const`) porque no modifican el estado del objeto.
 
 ##### Ejemplo de Getters
 
@@ -50,11 +50,11 @@ public:
 };
 ```
 
-En este ejemplo, `getNombre` y `getEdad` son m閠odos getters que devuelven los valores de `nombre` y `edad`, respectivamente.
+En este ejemplo, `getNombre` y `getEdad` son m茅todos getters que devuelven los valores de `nombre` y `edad`, respectivamente.
 
-#### M閠odos Setters
+#### M茅todos Setters
 
-Los m閠odos setters se utilizan para modificar los valores de los atributos privados. Los setters permiten validar y controlar los datos antes de asignarlos a los atributos.
+Los m茅todos setters se utilizan para modificar los valores de los atributos privados. Los setters permiten validar y controlar los datos antes de asignarlos a los atributos.
 
 ##### Ejemplo de Setters
 
@@ -75,10 +75,10 @@ public:
 
     // Setter para la edad
     void setEdad(int e) {
-        if (e > 0) {  // Validaci髇 simple
+        if (e > 0) {  // Validaci贸n simple
             edad = e;
         } else {
-            cout << "Edad no v醠ida." << endl;
+            cout << "Edad no v谩lida." << endl;
         }
     }
 
@@ -93,7 +93,7 @@ public:
 };
 ```
 
-En este ejemplo, `setNombre` y `setEdad` son m閠odos setters que permiten modificar los valores de `nombre` y `edad`, respectivamente. El setter `setEdad` incluye una validaci髇 para asegurarse de que la edad sea positiva.
+En este ejemplo, `setNombre` y `setEdad` son m茅todos setters que permiten modificar los valores de `nombre` y `edad`, respectivamente. El setter `setEdad` incluye una validaci贸n para asegurarse de que la edad sea positiva.
 
 #### Uso de Setters y Getters
 
@@ -123,7 +123,7 @@ public:
         if (e > 0) {
             edad = e;
         } else {
-            cout << "Edad no v醠ida." << endl;
+            cout << "Edad no v谩lida." << endl;
         }
     }
 
@@ -136,7 +136,7 @@ public:
         return edad;
     }
 
-    // M閠odo para mostrar informaci髇
+    // M茅todo para mostrar informaci贸n
     void mostrarInformacion() const {
         cout << "Nombre: " << nombre << ", Edad: " << edad << endl;
     }
@@ -152,7 +152,7 @@ int main() {
     juan.setEdad(31);
     juan.mostrarInformacion();
 
-    // Intentar establecer una edad no v醠ida
+    // Intentar establecer una edad no v谩lida
     juan.setEdad(-5);
     juan.mostrarInformacion();
 
@@ -164,21 +164,21 @@ int main() {
 }
 ```
 
-En este ejemplo, se crea un objeto `juan` de la clase `Persona`, se utilizan los setters para modificar sus atributos y los getters para acceder a ellos. La validaci髇 en el setter `setEdad` asegura que la edad no pueda establecerse en un valor no v醠ido.
+En este ejemplo, se crea un objeto `juan` de la clase `Persona`, se utilizan los setters para modificar sus atributos y los getters para acceder a ellos. La validaci贸n en el setter `setEdad` asegura que la edad no pueda establecerse en un valor no v谩lido.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los setters y getters son herramientas esenciales en la programaci髇 orientada a objetos para implementar la encapsulaci髇. Permiten controlar el acceso y la modificaci髇 de los atributos privados de una clase, asegurando que los datos se manejen de manera segura y consistente. Con el uso adecuado de setters y getters, se puede mejorar la robustez y mantenibilidad del c骴igo.
+Los setters y getters son herramientas esenciales en la programaci贸n orientada a objetos para implementar la encapsulaci贸n. Permiten controlar el acceso y la modificaci贸n de los atributos privados de una clase, asegurando que los datos se manejen de manera segura y consistente. Con el uso adecuado de setters y getters, se puede mejorar la robustez y mantenibilidad del c贸digo.
 <---FILES--->
-Definici髇 de Atributos Privados
-Definici髇 de Atributos Privados Result
+Definici贸n de Atributos Privados
+Definici贸n de Atributos Privados Result
 Ejemplo de Getters
 Ejemplo de Getters Result
 Ejemplo de Setters
 Ejemplo de Setters Result
 Ejemplo Completo
 Ejemplo Completo Result
-<---Definici髇 de Atributos Privados--->
+<---Definici贸n de Atributos Privados--->
 ```cpp
 class Persona {
 private:
@@ -186,9 +186,9 @@ private:
     int edad;
 
 public:
-    // M閠odos p鷅licos
+    // M茅todos p煤blicos
 };
-<---Definici髇 de Atributos Privados Result--->
+<---Definici贸n de Atributos Privados Result--->
 <---Ejemplo de Getters--->
 ```cpp
 class Persona {
@@ -229,10 +229,10 @@ public:
 
     // Setter para la edad
     void setEdad(int e) {
-        if (e > 0) {  // Validaci髇 simple
+        if (e > 0) {  // Validaci贸n simple
             edad = e;
         } else {
-            cout << "Edad no v醠ida." << endl;
+            cout << "Edad no v谩lida." << endl;
         }
     }
 
@@ -269,7 +269,7 @@ public:
         if (e > 0) {
             edad = e;
         } else {
-            cout << "Edad no v醠ida." << endl;
+            cout << "Edad no v谩lida." << endl;
         }
     }
 
@@ -282,7 +282,7 @@ public:
         return edad;
     }
 
-    // M閠odo para mostrar informaci髇
+    // M茅todo para mostrar informaci贸n
     void mostrarInformacion() const {
         cout << "Nombre: " << nombre << ", Edad: " << edad << endl;
     }
@@ -298,7 +298,7 @@ int main() {
     juan.setEdad(31);
     juan.mostrarInformacion();
 
-    // Intentar establecer una edad no v醠ida
+    // Intentar establecer una edad no v谩lida
     juan.setEdad(-5);
     juan.mostrarInformacion();
 

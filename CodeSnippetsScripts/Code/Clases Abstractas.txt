@@ -1,26 +1,26 @@
 <---EXPLANATION--->
 ### Clases Abstractas en C++
 
-Las clases abstractas son un concepto fundamental en la programaciÛn orientada a objetos en C++. Proporcionan una manera de definir interfaces comunes para sus clases derivadas y permiten diseÒar sistemas m·s flexibles y extensibles. Una clase abstracta es una clase que no puede ser instanciada directamente y se utiliza principalmente como una base para otras clases.
+Las clases abstractas son un concepto fundamental en la programaci√≥n orientada a objetos en C++. Proporcionan una manera de definir interfaces comunes para sus clases derivadas y permiten dise√±ar sistemas m√°s flexibles y extensibles. Una clase abstracta es una clase que no puede ser instanciada directamente y se utiliza principalmente como una base para otras clases.
 
-#### DefiniciÛn de Clase Abstracta
+#### Definici√≥n de Clase Abstracta
 
-Una clase abstracta en C++ es una clase que contiene al menos una funciÛn miembro pura virtual. Una funciÛn miembro pura virtual se declara aÒadiendo `= 0` al final de su declaraciÛn. Las clases derivadas deben proporcionar implementaciones para todas las funciones miembro puras virtuales de la clase abstracta para ser instanciadas.
+Una clase abstracta en C++ es una clase que contiene al menos una funci√≥n miembro pura virtual. Una funci√≥n miembro pura virtual se declara a√±adiendo `= 0` al final de su declaraci√≥n. Las clases derivadas deben proporcionar implementaciones para todas las funciones miembro puras virtuales de la clase abstracta para ser instanciadas.
 
 ##### Sintaxis
 
 ```cpp
 class NombreClaseAbstracta {
 public:
-    virtual void funcionPuraVirtual() = 0; // FunciÛn pura virtual
+    virtual void funcionPuraVirtual() = 0; // Funci√≥n pura virtual
 };
 ```
 
 #### Ejemplo de Clase Abstracta
 
-Consideremos un ejemplo donde queremos definir una jerarquÌa de clases para diferentes tipos de animales. La clase base `Animal` ser· una clase abstracta porque tiene una funciÛn pura virtual `hacerSonido`.
+Consideremos un ejemplo donde queremos definir una jerarqu√≠a de clases para diferentes tipos de animales. La clase base `Animal` ser√° una clase abstracta porque tiene una funci√≥n pura virtual `hacerSonido`.
 
-##### Ejemplo de ImplementaciÛn
+##### Ejemplo de Implementaci√≥n
 
 ```cpp
 #include <iostream>
@@ -28,7 +28,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // FunciÛn pura virtual
+    virtual void hacerSonido() const = 0; // Funci√≥n pura virtual
 
     virtual ~Animal() {
         // Destructor virtual
@@ -45,7 +45,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma˙lla" << endl;
+        cout << "El gato ma√∫lla" << endl;
     }
 };
 
@@ -66,20 +66,20 @@ int main() {
 ```
 
 En este ejemplo:
-- `Animal` es una clase abstracta porque tiene una funciÛn pura virtual `hacerSonido`.
-- `Perro` y `Gato` son clases derivadas que proporcionan implementaciones especÌficas de `hacerSonido`.
+- `Animal` es una clase abstracta porque tiene una funci√≥n pura virtual `hacerSonido`.
+- `Perro` y `Gato` son clases derivadas que proporcionan implementaciones espec√≠ficas de `hacerSonido`.
 
 #### Uso de Clases Abstractas
 
-Las clases abstractas son ˙tiles cuando se desea definir una interfaz com˙n para un conjunto de clases derivadas. Permiten que las clases derivadas compartan una estructura com˙n y obligan a estas clases a proporcionar implementaciones especÌficas para las funciones puras virtuales.
+Las clases abstractas son √∫tiles cuando se desea definir una interfaz com√∫n para un conjunto de clases derivadas. Permiten que las clases derivadas compartan una estructura com√∫n y obligan a estas clases a proporcionar implementaciones espec√≠ficas para las funciones puras virtuales.
 
 ##### Ventajas de Usar Clases Abstractas
 
-1. **Interfaz Com˙n:** Proveen una interfaz com˙n para todas las clases derivadas, asegurando que todas implementen ciertas funciones.
-2. **Extensibilidad:** Facilitan la extensibilidad del cÛdigo. Nuevas clases derivadas pueden aÒadirse sin cambiar la interfaz de la clase base.
-3. **Flexibilidad:** Permiten escribir cÛdigo m·s flexible y reusable, ya que el cÛdigo puede operar sobre punteros o referencias a la clase abstracta sin conocer los detalles de las clases derivadas especÌficas.
+1. **Interfaz Com√∫n:** Proveen una interfaz com√∫n para todas las clases derivadas, asegurando que todas implementen ciertas funciones.
+2. **Extensibilidad:** Facilitan la extensibilidad del c√≥digo. Nuevas clases derivadas pueden a√±adirse sin cambiar la interfaz de la clase base.
+3. **Flexibilidad:** Permiten escribir c√≥digo m√°s flexible y reusable, ya que el c√≥digo puede operar sobre punteros o referencias a la clase abstracta sin conocer los detalles de las clases derivadas espec√≠ficas.
 
-##### Ejemplo de Uso en una ColecciÛn
+##### Ejemplo de Uso en una Colecci√≥n
 
 ```cpp
 #include <iostream>
@@ -88,14 +88,14 @@ using namespace std;
 
 class Figura {
 public:
-    virtual void dibujar() const = 0; // FunciÛn pura virtual
+    virtual void dibujar() const = 0; // Funci√≥n pura virtual
     virtual ~Figura() {}
 };
 
 class Circulo : public Figura {
 public:
     void dibujar() const override {
-        cout << "Dibujando un cÌrculo" << endl;
+        cout << "Dibujando un c√≠rculo" << endl;
     }
 };
 
@@ -125,43 +125,43 @@ int main() {
 ```
 
 En este ejemplo:
-- `Figura` es una clase abstracta con una funciÛn pura virtual `dibujar`.
-- `Circulo` y `Cuadrado` son clases derivadas que proporcionan implementaciones especÌficas de `dibujar`.
-- Un vector de punteros a `Figura` permite almacenar y operar sobre diferentes tipos de figuras de manera polimÛrfica.
+- `Figura` es una clase abstracta con una funci√≥n pura virtual `dibujar`.
+- `Circulo` y `Cuadrado` son clases derivadas que proporcionan implementaciones espec√≠ficas de `dibujar`.
+- Un vector de punteros a `Figura` permite almacenar y operar sobre diferentes tipos de figuras de manera polim√≥rfica.
 
 #### Consideraciones al Usar Clases Abstractas
 
-1. **Destructores Virtuales:** Siempre declarar destructores virtuales en clases abstractas para asegurar una correcta liberaciÛn de recursos en las clases derivadas.
-2. **Implementaciones Comunes:** Si una funciÛn pura virtual tiene una implementaciÛn com˙n que puede ser compartida por algunas clases derivadas, puede ser implementada en la clase base como una funciÛn virtual no pura.
-3. **CombinaciÛn con Otras CaracterÌsticas:** Las clases abstractas pueden combinarse con otras caracterÌsticas de la POO, como la herencia m˙ltiple y los templates, para diseÒar sistemas m·s complejos y flexibles.
+1. **Destructores Virtuales:** Siempre declarar destructores virtuales en clases abstractas para asegurar una correcta liberaci√≥n de recursos en las clases derivadas.
+2. **Implementaciones Comunes:** Si una funci√≥n pura virtual tiene una implementaci√≥n com√∫n que puede ser compartida por algunas clases derivadas, puede ser implementada en la clase base como una funci√≥n virtual no pura.
+3. **Combinaci√≥n con Otras Caracter√≠sticas:** Las clases abstractas pueden combinarse con otras caracter√≠sticas de la POO, como la herencia m√∫ltiple y los templates, para dise√±ar sistemas m√°s complejos y flexibles.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las clases abstractas en C++ son una herramienta poderosa para definir interfaces comunes y asegurar que todas las clases derivadas implementen ciertas funciones. Facilitan la extensibilidad y la reutilizaciÛn del cÛdigo, permitiendo escribir aplicaciones m·s flexibles y mantenibles. Comprender cÛmo y cu·ndo usar clases abstractas es esencial para aprovechar al m·ximo las capacidades de la programaciÛn orientada a objetos en C++.
+Las clases abstractas en C++ son una herramienta poderosa para definir interfaces comunes y asegurar que todas las clases derivadas implementen ciertas funciones. Facilitan la extensibilidad y la reutilizaci√≥n del c√≥digo, permitiendo escribir aplicaciones m√°s flexibles y mantenibles. Comprender c√≥mo y cu√°ndo usar clases abstractas es esencial para aprovechar al m√°ximo las capacidades de la programaci√≥n orientada a objetos en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo de ImplementaciÛn
-Ejemplo de ImplementaciÛn Result
+Ejemplo de Implementaci√≥n
+Ejemplo de Implementaci√≥n Result
 Ventajas de Usar Clases Abstractas
 Ventajas de Usar Clases Abstractas Result
-Ejemplo de Uso en una ColecciÛn
-Ejemplo de Uso en una ColecciÛn Result
+Ejemplo de Uso en una Colecci√≥n
+Ejemplo de Uso en una Colecci√≥n Result
 <---Sintaxis--->
 ```cpp
 class NombreClaseAbstracta {
 public:
-    virtual void funcionPuraVirtual() = 0; // FunciÛn pura virtual
+    virtual void funcionPuraVirtual() = 0; // Funci√≥n pura virtual
 };
 <---Sintaxis Result--->
-<---Ejemplo de ImplementaciÛn--->
+<---Ejemplo de Implementaci√≥n--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // FunciÛn pura virtual
+    virtual void hacerSonido() const = 0; // Funci√≥n pura virtual
 
     virtual ~Animal() {
         // Destructor virtual
@@ -178,7 +178,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma˙lla" << endl;
+        cout << "El gato ma√∫lla" << endl;
     }
 };
 
@@ -196,10 +196,10 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de ImplementaciÛn Result--->
+<---Ejemplo de Implementaci√≥n Result--->
 <---Ventajas de Usar Clases Abstractas--->
 <---Ventajas de Usar Clases Abstractas Result--->
-<---Ejemplo de Uso en una ColecciÛn--->
+<---Ejemplo de Uso en una Colecci√≥n--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -207,14 +207,14 @@ using namespace std;
 
 class Figura {
 public:
-    virtual void dibujar() const = 0; // FunciÛn pura virtual
+    virtual void dibujar() const = 0; // Funci√≥n pura virtual
     virtual ~Figura() {}
 };
 
 class Circulo : public Figura {
 public:
     void dibujar() const override {
-        cout << "Dibujando un cÌrculo" << endl;
+        cout << "Dibujando un c√≠rculo" << endl;
     }
 };
 
@@ -241,4 +241,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Uso en una ColecciÛn Result--->
+<---Ejemplo de Uso en una Colecci√≥n Result--->

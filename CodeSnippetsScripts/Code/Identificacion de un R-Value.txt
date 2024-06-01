@@ -1,21 +1,21 @@
 <---EXPLANATION--->
-### IdentificaciÛn de un R-Value en C++
+### Identificaci√≥n de un R-Value en C++
 
-En C++, identificar un R-value (Right value) es esencial para comprender el comportamiento de las expresiones y cÛmo se gestionan los recursos. Los R-values son temporales y no tienen una direcciÛn en memoria accesible. AquÌ se explicar· cÛmo identificarlos y se proporcionar·n ejemplos pr·cticos.
+En C++, identificar un R-value (Right value) es esencial para comprender el comportamiento de las expresiones y c√≥mo se gestionan los recursos. Los R-values son temporales y no tienen una direcci√≥n en memoria accesible. Aqu√≠ se explicar√° c√≥mo identificarlos y se proporcionar√°n ejemplos pr√°cticos.
 
-#### CaracterÌsticas de los R-Values
+#### Caracter√≠sticas de los R-Values
 
-1. **Temporalidad:** Los R-values son temporales y existen solo durante la evaluaciÛn de una expresiÛn.
-2. **No Asignables:** No pueden aparecer en el lado izquierdo de una asignaciÛn.
-3. **No Pueden Tomarse Direcciones:** No tienen una direcciÛn de memoria accesible directamente mediante el operador `&`.
+1. **Temporalidad:** Los R-values son temporales y existen solo durante la evaluaci√≥n de una expresi√≥n.
+2. **No Asignables:** No pueden aparecer en el lado izquierdo de una asignaci√≥n.
+3. **No Pueden Tomarse Direcciones:** No tienen una direcci√≥n de memoria accesible directamente mediante el operador `&`.
 
 #### Ejemplos de R-Values
 
-1. **Literales:** Los valores literales como n˙meros y cadenas.
-2. **Resultados de Expresiones:** El resultado de operaciones aritmÈticas y lÛgicas.
+1. **Literales:** Los valores literales como n√∫meros y cadenas.
+2. **Resultados de Expresiones:** El resultado de operaciones aritm√©ticas y l√≥gicas.
 3. **Llamadas a Funciones que Devuelven R-Values:** Llamadas a funciones que devuelven valores temporales.
 
-##### Ejemplos Pr·cticos
+##### Ejemplos Pr√°cticos
 
 ```cpp
 #include <iostream>
@@ -115,9 +115,9 @@ En este ejemplo:
 - `std::move` se usa para convertir un L-value en un R-value, permitiendo que las move semantics se apliquen.
 - `MiClase` utiliza un move constructor y un move assignment operator para transferir eficientemente recursos de un objeto a otro.
 
-### IdentificaciÛn de R-Values en Funciones
+### Identificaci√≥n de R-Values en Funciones
 
-Al escribir funciones, es ˙til identificar cu·ndo se est·n utilizando R-values y cu·ndo L-values. Esto puede influir en la sobrecarga de funciones y en la eficiencia del cÛdigo.
+Al escribir funciones, es √∫til identificar cu√°ndo se est√°n utilizando R-values y cu√°ndo L-values. Esto puede influir en la sobrecarga de funciones y en la eficiencia del c√≥digo.
 
 ##### Ejemplo de Sobrecarga de Funciones con L-Values y R-Values
 
@@ -134,9 +134,9 @@ void procesar(int&& x) {
 
 int main() {
     int a = 5;
-    procesar(a);        // Llama a la versiÛn de L-value reference
-    procesar(10);       // Llama a la versiÛn de R-value reference
-    procesar(a + 3);    // Llama a la versiÛn de R-value reference
+    procesar(a);        // Llama a la versi√≥n de L-value reference
+    procesar(10);       // Llama a la versi√≥n de R-value reference
+    procesar(a + 3);    // Llama a la versi√≥n de R-value reference
 
     return 0;
 }
@@ -147,17 +147,17 @@ En este ejemplo:
 - `procesar(int&& x)` maneja R-values.
 - `a` es un L-value, mientras que `10` y `a + 3` son R-values.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Identificar R-values es crucial para escribir cÛdigo C++ eficiente y seguro. Los R-values son valores temporales y no asignables que se encuentran tÌpicamente en el lado derecho de una asignaciÛn. Con el uso de R-value references y move semantics, se pueden optimizar significativamente las operaciones de transferencia de recursos, mejorando el rendimiento y reduciendo la sobrecarga en el manejo de datos temporales. Entender la distinciÛn entre L-values y R-values es esencial para cualquier desarrollador de C++ moderno.
+Identificar R-values es crucial para escribir c√≥digo C++ eficiente y seguro. Los R-values son valores temporales y no asignables que se encuentran t√≠picamente en el lado derecho de una asignaci√≥n. Con el uso de R-value references y move semantics, se pueden optimizar significativamente las operaciones de transferencia de recursos, mejorando el rendimiento y reduciendo la sobrecarga en el manejo de datos temporales. Entender la distinci√≥n entre L-values y R-values es esencial para cualquier desarrollador de C++ moderno.
 <---FILES--->
-Ejemplos Pr·cticos
-Ejemplos Pr·cticos Result
+Ejemplos Pr√°cticos
+Ejemplos Pr√°cticos Result
 Ejemplo de R-Value References
 Ejemplo de R-Value References Result
 Ejemplo de Sobrecarga de Funciones con L-Values y R-Values
 Ejemplo de Sobrecarga de Funciones con L-Values y R-Values Result
-<---Ejemplos Pr·cticos--->
+<---Ejemplos Pr√°cticos--->
 ```cpp
 #include <iostream>
 
@@ -182,7 +182,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplos Pr·cticos Result--->
+<---Ejemplos Pr√°cticos Result--->
 <---Ejemplo de R-Value References--->
 ```cpp
 #include <iostream>
@@ -256,9 +256,9 @@ void procesar(int&& x) {
 
 int main() {
     int a = 5;
-    procesar(a);        // Llama a la versiÛn de L-value reference
-    procesar(10);       // Llama a la versiÛn de R-value reference
-    procesar(a + 3);    // Llama a la versiÛn de R-value reference
+    procesar(a);        // Llama a la versi√≥n de L-value reference
+    procesar(10);       // Llama a la versi√≥n de R-value reference
+    procesar(a + 3);    // Llama a la versi√≥n de R-value reference
 
     return 0;
 }

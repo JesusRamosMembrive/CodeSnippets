@@ -1,0 +1,317 @@
+<---EXPLANATION--->
+### Plantillas de Clase Usando Concepts en C++
+
+Introducidos en C++20, los concepts son una herramienta poderosa para especificar restricciones en los parámetros de las plantillas. Los concepts permiten escribir código genérico más seguro y claro, especificando qué requisitos debe cumplir un tipo para ser utilizado como argumento de plantilla.
+
+#### Introducción a Concepts
+
+Un concept define un conjunto de requisitos que un tipo debe cumplir. Estos requisitos pueden incluir la existencia de operaciones, tipos asociados, y propiedades de los tipos, entre otros.
+
+##### Definición de Concepts
+
+Un concept se define usando la palabra clave `concept`.
+
+###### Ejemplo Básico
+
+```cpp
+#include <concepts>
+
+// Definición de un concept que requiere que el tipo sea aritmético
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+```
+
+En este ejemplo:
+- `Aritmetico` es un concept que se satisface si `T` es un tipo aritmético.
+
+#### Uso de Concepts en Plantillas de Clase
+
+##### Clase Plantilla con Concepts
+
+Los concepts se pueden usar para restringir los tipos aceptados por una plantilla de clase.
+
+###### Ejemplo de Clase Plantilla Restringida por un Concept
+
+```cpp
+#include <iostream>
+#include <concepts>
+
+// Definición de un concept que requiere que el tipo sea aritmético
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+
+// Clase plantilla que utiliza el concept
+template<Aritmetico T>
+class MiClase {
+public:
+    T valor;
+
+    MiClase(T v) : valor(v) {}
+
+    void mostrar() const {
+        std::cout << "Valor: " << valor << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int> obj1(42);
+    obj1.mostrar();  // Muestra: Valor: 42
+
+    MiClase<double> obj2(3.14);
+    obj2.mostrar();  // Muestra: Valor: 3.14
+
+    // MiClase<std::string> obj3("Hola");  // Error en tiempo de compilación
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `MiClase` solo acepta tipos que satisfacen el concept `Aritmetico`.
+- Intentar instanciar `MiClase` con un tipo no aritmético, como `std::string`, resultará en un error de compilación.
+
+#### Ejemplo Avanzado: Concepts con Métodos de Clase
+
+Se pueden usar concepts para restringir no solo los tipos aceptados por la clase plantilla, sino también los tipos aceptados por sus métodos.
+
+```cpp
+#include <iostream>
+#include <concepts>
+
+// Definición de un concept que requiere que el tipo sea aritmético
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+
+template<Aritmetico T>
+class MiClase {
+public:
+    T valor;
+
+    MiClase(T v) : valor(v) {}
+
+    void mostrar() const {
+        std::cout << "Valor: " << valor << std::endl;
+    }
+
+    // Método que solo acepta tipos aritméticos
+    template<Aritmetico U>
+    void sumar(U otroValor) {
+        valor += otroValor;
+    }
+};
+
+int main() {
+    MiClase<int> obj1(42);
+    obj1.mostrar();            // Muestra: Valor: 42
+    obj1.sumar(8);
+    obj1.mostrar();            // Muestra: Valor: 50
+
+    MiClase<double> obj2(3.14);
+    obj2.mostrar();            // Muestra: Valor: 3.14
+    obj2.sumar(1.86);
+    obj2.mostrar();            // Muestra: Valor: 5.0
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- El método `sumar` acepta un tipo `U` que debe satisfacer el concept `Aritmetico`.
+- Esto asegura que `sumar` solo se pueda llamar con tipos aritméticos.
+
+#### Combinación de Concepts
+
+Los concepts pueden combinarse para definir restricciones más complejas.
+
+###### Ejemplo de Combinación de Concepts
+
+```cpp
+#include <iostream>
+#include <concepts>
+#include <type_traits>
+
+// Definición de concepts
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+
+template<typename T>
+concept Imprimible = requires(T t) {
+    std::cout << t;
+};
+
+// Clase plantilla que utiliza múltiples concepts
+template<typename T>
+requires Aritmetico<T> && Imprimible<T>
+class MiClase {
+public:
+    T valor;
+
+    MiClase(T v) : valor(v) {}
+
+    void mostrar() const {
+        std::cout << "Valor: " << valor << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int> obj1(42);
+    obj1.mostrar();            // Muestra: Valor: 42
+
+    MiClase<double> obj2(3.14);
+    obj2.mostrar();            // Muestra: Valor: 3.14
+
+    // MiClase<std::string> obj3("Hola");  // Error en tiempo de compilación
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `MiClase` solo acepta tipos que son tanto aritméticos como imprimibles.
+
+### Ventajas de Usar Concepts en Plantillas de Clase
+
+1. **Claridad y Legibilidad:** Los concepts permiten especificar claramente las restricciones en los parámetros de plantilla, mejorando la legibilidad del código.
+2. **Errores en Tiempo de Compilación:** Proporcionan errores en tiempo de compilación más claros y específicos cuando los tipos no cumplen con los requisitos.
+3. **Código Más Seguro:** Ayudan a evitar errores comunes al garantizar que solo se usen tipos apropiados con las plantillas.
+
+### Conclusión
+
+Los concepts en C++20 mejoran significativamente la programación genérica al permitir la especificación de requisitos claros y verificables en los parámetros de las plantillas. Utilizar concepts en plantillas de clase permite escribir código más robusto, claro y seguro, proporcionando restricciones que se verifican en tiempo de compilación. Esta capacidad facilita el desarrollo de bibliotecas y aplicaciones genéricas que son más fáciles de entender y mantener.
+<---FILES--->
+Definición de Concepts
+Definición de Concepts Result
+Ejemplo Básico
+Ejemplo Básico Result
+Clase Plantilla con Concepts
+Clase Plantilla con Concepts Result
+Ejemplo de Clase Plantilla Restringida por un Concept
+Ejemplo de Clase Plantilla Restringida por un Concept Result
+Ejemplo de Combinación de Concepts
+Ejemplo de Combinación de Concepts Result
+<---Definición de Concepts--->
+<---Definición de Concepts Result--->
+<---Ejemplo Básico--->
+```cpp
+#include <concepts>
+
+// Definición de un concept que requiere que el tipo sea aritmético
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+<---Ejemplo Básico Result--->
+<---Clase Plantilla con Concepts--->
+<---Clase Plantilla con Concepts Result--->
+<---Ejemplo de Clase Plantilla Restringida por un Concept--->
+```cpp
+#include <iostream>
+#include <concepts>
+
+// Definición de un concept que requiere que el tipo sea aritmético
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+
+// Clase plantilla que utiliza el concept
+template<Aritmetico T>
+class MiClase {
+public:
+    T valor;
+
+    MiClase(T v) : valor(v) {}
+
+    void mostrar() const {
+        std::cout << "Valor: " << valor << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int> obj1(42);
+    obj1.mostrar();  // Muestra: Valor: 42
+
+    MiClase<double> obj2(3.14);
+    obj2.mostrar();  // Muestra: Valor: 3.14
+
+    // MiClase<std::string> obj3("Hola");  // Error en tiempo de compilación
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <concepts>
+
+// Definición de un concept que requiere que el tipo sea aritmético
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+
+template<Aritmetico T>
+class MiClase {
+public:
+    T valor;
+
+    MiClase(T v) : valor(v) {}
+
+    void mostrar() const {
+        std::cout << "Valor: " << valor << std::endl;
+    }
+
+    // Método que solo acepta tipos aritméticos
+    template<Aritmetico U>
+    void sumar(U otroValor) {
+        valor += otroValor;
+    }
+};
+
+int main() {
+    MiClase<int> obj1(42);
+    obj1.mostrar();            // Muestra: Valor: 42
+    obj1.sumar(8);
+    obj1.mostrar();            // Muestra: Valor: 50
+
+    MiClase<double> obj2(3.14);
+    obj2.mostrar();            // Muestra: Valor: 3.14
+    obj2.sumar(1.86);
+    obj2.mostrar();            // Muestra: Valor: 5.0
+
+    return 0;
+}
+<---Ejemplo de Clase Plantilla Restringida por un Concept Result--->
+<---Ejemplo de Combinación de Concepts--->
+```cpp
+#include <iostream>
+#include <concepts>
+#include <type_traits>
+
+// Definición de concepts
+template<typename T>
+concept Aritmetico = std::is_arithmetic_v<T>;
+
+template<typename T>
+concept Imprimible = requires(T t) {
+    std::cout << t;
+};
+
+// Clase plantilla que utiliza múltiples concepts
+template<typename T>
+requires Aritmetico<T> && Imprimible<T>
+class MiClase {
+public:
+    T valor;
+
+    MiClase(T v) : valor(v) {}
+
+    void mostrar() const {
+        std::cout << "Valor: " << valor << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int> obj1(42);
+    obj1.mostrar();            // Muestra: Valor: 42
+
+    MiClase<double> obj2(3.14);
+    obj2.mostrar();            // Muestra: Valor: 3.14
+
+    // MiClase<std::string> obj3("Hola");  // Error en tiempo de compilación
+
+    return 0;
+}
+<---Ejemplo de Combinación de Concepts Result--->

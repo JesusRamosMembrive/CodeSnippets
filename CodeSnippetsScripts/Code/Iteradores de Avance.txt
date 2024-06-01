@@ -1,20 +1,20 @@
 <---EXPLANATION--->
 ### Iteradores de Avance en C++
 
-Los **iteradores de avance** (forward iterators) son una categoría de iteradores en C++ que permiten avanzar en una secuencia y leer o escribir elementos en esa secuencia. A diferencia de los iteradores de entrada y salida, los iteradores de avance soportan tanto la lectura como la escritura y permiten recorrer una secuencia en una única dirección.
+Los **iteradores de avance** (forward iterators) son una categorÃ­a de iteradores en C++ que permiten avanzar en una secuencia y leer o escribir elementos en esa secuencia. A diferencia de los iteradores de entrada y salida, los iteradores de avance soportan tanto la lectura como la escritura y permiten recorrer una secuencia en una Ãºnica direcciÃ³n.
 
-#### Características de los Iteradores de Avance
+#### CaracterÃ­sticas de los Iteradores de Avance
 
 1. **Lectura y Escritura:** Permiten leer y escribir elementos en la secuencia.
 2. **Unidireccional:** Permiten avanzar en la secuencia, pero no retroceder.
-3. **Multipasada:** Se garantiza que se pueden recorrer múltiples veces, lo que significa que se pueden copiar y cada copia puede recorrer la secuencia independientemente.
+3. **Multipasada:** Se garantiza que se pueden recorrer mÃºltiples veces, lo que significa que se pueden copiar y cada copia puede recorrer la secuencia independientemente.
 4. **Igualdad y Desigualdad:** Pueden compararse con otros iteradores de avance usando `==` y `!=`.
 
 #### Uso de Iteradores de Avance
 
-Los iteradores de avance son comúnmente utilizados en contenedores como `std::forward_list`, pero también son compatibles con otros contenedores de la STL que proporcionan iteradores más potentes, como `std::vector` y `std::list`.
+Los iteradores de avance son comÃºnmente utilizados en contenedores como `std::forward_list`, pero tambiÃ©n son compatibles con otros contenedores de la STL que proporcionan iteradores mÃ¡s potentes, como `std::vector` y `std::list`.
 
-##### Ejemplo Básico con `std::forward_list`
+##### Ejemplo BÃ¡sico con `std::forward_list`
 
 ```cpp
 #include <iostream>
@@ -40,7 +40,7 @@ int main() {
 En este ejemplo:
 - `std::forward_list<int>::iterator` es el tipo de iterador de avance para `std::forward_list<int>`.
 - `flist.begin()` devuelve un iterador al primer elemento de la lista.
-- `flist.end()` devuelve un iterador al elemento después del último elemento de la lista.
+- `flist.end()` devuelve un iterador al elemento despuÃ©s del Ãºltimo elemento de la lista.
 
 #### Algoritmos de la STL con Iteradores de Avance
 
@@ -134,21 +134,21 @@ int main() {
 En este ejemplo:
 - `std::forward_list<int>::const_iterator` es el tipo de iterador constante de avance para `std::forward_list<int>`.
 - `flist.cbegin()` devuelve un iterador constante al primer elemento de la lista.
-- `flist.cend()` devuelve un iterador constante al elemento después del último elemento de la lista.
+- `flist.cend()` devuelve un iterador constante al elemento despuÃ©s del Ãºltimo elemento de la lista.
 
-### Conclusión
+### ConclusiÃ³n
 
-Los iteradores de avance son una herramienta versátil en C++ que permiten recorrer y manipular elementos en una secuencia de manera unidireccional. Proporcionan una interfaz unificada para acceder y modificar elementos en diferentes tipos de contenedores, y se integran bien con los algoritmos de la STL. Entender cómo utilizar iteradores de avance y sus constantes correctamente es esencial para escribir código C++ robusto y eficiente.
+Los iteradores de avance son una herramienta versÃ¡til en C++ que permiten recorrer y manipular elementos en una secuencia de manera unidireccional. Proporcionan una interfaz unificada para acceder y modificar elementos en diferentes tipos de contenedores, y se integran bien con los algoritmos de la STL. Entender cÃ³mo utilizar iteradores de avance y sus constantes correctamente es esencial para escribir cÃ³digo C++ robusto y eficiente.
 <---FILES--->
-Ejemplo Básico con `std::forward_list`
-Ejemplo Básico con `std::forward_list` Result
+Ejemplo BÃ¡sico con `std::forward_list`
+Ejemplo BÃ¡sico con `std::forward_list` Result
 Ejemplo con `std::find`
 Ejemplo con `std::find` Result
 Ejemplo con `std::transform`
 Ejemplo con `std::transform` Result
 Ejemplo de Iteradores Constantes
 Ejemplo de Iteradores Constantes Result
-<---Ejemplo Básico con `std::forward_list`--->
+<---Ejemplo BÃ¡sico con `std::forward_list`--->
 ```cpp
 #include <iostream>
 #include <forward_list>
@@ -168,7 +168,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Básico con `std::forward_list` Result--->
+<---Ejemplo BÃ¡sico con `std::forward_list` Result--->
 <---Ejemplo con `std::find`--->
 ```cpp
 #include <iostream>

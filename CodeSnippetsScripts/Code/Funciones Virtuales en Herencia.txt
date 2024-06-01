@@ -1,34 +1,34 @@
 <---EXPLANATION--->
 ### Funciones Virtuales en Herencia en C++
 
-Las funciones virtuales son una caracterÌstica clave de la programaciÛn orientada a objetos en C++. Permiten que las funciones miembro se comporten de manera polimÛrfica, es decir, el comportamiento de la funciÛn se puede determinar en tiempo de ejecuciÛn en lugar de en tiempo de compilaciÛn. Esto es fundamental para la creaciÛn de interfaces flexibles y reutilizables y para la implementaciÛn del polimorfismo.
+Las funciones virtuales son una caracter√≠stica clave de la programaci√≥n orientada a objetos en C++. Permiten que las funciones miembro se comporten de manera polim√≥rfica, es decir, el comportamiento de la funci√≥n se puede determinar en tiempo de ejecuci√≥n en lugar de en tiempo de compilaci√≥n. Esto es fundamental para la creaci√≥n de interfaces flexibles y reutilizables y para la implementaci√≥n del polimorfismo.
 
-#### DefiniciÛn de Funciones Virtuales
+#### Definici√≥n de Funciones Virtuales
 
-Una funciÛn virtual es una funciÛn miembro de una clase que se puede redefinir en una clase derivada. Se declara con la palabra clave `virtual` en la clase base. Las funciones virtuales permiten que las llamadas a funciones a travÈs de punteros o referencias a la clase base se dirijan a la versiÛn m·s derivada de la funciÛn, seg˙n el tipo del objeto que realmente est· siendo apuntado o referenciado.
+Una funci√≥n virtual es una funci√≥n miembro de una clase que se puede redefinir en una clase derivada. Se declara con la palabra clave `virtual` en la clase base. Las funciones virtuales permiten que las llamadas a funciones a trav√©s de punteros o referencias a la clase base se dirijan a la versi√≥n m√°s derivada de la funci√≥n, seg√∫n el tipo del objeto que realmente est√° siendo apuntado o referenciado.
 
-##### Sintaxis B·sica
+##### Sintaxis B√°sica
 
 ```cpp
 class Base {
 public:
     virtual void funcion() {
-        // ImplementaciÛn de la clase base
+        // Implementaci√≥n de la clase base
     }
 };
 
 class Derivada : public Base {
 public:
     void funcion() override {
-        // ImplementaciÛn de la clase derivada
+        // Implementaci√≥n de la clase derivada
     }
 };
 ```
 
-- **`virtual`**: Indica que la funciÛn puede ser anulada en una clase derivada.
-- **`override`**: Es opcional pero recomendable, ya que proporciona una verificaciÛn en tiempo de compilaciÛn de que la funciÛn est· realmente anulando una funciÛn virtual de la clase base.
+- **`virtual`**: Indica que la funci√≥n puede ser anulada en una clase derivada.
+- **`override`**: Es opcional pero recomendable, ya que proporciona una verificaci√≥n en tiempo de compilaci√≥n de que la funci√≥n est√° realmente anulando una funci√≥n virtual de la clase base.
 
-#### Ejemplo B·sico de Funciones Virtuales
+#### Ejemplo B√°sico de Funciones Virtuales
 
 ```cpp
 #include <iostream>
@@ -51,7 +51,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma˙lla" << endl;
+        cout << "El gato ma√∫lla" << endl;
     }
 };
 
@@ -73,19 +73,19 @@ int main() {
 ```
 
 En este ejemplo:
-- `Animal` define una funciÛn virtual `hacerSonido`.
-- `Perro` y `Gato` anulan `hacerSonido` para proporcionar implementaciones especÌficas.
-- La funciÛn `hacerSonidoAnimal` demuestra el polimorfismo al llamar a `hacerSonido` en un `Animal`, `Perro` y `Gato`.
+- `Animal` define una funci√≥n virtual `hacerSonido`.
+- `Perro` y `Gato` anulan `hacerSonido` para proporcionar implementaciones espec√≠ficas.
+- La funci√≥n `hacerSonidoAnimal` demuestra el polimorfismo al llamar a `hacerSonido` en un `Animal`, `Perro` y `Gato`.
 
 #### Polimorfismo y Tablas Virtuales
 
 El polimorfismo se logra en C++ mediante el uso de una estructura llamada "tabla virtual" (vtable). Una vtable es una tabla de punteros a funciones virtuales. Cada clase que tiene funciones virtuales tiene su propia vtable, y cada objeto de esa clase tiene un puntero a la vtable correspondiente.
 
-Cuando se llama a una funciÛn virtual, el compilador utiliza el puntero a la vtable para encontrar la implementaciÛn correcta de la funciÛn a ejecutar en tiempo de ejecuciÛn.
+Cuando se llama a una funci√≥n virtual, el compilador utiliza el puntero a la vtable para encontrar la implementaci√≥n correcta de la funci√≥n a ejecutar en tiempo de ejecuci√≥n.
 
 #### Funciones Virtuales Puras y Clases Abstractas
 
-Una funciÛn virtual pura se declara con `= 0` y no tiene implementaciÛn en la clase base. Una clase que contiene al menos una funciÛn virtual pura es una clase abstracta y no puede instanciarse. Las clases derivadas deben proporcionar una implementaciÛn para las funciones virtuales puras para poder ser instanciadas.
+Una funci√≥n virtual pura se declara con `= 0` y no tiene implementaci√≥n en la clase base. Una clase que contiene al menos una funci√≥n virtual pura es una clase abstracta y no puede instanciarse. Las clases derivadas deben proporcionar una implementaci√≥n para las funciones virtuales puras para poder ser instanciadas.
 
 ##### Ejemplo de Funciones Virtuales Puras
 
@@ -95,7 +95,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // FunciÛn virtual pura
+    virtual void hacerSonido() const = 0; // Funci√≥n virtual pura
 };
 
 class Perro : public Animal {
@@ -108,7 +108,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma˙lla" << endl;
+        cout << "El gato ma√∫lla" << endl;
     }
 };
 
@@ -128,11 +128,11 @@ int main() {
 }
 ```
 
-En este ejemplo, `Animal` es una clase abstracta con una funciÛn virtual pura `hacerSonido`. `Perro` y `Gato` proporcionan implementaciones especÌficas de `hacerSonido`.
+En este ejemplo, `Animal` es una clase abstracta con una funci√≥n virtual pura `hacerSonido`. `Perro` y `Gato` proporcionan implementaciones espec√≠ficas de `hacerSonido`.
 
 #### Virtualidad y Constructores
 
-Las funciones virtuales no se comportan de manera polimÛrfica cuando son llamadas desde constructores y destructores. Durante la construcciÛn y destrucciÛn de un objeto, el tipo de objeto se considera el tipo de la clase en la que se est· ejecutando el constructor o destructor, no el tipo de la clase derivada.
+Las funciones virtuales no se comportan de manera polim√≥rfica cuando son llamadas desde constructores y destructores. Durante la construcci√≥n y destrucci√≥n de un objeto, el tipo de objeto se considera el tipo de la clase en la que se est√° ejecutando el constructor o destructor, no el tipo de la clase derivada.
 
 ##### Ejemplo de Virtualidad y Constructores
 
@@ -168,31 +168,31 @@ int main() {
 }
 ```
 
-En este ejemplo, durante la construcciÛn de un objeto `Derivada`, la llamada a `imprimir` desde el constructor de `Base` invoca `Base::imprimir`, no `Derivada::imprimir`.
+En este ejemplo, durante la construcci√≥n de un objeto `Derivada`, la llamada a `imprimir` desde el constructor de `Base` invoca `Base::imprimir`, no `Derivada::imprimir`.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las funciones virtuales son fundamentales para la implementaciÛn del polimorfismo en C++. Permiten que las funciones miembro se comporten de manera polimÛrfica, lo que es crucial para la creaciÛn de interfaces flexibles y reutilizables. Las funciones virtuales puras definen interfaces que deben ser implementadas por clases derivadas, creando clases abstractas que no pueden ser instanciadas. Es importante comprender las limitaciones de la virtualidad, especialmente en el contexto de constructores y destructores, para utilizar de manera efectiva las funciones virtuales en el diseÒo de software orientado a objetos en C++.
+Las funciones virtuales son fundamentales para la implementaci√≥n del polimorfismo en C++. Permiten que las funciones miembro se comporten de manera polim√≥rfica, lo que es crucial para la creaci√≥n de interfaces flexibles y reutilizables. Las funciones virtuales puras definen interfaces que deben ser implementadas por clases derivadas, creando clases abstractas que no pueden ser instanciadas. Es importante comprender las limitaciones de la virtualidad, especialmente en el contexto de constructores y destructores, para utilizar de manera efectiva las funciones virtuales en el dise√±o de software orientado a objetos en C++.
 <---FILES--->
-Sintaxis B·sica
-Sintaxis B·sica Result
+Sintaxis B√°sica
+Sintaxis B√°sica Result
 Ejemplo de Funciones Virtuales Puras
 Ejemplo de Funciones Virtuales Puras Result
 Ejemplo de Virtualidad y Constructores
 Ejemplo de Virtualidad y Constructores Result
-<---Sintaxis B·sica--->
+<---Sintaxis B√°sica--->
 ```cpp
 class Base {
 public:
     virtual void funcion() {
-        // ImplementaciÛn de la clase base
+        // Implementaci√≥n de la clase base
     }
 };
 
 class Derivada : public Base {
 public:
     void funcion() override {
-        // ImplementaciÛn de la clase derivada
+        // Implementaci√≥n de la clase derivada
     }
 };
 ```cpp
@@ -216,7 +216,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma˙lla" << endl;
+        cout << "El gato ma√∫lla" << endl;
     }
 };
 
@@ -235,7 +235,7 @@ int main() {
 
     return 0;
 }
-<---Sintaxis B·sica Result--->
+<---Sintaxis B√°sica Result--->
 <---Ejemplo de Funciones Virtuales Puras--->
 ```cpp
 #include <iostream>
@@ -243,7 +243,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // FunciÛn virtual pura
+    virtual void hacerSonido() const = 0; // Funci√≥n virtual pura
 };
 
 class Perro : public Animal {
@@ -256,7 +256,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma˙lla" << endl;
+        cout << "El gato ma√∫lla" << endl;
     }
 };
 

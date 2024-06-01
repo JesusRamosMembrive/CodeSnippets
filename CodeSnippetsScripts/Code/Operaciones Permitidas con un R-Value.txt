@@ -1,28 +1,28 @@
 <---EXPLANATION--->
 ### Operaciones Permitidas con un R-Value en C++
 
-Los R-values en C++ son valores temporales que no tienen una direcci髇 de memoria accesible. Aunque no pueden aparecer en el lado izquierdo de una asignaci髇, hay varias operaciones que se pueden realizar con ellos. A continuaci髇, se describen las operaciones permitidas con R-values, junto con ejemplos pr醕ticos.
+Los R-values en C++ son valores temporales que no tienen una direcci贸n de memoria accesible. Aunque no pueden aparecer en el lado izquierdo de una asignaci贸n, hay varias operaciones que se pueden realizar con ellos. A continuaci贸n, se describen las operaciones permitidas con R-values, junto con ejemplos pr谩cticos.
 
 #### Operaciones Comunes con R-Values
 
-1. **Asignaci髇 a una Variable:**
-   - Los R-values se pueden asignar a variables. Esto es com鷑 cuando se asigna el resultado de una expresi髇 a una variable.
+1. **Asignaci贸n a una Variable:**
+   - Los R-values se pueden asignar a variables. Esto es com煤n cuando se asigna el resultado de una expresi贸n a una variable.
 
 2. **Paso como Argumentos a Funciones:**
-   - Los R-values se pueden pasar como argumentos a funciones, especialmente a funciones que toman par醡etros por valor o R-value references.
+   - Los R-values se pueden pasar como argumentos a funciones, especialmente a funciones que toman par谩metros por valor o R-value references.
 
-3. **Inicializaci髇 de Variables:**
+3. **Inicializaci贸n de Variables:**
    - Los R-values se pueden utilizar para inicializar variables.
 
 4. **Operadores y Expresiones:**
-   - Los R-values se pueden usar en expresiones y con operadores aritm閠icos, l骻icos, y relacionales.
+   - Los R-values se pueden usar en expresiones y con operadores aritm茅ticos, l贸gicos, y relacionales.
 
 5. **Uso con R-Value References (`&&`):**
    - Los R-values se pueden capturar con R-value references, lo que permite optimizaciones de movimiento (move semantics).
 
 #### Ejemplos de Operaciones con R-Values
 
-##### Asignaci髇 a una Variable
+##### Asignaci贸n a una Variable
 
 ```cpp
 int x = 5;         // '5' es un R-value asignado a 'x'
@@ -37,7 +37,7 @@ En este ejemplo:
 ```cpp
 #include <iostream>
 
-// Funci髇 que toma un par醡etro por valor
+// Funci贸n que toma un par谩metro por valor
 void procesar(int x) {
     std::cout << "Valor: " << x << std::endl;
 }
@@ -49,9 +49,9 @@ int main() {
 ```
 
 En este ejemplo:
-- `10` es un R-value que se pasa como argumento a la funci髇 `procesar`.
+- `10` es un R-value que se pasa como argumento a la funci贸n `procesar`.
 
-##### Inicializaci髇 de Variables
+##### Inicializaci贸n de Variables
 
 ```cpp
 int a = 5;         // '5' es un R-value usado para inicializar 'a'
@@ -69,7 +69,7 @@ En este ejemplo:
 int main() {
     int x = 5;
     int y = 10;
-    int z = x + y;  // 'x + y' es un R-value usado en una expresi髇
+    int z = x + y;  // 'x + y' es un R-value usado en una expresi贸n
 
     std::cout << "Resultado: " << z << std::endl;
     return 0;
@@ -77,7 +77,7 @@ int main() {
 ```
 
 En este ejemplo:
-- `x + y` es un R-value resultante de la expresi髇 que se asigna a `z`.
+- `x + y` es un R-value resultante de la expresi贸n que se asigna a `z`.
 
 ##### Uso con R-Value References
 
@@ -145,36 +145,36 @@ En este ejemplo:
 
 ### Resumen de Operaciones Permitidas con R-Values
 
-1. **Asignaci髇 a Variables:** Los R-values se pueden asignar a variables de tipos compatibles.
+1. **Asignaci贸n a Variables:** Los R-values se pueden asignar a variables de tipos compatibles.
 2. **Paso como Argumentos a Funciones:** Los R-values se pueden pasar como argumentos a funciones, especialmente aquellas que aceptan R-value references (`&&`).
-3. **Inicializaci髇 de Variables:** Los R-values se pueden usar para inicializar variables.
-4. **Uso en Expresiones:** Los R-values se pueden usar en expresiones aritm閠icas, l骻icas, y relacionales.
+3. **Inicializaci贸n de Variables:** Los R-values se pueden usar para inicializar variables.
+4. **Uso en Expresiones:** Los R-values se pueden usar en expresiones aritm茅ticas, l贸gicas, y relacionales.
 5. **Move Semantics:** Los R-values se pueden usar con move semantics para transferir recursos eficientemente.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los R-values son fundamentales en C++ para trabajar con valores temporales y optimizar el manejo de recursos. Entender las operaciones permitidas con R-values y c髆o utilizarlos correctamente es crucial para escribir c骴igo C++ moderno y eficiente. Las move semantics, habilitadas por las R-value references, permiten una gesti髇 de recursos m醩 eficiente y un rendimiento mejorado en aplicaciones cr韙icas.
+Los R-values son fundamentales en C++ para trabajar con valores temporales y optimizar el manejo de recursos. Entender las operaciones permitidas con R-values y c贸mo utilizarlos correctamente es crucial para escribir c贸digo C++ moderno y eficiente. Las move semantics, habilitadas por las R-value references, permiten una gesti贸n de recursos m谩s eficiente y un rendimiento mejorado en aplicaciones cr铆ticas.
 <---FILES--->
-Asignaci髇 a una Variable
-Asignaci髇 a una Variable Result
+Asignaci贸n a una Variable
+Asignaci贸n a una Variable Result
 Paso como Argumentos a Funciones
 Paso como Argumentos a Funciones Result
-Inicializaci髇 de Variables
-Inicializaci髇 de Variables Result
+Inicializaci贸n de Variables
+Inicializaci贸n de Variables Result
 Uso en Expresiones y Operadores
 Uso en Expresiones y Operadores Result
 Uso con R-Value References
 Uso con R-Value References Result
-<---Asignaci髇 a una Variable--->
+<---Asignaci贸n a una Variable--->
 ```cpp
 int x = 5;         // '5' es un R-value asignado a 'x'
 double y = 3.14;   // '3.14' es un R-value asignado a 'y'
-<---Asignaci髇 a una Variable Result--->
+<---Asignaci贸n a una Variable Result--->
 <---Paso como Argumentos a Funciones--->
 ```cpp
 #include <iostream>
 
-// Funci髇 que toma un par醡etro por valor
+// Funci贸n que toma un par谩metro por valor
 void procesar(int x) {
     std::cout << "Valor: " << x << std::endl;
 }
@@ -184,11 +184,11 @@ int main() {
     return 0;
 }
 <---Paso como Argumentos a Funciones Result--->
-<---Inicializaci髇 de Variables--->
+<---Inicializaci贸n de Variables--->
 ```cpp
 int a = 5;         // '5' es un R-value usado para inicializar 'a'
 double b = a + 3;  // 'a + 3' es un R-value usado para inicializar 'b'
-<---Inicializaci髇 de Variables Result--->
+<---Inicializaci贸n de Variables Result--->
 <---Uso en Expresiones y Operadores--->
 ```cpp
 #include <iostream>
@@ -196,7 +196,7 @@ double b = a + 3;  // 'a + 3' es un R-value usado para inicializar 'b'
 int main() {
     int x = 5;
     int y = 10;
-    int z = x + y;  // 'x + y' es un R-value usado en una expresi髇
+    int z = x + y;  // 'x + y' es un R-value usado en una expresi贸n
 
     std::cout << "Resultado: " << z << std::endl;
     return 0;

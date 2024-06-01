@@ -1,44 +1,44 @@
 <---EXPLANATION--->
 ### `constexpr` en Funciones en C++
 
-La palabra clave `constexpr` en C++ se utiliza para declarar que una funci髇 o una variable puede ser evaluada en tiempo de compilaci髇. Esto permite a los compiladores realizar optimizaciones adicionales y detectar errores en tiempo de compilaci髇. `constexpr` es particularmente 鷗il para definir constantes y realizar c醠culos en tiempo de compilaci髇, asegurando que el c骴igo sea m醩 eficiente y seguro.
+La palabra clave `constexpr` en C++ se utiliza para declarar que una funci贸n o una variable puede ser evaluada en tiempo de compilaci贸n. Esto permite a los compiladores realizar optimizaciones adicionales y detectar errores en tiempo de compilaci贸n. `constexpr` es particularmente 煤til para definir constantes y realizar c谩lculos en tiempo de compilaci贸n, asegurando que el c贸digo sea m谩s eficiente y seguro.
 
 #### Concepto de `constexpr` en Funciones
 
-Una funci髇 `constexpr` es una funci髇 que puede ser evaluada en tiempo de compilaci髇 si se le proporcionan argumentos constantes. Para que una funci髇 sea `constexpr`, debe cumplir ciertas restricciones que garantizan que su evaluaci髇 sea posible en tiempo de compilaci髇.
+Una funci贸n `constexpr` es una funci贸n que puede ser evaluada en tiempo de compilaci贸n si se le proporcionan argumentos constantes. Para que una funci贸n sea `constexpr`, debe cumplir ciertas restricciones que garantizan que su evaluaci贸n sea posible en tiempo de compilaci贸n.
 
 ##### Restricciones de las Funciones `constexpr`
 
 1. Deben tener un valor de retorno.
-2. El cuerpo de la funci髇 debe consistir en una sola expresi髇 `return` en C++11; desde C++14, se permiten m醩 complejidades como bucles y condiciones.
-3. Todos los par醡etros deben ser `constexpr` si se pretende que la funci髇 sea evaluada en tiempo de compilaci髇.
-4. No pueden tener efectos secundarios, como modificar variables globales o est醫icas.
+2. El cuerpo de la funci贸n debe consistir en una sola expresi贸n `return` en C++11; desde C++14, se permiten m谩s complejidades como bucles y condiciones.
+3. Todos los par谩metros deben ser `constexpr` si se pretende que la funci贸n sea evaluada en tiempo de compilaci贸n.
+4. No pueden tener efectos secundarios, como modificar variables globales o est谩ticas.
 
-#### Definici髇 y Uso de Funciones `constexpr`
+#### Definici贸n y Uso de Funciones `constexpr`
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 constexpr para calcular el cuadrado de un n鷐ero
+// Funci贸n constexpr para calcular el cuadrado de un n煤mero
 constexpr int cuadrado(int x) {
     return x * x;
 }
 
 int main() {
-    constexpr int resultado = cuadrado(5); // Evaluado en tiempo de compilaci髇
+    constexpr int resultado = cuadrado(5); // Evaluado en tiempo de compilaci贸n
     cout << "El cuadrado de 5 es: " << resultado << endl;
     return 0;
 }
 ```
 
-En este ejemplo, la funci髇 `cuadrado` se puede evaluar en tiempo de compilaci髇 porque cumple con las restricciones de `constexpr`. La variable `resultado` se eval鷄 en tiempo de compilaci髇, lo que permite optimizaciones adicionales.
+En este ejemplo, la funci贸n `cuadrado` se puede evaluar en tiempo de compilaci贸n porque cumple con las restricciones de `constexpr`. La variable `resultado` se eval煤a en tiempo de compilaci贸n, lo que permite optimizaciones adicionales.
 
 #### Funciones `constexpr` en C++14 y Posterior
 
-A partir de C++14, las funciones `constexpr` pueden contener m醩 complejidades, como bucles y condiciones.
+A partir de C++14, las funciones `constexpr` pueden contener m谩s complejidades, como bucles y condiciones.
 
 ##### Ejemplo con Condicionales y Bucles
 
@@ -46,7 +46,7 @@ A partir de C++14, las funciones `constexpr` pueden contener m醩 complejidades, 
 #include <iostream>
 using namespace std;
 
-// Funci髇 constexpr para calcular el factorial de un n鷐ero
+// Funci贸n constexpr para calcular el factorial de un n煤mero
 constexpr int factorial(int n) {
     int resultado = 1;
     for (int i = 1; i <= n; ++i) {
@@ -56,28 +56,28 @@ constexpr int factorial(int n) {
 }
 
 int main() {
-    constexpr int resultado = factorial(5); // Evaluado en tiempo de compilaci髇
+    constexpr int resultado = factorial(5); // Evaluado en tiempo de compilaci贸n
     cout << "El factorial de 5 es: " << resultado << endl;
     return 0;
 }
 ```
 
-En este ejemplo, la funci髇 `factorial` utiliza un bucle para calcular el factorial de un n鷐ero. Esta funci髇 se puede evaluar en tiempo de compilaci髇 gracias a las mejoras introducidas en C++14.
+En este ejemplo, la funci贸n `factorial` utiliza un bucle para calcular el factorial de un n煤mero. Esta funci贸n se puede evaluar en tiempo de compilaci贸n gracias a las mejoras introducidas en C++14.
 
 #### Ventajas de Usar Funciones `constexpr`
 
-1. **Eficiencia:** Permiten al compilador realizar c醠culos en tiempo de compilaci髇, lo que puede reducir el tiempo de ejecuci髇 del programa.
-2. **Seguridad:** Ayudan a detectar errores en tiempo de compilaci髇 en lugar de en tiempo de ejecuci髇.
-3. **Optimizaci髇:** Facilitan la optimizaci髇 del c骴igo al permitir al compilador realizar evaluaciones constantes y eliminar c骴igo innecesario.
+1. **Eficiencia:** Permiten al compilador realizar c谩lculos en tiempo de compilaci贸n, lo que puede reducir el tiempo de ejecuci贸n del programa.
+2. **Seguridad:** Ayudan a detectar errores en tiempo de compilaci贸n en lugar de en tiempo de ejecuci贸n.
+3. **Optimizaci贸n:** Facilitan la optimizaci贸n del c贸digo al permitir al compilador realizar evaluaciones constantes y eliminar c贸digo innecesario.
 
 #### Limitaciones de las Funciones `constexpr`
 
-1. **Complejidad Restringida:** En C++11, las funciones `constexpr` deben ser simples y constar de una sola expresi髇 `return`. Sin embargo, en C++14 y posteriores, estas restricciones se han relajado.
-2. **Evaluaci髇 Condicional:** No todas las llamadas a funciones `constexpr` se evaluar醤 en tiempo de compilaci髇; solo aquellas con argumentos constantes.
+1. **Complejidad Restringida:** En C++11, las funciones `constexpr` deben ser simples y constar de una sola expresi贸n `return`. Sin embargo, en C++14 y posteriores, estas restricciones se han relajado.
+2. **Evaluaci贸n Condicional:** No todas las llamadas a funciones `constexpr` se evaluar谩n en tiempo de compilaci贸n; solo aquellas con argumentos constantes.
 
 #### Ejemplo Completo
 
-A continuaci髇, se muestra un ejemplo m醩 complejo que utiliza funciones `constexpr` para realizar varias operaciones matem醫icas en tiempo de compilaci髇:
+A continuaci贸n, se muestra un ejemplo m谩s complejo que utiliza funciones `constexpr` para realizar varias operaciones matem谩ticas en tiempo de compilaci贸n:
 
 ```cpp
 #include <iostream>
@@ -103,12 +103,12 @@ int main() {
     constexpr int a = 3;
     constexpr int b = 4;
 
-    constexpr int maxVal = maximo(a, b);        // Evaluado en tiempo de compilaci髇
-    constexpr int minVal = minimo(a, b);        // Evaluado en tiempo de compilaci髇
-    constexpr int sumaCuadrados = sumaDeCuadrados(a, b); // Evaluado en tiempo de compilaci髇
+    constexpr int maxVal = maximo(a, b);        // Evaluado en tiempo de compilaci贸n
+    constexpr int minVal = minimo(a, b);        // Evaluado en tiempo de compilaci贸n
+    constexpr int sumaCuadrados = sumaDeCuadrados(a, b); // Evaluado en tiempo de compilaci贸n
 
-    cout << "El m醲imo de " << a << " y " << b << " es: " << maxVal << endl;
-    cout << "El m韓imo de " << a << " y " << b << " es: " << minVal << endl;
+    cout << "El m谩ximo de " << a << " y " << b << " es: " << maxVal << endl;
+    cout << "El m铆nimo de " << a << " y " << b << " es: " << minVal << endl;
     cout << "La suma de los cuadrados de " << a << " y " << b << " es: " << sumaCuadrados << endl;
 
     return 0;
@@ -116,44 +116,44 @@ int main() {
 ```
 
 En este ejemplo:
-- `maximo` y `minimo` son funciones `constexpr` que determinan el valor m醲imo y m韓imo de dos enteros, respectivamente.
-- `sumaDeCuadrados` utiliza la funci髇 `cuadrado` para calcular la suma de los cuadrados de dos enteros.
-- Todas estas funciones se eval鷄n en tiempo de compilaci髇.
+- `maximo` y `minimo` son funciones `constexpr` que determinan el valor m谩ximo y m铆nimo de dos enteros, respectivamente.
+- `sumaDeCuadrados` utiliza la funci贸n `cuadrado` para calcular la suma de los cuadrados de dos enteros.
+- Todas estas funciones se eval煤an en tiempo de compilaci贸n.
 
-### Conclusi髇
+### Conclusi贸n
 
-Las funciones `constexpr` en C++ son una poderosa herramienta para realizar c醠culos en tiempo de compilaci髇, mejorando la eficiencia y seguridad del c骴igo. Aunque tienen algunas limitaciones, especialmente en versiones anteriores a C++14, su uso adecuado puede llevar a programas m醩 r醦idos y menos propensos a errores. Con una comprensi髇 s髄ida de `constexpr`, los desarrolladores pueden escribir c骴igo m醩 optimizado y robusto.
+Las funciones `constexpr` en C++ son una poderosa herramienta para realizar c谩lculos en tiempo de compilaci贸n, mejorando la eficiencia y seguridad del c贸digo. Aunque tienen algunas limitaciones, especialmente en versiones anteriores a C++14, su uso adecuado puede llevar a programas m谩s r谩pidos y menos propensos a errores. Con una comprensi贸n s贸lida de `constexpr`, los desarrolladores pueden escribir c贸digo m谩s optimizado y robusto.
 <---FILES--->
 Restricciones de las Funciones `constexpr`
 Restricciones de las Funciones `constexpr` Result
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo con Condicionales y Bucles
 Ejemplo con Condicionales y Bucles Result
 <---Restricciones de las Funciones `constexpr`--->
 <---Restricciones de las Funciones `constexpr` Result--->
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 constexpr para calcular el cuadrado de un n鷐ero
+// Funci贸n constexpr para calcular el cuadrado de un n煤mero
 constexpr int cuadrado(int x) {
     return x * x;
 }
 
 int main() {
-    constexpr int resultado = cuadrado(5); // Evaluado en tiempo de compilaci髇
+    constexpr int resultado = cuadrado(5); // Evaluado en tiempo de compilaci贸n
     cout << "El cuadrado de 5 es: " << resultado << endl;
     return 0;
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo con Condicionales y Bucles--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 constexpr para calcular el factorial de un n鷐ero
+// Funci贸n constexpr para calcular el factorial de un n煤mero
 constexpr int factorial(int n) {
     int resultado = 1;
     for (int i = 1; i <= n; ++i) {
@@ -163,7 +163,7 @@ constexpr int factorial(int n) {
 }
 
 int main() {
-    constexpr int resultado = factorial(5); // Evaluado en tiempo de compilaci髇
+    constexpr int resultado = factorial(5); // Evaluado en tiempo de compilaci贸n
     cout << "El factorial de 5 es: " << resultado << endl;
     return 0;
 }
@@ -191,12 +191,12 @@ int main() {
     constexpr int a = 3;
     constexpr int b = 4;
 
-    constexpr int maxVal = maximo(a, b);        // Evaluado en tiempo de compilaci髇
-    constexpr int minVal = minimo(a, b);        // Evaluado en tiempo de compilaci髇
-    constexpr int sumaCuadrados = sumaDeCuadrados(a, b); // Evaluado en tiempo de compilaci髇
+    constexpr int maxVal = maximo(a, b);        // Evaluado en tiempo de compilaci贸n
+    constexpr int minVal = minimo(a, b);        // Evaluado en tiempo de compilaci贸n
+    constexpr int sumaCuadrados = sumaDeCuadrados(a, b); // Evaluado en tiempo de compilaci贸n
 
-    cout << "El m醲imo de " << a << " y " << b << " es: " << maxVal << endl;
-    cout << "El m韓imo de " << a << " y " << b << " es: " << minVal << endl;
+    cout << "El m谩ximo de " << a << " y " << b << " es: " << maxVal << endl;
+    cout << "El m铆nimo de " << a << " y " << b << " es: " << minVal << endl;
     cout << "La suma de los cuadrados de " << a << " y " << b << " es: " << sumaCuadrados << endl;
 
     return 0;

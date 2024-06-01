@@ -1,39 +1,39 @@
 <---EXPLANATION--->
 ### Estructura de un Programa en C++
 
-Un programa en C++ se compone de varios elementos clave que definen su estructura b·sica. AquÌ desglosamos los componentes fundamentales de un programa en C++:
+Un programa en C++ se compone de varios elementos clave que definen su estructura b√°sica. Aqu√≠ desglosamos los componentes fundamentales de un programa en C++:
 
 #### 1. **Directivas del Preprocesador**
-Las directivas del preprocesador comienzan con `#` y se utilizan para incluir archivos de cabecera y definir macros. Las m·s comunes son `#include` y `#define`.
+Las directivas del preprocesador comienzan con `#` y se utilizan para incluir archivos de cabecera y definir macros. Las m√°s comunes son `#include` y `#define`.
 
 ```cpp
-#include <iostream> // Incluye la biblioteca de entrada y salida est·ndar
+#include <iostream> // Incluye la biblioteca de entrada y salida est√°ndar
 ```
 
 #### 2. **Espacio de Nombres (namespace)**
-El espacio de nombres ayuda a evitar colisiones de nombres en el cÛdigo. `std` es el espacio de nombres est·ndar de la biblioteca de C++.
+El espacio de nombres ayuda a evitar colisiones de nombres en el c√≥digo. `std` es el espacio de nombres est√°ndar de la biblioteca de C++.
 
 ```cpp
 using namespace std;
 ```
 
-#### 3. **FunciÛn Principal (`main`)**
-La funciÛn `main` es el punto de entrada de cualquier programa en C++. Su ejecuciÛn comienza aquÌ. Puede tener dos formas: `int main()` o `int main(int argc, char *argv[])`.
+#### 3. **Funci√≥n Principal (`main`)**
+La funci√≥n `main` es el punto de entrada de cualquier programa en C++. Su ejecuci√≥n comienza aqu√≠. Puede tener dos formas: `int main()` o `int main(int argc, char *argv[])`.
 
 ```cpp
 int main() {
-    // CÛdigo del programa
-    return 0; // Indica que el programa terminÛ correctamente
+    // C√≥digo del programa
+    return 0; // Indica que el programa termin√≥ correctamente
 }
 ```
 
 #### 4. **Declaraciones e Inicializaciones**
-Dentro de la funciÛn `main`, declaramos e inicializamos variables que se usar·n en el programa.
+Dentro de la funci√≥n `main`, declaramos e inicializamos variables que se usar√°n en el programa.
 
 ```cpp
 int main() {
-    int numero = 10; // DeclaraciÛn e inicializaciÛn de una variable
-    cout << "El n˙mero es: " << numero << endl; // Salida de datos
+    int numero = 10; // Declaraci√≥n e inicializaci√≥n de una variable
+    cout << "El n√∫mero es: " << numero << endl; // Salida de datos
     return 0;
 }
 ```
@@ -47,39 +47,39 @@ using namespace std;
 
 int main() {
     int numero;
-    cout << "Introduce un n˙mero: "; // Solicita al usuario un n˙mero
-    cin >> numero; // Lee el n˙mero introducido por el usuario
-    cout << "El n˙mero que introdujiste es: " << numero << endl;
+    cout << "Introduce un n√∫mero: "; // Solicita al usuario un n√∫mero
+    cin >> numero; // Lee el n√∫mero introducido por el usuario
+    cout << "El n√∫mero que introdujiste es: " << numero << endl;
     return 0;
 }
 ```
 
 ### Ejemplo Completo
 
-AquÌ hay un ejemplo completo de un programa simple en C++ que utiliza todos los elementos mencionados:
+Aqu√≠ hay un ejemplo completo de un programa simple en C++ que utiliza todos los elementos mencionados:
 
 ```cpp
-#include <iostream> // Directiva del preprocesador para incluir la biblioteca de entrada y salida est·ndar
+#include <iostream> // Directiva del preprocesador para incluir la biblioteca de entrada y salida est√°ndar
 
-using namespace std; // Usa el espacio de nombres est·ndar
+using namespace std; // Usa el espacio de nombres est√°ndar
 
-int main() { // FunciÛn principal
-    int numero; // DeclaraciÛn de una variable entera
-    cout << "Introduce un n˙mero: "; // Salida de datos para solicitar un n˙mero al usuario
+int main() { // Funci√≥n principal
+    int numero; // Declaraci√≥n de una variable entera
+    cout << "Introduce un n√∫mero: "; // Salida de datos para solicitar un n√∫mero al usuario
     cin >> numero; // Entrada de datos desde el usuario
-    cout << "El n˙mero que introdujiste es: " << numero << endl; // Salida de datos para mostrar el n˙mero introducido
-    return 0; // Devuelve 0 para indicar que el programa terminÛ correctamente
+    cout << "El n√∫mero que introdujiste es: " << numero << endl; // Salida de datos para mostrar el n√∫mero introducido
+    return 0; // Devuelve 0 para indicar que el programa termin√≥ correctamente
 }
 ```
 
-### ExplicaciÛn del Ejemplo
+### Explicaci√≥n del Ejemplo
 
 1. **Incluir Biblioteca de E/S:** `#include <iostream>` es necesario para usar `cout` y `cin`.
 2. **Espacio de Nombres:** `using namespace std;` permite usar `cout` y `cin` sin el prefijo `std::`.
-3. **FunciÛn Principal:** `int main()` define el punto de entrada del programa.
-4. **DeclaraciÛn de Variables:** `int numero;` declara una variable entera.
+3. **Funci√≥n Principal:** `int main()` define el punto de entrada del programa.
+4. **Declaraci√≥n de Variables:** `int numero;` declara una variable entera.
 5. **Entrada y Salida de Datos:** `cout` y `cin` se usan para interactuar con el usuario.
-6. **Retorno de la FunciÛn:** `return 0;` indica que el programa terminÛ correctamente.
+6. **Retorno de la Funci√≥n:** `return 0;` indica que el programa termin√≥ correctamente.
 
-Este es un programa b·sico en C++ que demuestra la estructura y los componentes esenciales que encontrar·s en cualquier programa C++.
+Este es un programa b√°sico en C++ que demuestra la estructura y los componentes esenciales que encontrar√°s en cualquier programa C++.
 <---FILES--->

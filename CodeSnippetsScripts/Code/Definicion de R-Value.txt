@@ -1,21 +1,21 @@
 <---EXPLANATION--->
-### DefiniciÛn de R-Value en C++
+### Definici√≥n de R-Value en C++
 
-En C++, un **R-value** (Right value) es una expresiÛn que no tiene una direcciÛn en memoria accesible directamente y es generalmente temporal. Los R-values tÌpicamente aparecen en el lado derecho de una asignaciÛn, de ahÌ su nombre. A diferencia de los L-values, los R-values no tienen un identificador persistente ni una direcciÛn en memoria que pueda ser tomada con el operador `&`.
+En C++, un **R-value** (Right value) es una expresi√≥n que no tiene una direcci√≥n en memoria accesible directamente y es generalmente temporal. Los R-values t√≠picamente aparecen en el lado derecho de una asignaci√≥n, de ah√≠ su nombre. A diferencia de los L-values, los R-values no tienen un identificador persistente ni una direcci√≥n en memoria que pueda ser tomada con el operador `&`.
 
-#### CaracterÌsticas de los R-Values
+#### Caracter√≠sticas de los R-Values
 
-1. **Temporalidad:** Los R-values son generalmente temporales y solo existen durante la evaluaciÛn de una expresiÛn.
-2. **No Asignables:** No se pueden asignar valores a R-values porque no tienen un identificador persistente ni una ubicaciÛn en memoria accesible.
-3. **OptimizaciÛn:** Los R-values son fundamentales para las optimizaciones como las move semantics, que permiten la transferencia eficiente de recursos.
+1. **Temporalidad:** Los R-values son generalmente temporales y solo existen durante la evaluaci√≥n de una expresi√≥n.
+2. **No Asignables:** No se pueden asignar valores a R-values porque no tienen un identificador persistente ni una ubicaci√≥n en memoria accesible.
+3. **Optimizaci√≥n:** Los R-values son fundamentales para las optimizaciones como las move semantics, que permiten la transferencia eficiente de recursos.
 
 #### Ejemplos de R-Values
 
-- Literales de datos, como n˙meros y cadenas.
-- El resultado de operaciones aritmÈticas.
-- Objetos temporales creados como resultado de una expresiÛn.
+- Literales de datos, como n√∫meros y cadenas.
+- El resultado de operaciones aritm√©ticas.
+- Objetos temporales creados como resultado de una expresi√≥n.
 
-##### Ejemplos Pr·cticos
+##### Ejemplos Pr√°cticos
 
 ```cpp
 int x = 5;         // '5' es un R-value
@@ -31,7 +31,7 @@ En estos ejemplos:
 
 #### R-Value References
 
-Introducidas en C++11, las **R-value references** permiten tomar posesiÛn de un R-value, proporcionando un mecanismo para implementar move semantics y optimizar el manejo de recursos.
+Introducidas en C++11, las **R-value references** permiten tomar posesi√≥n de un R-value, proporcionando un mecanismo para implementar move semantics y optimizar el manejo de recursos.
 
 ##### Sintaxis
 
@@ -104,24 +104,24 @@ En este ejemplo:
 - `std::move` convierte un L-value en un R-value, permitiendo que las move semantics se apliquen.
 - `MiClase` utiliza un move constructor y un move assignment operator para transferir eficientemente recursos de un objeto a otro.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-En C++, un R-value es una expresiÛn temporal que no tiene una direcciÛn en memoria accesible directamente. Los R-values son fundamentales para las optimizaciones de rendimiento como las move semantics, que permiten la transferencia eficiente de recursos en el lenguaje. Entender los R-values y cÛmo utilizarlos a travÈs de R-value references es esencial para escribir cÛdigo C++ eficiente y moderno.
+En C++, un R-value es una expresi√≥n temporal que no tiene una direcci√≥n en memoria accesible directamente. Los R-values son fundamentales para las optimizaciones de rendimiento como las move semantics, que permiten la transferencia eficiente de recursos en el lenguaje. Entender los R-values y c√≥mo utilizarlos a trav√©s de R-value references es esencial para escribir c√≥digo C++ eficiente y moderno.
 <---FILES--->
-Ejemplos Pr·cticos
-Ejemplos Pr·cticos Result
+Ejemplos Pr√°cticos
+Ejemplos Pr√°cticos Result
 Sintaxis
 Sintaxis Result
 Ejemplo con R-Value References
 Ejemplo con R-Value References Result
-<---Ejemplos Pr·cticos--->
+<---Ejemplos Pr√°cticos--->
 ```cpp
 int x = 5;         // '5' es un R-value
 int y = x + 2;     // 'x + 2' es un R-value
 
 std::string s1 = "hello";        // "hello" es un R-value
 std::string s2 = s1 + " world";  // 's1 + " world"' es un R-value
-<---Ejemplos Pr·cticos Result--->
+<---Ejemplos Pr√°cticos Result--->
 <---Sintaxis--->
 ```cpp
 int&& rvalue_ref = 10;  // rvalue_ref es una referencia a un R-value

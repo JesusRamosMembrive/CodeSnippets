@@ -1,23 +1,23 @@
 <---EXPLANATION--->
 ### Callbacks en C++
 
-En programaci髇, un **callback** es una funci髇 que se pasa como argumento a otra funci髇, y que se espera que se ejecute en alg鷑 punto posterior. Los callbacks son fundamentales para la programaci髇 as韓crona, el manejo de eventos, y para proporcionar una forma de personalizar el comportamiento de las funciones.
+En programaci贸n, un **callback** es una funci贸n que se pasa como argumento a otra funci贸n, y que se espera que se ejecute en alg煤n punto posterior. Los callbacks son fundamentales para la programaci贸n as铆ncrona, el manejo de eventos, y para proporcionar una forma de personalizar el comportamiento de las funciones.
 
-En C++, los callbacks se pueden implementar de varias maneras: usando punteros a funciones, funtores (objetos de funci髇), y expresiones lambda. Cada m閠odo tiene sus propias ventajas y desventajas.
+En C++, los callbacks se pueden implementar de varias maneras: usando punteros a funciones, funtores (objetos de funci贸n), y expresiones lambda. Cada m茅todo tiene sus propias ventajas y desventajas.
 
 #### Callbacks Usando Punteros a Funciones
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
 
-// Definici髇 de un callback como un puntero a funci髇
+// Definici贸n de un callback como un puntero a funci贸n
 void miCallback(int valor) {
     std::cout << "Callback llamado con valor: " << valor << std::endl;
 }
 
-// Funci髇 que toma un callback
+// Funci贸n que toma un callback
 void llamarCallback(void (*callback)(int), int valor) {
     callback(valor);  // Llama al callback con el valor proporcionado
 }
@@ -29,8 +29,8 @@ int main() {
 ```
 
 En este ejemplo:
-- `miCallback` es una funci髇 que toma un `int` como argumento.
-- `llamarCallback` toma un puntero a una funci髇 y un `int`, llamando a la funci髇 proporcionada con el `int` dado.
+- `miCallback` es una funci贸n que toma un `int` como argumento.
+- `llamarCallback` toma un puntero a una funci贸n y un `int`, llamando a la funci贸n proporcionada con el `int` dado.
 
 #### Callbacks Usando Funtores
 
@@ -41,7 +41,7 @@ Los funtores pueden ser utilizados como callbacks, ofreciendo la ventaja de pode
 ```cpp
 #include <iostream>
 
-// Definici髇 de un functor
+// Definici贸n de un functor
 class MiFunctor {
 public:
     void operator()(int valor) const {
@@ -49,7 +49,7 @@ public:
     }
 };
 
-// Funci髇 que toma un callback como functor
+// Funci贸n que toma un callback como functor
 template <typename Callback>
 void llamarCallback(Callback callback, int valor) {
     callback(valor);  // Llama al callback con el valor proporcionado
@@ -63,12 +63,12 @@ int main() {
 ```
 
 En este ejemplo:
-- `MiFunctor` es un objeto de funci髇 (functor) que puede ser utilizado como un callback.
-- `llamarCallback` es una funci髇 plantilla que acepta cualquier tipo de callback que soporte la sintaxis de llamada a funci髇.
+- `MiFunctor` es un objeto de funci贸n (functor) que puede ser utilizado como un callback.
+- `llamarCallback` es una funci贸n plantilla que acepta cualquier tipo de callback que soporte la sintaxis de llamada a funci贸n.
 
 #### Callbacks Usando Lambdas
 
-Las expresiones lambda proporcionan una forma concisa y flexible de definir callbacks en l韓ea.
+Las expresiones lambda proporcionan una forma concisa y flexible de definir callbacks en l铆nea.
 
 ##### Ejemplo con Lambda
 
@@ -76,7 +76,7 @@ Las expresiones lambda proporcionan una forma concisa y flexible de definir call
 #include <iostream>
 #include <functional>  // Para std::function
 
-// Funci髇 que toma un callback como std::function
+// Funci贸n que toma un callback como std::function
 void llamarCallback(const std::function<void(int)>& callback, int valor) {
     callback(valor);  // Llama al callback con el valor proporcionado
 }
@@ -92,10 +92,10 @@ int main() {
 ```
 
 En este ejemplo:
-- `lambda` es una expresi髇 lambda que toma un `int` y lo imprime.
+- `lambda` es una expresi贸n lambda que toma un `int` y lo imprime.
 - `llamarCallback` toma un `std::function<void(int)>`, lo que permite pasar cualquier callable compatible, incluyendo lambdas, funtores, y punteros a funciones.
 
-### Ventajas y Desventajas de Cada M閠odo
+### Ventajas y Desventajas de Cada M茅todo
 
 #### Punteros a Funciones
 
@@ -114,13 +114,13 @@ En este ejemplo:
   - Flexibles y reutilizables.
 
 - **Desventajas:**
-  - M醩 verbosos que las lambdas.
+  - M谩s verbosos que las lambdas.
   - Pueden ser menos intuitivos de usar.
 
 #### Lambdas
 
 - **Ventajas:**
-  - Concisos y f醕iles de leer.
+  - Concisos y f谩ciles de leer.
   - Pueden capturar variables del entorno.
   - Muy flexibles.
 
@@ -129,7 +129,7 @@ En este ejemplo:
 
 ### Uso de `std::function` para Mayor Flexibilidad
 
-`std::function` proporciona una forma unificada de manejar cualquier tipo de callable (punteros a funciones, funtores, lambdas) y es especialmente 鷗il cuando se necesita almacenar y pasar callbacks flexibles.
+`std::function` proporciona una forma unificada de manejar cualquier tipo de callable (punteros a funciones, funtores, lambdas) y es especialmente 煤til cuando se necesita almacenar y pasar callbacks flexibles.
 
 ##### Ejemplo con `std::function`
 
@@ -138,7 +138,7 @@ En este ejemplo:
 #include <functional>
 #include <vector>
 
-// Funci髇 que toma un std::function
+// Funci贸n que toma un std::function
 void ejecutarCallbacks(const std::vector<std::function<void(int)>>& callbacks, int valor) {
     for (const auto& callback : callbacks) {
         callback(valor);
@@ -148,7 +148,7 @@ void ejecutarCallbacks(const std::vector<std::function<void(int)>>& callbacks, i
 int main() {
     std::vector<std::function<void(int)>> callbacks;
 
-    // Agregar un puntero a funci髇
+    // Agregar un puntero a funci贸n
     callbacks.push_back([](int valor) {
         std::cout << "Lambda llamada con valor: " << valor << std::endl;
     });
@@ -172,28 +172,28 @@ En este ejemplo:
 - `ejecutarCallbacks` toma un `std::vector` de `std::function<void(int)>` y llama a cada callback en el vector.
 - Se agregan tanto una lambda como un functor al vector de callbacks, demostrando la flexibilidad de `std::function`.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los callbacks en C++ son una herramienta poderosa para manejar eventos y programaci髇 as韓crona. Pueden ser implementados usando punteros a funciones, funtores y lambdas, cada uno con sus propias ventajas y desventajas. El uso de `std::function` proporciona una forma unificada y flexible de manejar diferentes tipos de callables, facilitando el dise駉 de interfaces y la gesti髇 de eventos en aplicaciones complejas. Comprender y utilizar estos mecanismos permite escribir c骴igo C++ m醩 flexible y eficiente.
+Los callbacks en C++ son una herramienta poderosa para manejar eventos y programaci贸n as铆ncrona. Pueden ser implementados usando punteros a funciones, funtores y lambdas, cada uno con sus propias ventajas y desventajas. El uso de `std::function` proporciona una forma unificada y flexible de manejar diferentes tipos de callables, facilitando el dise帽o de interfaces y la gesti贸n de eventos en aplicaciones complejas. Comprender y utilizar estos mecanismos permite escribir c贸digo C++ m谩s flexible y eficiente.
 <---FILES--->
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo con Funtor
 Ejemplo con Funtor Result
 Ejemplo con Lambda
 Ejemplo con Lambda Result
 Ejemplo con `std::function`
 Ejemplo con `std::function` Result
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <iostream>
 
-// Definici髇 de un callback como un puntero a funci髇
+// Definici贸n de un callback como un puntero a funci贸n
 void miCallback(int valor) {
     std::cout << "Callback llamado con valor: " << valor << std::endl;
 }
 
-// Funci髇 que toma un callback
+// Funci贸n que toma un callback
 void llamarCallback(void (*callback)(int), int valor) {
     callback(valor);  // Llama al callback con el valor proporcionado
 }
@@ -202,12 +202,12 @@ int main() {
     llamarCallback(miCallback, 42);  // Llama a miCallback con el valor 42
     return 0;
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo con Funtor--->
 ```cpp
 #include <iostream>
 
-// Definici髇 de un functor
+// Definici贸n de un functor
 class MiFunctor {
 public:
     void operator()(int valor) const {
@@ -215,7 +215,7 @@ public:
     }
 };
 
-// Funci髇 que toma un callback como functor
+// Funci贸n que toma un callback como functor
 template <typename Callback>
 void llamarCallback(Callback callback, int valor) {
     callback(valor);  // Llama al callback con el valor proporcionado
@@ -232,7 +232,7 @@ int main() {
 #include <iostream>
 #include <functional>  // Para std::function
 
-// Funci髇 que toma un callback como std::function
+// Funci贸n que toma un callback como std::function
 void llamarCallback(const std::function<void(int)>& callback, int valor) {
     callback(valor);  // Llama al callback con el valor proporcionado
 }
@@ -252,7 +252,7 @@ int main() {
 #include <functional>
 #include <vector>
 
-// Funci髇 que toma un std::function
+// Funci贸n que toma un std::function
 void ejecutarCallbacks(const std::vector<std::function<void(int)>>& callbacks, int valor) {
     for (const auto& callback : callbacks) {
         callback(valor);
@@ -262,7 +262,7 @@ void ejecutarCallbacks(const std::vector<std::function<void(int)>>& callbacks, i
 int main() {
     std::vector<std::function<void(int)>> callbacks;
 
-    // Agregar un puntero a funci髇
+    // Agregar un puntero a funci贸n
     callbacks.push_back([](int valor) {
         std::cout << "Lambda llamada con valor: " << valor << std::endl;
     });

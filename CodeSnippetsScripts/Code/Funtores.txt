@@ -1,18 +1,18 @@
 <---EXPLANATION--->
 ### Funtores en C++
 
-Un functor, tambiÈn conocido como funciÛn objeto (function object), es cualquier objeto en C++ que puede ser llamado usando la sintaxis de llamada a funciÛn. Los funtores son ˙tiles porque pueden almacenar estado y proporcionar una mayor flexibilidad y reutilizaciÛn que las funciones ordinarias. En C++, los funtores se implementan sobrecargando el operador de llamada a funciÛn `operator()` en una clase.
+Un functor, tambi√©n conocido como funci√≥n objeto (function object), es cualquier objeto en C++ que puede ser llamado usando la sintaxis de llamada a funci√≥n. Los funtores son √∫tiles porque pueden almacenar estado y proporcionar una mayor flexibilidad y reutilizaci√≥n que las funciones ordinarias. En C++, los funtores se implementan sobrecargando el operador de llamada a funci√≥n `operator()` en una clase.
 
-#### DefiniciÛn y Uso de Funtores
+#### Definici√≥n y Uso de Funtores
 
 Un functor es una clase que sobrecarga el operador `()` para que sus instancias puedan ser usadas como funciones.
 
-##### Ejemplo B·sico de Functor
+##### Ejemplo B√°sico de Functor
 
 ```cpp
 #include <iostream>
 
-// DefiniciÛn de un functor
+// Definici√≥n de un functor
 class Incrementador {
 public:
     // Constructor que toma el incremento
@@ -37,29 +37,29 @@ int main() {
 ```
 
 En este ejemplo:
-- `Incrementador` es un functor que incrementa un valor dado por una cantidad especÌfica.
-- El operador `()` est· sobrecargado para realizar la operaciÛn de incremento.
+- `Incrementador` es un functor que incrementa un valor dado por una cantidad espec√≠fica.
+- El operador `()` est√° sobrecargado para realizar la operaci√≥n de incremento.
 
 #### Ventajas de Usar Funtores
 
 1. **Estado Interno:** Pueden almacenar estado interno, lo que no es posible con las funciones normales.
-2. **Mayor Flexibilidad:** Pueden ser usados en lugar de funciones como argumentos de otras funciones, especialmente en algoritmos de la biblioteca est·ndar.
-3. **ReutilizaciÛn:** Facilitan la reutilizaciÛn del cÛdigo, ya que los mismos funtores pueden ser usados en diferentes contextos.
+2. **Mayor Flexibilidad:** Pueden ser usados en lugar de funciones como argumentos de otras funciones, especialmente en algoritmos de la biblioteca est√°ndar.
+3. **Reutilizaci√≥n:** Facilitan la reutilizaci√≥n del c√≥digo, ya que los mismos funtores pueden ser usados en diferentes contextos.
 
-#### Funtores con Par·metros de Plantilla
+#### Funtores con Par√°metros de Plantilla
 
-Los funtores tambiÈn pueden ser plantillas, lo que permite su uso con diferentes tipos de datos.
+Los funtores tambi√©n pueden ser plantillas, lo que permite su uso con diferentes tipos de datos.
 
 ##### Ejemplo de Functor Plantilla
 
 ```cpp
 #include <iostream>
 
-// DefiniciÛn de un functor plantilla
+// Definici√≥n de un functor plantilla
 template <typename T>
 class Multiplicador {
 public:
-    // Constructor que toma el factor de multiplicaciÛn
+    // Constructor que toma el factor de multiplicaci√≥n
     Multiplicador(T factor) : factor(factor) {}
 
     // Sobrecarga del operador ()
@@ -83,13 +83,13 @@ int main() {
 ```
 
 En este ejemplo:
-- `Multiplicador` es un functor plantilla que puede multiplicar valores de diferentes tipos por un factor especÌfico.
+- `Multiplicador` es un functor plantilla que puede multiplicar valores de diferentes tipos por un factor espec√≠fico.
 
-#### Funtores en la Biblioteca Est·ndar
+#### Funtores en la Biblioteca Est√°ndar
 
-La biblioteca est·ndar de C++ incluye varios funtores predefinidos en el encabezado `<functional>`, como `std::plus`, `std::minus`, `std::multiplies`, etc.
+La biblioteca est√°ndar de C++ incluye varios funtores predefinidos en el encabezado `<functional>`, como `std::plus`, `std::minus`, `std::multiplies`, etc.
 
-##### Ejemplo con Funtores de la Biblioteca Est·ndar
+##### Ejemplo con Funtores de la Biblioteca Est√°ndar
 
 ```cpp
 #include <iostream>
@@ -114,24 +114,24 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::multiplies<int>()` es un functor predefinido que multiplica dos n˙meros.
+- `std::multiplies<int>()` es un functor predefinido que multiplica dos n√∫meros.
 - `std::transform` utiliza este functor para multiplicar cada elemento del vector por 2.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los funtores en C++ proporcionan una forma flexible y potente de encapsular operaciones que se pueden llamar como funciones. Permiten almacenar estado interno, ser utilizados en algoritmos de la biblioteca est·ndar, y ofrecen una mayor reutilizaciÛn del cÛdigo. Adem·s, los funtores pueden ser plantillas, lo que permite su uso con diferentes tipos de datos, y se integran bien con los funtores predefinidos en la biblioteca est·ndar. Comprender y utilizar funtores adecuadamente es esencial para aprovechar al m·ximo las capacidades de C++ en la programaciÛn orientada a objetos y genÈrica.
+Los funtores en C++ proporcionan una forma flexible y potente de encapsular operaciones que se pueden llamar como funciones. Permiten almacenar estado interno, ser utilizados en algoritmos de la biblioteca est√°ndar, y ofrecen una mayor reutilizaci√≥n del c√≥digo. Adem√°s, los funtores pueden ser plantillas, lo que permite su uso con diferentes tipos de datos, y se integran bien con los funtores predefinidos en la biblioteca est√°ndar. Comprender y utilizar funtores adecuadamente es esencial para aprovechar al m√°ximo las capacidades de C++ en la programaci√≥n orientada a objetos y gen√©rica.
 <---FILES--->
-Ejemplo B·sico de Functor
-Ejemplo B·sico de Functor Result
+Ejemplo B√°sico de Functor
+Ejemplo B√°sico de Functor Result
 Ejemplo de Functor Plantilla
 Ejemplo de Functor Plantilla Result
-Ejemplo con Funtores de la Biblioteca Est·ndar
-Ejemplo con Funtores de la Biblioteca Est·ndar Result
-<---Ejemplo B·sico de Functor--->
+Ejemplo con Funtores de la Biblioteca Est√°ndar
+Ejemplo con Funtores de la Biblioteca Est√°ndar Result
+<---Ejemplo B√°sico de Functor--->
 ```cpp
 #include <iostream>
 
-// DefiniciÛn de un functor
+// Definici√≥n de un functor
 class Incrementador {
 public:
     // Constructor que toma el incremento
@@ -153,16 +153,16 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico de Functor Result--->
+<---Ejemplo B√°sico de Functor Result--->
 <---Ejemplo de Functor Plantilla--->
 ```cpp
 #include <iostream>
 
-// DefiniciÛn de un functor plantilla
+// Definici√≥n de un functor plantilla
 template <typename T>
 class Multiplicador {
 public:
-    // Constructor que toma el factor de multiplicaciÛn
+    // Constructor que toma el factor de multiplicaci√≥n
     Multiplicador(T factor) : factor(factor) {}
 
     // Sobrecarga del operador ()
@@ -184,7 +184,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Functor Plantilla Result--->
-<---Ejemplo con Funtores de la Biblioteca Est·ndar--->
+<---Ejemplo con Funtores de la Biblioteca Est√°ndar--->
 ```cpp
 #include <iostream>
 #include <functional>
@@ -205,4 +205,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Funtores de la Biblioteca Est·ndar Result--->
+<---Ejemplo con Funtores de la Biblioteca Est√°ndar Result--->

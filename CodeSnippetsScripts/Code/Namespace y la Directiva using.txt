@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Namespace y la Directiva `using` en C++
 
-En C++, los namespaces son una herramienta esencial para organizar el cÛdigo y evitar conflictos de nombres. La directiva `using` facilita el acceso a los miembros de un namespace sin necesidad de utilizar el operador de resoluciÛn de ·mbito (`::`) repetidamente. Sin embargo, el uso adecuado de `using` es crucial para mantener el cÛdigo limpio y evitar problemas de ambig¸edad y conflictos de nombres.
+En C++, los namespaces son una herramienta esencial para organizar el c√≥digo y evitar conflictos de nombres. La directiva `using` facilita el acceso a los miembros de un namespace sin necesidad de utilizar el operador de resoluci√≥n de √°mbito (`::`) repetidamente. Sin embargo, el uso adecuado de `using` es crucial para mantener el c√≥digo limpio y evitar problemas de ambig√ºedad y conflictos de nombres.
 
 #### Namespace
 
-Un namespace es un contenedor que permite agrupar identificadores (como variables, funciones y clases) bajo un nombre especÌfico, ayudando a evitar conflictos de nombres en grandes proyectos.
+Un namespace es un contenedor que permite agrupar identificadores (como variables, funciones y clases) bajo un nombre espec√≠fico, ayudando a evitar conflictos de nombres en grandes proyectos.
 
 ##### Sintaxis de Namespace
 
@@ -34,7 +34,7 @@ namespace Matematicas {
 
 int main() {
     double radio = 5.0;
-    std::cout << "El ·rea del cÌrculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
+    std::cout << "El √°rea del c√≠rculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
     return 0;
 }
 ```
@@ -45,17 +45,17 @@ En este ejemplo:
 
 #### Directiva `using`
 
-La directiva `using` se utiliza para evitar la necesidad de utilizar repetidamente el operador de resoluciÛn de ·mbito (`::`) cuando se accede a los miembros de un namespace.
+La directiva `using` se utiliza para evitar la necesidad de utilizar repetidamente el operador de resoluci√≥n de √°mbito (`::`) cuando se accede a los miembros de un namespace.
 
 ##### Sintaxis de `using`
 
-1. **Traer Todo el Namespace al ¡mbito Actual:**
+1. **Traer Todo el Namespace al √Åmbito Actual:**
 
 ```cpp
 using namespace MiNamespace;
 ```
 
-2. **Traer un Miembro EspecÌfico al ¡mbito Actual:**
+2. **Traer un Miembro Espec√≠fico al √Åmbito Actual:**
 
 ```cpp
 using MiNamespace::miembroEspecifico;
@@ -83,7 +83,7 @@ int main() {
 En este ejemplo:
 - `using namespace std` permite el uso de `vector` y `cout` directamente sin el prefijo `std::`.
 
-##### Ejemplo con `using` EspecÌfico
+##### Ejemplo con `using` Espec√≠fico
 
 ```cpp
 #include <iostream>
@@ -106,12 +106,12 @@ int main() {
 ```
 
 En este ejemplo:
-- Solo `cout`, `endl`, y `vector` se traen al ·mbito actual, dejando otros miembros de `std` intactos.
+- Solo `cout`, `endl`, y `vector` se traen al √°mbito actual, dejando otros miembros de `std` intactos.
 
 #### Consideraciones sobre el Uso de `using`
 
 1. **Evitar `using namespace` en Archivos de Cabecera:**
-   - Traer todo el namespace al ·mbito en archivos de cabecera puede causar conflictos de nombres y ambig¸edades cuando otros archivos incluyen ese archivo de cabecera.
+   - Traer todo el namespace al √°mbito en archivos de cabecera puede causar conflictos de nombres y ambig√ºedades cuando otros archivos incluyen ese archivo de cabecera.
 
 ##### Ejemplo de Problema con `using namespace std` en Archivos de Cabecera
 
@@ -127,19 +127,19 @@ void mostrarMensaje() {
 
 Si `archivo.h` se incluye en varios archivos fuente, cualquier nombre en el namespace `std` puede causar conflictos de nombres.
 
-2. **Uso de `using` en Archivos de ImplementaciÛn:**
-   - Es m·s seguro y com˙n utilizar `using namespace` en archivos de implementaciÛn (`.cpp`) donde el alcance es limitado y controlado.
+2. **Uso de `using` en Archivos de Implementaci√≥n:**
+   - Es m√°s seguro y com√∫n utilizar `using namespace` en archivos de implementaci√≥n (`.cpp`) donde el alcance es limitado y controlado.
 
-3. **PrecisiÛn y Control:**
-   - Usar `using` especÌfico para traer solo los miembros necesarios del namespace, en lugar de todo el namespace, mejora el control y evita conflictos.
+3. **Precisi√≥n y Control:**
+   - Usar `using` espec√≠fico para traer solo los miembros necesarios del namespace, en lugar de todo el namespace, mejora el control y evita conflictos.
 
-##### Buenas Pr·cticas
+##### Buenas Pr√°cticas
 
-- **Prefiera `using` EspecÌfico:** En lugar de `using namespace std`, prefiera traer solo lo necesario, por ejemplo, `using std::cout;`.
-- **DocumentaciÛn:** Documente el uso de `using` para que otros desarrolladores comprendan su propÛsito y el namespace al que se refiere.
-- **Consistencia:** Mantenga consistencia en el uso de `using` a lo largo del cÛdigo para evitar confusiones.
+- **Prefiera `using` Espec√≠fico:** En lugar de `using namespace std`, prefiera traer solo lo necesario, por ejemplo, `using std::cout;`.
+- **Documentaci√≥n:** Documente el uso de `using` para que otros desarrolladores comprendan su prop√≥sito y el namespace al que se refiere.
+- **Consistencia:** Mantenga consistencia en el uso de `using` a lo largo del c√≥digo para evitar confusiones.
 
-#### Ejemplo de Buenas Pr·cticas
+#### Ejemplo de Buenas Pr√°cticas
 
 ```cpp
 #include <iostream>
@@ -165,11 +165,11 @@ int main() {
 ```
 
 En este ejemplo:
-- Solo se traen `cout`, `endl`, `vector`, y `sort` al ·mbito actual, lo que mantiene el cÛdigo claro y evita conflictos.
+- Solo se traen `cout`, `endl`, `vector`, y `sort` al √°mbito actual, lo que mantiene el c√≥digo claro y evita conflictos.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los namespaces en C++ son fundamentales para organizar el cÛdigo y evitar conflictos de nombres en proyectos grandes. La directiva `using` facilita el acceso a los miembros de un namespace, pero su uso debe ser cuidadoso para evitar problemas de ambig¸edad y conflictos de nombres. Utilizar `using` de manera especÌfica y evitar `using namespace` en archivos de cabecera son buenas pr·cticas que ayudan a mantener un cÛdigo limpio y mantenible.
+Los namespaces en C++ son fundamentales para organizar el c√≥digo y evitar conflictos de nombres en proyectos grandes. La directiva `using` facilita el acceso a los miembros de un namespace, pero su uso debe ser cuidadoso para evitar problemas de ambig√ºedad y conflictos de nombres. Utilizar `using` de manera espec√≠fica y evitar `using namespace` en archivos de cabecera son buenas pr√°cticas que ayudan a mantener un c√≥digo limpio y mantenible.
 <---FILES--->
 Sintaxis de Namespace
 Sintaxis de Namespace Result
@@ -179,12 +179,12 @@ Sintaxis de `using`
 Sintaxis de `using` Result
 Ejemplo con `using namespace`
 Ejemplo con `using namespace` Result
-Ejemplo con `using` EspecÌfico
-Ejemplo con `using` EspecÌfico Result
+Ejemplo con `using` Espec√≠fico
+Ejemplo con `using` Espec√≠fico Result
 Ejemplo de Problema con `using namespace std` en Archivos de Cabecera
 Ejemplo de Problema con `using namespace std` en Archivos de Cabecera Result
-Buenas Pr·cticas
-Buenas Pr·cticas Result
+Buenas Pr√°cticas
+Buenas Pr√°cticas Result
 <---Sintaxis de Namespace--->
 ```cpp
 namespace MiNamespace {
@@ -209,7 +209,7 @@ namespace Matematicas {
 
 int main() {
     double radio = 5.0;
-    std::cout << "El ·rea del cÌrculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
+    std::cout << "El √°rea del c√≠rculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
     return 0;
 }
 <---Ejemplo Result--->
@@ -236,7 +236,7 @@ int main() {
     return 0;
 }
 <---Ejemplo con `using namespace` Result--->
-<---Ejemplo con `using` EspecÌfico--->
+<---Ejemplo con `using` Espec√≠fico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -255,7 +255,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con `using` EspecÌfico Result--->
+<---Ejemplo con `using` Espec√≠fico Result--->
 <---Ejemplo de Problema con `using namespace std` en Archivos de Cabecera--->
 ```cpp
 // archivo.h
@@ -266,7 +266,7 @@ void mostrarMensaje() {
     cout << "Hola, mundo!" << endl;
 }
 <---Ejemplo de Problema con `using namespace std` en Archivos de Cabecera Result--->
-<---Buenas Pr·cticas--->
+<---Buenas Pr√°cticas--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -288,4 +288,4 @@ int main() {
 
     return 0;
 }
-<---Buenas Pr·cticas Result--->
+<---Buenas Pr√°cticas Result--->

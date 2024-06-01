@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Optimizaciones con `std::move` y R-Values en C++
 
-El uso de `std::move` y las R-values son fundamentales para optimizar el rendimiento en C++. Estas tÈcnicas permiten una transferencia eficiente de recursos en lugar de copias costosas, lo cual es crucial en aplicaciones de alto rendimiento. AquÌ se detallan las optimizaciones que se pueden lograr con `std::move` y las R-values, junto con ejemplos pr·cticos.
+El uso de `std::move` y las R-values son fundamentales para optimizar el rendimiento en C++. Estas t√©cnicas permiten una transferencia eficiente de recursos en lugar de copias costosas, lo cual es crucial en aplicaciones de alto rendimiento. Aqu√≠ se detallan las optimizaciones que se pueden lograr con `std::move` y las R-values, junto con ejemplos pr√°cticos.
 
 #### 1. **Evitar Copias Costosas**
 
-Una de las optimizaciones m·s importantes es evitar copias costosas de objetos grandes o complejos. Al mover recursos en lugar de copiarlos, se puede reducir significativamente la sobrecarga de tiempo y memoria.
+Una de las optimizaciones m√°s importantes es evitar copias costosas de objetos grandes o complejos. Al mover recursos en lugar de copiarlos, se puede reducir significativamente la sobrecarga de tiempo y memoria.
 
 ##### Ejemplo de Evitar Copias Costosas
 
@@ -45,7 +45,7 @@ En este ejemplo:
 
 #### 2. **Transferencia de Propiedad de Recursos**
 
-La transferencia de recursos a travÈs de move semantics permite que los objetos temporales transfieran su propiedad de recursos a otros objetos, reduciendo la necesidad de operaciones de asignaciÛn de recursos costosas.
+La transferencia de recursos a trav√©s de move semantics permite que los objetos temporales transfieran su propiedad de recursos a otros objetos, reduciendo la necesidad de operaciones de asignaci√≥n de recursos costosas.
 
 ##### Ejemplo de Transferencia de Recursos
 
@@ -59,7 +59,7 @@ std::vector<int> generarVector() {
 }
 
 int main() {
-    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaciÛn
+    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaci√≥n
 
     for (int num : vec) {
         std::cout << num << " ";
@@ -73,9 +73,9 @@ int main() {
 En este ejemplo:
 - `generarVector` devuelve un R-value, y `vec` se inicializa moviendo el contenido de `v`, evitando una copia completa.
 
-#### 3. **OptimizaciÛn de Contenedores Est·ndar**
+#### 3. **Optimizaci√≥n de Contenedores Est√°ndar**
 
-Muchos contenedores est·ndar de C++ aprovechan las move semantics para optimizar las operaciones de inserciÛn y asignaciÛn. Esto es especialmente ˙til en operaciones que implican reasignaciones de memoria.
+Muchos contenedores est√°ndar de C++ aprovechan las move semantics para optimizar las operaciones de inserci√≥n y asignaci√≥n. Esto es especialmente √∫til en operaciones que implican reasignaciones de memoria.
 
 ##### Ejemplo con `std::vector`
 
@@ -113,11 +113,11 @@ int main() {
 En este ejemplo:
 - `std::vector` utiliza el move constructor para insertar `MiClase` sin necesidad de copiar el objeto.
 
-#### 4. **OptimizaciÛn de Funciones que Devuelven Objetos**
+#### 4. **Optimizaci√≥n de Funciones que Devuelven Objetos**
 
 Las funciones que devuelven objetos pueden beneficiarse enormemente de las move semantics, permitiendo que los objetos temporales sean movidos en lugar de copiados.
 
-##### Ejemplo de FunciÛn que Devuelve un Objeto
+##### Ejemplo de Funci√≥n que Devuelve un Objeto
 
 ```cpp
 #include <iostream>
@@ -152,9 +152,9 @@ int main() {
 En este ejemplo:
 - `crearCadena` devuelve un R-value, y `cadena` se inicializa moviendo `temp`, evitando una copia completa.
 
-#### 5. **OptimizaciÛn en AsignaciÛn de Objetos**
+#### 5. **Optimizaci√≥n en Asignaci√≥n de Objetos**
 
-La asignaciÛn de objetos puede ser optimizada utilizando el move assignment operator, permitiendo la transferencia eficiente de recursos entre objetos.
+La asignaci√≥n de objetos puede ser optimizada utilizando el move assignment operator, permitiendo la transferencia eficiente de recursos entre objetos.
 
 ##### Ejemplo de Move Assignment Operator
 
@@ -203,16 +203,16 @@ int main() {
 En este ejemplo:
 - `obj2` se asigna a `obj1` utilizando el move assignment operator, transfiriendo los recursos de manera eficiente.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las optimizaciones con `std::move` y R-values en C++ son esenciales para mejorar el rendimiento y la eficiencia en la gestiÛn de recursos. Estas tÈcnicas permiten:
+Las optimizaciones con `std::move` y R-values en C++ son esenciales para mejorar el rendimiento y la eficiencia en la gesti√≥n de recursos. Estas t√©cnicas permiten:
 - Evitar copias costosas.
 - Transferir recursos de manera eficiente.
-- Optimizar el uso de contenedores est·ndar.
+- Optimizar el uso de contenedores est√°ndar.
 - Mejorar el rendimiento de funciones que devuelven objetos.
-- Optimizar la asignaciÛn de objetos.
+- Optimizar la asignaci√≥n de objetos.
 
-Entender y aplicar estas optimizaciones permite escribir cÛdigo C++ m·s eficiente y de alto rendimiento, aprovechando al m·ximo las capacidades modernas del lenguaje.
+Entender y aplicar estas optimizaciones permite escribir c√≥digo C++ m√°s eficiente y de alto rendimiento, aprovechando al m√°ximo las capacidades modernas del lenguaje.
 <---FILES--->
 Ejemplo de Evitar Copias Costosas
 Ejemplo de Evitar Copias Costosas Result
@@ -220,8 +220,8 @@ Ejemplo de Transferencia de Recursos
 Ejemplo de Transferencia de Recursos Result
 Ejemplo con `std::vector`
 Ejemplo con `std::vector` Result
-Ejemplo de FunciÛn que Devuelve un Objeto
-Ejemplo de FunciÛn que Devuelve un Objeto Result
+Ejemplo de Funci√≥n que Devuelve un Objeto
+Ejemplo de Funci√≥n que Devuelve un Objeto Result
 Ejemplo de Move Assignment Operator
 Ejemplo de Move Assignment Operator Result
 <---Ejemplo de Evitar Copias Costosas--->
@@ -266,7 +266,7 @@ std::vector<int> generarVector() {
 }
 
 int main() {
-    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaciÛn
+    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaci√≥n
 
     for (int num : vec) {
         std::cout << num << " ";
@@ -307,7 +307,7 @@ int main() {
     return 0;
 }
 <---Ejemplo con `std::vector` Result--->
-<---Ejemplo de FunciÛn que Devuelve un Objeto--->
+<---Ejemplo de Funci√≥n que Devuelve un Objeto--->
 ```cpp
 #include <iostream>
 #include <string>
@@ -336,7 +336,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de FunciÛn que Devuelve un Objeto Result--->
+<---Ejemplo de Funci√≥n que Devuelve un Objeto Result--->
 <---Ejemplo de Move Assignment Operator--->
 ```cpp
 #include <iostream>

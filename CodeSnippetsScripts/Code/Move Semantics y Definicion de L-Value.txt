@@ -1,40 +1,40 @@
 <---EXPLANATION--->
-### Move Semantics y DefiniciÛn de L-Value en C++
+### Move Semantics y Definici√≥n de L-Value en C++
 
-Las move semantics (sem·nticas de movimiento) y el concepto de L-value son fundamentales en C++ moderno para la gestiÛn eficiente de recursos y la optimizaciÛn del rendimiento. Comprender estos conceptos es crucial para escribir cÛdigo C++ eficiente y robusto.
+Las move semantics (sem√°nticas de movimiento) y el concepto de L-value son fundamentales en C++ moderno para la gesti√≥n eficiente de recursos y la optimizaci√≥n del rendimiento. Comprender estos conceptos es crucial para escribir c√≥digo C++ eficiente y robusto.
 
-#### DefiniciÛn de L-Value
+#### Definici√≥n de L-Value
 
-En C++, un **L-value** (Left value) es una expresiÛn que representa una ubicaciÛn en memoria que tiene un identificador persistente. Los L-values se pueden encontrar en el lado izquierdo de una asignaciÛn, lo que significa que pueden recibir un valor.
+En C++, un **L-value** (Left value) es una expresi√≥n que representa una ubicaci√≥n en memoria que tiene un identificador persistente. Los L-values se pueden encontrar en el lado izquierdo de una asignaci√≥n, lo que significa que pueden recibir un valor.
 
-##### CaracterÌsticas de L-Value
+##### Caracter√≠sticas de L-Value
 
-- **Asignabilidad:** Los L-values pueden aparecer en el lado izquierdo de una asignaciÛn.
-- **DirecciÛn en Memoria:** Los L-values tienen una direcciÛn en memoria, lo que significa que se puede tomar su direcciÛn utilizando el operador `&`.
-- **Persistencia:** Representan una entidad que persiste m·s all· de la expresiÛn en la que se usan.
+- **Asignabilidad:** Los L-values pueden aparecer en el lado izquierdo de una asignaci√≥n.
+- **Direcci√≥n en Memoria:** Los L-values tienen una direcci√≥n en memoria, lo que significa que se puede tomar su direcci√≥n utilizando el operador `&`.
+- **Persistencia:** Representan una entidad que persiste m√°s all√° de la expresi√≥n en la que se usan.
 
 ##### Ejemplos de L-Value
 
 ```cpp
 int x = 5;         // 'x' es un L-value
-int* p = &x;       // 'p' es un L-value que contiene la direcciÛn de 'x'
-x = 10;            // 'x' puede estar en el lado izquierdo de la asignaciÛn
-*p = 20;           // '*p' es un L-value que puede estar en el lado izquierdo de la asignaciÛn
+int* p = &x;       // 'p' es un L-value que contiene la direcci√≥n de 'x'
+x = 10;            // 'x' puede estar en el lado izquierdo de la asignaci√≥n
+*p = 20;           // '*p' es un L-value que puede estar en el lado izquierdo de la asignaci√≥n
 
 int& ref = x;      // 'ref' es un L-value reference a 'x'
-ref = 30;          // 'ref' puede estar en el lado izquierdo de la asignaciÛn
+ref = 30;          // 'ref' puede estar en el lado izquierdo de la asignaci√≥n
 ```
 
 En este ejemplo:
-- `x`, `p`, `*p` y `ref` son L-values porque tienen una ubicaciÛn en memoria y pueden recibir un valor.
+- `x`, `p`, `*p` y `ref` son L-values porque tienen una ubicaci√≥n en memoria y pueden recibir un valor.
 
 #### Move Semantics
 
-Las **move semantics** se introdujeron en C++11 para optimizar la transferencia de recursos entre objetos. En lugar de copiar recursos (lo cual puede ser costoso), las move semantics permiten mover recursos de un objeto a otro, dejando el objeto original en un estado v·lido pero no especificado.
+Las **move semantics** se introdujeron en C++11 para optimizar la transferencia de recursos entre objetos. En lugar de copiar recursos (lo cual puede ser costoso), las move semantics permiten mover recursos de un objeto a otro, dejando el objeto original en un estado v√°lido pero no especificado.
 
 ##### R-Value
 
-Antes de entrar en detalles sobre las move semantics, es importante entender los R-values. Un **R-value** (Right value) es una expresiÛn que no tiene una direcciÛn en memoria accesible y es temporal. Los R-values tÌpicamente se utilizan en el lado derecho de una asignaciÛn.
+Antes de entrar en detalles sobre las move semantics, es importante entender los R-values. Un **R-value** (Right value) es una expresi√≥n que no tiene una direcci√≥n en memoria accesible y es temporal. Los R-values t√≠picamente se utilizan en el lado derecho de una asignaci√≥n.
 
 ##### Ejemplos de R-Value
 
@@ -44,15 +44,15 @@ int z = y + 3;     // 'y + 3' es un R-value
 ```
 
 En este ejemplo:
-- `5` y `y + 3` son R-values porque son temporales y no tienen una direcciÛn en memoria accesible directamente.
+- `5` y `y + 3` son R-values porque son temporales y no tienen una direcci√≥n en memoria accesible directamente.
 
 ##### Move Constructor y Move Assignment Operator
 
-Las move semantics se implementan principalmente mediante el constructor de movimiento (move constructor) y el operador de asignaciÛn por movimiento (move assignment operator).
+Las move semantics se implementan principalmente mediante el constructor de movimiento (move constructor) y el operador de asignaci√≥n por movimiento (move assignment operator).
 
 ###### Move Constructor
 
-El move constructor transfiere recursos de un objeto a otro, dejando el objeto original en un estado v·lido pero indeterminado.
+El move constructor transfiere recursos de un objeto a otro, dejando el objeto original en un estado v√°lido pero indeterminado.
 
 ```cpp
 #include <iostream>
@@ -121,15 +121,15 @@ En este ejemplo:
 
 #### Ventajas de Move Semantics
 
-1. **Eficiencia:** Evitan copias innecesarias de recursos, lo que puede mejorar significativamente el rendimiento, especialmente para objetos grandes o que gestionan recursos externos como memoria din·mica o archivos.
-2. **Seguridad:** Las move semantics dejan el objeto original en un estado v·lido pero indeterminado, evitando problemas de recursos duplicados.
+1. **Eficiencia:** Evitan copias innecesarias de recursos, lo que puede mejorar significativamente el rendimiento, especialmente para objetos grandes o que gestionan recursos externos como memoria din√°mica o archivos.
+2. **Seguridad:** Las move semantics dejan el objeto original en un estado v√°lido pero indeterminado, evitando problemas de recursos duplicados.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Entender los L-values y R-values, junto con las move semantics, es esencial para escribir cÛdigo C++ eficiente y robusto. Las move semantics permiten transferir recursos de manera eficiente, optimizando el rendimiento y evitando copias costosas. Al implementar correctamente el move constructor y el move assignment operator, los desarrolladores pueden aprovechar estas optimizaciones en sus programas.
+Entender los L-values y R-values, junto con las move semantics, es esencial para escribir c√≥digo C++ eficiente y robusto. Las move semantics permiten transferir recursos de manera eficiente, optimizando el rendimiento y evitando copias costosas. Al implementar correctamente el move constructor y el move assignment operator, los desarrolladores pueden aprovechar estas optimizaciones en sus programas.
 <---FILES--->
-CaracterÌsticas de L-Value
-CaracterÌsticas de L-Value Result
+Caracter√≠sticas de L-Value
+Caracter√≠sticas de L-Value Result
 Ejemplos de L-Value
 Ejemplos de L-Value Result
 R-Value
@@ -140,17 +140,17 @@ Move Constructor y Move Assignment Operator
 Move Constructor y Move Assignment Operator Result
 Move Constructor
 Move Constructor Result
-<---CaracterÌsticas de L-Value--->
-<---CaracterÌsticas de L-Value Result--->
+<---Caracter√≠sticas de L-Value--->
+<---Caracter√≠sticas de L-Value Result--->
 <---Ejemplos de L-Value--->
 ```cpp
 int x = 5;         // 'x' es un L-value
-int* p = &x;       // 'p' es un L-value que contiene la direcciÛn de 'x'
-x = 10;            // 'x' puede estar en el lado izquierdo de la asignaciÛn
-*p = 20;           // '*p' es un L-value que puede estar en el lado izquierdo de la asignaciÛn
+int* p = &x;       // 'p' es un L-value que contiene la direcci√≥n de 'x'
+x = 10;            // 'x' puede estar en el lado izquierdo de la asignaci√≥n
+*p = 20;           // '*p' es un L-value que puede estar en el lado izquierdo de la asignaci√≥n
 
 int& ref = x;      // 'ref' es un L-value reference a 'x'
-ref = 30;          // 'ref' puede estar en el lado izquierdo de la asignaciÛn
+ref = 30;          // 'ref' puede estar en el lado izquierdo de la asignaci√≥n
 <---Ejemplos de L-Value Result--->
 <---R-Value--->
 <---R-Value Result--->

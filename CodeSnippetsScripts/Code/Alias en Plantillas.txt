@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Alias en Plantillas en C++
 
-En C++, los alias en plantillas se utilizan para simplificar la sintaxis y mejorar la legibilidad del c骴igo cuando se trabaja con tipos complejos en plantillas. Los alias de tipo se introdujeron en C++11 mediante la palabra clave `using`, que proporciona una forma m醩 conveniente de definir alias de tipo en comparaci髇 con los typedefs tradicionales.
+En C++, los alias en plantillas se utilizan para simplificar la sintaxis y mejorar la legibilidad del c贸digo cuando se trabaja con tipos complejos en plantillas. Los alias de tipo se introdujeron en C++11 mediante la palabra clave `using`, que proporciona una forma m谩s conveniente de definir alias de tipo en comparaci贸n con los typedefs tradicionales.
 
-#### Definici髇 de Alias de Tipo en Plantillas
+#### Definici贸n de Alias de Tipo en Plantillas
 
-Los alias de tipo en plantillas permiten crear nombres m醩 cortos y legibles para tipos complejos que dependen de par醡etros de plantilla. Esto es especialmente 鷗il cuando se trabaja con plantillas anidadas y tipos de contenedores gen閞icos.
+Los alias de tipo en plantillas permiten crear nombres m谩s cortos y legibles para tipos complejos que dependen de par谩metros de plantilla. Esto es especialmente 煤til cuando se trabaja con plantillas anidadas y tipos de contenedores gen茅ricos.
 
 ##### Sintaxis
 
@@ -16,9 +16,9 @@ using AliasName = SomeComplexType<T>;
 
 #### Ejemplos de Alias en Plantillas
 
-##### Alias de Tipo para Contenedores Gen閞icos
+##### Alias de Tipo para Contenedores Gen茅ricos
 
-Supongamos que queremos definir un alias para un `std::vector` que contiene `std::pair` de dos tipos gen閞icos.
+Supongamos que queremos definir un alias para un `std::vector` que contiene `std::pair` de dos tipos gen茅ricos.
 
 ```cpp
 #include <vector>
@@ -42,30 +42,30 @@ int main() {
 ```
 
 En este ejemplo:
-- `VectorDePares` es un alias que representa un `std::vector` de `std::pair` de dos tipos gen閞icos `T1` y `T2`.
-- Esto simplifica la declaraci髇 y uso de un vector de pares en el c骴igo.
+- `VectorDePares` es un alias que representa un `std::vector` de `std::pair` de dos tipos gen茅ricos `T1` y `T2`.
+- Esto simplifica la declaraci贸n y uso de un vector de pares en el c贸digo.
 
 ##### Alias de Tipo para Funciones
 
-Los alias de tipo tambi閚 pueden simplificar las declaraciones de punteros a funciones o tipos de funciones gen閞icas.
+Los alias de tipo tambi茅n pueden simplificar las declaraciones de punteros a funciones o tipos de funciones gen茅ricas.
 
 ```cpp
 #include <functional>
 #include <iostream>
 
-// Definir un alias para un tipo de funci髇 que toma dos enteros y devuelve un entero
+// Definir un alias para un tipo de funci贸n que toma dos enteros y devuelve un entero
 using FuncionBinaria = std::function<int(int, int)>;
 
-// Funci髇 que utiliza el alias para tomar una funci髇 binaria como par醡etro
+// Funci贸n que utiliza el alias para tomar una funci贸n binaria como par谩metro
 void aplicarFuncion(FuncionBinaria func, int a, int b) {
     std::cout << "Resultado: " << func(a, b) << std::endl;
 }
 
 int main() {
-    // Definir una lambda que coincide con el alias de tipo de funci髇
+    // Definir una lambda que coincide con el alias de tipo de funci贸n
     FuncionBinaria suma = [](int x, int y) { return x + y; };
 
-    // Aplicar la funci髇 suma
+    // Aplicar la funci贸n suma
     aplicarFuncion(suma, 3, 4); // Imprime: Resultado: 7
 
     return 0;
@@ -74,7 +74,7 @@ int main() {
 
 En este ejemplo:
 - `FuncionBinaria` es un alias que representa un `std::function` que toma dos enteros y devuelve un entero.
-- Esto facilita la declaraci髇 y el uso de funciones binarias en el c骴igo.
+- Esto facilita la declaraci贸n y el uso de funciones binarias en el c贸digo.
 
 ##### Alias de Tipo para Clases Plantilla
 
@@ -84,7 +84,7 @@ Los alias de tipo pueden simplificar las declaraciones cuando se trabaja con cla
 #include <map>
 #include <string>
 
-// Definir un alias para un mapa que tiene cadenas como claves y valores gen閞icos
+// Definir un alias para un mapa que tiene cadenas como claves y valores gen茅ricos
 template <typename T>
 using MapaDeCadenas = std::map<std::string, T>;
 
@@ -104,23 +104,23 @@ int main() {
 ```
 
 En este ejemplo:
-- `MapaDeCadenas` es un alias que representa un `std::map` con claves de tipo `std::string` y valores de tipo gen閞ico `T`.
-- Esto simplifica la declaraci髇 y el uso de mapas con claves de cadena en el c骴igo.
+- `MapaDeCadenas` es un alias que representa un `std::map` con claves de tipo `std::string` y valores de tipo gen茅rico `T`.
+- Esto simplifica la declaraci贸n y el uso de mapas con claves de cadena en el c贸digo.
 
 ### Ventajas de Usar Alias de Tipo en Plantillas
 
-1. **Legibilidad:** Los alias de tipo pueden hacer que el c骴igo sea m醩 legible al proporcionar nombres m醩 cortos y significativos para tipos complejos.
-2. **Mantenibilidad:** Facilitan la modificaci髇 de tipos subyacentes sin cambiar todas las referencias en el c骴igo.
-3. **Reducci髇 de Errores:** Ayudan a reducir errores tipogr醘icos y mejorar la consistencia al usar tipos complejos.
+1. **Legibilidad:** Los alias de tipo pueden hacer que el c贸digo sea m谩s legible al proporcionar nombres m谩s cortos y significativos para tipos complejos.
+2. **Mantenibilidad:** Facilitan la modificaci贸n de tipos subyacentes sin cambiar todas las referencias en el c贸digo.
+3. **Reducci贸n de Errores:** Ayudan a reducir errores tipogr谩ficos y mejorar la consistencia al usar tipos complejos.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los alias en plantillas son una herramienta poderosa en C++ que simplifica el manejo de tipos complejos y gen閞icos. Utilizando la palabra clave `using`, los desarrolladores pueden crear nombres de tipo m醩 cortos y significativos, mejorando la legibilidad y mantenibilidad del c骴igo. Esta caracter韘tica es particularmente 鷗il cuando se trabaja con plantillas anidadas y contenedores gen閞icos, permitiendo un c骴igo m醩 limpio y menos propenso a errores.
+Los alias en plantillas son una herramienta poderosa en C++ que simplifica el manejo de tipos complejos y gen茅ricos. Utilizando la palabra clave `using`, los desarrolladores pueden crear nombres de tipo m谩s cortos y significativos, mejorando la legibilidad y mantenibilidad del c贸digo. Esta caracter铆stica es particularmente 煤til cuando se trabaja con plantillas anidadas y contenedores gen茅ricos, permitiendo un c贸digo m谩s limpio y menos propenso a errores.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Alias de Tipo para Contenedores Gen閞icos
-Alias de Tipo para Contenedores Gen閞icos Result
+Alias de Tipo para Contenedores Gen茅ricos
+Alias de Tipo para Contenedores Gen茅ricos Result
 Alias de Tipo para Funciones
 Alias de Tipo para Funciones Result
 Alias de Tipo para Clases Plantilla
@@ -130,7 +130,7 @@ Alias de Tipo para Clases Plantilla Result
 template <typename T>
 using AliasName = SomeComplexType<T>;
 <---Sintaxis Result--->
-<---Alias de Tipo para Contenedores Gen閞icos--->
+<---Alias de Tipo para Contenedores Gen茅ricos--->
 ```cpp
 #include <vector>
 #include <utility>
@@ -150,25 +150,25 @@ int main() {
 
     return 0;
 }
-<---Alias de Tipo para Contenedores Gen閞icos Result--->
+<---Alias de Tipo para Contenedores Gen茅ricos Result--->
 <---Alias de Tipo para Funciones--->
 ```cpp
 #include <functional>
 #include <iostream>
 
-// Definir un alias para un tipo de funci髇 que toma dos enteros y devuelve un entero
+// Definir un alias para un tipo de funci贸n que toma dos enteros y devuelve un entero
 using FuncionBinaria = std::function<int(int, int)>;
 
-// Funci髇 que utiliza el alias para tomar una funci髇 binaria como par醡etro
+// Funci贸n que utiliza el alias para tomar una funci贸n binaria como par谩metro
 void aplicarFuncion(FuncionBinaria func, int a, int b) {
     std::cout << "Resultado: " << func(a, b) << std::endl;
 }
 
 int main() {
-    // Definir una lambda que coincide con el alias de tipo de funci髇
+    // Definir una lambda que coincide con el alias de tipo de funci贸n
     FuncionBinaria suma = [](int x, int y) { return x + y; };
 
-    // Aplicar la funci髇 suma
+    // Aplicar la funci贸n suma
     aplicarFuncion(suma, 3, 4); // Imprime: Resultado: 7
 
     return 0;
@@ -179,7 +179,7 @@ int main() {
 #include <map>
 #include <string>
 
-// Definir un alias para un mapa que tiene cadenas como claves y valores gen閞icos
+// Definir un alias para un mapa que tiene cadenas como claves y valores gen茅ricos
 template <typename T>
 using MapaDeCadenas = std::map<std::string, T>;
 

@@ -1,20 +1,20 @@
 <---EXPLANATION--->
 ### Iteradores de Entrada en C++
 
-Los **iteradores de entrada** (input iterators) son uno de los tipos de iteradores en C++ que se utilizan para leer datos secuencialmente de una secuencia. Estos iteradores permiten recorrer una secuencia de datos y leer cada elemento una vez, y son especialmente útiles cuando se trabaja con flujos de entrada como archivos o entradas estándar.
+Los **iteradores de entrada** (input iterators) son uno de los tipos de iteradores en C++ que se utilizan para leer datos secuencialmente de una secuencia. Estos iteradores permiten recorrer una secuencia de datos y leer cada elemento una vez, y son especialmente Ãºtiles cuando se trabaja con flujos de entrada como archivos o entradas estÃ¡ndar.
 
-#### Características de los Iteradores de Entrada
+#### CaracterÃ­sticas de los Iteradores de Entrada
 
 1. **Lectura Secuencial:** Permiten leer los elementos de una secuencia en orden.
 2. **No Modificables:** No se pueden usar para modificar los elementos de la secuencia.
-3. **Un Solo Paso:** Cada elemento puede ser leído una vez; no se garantiza que puedan retroceder.
+3. **Un Solo Paso:** Cada elemento puede ser leÃ­do una vez; no se garantiza que puedan retroceder.
 4. **Igualdad y Desigualdad:** Pueden compararse con otros iteradores de entrada usando `==` y `!=`.
 
 #### Ejemplo con Flujos de Entrada
 
-Los iteradores de entrada son comúnmente utilizados con flujos de entrada como `std::istream`.
+Los iteradores de entrada son comÃºnmente utilizados con flujos de entrada como `std::istream`.
 
-##### Ejemplo Básico con `std::istream_iterator`
+##### Ejemplo BÃ¡sico con `std::istream_iterator`
 
 ```cpp
 #include <iostream>
@@ -23,17 +23,17 @@ Los iteradores de entrada son comúnmente utilizados con flujos de entrada como `
 #include <algorithm>
 
 int main() {
-    std::cout << "Ingrese números separados por espacios (Ctrl+D para terminar): ";
+    std::cout << "Ingrese nÃºmeros separados por espacios (Ctrl+D para terminar): ";
 
     // Crear un istream_iterator para leer desde std::cin
     std::istream_iterator<int> inicio(std::cin);
     std::istream_iterator<int> fin;  // Iterador de fin predeterminado
 
-    // Leer todos los números ingresados en un vector
+    // Leer todos los nÃºmeros ingresados en un vector
     std::vector<int> numeros(inicio, fin);
 
-    // Mostrar los números leídos
-    std::cout << "Números ingresados: ";
+    // Mostrar los nÃºmeros leÃ­dos
+    std::cout << "NÃºmeros ingresados: ";
     for (int numero : numeros) {
         std::cout << numero << " ";
     }
@@ -45,7 +45,7 @@ int main() {
 
 En este ejemplo:
 - `std::istream_iterator<int>` se utiliza para crear un iterador de entrada que lee `int` desde `std::cin`.
-- Los números ingresados se almacenan en un `std::vector<int>` utilizando el rango `[inicio, fin]`.
+- Los nÃºmeros ingresados se almacenan en un `std::vector<int>` utilizando el rango `[inicio, fin]`.
 
 #### Uso en Algoritmos de la STL
 
@@ -60,20 +60,20 @@ Los iteradores de entrada pueden ser utilizados en algoritmos de la STL que requ
 #include <algorithm>
 
 int main() {
-    std::cout << "Ingrese números separados por espacios (Ctrl+D para terminar): ";
+    std::cout << "Ingrese nÃºmeros separados por espacios (Ctrl+D para terminar): ";
 
     // Crear un istream_iterator para leer desde std::cin
     std::istream_iterator<int> inicio(std::cin);
     std::istream_iterator<int> fin;  // Iterador de fin predeterminado
 
-    // Crear un vector para almacenar los números leídos
+    // Crear un vector para almacenar los nÃºmeros leÃ­dos
     std::vector<int> numeros;
 
-    // Usar std::copy para leer los números en el vector
+    // Usar std::copy para leer los nÃºmeros en el vector
     std::copy(inicio, fin, std::back_inserter(numeros));
 
-    // Mostrar los números leídos
-    std::cout << "Números ingresados: ";
+    // Mostrar los nÃºmeros leÃ­dos
+    std::cout << "NÃºmeros ingresados: ";
     for (int numero : numeros) {
         std::cout << numero << " ";
     }
@@ -84,13 +84,13 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::copy` se utiliza para copiar los números leídos desde el flujo de entrada a un vector utilizando un iterador de entrada.
+- `std::copy` se utiliza para copiar los nÃºmeros leÃ­dos desde el flujo de entrada a un vector utilizando un iterador de entrada.
 
-#### Implementación Personalizada de un Iterador de Entrada
+#### ImplementaciÃ³n Personalizada de un Iterador de Entrada
 
-Aunque `std::istream_iterator` es una implementación estándar, es posible definir iteradores de entrada personalizados.
+Aunque `std::istream_iterator` es una implementaciÃ³n estÃ¡ndar, es posible definir iteradores de entrada personalizados.
 
-##### Ejemplo de Implementación Personalizada
+##### Ejemplo de ImplementaciÃ³n Personalizada
 
 ```cpp
 #include <iostream>
@@ -121,24 +121,24 @@ public:
 
     InputIterator& operator++() {
         if (in && !(*in >> value)) {
-            in = nullptr;  // Alcanzó el final de la secuencia
+            in = nullptr;  // AlcanzÃ³ el final de la secuencia
         }
         return *this;
     }
 };
 
 int main() {
-    std::cout << "Ingrese números separados por espacios (Ctrl+D para terminar): ";
+    std::cout << "Ingrese nÃºmeros separados por espacios (Ctrl+D para terminar): ";
 
     // Usar el iterador de entrada personalizado para leer desde std::cin
     InputIterator inicio(std::cin);
     InputIterator fin;
 
-    // Leer todos los números ingresados en un vector
+    // Leer todos los nÃºmeros ingresados en un vector
     std::vector<int> numeros(inicio, fin);
 
-    // Mostrar los números leídos
-    std::cout << "Números ingresados: ";
+    // Mostrar los nÃºmeros leÃ­dos
+    std::cout << "NÃºmeros ingresados: ";
     for (int numero : numeros) {
         std::cout << numero << " ";
     }
@@ -152,17 +152,17 @@ En este ejemplo:
 - `InputIterator` es un iterador de entrada personalizado que lee `int` desde un flujo de entrada.
 - Se define sobrecargando los operadores necesarios para cumplir con los requisitos de un iterador de entrada.
 
-### Conclusión
+### ConclusiÃ³n
 
-Los iteradores de entrada son una herramienta poderosa en C++ para leer datos secuencialmente de una fuente de entrada. Permiten una lectura eficiente y son esenciales para trabajar con flujos de entrada en algoritmos de la STL. Entender cómo utilizar y, si es necesario, implementar iteradores de entrada personalizados, es fundamental para escribir código C++ robusto y eficiente.
+Los iteradores de entrada son una herramienta poderosa en C++ para leer datos secuencialmente de una fuente de entrada. Permiten una lectura eficiente y son esenciales para trabajar con flujos de entrada en algoritmos de la STL. Entender cÃ³mo utilizar y, si es necesario, implementar iteradores de entrada personalizados, es fundamental para escribir cÃ³digo C++ robusto y eficiente.
 <---FILES--->
-Ejemplo Básico con `std::istream_iterator`
-Ejemplo Básico con `std::istream_iterator` Result
+Ejemplo BÃ¡sico con `std::istream_iterator`
+Ejemplo BÃ¡sico con `std::istream_iterator` Result
 Ejemplo con `std::copy`
 Ejemplo con `std::copy` Result
-Ejemplo de Implementación Personalizada
-Ejemplo de Implementación Personalizada Result
-<---Ejemplo Básico con `std::istream_iterator`--->
+Ejemplo de ImplementaciÃ³n Personalizada
+Ejemplo de ImplementaciÃ³n Personalizada Result
+<---Ejemplo BÃ¡sico con `std::istream_iterator`--->
 ```cpp
 #include <iostream>
 #include <iterator>
@@ -170,17 +170,17 @@ Ejemplo de Implementación Personalizada Result
 #include <algorithm>
 
 int main() {
-    std::cout << "Ingrese números separados por espacios (Ctrl+D para terminar): ";
+    std::cout << "Ingrese nÃºmeros separados por espacios (Ctrl+D para terminar): ";
 
     // Crear un istream_iterator para leer desde std::cin
     std::istream_iterator<int> inicio(std::cin);
     std::istream_iterator<int> fin;  // Iterador de fin predeterminado
 
-    // Leer todos los números ingresados en un vector
+    // Leer todos los nÃºmeros ingresados en un vector
     std::vector<int> numeros(inicio, fin);
 
-    // Mostrar los números leídos
-    std::cout << "Números ingresados: ";
+    // Mostrar los nÃºmeros leÃ­dos
+    std::cout << "NÃºmeros ingresados: ";
     for (int numero : numeros) {
         std::cout << numero << " ";
     }
@@ -188,7 +188,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Básico con `std::istream_iterator` Result--->
+<---Ejemplo BÃ¡sico con `std::istream_iterator` Result--->
 <---Ejemplo con `std::copy`--->
 ```cpp
 #include <iostream>
@@ -197,20 +197,20 @@ int main() {
 #include <algorithm>
 
 int main() {
-    std::cout << "Ingrese números separados por espacios (Ctrl+D para terminar): ";
+    std::cout << "Ingrese nÃºmeros separados por espacios (Ctrl+D para terminar): ";
 
     // Crear un istream_iterator para leer desde std::cin
     std::istream_iterator<int> inicio(std::cin);
     std::istream_iterator<int> fin;  // Iterador de fin predeterminado
 
-    // Crear un vector para almacenar los números leídos
+    // Crear un vector para almacenar los nÃºmeros leÃ­dos
     std::vector<int> numeros;
 
-    // Usar std::copy para leer los números en el vector
+    // Usar std::copy para leer los nÃºmeros en el vector
     std::copy(inicio, fin, std::back_inserter(numeros));
 
-    // Mostrar los números leídos
-    std::cout << "Números ingresados: ";
+    // Mostrar los nÃºmeros leÃ­dos
+    std::cout << "NÃºmeros ingresados: ";
     for (int numero : numeros) {
         std::cout << numero << " ";
     }
@@ -219,7 +219,7 @@ int main() {
     return 0;
 }
 <---Ejemplo con `std::copy` Result--->
-<---Ejemplo de Implementación Personalizada--->
+<---Ejemplo de ImplementaciÃ³n Personalizada--->
 ```cpp
 #include <iostream>
 #include <iterator>
@@ -249,24 +249,24 @@ public:
 
     InputIterator& operator++() {
         if (in && !(*in >> value)) {
-            in = nullptr;  // Alcanzó el final de la secuencia
+            in = nullptr;  // AlcanzÃ³ el final de la secuencia
         }
         return *this;
     }
 };
 
 int main() {
-    std::cout << "Ingrese números separados por espacios (Ctrl+D para terminar): ";
+    std::cout << "Ingrese nÃºmeros separados por espacios (Ctrl+D para terminar): ";
 
     // Usar el iterador de entrada personalizado para leer desde std::cin
     InputIterator inicio(std::cin);
     InputIterator fin;
 
-    // Leer todos los números ingresados en un vector
+    // Leer todos los nÃºmeros ingresados en un vector
     std::vector<int> numeros(inicio, fin);
 
-    // Mostrar los números leídos
-    std::cout << "Números ingresados: ";
+    // Mostrar los nÃºmeros leÃ­dos
+    std::cout << "NÃºmeros ingresados: ";
     for (int numero : numeros) {
         std::cout << numero << " ";
     }
@@ -274,4 +274,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Implementación Personalizada Result--->
+<---Ejemplo de ImplementaciÃ³n Personalizada Result--->
