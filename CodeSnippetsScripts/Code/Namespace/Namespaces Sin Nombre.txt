@@ -1,0 +1,1226 @@
+<---EXPLANATION--->
+### Definición y Propósito de los Namespaces en C++
+
+En C++, un namespace (espacio de nombres) es una directiva utilizada para organizar el código y evitar conflictos de nombres. Los namespaces permiten agrupar funciones, variables, clases y otros identificadores en un contexto específico, evitando colisiones de nombres que pueden ocurrir cuando diferentes partes del programa definen elementos con el mismo nombre.
+
+#### Definición de Namespace
+
+Un namespace se define utilizando la palabra clave `namespace` seguida del nombre del espacio de nombres y un bloque de código que contiene las definiciones de los identificadores que pertenecen a ese espacio de nombres.
+
+##### Sintaxis
+
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+int main() {
+    double radio = 5.0;
+    cout << "El área del círculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << endl;
+    return 0;
+}
+```
+
+En este ejemplo:
+- El namespace `Matematicas` contiene una constante `PI` y dos funciones, `cuadrado` y `areaCirculo`.
+- En el `main`, se accede a `areaCirculo` utilizando el prefijo `Matematicas::` para evitar colisiones de nombres y especificar claramente de qué espacio de nombres provienen.
+
+#### Propósito de los Namespaces
+
+1. **Evitar Conflictos de Nombres:** Al organizar el código en namespaces, se pueden evitar conflictos de nombres que ocurren cuando dos partes diferentes del programa definen identificadores con el mismo nombre.
+2. **Organización del Código:** Permiten agrupar lógicamente las definiciones relacionadas, mejorando la legibilidad y el mantenimiento del código.
+3. **Modularidad:** Facilitan la modularidad del código, permitiendo dividir un programa grande en partes más manejables y coherentes.
+4. **Integración de Librerías:** Ayudan a integrar múltiples librerías en un mismo programa sin que los nombres de sus componentes colisionen.
+
+#### Uso de Namespaces
+
+1. **Acceso a Miembros de un Namespace:** Los miembros de un namespace se acceden utilizando el operador de resolución de ámbito `::`.
+
+##### Ejemplo
+
+```cpp
+namespace Ejemplo {
+    void funcion() {
+        std::cout << "Función en el namespace Ejemplo" << std::endl;
+    }
+}
+
+int main() {
+    Ejemplo::funcion(); // Llamada a la función utilizando el operador de resolución de ámbito
+    return 0;
+}
+```
+
+2. **Declaración de Usos (`using`):** La directiva `using` se puede utilizar para traer todos los miembros de un namespace al ámbito actual, evitando la necesidad de usar el operador de resolución de ámbito repetidamente.
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+namespace Matematicas {
+    double suma(double a, double b) {
+        return a + b;
+    }
+}
+
+using namespace Matematicas;
+
+int main() {
+    cout << "La suma de 3 y 4 es " << suma(3, 4) << endl; // No necesita Matematicas::
+    return 0;
+}
+```
+
+3. **Alias de Namespace:** Se pueden crear alias para namespaces largos o anidados, facilitando su uso.
+
+##### Ejemplo
+
+```cpp
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace largo
+namespace Proyecto = Empresa::Departamento::Proyecto;
+
+int main() {
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+```
+
+#### Namespaces Anónimos
+
+Los namespaces anónimos se utilizan para definir miembros que deben tener alcance en el archivo (file scope) y no deben ser accesibles desde otros archivos, lo cual es útil para evitar colisiones de nombres en programas grandes.
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace anónimo" << std::endl;
+    }
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+```
+
+En este ejemplo, `funcionPrivada` solo es accesible dentro del archivo donde se define, ya que está en un namespace anónimo.
+
+### Conclusión
+
+Los namespaces en C++ son una herramienta poderosa para organizar el código y evitar conflictos de nombres. Permiten agrupar definiciones relacionadas, mejorar la modularidad y la mantenibilidad del código, y facilitar la integración de múltiples librerías en un programa. Utilizar namespaces de manera adecuada es crucial para escribir código limpio, organizado y libre de colisiones de nombres.
+### Declaración de Namespace y Uso en C++
+
+Los namespaces (espacios de nombres) son una característica fundamental de C++ que ayuda a organizar el código y evitar conflictos de nombres. Los namespaces permiten agrupar identificadores como funciones, variables y clases bajo un nombre de espacio de nombres específico, lo que facilita la gestión y la reutilización del código en proyectos grandes.
+
+#### Declaración de un Namespace
+
+La declaración de un namespace se realiza usando la palabra clave `namespace` seguida del nombre del namespace y un bloque de código que contiene las definiciones que pertenecen a ese namespace.
+
+##### Sintaxis Básica
+
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+```
+
+##### Ejemplo de Declaración de Namespace
+
+```cpp
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+```
+
+En este ejemplo:
+- `Matematicas` es el nombre del namespace.
+- Dentro de `Matematicas`, se definen una constante `PI` y dos funciones `cuadrado` y `areaCirculo`.
+
+#### Uso de un Namespace
+
+Para usar las definiciones de un namespace, se puede:
+1. **Usar el Operador de Resolución de Ámbito `::`:** Este operador se usa para acceder a los miembros de un namespace especificando el nombre del namespace seguido de `::` y el nombre del miembro.
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+int main() {
+    double radio = 5.0;
+    std::cout << "El área del círculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
+    return 0;
+}
+```
+
+En este ejemplo, `Matematicas::areaCirculo` se utiliza para acceder a la función `areaCirculo` dentro del namespace `Matematicas`.
+
+2. **Directiva `using`:** La directiva `using` puede traer todos los miembros de un namespace al ámbito actual, evitando la necesidad de usar el operador de resolución de ámbito repetidamente.
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+using namespace Matematicas;
+
+int main() {
+    double radio = 5.0;
+    std::cout << "El área del círculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Sin usar Matematicas::
+    return 0;
+}
+```
+
+En este ejemplo, `using namespace Matematicas` trae todos los miembros de `Matematicas` al ámbito actual, por lo que `areaCirculo` se puede usar directamente.
+
+3. **Declaración de Uso de Identificadores Específicos:** Se puede usar la declaración `using` para traer solo identificadores específicos de un namespace al ámbito actual.
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+using Matematicas::areaCirculo;
+
+int main() {
+    double radio = 5.0;
+    std::cout << "El área del círculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
+    return 0;
+}
+```
+
+En este ejemplo, solo `areaCirculo` se trae al ámbito actual, mientras que otros miembros de `Matematicas` no se traen automáticamente.
+
+#### Namespaces Anidados
+
+Los namespaces pueden anidarse para organizar el código de manera más jerárquica y modular.
+
+##### Ejemplo de Namespaces Anidados
+
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::Proyecto::mostrarMensaje();
+    return 0;
+}
+```
+
+En este ejemplo:
+- `Empresa`, `Departamento` y `Proyecto` son namespaces anidados.
+- `mostrarMensaje` se accede usando el operador de resolución de ámbito con todos los niveles del namespace.
+
+#### Alias de Namespace
+
+Los alias de namespace pueden simplificar el acceso a namespaces largos o anidados.
+
+##### Ejemplo de Alias de Namespace
+
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace largo
+namespace Proyecto = Empresa::Departamento::Proyecto;
+
+int main() {
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+```
+
+En este ejemplo, `Proyecto` es un alias para `Empresa::Departamento::Proyecto`, lo que simplifica la llamada a `mostrarMensaje`.
+
+#### Namespaces Anónimos
+
+Los namespaces anónimos se utilizan para definir miembros que deben tener alcance en el archivo (file scope) y no deben ser accesibles desde otros archivos, útil para evitar colisiones de nombres en programas grandes.
+
+##### Ejemplo de Namespace Anónimo
+
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace anónimo" << std::endl;
+    }
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+```
+
+En este ejemplo, `funcionPrivada` solo es accesible dentro del archivo donde se define, ya que está en un namespace anónimo.
+
+### Conclusión
+
+Los namespaces en C++ son esenciales para organizar el código y evitar conflictos de nombres en proyectos grandes. Permiten agrupar definiciones relacionadas, mejorar la modularidad y la claridad del código, y facilitar la integración de múltiples librerías. Comprender cómo declarar y utilizar namespaces de manera efectiva es crucial para escribir código C++ bien estructurado y mantenible.
+### Namespaces Anidados en C++
+
+Los namespaces (espacios de nombres) anidados en C++ permiten organizar el código de manera jerárquica y modular. Utilizando namespaces anidados, se puede crear una estructura clara y coherente para los nombres de clases, funciones, y otras entidades, evitando conflictos de nombres y mejorando la legibilidad del código.
+
+#### Definición de Namespaces Anidados
+
+Un namespace anidado es simplemente un namespace que se declara dentro de otro namespace. Esto crea una jerarquía de namespaces que pueden contener definiciones más específicas dentro de un contexto más general.
+
+##### Sintaxis de Namespaces Anidados
+
+```cpp
+namespace NamespacePadre {
+    namespace NamespaceHijo {
+        // Definiciones de variables, funciones, clases, etc.
+    }
+}
+```
+
+##### Ejemplo de Namespaces Anidados
+
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::Proyecto::mostrarMensaje();
+    return 0;
+}
+```
+
+En este ejemplo:
+- `Empresa` es el namespace padre.
+- `Departamento` es un namespace anidado dentro de `Empresa`.
+- `Proyecto` es un namespace anidado dentro de `Departamento`.
+- La función `mostrarMensaje` se define dentro de `Proyecto` y se accede usando el operador de resolución de ámbito `::` con todos los niveles del namespace.
+
+#### Ventajas de Usar Namespaces Anidados
+
+1. **Organización Jerárquica:** Facilitan la organización jerárquica del código, lo que es especialmente útil en proyectos grandes.
+2. **Evitar Conflictos de Nombres:** Ayudan a evitar conflictos de nombres al agrupar definiciones relacionadas bajo nombres de espacios de nombres específicos.
+3. **Modularidad:** Permiten definir módulos y submódulos de manera clara y estructurada.
+4. **Claridad:** Mejoran la claridad del código al dejar claro a qué contexto pertenece cada definición.
+
+#### Alias para Namespaces Anidados
+
+Para simplificar el uso de namespaces anidados largos, se pueden crear alias.
+
+##### Ejemplo de Alias para Namespaces Anidados
+
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace anidado largo
+namespace ProyectoAlias = Empresa::Departamento::Proyecto;
+
+int main() {
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+```
+
+En este ejemplo, `ProyectoAlias` es un alias para `Empresa::Departamento::Proyecto`, lo que simplifica la llamada a `mostrarMensaje`.
+
+#### Usando `using` con Namespaces Anidados
+
+La directiva `using` puede simplificar el acceso a los miembros de namespaces anidados.
+
+##### Ejemplo con `using`
+
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+using namespace Empresa::Departamento::Proyecto;
+
+int main() {
+    mostrarMensaje(); // Llamada directa sin necesidad de prefijo
+    return 0;
+}
+```
+
+En este ejemplo, `using namespace Empresa::Departamento::Proyecto` trae todos los miembros de `Proyecto` al ámbito actual, permitiendo el uso directo de `mostrarMensaje`.
+
+#### Namespaces Anónimos en Contexto Anidado
+
+Los namespaces anónimos se utilizan para definir miembros que deben tener un alcance de archivo (file scope) y no deben ser accesibles desde otros archivos, evitando conflictos de nombres.
+
+##### Ejemplo de Namespaces Anónimos Anidados
+
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace {
+            void funcionPrivada() {
+                std::cout << "Función en el namespace anónimo dentro de Proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+```
+
+En este ejemplo:
+- `funcionPrivada` está en un namespace anónimo dentro de `Departamento`, y solo es accesible dentro del archivo en el que se define.
+
+### Conclusión
+
+Los namespaces anidados en C++ son una herramienta poderosa para organizar y modularizar el código en proyectos grandes. Permiten crear una estructura jerárquica clara, evitando conflictos de nombres y mejorando la legibilidad del código. El uso de alias y la directiva `using` puede simplificar el acceso a miembros de namespaces anidados, haciendo el código más manejable y fácil de entender. Comprender y utilizar namespaces anidados de manera efectiva es crucial para escribir código C++ bien estructurado y mantenible.
+### Namespaces Sin Nombre en C++
+
+Los namespaces sin nombre, también conocidos como namespaces anónimos, son una característica de C++ que permite definir miembros que tienen un alcance limitado al archivo en el que se declaran. Esto es útil para evitar conflictos de nombres y para encapsular implementaciones que no deben ser visibles fuera del archivo.
+
+#### Definición y Propósito de los Namespaces Sin Nombre
+
+Un namespace sin nombre se declara sin un identificador y encapsula funciones, variables y clases, restringiendo su alcance al archivo en el que están definidos. Esto garantiza que los identificadores definidos dentro del namespace sin nombre no entren en conflicto con los mismos nombres en otros archivos.
+
+##### Sintaxis
+
+```cpp
+namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+```
+
+#### Ejemplo de Namespace Sin Nombre
+
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace sin nombre" << std::endl;
+    }
+
+    int variablePrivada = 42;
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    std::cout << "Valor de variablePrivada: " << variablePrivada << std::endl;
+    return 0;
+}
+```
+
+En este ejemplo:
+- `funcionPrivada` y `variablePrivada` están declaradas dentro de un namespace sin nombre, por lo que solo son accesibles dentro del archivo en el que se definen.
+- Estas definiciones no pueden ser utilizadas ni causarán conflictos de nombres en otros archivos.
+
+#### Ventajas de Usar Namespaces Sin Nombre
+
+1. **Evitar Conflictos de Nombres:** Garantizan que los identificadores definidos dentro del namespace sin nombre no entren en conflicto con los mismos nombres en otros archivos.
+2. **Encapsulación:** Permiten encapsular funciones y variables que solo deben ser utilizadas dentro de un archivo específico.
+3. **Control de Visibilidad:** Facilitan el control de la visibilidad de funciones y variables, asegurando que solo las partes del código que las necesitan pueden acceder a ellas.
+
+#### Comparación con la Declaración `static`
+
+Antes de que los namespaces sin nombre fueran introducidos, la palabra clave `static` se utilizaba para lograr un efecto similar, limitando el alcance de las funciones y variables a su archivo de definición.
+
+##### Ejemplo con `static`
+
+```cpp
+#include <iostream>
+
+static void funcionPrivada() {
+    std::cout << "Función estática de alcance de archivo" << std::endl;
+}
+
+static int variablePrivada = 42;
+
+int main() {
+    funcionPrivada();
+    std::cout << "Valor de variablePrivada: " << variablePrivada << std::endl;
+    return 0;
+}
+```
+
+En este ejemplo:
+- `funcionPrivada` y `variablePrivada` están declaradas como `static`, por lo que solo son accesibles dentro del archivo en el que se definen.
+
+#### Ejemplo Avanzado: Implementación de una Clase en un Namespace Sin Nombre
+
+```cpp
+#include <iostream>
+
+namespace {
+    class Contador {
+    private:
+        int cuenta;
+
+    public:
+        Contador() : cuenta(0) {}
+
+        void incrementar() {
+            cuenta++;
+        }
+
+        int obtenerCuenta() const {
+            return cuenta;
+        }
+    };
+
+    void mostrarContador(const Contador& contador) {
+        std::cout << "Cuenta: " << contador.obtenerCuenta() << std::endl;
+    }
+}
+
+int main() {
+    Contador contador;
+    contador.incrementar();
+    contador.incrementar();
+    mostrarContador(contador); // Muestra: Cuenta: 2
+    return 0;
+}
+```
+
+En este ejemplo:
+- La clase `Contador` y la función `mostrarContador` están encapsuladas en un namespace sin nombre, limitando su visibilidad al archivo en el que están definidas.
+- Esto asegura que `Contador` y `mostrarContador` no entren en conflicto con definiciones similares en otros archivos del proyecto.
+
+#### Consideraciones y Buenas Prácticas
+
+1. **Uso Apropiado:** Utilice namespaces sin nombre para encapsular definiciones que no necesitan ser visibles fuera del archivo, mejorando la encapsulación y evitando conflictos de nombres.
+2. **Evitar Abusos:** No abuse de los namespaces sin nombre para ocultar demasiada lógica. Si múltiples archivos necesitan compartir la misma lógica, considere usar un namespace con nombre y declarar sus miembros en un archivo de cabecera (`.h`).
+3. **Claridad del Código:** Documente adecuadamente las razones para usar un namespace sin nombre, facilitando el mantenimiento y la comprensión del código.
+
+### Conclusión
+
+Los namespaces sin nombre en C++ son una herramienta poderosa para limitar el alcance de funciones, variables y clases al archivo en el que se definen. Esto ayuda a evitar conflictos de nombres y mejora la encapsulación del código. Utilizar namespaces sin nombre de manera adecuada puede resultar en un código más limpio, organizado y mantenible, garantizando que las definiciones internas no interfieran con otras partes del proyecto.
+<---FILES--->
+Sintaxis
+Sintaxis Result
+Ejemplo
+Ejemplo Result
+Sintaxis
+Sintaxis Result
+Ejemplo
+Ejemplo Result
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo de Declaración de Namespace
+Ejemplo de Declaración de Namespace Result
+Ejemplo de Namespaces Anidados
+Ejemplo de Namespaces Anidados Result
+Ejemplo de Alias de Namespace
+Ejemplo de Alias de Namespace Result
+Ejemplo de Namespace Anónimo
+Ejemplo de Namespace Anónimo Result
+Sintaxis
+Sintaxis Result
+Ejemplo
+Ejemplo Result
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo de Declaración de Namespace
+Ejemplo de Declaración de Namespace Result
+Ejemplo de Namespaces Anidados
+Ejemplo de Namespaces Anidados Result
+Ejemplo de Alias de Namespace
+Ejemplo de Alias de Namespace Result
+Ejemplo de Namespace Anónimo
+Ejemplo de Namespace Anónimo Result
+Sintaxis de Namespaces Anidados
+Sintaxis de Namespaces Anidados Result
+Ejemplo de Alias para Namespaces Anidados
+Ejemplo de Alias para Namespaces Anidados Result
+Ejemplo con `using`
+Ejemplo con `using` Result
+Ejemplo de Namespaces Anónimos Anidados
+Ejemplo de Namespaces Anónimos Anidados Result
+Sintaxis
+Sintaxis Result
+Ejemplo
+Ejemplo Result
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo de Declaración de Namespace
+Ejemplo de Declaración de Namespace Result
+Ejemplo de Namespaces Anidados
+Ejemplo de Namespaces Anidados Result
+Ejemplo de Alias de Namespace
+Ejemplo de Alias de Namespace Result
+Ejemplo de Namespace Anónimo
+Ejemplo de Namespace Anónimo Result
+Sintaxis de Namespaces Anidados
+Sintaxis de Namespaces Anidados Result
+Ejemplo de Alias para Namespaces Anidados
+Ejemplo de Alias para Namespaces Anidados Result
+Ejemplo con `using`
+Ejemplo con `using` Result
+Ejemplo de Namespaces Anónimos Anidados
+Ejemplo de Namespaces Anónimos Anidados Result
+Ejemplo con `static`
+Ejemplo con `static` Result
+<---Sintaxis--->
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+<---Sintaxis Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace anónimo" << std::endl;
+    }
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+<---Ejemplo Result--->
+<---Sintaxis--->
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+<---Sintaxis Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+using Matematicas::areaCirculo;
+
+int main() {
+    double radio = 5.0;
+    std::cout << "El área del círculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
+    return 0;
+}
+<---Ejemplo Result--->
+<---Sintaxis Básica--->
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+<---Sintaxis Básica Result--->
+<---Ejemplo de Declaración de Namespace--->
+```cpp
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+<---Ejemplo de Declaración de Namespace Result--->
+<---Ejemplo de Namespaces Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::Proyecto::mostrarMensaje();
+    return 0;
+}
+<---Ejemplo de Namespaces Anidados Result--->
+<---Ejemplo de Alias de Namespace--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace largo
+namespace Proyecto = Empresa::Departamento::Proyecto;
+
+int main() {
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+<---Ejemplo de Alias de Namespace Result--->
+<---Ejemplo de Namespace Anónimo--->
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace anónimo" << std::endl;
+    }
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+<---Ejemplo de Namespace Anónimo Result--->
+<---Sintaxis--->
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+<---Sintaxis Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+using Matematicas::areaCirculo;
+
+int main() {
+    double radio = 5.0;
+    std::cout << "El área del círculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
+    return 0;
+}
+<---Ejemplo Result--->
+<---Sintaxis Básica--->
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+<---Sintaxis Básica Result--->
+<---Ejemplo de Declaración de Namespace--->
+```cpp
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+<---Ejemplo de Declaración de Namespace Result--->
+<---Ejemplo de Namespaces Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::Proyecto::mostrarMensaje();
+    return 0;
+}
+<---Ejemplo de Namespaces Anidados Result--->
+<---Ejemplo de Alias de Namespace--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace largo
+namespace Proyecto = Empresa::Departamento::Proyecto;
+
+int main() {
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+<---Ejemplo de Alias de Namespace Result--->
+<---Ejemplo de Namespace Anónimo--->
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace anónimo" << std::endl;
+    }
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+<---Ejemplo de Namespace Anónimo Result--->
+<---Sintaxis de Namespaces Anidados--->
+```cpp
+namespace NamespacePadre {
+    namespace NamespaceHijo {
+        // Definiciones de variables, funciones, clases, etc.
+    }
+}
+<---Sintaxis de Namespaces Anidados Result--->
+<---Ejemplo de Alias para Namespaces Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace anidado largo
+namespace ProyectoAlias = Empresa::Departamento::Proyecto;
+
+int main() {
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+<---Ejemplo de Alias para Namespaces Anidados Result--->
+<---Ejemplo con `using`--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+using namespace Empresa::Departamento::Proyecto;
+
+int main() {
+    mostrarMensaje(); // Llamada directa sin necesidad de prefijo
+    return 0;
+}
+<---Ejemplo con `using` Result--->
+<---Ejemplo de Namespaces Anónimos Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace {
+            void funcionPrivada() {
+                std::cout << "Función en el namespace anónimo dentro de Proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+<---Ejemplo de Namespaces Anónimos Anidados Result--->
+<---Sintaxis--->
+```cpp
+namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace sin nombre" << std::endl;
+    }
+
+    int variablePrivada = 42;
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    std::cout << "Valor de variablePrivada: " << variablePrivada << std::endl;
+    return 0;
+}
+<---Sintaxis Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+
+using Matematicas::areaCirculo;
+
+int main() {
+    double radio = 5.0;
+    std::cout << "El área del círculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
+    return 0;
+}
+<---Ejemplo Result--->
+<---Sintaxis Básica--->
+```cpp
+namespace nombre_del_namespace {
+    // Definiciones de variables, funciones, clases, etc.
+}
+<---Sintaxis Básica Result--->
+<---Ejemplo de Declaración de Namespace--->
+```cpp
+namespace Matematicas {
+    const double PI = 3.141592653589793;
+
+    double cuadrado(double x) {
+        return x * x;
+    }
+
+    double areaCirculo(double radio) {
+        return PI * cuadrado(radio);
+    }
+}
+<---Ejemplo de Declaración de Namespace Result--->
+<---Ejemplo de Namespaces Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::Proyecto::mostrarMensaje();
+    return 0;
+}
+<---Ejemplo de Namespaces Anidados Result--->
+<---Ejemplo de Alias de Namespace--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace largo
+namespace Proyecto = Empresa::Departamento::Proyecto;
+
+int main() {
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+<---Ejemplo de Alias de Namespace Result--->
+<---Ejemplo de Namespace Anónimo--->
+```cpp
+#include <iostream>
+
+namespace {
+    void funcionPrivada() {
+        std::cout << "Función en el namespace anónimo" << std::endl;
+    }
+}
+
+int main() {
+    funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+<---Ejemplo de Namespace Anónimo Result--->
+<---Sintaxis de Namespaces Anidados--->
+```cpp
+namespace NamespacePadre {
+    namespace NamespaceHijo {
+        // Definiciones de variables, funciones, clases, etc.
+    }
+}
+<---Sintaxis de Namespaces Anidados Result--->
+<---Ejemplo de Alias para Namespaces Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+// Crear un alias para un namespace anidado largo
+namespace ProyectoAlias = Empresa::Departamento::Proyecto;
+
+int main() {
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la función
+    return 0;
+}
+<---Ejemplo de Alias para Namespaces Anidados Result--->
+<---Ejemplo con `using`--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace Proyecto {
+            void mostrarMensaje() {
+                std::cout << "Mensaje del proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+using namespace Empresa::Departamento::Proyecto;
+
+int main() {
+    mostrarMensaje(); // Llamada directa sin necesidad de prefijo
+    return 0;
+}
+<---Ejemplo con `using` Result--->
+<---Ejemplo de Namespaces Anónimos Anidados--->
+```cpp
+#include <iostream>
+
+namespace Empresa {
+    namespace Departamento {
+        namespace {
+            void funcionPrivada() {
+                std::cout << "Función en el namespace anónimo dentro de Proyecto" << std::endl;
+            }
+        }
+    }
+}
+
+int main() {
+    Empresa::Departamento::funcionPrivada(); // Llamada válida dentro del mismo archivo
+    return 0;
+}
+<---Ejemplo de Namespaces Anónimos Anidados Result--->
+<---Ejemplo con `static`--->
+```cpp
+#include <iostream>
+
+static void funcionPrivada() {
+    std::cout << "Función estática de alcance de archivo" << std::endl;
+}
+
+static int variablePrivada = 42;
+
+int main() {
+    funcionPrivada();
+    std::cout << "Valor de variablePrivada: " << variablePrivada << std::endl;
+    return 0;
+}
+```cpp
+#include <iostream>
+
+namespace {
+    class Contador {
+    private:
+        int cuenta;
+
+    public:
+        Contador() : cuenta(0) {}
+
+        void incrementar() {
+            cuenta++;
+        }
+
+        int obtenerCuenta() const {
+            return cuenta;
+        }
+    };
+
+    void mostrarContador(const Contador& contador) {
+        std::cout << "Cuenta: " << contador.obtenerCuenta() << std::endl;
+    }
+}
+
+int main() {
+    Contador contador;
+    contador.incrementar();
+    contador.incrementar();
+    mostrarContador(contador); // Muestra: Cuenta: 2
+    return 0;
+}
+<---Ejemplo con `static` Result--->

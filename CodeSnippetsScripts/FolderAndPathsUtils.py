@@ -33,12 +33,15 @@ def list_all_files(folder_path: str) -> list:
 
 def ensure_folder_exists(folder_path: str) -> None:
     """Check if a folder exists, and create it if it does not."""
-    print(f"Checking if folder '{folder_path}' exists.")
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
-        print(f"Folder '{folder_path}' created.")
-    else:
-        print(f"Folder '{folder_path}' already exists.")
+    try:
+        print(f"Folder path: {folder_path}")
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+            print(f"Folder '{folder_path}' created.")
+    except OSError as e:
+        print(f"Error: {e}")
+    finally:
+        pass
 
 
 def open_txt_file(file_path: str) -> str:

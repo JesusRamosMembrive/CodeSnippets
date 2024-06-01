@@ -282,3 +282,265 @@ En este ejemplo:
 
 Las clases amigas en C++ permiten un acceso controlado y directo a los miembros privados y protegidos de otras clases, facilitando la implementación de operaciones complejas y la sobrecarga de operadores. Aunque poderosas, deben usarse con moderación y cuidado para no comprometer la encapsulación y mantener un diseño de software limpio y mantenible. Entender y aplicar adecuadamente las clases amigas es esencial para aprovechar al máximo las capacidades de la programación orientada a objetos en C++.
 <---FILES--->
+Sintaxis
+Sintaxis Result
+Ejemplo de Implementación
+Ejemplo de Implementación Result
+Ejemplo de Sobrecarga de Operador
+Ejemplo de Sobrecarga de Operador Result
+Ejemplo de Clases Amigas
+Ejemplo de Clases Amigas Result
+Sintaxis
+Sintaxis Result
+Ejemplo de Implementación
+Ejemplo de Implementación Result
+Ejemplo de Sobrecarga de Operador
+Ejemplo de Sobrecarga de Operador Result
+Ejemplo de Clases Amigas
+Ejemplo de Clases Amigas Result
+Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas
+Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas Result
+<---Sintaxis--->
+```cpp
+class Clase {
+    friend tipo nombreFuncion(parametros);
+    // Miembros de la clase
+};
+<---Sintaxis Result--->
+<---Ejemplo de Implementación--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class Caja {
+private:
+    int ancho, alto, profundidad;
+
+public:
+    Caja(int a, int h, int p) : ancho(a), alto(h), profundidad(p) {}
+
+    // Declaración de la función amiga
+    friend int volumen(const Caja& c);
+};
+
+// Definición de la función amiga
+int volumen(const Caja& c) {
+    return c.ancho * c.alto * c.profundidad;
+}
+
+int main() {
+    Caja caja(3, 4, 5);
+    cout << "Volumen de la caja: " << volumen(caja) << endl;
+    return 0;
+}
+<---Ejemplo de Implementación Result--->
+<---Ejemplo de Sobrecarga de Operador--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class Complejo {
+private:
+    double real, imag;
+
+public:
+    Complejo(double r, double i) : real(r), imag(i) {}
+
+    // Declaración de la función amiga para sobrecargar el operador +
+    friend Complejo operator+(const Complejo& c1, const Complejo& c2);
+
+    void mostrar() const {
+        cout << "(" << real << ", " << imag << "i)" << endl;
+    }
+};
+
+// Definición de la función amiga
+Complejo operator+(const Complejo& c1, const Complejo& c2) {
+    return Complejo(c1.real + c2.real, c1.imag + c2.imag);
+}
+
+int main() {
+    Complejo c1(3.0, 4.0), c2(1.0, 2.0);
+    Complejo c3 = c1 + c2;
+    c3.mostrar();
+    return 0;
+}
+<---Ejemplo de Sobrecarga de Operador Result--->
+<---Ejemplo de Clases Amigas--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class ClaseB;
+
+class ClaseA {
+private:
+    int datoA;
+
+public:
+    ClaseA(int a) : datoA(a) {}
+
+    // Declaración de ClaseB como amiga
+    friend class ClaseB;
+};
+
+class ClaseB {
+public:
+    void mostrarA(const ClaseA& a) {
+        cout << "Dato de ClaseA: " << a.datoA << endl;
+    }
+};
+
+int main() {
+    ClaseA a(10);
+    ClaseB b;
+    b.mostrarA(a);
+    return 0;
+}
+<---Ejemplo de Clases Amigas Result--->
+<---Sintaxis--->
+```cpp
+class ClaseB; // Declaración adelantada
+
+class ClaseA {
+    friend class ClaseB; // Declaración de ClaseB como amiga
+    // Miembros de la clase A
+};
+<---Sintaxis Result--->
+<---Ejemplo de Implementación--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class ClaseB; // Declaración adelantada de ClaseB
+
+class ClaseA {
+private:
+    int datoA;
+
+public:
+    ClaseA(int a) : datoA(a) {}
+
+    // Declaración de ClaseB como amiga
+    friend class ClaseB;
+};
+
+class ClaseB {
+public:
+    void mostrarA(const ClaseA& a) {
+        // Acceso directo a los miembros privados de ClaseA
+        cout << "Dato de ClaseA: " << a.datoA << endl;
+    }
+};
+
+int main() {
+    ClaseA a(10);
+    ClaseB b;
+    b.mostrarA(a); // Muestra: Dato de ClaseA: 10
+    return 0;
+}
+<---Ejemplo de Implementación Result--->
+<---Ejemplo de Sobrecarga de Operador--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class Complejo {
+private:
+    double real, imag;
+
+public:
+    Complejo(double r, double i) : real(r), imag(i) {}
+
+    // Declaración de la función amiga para sobrecargar el operador +
+    friend Complejo operator+(const Complejo& c1, const Complejo& c2);
+
+    void mostrar() const {
+        cout << "(" << real << ", " << imag << "i)" << endl;
+    }
+};
+
+// Definición de la función amiga
+Complejo operator+(const Complejo& c1, const Complejo& c2) {
+    return Complejo(c1.real + c2.real, c1.imag + c2.imag);
+}
+
+int main() {
+    Complejo c1(3.0, 4.0), c2(1.0, 2.0);
+    Complejo c3 = c1 + c2;
+    c3.mostrar();
+    return 0;
+}
+<---Ejemplo de Sobrecarga de Operador Result--->
+<---Ejemplo de Clases Amigas--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class ClaseB;
+
+class ClaseA {
+private:
+    int datoA;
+
+public:
+    ClaseA(int a) : datoA(a) {}
+
+    // Declaración de ClaseB como amiga
+    friend class ClaseB;
+};
+
+class ClaseB {
+public:
+    void mostrarA(const ClaseA& a) {
+        cout << "Dato de ClaseA: " << a.datoA << endl;
+    }
+};
+
+int main() {
+    ClaseA a(10);
+    ClaseB b;
+    b.mostrarA(a);
+    return 0;
+}
+<---Ejemplo de Clases Amigas Result--->
+<---Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas--->
+```cpp
+#include <iostream>
+using namespace std;
+
+class Complejo; // Declaración adelantada de Complejo
+
+class Matematicas {
+public:
+    // Declaración de la función amiga para la sobrecarga del operador +
+    friend Complejo operator+(const Complejo& c1, const Complejo& c2);
+};
+
+class Complejo {
+private:
+    double real, imag;
+
+public:
+    Complejo(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
+
+    // Declaración de la función amiga para la sobrecarga del operador +
+    friend Complejo operator+(const Complejo& c1, const Complejo& c2);
+
+    void mostrar() const {
+        cout << "(" << real << ", " << imag << "i)" << endl;
+    }
+};
+
+// Definición de la función amiga para la sobrecarga del operador +
+Complejo operator+(const Complejo& c1, const Complejo& c2) {
+    return Complejo(c1.real + c2.real, c1.imag + c2.imag);
+}
+
+int main() {
+    Complejo c1(3.0, 4.0), c2(1.0, 2.0);
+    Complejo c3 = c1 + c2; // Llama a la función amiga
+    c3.mostrar(); // Muestra: (4.0, 6.0i)
+    return 0;
+}
+<---Ejemplo Avanzado: Sobrecarga de Operadores con Clases Amigas Result--->

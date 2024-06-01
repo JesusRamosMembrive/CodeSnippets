@@ -1,0 +1,1249 @@
+<---EXPLANATION--->
+### Control de Flujo: Condicionales en C++
+
+Los condicionales son estructuras de control de flujo que permiten tomar decisiones en el programa basadas en condiciones específicas. C++ proporciona varias estructuras condicionales, incluyendo `if`, `else if`, `else` y `switch`.
+
+#### 1. **Condicional `if`**
+
+La estructura `if` evalúa una condición y ejecuta un bloque de código si la condición es verdadera.
+
+##### Sintaxis Básica
+
+```cpp
+if (condicion) {
+    // Código a ejecutar si la condición es verdadera
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 10;
+    if (numero > 5) {
+        cout << "El número es mayor que 5." << endl;
+    }
+    return 0;
+}
+```
+
+#### 2. **Condicional `if-else`**
+
+La estructura `if-else` proporciona una alternativa en caso de que la condición `if` sea falsa.
+
+##### Sintaxis Básica
+
+```cpp
+if (condicion) {
+    // Código a ejecutar si la condición es verdadera
+} else {
+    // Código a ejecutar si la condición es falsa
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 3;
+    if (numero > 5) {
+        cout << "El número es mayor que 5." << endl;
+    } else {
+        cout << "El número es 5 o menor." << endl;
+    }
+    return 0;
+}
+```
+
+#### 3. **Condicional `if-else if-else`**
+
+La estructura `if-else if-else` permite evaluar múltiples condiciones secuencialmente. Se ejecuta el primer bloque de código cuya condición es verdadera.
+
+##### Sintaxis Básica
+
+```cpp
+if (condicion1) {
+    // Código a ejecutar si la condición1 es verdadera
+} else if (condicion2) {
+    // Código a ejecutar si la condición2 es verdadera
+} else {
+    // Código a ejecutar si ninguna de las condiciones anteriores es verdadera
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 7;
+    if (numero > 10) {
+        cout << "El número es mayor que 10." << endl;
+    } else if (numero > 5) {
+        cout << "El número es mayor que 5 pero menor o igual a 10." << endl;
+    } else {
+        cout << "El número es 5 o menor." << endl;
+    }
+    return 0;
+}
+```
+
+#### 4. **Condicional `switch`**
+
+La estructura `switch` es útil cuando se necesita evaluar una variable contra múltiples valores constantes. Es más limpia y legible que anidar múltiples `if-else` cuando se compara una sola variable con varios valores.
+
+##### Sintaxis Básica
+
+```cpp
+switch (variable) {
+    case valor1:
+        // Código a ejecutar si variable == valor1
+        break;
+    case valor2:
+        // Código a ejecutar si variable == valor2
+        break;
+    // Más casos según sea necesario
+    default:
+        // Código a ejecutar si ningún caso coincide
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int dia = 3;
+    switch (dia) {
+        case 1:
+            cout << "Lunes" << endl;
+            break;
+        case 2:
+            cout << "Martes" << endl;
+            break;
+        case 3:
+            cout << "Miércoles" << endl;
+            break;
+        case 4:
+            cout << "Jueves" << endl;
+            break;
+        case 5:
+            cout << "Viernes" << endl;
+            break;
+        case 6:
+            cout << "Sábado" << endl;
+            break;
+        case 7:
+            cout << "Domingo" << endl;
+            break;
+        default:
+            cout << "Día no válido" << endl;
+            break;
+    }
+    return 0;
+}
+```
+
+### Consejos y Buenas Prácticas
+
+- **Evitar Anidamiento Extremo:** El anidamiento profundo de condicionales `if` puede hacer que el código sea difícil de leer y mantener. Considera utilizar `switch` o refactorizar el código para simplificar la lógica.
+- **Usar `default` en `switch`:** Siempre proporciona un caso `default` en una estructura `switch` para manejar valores no esperados.
+- **Condiciones Claras y Comprensibles:** Asegúrate de que las condiciones sean claras y fáciles de entender. Evita condiciones complejas que puedan ser confusas.
+
+### Ejemplo Completo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    cout << "Introduce un número: ";
+    cin >> numero;
+
+    if (numero > 0) {
+        cout << "El número es positivo." << endl;
+    } else if (numero < 0) {
+        cout << "El número es negativo." << endl;
+    } else {
+        cout << "El número es cero." << endl;
+    }
+
+    char opcion;
+    cout << "Introduce una opción (a, b, c): ";
+    cin >> opcion;
+
+    switch (opcion) {
+        case 'a':
+            cout << "Opción A seleccionada." << endl;
+            break;
+        case 'b':
+            cout << "Opción B seleccionada." << endl;
+            break;
+        case 'c':
+            cout << "Opción C seleccionada." << endl;
+            break;
+        default:
+            cout << "Opción no válida." << endl;
+            break;
+    }
+
+    return 0;
+}
+```
+
+### Conclusión
+
+El uso de estructuras condicionales en C++ permite a los programadores controlar el flujo de ejecución del programa de manera efectiva. Entender cómo y cuándo usar `if`, `else if`, `else`, y `switch` es esencial para escribir código claro y eficiente.
+### Control de Flujo: Bucles en C++
+
+Los bucles son estructuras de control de flujo que permiten ejecutar un bloque de código repetidamente. C++ proporciona varios tipos de bucles: `for`, `while`, y `do-while`, cada uno con sus propias características y usos específicos.
+
+#### 1. **Bucle `for`**
+
+El bucle `for` se utiliza cuando se conoce de antemano el número de iteraciones que se desea realizar. Se compone de tres partes: inicialización, condición y actualización.
+
+##### Sintaxis Básica
+
+```cpp
+for (inicializacion; condicion; actualizacion) {
+    // Código a ejecutar en cada iteración
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 10; ++i) {
+        cout << "Iteración " << i << endl;
+    }
+    return 0;
+}
+```
+
+#### 2. **Bucle `while`**
+
+El bucle `while` se utiliza cuando se desea repetir un bloque de código mientras se cumpla una condición específica. La condición se evalúa antes de cada iteración.
+
+##### Sintaxis Básica
+
+```cpp
+while (condicion) {
+    // Código a ejecutar en cada iteración
+}
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;
+    while (i < 10) {
+        cout << "Iteración " << i << endl;
+        ++i;
+    }
+    return 0;
+}
+```
+
+#### 3. **Bucle `do-while`**
+
+El bucle `do-while` es similar al bucle `while`, pero garantiza que el bloque de código se ejecuta al menos una vez, ya que la condición se evalúa al final de cada iteración.
+
+##### Sintaxis Básica
+
+```cpp
+do {
+    // Código a ejecutar en cada iteración
+} while (condicion);
+```
+
+##### Ejemplo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;
+    do {
+        cout << "Iteración " << i << endl;
+        ++i;
+    } while (i < 10);
+    return 0;
+}
+```
+
+### Bucles Anidados
+
+Los bucles pueden anidarse, lo que significa que un bucle puede contener otro bucle dentro de su cuerpo. Esto es útil para trabajar con estructuras de datos multidimensionales, como matrices.
+
+##### Ejemplo de Bucles Anidados
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
+
+### Control de Flujo en Bucles
+
+- **`break`**: Termina el bucle inmediatamente.
+- **`continue`**: Salta la iteración actual y continúa con la siguiente iteración del bucle.
+
+##### Ejemplo de `break` y `continue`
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 10; ++i) {
+        if (i == 5) {
+            break; // Salir del bucle cuando i es 5
+        }
+        if (i % 2 == 0) {
+            continue; // Saltar los números pares
+        }
+        cout << "Iteración " << i << endl;
+    }
+    return 0;
+}
+```
+
+### Bucles con Rango (C++11 y Posterior)
+
+El bucle `for` basado en rango simplifica la iteración sobre contenedores, como vectores y arrays, introducido en C++11.
+
+##### Ejemplo de Bucle con Rango
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> numeros = {1, 2, 3, 4, 5};
+
+    for (int numero : numeros) {
+        cout << "Número: " << numero << endl;
+    }
+
+    return 0;
+}
+```
+
+### Buenas Prácticas
+
+- **Evitar Bucles Infinito:** Asegúrate de que las condiciones de terminación de los bucles se cumplan para evitar bucles infinitos.
+- **Usar Comentarios:** Documenta bucles complejos con comentarios claros.
+- **Evitar Uso Excesivo de `break` y `continue`:** Aunque útiles, un uso excesivo puede hacer que el código sea difícil de leer y mantener. Utilízalos con moderación y cuando sea absolutamente necesario.
+
+### Ejemplo Completo
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Bucle for
+    for (int i = 0; i < 5; ++i) {
+        cout << "For loop, iteración: " << i << endl;
+    }
+
+    // Bucle while
+    int j = 0;
+    while (j < 5) {
+        cout << "While loop, iteración: " << j << endl;
+        ++j;
+    }
+
+    // Bucle do-while
+    int k = 0;
+    do {
+        cout << "Do-While loop, iteración: " << k << endl;
+        ++k;
+    } while (k < 5);
+
+    // Bucle for con rango
+    vector<int> numeros = {10, 20, 30, 40, 50};
+    for (int numero : numeros) {
+        cout << "Bucle con rango, número: " << numero << endl;
+    }
+
+    // Bucle anidado
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
+
+### Conclusión
+
+Comprender y utilizar correctamente los diferentes tipos de bucles en C++ es fundamental para controlar el flujo de ejecución de un programa y realizar tareas repetitivas de manera eficiente. Cada tipo de bucle tiene sus propias ventajas y se adapta a diferentes situaciones de programación, lo que permite escribir código más limpio, legible y eficiente.
+### Operador Ternario en C++
+
+El operador ternario es un operador condicional compacto que permite evaluar una expresión y seleccionar entre dos valores basados en una condición. Es útil para simplificar código que de otra manera requeriría una estructura `if-else` más larga.
+
+#### Sintaxis del Operador Ternario
+
+El operador ternario utiliza el símbolo `?` para separar la condición de los dos resultados posibles, y el símbolo `:` para separar los dos resultados.
+
+```cpp
+condicion ? expresion_si_verdadero : expresion_si_falso;
+```
+
+- **`condicion`:** Una expresión booleana que se evalúa.
+- **`expresion_si_verdadero`:** La expresión que se evalúa y retorna si la condición es verdadera.
+- **`expresion_si_falso`:** La expresión que se evalúa y retorna si la condición es falsa.
+
+#### Ejemplo Básico
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5, b = 10;
+
+    // Uso del operador ternario
+    int mayor = (a > b) ? a : b;
+
+    cout << "El mayor valor es: " << mayor << endl;
+
+    return 0;
+}
+```
+
+En este ejemplo, la condición `(a > b)` se evalúa. Si es verdadera, `mayor` toma el valor de `a`; de lo contrario, toma el valor de `b`.
+
+#### Uso Común del Operador Ternario
+
+El operador ternario se utiliza comúnmente para:
+
+- Asignar valores a variables basándose en una condición.
+- Realizar selecciones rápidas entre dos valores sin usar estructuras `if-else`.
+
+##### Asignación Condicional
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 8;
+    string resultado;
+
+    // Asignación condicional con el operador ternario
+    resultado = (numero % 2 == 0) ? "Par" : "Impar";
+
+    cout << "El número " << numero << " es " << resultado << endl;
+
+    return 0;
+}
+```
+
+En este ejemplo, `resultado` se asigna a "Par" si `numero` es divisible por 2, y a "Impar" en caso contrario.
+
+##### Embedding en Expresiones
+
+El operador ternario también se puede utilizar dentro de expresiones más grandes.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad = 20;
+    string mensaje = "Eres " + ((edad >= 18) ? "mayor" : "menor") + " de edad.";
+
+    cout << mensaje << endl;
+
+    return 0;
+}
+```
+
+Aquí, el operador ternario se utiliza para construir dinámicamente la cadena `mensaje`.
+
+#### Consideraciones y Buenas Prácticas
+
+- **Legibilidad:** Aunque el operador ternario puede hacer el código más conciso, un uso excesivo o anidado puede dificultar la lectura del código. Úsalo con moderación.
+- **Simplicidad:** Es mejor utilizar el operador ternario para expresiones simples. Para condiciones complejas, una estructura `if-else` puede ser más clara.
+- **Tipos de Retorno:** Asegúrate de que las expresiones `expresion_si_verdadero` y `expresion_si_falso` retornen el mismo tipo de dato o tipos compatibles para evitar errores de compilación.
+
+#### Ejemplo Completo
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 15;
+    int y = 30;
+
+    // Determinar el mayor número usando el operador ternario
+    int mayor = (x > y) ? x : y;
+    cout << "El mayor valor es: " << mayor << endl;
+
+    // Determinar si un número es par o impar usando el operador ternario
+    int numero = 25;
+    string paridad = (numero % 2 == 0) ? "par" : "impar";
+    cout << "El número " << numero << " es " << paridad << endl;
+
+    // Asignar un mensaje basado en la edad
+    int edad = 17;
+    string mensaje = "Eres " + ((edad >= 18) ? "mayor" : "menor") + " de edad.";
+    cout << mensaje << endl;
+
+    return 0;
+}
+```
+
+### Conclusión
+
+El operador ternario es una herramienta útil en C++ para simplificar expresiones condicionales y hacer el código más compacto. Sin embargo, es importante usarlo con cuidado para mantener la legibilidad y claridad del código. Para condiciones simples, el operador ternario puede ser muy eficaz, mientras que para condiciones más complejas, una estructura `if-else` puede ser más adecuada.
+### `if constexpr` en C++
+
+Introducido en C++17, `if constexpr` es una característica que permite la evaluación condicional en tiempo de compilación. Es especialmente útil en el contexto de la metaprogramación, donde se desea que ciertas partes del código se ejecuten solo si ciertas condiciones son verdaderas durante la compilación, mejorando así la eficiencia y eliminando código innecesario en tiempo de ejecución.
+
+#### ¿Qué es `if constexpr`?
+
+`if constexpr` se utiliza para escribir expresiones condicionales que se evalúan en tiempo de compilación. Si la condición es `true`, el compilador incluye el bloque de código correspondiente; si es `false`, el bloque de código se ignora por completo. Esto permite eliminar ramas de código que nunca se ejecutarán, reduciendo el tamaño del binario y evitando errores de compilación en ramas no utilizadas.
+
+#### Sintaxis Básica
+
+```cpp
+if constexpr (condicion_constexpr) {
+    // Código a ejecutar si la condición es verdadera en tiempo de compilación
+} else {
+    // Código a ejecutar si la condición es falsa en tiempo de compilación
+}
+```
+
+#### Ejemplo Básico
+
+```cpp
+#include <iostream>
+#include <type_traits>
+
+template<typename T>
+void imprimirTipo(T valor) {
+    if constexpr (std::is_integral_v<T>) {
+        std::cout << "El valor es un entero: " << valor << std::endl;
+    } else {
+        std::cout << "El valor no es un entero: " << valor << std::endl;
+    }
+}
+
+int main() {
+    imprimirTipo(10);     // El valor es un entero
+    imprimirTipo(3.14);   // El valor no es un entero
+    return 0;
+}
+```
+
+En este ejemplo, `std::is_integral_v<T>` es una constante en tiempo de compilación que indica si `T` es un tipo integral. `if constexpr` utiliza esta información para decidir qué bloque de código compilar.
+
+#### Ventajas de `if constexpr`
+
+1. **Eficiencia en Tiempo de Compilación:** Elimina ramas de código no necesarias, mejorando la eficiencia.
+2. **Seguridad en el Tipo:** Evita errores de compilación en ramas de código que no son relevantes para ciertos tipos.
+3. **Metaprogramación:** Facilita la escritura de código genérico y optimizado para diferentes tipos.
+
+#### Ejemplo con Plantillas
+
+`if constexpr` es especialmente útil cuando se trabaja con plantillas y se necesita realizar diferentes acciones basadas en el tipo de plantilla.
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <type_traits>
+
+template<typename T>
+void procesar(T valor) {
+    if constexpr (std::is_integral_v<T>) {
+        std::cout << "Procesando un entero: " << valor << std::endl;
+    } else if constexpr (std::is_floating_point_v<T>) {
+        std::cout << "Procesando un número de punto flotante: " << valor << std::endl;
+    } else {
+        std::cout << "Procesando otro tipo: " << valor << std::endl;
+    }
+}
+
+int main() {
+    procesar(42);           // Procesando un entero
+    procesar(3.14159);      // Procesando un número de punto flotante
+    procesar("Hola");       // Procesando otro tipo
+    return 0;
+}
+```
+
+#### Comparación con `if` Tradicional
+
+A diferencia de un `if` tradicional, que se evalúa en tiempo de ejecución, `if constexpr` se evalúa en tiempo de compilación. Esto significa que el código dentro de las ramas no utilizadas no solo no se ejecuta, sino que ni siquiera se compila.
+
+```cpp
+#include <iostream>
+#include <type_traits>
+
+template<typename T>
+void ejemplo(T valor) {
+    if constexpr (sizeof(T) > 4) {
+        std::cout << "Tipo grande\n";
+    } else {
+        std::cout << "Tipo pequeño\n";
+    }
+}
+
+int main() {
+    ejemplo(123);           // Tipo pequeño (int)
+    ejemplo(1234567890123LL); // Tipo grande (long long)
+    return 0;
+}
+```
+
+En este ejemplo, `sizeof(T)` se evalúa en tiempo de compilación, permitiendo que el compilador incluya solo la rama de código relevante.
+
+### Ejemplo Completo y Más Complejo
+
+A continuación, un ejemplo más complejo que muestra cómo `if constexpr` puede ser utilizado en una plantilla genérica para manejar diferentes tipos de contenedores.
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <list>
+#include <type_traits>
+
+template<typename Container>
+void imprimirContenedor(const Container& contenedor) {
+    if constexpr (std::is_same_v<Container, std::vector<typename Container::value_type>>) {
+        std::cout << "Es un vector con tamaño: " << contenedor.size() << std::endl;
+    } else if constexpr (std::is_same_v<Container, std::list<typename Container::value_type>>) {
+        std::cout << "Es una lista con tamaño: " << contenedor.size() << std::endl;
+    } else {
+        std::cout << "Es otro tipo de contenedor con tamaño: " << contenedor.size() << std::endl;
+    }
+
+    for (const auto& elemento : contenedor) {
+        std::cout << elemento << " ";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    std::vector<int> miVector = {1, 2, 3, 4, 5};
+    std::list<int> miLista = {6, 7, 8, 9, 10};
+
+    imprimirContenedor(miVector); // Es un vector con tamaño: 5
+    imprimirContenedor(miLista);  // Es una lista con tamaño: 5
+
+    return 0;
+}
+```
+
+### Conclusión
+
+`if constexpr` es una poderosa característica de C++ que permite la evaluación condicional en tiempo de compilación. Esto es especialmente útil en la metaprogramación y la escritura de código genérico, proporcionando eficiencia y seguridad adicional en el código. Su uso adecuado puede simplificar el manejo de diferentes tipos y mejorar el rendimiento al eliminar ramas de código innecesarias.
+<---FILES--->
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo
+Ejemplo Result
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo
+Ejemplo Result
+Ejemplo de Bucles Anidados
+Ejemplo de Bucles Anidados Result
+Ejemplo de `break` y `continue`
+Ejemplo de `break` y `continue` Result
+Ejemplo de Bucle con Rango
+Ejemplo de Bucle con Rango Result
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo
+Ejemplo Result
+Ejemplo de Bucles Anidados
+Ejemplo de Bucles Anidados Result
+Ejemplo de `break` y `continue`
+Ejemplo de `break` y `continue` Result
+Ejemplo de Bucle con Rango
+Ejemplo de Bucle con Rango Result
+Asignación Condicional
+Asignación Condicional Result
+Embedding en Expresiones
+Embedding en Expresiones Result
+Sintaxis Básica
+Sintaxis Básica Result
+Ejemplo
+Ejemplo Result
+Ejemplo de Bucles Anidados
+Ejemplo de Bucles Anidados Result
+Ejemplo de `break` y `continue`
+Ejemplo de `break` y `continue` Result
+Ejemplo de Bucle con Rango
+Ejemplo de Bucle con Rango Result
+Asignación Condicional
+Asignación Condicional Result
+Embedding en Expresiones
+Embedding en Expresiones Result
+<---Sintaxis Básica--->
+```cpp
+switch (variable) {
+    case valor1:
+        // Código a ejecutar si variable == valor1
+        break;
+    case valor2:
+        // Código a ejecutar si variable == valor2
+        break;
+    // Más casos según sea necesario
+    default:
+        // Código a ejecutar si ningún caso coincide
+}
+<---Sintaxis Básica Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int dia = 3;
+    switch (dia) {
+        case 1:
+            cout << "Lunes" << endl;
+            break;
+        case 2:
+            cout << "Martes" << endl;
+            break;
+        case 3:
+            cout << "Miércoles" << endl;
+            break;
+        case 4:
+            cout << "Jueves" << endl;
+            break;
+        case 5:
+            cout << "Viernes" << endl;
+            break;
+        case 6:
+            cout << "Sábado" << endl;
+            break;
+        case 7:
+            cout << "Domingo" << endl;
+            break;
+        default:
+            cout << "Día no válido" << endl;
+            break;
+    }
+    return 0;
+}
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero;
+    cout << "Introduce un número: ";
+    cin >> numero;
+
+    if (numero > 0) {
+        cout << "El número es positivo." << endl;
+    } else if (numero < 0) {
+        cout << "El número es negativo." << endl;
+    } else {
+        cout << "El número es cero." << endl;
+    }
+
+    char opcion;
+    cout << "Introduce una opción (a, b, c): ";
+    cin >> opcion;
+
+    switch (opcion) {
+        case 'a':
+            cout << "Opción A seleccionada." << endl;
+            break;
+        case 'b':
+            cout << "Opción B seleccionada." << endl;
+            break;
+        case 'c':
+            cout << "Opción C seleccionada." << endl;
+            break;
+        default:
+            cout << "Opción no válida." << endl;
+            break;
+    }
+
+    return 0;
+}
+<---Ejemplo Result--->
+<---Sintaxis Básica--->
+```cpp
+do {
+    // Código a ejecutar en cada iteración
+} while (condicion);
+<---Sintaxis Básica Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;
+    do {
+        cout << "Iteración " << i << endl;
+        ++i;
+    } while (i < 10);
+    return 0;
+}
+<---Ejemplo Result--->
+<---Ejemplo de Bucles Anidados--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+<---Ejemplo de Bucles Anidados Result--->
+<---Ejemplo de `break` y `continue`--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 10; ++i) {
+        if (i == 5) {
+            break; // Salir del bucle cuando i es 5
+        }
+        if (i % 2 == 0) {
+            continue; // Saltar los números pares
+        }
+        cout << "Iteración " << i << endl;
+    }
+    return 0;
+}
+<---Ejemplo de `break` y `continue` Result--->
+<---Ejemplo de Bucle con Rango--->
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> numeros = {1, 2, 3, 4, 5};
+
+    for (int numero : numeros) {
+        cout << "Número: " << numero << endl;
+    }
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Bucle for
+    for (int i = 0; i < 5; ++i) {
+        cout << "For loop, iteración: " << i << endl;
+    }
+
+    // Bucle while
+    int j = 0;
+    while (j < 5) {
+        cout << "While loop, iteración: " << j << endl;
+        ++j;
+    }
+
+    // Bucle do-while
+    int k = 0;
+    do {
+        cout << "Do-While loop, iteración: " << k << endl;
+        ++k;
+    } while (k < 5);
+
+    // Bucle for con rango
+    vector<int> numeros = {10, 20, 30, 40, 50};
+    for (int numero : numeros) {
+        cout << "Bucle con rango, número: " << numero << endl;
+    }
+
+    // Bucle anidado
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+<---Ejemplo de Bucle con Rango Result--->
+<---Sintaxis Básica--->
+```cpp
+do {
+    // Código a ejecutar en cada iteración
+} while (condicion);
+<---Sintaxis Básica Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;
+    do {
+        cout << "Iteración " << i << endl;
+        ++i;
+    } while (i < 10);
+    return 0;
+}
+<---Ejemplo Result--->
+<---Ejemplo de Bucles Anidados--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+<---Ejemplo de Bucles Anidados Result--->
+<---Ejemplo de `break` y `continue`--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 10; ++i) {
+        if (i == 5) {
+            break; // Salir del bucle cuando i es 5
+        }
+        if (i % 2 == 0) {
+            continue; // Saltar los números pares
+        }
+        cout << "Iteración " << i << endl;
+    }
+    return 0;
+}
+<---Ejemplo de `break` y `continue` Result--->
+<---Ejemplo de Bucle con Rango--->
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> numeros = {1, 2, 3, 4, 5};
+
+    for (int numero : numeros) {
+        cout << "Número: " << numero << endl;
+    }
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Bucle for
+    for (int i = 0; i < 5; ++i) {
+        cout << "For loop, iteración: " << i << endl;
+    }
+
+    // Bucle while
+    int j = 0;
+    while (j < 5) {
+        cout << "While loop, iteración: " << j << endl;
+        ++j;
+    }
+
+    // Bucle do-while
+    int k = 0;
+    do {
+        cout << "Do-While loop, iteración: " << k << endl;
+        ++k;
+    } while (k < 5);
+
+    // Bucle for con rango
+    vector<int> numeros = {10, 20, 30, 40, 50};
+    for (int numero : numeros) {
+        cout << "Bucle con rango, número: " << numero << endl;
+    }
+
+    // Bucle anidado
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+<---Ejemplo de Bucle con Rango Result--->
+<---Asignación Condicional--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 8;
+    string resultado;
+
+    // Asignación condicional con el operador ternario
+    resultado = (numero % 2 == 0) ? "Par" : "Impar";
+
+    cout << "El número " << numero << " es " << resultado << endl;
+
+    return 0;
+}
+<---Asignación Condicional Result--->
+<---Embedding en Expresiones--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad = 20;
+    string mensaje = "Eres " + ((edad >= 18) ? "mayor" : "menor") + " de edad.";
+
+    cout << mensaje << endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 15;
+    int y = 30;
+
+    // Determinar el mayor número usando el operador ternario
+    int mayor = (x > y) ? x : y;
+    cout << "El mayor valor es: " << mayor << endl;
+
+    // Determinar si un número es par o impar usando el operador ternario
+    int numero = 25;
+    string paridad = (numero % 2 == 0) ? "par" : "impar";
+    cout << "El número " << numero << " es " << paridad << endl;
+
+    // Asignar un mensaje basado en la edad
+    int edad = 17;
+    string mensaje = "Eres " + ((edad >= 18) ? "mayor" : "menor") + " de edad.";
+    cout << mensaje << endl;
+
+    return 0;
+}
+<---Embedding en Expresiones Result--->
+<---Sintaxis Básica--->
+```cpp
+do {
+    // Código a ejecutar en cada iteración
+} while (condicion);
+<---Sintaxis Básica Result--->
+<---Ejemplo--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 0;
+    do {
+        cout << "Iteración " << i << endl;
+        ++i;
+    } while (i < 10);
+    return 0;
+}
+<---Ejemplo Result--->
+<---Ejemplo de Bucles Anidados--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+<---Ejemplo de Bucles Anidados Result--->
+<---Ejemplo de `break` y `continue`--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 0; i < 10; ++i) {
+        if (i == 5) {
+            break; // Salir del bucle cuando i es 5
+        }
+        if (i % 2 == 0) {
+            continue; // Saltar los números pares
+        }
+        cout << "Iteración " << i << endl;
+    }
+    return 0;
+}
+<---Ejemplo de `break` y `continue` Result--->
+<---Ejemplo de Bucle con Rango--->
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> numeros = {1, 2, 3, 4, 5};
+
+    for (int numero : numeros) {
+        cout << "Número: " << numero << endl;
+    }
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Bucle for
+    for (int i = 0; i < 5; ++i) {
+        cout << "For loop, iteración: " << i << endl;
+    }
+
+    // Bucle while
+    int j = 0;
+    while (j < 5) {
+        cout << "While loop, iteración: " << j << endl;
+        ++j;
+    }
+
+    // Bucle do-while
+    int k = 0;
+    do {
+        cout << "Do-While loop, iteración: " << k << endl;
+        ++k;
+    } while (k < 5);
+
+    // Bucle for con rango
+    vector<int> numeros = {10, 20, 30, 40, 50};
+    for (int numero : numeros) {
+        cout << "Bucle con rango, número: " << numero << endl;
+    }
+
+    // Bucle anidado
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+<---Ejemplo de Bucle con Rango Result--->
+<---Asignación Condicional--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int numero = 8;
+    string resultado;
+
+    // Asignación condicional con el operador ternario
+    resultado = (numero % 2 == 0) ? "Par" : "Impar";
+
+    cout << "El número " << numero << " es " << resultado << endl;
+
+    return 0;
+}
+<---Asignación Condicional Result--->
+<---Embedding en Expresiones--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad = 20;
+    string mensaje = "Eres " + ((edad >= 18) ? "mayor" : "menor") + " de edad.";
+
+    cout << mensaje << endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 15;
+    int y = 30;
+
+    // Determinar el mayor número usando el operador ternario
+    int mayor = (x > y) ? x : y;
+    cout << "El mayor valor es: " << mayor << endl;
+
+    // Determinar si un número es par o impar usando el operador ternario
+    int numero = 25;
+    string paridad = (numero % 2 == 0) ? "par" : "impar";
+    cout << "El número " << numero << " es " << paridad << endl;
+
+    // Asignar un mensaje basado en la edad
+    int edad = 17;
+    string mensaje = "Eres " + ((edad >= 18) ? "mayor" : "menor") + " de edad.";
+    cout << mensaje << endl;
+
+    return 0;
+}
+<---Embedding en Expresiones Result--->

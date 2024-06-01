@@ -1,7 +1,6 @@
 import re
 import unicodedata
 from dataclasses import dataclass, field
-import FolderAndPathsUtils as fpu
 
 
 @dataclass
@@ -42,15 +41,14 @@ class TextProcessor:
 
     def __create_files_section(self) -> None:
         """Create the files section of the final text."""
+        for key, value in self.examples_and_code_dict.items():
+            self.files += key + "\n"
         if not self.files:
             self.files = "<---FILES--->" + "\n" + "No files found." + "\n"
-        else:
-            for key, value in self.file_map.items():
-                self.files += key + "\n"
 
     def __create_examples_section(self) -> None:
         """Create the examples section of the final text."""
-        for key, value in self.file_map.items():
+        for key, value in self.examples_and_code_dict.items():
             self.text_of_example_section += "<---" + key + "--->" + "\n"
             for code in value:
                 self.text_of_example_section += code
@@ -61,7 +59,7 @@ class TextProcessor:
 
     def __save_final_text(self) -> None:
         """Save the final text to a file with the title provided."""
-        with open(fr"{self.path_to_save_final_text}/{self.title_clean}.txt", "w", encoding='utf-8') as f:
+        with open(fr"{self.path_to_save_final_text}/{self.name_cleaned}.txt", "w", encoding='utf-8') as f:
             f.write(self.text_processed)
 
     def __clean_file_name(self, name: str) -> None:
@@ -76,18 +74,15 @@ class TextProcessor:
         normalized_text = unicodedata.normalize('NFD', self.name_cleaned)
         self.name_cleaned = ''.join(c for c in normalized_text if unicodedata.category(c) != 'Mn')
 
-    def __get_file_title(self, file_text: str) -> str:
+    def __get_file_title(self, file_text: str) -> None:
         """Get the title of the file."""
-        # print(f"File text: {file_text}")
         try:
             for line in file_text.split("\n"):
-                print(f"Line: {line}")
                 title: str = line.split("###")[1].strip()
                 self.__clean_file_name(title)
                 break
         except Exception as e:
-            # print(e)
-            return "Untitled"
+            print(e)
 
     def __extract_text_between_users(self, content: str) -> list[str]:
         block = content.split("User")
@@ -100,18 +95,15 @@ class TextProcessor:
                     self.extracted_text.append(goal_text)
         return self.extracted_text
 
-    def set_path_to_save_final_text(self, path: str) -> None:
-        self.path_to_save_final_text = path
+    def set_path_to_save_final_text(self, path_to_save: str) -> None:
+        self.path_to_save_final_text = path_to_save
 
-    def create_a_file_algorithm(self, text_to_analyze: str) -> None:
+    def create_a_file_algorithm(self, text_to_process: str) -> None:
         """Create a file with the explanation, files, and examples."""
         counter: int = 0
 
-        for index, text_extracted in enumerate(self.__extract_text_between_users(text_to_analyze)):
-            title = self.__get_file_title(text_extracted)
-            if title == "Untitled":
-                print(f"Skipping file creation for extracted text {index} due to untitled")
-                continue
+        for index, text_extracted in enumerate(self.__extract_text_between_users(text_to_process)):
+            self.__get_file_title(text_extracted)
             self.__create_explanation_section(text_extracted)
             self.__create_file_dict(text_extracted)
             self.__create_files_section()
@@ -121,17 +113,20 @@ class TextProcessor:
             counter += 1
 
     @staticmethod
-    def generate_file(text_to_analyze: str, path: str) -> None:
+    def generate_file(text_to_process: str, path_of_file: str) -> None:
         processor = TextProcessor()
-        processor.set_path_to_save_final_text(path)
-        processor.create_a_file_algorithm(text_to_analyze)
+        processor.set_path_to_save_final_text(path_of_file)
+        processor.create_a_file_algorithm(text_to_process)
 
 
-if __name__ == "__main__":
-    text_to_analyze: str = fpu.open_txt_file(
-        r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\BackUp/Amigas.txt")
-    path = r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TestZone"
+# Test zone
+# if __name__ == "__main__":
+# import FolderAndPathsUtils as fpu
 
-    processor = TextProcessor()
-    processor.set_path_to_save_final_text(path)
-    processor.create_a_file_algorithm(text_to_analyze)
+# list_of_files = [r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\TextToProcess/Amigas.txt",
+# r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\TextToProcess/Concepts.txt"]
+#
+#     for file in list_of_files:
+#         text_to_analyze: str = fpu.open_txt_file(file)
+#         path = r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\TestZone"
+#         TextProcessor().generate_file(text_to_analyze, path)

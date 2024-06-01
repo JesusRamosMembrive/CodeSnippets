@@ -1,0 +1,1184 @@
+<---EXPLANATION--->
+### Algoritmos de la Biblioteca Estándar: `std::all_of`
+
+La función `std::all_of` es un algoritmo de la biblioteca estándar de C++ que se utiliza para verificar si todos los elementos en un rango satisfacen una determinada condición. Es parte del encabezado `<algorithm>` y es muy útil para realizar verificaciones globales sobre los elementos de contenedores como vectores, listas, arrays, etc.
+
+#### Sintaxis de `std::all_of`
+
+```cpp
+#include <algorithm>
+
+template <class InputIt, class UnaryPredicate>
+bool all_of(InputIt first, InputIt last, UnaryPredicate p);
+```
+
+- **`InputIt first`**: Iterador al primer elemento del rango.
+- **`InputIt last`**: Iterador al elemento después del último en el rango.
+- **`UnaryPredicate p`**: Una función o función objeto que toma un elemento del rango y devuelve un valor convertible a `bool`.
+
+#### Descripción
+
+`std::all_of` aplica el predicado `p` a todos los elementos en el rango `[first, last)` y devuelve `true` si el predicado devuelve `true` para todos los elementos. De lo contrario, devuelve `false`.
+
+#### Ejemplo de Uso de `std::all_of`
+
+##### Ejemplo Básico
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+bool esPositivo(int n) {
+    return n > 0;
+}
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Verificar si todos los elementos son positivos
+    bool todosPositivos = std::all_of(vec.begin(), vec.end(), esPositivo);
+
+    if (todosPositivos) {
+        std::cout << "Todos los elementos son positivos." << std::endl;
+    } else {
+        std::cout << "No todos los elementos son positivos." << std::endl;
+    }
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `esPositivo` es una función que verifica si un número es mayor que cero.
+- `std::all_of(vec.begin(), vec.end(), esPositivo)` verifica si todos los elementos del vector son positivos.
+
+##### Ejemplo con Lambda
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para verificar si todos los elementos son positivos
+    bool todosPositivos = std::all_of(vec.begin(), vec.end(), [](int n) {
+        return n > 0;
+    });
+
+    if (todosPositivos) {
+        std::cout << "Todos los elementos son positivos." << std::endl;
+    } else {
+        std::cout << "No todos los elementos son positivos." << std::endl;
+    }
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- Se usa una expresión lambda para definir el predicado en línea.
+
+### Más Ejemplos
+
+#### Verificar si Todos los Elementos son Pares
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {2, 4, 6, 8, 10};
+
+    // Usar una lambda para verificar si todos los elementos son pares
+    bool todosPares = std::all_of(vec.begin(), vec.end(), [](int n) {
+        return n % 2 == 0;
+    });
+
+    if (todosPares) {
+        std::cout << "Todos los elementos son pares." << std::endl;
+    } else {
+        std::cout << "No todos los elementos son pares." << std::endl;
+    }
+
+    return 0;
+}
+```
+
+#### Verificar si Todos los Elementos Están en un Rango
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {5, 6, 7, 8, 9};
+
+    // Usar una lambda para verificar si todos los elementos están en el rango [5, 10]
+    bool enRango = std::all_of(vec.begin(), vec.end(), [](int n) {
+        return n >= 5 && n <= 10;
+    });
+
+    if (enRango) {
+        std::cout << "Todos los elementos están en el rango [5, 10]." << std::endl;
+    } else {
+        std::cout << "No todos los elementos están en el rango [5, 10]." << std::endl;
+    }
+
+    return 0;
+}
+```
+
+### Consideraciones
+
+- **Rendimiento:** `std::all_of` detiene la evaluación tan pronto como encuentra el primer elemento que no satisface el predicado, lo que puede mejorar el rendimiento en comparación con un bucle que siempre recorre todos los elementos.
+- **Uso con Diferentes Contenedores:** Funciona con cualquier contenedor que soporte iteradores, como `std::vector`, `std::list`, `std::array`, etc.
+
+### Conclusión
+
+`std::all_of` es una función útil y poderosa de la biblioteca estándar de C++ que permite verificar de manera eficiente si todos los elementos en un rango cumplen con una condición específica. Su uso con funciones, funtores y lambdas proporciona una gran flexibilidad y es esencial para escribir código conciso y claro en C++.
+### Algoritmo de la Biblioteca Estándar: `std::for_each`
+
+El algoritmo `std::for_each` de la biblioteca estándar de C++ se utiliza para aplicar una función a cada elemento de un rango. Es una herramienta útil para realizar operaciones repetitivas en cada elemento de un contenedor.
+
+#### Sintaxis de `std::for_each`
+
+```cpp
+#include <algorithm>
+
+template <class InputIt, class UnaryFunction>
+UnaryFunction for_each(InputIt first, InputIt last, UnaryFunction f);
+```
+
+- **`InputIt first`**: Iterador al primer elemento del rango.
+- **`InputIt last`**: Iterador al elemento después del último en el rango.
+- **`UnaryFunction f`**: Una función o función objeto que se aplicará a cada elemento en el rango.
+
+#### Descripción
+
+`std::for_each` aplica la función `f` a cada elemento en el rango `[first, last)`. La función `f` puede ser una función regular, un objeto de función (functor) o una lambda.
+
+#### Ejemplo de Uso de `std::for_each`
+
+##### Ejemplo Básico
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void imprimir(int n) {
+    std::cout << n << " ";
+}
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::for_each para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), imprimir);
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `imprimir` es una función que toma un entero y lo imprime.
+- `std::for_each(vec.begin(), vec.end(), imprimir)` aplica la función `imprimir` a cada elemento del vector.
+
+##### Ejemplo con Lambda
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- Se usa una expresión lambda para definir la operación de impresión en línea.
+
+### Más Ejemplos
+
+#### Incrementar Cada Elemento de un Contenedor
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para incrementar cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int& n) {
+        n += 1;
+    });
+
+    // Imprimir los elementos incrementados
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- La lambda incrementa cada elemento del vector en 1.
+- Luego, se imprime cada elemento del vector utilizando `std::for_each`.
+
+#### Acumular Valores Usando un Functor
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Acumulador {
+    int suma = 0;
+
+    void operator()(int n) {
+        suma += n;
+    }
+};
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    Acumulador acumulador = std::for_each(vec.begin(), vec.end(), Acumulador());
+
+    std::cout << "Suma de los elementos: " << acumulador.suma << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `Acumulador` es un functor que acumula la suma de los elementos.
+- `std::for_each` aplica el functor a cada elemento del vector y devuelve el functor actualizado.
+
+### Consideraciones
+
+- **Rendimiento:** `std::for_each` es eficiente y generalmente se compila a código similar al de un bucle `for` explícito.
+- **Modificabilidad:** La función o lambda pasada a `std::for_each` puede modificar los elementos del contenedor si se pasan por referencia.
+
+### Conclusión
+
+`std::for_each` es un algoritmo de la biblioteca estándar de C++ que proporciona una forma conveniente y expresiva de aplicar una operación a cada elemento de un rango. Su uso con funciones, funtores y lambdas ofrece gran flexibilidad, y es una herramienta valiosa para escribir código conciso y claro en C++.
+### Algoritmo de la Biblioteca Estándar: `std::accumulate`
+
+La función `std::accumulate` es un algoritmo de la biblioteca estándar de C++ que se utiliza para sumar los elementos de un rango, acumulando un valor inicial con el resultado de aplicar una operación binaria a los elementos del rango. Es parte del encabezado `<numeric>`.
+
+#### Sintaxis de `std::accumulate`
+
+```cpp
+#include <numeric>
+
+template <class InputIt, class T>
+T accumulate(InputIt first, InputIt last, T init);
+
+template <class InputIt, class T, class BinaryOperation>
+T accumulate(InputIt first, InputIt last, T init, BinaryOperation op);
+```
+
+- **`InputIt first`**: Iterador al primer elemento del rango.
+- **`InputIt last`**: Iterador al elemento después del último en el rango.
+- **`T init`**: Valor inicial de la acumulación.
+- **`BinaryOperation op`** (opcional): Operación binaria que se aplicará a los elementos y al acumulador.
+
+#### Descripción
+
+`std::accumulate` aplica una operación binaria a un valor inicial y a cada uno de los elementos del rango, acumulando el resultado. Si no se proporciona una operación binaria, se utiliza la suma por defecto.
+
+#### Ejemplo de Uso de `std::accumulate`
+
+##### Ejemplo Básico (Suma)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::accumulate para sumar todos los elementos
+    int suma = std::accumulate(vec.begin(), vec.end(), 0);
+
+    std::cout << "La suma de los elementos es: " << suma << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `std::accumulate(vec.begin(), vec.end(), 0)` suma todos los elementos del vector comenzando con un valor inicial de `0`.
+
+##### Ejemplo con Operación Binaria Personalizada (Multiplicación)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::accumulate para multiplicar todos los elementos
+    int producto = std::accumulate(vec.begin(), vec.end(), 1, std::multiplies<int>());
+
+    std::cout << "El producto de los elementos es: " << producto << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `std::accumulate(vec.begin(), vec.end(), 1, std::multiplies<int>())` multiplica todos los elementos del vector comenzando con un valor inicial de `1`.
+
+### Más Ejemplos
+
+#### Concatenar Cadenas de Texto
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <string>
+
+int main() {
+    std::vector<std::string> vec = {"Hola", " ", "mundo", "!"};
+
+    // Usar std::accumulate para concatenar todas las cadenas
+    std::string resultado = std::accumulate(vec.begin(), vec.end(), std::string(""));
+
+    std::cout << "Cadena concatenada: " << resultado << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `std::accumulate(vec.begin(), vec.end(), std::string(""))` concatena todas las cadenas del vector comenzando con una cadena vacía.
+
+#### Calcular la Media de los Elementos
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Calcular la suma de los elementos
+    int suma = std::accumulate(vec.begin(), vec.end(), 0);
+
+    // Calcular la media
+    double media = static_cast<double>(suma) / vec.size();
+
+    std::cout << "La media de los elementos es: " << media << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- Se calcula la suma de los elementos del vector y luego se divide por el número de elementos para obtener la media.
+
+### Consideraciones
+
+- **Rendimiento:** `std::accumulate` es eficiente y su rendimiento es lineal en relación con el número de elementos del rango.
+- **Flexibilidad:** Puede usarse con cualquier tipo de contenedor que soporte iteradores y con cualquier operación binaria que tome dos parámetros del tipo de los elementos del contenedor.
+
+### Conclusión
+
+`std::accumulate` es un algoritmo versátil y poderoso de la biblioteca estándar de C++ que permite acumular valores en un rango utilizando una operación binaria. Su uso con funciones, funtores y lambdas ofrece gran flexibilidad y es esencial para escribir código conciso y claro en C++. Comprender cómo utilizar `std::accumulate` puede simplificar muchas operaciones comunes de reducción y acumulación en C++.
+### Algoritmos de la Biblioteca Estándar: `std::max` y `std::min`
+
+Las funciones `std::max` y `std::min` son parte de la biblioteca estándar de C++ y se utilizan para encontrar el mayor y el menor de dos valores, respectivamente. También existen versiones de estas funciones que operan sobre rangos de elementos. Estas funciones son parte del encabezado `<algorithm>`.
+
+#### Sintaxis de `std::max` y `std::min`
+
+##### `std::max`
+
+```cpp
+#include <algorithm>
+
+template <class T>
+const T& max(const T& a, const T& b);
+
+template <class T, class Compare>
+const T& max(const T& a, const T& b, Compare comp);
+
+template <class ForwardIt>
+ForwardIt max_element(ForwardIt first, ForwardIt last);
+
+template <class ForwardIt, class Compare>
+ForwardIt max_element(ForwardIt first, ForwardIt last, Compare comp);
+```
+
+##### `std::min`
+
+```cpp
+#include <algorithm>
+
+template <class T>
+const T& min(const T& a, const T& b);
+
+template <class T, class Compare>
+const T& min(const T& a, const T& b, Compare comp);
+
+template <class ForwardIt>
+ForwardIt min_element(ForwardIt first, ForwardIt last);
+
+template <class ForwardIt, class Compare>
+ForwardIt min_element(ForwardIt first, ForwardIt last, Compare comp);
+```
+
+#### Descripción
+
+- **`std::max` y `std::min`:** Devuelven el mayor y el menor de dos valores, respectivamente. Se puede proporcionar una función de comparación personalizada.
+- **`std::max_element` y `std::min_element`:** Encuentran el mayor y el menor elemento en un rango de elementos, respectivamente. Se puede proporcionar una función de comparación personalizada.
+
+#### Ejemplo de Uso de `std::max` y `std::min`
+
+##### Ejemplo Básico con Dos Valores
+
+```cpp
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    int a = 10, b = 20;
+
+    // Encontrar el valor máximo
+    int maxVal = std::max(a, b);
+    std::cout << "El mayor de " << a << " y " << b << " es " << maxVal << std::endl;
+
+    // Encontrar el valor mínimo
+    int minVal = std::min(a, b);
+    std::cout << "El menor de " << a << " y " << b << " es " << minVal << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `std::max(a, b)` devuelve el mayor de `a` y `b`.
+- `std::min(a, b)` devuelve el menor de `a` y `b`.
+
+##### Ejemplo con Comparación Personalizada
+
+```cpp
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+int main() {
+    std::string s1 = "apple", s2 = "orange";
+
+    // Comparar las cadenas por longitud
+    auto maxLen = std::max(s1, s2, [](const std::string& lhs, const std::string& rhs) {
+        return lhs.size() < rhs.size();
+    });
+
+    std::cout << "La cadena con mayor longitud es: " << maxLen << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- Se usa una lambda para comparar las cadenas por su longitud.
+
+#### Uso de `std::max_element` y `std::min_element`
+
+##### Ejemplo Básico con un Rango de Elementos
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Encontrar el elemento máximo
+    auto maxIt = std::max_element(vec.begin(), vec.end());
+    std::cout << "El elemento máximo es: " << *maxIt << std::endl;
+
+    // Encontrar el elemento mínimo
+    auto minIt = std::min_element(vec.begin(), vec.end());
+    std::cout << "El elemento mínimo es: " << *minIt << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `std::max_element(vec.begin(), vec.end())` devuelve un iterador al elemento máximo en el vector.
+- `std::min_element(vec.begin(), vec.end())` devuelve un iterador al elemento mínimo en el vector.
+
+##### Ejemplo con Comparación Personalizada
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Punto {
+    int x, y;
+};
+
+bool compararPorDistancia(const Punto& p1, const Punto& p2) {
+    return (p1.x * p1.x + p1.y * p1.y) < (p2.x * p2.x + p2.y * p2.y);
+}
+
+int main() {
+    std::vector<Punto> puntos = {{1, 2}, {3, 4}, {0, 5}, {-1, -1}};
+
+    // Encontrar el punto más lejano del origen
+    auto maxIt = std::max_element(puntos.begin(), puntos.end(), compararPorDistancia);
+    std::cout << "El punto más lejano es: (" << maxIt->x << ", " << maxIt->y << ")" << std::endl;
+
+    // Encontrar el punto más cercano al origen
+    auto minIt = std::min_element(puntos.begin(), puntos.end(), compararPorDistancia);
+    std::cout << "El punto más cercano es: (" << minIt->x << ", " << minIt->y << ")" << std::endl;
+
+    return 0;
+}
+```
+
+En este ejemplo:
+- `compararPorDistancia` es una función que compara dos puntos por su distancia al origen.
+- `std::max_element` y `std::min_element` usan esta función para encontrar el punto más lejano y el más cercano, respectivamente.
+
+### Consideraciones
+
+- **Rendimiento:** `std::max` y `std::min` operan en tiempo constante, mientras que `std::max_element` y `std::min_element` tienen un rendimiento lineal respecto al número de elementos en el rango.
+- **Flexibilidad:** Se pueden usar con cualquier tipo de datos que soporte las operaciones de comparación necesarias.
+
+### Conclusión
+
+`std::max` y `std::min` son funciones útiles de la biblioteca estándar de C++ para encontrar el mayor y el menor de dos valores, respectivamente. `std::max_element` y `std::min_element` extienden esta funcionalidad para operar sobre rangos de elementos. La capacidad de proporcionar funciones de comparación personalizadas hace que estos algoritmos sean extremadamente flexibles y poderosos, permitiendo su uso en una amplia variedad de escenarios de programación.
+<---FILES--->
+Ejemplo Básico
+Ejemplo Básico Result
+Ejemplo con Lambda
+Ejemplo con Lambda Result
+Ejemplo Básico
+Ejemplo Básico Result
+Ejemplo con Lambda
+Ejemplo con Lambda Result
+Ejemplo Básico
+Ejemplo Básico Result
+Ejemplo con Lambda
+Ejemplo con Lambda Result
+Ejemplo Básico (Suma)
+Ejemplo Básico (Suma) Result
+Ejemplo con Operación Binaria Personalizada (Multiplicación)
+Ejemplo con Operación Binaria Personalizada (Multiplicación) Result
+Ejemplo Básico
+Ejemplo Básico Result
+Ejemplo con Lambda
+Ejemplo con Lambda Result
+Ejemplo Básico (Suma)
+Ejemplo Básico (Suma) Result
+Ejemplo con Operación Binaria Personalizada (Multiplicación)
+Ejemplo con Operación Binaria Personalizada (Multiplicación) Result
+`std::max`
+`std::max` Result
+`std::min`
+`std::min` Result
+Ejemplo Básico con Dos Valores
+Ejemplo Básico con Dos Valores Result
+Ejemplo con Comparación Personalizada
+Ejemplo con Comparación Personalizada Result
+Ejemplo Básico con un Rango de Elementos
+Ejemplo Básico con un Rango de Elementos Result
+<---Ejemplo Básico--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+bool esPositivo(int n) {
+    return n > 0;
+}
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Verificar si todos los elementos son positivos
+    bool todosPositivos = std::all_of(vec.begin(), vec.end(), esPositivo);
+
+    if (todosPositivos) {
+        std::cout << "Todos los elementos son positivos." << std::endl;
+    } else {
+        std::cout << "No todos los elementos son positivos." << std::endl;
+    }
+
+    return 0;
+}
+<---Ejemplo Básico Result--->
+<---Ejemplo con Lambda--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para verificar si todos los elementos son positivos
+    bool todosPositivos = std::all_of(vec.begin(), vec.end(), [](int n) {
+        return n > 0;
+    });
+
+    if (todosPositivos) {
+        std::cout << "Todos los elementos son positivos." << std::endl;
+    } else {
+        std::cout << "No todos los elementos son positivos." << std::endl;
+    }
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {2, 4, 6, 8, 10};
+
+    // Usar una lambda para verificar si todos los elementos son pares
+    bool todosPares = std::all_of(vec.begin(), vec.end(), [](int n) {
+        return n % 2 == 0;
+    });
+
+    if (todosPares) {
+        std::cout << "Todos los elementos son pares." << std::endl;
+    } else {
+        std::cout << "No todos los elementos son pares." << std::endl;
+    }
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {5, 6, 7, 8, 9};
+
+    // Usar una lambda para verificar si todos los elementos están en el rango [5, 10]
+    bool enRango = std::all_of(vec.begin(), vec.end(), [](int n) {
+        return n >= 5 && n <= 10;
+    });
+
+    if (enRango) {
+        std::cout << "Todos los elementos están en el rango [5, 10]." << std::endl;
+    } else {
+        std::cout << "No todos los elementos están en el rango [5, 10]." << std::endl;
+    }
+
+    return 0;
+}
+<---Ejemplo con Lambda Result--->
+<---Ejemplo Básico--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void imprimir(int n) {
+    std::cout << n << " ";
+}
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::for_each para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), imprimir);
+    std::cout << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico Result--->
+<---Ejemplo con Lambda--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para incrementar cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int& n) {
+        n += 1;
+    });
+
+    // Imprimir los elementos incrementados
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Acumulador {
+    int suma = 0;
+
+    void operator()(int n) {
+        suma += n;
+    }
+};
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    Acumulador acumulador = std::for_each(vec.begin(), vec.end(), Acumulador());
+
+    std::cout << "Suma de los elementos: " << acumulador.suma << std::endl;
+
+    return 0;
+}
+<---Ejemplo con Lambda Result--->
+<---Ejemplo Básico--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void imprimir(int n) {
+    std::cout << n << " ";
+}
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::for_each para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), imprimir);
+    std::cout << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico Result--->
+<---Ejemplo con Lambda--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para incrementar cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int& n) {
+        n += 1;
+    });
+
+    // Imprimir los elementos incrementados
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Acumulador {
+    int suma = 0;
+
+    void operator()(int n) {
+        suma += n;
+    }
+};
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    Acumulador acumulador = std::for_each(vec.begin(), vec.end(), Acumulador());
+
+    std::cout << "Suma de los elementos: " << acumulador.suma << std::endl;
+
+    return 0;
+}
+<---Ejemplo con Lambda Result--->
+<---Ejemplo Básico (Suma)--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::accumulate para sumar todos los elementos
+    int suma = std::accumulate(vec.begin(), vec.end(), 0);
+
+    std::cout << "La suma de los elementos es: " << suma << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico (Suma) Result--->
+<---Ejemplo con Operación Binaria Personalizada (Multiplicación)--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::accumulate para multiplicar todos los elementos
+    int producto = std::accumulate(vec.begin(), vec.end(), 1, std::multiplies<int>());
+
+    std::cout << "El producto de los elementos es: " << producto << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <string>
+
+int main() {
+    std::vector<std::string> vec = {"Hola", " ", "mundo", "!"};
+
+    // Usar std::accumulate para concatenar todas las cadenas
+    std::string resultado = std::accumulate(vec.begin(), vec.end(), std::string(""));
+
+    std::cout << "Cadena concatenada: " << resultado << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Calcular la suma de los elementos
+    int suma = std::accumulate(vec.begin(), vec.end(), 0);
+
+    // Calcular la media
+    double media = static_cast<double>(suma) / vec.size();
+
+    std::cout << "La media de los elementos es: " << media << std::endl;
+
+    return 0;
+}
+<---Ejemplo con Operación Binaria Personalizada (Multiplicación) Result--->
+<---Ejemplo Básico--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+void imprimir(int n) {
+    std::cout << n << " ";
+}
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::for_each para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), imprimir);
+    std::cout << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico Result--->
+<---Ejemplo con Lambda--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para imprimir cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar una lambda para incrementar cada elemento del vector
+    std::for_each(vec.begin(), vec.end(), [](int& n) {
+        n += 1;
+    });
+
+    // Imprimir los elementos incrementados
+    std::for_each(vec.begin(), vec.end(), [](int n) {
+        std::cout << n << " ";
+    });
+    std::cout << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Acumulador {
+    int suma = 0;
+
+    void operator()(int n) {
+        suma += n;
+    }
+};
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    Acumulador acumulador = std::for_each(vec.begin(), vec.end(), Acumulador());
+
+    std::cout << "Suma de los elementos: " << acumulador.suma << std::endl;
+
+    return 0;
+}
+<---Ejemplo con Lambda Result--->
+<---Ejemplo Básico (Suma)--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::accumulate para sumar todos los elementos
+    int suma = std::accumulate(vec.begin(), vec.end(), 0);
+
+    std::cout << "La suma de los elementos es: " << suma << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico (Suma) Result--->
+<---Ejemplo con Operación Binaria Personalizada (Multiplicación)--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Usar std::accumulate para multiplicar todos los elementos
+    int producto = std::accumulate(vec.begin(), vec.end(), 1, std::multiplies<int>());
+
+    std::cout << "El producto de los elementos es: " << producto << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+#include <string>
+
+int main() {
+    std::vector<std::string> vec = {"Hola", " ", "mundo", "!"};
+
+    // Usar std::accumulate para concatenar todas las cadenas
+    std::string resultado = std::accumulate(vec.begin(), vec.end(), std::string(""));
+
+    std::cout << "Cadena concatenada: " << resultado << std::endl;
+
+    return 0;
+}
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Calcular la suma de los elementos
+    int suma = std::accumulate(vec.begin(), vec.end(), 0);
+
+    // Calcular la media
+    double media = static_cast<double>(suma) / vec.size();
+
+    std::cout << "La media de los elementos es: " << media << std::endl;
+
+    return 0;
+}
+<---Ejemplo con Operación Binaria Personalizada (Multiplicación) Result--->
+<---`std::max`--->
+```cpp
+#include <algorithm>
+
+template <class T>
+const T& max(const T& a, const T& b);
+
+template <class T, class Compare>
+const T& max(const T& a, const T& b, Compare comp);
+
+template <class ForwardIt>
+ForwardIt max_element(ForwardIt first, ForwardIt last);
+
+template <class ForwardIt, class Compare>
+ForwardIt max_element(ForwardIt first, ForwardIt last, Compare comp);
+<---`std::max` Result--->
+<---`std::min`--->
+```cpp
+#include <algorithm>
+
+template <class T>
+const T& min(const T& a, const T& b);
+
+template <class T, class Compare>
+const T& min(const T& a, const T& b, Compare comp);
+
+template <class ForwardIt>
+ForwardIt min_element(ForwardIt first, ForwardIt last);
+
+template <class ForwardIt, class Compare>
+ForwardIt min_element(ForwardIt first, ForwardIt last, Compare comp);
+<---`std::min` Result--->
+<---Ejemplo Básico con Dos Valores--->
+```cpp
+#include <iostream>
+#include <algorithm>
+
+int main() {
+    int a = 10, b = 20;
+
+    // Encontrar el valor máximo
+    int maxVal = std::max(a, b);
+    std::cout << "El mayor de " << a << " y " << b << " es " << maxVal << std::endl;
+
+    // Encontrar el valor mínimo
+    int minVal = std::min(a, b);
+    std::cout << "El menor de " << a << " y " << b << " es " << minVal << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico con Dos Valores Result--->
+<---Ejemplo con Comparación Personalizada--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Punto {
+    int x, y;
+};
+
+bool compararPorDistancia(const Punto& p1, const Punto& p2) {
+    return (p1.x * p1.x + p1.y * p1.y) < (p2.x * p2.x + p2.y * p2.y);
+}
+
+int main() {
+    std::vector<Punto> puntos = {{1, 2}, {3, 4}, {0, 5}, {-1, -1}};
+
+    // Encontrar el punto más lejano del origen
+    auto maxIt = std::max_element(puntos.begin(), puntos.end(), compararPorDistancia);
+    std::cout << "El punto más lejano es: (" << maxIt->x << ", " << maxIt->y << ")" << std::endl;
+
+    // Encontrar el punto más cercano al origen
+    auto minIt = std::min_element(puntos.begin(), puntos.end(), compararPorDistancia);
+    std::cout << "El punto más cercano es: (" << minIt->x << ", " << minIt->y << ")" << std::endl;
+
+    return 0;
+}
+<---Ejemplo con Comparación Personalizada Result--->
+<---Ejemplo Básico con un Rango de Elementos--->
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+
+    // Encontrar el elemento máximo
+    auto maxIt = std::max_element(vec.begin(), vec.end());
+    std::cout << "El elemento máximo es: " << *maxIt << std::endl;
+
+    // Encontrar el elemento mínimo
+    auto minIt = std::min_element(vec.begin(), vec.end());
+    std::cout << "El elemento mínimo es: " << *minIt << std::endl;
+
+    return 0;
+}
+<---Ejemplo Básico con un Rango de Elementos Result--->

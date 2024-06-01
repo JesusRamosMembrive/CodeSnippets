@@ -1,0 +1,276 @@
+<---EXPLANATION--->
+### Tipos de Datos Básicos (Datos Primitivos) en C++
+
+Los tipos de datos básicos, también conocidos como datos primitivos, son los bloques fundamentales que se utilizan para almacenar datos en un programa. C++ proporciona varios tipos de datos básicos para manejar diferentes tipos de información.
+
+#### 1. **Enteros (`int`)**
+El tipo de dato `int` se utiliza para almacenar números enteros. Su tamaño suele ser de 4 bytes, lo que permite almacenar valores en el rango de aproximadamente -2,147,483,648 a 2,147,483,647.
+
+```cpp
+int numero = 42;
+```
+
+#### 2. **Caracteres (`char`)**
+El tipo `char` se utiliza para almacenar un solo carácter. Su tamaño es de 1 byte, permitiendo representar caracteres individuales como letras, números y símbolos.
+
+```cpp
+char letra = 'A';
+```
+
+#### 3. **Booleanos (`bool`)**
+El tipo `bool` almacena valores booleanos, que pueden ser `true` o `false`. Se utiliza para representar condiciones y resultados lógicos.
+
+```cpp
+bool esVerdadero = true;
+```
+
+#### 4. **Flotantes (`float` y `double`)**
+Los tipos `float` y `double` se utilizan para almacenar números en punto flotante (números con decimales). `float` ocupa 4 bytes y `double` ocupa 8 bytes, ofreciendo mayor precisión.
+
+```cpp
+float numeroDecimal = 3.14f;
+double numeroGrande = 2.718281828459;
+```
+
+#### 5. **Enteros Modificados (`short`, `long`, `long long`)**
+C++ permite modificar los enteros para manejar diferentes rangos y tamaños. `short` es un entero corto, `long` es un entero largo, y `long long` es un entero aún más largo.
+
+```cpp
+short corto = 32767;         // Generalmente 2 bytes
+long largo = 2147483647;     // Generalmente 4 bytes
+long long muyLargo = 9223372036854775807LL; // Generalmente 8 bytes
+```
+
+#### 6. **Tipos Sin Signo (`unsigned`)**
+Los tipos sin signo (`unsigned`) se utilizan para almacenar solo números positivos, duplicando el rango positivo de los tipos de datos enteros.
+
+```cpp
+unsigned int positivo = 42;
+unsigned char caracter = 255;
+```
+
+### Ejemplos y Uso de Tipos de Datos Básicos
+
+A continuación se presenta un ejemplo completo que demuestra el uso de los tipos de datos básicos en un programa C++:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int entero = 100;                   // Entero
+    char caracter = 'C';                // Carácter
+    bool esCierto = true;               // Booleano
+    float flotante = 3.14f;             // Flotante
+    double doble = 2.718281828459;      // Doble precisión
+    short corto = 32767;                // Entero corto
+    long largo = 2147483647;            // Entero largo
+    long long muyLargo = 9223372036854775807LL; // Entero muy largo
+    unsigned int sinSigno = 4294967295; // Entero sin signo
+
+    // Salida de los valores
+    cout << "Entero: " << entero << endl;
+    cout << "Carácter: " << caracter << endl;
+    cout << "Booleano: " << esCierto << endl;
+    cout << "Flotante: " << flotante << endl;
+    cout << "Doble: " << doble << endl;
+    cout << "Corto: " << corto << endl;
+    cout << "Largo: " << largo << endl;
+    cout << "Muy Largo: " << muyLargo << endl;
+    cout << "Sin Signo: " << sinSigno << endl;
+
+    return 0;
+}
+```
+
+### Explicación del Ejemplo
+
+1. **Entero (`int`):** Se declara y se inicializa con un valor entero.
+2. **Carácter (`char`):** Se declara y se inicializa con un carácter.
+3. **Booleano (`bool`):** Se declara y se inicializa con un valor booleano.
+4. **Flotante (`float`):** Se declara y se inicializa con un número decimal.
+5. **Doble (`double`):** Se declara y se inicializa con un número decimal de doble precisión.
+6. **Corto (`short`):** Se declara y se inicializa con un valor entero corto.
+7. **Largo (`long`):** Se declara y se inicializa con un valor entero largo.
+8. **Muy Largo (`long long`):** Se declara y se inicializa con un valor entero muy largo.
+9. **Sin Signo (`unsigned`):** Se declara y se inicializa con un valor entero sin signo.
+
+Este ejemplo muestra cómo declarar, inicializar y utilizar diferentes tipos de datos básicos en C++. Cada tipo de dato se adapta a necesidades específicas dependiendo del rango y precisión que se requiera para las operaciones en un programa.
+### Variables y Constantes en C++
+
+#### 1. **Variables**
+
+Las variables son contenedores que almacenan datos y cuyo valor puede cambiar durante la ejecución del programa. Para declarar una variable, se especifica su tipo seguido del nombre de la variable.
+
+##### **Declaración y Asignación**
+
+```cpp
+int edad;            // Declaración de una variable entera
+edad = 25;           // Asignación de un valor a la variable
+
+float altura = 1.75; // Declaración y asignación en una sola línea
+```
+
+##### **Tipos Comunes de Variables**
+
+- **Entero (`int`):** Almacena números enteros.
+- **Flotante (`float`):** Almacena números con decimales.
+- **Doble (`double`):** Almacena números con mayor precisión decimal.
+- **Carácter (`char`):** Almacena un solo carácter.
+- **Booleano (`bool`):** Almacena valores `true` o `false`.
+
+##### **Ejemplo de Uso de Variables**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad = 25;
+    float altura = 1.75;
+    char inicial = 'J';
+    bool esEstudiante = true;
+
+    cout << "Edad: " << edad << endl;
+    cout << "Altura: " << altura << endl;
+    cout << "Inicial: " << inicial << endl;
+    cout << "Es estudiante: " << (esEstudiante ? "Sí" : "No") << endl;
+
+    return 0;
+}
+```
+
+#### 2. **Constantes**
+
+Las constantes son similares a las variables, pero su valor no puede cambiar una vez asignado. Se utilizan para valores que deben permanecer constantes durante la ejecución del programa. En C++, se pueden definir constantes utilizando la palabra clave `const` o la directiva de preprocesador `#define`.
+
+##### **Constantes con `const`**
+
+```cpp
+const int DIAS_EN_SEMANA = 7;
+const float PI = 3.14159;
+```
+
+##### **Constantes con `#define`**
+
+```cpp
+#define MESES_EN_ANO 12
+#define GRAVEDAD 9.81
+```
+
+##### **Ejemplo de Uso de Constantes**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+#define MESES_EN_ANO 12
+
+int main() {
+    const int DIAS_EN_SEMANA = 7;
+    const float PI = 3.14159;
+    int dias = 365;
+
+    cout << "Días en una semana: " << DIAS_EN_SEMANA << endl;
+    cout << "Pi: " << PI << endl;
+    cout << "Meses en un año: " << MESES_EN_ANO << endl;
+    cout << "Días en un año: " << dias << endl;
+
+    // Intentar modificar una constante resultará en un error
+    // DIAS_EN_SEMANA = 8; // Error: no se puede asignar un nuevo valor a una constante
+
+    return 0;
+}
+```
+
+### Diferencias Clave entre Variables y Constantes
+
+- **Mutabilidad:**
+  - **Variables:** Su valor puede cambiar durante la ejecución del programa.
+  - **Constantes:** Su valor no puede cambiar una vez asignado.
+
+- **Sintaxis de Declaración:**
+  - **Variables:** Tipo seguido del nombre de la variable.
+  - **Constantes:** `const` seguido del tipo y el nombre de la constante, o `#define` seguido del nombre y el valor de la constante.
+
+### Buenas Prácticas
+
+- Utiliza constantes para valores que no deben cambiar para mejorar la legibilidad y el mantenimiento del código.
+- Nombra las constantes utilizando letras mayúsculas y separadores de subrayado (`_`) para distinguirlas fácilmente de las variables.
+- Declara variables lo más cerca posible de su primer uso para mejorar la claridad del código y evitar errores.
+
+Estas prácticas te ayudarán a escribir código más claro y fácil de mantener, asegurando que los valores importantes no se modifiquen accidentalmente durante la ejecución del programa.
+<---FILES--->
+**Declaración y Asignación**
+**Declaración y Asignación** Result
+**Tipos Comunes de Variables**
+**Tipos Comunes de Variables** Result
+**Ejemplo de Uso de Variables**
+**Ejemplo de Uso de Variables** Result
+**Constantes con `const`**
+**Constantes con `const`** Result
+**Constantes con `#define`**
+**Constantes con `#define`** Result
+**Ejemplo de Uso de Constantes**
+**Ejemplo de Uso de Constantes** Result
+<---**Declaración y Asignación**--->
+```cpp
+int edad;            // Declaración de una variable entera
+edad = 25;           // Asignación de un valor a la variable
+
+float altura = 1.75; // Declaración y asignación en una sola línea
+<---**Declaración y Asignación** Result--->
+<---**Tipos Comunes de Variables**--->
+<---**Tipos Comunes de Variables** Result--->
+<---**Ejemplo de Uso de Variables**--->
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int edad = 25;
+    float altura = 1.75;
+    char inicial = 'J';
+    bool esEstudiante = true;
+
+    cout << "Edad: " << edad << endl;
+    cout << "Altura: " << altura << endl;
+    cout << "Inicial: " << inicial << endl;
+    cout << "Es estudiante: " << (esEstudiante ? "Sí" : "No") << endl;
+
+    return 0;
+}
+<---**Ejemplo de Uso de Variables** Result--->
+<---**Constantes con `const`**--->
+```cpp
+const int DIAS_EN_SEMANA = 7;
+const float PI = 3.14159;
+<---**Constantes con `const`** Result--->
+<---**Constantes con `#define`**--->
+```cpp
+#define MESES_EN_ANO 12
+#define GRAVEDAD 9.81
+<---**Constantes con `#define`** Result--->
+<---**Ejemplo de Uso de Constantes**--->
+```cpp
+#include <iostream>
+using namespace std;
+
+#define MESES_EN_ANO 12
+
+int main() {
+    const int DIAS_EN_SEMANA = 7;
+    const float PI = 3.14159;
+    int dias = 365;
+
+    cout << "Días en una semana: " << DIAS_EN_SEMANA << endl;
+    cout << "Pi: " << PI << endl;
+    cout << "Meses en un año: " << MESES_EN_ANO << endl;
+    cout << "Días en un año: " << dias << endl;
+
+    // Intentar modificar una constante resultará en un error
+    // DIAS_EN_SEMANA = 8; // Error: no se puede asignar un nuevo valor a una constante
+
+    return 0;
+}
+<---**Ejemplo de Uso de Constantes** Result--->
