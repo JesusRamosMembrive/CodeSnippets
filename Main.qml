@@ -6,7 +6,7 @@ import QtQuick.Controls.Material
 import QtQuick.Effects
 import QtQuick.Dialogs
 import QtQuick.Controls.Windows
-
+import QtQml
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 import "./Modules/Style"
@@ -280,13 +280,15 @@ Window {
                     flat: false
                     antialiasing: true
                     onClicked: {
-                        if (stackView.depth === 1) {
-                            stackView.push("CodeDisplayPage.qml")
-                            buttonExplanation.text = qsTr("Explanation")
-                        } else {
-                            stackView.pop()
-                            buttonExplanation.text = qsTr("Code")
-                        }
+                        // if (stackView.depth === 1) {
+                        //     stackView.push("CodeDisplayPage.qml")
+                        //     buttonExplanation.text = qsTr("Explanation")
+                        // } else {
+                        //     stackView.pop()
+                        //     buttonExplanation.text = qsTr("Code")
+                        // }
+                        pythonRunner.runScript(":/python/CodeSnippetsScripts/TestScripts.py", ["exe"]);
+
                     }
                 }
             }
@@ -317,6 +319,26 @@ Window {
 
                 }
             }
+        }
+    }
+
+
+    TextArea {
+        id: outputArea
+        width: 572
+        height: 864
+        wrapMode: Text.WordWrap
+        anchors.horizontalCenter: mouseAreaResize.horizontalCenter
+        placeholderText: qsTr("Text Area")
+    }
+
+    Connections {
+        target: pythonRunner
+        onScriptOutput: {
+            outputArea.text += output + "\n"
+        }
+        onScriptError: {
+            outputArea.text += "Error: " + error + "\n"
         }
     }
 

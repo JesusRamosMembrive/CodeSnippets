@@ -5,6 +5,7 @@
 // #include <QtWebEngineQuick/qtwebenginequickglobal.h>
 
 #include "./Modules/FileProcessor/fileprocessor.h"
+#include "./Modules/Utils/pythonrunner.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +17,9 @@ int main(int argc, char *argv[])
     qDebug() << "ResourceReader creado"; // Mover el debug aquí para confirmar la creación
     FileProcessor fileProcessor;
     engine.rootContext()->setContextProperty("fileProcessor", &fileProcessor);
+    PythonRunner pythonRunner;
+    engine.rootContext()->setContextProperty("pythonRunner", &pythonRunner);
+
 
     const QUrl url(u"qrc:/CodeSnippetApp/Main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,

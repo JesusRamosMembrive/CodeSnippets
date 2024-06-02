@@ -185,4 +185,11 @@
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Uso de Plantillas en Funciones.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Alcance de las Variables.txt</file>
     </qresource>
+    <qresource prefix="/python">
+        <file>CodeSnippetsScripts/FolderAndPathsUtils.py</file>
+        <file>CodeSnippetsScripts/FormattingTextToApp.py</file>
+        <file>CodeSnippetsScripts/ProcessText.py</file>
+        <file>CodeSnippetsScripts/QMLFileCreator.py</file>
+        <file>CodeSnippetsScripts/TestScripts.py</file>
+    </qresource>
 </RCC>

@@ -165,9 +165,5 @@ ScrollView {
             customButton: friendsButton
             searchFilter: textField.text
         }
-
-
-
-
     }
 }
