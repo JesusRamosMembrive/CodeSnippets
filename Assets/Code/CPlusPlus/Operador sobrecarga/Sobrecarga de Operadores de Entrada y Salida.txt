@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Sobrecarga de Operadores de Entrada y Salida en C++
 
-La sobrecarga de los operadores de entrada (`>>`) y salida (`<<`) permite definir c髆o se deben comportar estos operadores con tipos de datos definidos por el usuario. Esto es 鷗il para proporcionar una interfaz intuitiva para la entrada y salida de datos, permitiendo que los objetos se impriman y se lean f醕ilmente usando flujos de entrada y salida est醤dar como `std::cin` y `std::cout`.
+La sobrecarga de los operadores de entrada (`>>`) y salida (`<<`) permite definir c贸mo se deben comportar estos operadores con tipos de datos definidos por el usuario. Esto es 煤til para proporcionar una interfaz intuitiva para la entrada y salida de datos, permitiendo que los objetos se impriman y se lean f谩cilmente usando flujos de entrada y salida est谩ndar como `std::cin` y `std::cout`.
 
 #### Ejemplo: Clase `Complex` para Sobrecargar Operadores de Entrada y Salida
 
-Vamos a definir una clase `Complex` que representa un n鷐ero complejo y sobrecargaremos los operadores de entrada (`>>`) y salida (`<<`).
+Vamos a definir una clase `Complex` que representa un n煤mero complejo y sobrecargaremos los operadores de entrada (`>>`) y salida (`<<`).
 
 ```cpp
 // Complex.h
@@ -37,7 +37,7 @@ public:
         return is;
     }
 
-    // M閠odos para obtener la parte real e imaginaria (opcional)
+    // M茅todos para obtener la parte real e imaginaria (opcional)
     double getReal() const { return real; }
     double getImag() const { return imag; }
 };
@@ -56,7 +56,7 @@ int main() {
 
     std::cout << "c1: " << c1 << std::endl;
 
-    std::cout << "Ingrese un n鷐ero complejo (parte real e imaginaria):" << std::endl;
+    std::cout << "Ingrese un n煤mero complejo (parte real e imaginaria):" << std::endl;
     std::cin >> c2;
 
     std::cout << "c2: " << c2 << std::endl;
@@ -65,7 +65,7 @@ int main() {
 }
 ```
 
-### Explicaci髇 de los Operadores Sobrecargados
+### Explicaci贸n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `<<` (Salida)
 
@@ -75,7 +75,7 @@ friend std::ostream& operator<<(std::ostream& os, const Complex& c) {
     return os;
 }
 ```
-Este operador permite imprimir un objeto `Complex` a un flujo de salida, como `std::cout`. La implementaci髇 inserta la parte real e imaginaria del n鷐ero complejo en el flujo de salida.
+Este operador permite imprimir un objeto `Complex` a un flujo de salida, como `std::cout`. La implementaci贸n inserta la parte real e imaginaria del n煤mero complejo en el flujo de salida.
 
 #### Sobrecarga del Operador `>>` (Entrada)
 
@@ -88,21 +88,22 @@ friend std::istream& operator>>(std::istream& is, Complex& c) {
     return is;
 }
 ```
-Este operador permite leer un objeto `Complex` desde un flujo de entrada, como `std::cin`. La implementaci髇 solicita al usuario que ingrese la parte real e imaginaria del n鷐ero complejo y las almacena en el objeto `Complex`.
+Este operador permite leer un objeto `Complex` desde un flujo de entrada, como `std::cin`. La implementaci贸n solicita al usuario que ingrese la parte real e imaginaria del n煤mero complejo y las almacena en el objeto `Complex`.
 
 ### Ventajas de la Sobrecarga de Operadores de Entrada y Salida
 
 1. **Legibilidad y Facilidad de Uso**: Permite utilizar una sintaxis intuitiva y clara para la entrada y salida de datos, similar a la utilizada para tipos de datos incorporados.
 2. **Consistencia**: Proporciona una interfaz consistente para la entrada y salida de objetos, facilitando su uso en diferentes contextos.
-3. **Encapsulaci髇**: Encapsula la l骻ica de la entrada y salida dentro de la clase, asegurando que los detalles de implementaci髇 est閚 ocultos y el c骴igo cliente sea m醩 limpio.
+3. **Encapsulaci贸n**: Encapsula la l贸gica de la entrada y salida dentro de la clase, asegurando que los detalles de implementaci贸n est茅n ocultos y el c贸digo cliente sea m谩s limpio.
 
 ### Desventajas de la Sobrecarga de Operadores de Entrada y Salida
 
-1. **Complejidad Adicional**: Puede agregar complejidad al c骴igo de la clase, especialmente si la l骻ica de entrada y salida es compleja.
-2. **Dependencia de la Interfaz de Usuario**: La implementaci髇 del operador de entrada puede depender de la interfaz de usuario, lo que puede no ser deseable en todos los contextos (por ejemplo, en aplicaciones sin interfaz de usuario).
+1. **Complejidad Adicional**: Puede agregar complejidad al c贸digo de la clase, especialmente si la l贸gica de entrada y salida es compleja.
+2. **Dependencia de la Interfaz de Usuario**: La implementaci贸n del operador de entrada puede depender de la interfaz de usuario, lo que puede no ser deseable en todos los contextos (por ejemplo, en aplicaciones sin interfaz de usuario).
 3. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores en la lectura y escritura de datos.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores de entrada y salida en C++ permite realizar operaciones de entrada y salida de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c骴igo, haciendo que las clases sean m醩 f醕iles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c骴igo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
+La sobrecarga de operadores de entrada y salida en C++ permite realizar operaciones de entrada y salida de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c贸digo, haciendo que las clases sean m谩s f谩ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c贸digo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
 <---FILES--->
+NA.

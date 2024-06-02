@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Estándar: `std::copy`
+### Algoritmo de la Biblioteca EstÃ¡ndar: `std::copy`
 
-La función `std::copy` es un algoritmo de la biblioteca estándar de C++ que se utiliza para copiar elementos de un rango a otro. Es parte del encabezado `<algorithm>` y es muy útil para duplicar o trasladar datos entre contenedores.
+La funciÃ³n `std::copy` es un algoritmo de la biblioteca estÃ¡ndar de C++ que se utiliza para copiar elementos de un rango a otro. Es parte del encabezado `<algorithm>` y es muy Ãºtil para duplicar o trasladar datos entre contenedores.
 
 #### Sintaxis de `std::copy`
 
@@ -13,16 +13,16 @@ OutputIt copy(InputIt first, InputIt last, OutputIt d_first);
 ```
 
 - **`InputIt first`**: Iterador al primer elemento del rango de entrada.
-- **`InputIt last`**: Iterador al elemento después del último en el rango de entrada.
+- **`InputIt last`**: Iterador al elemento despuÃ©s del Ãºltimo en el rango de entrada.
 - **`OutputIt d_first`**: Iterador al primer elemento del rango de destino.
 
-#### Descripción
+#### DescripciÃ³n
 
 `std::copy` copia los elementos del rango `[first, last)` al rango que comienza en `d_first`. El rango de destino debe ser lo suficientemente grande para contener todos los elementos copiados.
 
 #### Ejemplo de Uso de `std::copy`
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -115,7 +115,7 @@ En este ejemplo:
 
 #### Copiar con `std::back_inserter`
 
-Si el contenedor de destino no tiene suficiente espacio reservado, se puede utilizar un `std::back_inserter` para que el contenedor crezca automáticamente.
+Si el contenedor de destino no tiene suficiente espacio reservado, se puede utilizar un `std::back_inserter` para que el contenedor crezca automÃ¡ticamente.
 
 ```cpp
 #include <iostream>
@@ -142,22 +142,22 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::back_inserter(destino)` se utiliza para insertar elementos al final del vector `destino`, expandiendo automáticamente su tamaño según sea necesario.
+- `std::back_inserter(destino)` se utiliza para insertar elementos al final del vector `destino`, expandiendo automÃ¡ticamente su tamaÃ±o segÃºn sea necesario.
 
 ### Consideraciones
 
 - **Rendimiento:** `std::copy` es muy eficiente y generalmente se compila a un bucle simple que copia elementos.
-- **Seguridad:** Asegúrese de que el rango de destino sea lo suficientemente grande para contener todos los elementos del rango de origen para evitar accesos fuera de los límites.
+- **Seguridad:** AsegÃºrese de que el rango de destino sea lo suficientemente grande para contener todos los elementos del rango de origen para evitar accesos fuera de los lÃ­mites.
 
-### Conclusión
+### ConclusiÃ³n
 
-`std::copy` es un algoritmo fundamental de la biblioteca estándar de C++ que proporciona una forma eficiente y flexible de copiar elementos entre contenedores. Su uso con iteradores y adaptadores de inserción como `std::back_inserter` permite una gran variedad de operaciones de copia, adecuándose a las necesidades de diferentes tipos de contenedores. Comprender y utilizar `std::copy` es esencial para escribir código C++ robusto y eficiente.
+`std::copy` es un algoritmo fundamental de la biblioteca estÃ¡ndar de C++ que proporciona una forma eficiente y flexible de copiar elementos entre contenedores. Su uso con iteradores y adaptadores de inserciÃ³n como `std::back_inserter` permite una gran variedad de operaciones de copia, adecuÃ¡ndose a las necesidades de diferentes tipos de contenedores. Comprender y utilizar `std::copy` es esencial para escribir cÃ³digo C++ robusto y eficiente.
 <---FILES--->
-Ejemplo Básico
-Ejemplo Básico Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
 Copiar Elementos entre Diferentes Contenedores
 Copiar Elementos entre Diferentes Contenedores Result
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -179,7 +179,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Básico Result--->
+<---Ejemplo BÃ¡sico Result--->
 <---Copiar Elementos entre Diferentes Contenedores--->
 ```cpp
 #include <iostream>

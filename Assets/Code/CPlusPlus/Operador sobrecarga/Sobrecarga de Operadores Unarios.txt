@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Sobrecarga de Operadores Unarios en C++
 
-La sobrecarga de operadores unarios permite definir c髆o se deben comportar los operadores unarios est醤dar (como `-`, `++`, `--`, `!`, `~`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Estos operadores act鷄n sobre un solo operando y son 鷗iles para clases que representan datos que pueden beneficiarse de operaciones como la negaci髇, la inversi髇 de bits, la pre-incrementaci髇, y la post-incrementaci髇.
+La sobrecarga de operadores unarios permite definir c贸mo se deben comportar los operadores unarios est谩ndar (como `-`, `++`, `--`, `!`, `~`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Estos operadores act煤an sobre un solo operando y son 煤tiles para clases que representan datos que pueden beneficiarse de operaciones como la negaci贸n, la inversi贸n de bits, la pre-incrementaci贸n, y la post-incrementaci贸n.
 
-A continuaci髇, veremos c髆o sobrecargar algunos operadores unarios en C++.
+A continuaci贸n, veremos c贸mo sobrecargar algunos operadores unarios en C++.
 
 #### Ejemplo: Clase `Number` para Operaciones Unarias
 
-Vamos a definir una clase `Number` que representa un n鷐ero entero y sobrecargaremos los operadores `-`, `++`, `--`, `!`, y `~`.
+Vamos a definir una clase `Number` que representa un n煤mero entero y sobrecargaremos los operadores `-`, `++`, `--`, `!`, y `~`.
 
 ```cpp
 // Number.h
@@ -107,7 +107,7 @@ int main() {
 }
 ```
 
-### Explicaci髇 de los Operadores Sobrecargados
+### Explicaci贸n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador Unario `-`
 
@@ -116,7 +116,7 @@ Number operator-() const {
     return Number(-value);
 }
 ```
-Este operador devuelve un nuevo objeto `Number` cuyo valor es la negaci髇 del valor del operando.
+Este operador devuelve un nuevo objeto `Number` cuyo valor es la negaci贸n del valor del operando.
 
 #### Sobrecarga del Operador Unario `++` (Pre-incremento)
 
@@ -126,7 +126,7 @@ Number& operator++() {
     return *this;
 }
 ```
-Este operador incrementa el valor del objeto y devuelve una referencia a 閘 mismo. Se llama antes de evaluar la expresi髇.
+Este operador incrementa el valor del objeto y devuelve una referencia a 茅l mismo. Se llama antes de evaluar la expresi贸n.
 
 #### Sobrecarga del Operador Unario `++` (Post-incremento)
 
@@ -137,7 +137,7 @@ Number operator++(int) {
     return temp;
 }
 ```
-Este operador incrementa el valor del objeto pero devuelve una copia del valor original antes de la operaci髇. El par醡etro `int` distingue esta versi髇 de la versi髇 de pre-incremento.
+Este operador incrementa el valor del objeto pero devuelve una copia del valor original antes de la operaci贸n. El par谩metro `int` distingue esta versi贸n de la versi贸n de pre-incremento.
 
 #### Sobrecarga del Operador Unario `--` (Pre-decremento)
 
@@ -147,7 +147,7 @@ Number& operator--() {
     return *this;
 }
 ```
-Este operador decrementa el valor del objeto y devuelve una referencia a 閘 mismo. Se llama antes de evaluar la expresi髇.
+Este operador decrementa el valor del objeto y devuelve una referencia a 茅l mismo. Se llama antes de evaluar la expresi贸n.
 
 #### Sobrecarga del Operador Unario `--` (Post-decremento)
 
@@ -158,7 +158,7 @@ Number operator--(int) {
     return temp;
 }
 ```
-Este operador decrementa el valor del objeto pero devuelve una copia del valor original antes de la operaci髇. El par醡etro `int` distingue esta versi髇 de la versi髇 de pre-decremento.
+Este operador decrementa el valor del objeto pero devuelve una copia del valor original antes de la operaci贸n. El par谩metro `int` distingue esta versi贸n de la versi贸n de pre-decremento.
 
 #### Sobrecarga del Operador Unario `!`
 
@@ -181,16 +181,17 @@ Este operador devuelve un nuevo objeto `Number` cuyo valor es el complemento a u
 ### Ventajas de la Sobrecarga de Operadores Unarios
 
 1. **Legibilidad y Naturalidad**: Permite utilizar una sintaxis clara y familiar para operaciones unarias.
-2. **Facilidad de Uso**: Hace que las clases sean m醩 intuitivas y f醕iles de usar, especialmente cuando se trabaja con operaciones unarias comunes.
-3. **Encapsulaci髇**: Permite encapsular la l骻ica de las operaciones unarias dentro de la clase.
+2. **Facilidad de Uso**: Hace que las clases sean m谩s intuitivas y f谩ciles de usar, especialmente cuando se trabaja con operaciones unarias comunes.
+3. **Encapsulaci贸n**: Permite encapsular la l贸gica de las operaciones unarias dentro de la clase.
 
 ### Desventajas de la Sobrecarga de Operadores Unarios
 
-1. **Complejidad Adicional**: Puede agregar complejidad al c骴igo, lo que puede dificultar la comprensi髇 y el mantenimiento, especialmente para desarrolladores no familiarizados con la sobrecarga de operadores.
-2. **Riesgo de Abuso**: Los operadores sobrecargados pueden ser utilizados de manera inapropiada o inesperada, lo que puede llevar a confusi髇.
-3. **Ambig黣dad y Errores Sutiles**: La sobrecarga incorrecta de operadores puede introducir ambig黣dades y errores sutiles que pueden ser dif韈iles de depurar.
+1. **Complejidad Adicional**: Puede agregar complejidad al c贸digo, lo que puede dificultar la comprensi贸n y el mantenimiento, especialmente para desarrolladores no familiarizados con la sobrecarga de operadores.
+2. **Riesgo de Abuso**: Los operadores sobrecargados pueden ser utilizados de manera inapropiada o inesperada, lo que puede llevar a confusi贸n.
+3. **Ambig眉edad y Errores Sutiles**: La sobrecarga incorrecta de operadores puede introducir ambig眉edades y errores sutiles que pueden ser dif铆ciles de depurar.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores unarios en C++ permite realizar operaciones unarias de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c骴igo, haciendo que las clases sean m醩 f醕iles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c骴igo claro y mantenible. Es crucial documentar adecuadamente cualquier operador sobrecargado para asegurarse de que su comportamiento sea claro para otros desarrolladores.
+La sobrecarga de operadores unarios en C++ permite realizar operaciones unarias de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c贸digo, haciendo que las clases sean m谩s f谩ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c贸digo claro y mantenible. Es crucial documentar adecuadamente cualquier operador sobrecargado para asegurarse de que su comportamiento sea claro para otros desarrolladores.
 <---FILES--->
+NA.

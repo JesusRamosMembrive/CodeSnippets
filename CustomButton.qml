@@ -41,9 +41,12 @@ Control {
         Text {
             id: buttonTextItem
             color: customButton.buttonTextColor
+            horizontalAlignment: Text.AlignHCenter
+            wrapMode: Text.WrapAnywhere
             anchors.centerIn: parent
-            font.pointSize: 13
+            font.pointSize: 12
             font.family: "Roboto"
+
         }
     }
 

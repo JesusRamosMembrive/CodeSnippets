@@ -19,11 +19,13 @@ class TextProcessor:
 
     def __create_explanation_section(self, text: str) -> None:
         """Create the explanation section of the final text."""
+        self.explanation = "<---EXPLANATION--->" + "\n"
         self.explanation = self.explanation + text + "\n"
 
     def __create_file_dict(self, text: str) -> None:
         """ Create a dictionary of examples and code blocks from the text."""
         line_stripped: str = ""
+        self.examples_and_code_dict = {}
         is_code_block: bool = False
         for line in text.split("\n"):
             if line.startswith("```"):
@@ -32,6 +34,7 @@ class TextProcessor:
                 is_code_block = True
             if line.startswith("#####"):
                 line_stripped = line.strip("#####")[1:]
+                # line_stripped = line.strip("#####")[1:].replace("**", "")
                 line_stripped_result = line_stripped + " Result"
                 self.examples_and_code_dict[line_stripped] = []
                 self.examples_and_code_dict[line_stripped_result] = []
@@ -41,13 +44,18 @@ class TextProcessor:
 
     def __create_files_section(self) -> None:
         """Create the files section of the final text."""
+        self.files = "<---FILES--->" + "\n"
+        print(f"Examples and code dict: {self.examples_and_code_dict}")
+        if not self.examples_and_code_dict:
+            print("No files found.")
+            self.files += "NA." + "\n"
+            return
         for key, value in self.examples_and_code_dict.items():
             self.files += key + "\n"
-        if not self.files:
-            self.files = "<---FILES--->" + "\n" + "No files found." + "\n"
 
     def __create_examples_section(self) -> None:
         """Create the examples section of the final text."""
+        self.text_of_example_section = ""
         for key, value in self.examples_and_code_dict.items():
             self.text_of_example_section += "<---" + key + "--->" + "\n"
             for code in value:
@@ -86,7 +94,7 @@ class TextProcessor:
 
     def __extract_text_between_users(self, content: str) -> list[str]:
         block = content.split("User")
-
+        self.extracted_text = []
         for internal_block in block:
             if "ChatGPT" in internal_block:
                 parts = internal_block.split("ChatGPT")
@@ -117,7 +125,6 @@ class TextProcessor:
         processor = TextProcessor()
         processor.set_path_to_save_final_text(path_of_file)
         processor.create_a_file_algorithm(text_to_process)
-
 
 # Test zone
 # if __name__ == "__main__":

@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Inicializaci髇 con `auto` en C++
+### Inicializaci贸n con `auto` en C++
 
-En C++11 y versiones posteriores, la palabra clave `auto` permite al compilador deducir autom醫icamente el tipo de una variable a partir del valor con el que se inicializa. Esto puede simplificar el c骴igo y hacerlo m醩 legible, especialmente cuando se trabaja con tipos complejos.
+En C++11 y versiones posteriores, la palabra clave `auto` permite al compilador deducir autom谩ticamente el tipo de una variable a partir del valor con el que se inicializa. Esto puede simplificar el c贸digo y hacerlo m谩s legible, especialmente cuando se trabaja con tipos complejos.
 
-#### 1. **Uso B醩ico de `auto`**
+#### 1. **Uso B谩sico de `auto`**
 
-Cuando se utiliza `auto` para declarar una variable, el compilador determina el tipo de la variable bas醤dose en la expresi髇 que se usa para inicializarla.
+Cuando se utiliza `auto` para declarar una variable, el compilador determina el tipo de la variable bas谩ndose en la expresi贸n que se usa para inicializarla.
 
 ```cpp
 auto numero = 10;         // int
@@ -16,13 +16,13 @@ auto booleano = true;     // bool
 
 #### 2. **Ventajas de Usar `auto`**
 
-- **Simplicidad y Legibilidad:** Reduce la verbosidad del c骴igo, especialmente 鷗il con tipos complejos.
-- **Evita Errores de Tipo:** Minimiza los errores relacionados con la declaraci髇 de tipos incorrectos.
-- **Flexibilidad:** Permite cambios en el tipo de datos subyacente sin necesidad de modificar la declaraci髇 de la variable.
+- **Simplicidad y Legibilidad:** Reduce la verbosidad del c贸digo, especialmente 煤til con tipos complejos.
+- **Evita Errores de Tipo:** Minimiza los errores relacionados con la declaraci贸n de tipos incorrectos.
+- **Flexibilidad:** Permite cambios en el tipo de datos subyacente sin necesidad de modificar la declaraci贸n de la variable.
 
 #### 3. **Ejemplos de `auto` con Tipos Complejos**
 
-`auto` es especialmente 鷗il cuando se trabaja con iteradores, punteros inteligentes, o tipos definidos por el usuario.
+`auto` es especialmente 煤til cuando se trabaja con iteradores, punteros inteligentes, o tipos definidos por el usuario.
 
 ##### **Con Iteradores**
 
@@ -34,7 +34,7 @@ using namespace std;
 int main() {
     vector<int> numeros = {1, 2, 3, 4, 5};
 
-    // Iterador expl韈ito
+    // Iterador expl铆cito
     vector<int>::iterator it = numeros.begin();
 
     // Iterador con auto
@@ -54,10 +54,10 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaraci髇 expl韈ita
+    // Declaraci贸n expl铆cita
     unique_ptr<int> punteroInt(new int(10));
 
-    // Declaraci髇 con auto
+    // Declaraci贸n con auto
     auto punteroAuto = make_unique<int>(20);
 
     cout << "Valor apuntado por punteroInt: " << *punteroInt << endl;
@@ -76,7 +76,7 @@ int main() {
   auto miVariable = valorConstante; // miVariable es int, no const int
   ```
 
-- **Tipos Deducidos:** `auto` no deduce referencias o punteros a menos que se especifique expl韈itamente.
+- **Tipos Deducidos:** `auto` no deduce referencias o punteros a menos que se especifique expl铆citamente.
 
   ```cpp
   int x = 5;
@@ -86,7 +86,7 @@ int main() {
   auto& referenciaRefX = refX; // referenciaRefX es int&
   ```
 
-- **Uso con Inicializaci髇 de Lista:** `auto` y la inicializaci髇 de lista pueden dar resultados inesperados debido a las reglas de deducci髇 de tipos.
+- **Uso con Inicializaci贸n de Lista:** `auto` y la inicializaci贸n de lista pueden dar resultados inesperados debido a las reglas de deducci贸n de tipos.
 
   ```cpp
   auto valor1 = {10}; // std::initializer_list<int>
@@ -102,7 +102,7 @@ int main() {
 using namespace std;
 
 int main() {
-    // Inicializaci髇 b醩ica
+    // Inicializaci贸n b谩sica
     auto numero = 10;         // int
     auto decimal = 3.14;      // double
     auto caracter = 'A';      // char
@@ -116,9 +116,9 @@ int main() {
     auto puntero = make_unique<int>(100);
 
     // Salida de los valores
-    cout << "N鷐ero: " << numero << endl;
+    cout << "N煤mero: " << numero << endl;
     cout << "Decimal: " << decimal << endl;
-    cout << "Car醕ter: " << caracter << endl;
+    cout << "Car谩cter: " << caracter << endl;
     cout << "Booleano: " << booleano << endl;
     cout << "Primer elemento del vector: " << *it << endl;
     cout << "Valor del puntero: " << *puntero << endl;
@@ -127,13 +127,13 @@ int main() {
 }
 ```
 
-### Explicaci髇 del Ejemplo
+### Explicaci贸n del Ejemplo
 
-1. **Inicializaci髇 B醩ica:** Se utilizan diferentes tipos de datos para demostrar c髆o `auto` deduce el tipo correcto.
+1. **Inicializaci贸n B谩sica:** Se utilizan diferentes tipos de datos para demostrar c贸mo `auto` deduce el tipo correcto.
 2. **Uso con Contenedores:** Se declara un iterador para un `vector` utilizando `auto`, lo que simplifica la sintaxis.
-3. **Punteros Inteligentes:** `auto` se utiliza para deducir el tipo de un puntero inteligente, haciendo el c骴igo m醩 claro y menos propenso a errores.
+3. **Punteros Inteligentes:** `auto` se utiliza para deducir el tipo de un puntero inteligente, haciendo el c贸digo m谩s claro y menos propenso a errores.
 
-El uso de `auto` en C++ proporciona una forma m醩 limpia y concisa de declarar variables, especialmente cuando los tipos son largos o complejos. Sin embargo, es importante entender c髆o `auto` deduce los tipos para evitar errores sutiles en el c骴igo.
+El uso de `auto` en C++ proporciona una forma m谩s limpia y concisa de declarar variables, especialmente cuando los tipos son largos o complejos. Sin embargo, es importante entender c贸mo `auto` deduce los tipos para evitar errores sutiles en el c贸digo.
 <---FILES--->
 **Con Iteradores**
 **Con Iteradores** Result
@@ -148,7 +148,7 @@ using namespace std;
 int main() {
     vector<int> numeros = {1, 2, 3, 4, 5};
 
-    // Iterador expl韈ito
+    // Iterador expl铆cito
     vector<int>::iterator it = numeros.begin();
 
     // Iterador con auto
@@ -166,10 +166,10 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaraci髇 expl韈ita
+    // Declaraci贸n expl铆cita
     unique_ptr<int> punteroInt(new int(10));
 
-    // Declaraci髇 con auto
+    // Declaraci贸n con auto
     auto punteroAuto = make_unique<int>(20);
 
     cout << "Valor apuntado por punteroInt: " << *punteroInt << endl;
@@ -184,7 +184,7 @@ int main() {
 using namespace std;
 
 int main() {
-    // Inicializaci髇 b醩ica
+    // Inicializaci贸n b谩sica
     auto numero = 10;         // int
     auto decimal = 3.14;      // double
     auto caracter = 'A';      // char
@@ -198,9 +198,9 @@ int main() {
     auto puntero = make_unique<int>(100);
 
     // Salida de los valores
-    cout << "N鷐ero: " << numero << endl;
+    cout << "N煤mero: " << numero << endl;
     cout << "Decimal: " << decimal << endl;
-    cout << "Car醕ter: " << caracter << endl;
+    cout << "Car谩cter: " << caracter << endl;
     cout << "Booleano: " << booleano << endl;
     cout << "Primer elemento del vector: " << *it << endl;
     cout << "Valor del puntero: " << *puntero << endl;

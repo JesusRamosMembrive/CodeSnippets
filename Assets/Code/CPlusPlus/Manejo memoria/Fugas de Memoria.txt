@@ -1,9 +1,9 @@
 <---EXPLANATION--->
 ### Fugas de Memoria en C++
 
-Una fuga de memoria ocurre cuando un programa no libera la memoria que ha asignado din·micamente, lo que puede llevar a un consumo excesivo de memoria y, eventualmente, al fallo del programa. En aplicaciones de larga duraciÛn o sistemas embebidos, las fugas de memoria pueden tener consecuencias graves.
+Una fuga de memoria ocurre cuando un programa no libera la memoria que ha asignado din√°micamente, lo que puede llevar a un consumo excesivo de memoria y, eventualmente, al fallo del programa. En aplicaciones de larga duraci√≥n o sistemas embebidos, las fugas de memoria pueden tener consecuencias graves.
 
-#### øQuÈ es una Fuga de Memoria?
+#### ¬øQu√© es una Fuga de Memoria?
 
 Una fuga de memoria se produce cuando la memoria que se ha asignado en el heap no se libera adecuadamente. Esto ocurre principalmente cuando se pierde la referencia al puntero que apunta a esa memoria, lo que impide que el programa la reutilice o la libere.
 
@@ -16,7 +16,7 @@ Una fuga de memoria se produce cuando la memoria que se ha asignado en el heap n
 
 void funcion() {
     int* ptr = new int(10); // Asignar memoria en el heap
-    // ptr se pierde al salir de la funciÛn sin liberar la memoria
+    // ptr se pierde al salir de la funci√≥n sin liberar la memoria
 }
 
 int main() {
@@ -33,8 +33,8 @@ int main() {
 
 void funcion() {
     for (int i = 0; i < 10; ++i) {
-        int* ptr = new int(i); // Asignar memoria en el heap en cada iteraciÛn
-        // Sin delete, cada iteraciÛn causa una fuga de memoria
+        int* ptr = new int(i); // Asignar memoria en el heap en cada iteraci√≥n
+        // Sin delete, cada iteraci√≥n causa una fuga de memoria
     }
 }
 
@@ -44,11 +44,11 @@ int main() {
 }
 ```
 
-### CÛmo Detectar y Evitar Fugas de Memoria
+### C√≥mo Detectar y Evitar Fugas de Memoria
 
 #### 1. Liberar Memoria Manualmente
 
-Aseg˙rese de liberar toda la memoria asignada din·micamente usando `delete` o `delete[]` cuando ya no se necesite.
+Aseg√∫rese de liberar toda la memoria asignada din√°micamente usando `delete` o `delete[]` cuando ya no se necesite.
 
 ```cpp
 #include <iostream>
@@ -67,7 +67,7 @@ int main() {
 
 #### 2. Uso de Smart Pointers
 
-Los punteros inteligentes, introducidos en C++11, ayudan a gestionar autom·ticamente la vida ˙til de los objetos en el heap, evitando fugas de memoria.
+Los punteros inteligentes, introducidos en C++11, ayudan a gestionar autom√°ticamente la vida √∫til de los objetos en el heap, evitando fugas de memoria.
 
 ##### `std::unique_ptr`
 
@@ -76,7 +76,7 @@ Los punteros inteligentes, introducidos en C++11, ayudan a gestionar autom·ticam
 #include <memory>
 
 void funcion() {
-    std::unique_ptr<int> ptr = std::make_unique<int>(10); // Memoria gestionada autom·ticamente
+    std::unique_ptr<int> ptr = std::make_unique<int>(10); // Memoria gestionada autom√°ticamente
     // Usar ptr
 }
 
@@ -104,14 +104,14 @@ int main() {
 }
 ```
 
-#### 3. Uso de Herramientas de An·lisis de Memoria
+#### 3. Uso de Herramientas de An√°lisis de Memoria
 
-Existen varias herramientas que pueden ayudar a detectar fugas de memoria en el cÛdigo, tales como:
+Existen varias herramientas que pueden ayudar a detectar fugas de memoria en el c√≥digo, tales como:
 
-- **Valgrind**: Una herramienta de an·lisis de memoria que detecta fugas de memoria y errores de acceso a memoria.
+- **Valgrind**: Una herramienta de an√°lisis de memoria que detecta fugas de memoria y errores de acceso a memoria.
 - **AddressSanitizer**: Un runtime que detecta errores de memoria como desbordamientos de buffer y fugas de memoria.
 
-##### Uso B·sico de Valgrind
+##### Uso B√°sico de Valgrind
 
 ```sh
 valgrind --leak-check=full ./mi_programa
@@ -121,7 +121,7 @@ valgrind --leak-check=full ./mi_programa
 
 #### Fugas de Memoria en Clases
 
-Las fugas de memoria pueden ser m·s complejas en clases, especialmente si las clases manejan recursos din·micos.
+Las fugas de memoria pueden ser m√°s complejas en clases, especialmente si las clases manejan recursos din√°micos.
 
 ##### Ejemplo de Clase con Fuga de Memoria
 
@@ -131,7 +131,7 @@ Las fugas de memoria pueden ser m·s complejas en clases, especialmente si las cl
 class MiClase {
 public:
     MiClase() {
-        ptr_ = new int[10]; // Asignar memoria din·mica
+        ptr_ = new int[10]; // Asignar memoria din√°mica
     }
     ~MiClase() {
         // Falta delete[] ptr_, causando una fuga de memoria
@@ -147,7 +147,7 @@ int main() {
 }
 ```
 
-##### SoluciÛn con Destructor Correcto
+##### Soluci√≥n con Destructor Correcto
 
 ```cpp
 #include <iostream>
@@ -155,7 +155,7 @@ int main() {
 class MiClase {
 public:
     MiClase() {
-        ptr_ = new int[10]; // Asignar memoria din·mica
+        ptr_ = new int[10]; // Asignar memoria din√°mica
     }
     ~MiClase() {
         delete[] ptr_; // Liberar la memoria asignada
@@ -173,7 +173,7 @@ int main() {
 
 #### Uso de Smart Pointers en Clases
 
-Encapsular la gestiÛn de memoria en clases usando punteros inteligentes.
+Encapsular la gesti√≥n de memoria en clases usando punteros inteligentes.
 
 ```cpp
 #include <iostream>
@@ -184,7 +184,7 @@ public:
     MiClase() {
         ptr_ = std::make_unique<int[]>(10); // Uso de unique_ptr
     }
-    // No se necesita destructor explÌcito
+    // No se necesita destructor expl√≠cito
 
 private:
     std::unique_ptr<int[]> ptr_;
@@ -196,17 +196,17 @@ int main() {
 }
 ```
 
-### Mejores Pr·cticas para Evitar Fugas de Memoria
+### Mejores Pr√°cticas para Evitar Fugas de Memoria
 
 1. **Usar Smart Pointers**: Siempre que sea posible, use `std::unique_ptr` y `std::shared_ptr` en lugar de punteros crudos.
-2. **Liberar Memoria Manualmente**: Si usa `new`, aseg˙rese de emparejarlo siempre con `delete`.
-3. **RAII (Resource Acquisition Is Initialization)**: Utilice el principio RAII para asegurar que los recursos se liberen cuando los objetos salen de su ·mbito.
-4. **Revisiones y Pruebas de CÛdigo**: Realice revisiones de cÛdigo y pruebas exhaustivas para detectar y corregir fugas de memoria.
-5. **Herramientas de An·lisis**: Use herramientas como Valgrind y AddressSanitizer para detectar fugas de memoria y otros errores de memoria en su cÛdigo.
+2. **Liberar Memoria Manualmente**: Si usa `new`, aseg√∫rese de emparejarlo siempre con `delete`.
+3. **RAII (Resource Acquisition Is Initialization)**: Utilice el principio RAII para asegurar que los recursos se liberen cuando los objetos salen de su √°mbito.
+4. **Revisiones y Pruebas de C√≥digo**: Realice revisiones de c√≥digo y pruebas exhaustivas para detectar y corregir fugas de memoria.
+5. **Herramientas de An√°lisis**: Use herramientas como Valgrind y AddressSanitizer para detectar fugas de memoria y otros errores de memoria en su c√≥digo.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las fugas de memoria pueden tener efectos severos en el rendimiento y la estabilidad de un programa. Es crucial entender cÛmo se producen y adoptar buenas pr·cticas para prevenirlas. El uso de punteros inteligentes, la liberaciÛn manual de memoria y el uso de herramientas de an·lisis son estrategias efectivas para gestionar la memoria de manera eficiente y segura en C++. Al seguir estas pr·cticas, se puede escribir cÛdigo m·s robusto y mantenible.
+Las fugas de memoria pueden tener efectos severos en el rendimiento y la estabilidad de un programa. Es crucial entender c√≥mo se producen y adoptar buenas pr√°cticas para prevenirlas. El uso de punteros inteligentes, la liberaci√≥n manual de memoria y el uso de herramientas de an√°lisis son estrategias efectivas para gestionar la memoria de manera eficiente y segura en C++. Al seguir estas pr√°cticas, se puede escribir c√≥digo m√°s robusto y mantenible.
 <---FILES--->
 Fuga de Memoria Simple
 Fuga de Memoria Simple Result
@@ -216,19 +216,19 @@ Fuga de Memoria en un Bucle Result
 `std::unique_ptr` Result
 `std::shared_ptr`
 `std::shared_ptr` Result
-Uso B·sico de Valgrind
-Uso B·sico de Valgrind Result
+Uso B√°sico de Valgrind
+Uso B√°sico de Valgrind Result
 Ejemplo de Clase con Fuga de Memoria
 Ejemplo de Clase con Fuga de Memoria Result
-SoluciÛn con Destructor Correcto
-SoluciÛn con Destructor Correcto Result
+Soluci√≥n con Destructor Correcto
+Soluci√≥n con Destructor Correcto Result
 <---Fuga de Memoria Simple--->
 ```cpp
 #include <iostream>
 
 void funcion() {
     int* ptr = new int(10); // Asignar memoria en el heap
-    // ptr se pierde al salir de la funciÛn sin liberar la memoria
+    // ptr se pierde al salir de la funci√≥n sin liberar la memoria
 }
 
 int main() {
@@ -243,8 +243,8 @@ int main() {
 
 void funcion() {
     for (int i = 0; i < 10; ++i) {
-        int* ptr = new int(i); // Asignar memoria en el heap en cada iteraciÛn
-        // Sin delete, cada iteraciÛn causa una fuga de memoria
+        int* ptr = new int(i); // Asignar memoria en el heap en cada iteraci√≥n
+        // Sin delete, cada iteraci√≥n causa una fuga de memoria
     }
 }
 
@@ -272,7 +272,7 @@ int main() {
 #include <memory>
 
 void funcion() {
-    std::unique_ptr<int> ptr = std::make_unique<int>(10); // Memoria gestionada autom·ticamente
+    std::unique_ptr<int> ptr = std::make_unique<int>(10); // Memoria gestionada autom√°ticamente
     // Usar ptr
 }
 
@@ -297,8 +297,8 @@ int main() {
     return 0;
 }
 <---`std::shared_ptr` Result--->
-<---Uso B·sico de Valgrind--->
-<---Uso B·sico de Valgrind Result--->
+<---Uso B√°sico de Valgrind--->
+<---Uso B√°sico de Valgrind Result--->
 <---Ejemplo de Clase con Fuga de Memoria--->
 ```cpp
 #include <iostream>
@@ -306,7 +306,7 @@ int main() {
 class MiClase {
 public:
     MiClase() {
-        ptr_ = new int[10]; // Asignar memoria din·mica
+        ptr_ = new int[10]; // Asignar memoria din√°mica
     }
     ~MiClase() {
         // Falta delete[] ptr_, causando una fuga de memoria
@@ -321,14 +321,14 @@ int main() {
     return 0;
 }
 <---Ejemplo de Clase con Fuga de Memoria Result--->
-<---SoluciÛn con Destructor Correcto--->
+<---Soluci√≥n con Destructor Correcto--->
 ```cpp
 #include <iostream>
 
 class MiClase {
 public:
     MiClase() {
-        ptr_ = new int[10]; // Asignar memoria din·mica
+        ptr_ = new int[10]; // Asignar memoria din√°mica
     }
     ~MiClase() {
         delete[] ptr_; // Liberar la memoria asignada
@@ -351,7 +351,7 @@ public:
     MiClase() {
         ptr_ = std::make_unique<int[]>(10); // Uso de unique_ptr
     }
-    // No se necesita destructor explÌcito
+    // No se necesita destructor expl√≠cito
 
 private:
     std::unique_ptr<int[]> ptr_;
@@ -361,4 +361,4 @@ int main() {
     MiClase obj;
     return 0;
 }
-<---SoluciÛn con Destructor Correcto Result--->
+<---Soluci√≥n con Destructor Correcto Result--->

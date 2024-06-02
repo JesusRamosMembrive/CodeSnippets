@@ -1,21 +1,21 @@
 <---EXPLANATION--->
 ### Operadores en C++
 
-En C++, los operadores son s韒bolos especiales que se utilizan para realizar operaciones en operandos. Hay varios tipos de operadores, incluyendo aritm閠icos, l骻icos y relacionales, que permiten realizar c醠culos, comparaciones y evaluaciones l骻icas.
+En C++, los operadores son s铆mbolos especiales que se utilizan para realizar operaciones en operandos. Hay varios tipos de operadores, incluyendo aritm茅ticos, l贸gicos y relacionales, que permiten realizar c谩lculos, comparaciones y evaluaciones l贸gicas.
 
-#### 1. **Operadores Aritm閠icos**
+#### 1. **Operadores Aritm茅ticos**
 
-Los operadores aritm閠icos se utilizan para realizar operaciones matem醫icas b醩icas.
+Los operadores aritm茅ticos se utilizan para realizar operaciones matem谩ticas b谩sicas.
 
-| Operador | Nombre         | Ejemplo      | Descripci髇                          |
+| Operador | Nombre         | Ejemplo      | Descripci贸n                          |
 |----------|----------------|--------------|--------------------------------------|
 | `+`      | Suma           | `a + b`      | Suma de `a` y `b`                    |
 | `-`      | Resta          | `a - b`      | Resta de `b` de `a`                  |
-| `*`      | Multiplicaci髇 | `a * b`      | Producto de `a` y `b`                |
-| `/`      | Divisi髇       | `a / b`      | Cociente de `a` y `b`                |
-| `%`      | M骴ulo         | `a % b`      | Resto de la divisi髇 de `a` entre `b`|
+| `*`      | Multiplicaci贸n | `a * b`      | Producto de `a` y `b`                |
+| `/`      | Divisi贸n       | `a / b`      | Cociente de `a` y `b`                |
+| `%`      | M贸dulo         | `a % b`      | Resto de la divisi贸n de `a` entre `b`|
 
-##### Ejemplo de Operadores Aritm閠icos
+##### Ejemplo de Operadores Aritm茅ticos
 
 ```cpp
 #include <iostream>
@@ -27,25 +27,25 @@ int main() {
 
     cout << "Suma: " << a + b << endl;           // 13
     cout << "Resta: " << a - b << endl;          // 7
-    cout << "Multiplicaci髇: " << a * b << endl; // 30
-    cout << "Divisi髇: " << a / b << endl;       // 3
-    cout << "M骴ulo: " << a % b << endl;         // 1
+    cout << "Multiplicaci贸n: " << a * b << endl; // 30
+    cout << "Divisi贸n: " << a / b << endl;       // 3
+    cout << "M贸dulo: " << a % b << endl;         // 1
 
     return 0;
 }
 ```
 
-#### 2. **Operadores L骻icos**
+#### 2. **Operadores L贸gicos**
 
-Los operadores l骻icos se utilizan para realizar operaciones l骻icas, generalmente en expresiones booleanas.
+Los operadores l贸gicos se utilizan para realizar operaciones l贸gicas, generalmente en expresiones booleanas.
 
-| Operador | Nombre   | Ejemplo       | Descripci髇                            |
+| Operador | Nombre   | Ejemplo       | Descripci贸n                            |
 |----------|----------|---------------|----------------------------------------|
 | `&&`     | AND      | `a && b`      | Verdadero si tanto `a` como `b` son verdaderos |
 | `||`     | OR       | `a || b`      | Verdadero si al menos uno de `a` o `b` es verdadero |
 | `!`      | NOT      | `!a`          | Verdadero si `a` es falso               |
 
-##### Ejemplo de Operadores L骻icos
+##### Ejemplo de Operadores L贸gicos
 
 ```cpp
 #include <iostream>
@@ -65,9 +65,9 @@ int main() {
 
 #### 3. **Operadores Relacionales**
 
-Los operadores relacionales se utilizan para comparar dos valores. El resultado de una operaci髇 relacional es un valor booleano (`true` o `false`).
+Los operadores relacionales se utilizan para comparar dos valores. El resultado de una operaci贸n relacional es un valor booleano (`true` o `false`).
 
-| Operador | Nombre           | Ejemplo   | Descripci髇                          |
+| Operador | Nombre           | Ejemplo   | Descripci贸n                          |
 |----------|------------------|-----------|--------------------------------------|
 | `==`     | Igual a          | `a == b`  | Verdadero si `a` es igual a `b`      |
 | `!=`     | No igual a       | `a != b`  | Verdadero si `a` no es igual a `b`   |
@@ -99,7 +99,7 @@ int main() {
 
 ### Uso Combinado de Operadores
 
-En muchos casos, los operadores aritm閠icos, l骻icos y relacionales se combinan para construir expresiones m醩 complejas.
+En muchos casos, los operadores aritm茅ticos, l贸gicos y relacionales se combinan para construir expresiones m谩s complejas.
 
 ##### Ejemplo de Uso Combinado
 
@@ -112,10 +112,10 @@ int main() {
     int y = 10;
     int z = 15;
 
-    // Combinaci髇 de operadores aritm閠icos y relacionales
+    // Combinaci贸n de operadores aritm茅ticos y relacionales
     bool resultado1 = (x + y) > z; // true
 
-    // Combinaci髇 de operadores l骻icos y relacionales
+    // Combinaci贸n de operadores l贸gicos y relacionales
     bool resultado2 = (x < y) && (y < z); // true
 
     cout << "Resultado 1: " << resultado1 << endl; // 1 (true)
@@ -125,19 +125,19 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Conocer y entender c髆o utilizar los operadores aritm閠icos, l骻icos y relacionales en C++ es fundamental para realizar operaciones b醩icas y tomar decisiones en el c骴igo. Estos operadores permiten construir expresiones y condiciones que son esenciales para controlar el flujo de ejecuci髇 de los programas y manipular datos de manera efectiva.
+Conocer y entender c贸mo utilizar los operadores aritm茅ticos, l贸gicos y relacionales en C++ es fundamental para realizar operaciones b谩sicas y tomar decisiones en el c贸digo. Estos operadores permiten construir expresiones y condiciones que son esenciales para controlar el flujo de ejecuci贸n de los programas y manipular datos de manera efectiva.
 <---FILES--->
-Ejemplo de Operadores Aritm閠icos
-Ejemplo de Operadores Aritm閠icos Result
-Ejemplo de Operadores L骻icos
-Ejemplo de Operadores L骻icos Result
+Ejemplo de Operadores Aritm茅ticos
+Ejemplo de Operadores Aritm茅ticos Result
+Ejemplo de Operadores L贸gicos
+Ejemplo de Operadores L贸gicos Result
 Ejemplo de Operadores Relacionales
 Ejemplo de Operadores Relacionales Result
 Ejemplo de Uso Combinado
 Ejemplo de Uso Combinado Result
-<---Ejemplo de Operadores Aritm閠icos--->
+<---Ejemplo de Operadores Aritm茅ticos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -148,14 +148,14 @@ int main() {
 
     cout << "Suma: " << a + b << endl;           // 13
     cout << "Resta: " << a - b << endl;          // 7
-    cout << "Multiplicaci髇: " << a * b << endl; // 30
-    cout << "Divisi髇: " << a / b << endl;       // 3
-    cout << "M骴ulo: " << a % b << endl;         // 1
+    cout << "Multiplicaci贸n: " << a * b << endl; // 30
+    cout << "Divisi贸n: " << a / b << endl;       // 3
+    cout << "M贸dulo: " << a % b << endl;         // 1
 
     return 0;
 }
-<---Ejemplo de Operadores Aritm閠icos Result--->
-<---Ejemplo de Operadores L骻icos--->
+<---Ejemplo de Operadores Aritm茅ticos Result--->
+<---Ejemplo de Operadores L贸gicos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -170,7 +170,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Operadores L骻icos Result--->
+<---Ejemplo de Operadores L贸gicos Result--->
 <---Ejemplo de Operadores Relacionales--->
 ```cpp
 #include <iostream>
@@ -200,10 +200,10 @@ int main() {
     int y = 10;
     int z = 15;
 
-    // Combinaci髇 de operadores aritm閠icos y relacionales
+    // Combinaci贸n de operadores aritm茅ticos y relacionales
     bool resultado1 = (x + y) > z; // true
 
-    // Combinaci髇 de operadores l骻icos y relacionales
+    // Combinaci贸n de operadores l贸gicos y relacionales
     bool resultado2 = (x < y) && (y < z); // true
 
     cout << "Resultado 1: " << resultado1 << endl; // 1 (true)

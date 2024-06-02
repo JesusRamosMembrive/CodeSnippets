@@ -1,23 +1,23 @@
 <---EXPLANATION--->
-### Diferencia entre Iterar con Õndices y con Iteradores en C++
+### Diferencia entre Iterar con √çndices y con Iteradores en C++
 
-Iterar sobre los elementos de un contenedor se puede hacer utilizando Ìndices o utilizando iteradores. Ambas tÈcnicas tienen sus propias ventajas y desventajas, y su uso depende del tipo de contenedor y del contexto en el que se est· programando. A continuaciÛn, se describen las diferencias clave entre iterar con Ìndices y con iteradores.
+Iterar sobre los elementos de un contenedor se puede hacer utilizando √≠ndices o utilizando iteradores. Ambas t√©cnicas tienen sus propias ventajas y desventajas, y su uso depende del tipo de contenedor y del contexto en el que se est√° programando. A continuaci√≥n, se describen las diferencias clave entre iterar con √≠ndices y con iteradores.
 
-#### Iterar con Õndices
+#### Iterar con √çndices
 
-Iterar con Ìndices es una tÈcnica com˙nmente utilizada con contenedores que soportan acceso aleatorio, como arrays y `std::vector`. En esta tÈcnica, se utilizan Ìndices para acceder a los elementos del contenedor.
+Iterar con √≠ndices es una t√©cnica com√∫nmente utilizada con contenedores que soportan acceso aleatorio, como arrays y `std::vector`. En esta t√©cnica, se utilizan √≠ndices para acceder a los elementos del contenedor.
 
-##### Ventajas de Iterar con Õndices
+##### Ventajas de Iterar con √çndices
 
 1. **Simplicidad:** La sintaxis es sencilla y directa.
-2. **Acceso Directo:** Permite acceso directo a los elementos del contenedor mediante su posiciÛn.
+2. **Acceso Directo:** Permite acceso directo a los elementos del contenedor mediante su posici√≥n.
 
-##### Desventajas de Iterar con Õndices
+##### Desventajas de Iterar con √çndices
 
 1. **Limitado a Contenedores con Acceso Aleatorio:** No es aplicable a todos los tipos de contenedores, como `std::list`, `std::set`, o `std::map`.
-2. **Errores de Rango:** Es propenso a errores de acceso fuera de rango si no se manejan correctamente los lÌmites del bucle.
+2. **Errores de Rango:** Es propenso a errores de acceso fuera de rango si no se manejan correctamente los l√≠mites del bucle.
 
-##### Ejemplo de IteraciÛn con Õndices
+##### Ejemplo de Iteraci√≥n con √çndices
 
 ```cpp
 #include <iostream>
@@ -26,7 +26,7 @@ Iterar con Ìndices es una tÈcnica com˙nmente utilizada con contenedores que sopo
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
-    // Iterar con Ìndices
+    // Iterar con √≠ndices
     for (size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i] << " ";
     }
@@ -38,20 +38,20 @@ int main() {
 
 #### Iterar con Iteradores
 
-Los iteradores proporcionan una manera m·s generalizada y flexible de recorrer contenedores. Funcionan con cualquier tipo de contenedor que proporcione iteradores, no solo aquellos con acceso aleatorio.
+Los iteradores proporcionan una manera m√°s generalizada y flexible de recorrer contenedores. Funcionan con cualquier tipo de contenedor que proporcione iteradores, no solo aquellos con acceso aleatorio.
 
 ##### Ventajas de Iterar con Iteradores
 
 1. **Generalidad:** Funciona con cualquier tipo de contenedor de la STL, incluyendo `std::list`, `std::set`, y `std::map`.
-2. **Seguridad:** Menos propenso a errores de rango, ya que los iteradores proporcionan mÈtodos seguros como `begin()` y `end()`.
-3. **Flexibilidad:** Permite operaciones adicionales como la modificaciÛn de elementos y la inserciÛn/eliminaciÛn durante la iteraciÛn en contenedores que lo permiten.
+2. **Seguridad:** Menos propenso a errores de rango, ya que los iteradores proporcionan m√©todos seguros como `begin()` y `end()`.
+3. **Flexibilidad:** Permite operaciones adicionales como la modificaci√≥n de elementos y la inserci√≥n/eliminaci√≥n durante la iteraci√≥n en contenedores que lo permiten.
 
 ##### Desventajas de Iterar con Iteradores
 
-1. **Complejidad:** La sintaxis puede ser m·s compleja y menos intuitiva que el uso de Ìndices, especialmente para principiantes.
-2. **Menor Eficiencia en Algunos Casos:** Para contenedores con acceso aleatorio, el uso de Ìndices puede ser m·s eficiente.
+1. **Complejidad:** La sintaxis puede ser m√°s compleja y menos intuitiva que el uso de √≠ndices, especialmente para principiantes.
+2. **Menor Eficiencia en Algunos Casos:** Para contenedores con acceso aleatorio, el uso de √≠ndices puede ser m√°s eficiente.
 
-##### Ejemplo de IteraciÛn con Iteradores
+##### Ejemplo de Iteraci√≥n con Iteradores
 
 ```cpp
 #include <iostream>
@@ -70,11 +70,11 @@ int main() {
 }
 ```
 
-### ComparaciÛn Directa
+### Comparaci√≥n Directa
 
 #### Con `std::vector`
 
-##### IteraciÛn con Õndices
+##### Iteraci√≥n con √çndices
 
 ```cpp
 #include <iostream>
@@ -83,7 +83,7 @@ int main() {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
-    // Iterar con Ìndices
+    // Iterar con √≠ndices
     for (size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i] << " ";
     }
@@ -93,7 +93,7 @@ int main() {
 }
 ```
 
-##### IteraciÛn con Iteradores
+##### Iteraci√≥n con Iteradores
 
 ```cpp
 #include <iostream>
@@ -114,7 +114,7 @@ int main() {
 
 #### Con `std::list`
 
-##### IteraciÛn con Iteradores (No se puede usar Ìndices)
+##### Iteraci√≥n con Iteradores (No se puede usar √≠ndices)
 
 ```cpp
 #include <iostream>
@@ -133,38 +133,38 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Iterar con Ìndices y con iteradores son tÈcnicas ˙tiles en C++, cada una con sus propias ventajas y desventajas. La elecciÛn entre usar Ìndices o iteradores depende del tipo de contenedor y del contexto especÌfico en el que se est· programando.
+Iterar con √≠ndices y con iteradores son t√©cnicas √∫tiles en C++, cada una con sus propias ventajas y desventajas. La elecci√≥n entre usar √≠ndices o iteradores depende del tipo de contenedor y del contexto espec√≠fico en el que se est√° programando.
 
-- **Õndices:** Son m·s simples y directos, pero est·n limitados a contenedores con acceso aleatorio y son m·s propensos a errores de rango.
-- **Iteradores:** Son m·s generales y seguros, funcionando con cualquier contenedor de la STL y proporcionando mayor flexibilidad, aunque pueden ser m·s complejos de utilizar.
+- **√çndices:** Son m√°s simples y directos, pero est√°n limitados a contenedores con acceso aleatorio y son m√°s propensos a errores de rango.
+- **Iteradores:** Son m√°s generales y seguros, funcionando con cualquier contenedor de la STL y proporcionando mayor flexibilidad, aunque pueden ser m√°s complejos de utilizar.
 
-Comprender cu·ndo y cÛmo utilizar cada tÈcnica es esencial para escribir cÛdigo C++ eficiente, seguro y adaptable a diferentes tipos de contenedores.
+Comprender cu√°ndo y c√≥mo utilizar cada t√©cnica es esencial para escribir c√≥digo C++ eficiente, seguro y adaptable a diferentes tipos de contenedores.
 <---FILES--->
-Ventajas de Iterar con Õndices
-Ventajas de Iterar con Õndices Result
-Desventajas de Iterar con Õndices
-Desventajas de Iterar con Õndices Result
-Ejemplo de IteraciÛn con Õndices
-Ejemplo de IteraciÛn con Õndices Result
+Ventajas de Iterar con √çndices
+Ventajas de Iterar con √çndices Result
+Desventajas de Iterar con √çndices
+Desventajas de Iterar con √çndices Result
+Ejemplo de Iteraci√≥n con √çndices
+Ejemplo de Iteraci√≥n con √çndices Result
 Ventajas de Iterar con Iteradores
 Ventajas de Iterar con Iteradores Result
 Desventajas de Iterar con Iteradores
 Desventajas de Iterar con Iteradores Result
-Ejemplo de IteraciÛn con Iteradores
-Ejemplo de IteraciÛn con Iteradores Result
-IteraciÛn con Õndices
-IteraciÛn con Õndices Result
-IteraciÛn con Iteradores
-IteraciÛn con Iteradores Result
-IteraciÛn con Iteradores (No se puede usar Ìndices)
-IteraciÛn con Iteradores (No se puede usar Ìndices) Result
-<---Ventajas de Iterar con Õndices--->
-<---Ventajas de Iterar con Õndices Result--->
-<---Desventajas de Iterar con Õndices--->
-<---Desventajas de Iterar con Õndices Result--->
-<---Ejemplo de IteraciÛn con Õndices--->
+Ejemplo de Iteraci√≥n con Iteradores
+Ejemplo de Iteraci√≥n con Iteradores Result
+Iteraci√≥n con √çndices
+Iteraci√≥n con √çndices Result
+Iteraci√≥n con Iteradores
+Iteraci√≥n con Iteradores Result
+Iteraci√≥n con Iteradores (No se puede usar √≠ndices)
+Iteraci√≥n con Iteradores (No se puede usar √≠ndices) Result
+<---Ventajas de Iterar con √çndices--->
+<---Ventajas de Iterar con √çndices Result--->
+<---Desventajas de Iterar con √çndices--->
+<---Desventajas de Iterar con √çndices Result--->
+<---Ejemplo de Iteraci√≥n con √çndices--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -172,7 +172,7 @@ IteraciÛn con Iteradores (No se puede usar Ìndices) Result
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
-    // Iterar con Ìndices
+    // Iterar con √≠ndices
     for (size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i] << " ";
     }
@@ -180,12 +180,12 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de IteraciÛn con Õndices Result--->
+<---Ejemplo de Iteraci√≥n con √çndices Result--->
 <---Ventajas de Iterar con Iteradores--->
 <---Ventajas de Iterar con Iteradores Result--->
 <---Desventajas de Iterar con Iteradores--->
 <---Desventajas de Iterar con Iteradores Result--->
-<---Ejemplo de IteraciÛn con Iteradores--->
+<---Ejemplo de Iteraci√≥n con Iteradores--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -201,8 +201,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de IteraciÛn con Iteradores Result--->
-<---IteraciÛn con Õndices--->
+<---Ejemplo de Iteraci√≥n con Iteradores Result--->
+<---Iteraci√≥n con √çndices--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -210,7 +210,7 @@ int main() {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
-    // Iterar con Ìndices
+    // Iterar con √≠ndices
     for (size_t i = 0; i < vec.size(); ++i) {
         std::cout << vec[i] << " ";
     }
@@ -218,8 +218,8 @@ int main() {
 
     return 0;
 }
-<---IteraciÛn con Õndices Result--->
-<---IteraciÛn con Iteradores--->
+<---Iteraci√≥n con √çndices Result--->
+<---Iteraci√≥n con Iteradores--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -235,8 +235,8 @@ int main() {
 
     return 0;
 }
-<---IteraciÛn con Iteradores Result--->
-<---IteraciÛn con Iteradores (No se puede usar Ìndices)--->
+<---Iteraci√≥n con Iteradores Result--->
+<---Iteraci√≥n con Iteradores (No se puede usar √≠ndices)--->
 ```cpp
 #include <iostream>
 #include <list>
@@ -252,4 +252,4 @@ int main() {
 
     return 0;
 }
-<---IteraciÛn con Iteradores (No se puede usar Ìndices) Result--->
+<---Iteraci√≥n con Iteradores (No se puede usar √≠ndices) Result--->

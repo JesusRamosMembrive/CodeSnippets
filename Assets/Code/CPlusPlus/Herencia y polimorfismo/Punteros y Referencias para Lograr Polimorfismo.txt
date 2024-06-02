@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Punteros y Referencias para Lograr Polimorfismo en C++
 
-En C++, los punteros y las referencias son herramientas clave para lograr el polimorfismo din醡ico. Usar punteros y referencias a clases base permite que las funciones se comporten de manera polim髍fica, es decir, que se ejecuten diferentes versiones de una funci髇 seg鷑 el tipo real del objeto en tiempo de ejecuci髇.
+En C++, los punteros y las referencias son herramientas clave para lograr el polimorfismo din谩mico. Usar punteros y referencias a clases base permite que las funciones se comporten de manera polim贸rfica, es decir, que se ejecuten diferentes versiones de una funci贸n seg煤n el tipo real del objeto en tiempo de ejecuci贸n.
 
 #### Punteros y Polimorfismo
 
-Cuando se usan punteros a una clase base para manejar objetos de clases derivadas, el comportamiento polim髍fico se logra mediante funciones virtuales. Un puntero a una clase base puede apuntar a un objeto de cualquier clase derivada, y las funciones virtuales garantizan que se llame a la versi髇 correcta de la funci髇 seg鷑 el tipo del objeto al que apunta el puntero.
+Cuando se usan punteros a una clase base para manejar objetos de clases derivadas, el comportamiento polim贸rfico se logra mediante funciones virtuales. Un puntero a una clase base puede apuntar a un objeto de cualquier clase derivada, y las funciones virtuales garantizan que se llame a la versi贸n correcta de la funci贸n seg煤n el tipo del objeto al que apunta el puntero.
 
 ##### Ejemplo de Polimorfismo con Punteros
 
@@ -31,7 +31,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -53,11 +53,11 @@ int main() {
 
 En este ejemplo:
 - Se crean punteros a `Animal` que apuntan a objetos de `Animal`, `Perro` y `Gato`.
-- Las llamadas a `hacerSonido` son resueltas en tiempo de ejecuci髇 seg鷑 el tipo real del objeto al que apunta el puntero, gracias a la palabra clave `virtual`.
+- Las llamadas a `hacerSonido` son resueltas en tiempo de ejecuci贸n seg煤n el tipo real del objeto al que apunta el puntero, gracias a la palabra clave `virtual`.
 
 #### Referencias y Polimorfismo
 
-Las referencias a clases base tambi閚 pueden utilizarse para lograr polimorfismo. Similar a los punteros, una referencia a una clase base puede referirse a un objeto de cualquier clase derivada, y las funciones virtuales garantizan que se llame a la versi髇 correcta de la funci髇.
+Las referencias a clases base tambi茅n pueden utilizarse para lograr polimorfismo. Similar a los punteros, una referencia a una clase base puede referirse a un objeto de cualquier clase derivada, y las funciones virtuales garantizan que se llame a la versi贸n correcta de la funci贸n.
 
 ##### Ejemplo de Polimorfismo con Referencias
 
@@ -83,7 +83,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -105,19 +105,19 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `hacerSonidoAnimal` acepta una referencia a `Animal` y llama a `hacerSonido`.
-- La referencia `animal` puede referirse a un `Animal`, `Perro` o `Gato`, y la llamada a `hacerSonido` se resuelve en tiempo de ejecuci髇 seg鷑 el tipo real del objeto.
+- La funci贸n `hacerSonidoAnimal` acepta una referencia a `Animal` y llama a `hacerSonido`.
+- La referencia `animal` puede referirse a un `Animal`, `Perro` o `Gato`, y la llamada a `hacerSonido` se resuelve en tiempo de ejecuci贸n seg煤n el tipo real del objeto.
 
 #### Ventajas y Consideraciones
 
 - **Ventajas del Polimorfismo:**
   - **Flexibilidad:** Permite tratar objetos de diferentes clases derivadas de manera uniforme.
-  - **Extensibilidad:** Nuevas clases derivadas pueden a馻dirse sin cambiar el c骴igo que usa punteros o referencias a la clase base.
-  - **Mantenimiento:** Facilita el mantenimiento y la expansi髇 del c骴igo, ya que las modificaciones pueden hacerse en las clases derivadas sin afectar al c骴igo que utiliza las clases base.
+  - **Extensibilidad:** Nuevas clases derivadas pueden a帽adirse sin cambiar el c贸digo que usa punteros o referencias a la clase base.
+  - **Mantenimiento:** Facilita el mantenimiento y la expansi贸n del c贸digo, ya que las modificaciones pueden hacerse en las clases derivadas sin afectar al c贸digo que utiliza las clases base.
 
 - **Consideraciones:**
-  - **Destructores Virtuales:** Siempre declarar destructores virtuales en clases base polim髍ficas para asegurar una correcta liberaci髇 de recursos.
-  - **Cuidado con la Gesti髇 de Recursos:** Cuando se usan punteros, es importante gestionar correctamente la memoria para evitar fugas.
+  - **Destructores Virtuales:** Siempre declarar destructores virtuales en clases base polim贸rficas para asegurar una correcta liberaci贸n de recursos.
+  - **Cuidado con la Gesti贸n de Recursos:** Cuando se usan punteros, es importante gestionar correctamente la memoria para evitar fugas.
 
 ##### Destructores Virtuales
 
@@ -143,9 +143,9 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-El uso de punteros y referencias a clases base es esencial para lograr polimorfismo din醡ico en C++. Permiten que las funciones miembro virtuales se comporten de manera polim髍fica, resolviendo en tiempo de ejecuci髇 la versi髇 correcta de la funci髇 seg鷑 el tipo real del objeto. Este mecanismo es fundamental para dise馻r sistemas orientados a objetos flexibles y mantenibles, permitiendo extender y modificar el comportamiento sin cambiar el c骴igo existente que trabaja con clases base. La correcta gesti髇 de recursos, incluyendo destructores virtuales, es crucial para evitar problemas en aplicaciones polim髍ficas.
+El uso de punteros y referencias a clases base es esencial para lograr polimorfismo din谩mico en C++. Permiten que las funciones miembro virtuales se comporten de manera polim贸rfica, resolviendo en tiempo de ejecuci贸n la versi贸n correcta de la funci贸n seg煤n el tipo real del objeto. Este mecanismo es fundamental para dise帽ar sistemas orientados a objetos flexibles y mantenibles, permitiendo extender y modificar el comportamiento sin cambiar el c贸digo existente que trabaja con clases base. La correcta gesti贸n de recursos, incluyendo destructores virtuales, es crucial para evitar problemas en aplicaciones polim贸rficas.
 <---FILES--->
 Ejemplo de Polimorfismo con Punteros
 Ejemplo de Polimorfismo con Punteros Result
@@ -176,7 +176,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -218,7 +218,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 

@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Uso de Iteradores en Bucles `for` y `while` en C++
 
-Los iteradores son una herramienta poderosa en C++ para recorrer los elementos de los contenedores de la biblioteca estándar (STL) de manera eficiente. Los iteradores se pueden utilizar tanto en bucles `for` como en bucles `while` para acceder y manipular los elementos de un contenedor.
+Los iteradores son una herramienta poderosa en C++ para recorrer los elementos de los contenedores de la biblioteca estÃ¡ndar (STL) de manera eficiente. Los iteradores se pueden utilizar tanto en bucles `for` como en bucles `while` para acceder y manipular los elementos de un contenedor.
 
 #### Uso de Iteradores en Bucles `for`
 
-El bucle `for` es una forma común y concisa de recorrer elementos en un contenedor utilizando iteradores.
+El bucle `for` es una forma comÃºn y concisa de recorrer elementos en un contenedor utilizando iteradores.
 
 ##### Ejemplo con `std::vector` y Bucle `for`
 
@@ -28,7 +28,7 @@ int main() {
 
 En este ejemplo:
 - `vec.begin()` devuelve un iterador al primer elemento del vector.
-- `vec.end()` devuelve un iterador al elemento siguiente al último del vector.
+- `vec.end()` devuelve un iterador al elemento siguiente al Ãºltimo del vector.
 - El bucle `for` recorre el vector desde el primer elemento hasta el elemento anterior al `end()`.
 
 ##### Ejemplo con Iteradores Constantes
@@ -52,12 +52,12 @@ int main() {
 
 En este ejemplo:
 - `vec.cbegin()` devuelve un iterador constante al primer elemento del vector.
-- `vec.cend()` devuelve un iterador constante al elemento siguiente al último del vector.
+- `vec.cend()` devuelve un iterador constante al elemento siguiente al Ãºltimo del vector.
 - El bucle `for` recorre el vector sin modificar sus elementos.
 
 #### Uso de Iteradores en Bucles `while`
 
-El bucle `while` proporciona una alternativa más explícita y flexible para recorrer elementos en un contenedor utilizando iteradores.
+El bucle `while` proporciona una alternativa mÃ¡s explÃ­cita y flexible para recorrer elementos en un contenedor utilizando iteradores.
 
 ##### Ejemplo con `std::list` y Bucle `while`
 
@@ -82,7 +82,7 @@ int main() {
 
 En este ejemplo:
 - `lst.begin()` devuelve un iterador al primer elemento de la lista.
-- `lst.end()` devuelve un iterador al elemento siguiente al último de la lista.
+- `lst.end()` devuelve un iterador al elemento siguiente al Ãºltimo de la lista.
 - El bucle `while` recorre la lista desde el primer elemento hasta el elemento anterior al `end()`.
 
 ##### Ejemplo con Iteradores Constantes
@@ -108,12 +108,12 @@ int main() {
 
 En este ejemplo:
 - `lst.cbegin()` devuelve un iterador constante al primer elemento de la lista.
-- `lst.cend()` devuelve un iterador constante al elemento siguiente al último de la lista.
+- `lst.cend()` devuelve un iterador constante al elemento siguiente al Ãºltimo de la lista.
 - El bucle `while` recorre la lista sin modificar sus elementos.
 
 #### Uso de Iteradores Bidireccionales en Bucles
 
-Los iteradores bidireccionales permiten recorrer contenedores en ambas direcciones, lo que es útil en algunos casos.
+Los iteradores bidireccionales permiten recorrer contenedores en ambas direcciones, lo que es Ãºtil en algunos casos.
 
 ##### Ejemplo con `std::list` y Bucle `for` en Ambas Direcciones
 
@@ -130,7 +130,7 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer hacia atrás
+    // Recorrer hacia atrÃ¡s
     for (std::list<int>::iterator it = --lst.end(); it != --lst.begin(); --it) {
         std::cout << *it << " ";
     }
@@ -142,11 +142,11 @@ int main() {
 
 En este ejemplo:
 - El primer bucle `for` recorre la lista hacia adelante.
-- El segundo bucle `for` recorre la lista hacia atrás utilizando iteradores bidireccionales.
+- El segundo bucle `for` recorre la lista hacia atrÃ¡s utilizando iteradores bidireccionales.
 
-### Conclusión
+### ConclusiÃ³n
 
-El uso de iteradores en bucles `for` y `while` proporciona una manera flexible y eficiente de recorrer y manipular los elementos de un contenedor en C++. Los iteradores permiten una navegación segura y eficiente a través de los elementos del contenedor, ya sea para lectura o modificación. Comprender cómo utilizar iteradores con diferentes tipos de bucles es esencial para escribir código C++ robusto y eficiente.
+El uso de iteradores en bucles `for` y `while` proporciona una manera flexible y eficiente de recorrer y manipular los elementos de un contenedor en C++. Los iteradores permiten una navegaciÃ³n segura y eficiente a travÃ©s de los elementos del contenedor, ya sea para lectura o modificaciÃ³n. Comprender cÃ³mo utilizar iteradores con diferentes tipos de bucles es esencial para escribir cÃ³digo C++ robusto y eficiente.
 <---FILES--->
 Ejemplo con `std::vector` y Bucle `for`
 Ejemplo con `std::vector` y Bucle `for` Result
@@ -225,7 +225,7 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer hacia atrás
+    // Recorrer hacia atrÃ¡s
     for (std::list<int>::iterator it = --lst.end(); it != --lst.begin(); --it) {
         std::cout << *it << " ";
     }

@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### DeclaraciÛn de Namespace y Uso en C++
+### Declaraci√≥n de Namespace y Uso en C++
 
-Los namespaces (espacios de nombres) son una caracterÌstica fundamental de C++ que ayuda a organizar el cÛdigo y evitar conflictos de nombres. Los namespaces permiten agrupar identificadores como funciones, variables y clases bajo un nombre de espacio de nombres especÌfico, lo que facilita la gestiÛn y la reutilizaciÛn del cÛdigo en proyectos grandes.
+Los namespaces (espacios de nombres) son una caracter√≠stica fundamental de C++ que ayuda a organizar el c√≥digo y evitar conflictos de nombres. Los namespaces permiten agrupar identificadores como funciones, variables y clases bajo un nombre de espacio de nombres espec√≠fico, lo que facilita la gesti√≥n y la reutilizaci√≥n del c√≥digo en proyectos grandes.
 
-#### DeclaraciÛn de un Namespace
+#### Declaraci√≥n de un Namespace
 
-La declaraciÛn de un namespace se realiza usando la palabra clave `namespace` seguida del nombre del namespace y un bloque de cÛdigo que contiene las definiciones que pertenecen a ese namespace.
+La declaraci√≥n de un namespace se realiza usando la palabra clave `namespace` seguida del nombre del namespace y un bloque de c√≥digo que contiene las definiciones que pertenecen a ese namespace.
 
-##### Sintaxis B·sica
+##### Sintaxis B√°sica
 
 ```cpp
 namespace nombre_del_namespace {
@@ -15,7 +15,7 @@ namespace nombre_del_namespace {
 }
 ```
 
-##### Ejemplo de DeclaraciÛn de Namespace
+##### Ejemplo de Declaraci√≥n de Namespace
 
 ```cpp
 namespace Matematicas {
@@ -38,7 +38,7 @@ En este ejemplo:
 #### Uso de un Namespace
 
 Para usar las definiciones de un namespace, se puede:
-1. **Usar el Operador de ResoluciÛn de ¡mbito `::`:** Este operador se usa para acceder a los miembros de un namespace especificando el nombre del namespace seguido de `::` y el nombre del miembro.
+1. **Usar el Operador de Resoluci√≥n de √Åmbito `::`:** Este operador se usa para acceder a los miembros de un namespace especificando el nombre del namespace seguido de `::` y el nombre del miembro.
 
 ##### Ejemplo
 
@@ -59,14 +59,14 @@ namespace Matematicas {
 
 int main() {
     double radio = 5.0;
-    std::cout << "El ·rea del cÌrculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
+    std::cout << "El √°rea del c√≠rculo con radio " << radio << " es " << Matematicas::areaCirculo(radio) << std::endl;
     return 0;
 }
 ```
 
-En este ejemplo, `Matematicas::areaCirculo` se utiliza para acceder a la funciÛn `areaCirculo` dentro del namespace `Matematicas`.
+En este ejemplo, `Matematicas::areaCirculo` se utiliza para acceder a la funci√≥n `areaCirculo` dentro del namespace `Matematicas`.
 
-2. **Directiva `using`:** La directiva `using` puede traer todos los miembros de un namespace al ·mbito actual, evitando la necesidad de usar el operador de resoluciÛn de ·mbito repetidamente.
+2. **Directiva `using`:** La directiva `using` puede traer todos los miembros de un namespace al √°mbito actual, evitando la necesidad de usar el operador de resoluci√≥n de √°mbito repetidamente.
 
 ##### Ejemplo
 
@@ -89,14 +89,14 @@ using namespace Matematicas;
 
 int main() {
     double radio = 5.0;
-    std::cout << "El ·rea del cÌrculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Sin usar Matematicas::
+    std::cout << "El √°rea del c√≠rculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Sin usar Matematicas::
     return 0;
 }
 ```
 
-En este ejemplo, `using namespace Matematicas` trae todos los miembros de `Matematicas` al ·mbito actual, por lo que `areaCirculo` se puede usar directamente.
+En este ejemplo, `using namespace Matematicas` trae todos los miembros de `Matematicas` al √°mbito actual, por lo que `areaCirculo` se puede usar directamente.
 
-3. **DeclaraciÛn de Uso de Identificadores EspecÌficos:** Se puede usar la declaraciÛn `using` para traer solo identificadores especÌficos de un namespace al ·mbito actual.
+3. **Declaraci√≥n de Uso de Identificadores Espec√≠ficos:** Se puede usar la declaraci√≥n `using` para traer solo identificadores espec√≠ficos de un namespace al √°mbito actual.
 
 ##### Ejemplo
 
@@ -119,16 +119,16 @@ using Matematicas::areaCirculo;
 
 int main() {
     double radio = 5.0;
-    std::cout << "El ·rea del cÌrculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
+    std::cout << "El √°rea del c√≠rculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
     return 0;
 }
 ```
 
-En este ejemplo, solo `areaCirculo` se trae al ·mbito actual, mientras que otros miembros de `Matematicas` no se traen autom·ticamente.
+En este ejemplo, solo `areaCirculo` se trae al √°mbito actual, mientras que otros miembros de `Matematicas` no se traen autom√°ticamente.
 
 #### Namespaces Anidados
 
-Los namespaces pueden anidarse para organizar el cÛdigo de manera m·s jer·rquica y modular.
+Los namespaces pueden anidarse para organizar el c√≥digo de manera m√°s jer√°rquica y modular.
 
 ##### Ejemplo de Namespaces Anidados
 
@@ -153,7 +153,7 @@ int main() {
 
 En este ejemplo:
 - `Empresa`, `Departamento` y `Proyecto` son namespaces anidados.
-- `mostrarMensaje` se accede usando el operador de resoluciÛn de ·mbito con todos los niveles del namespace.
+- `mostrarMensaje` se accede usando el operador de resoluci√≥n de √°mbito con todos los niveles del namespace.
 
 #### Alias de Namespace
 
@@ -178,59 +178,59 @@ namespace Empresa {
 namespace Proyecto = Empresa::Departamento::Proyecto;
 
 int main() {
-    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la funciÛn
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la funci√≥n
     return 0;
 }
 ```
 
 En este ejemplo, `Proyecto` es un alias para `Empresa::Departamento::Proyecto`, lo que simplifica la llamada a `mostrarMensaje`.
 
-#### Namespaces AnÛnimos
+#### Namespaces An√≥nimos
 
-Los namespaces anÛnimos se utilizan para definir miembros que deben tener alcance en el archivo (file scope) y no deben ser accesibles desde otros archivos, ˙til para evitar colisiones de nombres en programas grandes.
+Los namespaces an√≥nimos se utilizan para definir miembros que deben tener alcance en el archivo (file scope) y no deben ser accesibles desde otros archivos, √∫til para evitar colisiones de nombres en programas grandes.
 
-##### Ejemplo de Namespace AnÛnimo
+##### Ejemplo de Namespace An√≥nimo
 
 ```cpp
 #include <iostream>
 
 namespace {
     void funcionPrivada() {
-        std::cout << "FunciÛn en el namespace anÛnimo" << std::endl;
+        std::cout << "Funci√≥n en el namespace an√≥nimo" << std::endl;
     }
 }
 
 int main() {
-    funcionPrivada(); // Llamada v·lida dentro del mismo archivo
+    funcionPrivada(); // Llamada v√°lida dentro del mismo archivo
     return 0;
 }
 ```
 
-En este ejemplo, `funcionPrivada` solo es accesible dentro del archivo donde se define, ya que est· en un namespace anÛnimo.
+En este ejemplo, `funcionPrivada` solo es accesible dentro del archivo donde se define, ya que est√° en un namespace an√≥nimo.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los namespaces en C++ son esenciales para organizar el cÛdigo y evitar conflictos de nombres en proyectos grandes. Permiten agrupar definiciones relacionadas, mejorar la modularidad y la claridad del cÛdigo, y facilitar la integraciÛn de m˙ltiples librerÌas. Comprender cÛmo declarar y utilizar namespaces de manera efectiva es crucial para escribir cÛdigo C++ bien estructurado y mantenible.
+Los namespaces en C++ son esenciales para organizar el c√≥digo y evitar conflictos de nombres en proyectos grandes. Permiten agrupar definiciones relacionadas, mejorar la modularidad y la claridad del c√≥digo, y facilitar la integraci√≥n de m√∫ltiples librer√≠as. Comprender c√≥mo declarar y utilizar namespaces de manera efectiva es crucial para escribir c√≥digo C++ bien estructurado y mantenible.
 <---FILES--->
-Sintaxis B·sica
-Sintaxis B·sica Result
-Ejemplo de DeclaraciÛn de Namespace
-Ejemplo de DeclaraciÛn de Namespace Result
+Sintaxis B√°sica
+Sintaxis B√°sica Result
+Ejemplo de Declaraci√≥n de Namespace
+Ejemplo de Declaraci√≥n de Namespace Result
 Ejemplo
 Ejemplo Result
 Ejemplo de Namespaces Anidados
 Ejemplo de Namespaces Anidados Result
 Ejemplo de Alias de Namespace
 Ejemplo de Alias de Namespace Result
-Ejemplo de Namespace AnÛnimo
-Ejemplo de Namespace AnÛnimo Result
-<---Sintaxis B·sica--->
+Ejemplo de Namespace An√≥nimo
+Ejemplo de Namespace An√≥nimo Result
+<---Sintaxis B√°sica--->
 ```cpp
 namespace nombre_del_namespace {
     // Definiciones de variables, funciones, clases, etc.
 }
-<---Sintaxis B·sica Result--->
-<---Ejemplo de DeclaraciÛn de Namespace--->
+<---Sintaxis B√°sica Result--->
+<---Ejemplo de Declaraci√≥n de Namespace--->
 ```cpp
 namespace Matematicas {
     const double PI = 3.141592653589793;
@@ -243,7 +243,7 @@ namespace Matematicas {
         return PI * cuadrado(radio);
     }
 }
-<---Ejemplo de DeclaraciÛn de Namespace Result--->
+<---Ejemplo de Declaraci√≥n de Namespace Result--->
 <---Ejemplo--->
 ```cpp
 #include <iostream>
@@ -264,7 +264,7 @@ using Matematicas::areaCirculo;
 
 int main() {
     double radio = 5.0;
-    std::cout << "El ·rea del cÌrculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
+    std::cout << "El √°rea del c√≠rculo con radio " << radio << " es " << areaCirculo(radio) << std::endl; // Solo areaCirculo
     return 0;
 }
 <---Ejemplo Result--->
@@ -305,22 +305,22 @@ namespace Empresa {
 namespace Proyecto = Empresa::Departamento::Proyecto;
 
 int main() {
-    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la funciÛn
+    Proyecto::mostrarMensaje(); // Usando el alias para llamar a la funci√≥n
     return 0;
 }
 <---Ejemplo de Alias de Namespace Result--->
-<---Ejemplo de Namespace AnÛnimo--->
+<---Ejemplo de Namespace An√≥nimo--->
 ```cpp
 #include <iostream>
 
 namespace {
     void funcionPrivada() {
-        std::cout << "FunciÛn en el namespace anÛnimo" << std::endl;
+        std::cout << "Funci√≥n en el namespace an√≥nimo" << std::endl;
     }
 }
 
 int main() {
-    funcionPrivada(); // Llamada v·lida dentro del mismo archivo
+    funcionPrivada(); // Llamada v√°lida dentro del mismo archivo
     return 0;
 }
-<---Ejemplo de Namespace AnÛnimo Result--->
+<---Ejemplo de Namespace An√≥nimo Result--->

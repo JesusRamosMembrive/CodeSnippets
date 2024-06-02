@@ -1,19 +1,19 @@
 <---EXPLANATION--->
-### Inicialización dentro de `if` y `switch` en C++
+### InicializaciÃ³n dentro de `if` y `switch` en C++
 
-Desde C++17, es posible inicializar variables directamente dentro de la condición de un `if` o un `switch`. Esta característica mejora la legibilidad y el alcance del código, asegurando que las variables sólo sean accesibles dentro del ámbito de la estructura condicional donde se utilizan.
+Desde C++17, es posible inicializar variables directamente dentro de la condiciÃ³n de un `if` o un `switch`. Esta caracterÃ­stica mejora la legibilidad y el alcance del cÃ³digo, asegurando que las variables sÃ³lo sean accesibles dentro del Ã¡mbito de la estructura condicional donde se utilizan.
 
-#### Inicialización dentro de `if`
+#### InicializaciÃ³n dentro de `if`
 
-La inicialización dentro de `if` permite declarar e inicializar una variable en la misma línea donde se evalúa la condición del `if`. La variable declarada es local al bloque del `if` y sus cláusulas `else`.
+La inicializaciÃ³n dentro de `if` permite declarar e inicializar una variable en la misma lÃ­nea donde se evalÃºa la condiciÃ³n del `if`. La variable declarada es local al bloque del `if` y sus clÃ¡usulas `else`.
 
-##### Sintaxis Básica
+##### Sintaxis BÃ¡sica
 
 ```cpp
 if (auto variable = expresion; condicion) {
-    // Código a ejecutar si la condición es verdadera
+    // CÃ³digo a ejecutar si la condiciÃ³n es verdadera
 } else {
-    // Código a ejecutar si la condición es falsa
+    // CÃ³digo a ejecutar si la condiciÃ³n es falsa
 }
 ```
 
@@ -49,24 +49,24 @@ int main() {
 }
 ```
 
-En este ejemplo, la variable `valor` es declarada y inicializada dentro de la condición del `if`, y su alcance se limita al bloque del `if` y su correspondiente `else`.
+En este ejemplo, la variable `valor` es declarada y inicializada dentro de la condiciÃ³n del `if`, y su alcance se limita al bloque del `if` y su correspondiente `else`.
 
-#### Inicialización dentro de `switch`
+#### InicializaciÃ³n dentro de `switch`
 
-La inicialización dentro de `switch` permite declarar e inicializar una variable en la misma línea donde se evalúa la expresión del `switch`. La variable declarada es local al bloque del `switch`.
+La inicializaciÃ³n dentro de `switch` permite declarar e inicializar una variable en la misma lÃ­nea donde se evalÃºa la expresiÃ³n del `switch`. La variable declarada es local al bloque del `switch`.
 
-##### Sintaxis Básica
+##### Sintaxis BÃ¡sica
 
 ```cpp
 switch (auto variable = expresion; variable) {
     case valor1:
-        // Código a ejecutar si variable == valor1
+        // CÃ³digo a ejecutar si variable == valor1
         break;
     case valor2:
-        // Código a ejecutar si variable == valor2
+        // CÃ³digo a ejecutar si variable == valor2
         break;
     default:
-        // Código a ejecutar si variable no coincide con ningún caso
+        // CÃ³digo a ejecutar si variable no coincide con ningÃºn caso
 }
 ```
 
@@ -81,7 +81,7 @@ string obtenerCategoria(int edad) {
     if (edad < 0) {
         return "Invalido";
     } else if (edad <= 12) {
-        return "Niño";
+        return "NiÃ±o";
     } else if (edad <= 19) {
         return "Adolescente";
     } else if (edad <= 65) {
@@ -94,36 +94,36 @@ string obtenerCategoria(int edad) {
 int main() {
     switch (auto categoria = obtenerCategoria(25); categoria[0]) {
         case 'N':
-            cout << "Categoría: Niño" << endl;
+            cout << "CategorÃ­a: NiÃ±o" << endl;
             break;
         case 'A':
-            cout << "Categoría: Adolescente" << endl;
+            cout << "CategorÃ­a: Adolescente" << endl;
             break;
         case 'A':
-            cout << "Categoría: Adulto" << endl;
+            cout << "CategorÃ­a: Adulto" << endl;
             break;
         case 'A':
-            cout << "Categoría: Anciano" << endl;
+            cout << "CategorÃ­a: Anciano" << endl;
             break;
         default:
-            cout << "Categoría: Invalido" << endl;
+            cout << "CategorÃ­a: Invalido" << endl;
     }
 
     return 0;
 }
 ```
 
-En este ejemplo, la variable `categoria` es declarada y inicializada dentro de la expresión del `switch`, y su alcance se limita al bloque del `switch`.
+En este ejemplo, la variable `categoria` es declarada y inicializada dentro de la expresiÃ³n del `switch`, y su alcance se limita al bloque del `switch`.
 
-### Beneficios de la Inicialización en `if` y `switch`
+### Beneficios de la InicializaciÃ³n en `if` y `switch`
 
-1. **Mayor Legibilidad:** Permite declarar e inicializar variables justo donde se necesitan, mejorando la claridad del código.
-2. **Ámbito Limitado:** Las variables están limitadas al bloque del `if` o `switch`, evitando posibles conflictos de nombres y errores de alcance.
-3. **Eficiencia:** Facilita la optimización del código al reducir el ámbito de las variables.
+1. **Mayor Legibilidad:** Permite declarar e inicializar variables justo donde se necesitan, mejorando la claridad del cÃ³digo.
+2. **Ãmbito Limitado:** Las variables estÃ¡n limitadas al bloque del `if` o `switch`, evitando posibles conflictos de nombres y errores de alcance.
+3. **Eficiencia:** Facilita la optimizaciÃ³n del cÃ³digo al reducir el Ã¡mbito de las variables.
 
 ### Ejemplo Completo
 
-Aquí hay un ejemplo que combina la inicialización dentro de `if` y `switch` para demostrar cómo se pueden usar juntos de manera efectiva:
+AquÃ­ hay un ejemplo que combina la inicializaciÃ³n dentro de `if` y `switch` para demostrar cÃ³mo se pueden usar juntos de manera efectiva:
 
 ```cpp
 #include <iostream>
@@ -172,27 +172,27 @@ int main() {
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-La capacidad de inicializar variables dentro de `if` y `switch` en C++17 y posteriores mejora significativamente la legibilidad y el manejo de ámbitos en el código. Esta característica permite escribir código más limpio y seguro, reduciendo la posibilidad de errores relacionados con el alcance de las variables y mejorando la eficiencia del programa.
+La capacidad de inicializar variables dentro de `if` y `switch` en C++17 y posteriores mejora significativamente la legibilidad y el manejo de Ã¡mbitos en el cÃ³digo. Esta caracterÃ­stica permite escribir cÃ³digo mÃ¡s limpio y seguro, reduciendo la posibilidad de errores relacionados con el alcance de las variables y mejorando la eficiencia del programa.
 <---FILES--->
-Sintaxis Básica
-Sintaxis Básica Result
+Sintaxis BÃ¡sica
+Sintaxis BÃ¡sica Result
 Ejemplo
 Ejemplo Result
-<---Sintaxis Básica--->
+<---Sintaxis BÃ¡sica--->
 ```cpp
 switch (auto variable = expresion; variable) {
     case valor1:
-        // Código a ejecutar si variable == valor1
+        // CÃ³digo a ejecutar si variable == valor1
         break;
     case valor2:
-        // Código a ejecutar si variable == valor2
+        // CÃ³digo a ejecutar si variable == valor2
         break;
     default:
-        // Código a ejecutar si variable no coincide con ningún caso
+        // CÃ³digo a ejecutar si variable no coincide con ningÃºn caso
 }
-<---Sintaxis Básica Result--->
+<---Sintaxis BÃ¡sica Result--->
 <---Ejemplo--->
 ```cpp
 #include <iostream>
@@ -203,7 +203,7 @@ string obtenerCategoria(int edad) {
     if (edad < 0) {
         return "Invalido";
     } else if (edad <= 12) {
-        return "Niño";
+        return "NiÃ±o";
     } else if (edad <= 19) {
         return "Adolescente";
     } else if (edad <= 65) {
@@ -216,19 +216,19 @@ string obtenerCategoria(int edad) {
 int main() {
     switch (auto categoria = obtenerCategoria(25); categoria[0]) {
         case 'N':
-            cout << "Categoría: Niño" << endl;
+            cout << "CategorÃ­a: NiÃ±o" << endl;
             break;
         case 'A':
-            cout << "Categoría: Adolescente" << endl;
+            cout << "CategorÃ­a: Adolescente" << endl;
             break;
         case 'A':
-            cout << "Categoría: Adulto" << endl;
+            cout << "CategorÃ­a: Adulto" << endl;
             break;
         case 'A':
-            cout << "Categoría: Anciano" << endl;
+            cout << "CategorÃ­a: Anciano" << endl;
             break;
         default:
-            cout << "Categoría: Invalido" << endl;
+            cout << "CategorÃ­a: Invalido" << endl;
     }
 
     return 0;

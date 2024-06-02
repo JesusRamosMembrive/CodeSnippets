@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### `std::weak_ptr` en Profundidad
 
-`std::weak_ptr` es un tipo de puntero inteligente en C++ que proporciona una referencia no propietaria a un objeto gestionado por `std::shared_ptr`. Su principal uso es evitar ciclos de referencia que pueden provocar fugas de memoria. `std::weak_ptr` no afecta el conteo de referencias de `std::shared_ptr`, permitiendo una referencia segura y controlada a los objetos sin extender su vida útil.
+`std::weak_ptr` es un tipo de puntero inteligente en C++ que proporciona una referencia no propietaria a un objeto gestionado por `std::shared_ptr`. Su principal uso es evitar ciclos de referencia que pueden provocar fugas de memoria. `std::weak_ptr` no afecta el conteo de referencias de `std::shared_ptr`, permitiendo una referencia segura y controlada a los objetos sin extender su vida Ãºtil.
 
-#### Declaraciones y Uso Básico
+#### Declaraciones y Uso BÃ¡sico
 
-##### Declaración y Asignación
+##### DeclaraciÃ³n y AsignaciÃ³n
 
 Para declarar un `std::weak_ptr`, se incluye la cabecera `<memory>`. Un `std::weak_ptr` debe ser inicializado con un `std::shared_ptr`.
 
@@ -24,7 +24,7 @@ int main() {
 
 #### Uso de `lock` para Acceder al Objeto
 
-El método `lock` de `std::weak_ptr` retorna un `std::shared_ptr` que comparte la propiedad del objeto si el objeto aún existe; de lo contrario, retorna un `nullptr`.
+El mÃ©todo `lock` de `std::weak_ptr` retorna un `std::shared_ptr` que comparte la propiedad del objeto si el objeto aÃºn existe; de lo contrario, retorna un `nullptr`.
 
 ```cpp
 #include <iostream>
@@ -37,7 +37,7 @@ int main() {
     if (auto spt = wptr.lock()) { // Crear shared_ptr temporal
         std::cout << *spt << std::endl; // Salida: 42
     } else {
-        std::cout << "El recurso ya no está disponible." << std::endl;
+        std::cout << "El recurso ya no estÃ¡ disponible." << std::endl;
     }
 
     sptr.reset(); // Liberar el recurso
@@ -45,7 +45,7 @@ int main() {
     if (auto spt = wptr.lock()) {
         std::cout << *spt << std::endl;
     } else {
-        std::cout << "El recurso ya no está disponible." << std::endl; // Salida esperada
+        std::cout << "El recurso ya no estÃ¡ disponible." << std::endl; // Salida esperada
     }
 
     return 0;
@@ -54,11 +54,11 @@ int main() {
 
 #### Evitar Ciclos de Referencia
 
-El uso más común de `std::weak_ptr` es evitar ciclos de referencia en estructuras de datos como grafos o árboles, donde los nodos pueden tener referencias entre sí.
+El uso mÃ¡s comÃºn de `std::weak_ptr` es evitar ciclos de referencia en estructuras de datos como grafos o Ã¡rboles, donde los nodos pueden tener referencias entre sÃ­.
 
 ##### Ejemplo de Ciclo de Referencia Evitado con `std::weak_ptr`
 
-###### Declaración en el Archivo de Cabecera (.h)
+###### DeclaraciÃ³n en el Archivo de Cabecera (.h)
 
 ```cpp
 // Nodo.h
@@ -84,7 +84,7 @@ private:
 #endif // NODO_H
 ```
 
-###### Definición en el Archivo de Implementación (.cpp)
+###### DefiniciÃ³n en el Archivo de ImplementaciÃ³n (.cpp)
 
 ```cpp
 // Nodo.cpp
@@ -114,7 +114,7 @@ void Nodo::mostrar() const {
 }
 ```
 
-###### Función Principal
+###### FunciÃ³n Principal
 
 ```cpp
 #include <iostream>
@@ -136,11 +136,11 @@ int main() {
 }
 ```
 
-#### Buenas Prácticas con `std::weak_ptr`
+#### Buenas PrÃ¡cticas con `std::weak_ptr`
 
-##### 1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Útil Controlada
+##### 1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Ãštil Controlada
 
-Use `std::weak_ptr` para referencias que no deberían extender la vida útil del objeto, como en el caso de cachés, observadores o nodos de grafos.
+Use `std::weak_ptr` para referencias que no deberÃ­an extender la vida Ãºtil del objeto, como en el caso de cachÃ©s, observadores o nodos de grafos.
 
 ```cpp
 #include <iostream>
@@ -194,7 +194,7 @@ int main() {
 
 ##### 2. Usar `std::weak_ptr` en Estructuras de Datos Complejas
 
-En estructuras de datos complejas como grafos o árboles, `std::weak_ptr` es ideal para evitar ciclos de referencia.
+En estructuras de datos complejas como grafos o Ã¡rboles, `std::weak_ptr` es ideal para evitar ciclos de referencia.
 
 ```cpp
 #include <memory>
@@ -230,31 +230,31 @@ int main() {
     nodo1->agregarHijo(nodo2);
     nodo2->agregarHijo(nodo3);
 
-    nodo1->mostrar(); // Muestra la jerarquía completa
+    nodo1->mostrar(); // Muestra la jerarquÃ­a completa
 
     return 0;
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-`std::weak_ptr` es una herramienta crucial en C++ para gestionar referencias no propietarias y evitar ciclos de referencia que pueden provocar fugas de memoria. Su uso adecuado en conjunción con `std::shared_ptr` asegura una gestión de memoria eficiente y segura en aplicaciones complejas. Al comprender y aplicar las mejores prácticas para `std::weak_ptr`, los desarrolladores pueden escribir código más robusto y mantenible.
+`std::weak_ptr` es una herramienta crucial en C++ para gestionar referencias no propietarias y evitar ciclos de referencia que pueden provocar fugas de memoria. Su uso adecuado en conjunciÃ³n con `std::shared_ptr` asegura una gestiÃ³n de memoria eficiente y segura en aplicaciones complejas. Al comprender y aplicar las mejores prÃ¡cticas para `std::weak_ptr`, los desarrolladores pueden escribir cÃ³digo mÃ¡s robusto y mantenible.
 <---FILES--->
-Declaración y Asignación
-Declaración y Asignación Result
+DeclaraciÃ³n y AsignaciÃ³n
+DeclaraciÃ³n y AsignaciÃ³n Result
 Ejemplo de Ciclo de Referencia Evitado con `std::weak_ptr`
 Ejemplo de Ciclo de Referencia Evitado con `std::weak_ptr` Result
-Declaración en el Archivo de Cabecera (.h)
-Declaración en el Archivo de Cabecera (.h) Result
-Definición en el Archivo de Implementación (.cpp)
-Definición en el Archivo de Implementación (.cpp) Result
-Función Principal
-Función Principal Result
-1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Útil Controlada
-1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Útil Controlada Result
+DeclaraciÃ³n en el Archivo de Cabecera (.h)
+DeclaraciÃ³n en el Archivo de Cabecera (.h) Result
+DefiniciÃ³n en el Archivo de ImplementaciÃ³n (.cpp)
+DefiniciÃ³n en el Archivo de ImplementaciÃ³n (.cpp) Result
+FunciÃ³n Principal
+FunciÃ³n Principal Result
+1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Ãštil Controlada
+1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Ãštil Controlada Result
 2. Usar `std::weak_ptr` en Estructuras de Datos Complejas
 2. Usar `std::weak_ptr` en Estructuras de Datos Complejas Result
-<---Declaración y Asignación--->
+<---DeclaraciÃ³n y AsignaciÃ³n--->
 ```cpp
 #include <iostream>
 #include <memory>
@@ -277,7 +277,7 @@ int main() {
     if (auto spt = wptr.lock()) { // Crear shared_ptr temporal
         std::cout << *spt << std::endl; // Salida: 42
     } else {
-        std::cout << "El recurso ya no está disponible." << std::endl;
+        std::cout << "El recurso ya no estÃ¡ disponible." << std::endl;
     }
 
     sptr.reset(); // Liberar el recurso
@@ -285,15 +285,15 @@ int main() {
     if (auto spt = wptr.lock()) {
         std::cout << *spt << std::endl;
     } else {
-        std::cout << "El recurso ya no está disponible." << std::endl; // Salida esperada
+        std::cout << "El recurso ya no estÃ¡ disponible." << std::endl; // Salida esperada
     }
 
     return 0;
 }
-<---Declaración y Asignación Result--->
+<---DeclaraciÃ³n y AsignaciÃ³n Result--->
 <---Ejemplo de Ciclo de Referencia Evitado con `std::weak_ptr`--->
 <---Ejemplo de Ciclo de Referencia Evitado con `std::weak_ptr` Result--->
-<---Declaración en el Archivo de Cabecera (.h)--->
+<---DeclaraciÃ³n en el Archivo de Cabecera (.h)--->
 ```cpp
 // Nodo.h
 #ifndef NODO_H
@@ -316,8 +316,8 @@ private:
 };
 
 #endif // NODO_H
-<---Declaración en el Archivo de Cabecera (.h) Result--->
-<---Definición en el Archivo de Implementación (.cpp)--->
+<---DeclaraciÃ³n en el Archivo de Cabecera (.h) Result--->
+<---DefiniciÃ³n en el Archivo de ImplementaciÃ³n (.cpp)--->
 ```cpp
 // Nodo.cpp
 #include "Nodo.h"
@@ -344,8 +344,8 @@ void Nodo::mostrar() const {
         hijo->mostrar();
     }
 }
-<---Definición en el Archivo de Implementación (.cpp) Result--->
-<---Función Principal--->
+<---DefiniciÃ³n en el Archivo de ImplementaciÃ³n (.cpp) Result--->
+<---FunciÃ³n Principal--->
 ```cpp
 #include <iostream>
 #include "Nodo.h"
@@ -364,8 +364,8 @@ int main() {
 
     return 0;
 }
-<---Función Principal Result--->
-<---1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Útil Controlada--->
+<---FunciÃ³n Principal Result--->
+<---1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Ãštil Controlada--->
 ```cpp
 #include <iostream>
 #include <memory>
@@ -414,7 +414,7 @@ int main() {
 
     return 0;
 }
-<---1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Útil Controlada Result--->
+<---1. Utilizar `std::weak_ptr` para Referencias a Objetos de Vida Ãštil Controlada Result--->
 <---2. Usar `std::weak_ptr` en Estructuras de Datos Complejas--->
 ```cpp
 #include <memory>
@@ -450,7 +450,7 @@ int main() {
     nodo1->agregarHijo(nodo2);
     nodo2->agregarHijo(nodo3);
 
-    nodo1->mostrar(); // Muestra la jerarquía completa
+    nodo1->mostrar(); // Muestra la jerarquÃ­a completa
 
     return 0;
 }

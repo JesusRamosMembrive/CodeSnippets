@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Diferencias entre Sem·ntica de Copia y de Movimiento en C++
+### Diferencias entre Sem√°ntica de Copia y de Movimiento en C++
 
-Las sem·nticas de copia y de movimiento son dos mecanismos fundamentales para la gestiÛn de recursos en C++. Aunque ambos se utilizan para transferir datos de un objeto a otro, funcionan de manera diferente y tienen implicaciones distintas en tÈrminos de eficiencia y uso de recursos. AquÌ se describen las diferencias clave entre la sem·ntica de copia y la de movimiento.
+Las sem√°nticas de copia y de movimiento son dos mecanismos fundamentales para la gesti√≥n de recursos en C++. Aunque ambos se utilizan para transferir datos de un objeto a otro, funcionan de manera diferente y tienen implicaciones distintas en t√©rminos de eficiencia y uso de recursos. Aqu√≠ se describen las diferencias clave entre la sem√°ntica de copia y la de movimiento.
 
-#### Sem·ntica de Copia
+#### Sem√°ntica de Copia
 
-La sem·ntica de copia implica la creaciÛn de una copia completa de los recursos gestionados por un objeto. Esto se realiza mediante el copy constructor y el copy assignment operator.
+La sem√°ntica de copia implica la creaci√≥n de una copia completa de los recursos gestionados por un objeto. Esto se realiza mediante el copy constructor y el copy assignment operator.
 
 ##### Copy Constructor
 
@@ -50,7 +50,7 @@ public:
 };
 ```
 
-##### Ejemplo de Sem·ntica de Copia
+##### Ejemplo de Sem√°ntica de Copia
 
 ```cpp
 int main() {
@@ -66,9 +66,9 @@ En este ejemplo:
 - `obj2` se crea a partir de `obj1` utilizando el copy constructor.
 - `obj3` se asigna a partir de `obj1` utilizando el copy assignment operator.
 
-#### Sem·ntica de Movimiento
+#### Sem√°ntica de Movimiento
 
-La sem·ntica de movimiento, introducida en C++11, permite transferir recursos de un objeto a otro en lugar de copiarlos. Esto se realiza mediante el move constructor y el move assignment operator.
+La sem√°ntica de movimiento, introducida en C++11, permite transferir recursos de un objeto a otro en lugar de copiarlos. Esto se realiza mediante el move constructor y el move assignment operator.
 
 ##### Move Constructor
 
@@ -115,7 +115,7 @@ public:
 };
 ```
 
-##### Ejemplo de Sem·ntica de Movimiento
+##### Ejemplo de Sem√°ntica de Movimiento
 
 ```cpp
 #include <utility>
@@ -137,27 +137,27 @@ En este ejemplo:
 
 #### 1. **Eficiencia**
 
-- **Copia:** Implica duplicar recursos, lo cual puede ser costoso en tÈrminos de tiempo y memoria, especialmente para objetos grandes o que gestionan recursos externos.
-- **Movimiento:** Transfiere recursos en lugar de duplicarlos, lo que es m·s eficiente y evita la sobrecarga de copia.
+- **Copia:** Implica duplicar recursos, lo cual puede ser costoso en t√©rminos de tiempo y memoria, especialmente para objetos grandes o que gestionan recursos externos.
+- **Movimiento:** Transfiere recursos en lugar de duplicarlos, lo que es m√°s eficiente y evita la sobrecarga de copia.
 
 #### 2. **Estado del Objeto Original**
 
-- **Copia:** El objeto original permanece inalterado y sigue siendo completamente funcional despuÈs de la copia.
-- **Movimiento:** El objeto original queda en un estado v·lido pero indeterminado despuÈs del movimiento y no debe ser utilizado hasta que se le reasigne un nuevo valor.
+- **Copia:** El objeto original permanece inalterado y sigue siendo completamente funcional despu√©s de la copia.
+- **Movimiento:** El objeto original queda en un estado v√°lido pero indeterminado despu√©s del movimiento y no debe ser utilizado hasta que se le reasigne un nuevo valor.
 
 #### 3. **Uso de Recursos**
 
 - **Copia:** Requiere asignar memoria adicional y otros recursos necesarios para mantener la copia.
 - **Movimiento:** No requiere memoria adicional significativa ya que los recursos simplemente se transfieren.
 
-#### 4. **ImplementaciÛn**
+#### 4. **Implementaci√≥n**
 
-- **Copia:** Requiere la implementaciÛn de un copy constructor y un copy assignment operator.
-- **Movimiento:** Requiere la implementaciÛn de un move constructor y un move assignment operator.
+- **Copia:** Requiere la implementaci√≥n de un copy constructor y un copy assignment operator.
+- **Movimiento:** Requiere la implementaci√≥n de un move constructor y un move assignment operator.
 
 #### 5. **Ejemplo Comparativo**
 
-##### Sem·ntica de Copia
+##### Sem√°ntica de Copia
 
 ```cpp
 class MiClase {
@@ -185,7 +185,7 @@ public:
 };
 ```
 
-##### Sem·ntica de Movimiento
+##### Sem√°ntica de Movimiento
 
 ```cpp
 class MiClase {
@@ -215,26 +215,26 @@ public:
 };
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La sem·ntica de copia y la de movimiento en C++ ofrecen diferentes mecanismos para transferir datos entre objetos. La sem·ntica de copia implica duplicar recursos, lo cual puede ser costoso en tÈrminos de rendimiento. En contraste, la sem·ntica de movimiento permite transferir recursos de manera eficiente, evitando la sobrecarga de copia y mejorando el rendimiento general del programa. Comprender y utilizar adecuadamente estas sem·nticas es crucial para escribir cÛdigo C++ moderno y eficiente.
+La sem√°ntica de copia y la de movimiento en C++ ofrecen diferentes mecanismos para transferir datos entre objetos. La sem√°ntica de copia implica duplicar recursos, lo cual puede ser costoso en t√©rminos de rendimiento. En contraste, la sem√°ntica de movimiento permite transferir recursos de manera eficiente, evitando la sobrecarga de copia y mejorando el rendimiento general del programa. Comprender y utilizar adecuadamente estas sem√°nticas es crucial para escribir c√≥digo C++ moderno y eficiente.
 <---FILES--->
 Copy Constructor
 Copy Constructor Result
 Copy Assignment Operator
 Copy Assignment Operator Result
-Ejemplo de Sem·ntica de Copia
-Ejemplo de Sem·ntica de Copia Result
+Ejemplo de Sem√°ntica de Copia
+Ejemplo de Sem√°ntica de Copia Result
 Move Constructor
 Move Constructor Result
 Move Assignment Operator
 Move Assignment Operator Result
-Ejemplo de Sem·ntica de Movimiento
-Ejemplo de Sem·ntica de Movimiento Result
-Sem·ntica de Copia
-Sem·ntica de Copia Result
-Sem·ntica de Movimiento
-Sem·ntica de Movimiento Result
+Ejemplo de Sem√°ntica de Movimiento
+Ejemplo de Sem√°ntica de Movimiento Result
+Sem√°ntica de Copia
+Sem√°ntica de Copia Result
+Sem√°ntica de Movimiento
+Sem√°ntica de Movimiento Result
 <---Copy Constructor--->
 ```cpp
 class MiClase {
@@ -270,7 +270,7 @@ public:
     }
 };
 <---Copy Assignment Operator Result--->
-<---Ejemplo de Sem·ntica de Copia--->
+<---Ejemplo de Sem√°ntica de Copia--->
 ```cpp
 int main() {
     MiClase obj1(10);
@@ -279,7 +279,7 @@ int main() {
     obj3 = obj1;          // Llama al copy assignment operator
     return 0;
 }
-<---Ejemplo de Sem·ntica de Copia Result--->
+<---Ejemplo de Sem√°ntica de Copia Result--->
 <---Move Constructor--->
 ```cpp
 class MiClase {
@@ -317,7 +317,7 @@ public:
     }
 };
 <---Move Assignment Operator Result--->
-<---Ejemplo de Sem·ntica de Movimiento--->
+<---Ejemplo de Sem√°ntica de Movimiento--->
 ```cpp
 #include <utility>
 
@@ -328,8 +328,8 @@ int main() {
     obj3 = std::move(obj2);          // Llama al move assignment operator
     return 0;
 }
-<---Ejemplo de Sem·ntica de Movimiento Result--->
-<---Sem·ntica de Copia--->
+<---Ejemplo de Sem√°ntica de Movimiento Result--->
+<---Sem√°ntica de Copia--->
 ```cpp
 class MiClase {
 public:
@@ -354,8 +354,8 @@ public:
         delete data;
     }
 };
-<---Sem·ntica de Copia Result--->
-<---Sem·ntica de Movimiento--->
+<---Sem√°ntica de Copia Result--->
+<---Sem√°ntica de Movimiento--->
 ```cpp
 class MiClase {
 public:
@@ -382,4 +382,4 @@ public:
         delete data;
     }
 };
-<---Sem·ntica de Movimiento Result--->
+<---Sem√°ntica de Movimiento Result--->

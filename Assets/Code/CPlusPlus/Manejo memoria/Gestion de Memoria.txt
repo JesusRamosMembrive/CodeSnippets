@@ -1,37 +1,37 @@
 <---EXPLANATION--->
-### GestiÛn de Memoria en C++
+### Gesti√≥n de Memoria en C++
 
-La gestiÛn de memoria en C++ es un aspecto fundamental que todo desarrollador debe entender profundamente para evitar errores comunes como fugas de memoria y accesos inv·lidos. A diferencia de lenguajes de programaciÛn que manejan la memoria autom·ticamente, C++ permite y requiere que el programador gestione la asignaciÛn y liberaciÛn de memoria.
+La gesti√≥n de memoria en C++ es un aspecto fundamental que todo desarrollador debe entender profundamente para evitar errores comunes como fugas de memoria y accesos inv√°lidos. A diferencia de lenguajes de programaci√≥n que manejan la memoria autom√°ticamente, C++ permite y requiere que el programador gestione la asignaci√≥n y liberaci√≥n de memoria.
 
 #### Tipos de Memoria en C++
 
-En C++, la memoria se puede clasificar en dos tipos principales: memoria est·tica y memoria din·mica.
+En C++, la memoria se puede clasificar en dos tipos principales: memoria est√°tica y memoria din√°mica.
 
-1. **Memoria Est·tica**: Se asigna en el tiempo de compilaciÛn. Incluye variables globales, variables est·ticas y constantes.
-2. **Memoria Din·mica**: Se asigna en el tiempo de ejecuciÛn usando operadores como `new` y `delete`.
+1. **Memoria Est√°tica**: Se asigna en el tiempo de compilaci√≥n. Incluye variables globales, variables est√°ticas y constantes.
+2. **Memoria Din√°mica**: Se asigna en el tiempo de ejecuci√≥n usando operadores como `new` y `delete`.
 
-#### AsignaciÛn y LiberaciÛn de Memoria
+#### Asignaci√≥n y Liberaci√≥n de Memoria
 
-##### Memoria Est·tica
+##### Memoria Est√°tica
 
-La memoria est·tica se gestiona autom·ticamente. Por ejemplo:
+La memoria est√°tica se gestiona autom√°ticamente. Por ejemplo:
 
 ```cpp
 #include <iostream>
 
-int globalVariable = 10; // Variable global (memoria est·tica)
+int globalVariable = 10; // Variable global (memoria est√°tica)
 
 int main() {
-    static int staticVariable = 20; // Variable est·tica local (memoria est·tica)
+    static int staticVariable = 20; // Variable est√°tica local (memoria est√°tica)
     return 0;
 }
 ```
 
-##### Memoria Din·mica
+##### Memoria Din√°mica
 
-La memoria din·mica se asigna y libera manualmente usando `new` y `delete` para variables simples, y `new[]` y `delete[]` para arreglos.
+La memoria din√°mica se asigna y libera manualmente usando `new` y `delete` para variables simples, y `new[]` y `delete[]` para arreglos.
 
-##### Ejemplo B·sico de AsignaciÛn Din·mica
+##### Ejemplo B√°sico de Asignaci√≥n Din√°mica
 
 ```cpp
 #include <iostream>
@@ -46,7 +46,7 @@ int main() {
 }
 ```
 
-##### Ejemplo de Arreglo Din·mico
+##### Ejemplo de Arreglo Din√°mico
 
 ```cpp
 #include <iostream>
@@ -70,11 +70,11 @@ int main() {
 }
 ```
 
-### Buenas Pr·cticas para la GestiÛn de Memoria
+### Buenas Pr√°cticas para la Gesti√≥n de Memoria
 
 #### 1. Siempre Liberar la Memoria Asignada
 
-No liberar la memoria asignada din·micamente resulta en fugas de memoria, lo que puede llevar a que una aplicaciÛn consuma m·s memoria de la necesaria y eventualmente falle.
+No liberar la memoria asignada din√°micamente resulta en fugas de memoria, lo que puede llevar a que una aplicaci√≥n consuma m√°s memoria de la necesaria y eventualmente falle.
 
 ##### Ejemplo Incorrecto
 
@@ -94,7 +94,7 @@ delete ptr; // Liberar memoria
 
 #### 2. Usar Smart Pointers
 
-Los punteros inteligentes (`smart pointers`) en la biblioteca est·ndar de C++ (`std::unique_ptr`, `std::shared_ptr`, etc.) ayudan a manejar la memoria de manera autom·tica y evitar fugas de memoria.
+Los punteros inteligentes (`smart pointers`) en la biblioteca est√°ndar de C++ (`std::unique_ptr`, `std::shared_ptr`, etc.) ayudan a manejar la memoria de manera autom√°tica y evitar fugas de memoria.
 
 ##### Ejemplo con `std::unique_ptr`
 
@@ -105,22 +105,22 @@ Los punteros inteligentes (`smart pointers`) en la biblioteca est·ndar de C++ (`
 int main() {
     std::unique_ptr<int> ptr = std::make_unique<int>(100); // Asignar memoria
     std::cout << *ptr << std::endl; // Salida: 100
-    // Memoria se libera autom·ticamente cuando ptr sale del alcance
+    // Memoria se libera autom√°ticamente cuando ptr sale del alcance
 
     return 0;
 }
 ```
 
-#### 3. Evitar Accesos Inv·lidos a Memoria
+#### 3. Evitar Accesos Inv√°lidos a Memoria
 
-Acceder a memoria despuÈs de haberla liberado resulta en comportamiento indefinido. Siempre aseg˙rese de no usar punteros despuÈs de haber llamado a `delete`.
+Acceder a memoria despu√©s de haberla liberado resulta en comportamiento indefinido. Siempre aseg√∫rese de no usar punteros despu√©s de haber llamado a `delete`.
 
 ##### Ejemplo Incorrecto
 
 ```cpp
 int* ptr = new int(10);
 delete ptr; // Liberar memoria
-std::cout << *ptr << std::endl; // Acceso inv·lido: comportamiento indefinido
+std::cout << *ptr << std::endl; // Acceso inv√°lido: comportamiento indefinido
 ```
 
 ##### Ejemplo Correcto
@@ -128,14 +128,14 @@ std::cout << *ptr << std::endl; // Acceso inv·lido: comportamiento indefinido
 ```cpp
 int* ptr = new int(10);
 delete ptr; // Liberar memoria
-ptr = nullptr; // Evitar acceso inv·lido
+ptr = nullptr; // Evitar acceso inv√°lido
 ```
 
-### GestiÛn de Memoria en Clases
+### Gesti√≥n de Memoria en Clases
 
-Cuando se diseÒan clases que manejan recursos din·micos, es esencial implementar correctamente el constructor de copia, el operador de asignaciÛn y el destructor.
+Cuando se dise√±an clases que manejan recursos din√°micos, es esencial implementar correctamente el constructor de copia, el operador de asignaci√≥n y el destructor.
 
-#### Ejemplo: Clase con GestiÛn de Memoria
+#### Ejemplo: Clase con Gesti√≥n de Memoria
 
 ```cpp
 #include <iostream>
@@ -164,7 +164,7 @@ public:
         strcpy(data, other.data);
     }
 
-    // Operador de asignaciÛn
+    // Operador de asignaci√≥n
     String& operator=(const String& other) {
         if (this == &other) return *this;
 
@@ -185,7 +185,7 @@ int main() {
     String str1("Hello");
     String str2 = str1; // Constructor de copia
     String str3("World");
-    str3 = str1; // Operador de asignaciÛn
+    str3 = str1; // Operador de asignaci√≥n
     str1.print(); // Salida: Hello
     str2.print(); // Salida: Hello
     str3.print(); // Salida: Hello
@@ -194,38 +194,38 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La gestiÛn de memoria en C++ es un tema crÌtico que requiere atenciÛn cuidadosa para evitar errores como fugas de memoria y accesos inv·lidos. El uso de buenas pr·cticas como liberar memoria correctamente, usar punteros inteligentes y manejar adecuadamente la memoria en clases asegura que las aplicaciones sean eficientes y robustas. Al entender y aplicar estos conceptos, los desarrolladores pueden escribir cÛdigo m·s seguro y mantenible.
+La gesti√≥n de memoria en C++ es un tema cr√≠tico que requiere atenci√≥n cuidadosa para evitar errores como fugas de memoria y accesos inv√°lidos. El uso de buenas pr√°cticas como liberar memoria correctamente, usar punteros inteligentes y manejar adecuadamente la memoria en clases asegura que las aplicaciones sean eficientes y robustas. Al entender y aplicar estos conceptos, los desarrolladores pueden escribir c√≥digo m√°s seguro y mantenible.
 <---FILES--->
-Memoria Est·tica
-Memoria Est·tica Result
-Memoria Din·mica
-Memoria Din·mica Result
-Ejemplo B·sico de AsignaciÛn Din·mica
-Ejemplo B·sico de AsignaciÛn Din·mica Result
-Ejemplo de Arreglo Din·mico
-Ejemplo de Arreglo Din·mico Result
+Memoria Est√°tica
+Memoria Est√°tica Result
+Memoria Din√°mica
+Memoria Din√°mica Result
+Ejemplo B√°sico de Asignaci√≥n Din√°mica
+Ejemplo B√°sico de Asignaci√≥n Din√°mica Result
+Ejemplo de Arreglo Din√°mico
+Ejemplo de Arreglo Din√°mico Result
 Ejemplo Incorrecto
 Ejemplo Incorrecto Result
 Ejemplo Correcto
 Ejemplo Correcto Result
 Ejemplo con `std::unique_ptr`
 Ejemplo con `std::unique_ptr` Result
-<---Memoria Est·tica--->
+<---Memoria Est√°tica--->
 ```cpp
 #include <iostream>
 
-int globalVariable = 10; // Variable global (memoria est·tica)
+int globalVariable = 10; // Variable global (memoria est√°tica)
 
 int main() {
-    static int staticVariable = 20; // Variable est·tica local (memoria est·tica)
+    static int staticVariable = 20; // Variable est√°tica local (memoria est√°tica)
     return 0;
 }
-<---Memoria Est·tica Result--->
-<---Memoria Din·mica--->
-<---Memoria Din·mica Result--->
-<---Ejemplo B·sico de AsignaciÛn Din·mica--->
+<---Memoria Est√°tica Result--->
+<---Memoria Din√°mica--->
+<---Memoria Din√°mica Result--->
+<---Ejemplo B√°sico de Asignaci√≥n Din√°mica--->
 ```cpp
 #include <iostream>
 
@@ -237,8 +237,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico de AsignaciÛn Din·mica Result--->
-<---Ejemplo de Arreglo Din·mico--->
+<---Ejemplo B√°sico de Asignaci√≥n Din√°mica Result--->
+<---Ejemplo de Arreglo Din√°mico--->
 ```cpp
 #include <iostream>
 
@@ -259,18 +259,18 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Arreglo Din·mico Result--->
+<---Ejemplo de Arreglo Din√°mico Result--->
 <---Ejemplo Incorrecto--->
 ```cpp
 int* ptr = new int(10);
 delete ptr; // Liberar memoria
-std::cout << *ptr << std::endl; // Acceso inv·lido: comportamiento indefinido
+std::cout << *ptr << std::endl; // Acceso inv√°lido: comportamiento indefinido
 <---Ejemplo Incorrecto Result--->
 <---Ejemplo Correcto--->
 ```cpp
 int* ptr = new int(10);
 delete ptr; // Liberar memoria
-ptr = nullptr; // Evitar acceso inv·lido
+ptr = nullptr; // Evitar acceso inv√°lido
 ```cpp
 #include <iostream>
 #include <cstring>
@@ -298,7 +298,7 @@ public:
         strcpy(data, other.data);
     }
 
-    // Operador de asignaciÛn
+    // Operador de asignaci√≥n
     String& operator=(const String& other) {
         if (this == &other) return *this;
 
@@ -319,7 +319,7 @@ int main() {
     String str1("Hello");
     String str2 = str1; // Constructor de copia
     String str3("World");
-    str3 = str1; // Operador de asignaciÛn
+    str3 = str1; // Operador de asignaci√≥n
     str1.print(); // Salida: Hello
     str2.print(); // Salida: Hello
     str3.print(); // Salida: Hello
@@ -335,7 +335,7 @@ int main() {
 int main() {
     std::unique_ptr<int> ptr = std::make_unique<int>(100); // Asignar memoria
     std::cout << *ptr << std::endl; // Salida: 100
-    // Memoria se libera autom·ticamente cuando ptr sale del alcance
+    // Memoria se libera autom√°ticamente cuando ptr sale del alcance
 
     return 0;
 }

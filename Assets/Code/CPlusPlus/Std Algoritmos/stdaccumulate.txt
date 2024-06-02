@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Est·ndar: `std::accumulate`
+### Algoritmo de la Biblioteca Est√°ndar: `std::accumulate`
 
-La funciÛn `std::accumulate` es un algoritmo de la biblioteca est·ndar de C++ que se utiliza para sumar los elementos de un rango, acumulando un valor inicial con el resultado de aplicar una operaciÛn binaria a los elementos del rango. Es parte del encabezado `<numeric>`.
+La funci√≥n `std::accumulate` es un algoritmo de la biblioteca est√°ndar de C++ que se utiliza para sumar los elementos de un rango, acumulando un valor inicial con el resultado de aplicar una operaci√≥n binaria a los elementos del rango. Es parte del encabezado `<numeric>`.
 
 #### Sintaxis de `std::accumulate`
 
@@ -16,17 +16,17 @@ T accumulate(InputIt first, InputIt last, T init, BinaryOperation op);
 ```
 
 - **`InputIt first`**: Iterador al primer elemento del rango.
-- **`InputIt last`**: Iterador al elemento despuÈs del ˙ltimo en el rango.
-- **`T init`**: Valor inicial de la acumulaciÛn.
-- **`BinaryOperation op`** (opcional): OperaciÛn binaria que se aplicar· a los elementos y al acumulador.
+- **`InputIt last`**: Iterador al elemento despu√©s del √∫ltimo en el rango.
+- **`T init`**: Valor inicial de la acumulaci√≥n.
+- **`BinaryOperation op`** (opcional): Operaci√≥n binaria que se aplicar√° a los elementos y al acumulador.
 
-#### DescripciÛn
+#### Descripci√≥n
 
-`std::accumulate` aplica una operaciÛn binaria a un valor inicial y a cada uno de los elementos del rango, acumulando el resultado. Si no se proporciona una operaciÛn binaria, se utiliza la suma por defecto.
+`std::accumulate` aplica una operaci√≥n binaria a un valor inicial y a cada uno de los elementos del rango, acumulando el resultado. Si no se proporciona una operaci√≥n binaria, se utiliza la suma por defecto.
 
 #### Ejemplo de Uso de `std::accumulate`
 
-##### Ejemplo B·sico (Suma)
+##### Ejemplo B√°sico (Suma)
 
 ```cpp
 #include <iostream>
@@ -48,7 +48,7 @@ int main() {
 En este ejemplo:
 - `std::accumulate(vec.begin(), vec.end(), 0)` suma todos los elementos del vector comenzando con un valor inicial de `0`.
 
-##### Ejemplo con OperaciÛn Binaria Personalizada (MultiplicaciÛn)
+##### Ejemplo con Operaci√≥n Binaria Personalizada (Multiplicaci√≥n)
 
 ```cpp
 #include <iostream>
@@ -70,7 +70,7 @@ int main() {
 En este ejemplo:
 - `std::accumulate(vec.begin(), vec.end(), 1, std::multiplies<int>())` multiplica todos los elementos del vector comenzando con un valor inicial de `1`.
 
-### M·s Ejemplos
+### M√°s Ejemplos
 
 #### Concatenar Cadenas de Texto
 
@@ -93,7 +93,7 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::accumulate(vec.begin(), vec.end(), std::string(""))` concatena todas las cadenas del vector comenzando con una cadena vacÌa.
+- `std::accumulate(vec.begin(), vec.end(), std::string(""))` concatena todas las cadenas del vector comenzando con una cadena vac√≠a.
 
 #### Calcular la Media de los Elementos
 
@@ -118,22 +118,22 @@ int main() {
 ```
 
 En este ejemplo:
-- Se calcula la suma de los elementos del vector y luego se divide por el n˙mero de elementos para obtener la media.
+- Se calcula la suma de los elementos del vector y luego se divide por el n√∫mero de elementos para obtener la media.
 
 ### Consideraciones
 
-- **Rendimiento:** `std::accumulate` es eficiente y su rendimiento es lineal en relaciÛn con el n˙mero de elementos del rango.
-- **Flexibilidad:** Puede usarse con cualquier tipo de contenedor que soporte iteradores y con cualquier operaciÛn binaria que tome dos par·metros del tipo de los elementos del contenedor.
+- **Rendimiento:** `std::accumulate` es eficiente y su rendimiento es lineal en relaci√≥n con el n√∫mero de elementos del rango.
+- **Flexibilidad:** Puede usarse con cualquier tipo de contenedor que soporte iteradores y con cualquier operaci√≥n binaria que tome dos par√°metros del tipo de los elementos del contenedor.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::accumulate` es un algoritmo vers·til y poderoso de la biblioteca est·ndar de C++ que permite acumular valores en un rango utilizando una operaciÛn binaria. Su uso con funciones, funtores y lambdas ofrece gran flexibilidad y es esencial para escribir cÛdigo conciso y claro en C++. Comprender cÛmo utilizar `std::accumulate` puede simplificar muchas operaciones comunes de reducciÛn y acumulaciÛn en C++.
+`std::accumulate` es un algoritmo vers√°til y poderoso de la biblioteca est√°ndar de C++ que permite acumular valores en un rango utilizando una operaci√≥n binaria. Su uso con funciones, funtores y lambdas ofrece gran flexibilidad y es esencial para escribir c√≥digo conciso y claro en C++. Comprender c√≥mo utilizar `std::accumulate` puede simplificar muchas operaciones comunes de reducci√≥n y acumulaci√≥n en C++.
 <---FILES--->
-Ejemplo B·sico (Suma)
-Ejemplo B·sico (Suma) Result
-Ejemplo con OperaciÛn Binaria Personalizada (MultiplicaciÛn)
-Ejemplo con OperaciÛn Binaria Personalizada (MultiplicaciÛn) Result
-<---Ejemplo B·sico (Suma)--->
+Ejemplo B√°sico (Suma)
+Ejemplo B√°sico (Suma) Result
+Ejemplo con Operaci√≥n Binaria Personalizada (Multiplicaci√≥n)
+Ejemplo con Operaci√≥n Binaria Personalizada (Multiplicaci√≥n) Result
+<---Ejemplo B√°sico (Suma)--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -149,8 +149,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico (Suma) Result--->
-<---Ejemplo con OperaciÛn Binaria Personalizada (MultiplicaciÛn)--->
+<---Ejemplo B√°sico (Suma) Result--->
+<---Ejemplo con Operaci√≥n Binaria Personalizada (Multiplicaci√≥n)--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -200,4 +200,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con OperaciÛn Binaria Personalizada (MultiplicaciÛn) Result--->
+<---Ejemplo con Operaci√≥n Binaria Personalizada (Multiplicaci√≥n) Result--->

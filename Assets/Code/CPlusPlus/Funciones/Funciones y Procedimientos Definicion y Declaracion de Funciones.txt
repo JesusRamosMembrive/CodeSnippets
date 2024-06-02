@@ -1,23 +1,23 @@
 <---EXPLANATION--->
-### Funciones y Procedimientos en C++: DefiniciÛn y DeclaraciÛn de Funciones
+### Funciones y Procedimientos en C++: Definici√≥n y Declaraci√≥n de Funciones
 
-Las funciones en C++ son bloques de cÛdigo que realizan una tarea especÌfica y pueden ser llamadas desde diferentes partes de un programa. Definir y declarar funciones es fundamental para estructurar y modularizar el cÛdigo, facilitando la reutilizaciÛn y el mantenimiento.
+Las funciones en C++ son bloques de c√≥digo que realizan una tarea espec√≠fica y pueden ser llamadas desde diferentes partes de un programa. Definir y declarar funciones es fundamental para estructurar y modularizar el c√≥digo, facilitando la reutilizaci√≥n y el mantenimiento.
 
-#### DeclaraciÛn de Funciones
+#### Declaraci√≥n de Funciones
 
-La declaraciÛn de una funciÛn (tambiÈn conocida como prototipo de funciÛn) informa al compilador sobre la existencia de una funciÛn antes de su definiciÛn real. La declaraciÛn incluye el tipo de retorno, el nombre de la funciÛn y los tipos de par·metros.
+La declaraci√≥n de una funci√≥n (tambi√©n conocida como prototipo de funci√≥n) informa al compilador sobre la existencia de una funci√≥n antes de su definici√≥n real. La declaraci√≥n incluye el tipo de retorno, el nombre de la funci√≥n y los tipos de par√°metros.
 
-##### Sintaxis de la DeclaraciÛn de Funciones
+##### Sintaxis de la Declaraci√≥n de Funciones
 
 ```cpp
 tipo_retorno nombre_funcion(lista_de_parametros);
 ```
 
-- **tipo_retorno**: El tipo de dato que devuelve la funciÛn.
-- **nombre_funcion**: El identificador de la funciÛn.
-- **lista_de_parametros**: Los tipos y nombres de los par·metros que acepta la funciÛn.
+- **tipo_retorno**: El tipo de dato que devuelve la funci√≥n.
+- **nombre_funcion**: El identificador de la funci√≥n.
+- **lista_de_parametros**: Los tipos y nombres de los par√°metros que acepta la funci√≥n.
 
-##### Ejemplo de DeclaraciÛn de FunciÛn
+##### Ejemplo de Declaraci√≥n de Funci√≥n
 
 ```cpp
 int sumar(int a, int b);
@@ -25,22 +25,22 @@ void mostrarMensaje(string mensaje);
 ```
 
 En este ejemplo:
-- `int sumar(int a, int b);` declara una funciÛn que toma dos enteros y devuelve un entero.
-- `void mostrarMensaje(string mensaje);` declara una funciÛn que toma una cadena y no devuelve nada.
+- `int sumar(int a, int b);` declara una funci√≥n que toma dos enteros y devuelve un entero.
+- `void mostrarMensaje(string mensaje);` declara una funci√≥n que toma una cadena y no devuelve nada.
 
-#### DefiniciÛn de Funciones
+#### Definici√≥n de Funciones
 
-La definiciÛn de una funciÛn proporciona el cuerpo de la funciÛn, es decir, el bloque de cÛdigo que se ejecuta cuando se llama a la funciÛn. La definiciÛn incluye la declaraciÛn de la funciÛn y el bloque de cÛdigo asociado.
+La definici√≥n de una funci√≥n proporciona el cuerpo de la funci√≥n, es decir, el bloque de c√≥digo que se ejecuta cuando se llama a la funci√≥n. La definici√≥n incluye la declaraci√≥n de la funci√≥n y el bloque de c√≥digo asociado.
 
-##### Sintaxis de la DefiniciÛn de Funciones
+##### Sintaxis de la Definici√≥n de Funciones
 
 ```cpp
 tipo_retorno nombre_funcion(lista_de_parametros) {
-    // Cuerpo de la funciÛn
+    // Cuerpo de la funci√≥n
 }
 ```
 
-##### Ejemplo de DefiniciÛn de FunciÛn
+##### Ejemplo de Definici√≥n de Funci√≥n
 
 ```cpp
 int sumar(int a, int b) {
@@ -53,10 +53,10 @@ void mostrarMensaje(string mensaje) {
 ```
 
 En este ejemplo:
-- `int sumar(int a, int b) { return a + b; }` define una funciÛn que suma dos enteros y devuelve el resultado.
-- `void mostrarMensaje(string mensaje) { cout << mensaje << endl; }` define una funciÛn que muestra un mensaje en la consola.
+- `int sumar(int a, int b) { return a + b; }` define una funci√≥n que suma dos enteros y devuelve el resultado.
+- `void mostrarMensaje(string mensaje) { cout << mensaje << endl; }` define una funci√≥n que muestra un mensaje en la consola.
 
-#### Ejemplo Completo: DeclaraciÛn y DefiniciÛn de Funciones
+#### Ejemplo Completo: Declaraci√≥n y Definici√≥n de Funciones
 
 ```cpp
 #include <iostream>
@@ -87,15 +87,15 @@ void mostrarMensaje(string mensaje) {
 
 En este ejemplo completo:
 - Las funciones `sumar` y `mostrarMensaje` se declaran antes del `main`.
-- Las definiciones de las funciones `sumar` y `mostrarMensaje` proporcionan los cuerpos de las funciones despuÈs del `main`.
+- Las definiciones de las funciones `sumar` y `mostrarMensaje` proporcionan los cuerpos de las funciones despu√©s del `main`.
 
-#### Funciones con Par·metros por Valor y por Referencia
+#### Funciones con Par√°metros por Valor y por Referencia
 
-En C++, los par·metros de las funciones pueden pasarse por valor o por referencia.
+En C++, los par√°metros de las funciones pueden pasarse por valor o por referencia.
 
-##### Par·metros por Valor
+##### Par√°metros por Valor
 
-Los par·metros por valor se copian en los par·metros de la funciÛn. Los cambios en los par·metros dentro de la funciÛn no afectan a los argumentos originales.
+Los par√°metros por valor se copian en los par√°metros de la funci√≥n. Los cambios en los par√°metros dentro de la funci√≥n no afectan a los argumentos originales.
 
 ```cpp
 void incrementarPorValor(int x) {
@@ -105,14 +105,14 @@ void incrementarPorValor(int x) {
 int main() {
     int numero = 5;
     incrementarPorValor(numero);
-    cout << "N˙mero despuÈs de incrementar por valor: " << numero << endl; // Salida: 5
+    cout << "N√∫mero despu√©s de incrementar por valor: " << numero << endl; // Salida: 5
     return 0;
 }
 ```
 
-##### Par·metros por Referencia
+##### Par√°metros por Referencia
 
-Los par·metros por referencia permiten que la funciÛn modifique los argumentos originales. Se utilizan referencias (`&`) en la lista de par·metros.
+Los par√°metros por referencia permiten que la funci√≥n modifique los argumentos originales. Se utilizan referencias (`&`) en la lista de par√°metros.
 
 ```cpp
 void incrementarPorReferencia(int& x) {
@@ -122,14 +122,14 @@ void incrementarPorReferencia(int& x) {
 int main() {
     int numero = 5;
     incrementarPorReferencia(numero);
-    cout << "N˙mero despuÈs de incrementar por referencia: " << numero << endl; // Salida: 6
+    cout << "N√∫mero despu√©s de incrementar por referencia: " << numero << endl; // Salida: 6
     return 0;
 }
 ```
 
 #### Sobrecarga de Funciones
 
-C++ permite la sobrecarga de funciones, es decir, varias funciones pueden tener el mismo nombre pero diferentes listas de par·metros.
+C++ permite la sobrecarga de funciones, es decir, varias funciones pueden tener el mismo nombre pero diferentes listas de par√°metros.
 
 ##### Ejemplo de Sobrecarga de Funciones
 
@@ -152,40 +152,40 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las funciones son una parte esencial de la programaciÛn en C++. Comprender cÛmo declarar y definir funciones, asÌ como las diferencias entre pasar par·metros por valor y por referencia, permite escribir cÛdigo modular, reutilizable y f·cil de mantener. La sobrecarga de funciones aÒade flexibilidad, permitiendo definir m˙ltiples versiones de una funciÛn para manejar diferentes tipos de datos o cantidades de par·metros. Con estas habilidades, los desarrolladores pueden estructurar mejor sus programas y resolver problemas de manera eficiente.
+Las funciones son una parte esencial de la programaci√≥n en C++. Comprender c√≥mo declarar y definir funciones, as√≠ como las diferencias entre pasar par√°metros por valor y por referencia, permite escribir c√≥digo modular, reutilizable y f√°cil de mantener. La sobrecarga de funciones a√±ade flexibilidad, permitiendo definir m√∫ltiples versiones de una funci√≥n para manejar diferentes tipos de datos o cantidades de par√°metros. Con estas habilidades, los desarrolladores pueden estructurar mejor sus programas y resolver problemas de manera eficiente.
 <---FILES--->
-Sintaxis de la DeclaraciÛn de Funciones
-Sintaxis de la DeclaraciÛn de Funciones Result
-Ejemplo de DeclaraciÛn de FunciÛn
-Ejemplo de DeclaraciÛn de FunciÛn Result
-Sintaxis de la DefiniciÛn de Funciones
-Sintaxis de la DefiniciÛn de Funciones Result
-Ejemplo de DefiniciÛn de FunciÛn
-Ejemplo de DefiniciÛn de FunciÛn Result
-Par·metros por Valor
-Par·metros por Valor Result
-Par·metros por Referencia
-Par·metros por Referencia Result
+Sintaxis de la Declaraci√≥n de Funciones
+Sintaxis de la Declaraci√≥n de Funciones Result
+Ejemplo de Declaraci√≥n de Funci√≥n
+Ejemplo de Declaraci√≥n de Funci√≥n Result
+Sintaxis de la Definici√≥n de Funciones
+Sintaxis de la Definici√≥n de Funciones Result
+Ejemplo de Definici√≥n de Funci√≥n
+Ejemplo de Definici√≥n de Funci√≥n Result
+Par√°metros por Valor
+Par√°metros por Valor Result
+Par√°metros por Referencia
+Par√°metros por Referencia Result
 Ejemplo de Sobrecarga de Funciones
 Ejemplo de Sobrecarga de Funciones Result
-<---Sintaxis de la DeclaraciÛn de Funciones--->
+<---Sintaxis de la Declaraci√≥n de Funciones--->
 ```cpp
 tipo_retorno nombre_funcion(lista_de_parametros);
-<---Sintaxis de la DeclaraciÛn de Funciones Result--->
-<---Ejemplo de DeclaraciÛn de FunciÛn--->
+<---Sintaxis de la Declaraci√≥n de Funciones Result--->
+<---Ejemplo de Declaraci√≥n de Funci√≥n--->
 ```cpp
 int sumar(int a, int b);
 void mostrarMensaje(string mensaje);
-<---Ejemplo de DeclaraciÛn de FunciÛn Result--->
-<---Sintaxis de la DefiniciÛn de Funciones--->
+<---Ejemplo de Declaraci√≥n de Funci√≥n Result--->
+<---Sintaxis de la Definici√≥n de Funciones--->
 ```cpp
 tipo_retorno nombre_funcion(lista_de_parametros) {
-    // Cuerpo de la funciÛn
+    // Cuerpo de la funci√≥n
 }
-<---Sintaxis de la DefiniciÛn de Funciones Result--->
-<---Ejemplo de DefiniciÛn de FunciÛn--->
+<---Sintaxis de la Definici√≥n de Funciones Result--->
+<---Ejemplo de Definici√≥n de Funci√≥n--->
 ```cpp
 int sumar(int a, int b) {
     return a + b;
@@ -219,8 +219,8 @@ int sumar(int a, int b) {
 void mostrarMensaje(string mensaje) {
     cout << mensaje << endl;
 }
-<---Ejemplo de DefiniciÛn de FunciÛn Result--->
-<---Par·metros por Valor--->
+<---Ejemplo de Definici√≥n de Funci√≥n Result--->
+<---Par√°metros por Valor--->
 ```cpp
 void incrementarPorValor(int x) {
     x++;
@@ -229,11 +229,11 @@ void incrementarPorValor(int x) {
 int main() {
     int numero = 5;
     incrementarPorValor(numero);
-    cout << "N˙mero despuÈs de incrementar por valor: " << numero << endl; // Salida: 5
+    cout << "N√∫mero despu√©s de incrementar por valor: " << numero << endl; // Salida: 5
     return 0;
 }
-<---Par·metros por Valor Result--->
-<---Par·metros por Referencia--->
+<---Par√°metros por Valor Result--->
+<---Par√°metros por Referencia--->
 ```cpp
 void incrementarPorReferencia(int& x) {
     x++;
@@ -242,10 +242,10 @@ void incrementarPorReferencia(int& x) {
 int main() {
     int numero = 5;
     incrementarPorReferencia(numero);
-    cout << "N˙mero despuÈs de incrementar por referencia: " << numero << endl; // Salida: 6
+    cout << "N√∫mero despu√©s de incrementar por referencia: " << numero << endl; // Salida: 6
     return 0;
 }
-<---Par·metros por Referencia Result--->
+<---Par√°metros por Referencia Result--->
 <---Ejemplo de Sobrecarga de Funciones--->
 ```cpp
 #include <iostream>

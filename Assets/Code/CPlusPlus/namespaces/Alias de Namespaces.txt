@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Alias de Namespaces en C++
 
-En C++, los alias de namespaces permiten simplificar y acortar nombres de namespaces largos o anidados. Esto facilita el uso de dichos namespaces en el c骴igo, mejorando la legibilidad y la mantenibilidad. Un alias de namespace es simplemente otro nombre para un namespace existente.
+En C++, los alias de namespaces permiten simplificar y acortar nombres de namespaces largos o anidados. Esto facilita el uso de dichos namespaces en el c贸digo, mejorando la legibilidad y la mantenibilidad. Un alias de namespace es simplemente otro nombre para un namespace existente.
 
-#### Definici髇 de Alias de Namespace
+#### Definici贸n de Alias de Namespace
 
-Para crear un alias de namespace, se usa la palabra clave `namespace` seguida del nuevo nombre del alias, el operador de asignaci髇 `=` y el namespace existente que se quiere aliasar.
+Para crear un alias de namespace, se usa la palabra clave `namespace` seguida del nuevo nombre del alias, el operador de asignaci贸n `=` y el namespace existente que se quiere aliasar.
 
 ##### Sintaxis
 
@@ -15,9 +15,9 @@ namespace nuevo_alias = namespace_existente;
 
 #### Ejemplo de Alias de Namespace
 
-Consideremos un ejemplo con namespaces anidados para ilustrar c髆o se crean y utilizan los alias de namespaces.
+Consideremos un ejemplo con namespaces anidados para ilustrar c贸mo se crean y utilizan los alias de namespaces.
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
@@ -36,24 +36,24 @@ namespace Empresa {
 namespace ProyectoAlias = Empresa::Departamento::Proyecto;
 
 int main() {
-    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funci髇
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funci贸n
     return 0;
 }
 ```
 
 En este ejemplo:
 - `ProyectoAlias` es un alias para `Empresa::Departamento::Proyecto`.
-- La funci髇 `mostrarMensaje` se llama usando el alias `ProyectoAlias` en lugar del nombre completo del namespace.
+- La funci贸n `mostrarMensaje` se llama usando el alias `ProyectoAlias` en lugar del nombre completo del namespace.
 
 #### Ventajas de Usar Alias de Namespace
 
-1. **Simplicidad:** Los alias de namespace reducen la longitud de los nombres de namespaces largos o anidados, haciendo el c骴igo m醩 limpio y f醕il de leer.
-2. **Claridad:** Facilitan la comprensi髇 del c骴igo al proporcionar nombres m醩 cortos y significativos.
-3. **Flexibilidad:** Permiten cambiar el namespace subyacente sin necesidad de modificar todas las referencias en el c骴igo, facilitando la reorganizaci髇 del c骴igo.
+1. **Simplicidad:** Los alias de namespace reducen la longitud de los nombres de namespaces largos o anidados, haciendo el c贸digo m谩s limpio y f谩cil de leer.
+2. **Claridad:** Facilitan la comprensi贸n del c贸digo al proporcionar nombres m谩s cortos y significativos.
+3. **Flexibilidad:** Permiten cambiar el namespace subyacente sin necesidad de modificar todas las referencias en el c贸digo, facilitando la reorganizaci贸n del c贸digo.
 
 #### Alias de Namespace en Proyectos Grandes
 
-En proyectos grandes, los namespaces anidados son comunes para organizar el c骴igo en m骴ulos y subm骴ulos. Los alias de namespaces pueden ser especialmente 鷗iles en estos casos para acortar los nombres largos.
+En proyectos grandes, los namespaces anidados son comunes para organizar el c贸digo en m贸dulos y subm贸dulos. Los alias de namespaces pueden ser especialmente 煤tiles en estos casos para acortar los nombres largos.
 
 ##### Ejemplo en un Proyecto Grande
 
@@ -64,19 +64,19 @@ namespace Empresa {
     namespace Software {
         namespace ModuloA {
             void funcionA() {
-                std::cout << "Funci髇 A en M骴ulo A" << std::endl;
+                std::cout << "Funci贸n A en M贸dulo A" << std::endl;
             }
         }
 
         namespace ModuloB {
             void funcionB() {
-                std::cout << "Funci髇 B en M骴ulo B" << std::endl;
+                std::cout << "Funci贸n B en M贸dulo B" << std::endl;
             }
         }
     }
 }
 
-// Crear alias para los m骴ulos
+// Crear alias para los m贸dulos
 namespace ModA = Empresa::Software.ModuloA;
 namespace ModB = Empresa::Software.ModuloB;
 
@@ -91,18 +91,18 @@ En este ejemplo:
 - `ModA` y `ModB` son alias para `Empresa::Software::ModuloA` y `Empresa::Software::ModuloB`, respectivamente.
 - Las funciones `funcionA` y `funcionB` se llaman usando los alias en lugar de los nombres completos.
 
-#### Alias de Namespace en Contextos Espec韋icos
+#### Alias de Namespace en Contextos Espec铆ficos
 
-Los alias de namespace tambi閚 pueden ser 鷗iles en contextos espec韋icos donde se utilizan varias librer韆s con namespaces largos o donde se necesita cambiar el namespace subyacente sin afectar el resto del c骴igo.
+Los alias de namespace tambi茅n pueden ser 煤tiles en contextos espec铆ficos donde se utilizan varias librer铆as con namespaces largos o donde se necesita cambiar el namespace subyacente sin afectar el resto del c贸digo.
 
-##### Ejemplo con Librer韆s Externas
+##### Ejemplo con Librer铆as Externas
 
 ```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
-// Alias para nombres de namespaces largos de librer韆s externas
+// Alias para nombres de namespaces largos de librer铆as externas
 namespace vec = std::vector;
 namespace algo = std::algorithm;
 
@@ -123,31 +123,31 @@ int main() {
 En este ejemplo:
 - `vec` es un alias para `std::vector`.
 - `algo` es un alias para `std::algorithm`.
-- El uso de alias simplifica la referencia a tipos y funciones de la librer韆 est醤dar.
+- El uso de alias simplifica la referencia a tipos y funciones de la librer铆a est谩ndar.
 
-#### Buenas Pr醕ticas al Usar Alias de Namespace
+#### Buenas Pr谩cticas al Usar Alias de Namespace
 
-1. **Nombres Significativos:** Elija nombres de alias que sean significativos y f醕iles de entender para mejorar la claridad del c骴igo.
-2. **Documentaci髇:** Documente los alias de namespace para que otros desarrolladores comprendan su prop髎ito y el namespace al que se refieren.
-3. **Consistencia:** Mantenga consistencia en el uso de alias a lo largo del c骴igo para evitar confusiones.
+1. **Nombres Significativos:** Elija nombres de alias que sean significativos y f谩ciles de entender para mejorar la claridad del c贸digo.
+2. **Documentaci贸n:** Documente los alias de namespace para que otros desarrolladores comprendan su prop贸sito y el namespace al que se refieren.
+3. **Consistencia:** Mantenga consistencia en el uso de alias a lo largo del c贸digo para evitar confusiones.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los alias de namespaces en C++ son una herramienta poderosa para simplificar el uso de namespaces largos o anidados, mejorando la legibilidad y la mantenibilidad del c骴igo. Son especialmente 鷗iles en proyectos grandes y en contextos donde se utilizan m鷏tiples librer韆s externas con nombres largos. Utilizar alias de namespace de manera efectiva puede resultar en un c骴igo m醩 limpio, claro y f醕il de mantener.
+Los alias de namespaces en C++ son una herramienta poderosa para simplificar el uso de namespaces largos o anidados, mejorando la legibilidad y la mantenibilidad del c贸digo. Son especialmente 煤tiles en proyectos grandes y en contextos donde se utilizan m煤ltiples librer铆as externas con nombres largos. Utilizar alias de namespace de manera efectiva puede resultar en un c贸digo m谩s limpio, claro y f谩cil de mantener.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo en un Proyecto Grande
 Ejemplo en un Proyecto Grande Result
-Ejemplo con Librer韆s Externas
-Ejemplo con Librer韆s Externas Result
+Ejemplo con Librer铆as Externas
+Ejemplo con Librer铆as Externas Result
 <---Sintaxis--->
 ```cpp
 namespace nuevo_alias = namespace_existente;
 <---Sintaxis Result--->
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <iostream>
 
@@ -165,10 +165,10 @@ namespace Empresa {
 namespace ProyectoAlias = Empresa::Departamento::Proyecto;
 
 int main() {
-    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funci髇
+    ProyectoAlias::mostrarMensaje(); // Usando el alias para llamar a la funci贸n
     return 0;
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo en un Proyecto Grande--->
 ```cpp
 #include <iostream>
@@ -177,19 +177,19 @@ namespace Empresa {
     namespace Software {
         namespace ModuloA {
             void funcionA() {
-                std::cout << "Funci髇 A en M骴ulo A" << std::endl;
+                std::cout << "Funci贸n A en M贸dulo A" << std::endl;
             }
         }
 
         namespace ModuloB {
             void funcionB() {
-                std::cout << "Funci髇 B en M骴ulo B" << std::endl;
+                std::cout << "Funci贸n B en M贸dulo B" << std::endl;
             }
         }
     }
 }
 
-// Crear alias para los m骴ulos
+// Crear alias para los m贸dulos
 namespace ModA = Empresa::Software.ModuloA;
 namespace ModB = Empresa::Software.ModuloB;
 
@@ -199,13 +199,13 @@ int main() {
     return 0;
 }
 <---Ejemplo en un Proyecto Grande Result--->
-<---Ejemplo con Librer韆s Externas--->
+<---Ejemplo con Librer铆as Externas--->
 ```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
-// Alias para nombres de namespaces largos de librer韆s externas
+// Alias para nombres de namespaces largos de librer铆as externas
 namespace vec = std::vector;
 namespace algo = std::algorithm;
 
@@ -221,4 +221,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Librer韆s Externas Result--->
+<---Ejemplo con Librer铆as Externas Result--->

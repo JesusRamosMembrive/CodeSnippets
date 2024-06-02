@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Sobrecarga de Operadores Binarios en C++
 
-La sobrecarga de operadores binarios permite definir c髆o se deben comportar los operadores binarios est醤dar (como `&`, `|`, `^`, `<<`, `>>`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Esto es 鷗il para clases que representan datos que pueden beneficiarse de operaciones bit a bit, como n鷐eros grandes, m醩caras de bits, etc.
+La sobrecarga de operadores binarios permite definir c贸mo se deben comportar los operadores binarios est谩ndar (como `&`, `|`, `^`, `<<`, `>>`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Esto es 煤til para clases que representan datos que pueden beneficiarse de operaciones bit a bit, como n煤meros grandes, m谩scaras de bits, etc.
 
-A continuaci髇, veremos c髆o sobrecargar algunos operadores binarios b醩icos en C++.
+A continuaci贸n, veremos c贸mo sobrecargar algunos operadores binarios b谩sicos en C++.
 
-#### Ejemplo: Clase `BitMask` para Manipulaci髇 de Bits
+#### Ejemplo: Clase `BitMask` para Manipulaci贸n de Bits
 
-Vamos a definir una clase `BitMask` que representa una m醩cara de bits y sobrecargaremos los operadores `&`, `|`, `^`, `<<` y `>>`.
+Vamos a definir una clase `BitMask` que representa una m谩scara de bits y sobrecargaremos los operadores `&`, `|`, `^`, `<<` y `>>`.
 
 ```cpp
 // BitMask.h
@@ -85,7 +85,7 @@ int main() {
 }
 ```
 
-### Explicaci髇 de los Operadores Sobrecargados
+### Explicaci贸n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `&` (AND)
 
@@ -94,7 +94,7 @@ BitMask operator&(const BitMask& other) const {
     return BitMask(bits.to_ulong() & other.bits.to_ulong());
 }
 ```
-Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de la operaci髇 AND bit a bit entre dos m醩caras de bits.
+Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de la operaci贸n AND bit a bit entre dos m谩scaras de bits.
 
 #### Sobrecarga del Operador `|` (OR)
 
@@ -103,7 +103,7 @@ BitMask operator|(const BitMask& other) const {
     return BitMask(bits.to_ulong() | other.bits.to_ulong());
 }
 ```
-Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de la operaci髇 OR bit a bit entre dos m醩caras de bits.
+Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de la operaci贸n OR bit a bit entre dos m谩scaras de bits.
 
 #### Sobrecarga del Operador `^` (XOR)
 
@@ -112,7 +112,7 @@ BitMask operator^(const BitMask& other) const {
     return BitMask(bits.to_ulong() ^ other.bits.to_ulong());
 }
 ```
-Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de la operaci髇 XOR bit a bit entre dos m醩caras de bits.
+Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de la operaci贸n XOR bit a bit entre dos m谩scaras de bits.
 
 #### Sobrecarga del Operador `<<` (Shift a la Izquierda)
 
@@ -136,3 +136,4 @@ Este operador devuelve un nuevo objeto `BitMask` que representa el resultado de 
 
 1. **Legibilidad y Naturalidad**: Permite utilizar una sintaxis clara y familiar para operaciones bit a bit.
 <---FILES--->
+NA.

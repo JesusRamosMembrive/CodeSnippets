@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Enumeraciones (`enum`) y Clases de EnumeraciÛn (`enum class`) en C++
+### Enumeraciones (`enum`) y Clases de Enumeraci√≥n (`enum class`) en C++
 
-Las enumeraciones son tipos de datos definidos por el usuario que consisten en un conjunto de valores constantes integrales, llamados enumeradores. Las enumeraciones son ˙tiles para representar un conjunto fijo de valores relacionados, como dÌas de la semana, estados de un proceso, etc. C++ proporciona dos formas de definir enumeraciones: `enum` (enumeraciones tradicionales) y `enum class` (clases de enumeraciÛn).
+Las enumeraciones son tipos de datos definidos por el usuario que consisten en un conjunto de valores constantes integrales, llamados enumeradores. Las enumeraciones son √∫tiles para representar un conjunto fijo de valores relacionados, como d√≠as de la semana, estados de un proceso, etc. C++ proporciona dos formas de definir enumeraciones: `enum` (enumeraciones tradicionales) y `enum class` (clases de enumeraci√≥n).
 
 #### Enumeraciones Tradicionales (`enum`)
 
@@ -17,7 +17,7 @@ enum NombreEnum {
 };
 ```
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -37,18 +37,18 @@ int main() {
     DiaSemana hoy = Miercoles;
 
     if (hoy == Miercoles) {
-        cout << "Hoy es miÈrcoles." << endl;
+        cout << "Hoy es mi√©rcoles." << endl;
     }
 
     return 0;
 }
 ```
 
-En este ejemplo, `DiaSemana` es una enumeraciÛn que define los dÌas de la semana.
+En este ejemplo, `DiaSemana` es una enumeraci√≥n que define los d√≠as de la semana.
 
-##### AsignaciÛn de Valores EspecÌficos
+##### Asignaci√≥n de Valores Espec√≠ficos
 
-Por defecto, los enumeradores se asignan a valores enteros comenzando desde 0, pero se pueden asignar valores especÌficos.
+Por defecto, los enumeradores se asignan a valores enteros comenzando desde 0, pero se pueden asignar valores espec√≠ficos.
 
 ```cpp
 enum Mes {
@@ -67,11 +67,11 @@ enum Mes {
 };
 ```
 
-En este ejemplo, `Enero` est· asignado a 1, y los siguientes enumeradores se incrementan autom·ticamente.
+En este ejemplo, `Enero` est√° asignado a 1, y los siguientes enumeradores se incrementan autom√°ticamente.
 
-#### Clases de EnumeraciÛn (`enum class`)
+#### Clases de Enumeraci√≥n (`enum class`)
 
-Las clases de enumeraciÛn, introducidas en C++11, resuelven algunas de las limitaciones de las enumeraciones tradicionales, proporcionando un mayor control sobre el ·mbito y el tipo de los enumeradores.
+Las clases de enumeraci√≥n, introducidas en C++11, resuelven algunas de las limitaciones de las enumeraciones tradicionales, proporcionando un mayor control sobre el √°mbito y el tipo de los enumeradores.
 
 ##### Sintaxis
 
@@ -83,7 +83,7 @@ enum class NombreEnumClass {
 };
 ```
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -106,15 +106,15 @@ int main() {
 }
 ```
 
-En este ejemplo, `Color` es una clase de enumeraciÛn que define diferentes colores. A diferencia de las enumeraciones tradicionales, los enumeradores en `enum class` est·n en el ·mbito de la clase de enumeraciÛn, lo que evita conflictos de nombres.
+En este ejemplo, `Color` es una clase de enumeraci√≥n que define diferentes colores. A diferencia de las enumeraciones tradicionales, los enumeradores en `enum class` est√°n en el √°mbito de la clase de enumeraci√≥n, lo que evita conflictos de nombres.
 
 ##### Ventajas de `enum class`
 
-1. **¡mbito Estricto:** Los enumeradores est·n en el ·mbito de la clase de enumeraciÛn, evitando conflictos de nombres.
-2. **Tipo de Datos Fuertemente Tipado:** Los valores de `enum class` no se convierten implÌcitamente a tipos enteros, proporcionando una mayor seguridad de tipos.
-3. **AsignaciÛn de Valores:** Se pueden asignar valores especÌficos, al igual que en las enumeraciones tradicionales.
+1. **√Åmbito Estricto:** Los enumeradores est√°n en el √°mbito de la clase de enumeraci√≥n, evitando conflictos de nombres.
+2. **Tipo de Datos Fuertemente Tipado:** Los valores de `enum class` no se convierten impl√≠citamente a tipos enteros, proporcionando una mayor seguridad de tipos.
+3. **Asignaci√≥n de Valores:** Se pueden asignar valores espec√≠ficos, al igual que en las enumeraciones tradicionales.
 
-##### Ejemplo con AsignaciÛn de Valores EspecÌficos
+##### Ejemplo con Asignaci√≥n de Valores Espec√≠ficos
 
 ```cpp
 #include <iostream>
@@ -131,18 +131,18 @@ int main() {
     Estado usuario = Estado::Activo;
 
     if (usuario == Estado::Activo) {
-        cout << "El usuario est· activo." << endl;
+        cout << "El usuario est√° activo." << endl;
     }
 
     return 0;
 }
 ```
 
-#### ConversiÛn entre Enumeraciones y Enteros
+#### Conversi√≥n entre Enumeraciones y Enteros
 
-A veces, puede ser necesario convertir entre enumeraciones y enteros. Para las enumeraciones tradicionales, esto se hace implÌcitamente, mientras que para `enum class`, se requiere una conversiÛn explÌcita.
+A veces, puede ser necesario convertir entre enumeraciones y enteros. Para las enumeraciones tradicionales, esto se hace impl√≠citamente, mientras que para `enum class`, se requiere una conversi√≥n expl√≠cita.
 
-##### Ejemplo de ConversiÛn
+##### Ejemplo de Conversi√≥n
 
 ```cpp
 #include <iostream>
@@ -161,9 +161,9 @@ enum class Dia : int {
 int main() {
     Dia hoy = Dia::Jueves;
 
-    // ConversiÛn explÌcita de enum class a int
+    // Conversi√≥n expl√≠cita de enum class a int
     int diaNumero = static_cast<int>(hoy);
-    cout << "Hoy es el dÌa n˙mero: " << diaNumero << endl;
+    cout << "Hoy es el d√≠a n√∫mero: " << diaNumero << endl;
 
     return 0;
 }
@@ -171,13 +171,13 @@ int main() {
 
 #### Ejemplo Completo
 
-A continuaciÛn, un ejemplo completo que ilustra el uso de `enum` y `enum class`, incluyendo conversiones y comparaciÛn de ventajas.
+A continuaci√≥n, un ejemplo completo que ilustra el uso de `enum` y `enum class`, incluyendo conversiones y comparaci√≥n de ventajas.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// EnumeraciÛn tradicional
+// Enumeraci√≥n tradicional
 enum DiaSemana {
     Lunes,
     Martes,
@@ -188,7 +188,7 @@ enum DiaSemana {
     Domingo
 };
 
-// Clase de enumeraciÛn
+// Clase de enumeraci√≥n
 enum class Estado {
     Inactivo = 0,
     Activo = 1,
@@ -197,19 +197,19 @@ enum class Estado {
 };
 
 int main() {
-    // Uso de enumeraciÛn tradicional
+    // Uso de enumeraci√≥n tradicional
     DiaSemana hoy = Miercoles;
     if (hoy == Miercoles) {
-        cout << "Hoy es miÈrcoles." << endl;
+        cout << "Hoy es mi√©rcoles." << endl;
     }
 
-    // Uso de clase de enumeraciÛn
+    // Uso de clase de enumeraci√≥n
     Estado usuario = Estado::Activo;
     if (usuario == Estado::Activo) {
-        cout << "El usuario est· activo." << endl;
+        cout << "El usuario est√° activo." << endl;
     }
 
-    // ConversiÛn explÌcita de enum class a int
+    // Conversi√≥n expl√≠cita de enum class a int
     int estadoNumero = static_cast<int>(usuario);
     cout << "El estado del usuario es: " << estadoNumero << endl;
 
@@ -217,22 +217,22 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las enumeraciones (`enum`) y las clases de enumeraciÛn (`enum class`) en C++ son herramientas ˙tiles para representar conjuntos de valores constantes. Las enumeraciones tradicionales son simples y f·ciles de usar, mientras que las clases de enumeraciÛn proporcionan un control m·s estricto sobre el ·mbito y la seguridad de tipos. Comprender las diferencias y las mejores pr·cticas para usar cada una es crucial para escribir cÛdigo C++ claro, seguro y eficiente.
+Las enumeraciones (`enum`) y las clases de enumeraci√≥n (`enum class`) en C++ son herramientas √∫tiles para representar conjuntos de valores constantes. Las enumeraciones tradicionales son simples y f√°ciles de usar, mientras que las clases de enumeraci√≥n proporcionan un control m√°s estricto sobre el √°mbito y la seguridad de tipos. Comprender las diferencias y las mejores pr√°cticas para usar cada una es crucial para escribir c√≥digo C++ claro, seguro y eficiente.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo B·sico
-Ejemplo B·sico Result
-AsignaciÛn de Valores EspecÌficos
-AsignaciÛn de Valores EspecÌficos Result
+Ejemplo B√°sico
+Ejemplo B√°sico Result
+Asignaci√≥n de Valores Espec√≠ficos
+Asignaci√≥n de Valores Espec√≠ficos Result
 Ventajas de `enum class`
 Ventajas de `enum class` Result
-Ejemplo con AsignaciÛn de Valores EspecÌficos
-Ejemplo con AsignaciÛn de Valores EspecÌficos Result
-Ejemplo de ConversiÛn
-Ejemplo de ConversiÛn Result
+Ejemplo con Asignaci√≥n de Valores Espec√≠ficos
+Ejemplo con Asignaci√≥n de Valores Espec√≠ficos Result
+Ejemplo de Conversi√≥n
+Ejemplo de Conversi√≥n Result
 <---Sintaxis--->
 ```cpp
 enum class NombreEnumClass {
@@ -241,7 +241,7 @@ enum class NombreEnumClass {
     // Otros valores
 };
 <---Sintaxis Result--->
-<---Ejemplo B·sico--->
+<---Ejemplo B√°sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -261,8 +261,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico Result--->
-<---AsignaciÛn de Valores EspecÌficos--->
+<---Ejemplo B√°sico Result--->
+<---Asignaci√≥n de Valores Espec√≠ficos--->
 ```cpp
 enum Mes {
     Enero = 1,
@@ -278,10 +278,10 @@ enum Mes {
     Noviembre,
     Diciembre
 };
-<---AsignaciÛn de Valores EspecÌficos Result--->
+<---Asignaci√≥n de Valores Espec√≠ficos Result--->
 <---Ventajas de `enum class`--->
 <---Ventajas de `enum class` Result--->
-<---Ejemplo con AsignaciÛn de Valores EspecÌficos--->
+<---Ejemplo con Asignaci√≥n de Valores Espec√≠ficos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -297,13 +297,13 @@ int main() {
     Estado usuario = Estado::Activo;
 
     if (usuario == Estado::Activo) {
-        cout << "El usuario est· activo." << endl;
+        cout << "El usuario est√° activo." << endl;
     }
 
     return 0;
 }
-<---Ejemplo con AsignaciÛn de Valores EspecÌficos Result--->
-<---Ejemplo de ConversiÛn--->
+<---Ejemplo con Asignaci√≥n de Valores Espec√≠ficos Result--->
+<---Ejemplo de Conversi√≥n--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -321,9 +321,9 @@ enum class Dia : int {
 int main() {
     Dia hoy = Dia::Jueves;
 
-    // ConversiÛn explÌcita de enum class a int
+    // Conversi√≥n expl√≠cita de enum class a int
     int diaNumero = static_cast<int>(hoy);
-    cout << "Hoy es el dÌa n˙mero: " << diaNumero << endl;
+    cout << "Hoy es el d√≠a n√∫mero: " << diaNumero << endl;
 
     return 0;
 }
@@ -331,7 +331,7 @@ int main() {
 #include <iostream>
 using namespace std;
 
-// EnumeraciÛn tradicional
+// Enumeraci√≥n tradicional
 enum DiaSemana {
     Lunes,
     Martes,
@@ -342,7 +342,7 @@ enum DiaSemana {
     Domingo
 };
 
-// Clase de enumeraciÛn
+// Clase de enumeraci√≥n
 enum class Estado {
     Inactivo = 0,
     Activo = 1,
@@ -351,22 +351,22 @@ enum class Estado {
 };
 
 int main() {
-    // Uso de enumeraciÛn tradicional
+    // Uso de enumeraci√≥n tradicional
     DiaSemana hoy = Miercoles;
     if (hoy == Miercoles) {
-        cout << "Hoy es miÈrcoles." << endl;
+        cout << "Hoy es mi√©rcoles." << endl;
     }
 
-    // Uso de clase de enumeraciÛn
+    // Uso de clase de enumeraci√≥n
     Estado usuario = Estado::Activo;
     if (usuario == Estado::Activo) {
-        cout << "El usuario est· activo." << endl;
+        cout << "El usuario est√° activo." << endl;
     }
 
-    // ConversiÛn explÌcita de enum class a int
+    // Conversi√≥n expl√≠cita de enum class a int
     int estadoNumero = static_cast<int>(usuario);
     cout << "El estado del usuario es: " << estadoNumero << endl;
 
     return 0;
 }
-<---Ejemplo de ConversiÛn Result--->
+<---Ejemplo de Conversi√≥n Result--->

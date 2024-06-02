@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Uso de Concepts con Funciones y Clases en C++
 
-Los Concepts en C++ pueden aplicarse tanto a funciones como a clases, permitiendo definir restricciones claras y espec韋icas para los tipos utilizados en plantillas. A continuaci髇, veremos c髆o usar Concepts con funciones y clases, y c髆o esta pr醕tica mejora la claridad y robustez del c骴igo.
+Los Concepts en C++ pueden aplicarse tanto a funciones como a clases, permitiendo definir restricciones claras y espec铆ficas para los tipos utilizados en plantillas. A continuaci贸n, veremos c贸mo usar Concepts con funciones y clases, y c贸mo esta pr谩ctica mejora la claridad y robustez del c贸digo.
 
 #### Uso de Concepts con Funciones
 
 Los Concepts se utilizan frecuentemente con funciones para restringir los tipos que pueden ser pasados como argumentos de plantilla. Esto se logra mediante la palabra clave `template` y la sintaxis `Concept Nombre`.
 
-##### Ejemplo de Concept con Funci髇
+##### Ejemplo de Concept con Funci贸n
 
 ```cpp
 #include <concepts>
@@ -17,7 +17,7 @@ Los Concepts se utilizan frecuentemente con funciones para restringir los tipos 
 template<typename T>
 concept Integral = std::is_integral_v<T>;
 
-// Funci髇 plantilla que utiliza el Concept Integral
+// Funci贸n plantilla que utiliza el Concept Integral
 template<Integral T>
 T sumar(T a, T b) {
     return a + b;
@@ -28,17 +28,17 @@ int main() {
     std::cout << sumar(a, b) << std::endl; // Funciona: int es un tipo integral
 
     // double x = 5.0, y = 3.0;
-    // std::cout << sumar(x, y) << std::endl; // Error de compilaci髇: double no es un tipo integral
+    // std::cout << sumar(x, y) << std::endl; // Error de compilaci贸n: double no es un tipo integral
 }
 ```
 
 En este ejemplo:
 - El Concept `Integral` se define para verificar si un tipo es integral.
-- La funci髇 plantilla `sumar` utiliza el Concept `Integral`, asegurando que solo acepte tipos integrales.
+- La funci贸n plantilla `sumar` utiliza el Concept `Integral`, asegurando que solo acepte tipos integrales.
 
 #### Uso de Concepts con Clases
 
-Adem醩 de funciones, los Concepts pueden aplicarse a clases para restringir los tipos que se pueden utilizar con plantillas de clase.
+Adem谩s de funciones, los Concepts pueden aplicarse a clases para restringir los tipos que se pueden utilizar con plantillas de clase.
 
 ##### Ejemplo de Concept con Clase
 
@@ -69,7 +69,7 @@ int main() {
     std::cout << calc.multiplicar(2.5f, 3.0f) << std::endl; // Funciona: float es un tipo flotante
 
     // Calculadora<int> calcInt;
-    // std::cout << calcInt.sumar(2, 3) << std::endl; // Error de compilaci髇: int no es un tipo flotante
+    // std::cout << calcInt.sumar(2, 3) << std::endl; // Error de compilaci贸n: int no es un tipo flotante
 }
 ```
 
@@ -77,23 +77,23 @@ En este ejemplo:
 - El Concept `FloatingPoint` se define para verificar si un tipo es flotante.
 - La clase plantilla `Calculadora` utiliza el Concept `FloatingPoint`, asegurando que solo acepte tipos flotantes.
 
-### Buenas Pr醕ticas al Usar Concepts con Funciones y Clases
+### Buenas Pr谩cticas al Usar Concepts con Funciones y Clases
 
-#### 1. Definir Concepts Espec韋icos y Claros
+#### 1. Definir Concepts Espec铆ficos y Claros
 
-Defina Concepts que sean claros y espec韋icos para el contexto de su aplicaci髇. Esto ayuda a evitar confusiones y errores.
+Defina Concepts que sean claros y espec铆ficos para el contexto de su aplicaci贸n. Esto ayuda a evitar confusiones y errores.
 
 #### 2. Utilizar Concepts para Mejorar la Legibilidad
 
-Aplique Concepts para mejorar la legibilidad y la mantenibilidad del c骴igo, proporcionando contexto claro sobre los tipos esperados en plantillas.
+Aplique Concepts para mejorar la legibilidad y la mantenibilidad del c贸digo, proporcionando contexto claro sobre los tipos esperados en plantillas.
 
 #### 3. Documentar los Concepts y sus Requisitos
 
-Documente adecuadamente los Concepts y los requisitos que imponen para facilitar su comprensi髇 y correcto uso.
+Documente adecuadamente los Concepts y los requisitos que imponen para facilitar su comprensi贸n y correcto uso.
 
-#### 4. Aprovechar los Concepts para Mejorar la Seguridad del C骴igo
+#### 4. Aprovechar los Concepts para Mejorar la Seguridad del C贸digo
 
-Utilice Concepts para verificar los requisitos de los tipos en tiempo de compilaci髇, mejorando la seguridad y la robustez del c骴igo.
+Utilice Concepts para verificar los requisitos de los tipos en tiempo de compilaci贸n, mejorando la seguridad y la robustez del c贸digo.
 
 ### Ejemplo Avanzado: Uso Combinado de Concepts en Funciones y Clases
 
@@ -124,7 +124,7 @@ public:
     }
 };
 
-// Funci髇 plantilla que usa el Concept Iterable
+// Funci贸n plantilla que usa el Concept Iterable
 template<Iterable T>
 void procesarContenedor(const T& contenedor) {
     for (const auto& elem : contenedor) {
@@ -147,23 +147,23 @@ int main() {
     procesarContenedor(lst); // Funciona: list es iterable
 
     // int num = 42;
-    // procesarContenedor(num); // Error de compilaci髇: int no es iterable
+    // procesarContenedor(num); // Error de compilaci贸n: int no es iterable
 }
 ```
 
 En este ejemplo:
 - El Concept `Iterable` se define para verificar si un tipo es iterable mediante `begin()` y `end()`.
-- La clase `Procesador` y la funci髇 `procesarContenedor` utilizan el Concept `Iterable`, asegurando que solo acepten tipos iterables.
+- La clase `Procesador` y la funci贸n `procesarContenedor` utilizan el Concept `Iterable`, asegurando que solo acepten tipos iterables.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los Concepts en C++ proporcionan una forma poderosa de definir y verificar restricciones de tipos en plantillas, mejorando la claridad, seguridad y mantenibilidad del c骴igo. Al utilizar Concepts con funciones y clases, puede asegurar que solo se utilicen tipos adecuados, evitar errores de compilaci髇 y proporcionar un contexto claro sobre las expectativas de su c骴igo.
+Los Concepts en C++ proporcionan una forma poderosa de definir y verificar restricciones de tipos en plantillas, mejorando la claridad, seguridad y mantenibilidad del c贸digo. Al utilizar Concepts con funciones y clases, puede asegurar que solo se utilicen tipos adecuados, evitar errores de compilaci贸n y proporcionar un contexto claro sobre las expectativas de su c贸digo.
 <---FILES--->
-Ejemplo de Concept con Funci髇
-Ejemplo de Concept con Funci髇 Result
+Ejemplo de Concept con Funci贸n
+Ejemplo de Concept con Funci贸n Result
 Ejemplo de Concept con Clase
 Ejemplo de Concept con Clase Result
-<---Ejemplo de Concept con Funci髇--->
+<---Ejemplo de Concept con Funci贸n--->
 ```cpp
 #include <concepts>
 #include <iostream>
@@ -172,7 +172,7 @@ Ejemplo de Concept con Clase Result
 template<typename T>
 concept Integral = std::is_integral_v<T>;
 
-// Funci髇 plantilla que utiliza el Concept Integral
+// Funci贸n plantilla que utiliza el Concept Integral
 template<Integral T>
 T sumar(T a, T b) {
     return a + b;
@@ -183,9 +183,9 @@ int main() {
     std::cout << sumar(a, b) << std::endl; // Funciona: int es un tipo integral
 
     // double x = 5.0, y = 3.0;
-    // std::cout << sumar(x, y) << std::endl; // Error de compilaci髇: double no es un tipo integral
+    // std::cout << sumar(x, y) << std::endl; // Error de compilaci贸n: double no es un tipo integral
 }
-<---Ejemplo de Concept con Funci髇 Result--->
+<---Ejemplo de Concept con Funci贸n Result--->
 <---Ejemplo de Concept con Clase--->
 ```cpp
 #include <concepts>
@@ -214,7 +214,7 @@ int main() {
     std::cout << calc.multiplicar(2.5f, 3.0f) << std::endl; // Funciona: float es un tipo flotante
 
     // Calculadora<int> calcInt;
-    // std::cout << calcInt.sumar(2, 3) << std::endl; // Error de compilaci髇: int no es un tipo flotante
+    // std::cout << calcInt.sumar(2, 3) << std::endl; // Error de compilaci贸n: int no es un tipo flotante
 }
 ```cpp
 #include <concepts>
@@ -241,7 +241,7 @@ public:
     }
 };
 
-// Funci髇 plantilla que usa el Concept Iterable
+// Funci贸n plantilla que usa el Concept Iterable
 template<Iterable T>
 void procesarContenedor(const T& contenedor) {
     for (const auto& elem : contenedor) {
@@ -264,6 +264,6 @@ int main() {
     procesarContenedor(lst); // Funciona: list es iterable
 
     // int num = 42;
-    // procesarContenedor(num); // Error de compilaci髇: int no es iterable
+    // procesarContenedor(num); // Error de compilaci贸n: int no es iterable
 }
 <---Ejemplo de Concept con Clase Result--->

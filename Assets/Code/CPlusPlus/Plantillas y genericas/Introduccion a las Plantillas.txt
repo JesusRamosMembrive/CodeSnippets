@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Introducci髇 a las Plantillas en C++
+### Introducci贸n a las Plantillas en C++
 
-Las plantillas en C++ son una caracter韘tica poderosa que permite escribir c骴igo gen閞ico, capaz de trabajar con cualquier tipo de dato. Esto facilita la reutilizaci髇 de c骴igo y la creaci髇 de funciones y clases que operan de manera eficiente con diferentes tipos de datos.
+Las plantillas en C++ son una caracter铆stica poderosa que permite escribir c贸digo gen茅rico, capaz de trabajar con cualquier tipo de dato. Esto facilita la reutilizaci贸n de c贸digo y la creaci贸n de funciones y clases que operan de manera eficiente con diferentes tipos de datos.
 
-#### Definici髇 de Plantillas de Funci髇
+#### Definici贸n de Plantillas de Funci贸n
 
-Las plantillas de funci髇 permiten crear funciones que pueden trabajar con cualquier tipo de dato.
+Las plantillas de funci贸n permiten crear funciones que pueden trabajar con cualquier tipo de dato.
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 // plantilla_funcion.cpp
@@ -26,14 +26,14 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `obtenerMayor` utiliza una plantilla para trabajar con cualquier tipo de dato (`int`, `double`, etc.).
-- La palabra clave `template` seguida de `<typename T>` define una plantilla de funci髇 donde `T` es un par醡etro de tipo.
+- La funci贸n `obtenerMayor` utiliza una plantilla para trabajar con cualquier tipo de dato (`int`, `double`, etc.).
+- La palabra clave `template` seguida de `<typename T>` define una plantilla de funci贸n donde `T` es un par谩metro de tipo.
 
-#### Definici髇 de Plantillas de Clase
+#### Definici贸n de Plantillas de Clase
 
-Las plantillas de clase permiten crear clases gen閞icas que pueden manejar diferentes tipos de datos.
+Las plantillas de clase permiten crear clases gen茅ricas que pueden manejar diferentes tipos de datos.
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 // plantilla_clase.h
@@ -85,13 +85,13 @@ int main() {
 En este ejemplo:
 - La clase `MiClase` es una plantilla que puede manejar diferentes tipos de datos (`int`, `double`, etc.).
 - La palabra clave `template` seguida de `<typename T>` define una plantilla de clase.
-- La implementaci髇 de los m閠odos de la plantilla de clase se encuentra en un archivo separado (`plantilla_clase.cpp`), y se incluye al final del archivo de cabecera.
+- La implementaci贸n de los m茅todos de la plantilla de clase se encuentra en un archivo separado (`plantilla_clase.cpp`), y se incluye al final del archivo de cabecera.
 
-### Buenas Pr醕ticas para el Uso de Plantillas
+### Buenas Pr谩cticas para el Uso de Plantillas
 
-#### 1. Mantener la Implementaci髇 de Plantillas en el Archivo de Cabecera
+#### 1. Mantener la Implementaci贸n de Plantillas en el Archivo de Cabecera
 
-Aunque se puede separar la declaraci髇 y la implementaci髇 de plantillas en archivos `.h` y `.cpp` respectivamente, a menudo se recomienda mantener ambas en el archivo de cabecera para evitar problemas de enlace.
+Aunque se puede separar la declaraci贸n y la implementaci贸n de plantillas en archivos `.h` y `.cpp` respectivamente, a menudo se recomienda mantener ambas en el archivo de cabecera para evitar problemas de enlace.
 
 ##### Ejemplo
 
@@ -119,9 +119,9 @@ void MiClase<T>::mostrarValor() {
 #endif // MICLASE_H
 ```
 
-#### 2. Utilizar Nombres Significativos para Par醡etros de Tipo
+#### 2. Utilizar Nombres Significativos para Par谩metros de Tipo
 
-Utilice nombres de par醡etros de tipo que sean significativos para mejorar la legibilidad del c骴igo.
+Utilice nombres de par谩metros de tipo que sean significativos para mejorar la legibilidad del c贸digo.
 
 ##### Ejemplo
 
@@ -137,7 +137,7 @@ public:
 
 #### 3. Documentar las Plantillas Adecuadamente
 
-Aseg鷕ese de documentar las plantillas para explicar el prop髎ito de los par醡etros de tipo y c髆o se deben utilizar.
+Aseg煤rese de documentar las plantillas para explicar el prop贸sito de los par谩metros de tipo y c贸mo se deben utilizar.
 
 ##### Ejemplo
 
@@ -154,7 +154,7 @@ class MiClase {
 public:
     // Constructor que inicializa el valor
     MiClase(T valor) : valor(valor) {}
-    // Muestra el valor almacenado en la salida est醤dar
+    // Muestra el valor almacenado en la salida est谩ndar
     void mostrarValor();
 private:
     T valor; // El valor almacenado, de tipo T
@@ -168,15 +168,15 @@ void MiClase<T>::mostrarValor() {
 #endif // MICLASE_H
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Las plantillas en C++ son una herramienta poderosa para escribir c骴igo gen閞ico y reutilizable. Al seguir buenas pr醕ticas como mantener la implementaci髇 en el archivo de cabecera, utilizar nombres significativos para los par醡etros de tipo y documentar adecuadamente, se puede crear c骴igo claro y mantenible. Las plantillas permiten a los desarrolladores escribir funciones y clases que trabajan de manera eficiente con cualquier tipo de dato, mejorando la flexibilidad y reutilizaci髇 del c骴igo.
+Las plantillas en C++ son una herramienta poderosa para escribir c贸digo gen茅rico y reutilizable. Al seguir buenas pr谩cticas como mantener la implementaci贸n en el archivo de cabecera, utilizar nombres significativos para los par谩metros de tipo y documentar adecuadamente, se puede crear c贸digo claro y mantenible. Las plantillas permiten a los desarrolladores escribir funciones y clases que trabajan de manera eficiente con cualquier tipo de dato, mejorando la flexibilidad y reutilizaci贸n del c贸digo.
 <---FILES--->
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo
 Ejemplo Result
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 // plantilla_clase.h
 #ifndef PLANTILLA_CLASE_H
@@ -218,7 +218,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo--->
 ```cpp
 // MiClase.h
@@ -233,7 +233,7 @@ class MiClase {
 public:
     // Constructor que inicializa el valor
     MiClase(T valor) : valor(valor) {}
-    // Muestra el valor almacenado en la salida est醤dar
+    // Muestra el valor almacenado en la salida est谩ndar
     void mostrarValor();
 private:
     T valor; // El valor almacenado, de tipo T

@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Miembros Constantes en una Clase.txt</file>
-        <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Objetos Constantes.txt</file>
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro del Tipo self.txt</file>
         <file>Assets/Code/CPlusPlus/Control de flujo/Bucles Anidados (Nested Loops).txt</file>
         <file>Assets/Code/CPlusPlus/Control de flujo/Control de Flujo Bucles.txt</file>
@@ -22,7 +20,6 @@
         <file>Assets/Code/CPlusPlus/Funciones como entidades/Funtores.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Constexpr y Constinit.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Entrada y Salida de Datos.txt</file>
-        <file>Assets/Code/CPlusPlus/Fundamentos/Estructura de un Programa.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Literales.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Operadores.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Overflow y Underflow.txt</file>
@@ -48,17 +45,6 @@
         <file>Assets/Code/CPlusPlus/namespaces/Namespace y la Directiva using.txt</file>
         <file>Assets/Code/CPlusPlus/namespaces/Namespaces Anidados.txt</file>
         <file>Assets/Code/CPlusPlus/namespaces/Namespaces Sin Nombre.txt</file>
-        <file>Assets/Code/CPlusPlus/Operador sobrecarga/Sobrecarga de Funciones.txt</file>
-        <file>Assets/Code/CPlusPlus/Operador sobrecarga/Sobrecarga de Operadores.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Alias en Plantillas.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase Base.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase con TypeTraits.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase para Funciones Amigas.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase Usando Concepts.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Uso de Plantillas en Clases Derivadas.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/Clases Sanitizadas.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/consteval en Funciones.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/constexpr en Funciones.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Constructor de Copia.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Constructor de Movimiento.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Constructores.txt</file>
@@ -66,16 +52,12 @@
         <file>Assets/Code/CPlusPlus/POO/Destructores.txt</file>
         <file>Assets/Code/CPlusPlus/POO/El Puntero this.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Encapsulamiento.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/Funciones con Tipo de Dato Deducido en el Retorno.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/Funciones con Valor de Retorno y Sin Valor de Retorno.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/Funciones que Devuelven Referencias o Punteros.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Setters y Getters en una Clase.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Mover un L-Value y sus Implicaciones.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Operaciones Permitidas con un R-Value.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Optimizaciones con stdmove y R-Values.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/R-Values por Referencia.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdaccumulate.txt</file>
-        <file>Assets/Code/CPlusPlus/Std Algoritmos/stdadvance y stddistance.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdallof.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdcopy.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdfill.txt</file>
@@ -84,11 +66,8 @@
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdlowerbound y stdupperbound.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdmax y stdmin.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdmerge.txt</file>
-        <file>Assets/Code/CPlusPlus/Std Algoritmos/stdmove.txt</file>
-        <file>Assets/Code/CPlusPlus/Std Algoritmos/stdnext y stdprev.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdnthelement.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdpartition.txt</file>
-        <file>Assets/Code/CPlusPlus/Std Algoritmos/stdranges en profundidad.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdremove.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdreplace.txt</file>
         <file>Assets/Code/CPlusPlus/Std Algoritmos/stdreverse.txt</file>
@@ -101,7 +80,6 @@
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro Estaticas Inline.txt</file>
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro Estaticas, Inline y Const.txt</file>
         <file>Assets/Code/CPlusPlus/Control de flujo/Inicializacion dentro de if y switch.txt</file>
-        <file>Assets/Code/CPlusPlus/Corutinas/Introduccion a las Corutinas 20.txt</file>
         <file>Assets/Code/CPlusPlus/Expresiones de rango/Caracteristicas de C++20 Expresiones de Rango y stdranges.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones/Funciones y Procedimientos Definicion y Declaracion de Funciones.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones/Parametros y Argumentos.txt</file>
@@ -118,16 +96,11 @@
         <file>Assets/Code/CPlusPlus/Herencia y polimorfismo/Problema del Diamante en la Herencia Multiple.txt</file>
         <file>Assets/Code/CPlusPlus/Iteradores/Diferencia entre Iterar con Indices y con Iteradores.txt</file>
         <file>Assets/Code/CPlusPlus/Iteradores/Operaciones Permitidas en el Ambito de Contenedores.txt</file>
-        <file>Assets/Code/CPlusPlus/Manejo memoria/Importancia de la Gestion de Memoria.txt</file>
         <file>Assets/Code/CPlusPlus/namespaces/Declaracion de Namespace y Uso.txt</file>
         <file>Assets/Code/CPlusPlus/namespaces/Definicion y Proposito de los Namespaces.txt</file>
         <file>Assets/Code/CPlusPlus/namespaces/Namespace Estandar std.txt</file>
         <file>Assets/Code/CPlusPlus/namespaces/Namespaces en Archivos de Cabecera y Buenas Practicas.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas Variadicas en Funciones y Clases.txt</file>
-        <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas Variadicas.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Constructores Explicitos.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/Conversiones Implicitas en Funciones y Paso de Argumentos.txt</file>
-        <file>Assets/Code/CPlusPlus/POO/Funciones Miembro Estaticas.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Programacion Orientada a Objetos Clases y Objetos.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Conversion de un L-Value a un R-Value.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Definicion de R-Value.txt</file>
@@ -135,12 +108,6 @@
         <file>Assets/Code/CPlusPlus/Semantics/Identificacion de un R-Value.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Implicaciones de una Conversion de L-Value a R-Value.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/Move Semantics y Definicion de L-Value.txt</file>
-        <file>Assets/Code/CPlusPlus/Estructuras de datos/Alias_de_Tipos_typedef_y_using.txt</file>
-        <file>Assets/Code/CPlusPlus/Estructuras de datos/Arrays_Multidimensionales.txt</file>
-        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras_de_Datos_Arrays_y_Vectores.txt</file>
-        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras_de_Datos_Listas_y_Colas.txt</file>
-        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras_de_Datos_Mapas_y_Diccionarios.txt</file>
-        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras_de_Datos_Pilas_y_Conjuntos.txt</file>
         <file>Assets/Code/CPlusPlus/Concepts/Concepts en Clases y Plantillas de Clases.txt</file>
         <file>Assets/Code/CPlusPlus/Concepts/Concepts en Funciones para Restringir el Tipo de Parametro.txt</file>
         <file>Assets/Code/CPlusPlus/Concepts/Concepts para Especializar Plantillas.txt</file>
@@ -183,6 +150,5 @@
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase.txt</file>
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas en Funciones con Multiples Tipos de Datos.txt</file>
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Uso de Plantillas en Funciones.txt</file>
-        <file>Assets/Code/CPlusPlus/Fundamentos/Alcance de las Variables.txt</file>
     </qresource>
 </RCC>

@@ -1,6 +1,6 @@
 import QtQuick
 Item{
-property ListModel namespacesType: ListModel{
+property ListModel namespaceType: ListModel{
 
 ListElement{ name: "Alias de Namespaces"}
 ListElement{ name: "Declaracion de Namespace y Uso"}

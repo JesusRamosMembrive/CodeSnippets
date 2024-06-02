@@ -1,19 +1,19 @@
 <---EXPLANATION--->
 ### El Puntero `this` en C++
 
-En C++, el puntero `this` es un puntero implÌcito disponible en las funciones miembro de una clase. Apunta al objeto actual que invoca la funciÛn miembro. El puntero `this` es muy ˙til para acceder a los miembros del objeto, distinguir entre miembros de la clase y par·metros con el mismo nombre, y para encadenar llamadas a funciones miembro.
+En C++, el puntero `this` es un puntero impl√≠cito disponible en las funciones miembro de una clase. Apunta al objeto actual que invoca la funci√≥n miembro. El puntero `this` es muy √∫til para acceder a los miembros del objeto, distinguir entre miembros de la clase y par√°metros con el mismo nombre, y para encadenar llamadas a funciones miembro.
 
-#### CaracterÌsticas del Puntero `this`
+#### Caracter√≠sticas del Puntero `this`
 
-1. **ImplÌcito:** No es necesario declarar o inicializar `this`; est· disponible autom·ticamente en las funciones miembro.
-2. **Apunta al Objeto Actual:** `this` siempre apunta al objeto que invoca la funciÛn miembro.
+1. **Impl√≠cito:** No es necesario declarar o inicializar `this`; est√° disponible autom√°ticamente en las funciones miembro.
+2. **Apunta al Objeto Actual:** `this` siempre apunta al objeto que invoca la funci√≥n miembro.
 3. **Constancia en Funciones Constantes:** En funciones miembro constantes, `this` es un puntero a un objeto constante (`const`).
 
-#### Uso B·sico del Puntero `this`
+#### Uso B√°sico del Puntero `this`
 
-El uso b·sico de `this` es para acceder a los miembros del objeto dentro de sus funciones miembro.
+El uso b√°sico de `this` es para acceder a los miembros del objeto dentro de sus funciones miembro.
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -27,13 +27,13 @@ public:
     // Constructor
     Punto(int x = 0, int y = 0) : x(x), y(y) {}
 
-    // FunciÛn para establecer valores usando this
+    // Funci√≥n para establecer valores usando this
     void setXY(int x, int y) {
         this->x = x;  // Acceso a miembro de la clase
         this->y = y;  // Acceso a miembro de la clase
     }
 
-    // FunciÛn para mostrar valores
+    // Funci√≥n para mostrar valores
     void mostrar() const {
         cout << "Punto(" << x << ", " << y << ")" << endl;
     }
@@ -52,11 +52,11 @@ int main() {
 
 En este ejemplo, `this->x` y `this->y` se utilizan para acceder a los miembros `x` y `y` de la clase `Punto`.
 
-#### Encadenamiento de MÈtodos
+#### Encadenamiento de M√©todos
 
-El puntero `this` se puede utilizar para devolver una referencia al objeto actual, permitiendo encadenar llamadas a mÈtodos.
+El puntero `this` se puede utilizar para devolver una referencia al objeto actual, permitiendo encadenar llamadas a m√©todos.
 
-##### Ejemplo de Encadenamiento de MÈtodos
+##### Ejemplo de Encadenamiento de M√©todos
 
 ```cpp
 #include <iostream>
@@ -70,7 +70,7 @@ public:
     // Constructor
     Rectangulo(int ancho = 0, int alto = 0) : ancho(ancho), alto(alto) {}
 
-    // MÈtodos para establecer valores con encadenamiento
+    // M√©todos para establecer valores con encadenamiento
     Rectangulo& setAncho(int ancho) {
         this->ancho = ancho;
         return *this;
@@ -81,7 +81,7 @@ public:
         return *this;
     }
 
-    // FunciÛn para mostrar valores
+    // Funci√≥n para mostrar valores
     void mostrar() const {
         cout << "Rectangulo(" << ancho << ", " << alto << ")" << endl;
     }
@@ -89,20 +89,20 @@ public:
 
 int main() {
     Rectangulo r;
-    r.setAncho(10).setAlto(20);  // Encadenamiento de mÈtodos
+    r.setAncho(10).setAlto(20);  // Encadenamiento de m√©todos
     r.mostrar();
 
     return 0;
 }
 ```
 
-En este ejemplo, `setAncho` y `setAlto` devuelven una referencia al objeto actual (`*this`), permitiendo encadenar las llamadas a mÈtodos.
+En este ejemplo, `setAncho` y `setAlto` devuelven una referencia al objeto actual (`*this`), permitiendo encadenar las llamadas a m√©todos.
 
 #### Uso de `this` en Funciones Constantes
 
-En funciones miembro constantes, `this` es un puntero a un objeto constante (`const`), lo que garantiza que la funciÛn no puede modificar los miembros del objeto.
+En funciones miembro constantes, `this` es un puntero a un objeto constante (`const`), lo que garantiza que la funci√≥n no puede modificar los miembros del objeto.
 
-##### Ejemplo con FunciÛn Constante
+##### Ejemplo con Funci√≥n Constante
 
 ```cpp
 #include <iostream>
@@ -116,17 +116,17 @@ public:
     // Constructor
     Circulo(double radio = 0) : radio(radio) {}
 
-    // MÈtodo constante
+    // M√©todo constante
     double getRadio() const {
         return this->radio;  // `this` es un puntero a un objeto constante
     }
 
-    // MÈtodo para establecer el radio
+    // M√©todo para establecer el radio
     void setRadio(double radio) {
         this->radio = radio;
     }
 
-    // FunciÛn para mostrar el radio
+    // Funci√≥n para mostrar el radio
     void mostrar() const {
         cout << "Circulo con radio: " << this->getRadio() << endl;
     }
@@ -143,13 +143,13 @@ int main() {
 }
 ```
 
-En este ejemplo, `getRadio` es una funciÛn constante que utiliza `this` para acceder al miembro `radio`.
+En este ejemplo, `getRadio` es una funci√≥n constante que utiliza `this` para acceder al miembro `radio`.
 
-#### PrevenciÛn de Auto-AsignaciÛn
+#### Prevenci√≥n de Auto-Asignaci√≥n
 
-El puntero `this` se puede utilizar para prevenir la auto-asignaciÛn en el operador de asignaciÛn sobrecargado.
+El puntero `this` se puede utilizar para prevenir la auto-asignaci√≥n en el operador de asignaci√≥n sobrecargado.
 
-##### Ejemplo de PrevenciÛn de Auto-AsignaciÛn
+##### Ejemplo de Prevenci√≥n de Auto-Asignaci√≥n
 
 ```cpp
 #include <iostream>
@@ -178,9 +178,9 @@ public:
         strcpy(str, other.str);
     }
 
-    // Operador de asignaciÛn sobrecargado
+    // Operador de asignaci√≥n sobrecargado
     Cadena& operator=(const Cadena& other) {
-        if (this != &other) {  // PrevenciÛn de auto-asignaciÛn
+        if (this != &other) {  // Prevenci√≥n de auto-asignaci√≥n
             delete[] str;
             str = new char[strlen(other.str) + 1];
             strcpy(str, other.str);
@@ -188,7 +188,7 @@ public:
         return *this;
     }
 
-    // FunciÛn para mostrar la cadena
+    // Funci√≥n para mostrar la cadena
     void mostrar() const {
         cout << "Cadena: " << str << endl;
     }
@@ -201,28 +201,28 @@ int main() {
     c1.mostrar();
     c2.mostrar();
 
-    c2 = c1;  // Usando el operador de asignaciÛn sobrecargado
+    c2 = c1;  // Usando el operador de asignaci√≥n sobrecargado
     c2.mostrar();
 
     return 0;
 }
 ```
 
-En este ejemplo, `this` se utiliza para comprobar la auto-asignaciÛn en el operador de asignaciÛn sobrecargado (`operator=`).
+En este ejemplo, `this` se utiliza para comprobar la auto-asignaci√≥n en el operador de asignaci√≥n sobrecargado (`operator=`).
 
-### ConclusiÛn
+### Conclusi√≥n
 
-El puntero `this` en C++ es una herramienta poderosa que permite a los programadores acceder y manipular los miembros del objeto actual dentro de las funciones miembro. Es fundamental para la implementaciÛn de tÈcnicas como el encadenamiento de mÈtodos, la prevenciÛn de auto-asignaciÛn y la diferenciaciÛn entre miembros de la clase y par·metros con el mismo nombre. Entender y utilizar correctamente `this` puede mejorar la claridad y la eficiencia del cÛdigo orientado a objetos en C++.
+El puntero `this` en C++ es una herramienta poderosa que permite a los programadores acceder y manipular los miembros del objeto actual dentro de las funciones miembro. Es fundamental para la implementaci√≥n de t√©cnicas como el encadenamiento de m√©todos, la prevenci√≥n de auto-asignaci√≥n y la diferenciaci√≥n entre miembros de la clase y par√°metros con el mismo nombre. Entender y utilizar correctamente `this` puede mejorar la claridad y la eficiencia del c√≥digo orientado a objetos en C++.
 <---FILES--->
-Ejemplo B·sico
-Ejemplo B·sico Result
-Ejemplo de Encadenamiento de MÈtodos
-Ejemplo de Encadenamiento de MÈtodos Result
-Ejemplo con FunciÛn Constante
-Ejemplo con FunciÛn Constante Result
-Ejemplo de PrevenciÛn de Auto-AsignaciÛn
-Ejemplo de PrevenciÛn de Auto-AsignaciÛn Result
-<---Ejemplo B·sico--->
+Ejemplo B√°sico
+Ejemplo B√°sico Result
+Ejemplo de Encadenamiento de M√©todos
+Ejemplo de Encadenamiento de M√©todos Result
+Ejemplo con Funci√≥n Constante
+Ejemplo con Funci√≥n Constante Result
+Ejemplo de Prevenci√≥n de Auto-Asignaci√≥n
+Ejemplo de Prevenci√≥n de Auto-Asignaci√≥n Result
+<---Ejemplo B√°sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -235,13 +235,13 @@ public:
     // Constructor
     Punto(int x = 0, int y = 0) : x(x), y(y) {}
 
-    // FunciÛn para establecer valores usando this
+    // Funci√≥n para establecer valores usando this
     void setXY(int x, int y) {
         this->x = x;  // Acceso a miembro de la clase
         this->y = y;  // Acceso a miembro de la clase
     }
 
-    // FunciÛn para mostrar valores
+    // Funci√≥n para mostrar valores
     void mostrar() const {
         cout << "Punto(" << x << ", " << y << ")" << endl;
     }
@@ -256,8 +256,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico Result--->
-<---Ejemplo de Encadenamiento de MÈtodos--->
+<---Ejemplo B√°sico Result--->
+<---Ejemplo de Encadenamiento de M√©todos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -270,7 +270,7 @@ public:
     // Constructor
     Rectangulo(int ancho = 0, int alto = 0) : ancho(ancho), alto(alto) {}
 
-    // MÈtodos para establecer valores con encadenamiento
+    // M√©todos para establecer valores con encadenamiento
     Rectangulo& setAncho(int ancho) {
         this->ancho = ancho;
         return *this;
@@ -281,7 +281,7 @@ public:
         return *this;
     }
 
-    // FunciÛn para mostrar valores
+    // Funci√≥n para mostrar valores
     void mostrar() const {
         cout << "Rectangulo(" << ancho << ", " << alto << ")" << endl;
     }
@@ -289,13 +289,13 @@ public:
 
 int main() {
     Rectangulo r;
-    r.setAncho(10).setAlto(20);  // Encadenamiento de mÈtodos
+    r.setAncho(10).setAlto(20);  // Encadenamiento de m√©todos
     r.mostrar();
 
     return 0;
 }
-<---Ejemplo de Encadenamiento de MÈtodos Result--->
-<---Ejemplo con FunciÛn Constante--->
+<---Ejemplo de Encadenamiento de M√©todos Result--->
+<---Ejemplo con Funci√≥n Constante--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -308,17 +308,17 @@ public:
     // Constructor
     Circulo(double radio = 0) : radio(radio) {}
 
-    // MÈtodo constante
+    // M√©todo constante
     double getRadio() const {
         return this->radio;  // `this` es un puntero a un objeto constante
     }
 
-    // MÈtodo para establecer el radio
+    // M√©todo para establecer el radio
     void setRadio(double radio) {
         this->radio = radio;
     }
 
-    // FunciÛn para mostrar el radio
+    // Funci√≥n para mostrar el radio
     void mostrar() const {
         cout << "Circulo con radio: " << this->getRadio() << endl;
     }
@@ -333,8 +333,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con FunciÛn Constante Result--->
-<---Ejemplo de PrevenciÛn de Auto-AsignaciÛn--->
+<---Ejemplo con Funci√≥n Constante Result--->
+<---Ejemplo de Prevenci√≥n de Auto-Asignaci√≥n--->
 ```cpp
 #include <iostream>
 #include <cstring>
@@ -362,9 +362,9 @@ public:
         strcpy(str, other.str);
     }
 
-    // Operador de asignaciÛn sobrecargado
+    // Operador de asignaci√≥n sobrecargado
     Cadena& operator=(const Cadena& other) {
-        if (this != &other) {  // PrevenciÛn de auto-asignaciÛn
+        if (this != &other) {  // Prevenci√≥n de auto-asignaci√≥n
             delete[] str;
             str = new char[strlen(other.str) + 1];
             strcpy(str, other.str);
@@ -372,7 +372,7 @@ public:
         return *this;
     }
 
-    // FunciÛn para mostrar la cadena
+    // Funci√≥n para mostrar la cadena
     void mostrar() const {
         cout << "Cadena: " << str << endl;
     }
@@ -385,9 +385,9 @@ int main() {
     c1.mostrar();
     c2.mostrar();
 
-    c2 = c1;  // Usando el operador de asignaciÛn sobrecargado
+    c2 = c1;  // Usando el operador de asignaci√≥n sobrecargado
     c2.mostrar();
 
     return 0;
 }
-<---Ejemplo de PrevenciÛn de Auto-AsignaciÛn Result--->
+<---Ejemplo de Prevenci√≥n de Auto-Asignaci√≥n Result--->

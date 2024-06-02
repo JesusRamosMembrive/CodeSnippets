@@ -1,21 +1,21 @@
 <---EXPLANATION--->
 ### Funciones Inline en C++
 
-Las funciones `inline` en C++ son una característica que sugiere al compilador que expanda el código de la función en lugar de realizar una llamada a la función. Esto puede reducir la sobrecarga de la llamada a la función, mejorar el rendimiento en algunos casos y ayudar a optimizar el código. Sin embargo, el uso excesivo de funciones `inline` puede aumentar el tamaño del código y reducir la eficiencia de la caché.
+Las funciones `inline` en C++ son una caracterÃ­stica que sugiere al compilador que expanda el cÃ³digo de la funciÃ³n en lugar de realizar una llamada a la funciÃ³n. Esto puede reducir la sobrecarga de la llamada a la funciÃ³n, mejorar el rendimiento en algunos casos y ayudar a optimizar el cÃ³digo. Sin embargo, el uso excesivo de funciones `inline` puede aumentar el tamaÃ±o del cÃ³digo y reducir la eficiencia de la cachÃ©.
 
-#### Definición de Funciones Inline
+#### DefiniciÃ³n de Funciones Inline
 
-Para declarar una función como `inline`, se utiliza la palabra clave `inline` antes de la declaración o definición de la función.
+Para declarar una funciÃ³n como `inline`, se utiliza la palabra clave `inline` antes de la declaraciÃ³n o definiciÃ³n de la funciÃ³n.
 
 ##### Sintaxis
 
 ```cpp
 inline tipo_retorno nombre_funcion(parametros) {
-    // cuerpo de la función
+    // cuerpo de la funciÃ³n
 }
 ```
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -32,23 +32,23 @@ int main() {
 }
 ```
 
-En este ejemplo, la función `sumar` se define como `inline`, lo que sugiere al compilador que expanda la función en línea en lugar de hacer una llamada a la función.
+En este ejemplo, la funciÃ³n `sumar` se define como `inline`, lo que sugiere al compilador que expanda la funciÃ³n en lÃ­nea en lugar de hacer una llamada a la funciÃ³n.
 
 #### Ventajas de las Funciones Inline
 
-1. **Reducción de la Sobrecarga de Llamada a Función:** Al expandir el código de la función en línea, se elimina la sobrecarga asociada con la llamada a la función.
-2. **Optimización del Rendimiento:** Para funciones pequeñas y frecuentemente llamadas, el uso de `inline` puede mejorar el rendimiento.
-3. **Facilitación de la Optimización del Compilador:** El compilador puede aplicar más optimizaciones cuando el cuerpo de la función está disponible en línea.
+1. **ReducciÃ³n de la Sobrecarga de Llamada a FunciÃ³n:** Al expandir el cÃ³digo de la funciÃ³n en lÃ­nea, se elimina la sobrecarga asociada con la llamada a la funciÃ³n.
+2. **OptimizaciÃ³n del Rendimiento:** Para funciones pequeÃ±as y frecuentemente llamadas, el uso de `inline` puede mejorar el rendimiento.
+3. **FacilitaciÃ³n de la OptimizaciÃ³n del Compilador:** El compilador puede aplicar mÃ¡s optimizaciones cuando el cuerpo de la funciÃ³n estÃ¡ disponible en lÃ­nea.
 
 #### Limitaciones y Consideraciones
 
-1. **Tamaño del Código:** El uso excesivo de funciones `inline` puede aumentar el tamaño del código, lo que puede afectar negativamente a la eficiencia de la caché.
-2. **Compilador Puede Ignorar `inline`:** La palabra clave `inline` es una sugerencia para el compilador, no una orden. El compilador puede decidir no hacer una función en línea si considera que no es beneficioso.
-3. **Adecuación para Funciones Pequeñas:** Las funciones `inline` son más adecuadas para funciones pequeñas y de propósito general. Funciones grandes y complejas no deberían ser inlined debido a la inflación del código.
+1. **TamaÃ±o del CÃ³digo:** El uso excesivo de funciones `inline` puede aumentar el tamaÃ±o del cÃ³digo, lo que puede afectar negativamente a la eficiencia de la cachÃ©.
+2. **Compilador Puede Ignorar `inline`:** La palabra clave `inline` es una sugerencia para el compilador, no una orden. El compilador puede decidir no hacer una funciÃ³n en lÃ­nea si considera que no es beneficioso.
+3. **AdecuaciÃ³n para Funciones PequeÃ±as:** Las funciones `inline` son mÃ¡s adecuadas para funciones pequeÃ±as y de propÃ³sito general. Funciones grandes y complejas no deberÃ­an ser inlined debido a la inflaciÃ³n del cÃ³digo.
 
 #### Funciones Inline en Clases
 
-En las clases, las funciones miembro pueden ser declaradas y definidas como `inline` dentro de la definición de la clase.
+En las clases, las funciones miembro pueden ser declaradas y definidas como `inline` dentro de la definiciÃ³n de la clase.
 
 ##### Ejemplo en Clases
 
@@ -88,7 +88,7 @@ En este ejemplo, el constructor y las funciones miembro de la clase `Punto` se d
 
 #### Uso de `inline` con Funciones Definidas en el Archivo de Cabecera
 
-Es común definir funciones `inline` en archivos de cabecera para que puedan ser usadas en múltiples archivos fuente sin causar errores de múltiples definiciones.
+Es comÃºn definir funciones `inline` en archivos de cabecera para que puedan ser usadas en mÃºltiples archivos fuente sin causar errores de mÃºltiples definiciones.
 
 ##### Ejemplo en un Archivo de Cabecera
 
@@ -134,13 +134,13 @@ int main() {
 
 #### Ejemplo Completo con Funciones Inline
 
-A continuación, se presenta un ejemplo completo que muestra el uso de funciones `inline` tanto dentro como fuera de una clase.
+A continuaciÃ³n, se presenta un ejemplo completo que muestra el uso de funciones `inline` tanto dentro como fuera de una clase.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Función inline fuera de la clase
+// FunciÃ³n inline fuera de la clase
 inline int sumar(int a, int b) {
     return a + b;
 }
@@ -161,28 +161,28 @@ public:
 };
 
 int main() {
-    // Uso de función inline fuera de la clase
+    // Uso de funciÃ³n inline fuera de la clase
     int resultado = sumar(5, 7);
     cout << "La suma es: " << resultado << endl;
 
     // Uso de funciones inline dentro de la clase
     Rectangulo rect(10, 20);
-    cout << "Ancho del rectángulo: " << rect.getAncho() << endl;
-    cout << "Alto del rectángulo: " << rect.getAlto() << endl;
-    cout << "Área del rectángulo: " << rect.area() << endl;
+    cout << "Ancho del rectÃ¡ngulo: " << rect.getAncho() << endl;
+    cout << "Alto del rectÃ¡ngulo: " << rect.getAlto() << endl;
+    cout << "Ãrea del rectÃ¡ngulo: " << rect.area() << endl;
 
     return 0;
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-Las funciones `inline` en C++ son una herramienta útil para optimizar el rendimiento del programa al reducir la sobrecarga de llamadas a funciones, especialmente para funciones pequeñas y frecuentemente llamadas. Aunque el uso de `inline` puede mejorar el rendimiento, debe emplearse con moderación para evitar inflar el tamaño del código y comprometer la eficiencia de la caché. Con una comprensión sólida de cuándo y cómo usar funciones `inline`, los desarrolladores pueden escribir código más eficiente y optimizado.
+Las funciones `inline` en C++ son una herramienta Ãºtil para optimizar el rendimiento del programa al reducir la sobrecarga de llamadas a funciones, especialmente para funciones pequeÃ±as y frecuentemente llamadas. Aunque el uso de `inline` puede mejorar el rendimiento, debe emplearse con moderaciÃ³n para evitar inflar el tamaÃ±o del cÃ³digo y comprometer la eficiencia de la cachÃ©. Con una comprensiÃ³n sÃ³lida de cuÃ¡ndo y cÃ³mo usar funciones `inline`, los desarrolladores pueden escribir cÃ³digo mÃ¡s eficiente y optimizado.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo Básico
-Ejemplo Básico Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
 Ejemplo en Clases
 Ejemplo en Clases Result
 Ejemplo en un Archivo de Cabecera
@@ -192,10 +192,10 @@ Uso del Archivo de Cabecera en un Archivo Fuente Result
 <---Sintaxis--->
 ```cpp
 inline tipo_retorno nombre_funcion(parametros) {
-    // cuerpo de la función
+    // cuerpo de la funciÃ³n
 }
 <---Sintaxis Result--->
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -209,7 +209,7 @@ int main() {
     cout << "La suma es: " << resultado << endl;
     return 0;
 }
-<---Ejemplo Básico Result--->
+<---Ejemplo BÃ¡sico Result--->
 <---Ejemplo en Clases--->
 ```cpp
 #include <iostream>
@@ -283,7 +283,7 @@ int main() {
 #include <iostream>
 using namespace std;
 
-// Función inline fuera de la clase
+// FunciÃ³n inline fuera de la clase
 inline int sumar(int a, int b) {
     return a + b;
 }
@@ -304,15 +304,15 @@ public:
 };
 
 int main() {
-    // Uso de función inline fuera de la clase
+    // Uso de funciÃ³n inline fuera de la clase
     int resultado = sumar(5, 7);
     cout << "La suma es: " << resultado << endl;
 
     // Uso de funciones inline dentro de la clase
     Rectangulo rect(10, 20);
-    cout << "Ancho del rectángulo: " << rect.getAncho() << endl;
-    cout << "Alto del rectángulo: " << rect.getAlto() << endl;
-    cout << "Área del rectángulo: " << rect.area() << endl;
+    cout << "Ancho del rectÃ¡ngulo: " << rect.getAncho() << endl;
+    cout << "Alto del rectÃ¡ngulo: " << rect.getAlto() << endl;
+    cout << "Ãrea del rectÃ¡ngulo: " << rect.area() << endl;
 
     return 0;
 }

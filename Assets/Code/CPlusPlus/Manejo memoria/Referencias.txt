@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Referencias en C++
 
-Las referencias son una caracter韘tica poderosa y segura de C++ que permite crear alias para las variables. A diferencia de los punteros, las referencias no pueden ser nulas y deben ser inicializadas cuando se declaran. Las referencias simplifican la sintaxis y hacen el c骴igo m醩 legible, especialmente cuando se pasan par醡etros a funciones.
+Las referencias son una caracter铆stica poderosa y segura de C++ que permite crear alias para las variables. A diferencia de los punteros, las referencias no pueden ser nulas y deben ser inicializadas cuando se declaran. Las referencias simplifican la sintaxis y hacen el c贸digo m谩s legible, especialmente cuando se pasan par谩metros a funciones.
 
-#### Declaraci髇 y Uso de Referencias
+#### Declaraci贸n y Uso de Referencias
 
-##### Declaraci髇 B醩ica
+##### Declaraci贸n B谩sica
 
 Para declarar una referencia, se utiliza el operador `&` seguido del nombre de la referencia.
 
@@ -17,7 +17,7 @@ std::cout << "var: " << var << std::endl; // Salida: 10
 std::cout << "ref: " << ref << std::endl; // Salida: 10
 ```
 
-##### Modificaci髇 a trav閟 de Referencias
+##### Modificaci贸n a trav茅s de Referencias
 
 Las referencias pueden ser utilizadas para modificar la variable original a la que hacen referencia.
 
@@ -25,7 +25,7 @@ Las referencias pueden ser utilizadas para modificar la variable original a la q
 int var = 10;
 int& ref = var;
 
-ref = 20; // Modifica var a trav閟 de ref
+ref = 20; // Modifica var a trav茅s de ref
 
 std::cout << "var: " << var << std::endl; // Salida: 20
 std::cout << "ref: " << ref << std::endl; // Salida: 20
@@ -33,11 +33,11 @@ std::cout << "ref: " << ref << std::endl; // Salida: 20
 
 ### Referencias y Funciones
 
-Las referencias son especialmente 鷗iles para pasar par醡etros a funciones sin hacer copias de los mismos, lo que mejora el rendimiento.
+Las referencias son especialmente 煤tiles para pasar par谩metros a funciones sin hacer copias de los mismos, lo que mejora el rendimiento.
 
 #### Paso por Referencia
 
-Pasar par醡etros por referencia permite modificar los argumentos originales dentro de la funci髇.
+Pasar par谩metros por referencia permite modificar los argumentos originales dentro de la funci贸n.
 
 ##### Ejemplo de Paso por Referencia
 
@@ -51,7 +51,7 @@ void incrementar(int& ref) {
 int main() {
     int var = 10;
     incrementar(var);
-    std::cout << "Valor de var despu閟 de incrementar: " << var << std::endl; // Salida: 11
+    std::cout << "Valor de var despu茅s de incrementar: " << var << std::endl; // Salida: 11
 
     return 0;
 }
@@ -59,7 +59,7 @@ int main() {
 
 #### Referencias Constantes
 
-Las referencias constantes permiten pasar par醡etros a funciones sin permitir la modificaci髇 de los mismos dentro de la funci髇. Esto es 鷗il para optimizar el rendimiento y garantizar la inmutabilidad de los datos.
+Las referencias constantes permiten pasar par谩metros a funciones sin permitir la modificaci贸n de los mismos dentro de la funci贸n. Esto es 煤til para optimizar el rendimiento y garantizar la inmutabilidad de los datos.
 
 ##### Ejemplo de Referencia Constante
 
@@ -80,11 +80,11 @@ int main() {
 
 ### Referencias en Clases
 
-Las referencias tambi閚 se utilizan ampliamente en clases para implementar constructores de copia, operadores de asignaci髇 y otros m閠odos.
+Las referencias tambi茅n se utilizan ampliamente en clases para implementar constructores de copia, operadores de asignaci贸n y otros m茅todos.
 
 #### Constructor de Copia
 
-Un constructor de copia utiliza referencias para evitar la creaci髇 de copias innecesarias de objetos.
+Un constructor de copia utiliza referencias para evitar la creaci贸n de copias innecesarias de objetos.
 
 ##### Ejemplo de Constructor de Copia
 
@@ -117,11 +117,11 @@ int main() {
 }
 ```
 
-#### Operador de Asignaci髇
+#### Operador de Asignaci贸n
 
-El operador de asignaci髇 tambi閚 se implementa usando referencias para evitar copias innecesarias y gestionar la asignaci髇 de recursos correctamente.
+El operador de asignaci贸n tambi茅n se implementa usando referencias para evitar copias innecesarias y gestionar la asignaci贸n de recursos correctamente.
 
-##### Ejemplo de Operador de Asignaci髇
+##### Ejemplo de Operador de Asignaci贸n
 
 ```cpp
 #include <iostream>
@@ -133,7 +133,7 @@ private:
 public:
     MiClase(int v) : valor(v) {}
     
-    // Operador de asignaci髇
+    // Operador de asignaci贸n
     MiClase& operator=(const MiClase& otra) {
         if (this != &otra) {
             valor = otra.valor;
@@ -147,7 +147,7 @@ public:
 int main() {
     MiClase obj1(10);
     MiClase obj2(20);
-    obj2 = obj1; // Llama al operador de asignaci髇
+    obj2 = obj1; // Llama al operador de asignaci贸n
 
     std::cout << "Valor de obj1: " << obj1.obtenerValor() << std::endl; // Salida: 10
     std::cout << "Valor de obj2: " << obj2.obtenerValor() << std::endl; // Salida: 10
@@ -156,18 +156,18 @@ int main() {
 }
 ```
 
-### Buenas Pr醕ticas con Referencias
+### Buenas Pr谩cticas con Referencias
 
 #### Evitar Referencias Dangling
 
-Las referencias dangling (colgantes) ocurren cuando una referencia apunta a una variable que ha sido destruida o liberada. Siempre aseg鷕ese de que la vida 鷗il del objeto referenciado sea mayor que la de la referencia.
+Las referencias dangling (colgantes) ocurren cuando una referencia apunta a una variable que ha sido destruida o liberada. Siempre aseg煤rese de que la vida 煤til del objeto referenciado sea mayor que la de la referencia.
 
 ##### Ejemplo de Referencia Dangling (a Evitar)
 
 ```cpp
 int& funcion() {
     int var = 10;
-    return var; // var se destruye al salir de la funci髇
+    return var; // var se destruye al salir de la funci贸n
 }
 
 int main() {
@@ -180,7 +180,7 @@ int main() {
 
 #### Uso de Const en Referencias
 
-Utilice `const` siempre que sea posible para evitar modificaciones accidentales y mejorar la seguridad del c骴igo.
+Utilice `const` siempre que sea posible para evitar modificaciones accidentales y mejorar la seguridad del c贸digo.
 
 ```cpp
 void mostrar(const int& ref) {
@@ -188,42 +188,42 @@ void mostrar(const int& ref) {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Las referencias en C++ son una herramienta esencial para la manipulaci髇 eficiente y segura de variables. Permiten pasar argumentos a funciones sin hacer copias, lo que mejora el rendimiento, y garantizan la inmutabilidad cuando se usan con `const`. Al seguir buenas pr醕ticas y evitar referencias colgantes, se puede escribir c骴igo m醩 limpio, seguro y eficiente.
+Las referencias en C++ son una herramienta esencial para la manipulaci贸n eficiente y segura de variables. Permiten pasar argumentos a funciones sin hacer copias, lo que mejora el rendimiento, y garantizan la inmutabilidad cuando se usan con `const`. Al seguir buenas pr谩cticas y evitar referencias colgantes, se puede escribir c贸digo m谩s limpio, seguro y eficiente.
 <---FILES--->
-Declaraci髇 B醩ica
-Declaraci髇 B醩ica Result
-Modificaci髇 a trav閟 de Referencias
-Modificaci髇 a trav閟 de Referencias Result
+Declaraci贸n B谩sica
+Declaraci贸n B谩sica Result
+Modificaci贸n a trav茅s de Referencias
+Modificaci贸n a trav茅s de Referencias Result
 Ejemplo de Paso por Referencia
 Ejemplo de Paso por Referencia Result
 Ejemplo de Referencia Constante
 Ejemplo de Referencia Constante Result
 Ejemplo de Constructor de Copia
 Ejemplo de Constructor de Copia Result
-Ejemplo de Operador de Asignaci髇
-Ejemplo de Operador de Asignaci髇 Result
+Ejemplo de Operador de Asignaci贸n
+Ejemplo de Operador de Asignaci贸n Result
 Ejemplo de Referencia Dangling (a Evitar)
 Ejemplo de Referencia Dangling (a Evitar) Result
-<---Declaraci髇 B醩ica--->
+<---Declaraci贸n B谩sica--->
 ```cpp
 int var = 10;
 int& ref = var; // ref es una referencia a var
 
 std::cout << "var: " << var << std::endl; // Salida: 10
 std::cout << "ref: " << ref << std::endl; // Salida: 10
-<---Declaraci髇 B醩ica Result--->
-<---Modificaci髇 a trav閟 de Referencias--->
+<---Declaraci贸n B谩sica Result--->
+<---Modificaci贸n a trav茅s de Referencias--->
 ```cpp
 int var = 10;
 int& ref = var;
 
-ref = 20; // Modifica var a trav閟 de ref
+ref = 20; // Modifica var a trav茅s de ref
 
 std::cout << "var: " << var << std::endl; // Salida: 20
 std::cout << "ref: " << ref << std::endl; // Salida: 20
-<---Modificaci髇 a trav閟 de Referencias Result--->
+<---Modificaci贸n a trav茅s de Referencias Result--->
 <---Ejemplo de Paso por Referencia--->
 ```cpp
 #include <iostream>
@@ -235,7 +235,7 @@ void incrementar(int& ref) {
 int main() {
     int var = 10;
     incrementar(var);
-    std::cout << "Valor de var despu閟 de incrementar: " << var << std::endl; // Salida: 11
+    std::cout << "Valor de var despu茅s de incrementar: " << var << std::endl; // Salida: 11
 
     return 0;
 }
@@ -284,7 +284,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Constructor de Copia Result--->
-<---Ejemplo de Operador de Asignaci髇--->
+<---Ejemplo de Operador de Asignaci贸n--->
 ```cpp
 #include <iostream>
 
@@ -295,7 +295,7 @@ private:
 public:
     MiClase(int v) : valor(v) {}
     
-    // Operador de asignaci髇
+    // Operador de asignaci贸n
     MiClase& operator=(const MiClase& otra) {
         if (this != &otra) {
             valor = otra.valor;
@@ -309,19 +309,19 @@ public:
 int main() {
     MiClase obj1(10);
     MiClase obj2(20);
-    obj2 = obj1; // Llama al operador de asignaci髇
+    obj2 = obj1; // Llama al operador de asignaci贸n
 
     std::cout << "Valor de obj1: " << obj1.obtenerValor() << std::endl; // Salida: 10
     std::cout << "Valor de obj2: " << obj2.obtenerValor() << std::endl; // Salida: 10
 
     return 0;
 }
-<---Ejemplo de Operador de Asignaci髇 Result--->
+<---Ejemplo de Operador de Asignaci贸n Result--->
 <---Ejemplo de Referencia Dangling (a Evitar)--->
 ```cpp
 int& funcion() {
     int var = 10;
-    return var; // var se destruye al salir de la funci髇
+    return var; // var se destruye al salir de la funci贸n
 }
 
 int main() {

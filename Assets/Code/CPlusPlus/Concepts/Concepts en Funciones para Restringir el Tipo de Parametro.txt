@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Concepts en Funciones para Restringir el Tipo de Par·metro en C++
+### Concepts en Funciones para Restringir el Tipo de Par√°metro en C++
 
-Los Concepts en C++20 son una herramienta poderosa que permite restringir los tipos de par·metros que pueden ser pasados a funciones plantilla. Esto mejora la seguridad del cÛdigo al asegurar que solo los tipos que cumplen ciertos requisitos puedan ser utilizados.
+Los Concepts en C++20 son una herramienta poderosa que permite restringir los tipos de par√°metros que pueden ser pasados a funciones plantilla. Esto mejora la seguridad del c√≥digo al asegurar que solo los tipos que cumplen ciertos requisitos puedan ser utilizados.
 
-### DefiniciÛn de Concepts en Funciones
+### Definici√≥n de Concepts en Funciones
 
-Para usar un Concept en una funciÛn, se especifica el Concept en la declaraciÛn de la plantilla. AquÌ hay una guÌa paso a paso y ejemplos de cÛmo hacerlo.
+Para usar un Concept en una funci√≥n, se especifica el Concept en la declaraci√≥n de la plantilla. Aqu√≠ hay una gu√≠a paso a paso y ejemplos de c√≥mo hacerlo.
 
 #### Ejemplo 1: Uso de `std::integral`
 
@@ -15,7 +15,7 @@ Este Concept predefinido verifica si un tipo es un tipo integral (como `int`, `c
 #include <concepts>
 #include <iostream>
 
-// FunciÛn plantilla que solo acepta tipos integrales
+// Funci√≥n plantilla que solo acepta tipos integrales
 template<std::integral T>
 T sumar(T a, T b) {
     return a + b;
@@ -26,11 +26,11 @@ int main() {
     std::cout << sumar(x, y) << std::endl;  // Funciona: int es un tipo integral
 
     // double a = 5.0, b = 3.0;
-    // std::cout << sumar(a, b) << std::endl;  // Error de compilaciÛn: double no es un tipo integral
+    // std::cout << sumar(a, b) << std::endl;  // Error de compilaci√≥n: double no es un tipo integral
 }
 ```
 
-En este ejemplo, la funciÛn plantilla `sumar` solo acepta par·metros de tipo integral debido al Concept `std::integral`.
+En este ejemplo, la funci√≥n plantilla `sumar` solo acepta par√°metros de tipo integral debido al Concept `std::integral`.
 
 #### Ejemplo 2: Uso de `std::floating_point`
 
@@ -40,7 +40,7 @@ Este Concept predefinido verifica si un tipo es un tipo de punto flotante (como 
 #include <concepts>
 #include <iostream>
 
-// FunciÛn plantilla que solo acepta tipos de punto flotante
+// Funci√≥n plantilla que solo acepta tipos de punto flotante
 template<std::floating_point T>
 T multiplicar(T a, T b) {
     return a * b;
@@ -51,26 +51,26 @@ int main() {
     std::cout << multiplicar(x, y) << std::endl;  // Funciona: double es un tipo de punto flotante
 
     // int a = 2, b = 3;
-    // std::cout << multiplicar(a, b) << std::endl;  // Error de compilaciÛn: int no es un tipo de punto flotante
+    // std::cout << multiplicar(a, b) << std::endl;  // Error de compilaci√≥n: int no es un tipo de punto flotante
 }
 ```
 
 #### Ejemplo 3: Concept Personalizado `HasSizeMethod`
 
-Este Concept verifica si un tipo tiene un mÈtodo `size()` que retorna un valor convertible a `std::size_t`.
+Este Concept verifica si un tipo tiene un m√©todo `size()` que retorna un valor convertible a `std::size_t`.
 
 ```cpp
 #include <concepts>
 #include <type_traits>
 #include <iostream>
 
-// Definir un Concept que requiere que T tenga un mÈtodo `size()`
+// Definir un Concept que requiere que T tenga un m√©todo `size()`
 template<typename T>
 concept HasSizeMethod = requires(T a) {
     { a.size() } -> std::convertible_to<std::size_t>;
 };
 
-// FunciÛn plantilla que solo acepta tipos que tienen un mÈtodo `size()`
+// Funci√≥n plantilla que solo acepta tipos que tienen un m√©todo `size()`
 template<HasSizeMethod T>
 std::size_t obtenerSize(const T& obj) {
     return obj.size();
@@ -92,10 +92,10 @@ public:
 
 int main() {
     ConSize cs;
-    std::cout << obtenerSize(cs) << std::endl; // Funciona: ConSize tiene mÈtodo `size()`
+    std::cout << obtenerSize(cs) << std::endl; // Funciona: ConSize tiene m√©todo `size()`
 
     // SinSize ss;
-    // std::cout << obtenerSize(ss) << std::endl; // Error de compilaciÛn: SinSize no tiene mÈtodo `size()`
+    // std::cout << obtenerSize(ss) << std::endl; // Error de compilaci√≥n: SinSize no tiene m√©todo `size()`
 }
 ```
 
@@ -107,13 +107,13 @@ Este Concept verifica si dos instancias de un tipo pueden sumarse utilizando el 
 #include <concepts>
 #include <iostream>
 
-// Definir un Concept que requiere que T soporte la operaciÛn de suma
+// Definir un Concept que requiere que T soporte la operaci√≥n de suma
 template<typename T>
 concept Addable = requires(T a, T b) {
     { a + b } -> std::same_as<T>;
 };
 
-// FunciÛn plantilla que solo acepta tipos que soportan la suma
+// Funci√≥n plantilla que solo acepta tipos que soportan la suma
 template<Addable T>
 T sumar(T a, T b) {
     return a + b;
@@ -127,15 +127,15 @@ int main() {
     std::cout << sumar(p, q) << std::endl;  // Funciona: double soporta la suma
 
     // std::string s1 = "Hola, ", s2 = "Mundo!";
-    // std::cout << sumar(s1, s2) << std::endl;  // Funciona: std::string soporta la suma (concatenaciÛn)
+    // std::cout << sumar(s1, s2) << std::endl;  // Funciona: std::string soporta la suma (concatenaci√≥n)
 }
 ```
 
-### Uso de Concepts en Par·metros de Funciones
+### Uso de Concepts en Par√°metros de Funciones
 
-Los Concepts tambiÈn pueden ser utilizados directamente en la lista de par·metros de una funciÛn para restringir los tipos permitidos.
+Los Concepts tambi√©n pueden ser utilizados directamente en la lista de par√°metros de una funci√≥n para restringir los tipos permitidos.
 
-#### Ejemplo 5: Uso de Concepts en Par·metros
+#### Ejemplo 5: Uso de Concepts en Par√°metros
 
 ```cpp
 #include <concepts>
@@ -145,25 +145,26 @@ Los Concepts tambiÈn pueden ser utilizados directamente en la lista de par·metro
 template<typename T>
 concept Integral = std::is_integral_v<T>;
 
-// FunciÛn que utiliza el Concept directamente en los par·metros
+// Funci√≥n que utiliza el Concept directamente en los par√°metros
 void imprimir(Integral auto valor) {
     std::cout << valor << std::endl;
 }
 
 int main() {
     imprimir(42);  // Funciona: 42 es un int (integral)
-    // imprimir(42.0);  // Error de compilaciÛn: 42.0 es un double (no integral)
+    // imprimir(42.0);  // Error de compilaci√≥n: 42.0 es un double (no integral)
 }
 ```
 
-### Buenas Pr·cticas al Usar Concepts en Funciones
+### Buenas Pr√°cticas al Usar Concepts en Funciones
 
-1. **Definir Concepts Claros y EspecÌficos**: Aseg˙rese de que los Concepts sean claros y especÌficos para evitar confusiones.
-2. **Reutilizar Concepts**: Defina Concepts reutilizables que puedan ser aplicados en m˙ltiples funciones y contextos.
-3. **Documentar**: Documente los Concepts y las funciones que los utilizan para facilitar la comprensiÛn del cÛdigo.
-4. **Evitar Complejidad**: Mantenga los Concepts lo m·s simples posible para no complicar innecesariamente el cÛdigo.
+1. **Definir Concepts Claros y Espec√≠ficos**: Aseg√∫rese de que los Concepts sean claros y espec√≠ficos para evitar confusiones.
+2. **Reutilizar Concepts**: Defina Concepts reutilizables que puedan ser aplicados en m√∫ltiples funciones y contextos.
+3. **Documentar**: Documente los Concepts y las funciones que los utilizan para facilitar la comprensi√≥n del c√≥digo.
+4. **Evitar Complejidad**: Mantenga los Concepts lo m√°s simples posible para no complicar innecesariamente el c√≥digo.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los Concepts en C++ permiten restringir los tipos de par·metros en funciones plantilla, proporcionando una forma clara y concisa de imponer restricciones de tipos. Esto no solo mejora la seguridad y la robustez del cÛdigo, sino que tambiÈn facilita la detecciÛn de errores en tiempo de compilaciÛn y mejora la legibilidad del cÛdigo. Al definir y utilizar Concepts personalizados, puede asegurar que sus funciones solo acepten los tipos adecuados, evitando errores y mejorando la mantenibilidad del cÛdigo.
+Los Concepts en C++ permiten restringir los tipos de par√°metros en funciones plantilla, proporcionando una forma clara y concisa de imponer restricciones de tipos. Esto no solo mejora la seguridad y la robustez del c√≥digo, sino que tambi√©n facilita la detecci√≥n de errores en tiempo de compilaci√≥n y mejora la legibilidad del c√≥digo. Al definir y utilizar Concepts personalizados, puede asegurar que sus funciones solo acepten los tipos adecuados, evitando errores y mejorando la mantenibilidad del c√≥digo.
 <---FILES--->
+NA.

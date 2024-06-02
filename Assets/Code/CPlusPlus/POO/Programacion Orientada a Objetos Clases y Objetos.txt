@@ -1,15 +1,15 @@
 <---EXPLANATION--->
-### ProgramaciÛn Orientada a Objetos en C++: Clases y Objetos
+### Programaci√≥n Orientada a Objetos en C++: Clases y Objetos
 
-La programaciÛn orientada a objetos (POO) es un paradigma de programaciÛn que utiliza "objetos" y sus interacciones para diseÒar aplicaciones y programas. En C++, la POO es una caracterÌstica central que permite organizar y estructurar el cÛdigo de manera modular y reutilizable. Los dos conceptos fundamentales en la POO son las clases y los objetos.
+La programaci√≥n orientada a objetos (POO) es un paradigma de programaci√≥n que utiliza "objetos" y sus interacciones para dise√±ar aplicaciones y programas. En C++, la POO es una caracter√≠stica central que permite organizar y estructurar el c√≥digo de manera modular y reutilizable. Los dos conceptos fundamentales en la POO son las clases y los objetos.
 
 #### Clases
 
-Una clase en C++ es una plantilla o un molde que define los atributos y comportamientos de los objetos que se crean a partir de ella. Los atributos son variables que mantienen el estado del objeto, mientras que los comportamientos son funciones o mÈtodos que definen lo que el objeto puede hacer.
+Una clase en C++ es una plantilla o un molde que define los atributos y comportamientos de los objetos que se crean a partir de ella. Los atributos son variables que mantienen el estado del objeto, mientras que los comportamientos son funciones o m√©todos que definen lo que el objeto puede hacer.
 
-##### DefiniciÛn de una Clase
+##### Definici√≥n de una Clase
 
-La sintaxis b·sica para definir una clase en C++ es la siguiente:
+La sintaxis b√°sica para definir una clase en C++ es la siguiente:
 
 ```cpp
 class NombreClase {
@@ -17,14 +17,14 @@ public:
     // Atributos
     tipo_atributo nombre_atributo;
 
-    // MÈtodos
+    // M√©todos
     tipo_retorno nombre_metodo(parametros);
 
     // Otros componentes, como constructores, destructores, etc.
 };
 ```
 
-##### Ejemplo B·sico de una Clase
+##### Ejemplo B√°sico de una Clase
 
 ```cpp
 #include <iostream>
@@ -36,9 +36,9 @@ public:
     string nombre;
     int edad;
 
-    // MÈtodos
+    // M√©todos
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -48,7 +48,7 @@ int main() {
     juan.nombre = "Juan";
     juan.edad = 30;
 
-    // Llamar al mÈtodo saludar
+    // Llamar al m√©todo saludar
     juan.saludar();
 
     return 0;
@@ -56,14 +56,14 @@ int main() {
 ```
 
 En este ejemplo:
-- `Persona` es una clase que tiene dos atributos (`nombre` y `edad`) y un mÈtodo (`saludar`).
+- `Persona` es una clase que tiene dos atributos (`nombre` y `edad`) y un m√©todo (`saludar`).
 - `juan` es un objeto de la clase `Persona`.
 
 #### Objetos
 
-Un objeto es una instancia de una clase. Cada objeto tiene su propio estado (valores de los atributos) y puede usar los mÈtodos definidos en la clase.
+Un objeto es una instancia de una clase. Cada objeto tiene su propio estado (valores de los atributos) y puede usar los m√©todos definidos en la clase.
 
-##### CreaciÛn de Objetos
+##### Creaci√≥n de Objetos
 
 Los objetos se crean declarando una variable del tipo de la clase:
 
@@ -71,7 +71,7 @@ Los objetos se crean declarando una variable del tipo de la clase:
 NombreClase nombre_objeto;
 ```
 
-##### Ejemplo de CreaciÛn y Uso de Objetos
+##### Ejemplo de Creaci√≥n y Uso de Objetos
 
 ```cpp
 #include <iostream>
@@ -84,9 +84,9 @@ public:
     string modelo;
     int anio;
 
-    // MÈtodos
+    // M√©todos
     void mostrarInformacion() {
-        cout << "Marca: " << marca << ", Modelo: " << modelo << ", AÒo: " << anio << endl;
+        cout << "Marca: " << marca << ", Modelo: " << modelo << ", A√±o: " << anio << endl;
     }
 };
 
@@ -102,7 +102,7 @@ int main() {
     coche2.modelo = "Civic";
     coche2.anio = 2019;
 
-    // Llamar a los mÈtodos de los objetos
+    // Llamar a los m√©todos de los objetos
     coche1.mostrarInformacion();
     coche2.mostrarInformacion();
 
@@ -110,7 +110,7 @@ int main() {
 }
 ```
 
-En este ejemplo, `Coche` es una clase que define tres atributos y un mÈtodo. Se crean dos objetos (`coche1` y `coche2`) y se llama al mÈtodo `mostrarInformacion` para cada objeto.
+En este ejemplo, `Coche` es una clase que define tres atributos y un m√©todo. Se crean dos objetos (`coche1` y `coche2`) y se llama al m√©todo `mostrarInformacion` para cada objeto.
 
 #### Constructores y Destructores
 
@@ -118,7 +118,7 @@ Los constructores y destructores son funciones especiales que se utilizan para i
 
 ##### Constructores
 
-Un constructor es una funciÛn que se llama autom·ticamente cuando se crea un objeto. Se utiliza para inicializar los atributos del objeto.
+Un constructor es una funci√≥n que se llama autom√°ticamente cuando se crea un objeto. Se utiliza para inicializar los atributos del objeto.
 
 ```cpp
 class Persona {
@@ -133,7 +133,7 @@ public:
     }
 
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -148,7 +148,7 @@ int main() {
 
 ##### Destructores
 
-Un destructor es una funciÛn que se llama autom·ticamente cuando un objeto es destruido. Se utiliza para liberar recursos que el objeto haya adquirido durante su vida.
+Un destructor es una funci√≥n que se llama autom√°ticamente cuando un objeto es destruido. Se utiliza para liberar recursos que el objeto haya adquirido durante su vida.
 
 ```cpp
 class Persona {
@@ -168,7 +168,7 @@ public:
     }
 
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -177,14 +177,14 @@ int main() {
     Persona juan("Juan", 30);
     juan.saludar();
 
-    // El destructor se llamar· autom·ticamente al final del alcance
+    // El destructor se llamar√° autom√°ticamente al final del alcance
     return 0;
 }
 ```
 
-#### EncapsulaciÛn
+#### Encapsulaci√≥n
 
-La encapsulaciÛn es un principio de la POO que restringe el acceso directo a los atributos de una clase. En lugar de eso, se proporcionan mÈtodos p˙blicos para acceder y modificar estos atributos.
+La encapsulaci√≥n es un principio de la POO que restringe el acceso directo a los atributos de una clase. En lugar de eso, se proporcionan m√©todos p√∫blicos para acceder y modificar estos atributos.
 
 ##### Modificadores de Acceso
 
@@ -202,7 +202,7 @@ public:
     // Constructor
     Persona(string n, int e) : nombre(n), edad(e) {}
 
-    // MÈtodos para acceder y modificar los atributos
+    // M√©todos para acceder y modificar los atributos
     string getNombre() {
         return nombre;
     }
@@ -220,7 +220,7 @@ public:
     }
 
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -235,40 +235,40 @@ int main() {
 }
 ```
 
-En este ejemplo, los atributos `nombre` y `edad` son privados, y se proporcionan mÈtodos p˙blicos para acceder y modificarlos.
+En este ejemplo, los atributos `nombre` y `edad` son privados, y se proporcionan m√©todos p√∫blicos para acceder y modificarlos.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las clases y objetos son los pilares de la programaciÛn orientada a objetos en C++. Las clases permiten definir plantillas para crear objetos, encapsulando datos y comportamientos relacionados. Los objetos son instancias de estas clases, y mediante el uso de constructores, destructores y modificadores de acceso, podemos gestionar y proteger eficazmente los datos dentro de nuestros programas. Con un entendimiento sÛlido de estos conceptos, los desarrolladores pueden crear aplicaciones m·s organizadas, modulares y mantenibles.
+Las clases y objetos son los pilares de la programaci√≥n orientada a objetos en C++. Las clases permiten definir plantillas para crear objetos, encapsulando datos y comportamientos relacionados. Los objetos son instancias de estas clases, y mediante el uso de constructores, destructores y modificadores de acceso, podemos gestionar y proteger eficazmente los datos dentro de nuestros programas. Con un entendimiento s√≥lido de estos conceptos, los desarrolladores pueden crear aplicaciones m√°s organizadas, modulares y mantenibles.
 <---FILES--->
-DefiniciÛn de una Clase
-DefiniciÛn de una Clase Result
-Ejemplo B·sico de una Clase
-Ejemplo B·sico de una Clase Result
-CreaciÛn de Objetos
-CreaciÛn de Objetos Result
-Ejemplo de CreaciÛn y Uso de Objetos
-Ejemplo de CreaciÛn y Uso de Objetos Result
+Definici√≥n de una Clase
+Definici√≥n de una Clase Result
+Ejemplo B√°sico de una Clase
+Ejemplo B√°sico de una Clase Result
+Creaci√≥n de Objetos
+Creaci√≥n de Objetos Result
+Ejemplo de Creaci√≥n y Uso de Objetos
+Ejemplo de Creaci√≥n y Uso de Objetos Result
 Constructores
 Constructores Result
 Destructores
 Destructores Result
 Modificadores de Acceso
 Modificadores de Acceso Result
-<---DefiniciÛn de una Clase--->
+<---Definici√≥n de una Clase--->
 ```cpp
 class NombreClase {
 public:
     // Atributos
     tipo_atributo nombre_atributo;
 
-    // MÈtodos
+    // M√©todos
     tipo_retorno nombre_metodo(parametros);
 
     // Otros componentes, como constructores, destructores, etc.
 };
-<---DefiniciÛn de una Clase Result--->
-<---Ejemplo B·sico de una Clase--->
+<---Definici√≥n de una Clase Result--->
+<---Ejemplo B√°sico de una Clase--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -279,9 +279,9 @@ public:
     string nombre;
     int edad;
 
-    // MÈtodos
+    // M√©todos
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -291,17 +291,17 @@ int main() {
     juan.nombre = "Juan";
     juan.edad = 30;
 
-    // Llamar al mÈtodo saludar
+    // Llamar al m√©todo saludar
     juan.saludar();
 
     return 0;
 }
-<---Ejemplo B·sico de una Clase Result--->
-<---CreaciÛn de Objetos--->
+<---Ejemplo B√°sico de una Clase Result--->
+<---Creaci√≥n de Objetos--->
 ```cpp
 NombreClase nombre_objeto;
-<---CreaciÛn de Objetos Result--->
-<---Ejemplo de CreaciÛn y Uso de Objetos--->
+<---Creaci√≥n de Objetos Result--->
+<---Ejemplo de Creaci√≥n y Uso de Objetos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -313,9 +313,9 @@ public:
     string modelo;
     int anio;
 
-    // MÈtodos
+    // M√©todos
     void mostrarInformacion() {
-        cout << "Marca: " << marca << ", Modelo: " << modelo << ", AÒo: " << anio << endl;
+        cout << "Marca: " << marca << ", Modelo: " << modelo << ", A√±o: " << anio << endl;
     }
 };
 
@@ -331,13 +331,13 @@ int main() {
     coche2.modelo = "Civic";
     coche2.anio = 2019;
 
-    // Llamar a los mÈtodos de los objetos
+    // Llamar a los m√©todos de los objetos
     coche1.mostrarInformacion();
     coche2.mostrarInformacion();
 
     return 0;
 }
-<---Ejemplo de CreaciÛn y Uso de Objetos Result--->
+<---Ejemplo de Creaci√≥n y Uso de Objetos Result--->
 <---Constructores--->
 ```cpp
 class Persona {
@@ -352,7 +352,7 @@ public:
     }
 
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -383,7 +383,7 @@ public:
     }
 
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 
@@ -392,7 +392,7 @@ int main() {
     Persona juan("Juan", 30);
     juan.saludar();
 
-    // El destructor se llamar· autom·ticamente al final del alcance
+    // El destructor se llamar√° autom√°ticamente al final del alcance
     return 0;
 }
 <---Destructores Result--->
@@ -407,7 +407,7 @@ public:
     // Constructor
     Persona(string n, int e) : nombre(n), edad(e) {}
 
-    // MÈtodos para acceder y modificar los atributos
+    // M√©todos para acceder y modificar los atributos
     string getNombre() {
         return nombre;
     }
@@ -425,7 +425,7 @@ public:
     }
 
     void saludar() {
-        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " aÒos." << endl;
+        cout << "Hola, mi nombre es " << nombre << " y tengo " << edad << " a√±os." << endl;
     }
 };
 

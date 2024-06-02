@@ -1,16 +1,16 @@
 <---EXPLANATION--->
-### Funciones Miembro Est·ticas en C++
+### Funciones Miembro Est√°ticas en C++
 
-En C++, las funciones miembro est·ticas son funciones que pertenecen a la clase en sÌ misma, m·s que a cualquier instancia de la clase. Esto significa que pueden ser llamadas sin crear una instancia de la clase. Las funciones miembro est·ticas no tienen acceso al puntero `this` y solo pueden acceder a otros miembros est·ticos de la clase.
+En C++, las funciones miembro est√°ticas son funciones que pertenecen a la clase en s√≠ misma, m√°s que a cualquier instancia de la clase. Esto significa que pueden ser llamadas sin crear una instancia de la clase. Las funciones miembro est√°ticas no tienen acceso al puntero `this` y solo pueden acceder a otros miembros est√°ticos de la clase.
 
-#### DefiniciÛn y Uso de Funciones Miembro Est·ticas
+#### Definici√≥n y Uso de Funciones Miembro Est√°ticas
 
-Una funciÛn miembro est·tica se declara usando la palabra clave `static` dentro de la definiciÛn de la clase. Estas funciones pueden ser llamadas usando el nombre de la clase en lugar de una instancia de la clase.
+Una funci√≥n miembro est√°tica se declara usando la palabra clave `static` dentro de la definici√≥n de la clase. Estas funciones pueden ser llamadas usando el nombre de la clase en lugar de una instancia de la clase.
 
-##### CaracterÌsticas de las Funciones Miembro Est·ticas
+##### Caracter√≠sticas de las Funciones Miembro Est√°ticas
 
-1. **Sin `this`:** No pueden acceder al puntero `this` ya que no est·n asociadas a ninguna instancia.
-2. **Acceso a Miembros Est·ticos:** Solo pueden acceder a variables y otras funciones est·ticas de la clase.
+1. **Sin `this`:** No pueden acceder al puntero `this` ya que no est√°n asociadas a ninguna instancia.
+2. **Acceso a Miembros Est√°ticos:** Solo pueden acceder a variables y otras funciones est√°ticas de la clase.
 3. **Llamada sin Instancia:** Pueden ser llamadas sin crear una instancia de la clase, usando el nombre de la clase.
 
 ##### Sintaxis
@@ -23,9 +23,9 @@ public:
 };
 ```
 
-##### Ejemplo de Funciones Miembro Est·ticas
+##### Ejemplo de Funciones Miembro Est√°ticas
 
-Consideremos una clase `Contador` que usa una funciÛn miembro est·tica para contar el n˙mero de instancias creadas de la clase.
+Consideremos una clase `Contador` que usa una funci√≥n miembro est√°tica para contar el n√∫mero de instancias creadas de la clase.
 
 ```cpp
 #include <iostream>
@@ -33,7 +33,7 @@ using namespace std;
 
 class Contador {
 private:
-    static int cuenta; // Variable miembro est·tica
+    static int cuenta; // Variable miembro est√°tica
 
 public:
     Contador() {
@@ -44,45 +44,45 @@ public:
         cuenta--;
     }
 
-    static int obtenerCuenta() { // FunciÛn miembro est·tica
+    static int obtenerCuenta() { // Funci√≥n miembro est√°tica
         return cuenta;
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Contador::cuenta = 0;
 
 int main() {
     Contador c1;
     Contador c2;
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     {
         Contador c3;
-        cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
+        cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
     }
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     return 0;
 }
 ```
 
 En este ejemplo:
-- `cuenta` es una variable miembro est·tica que rastrea el n˙mero de instancias de `Contador`.
-- `obtenerCuenta` es una funciÛn miembro est·tica que devuelve el valor de `cuenta`.
+- `cuenta` es una variable miembro est√°tica que rastrea el n√∫mero de instancias de `Contador`.
+- `obtenerCuenta` es una funci√≥n miembro est√°tica que devuelve el valor de `cuenta`.
 
-#### Ventajas de Usar Funciones Miembro Est·ticas
+#### Ventajas de Usar Funciones Miembro Est√°ticas
 
-1. **No Requieren Instancia:** Las funciones miembro est·ticas pueden ser llamadas sin crear una instancia de la clase, lo que puede ser ˙til para funciones utilitarias que no dependen del estado de una instancia.
-2. **Acceso a Miembros Est·ticos:** Pueden acceder y manipular variables est·ticas de la clase, permitiendo el uso compartido de datos entre todas las instancias de la clase.
-3. **Facilidad de Uso:** Pueden ser utilizadas como funciones globales con el alcance de la clase, mejorando la organizaciÛn del cÛdigo.
+1. **No Requieren Instancia:** Las funciones miembro est√°ticas pueden ser llamadas sin crear una instancia de la clase, lo que puede ser √∫til para funciones utilitarias que no dependen del estado de una instancia.
+2. **Acceso a Miembros Est√°ticos:** Pueden acceder y manipular variables est√°ticas de la clase, permitiendo el uso compartido de datos entre todas las instancias de la clase.
+3. **Facilidad de Uso:** Pueden ser utilizadas como funciones globales con el alcance de la clase, mejorando la organizaci√≥n del c√≥digo.
 
-#### ComparaciÛn con Funciones Miembro No Est·ticas
+#### Comparaci√≥n con Funciones Miembro No Est√°ticas
 
-- **Acceso a Miembros:** Las funciones miembro no est·ticas pueden acceder a todos los miembros de la clase, incluyendo los no est·ticos, mientras que las funciones est·ticas solo pueden acceder a miembros est·ticos.
-- **Uso de `this`:** Las funciones miembro no est·ticas tienen acceso al puntero `this`, permitiendo operar sobre la instancia actual, mientras que las funciones est·ticas no lo tienen.
+- **Acceso a Miembros:** Las funciones miembro no est√°ticas pueden acceder a todos los miembros de la clase, incluyendo los no est√°ticos, mientras que las funciones est√°ticas solo pueden acceder a miembros est√°ticos.
+- **Uso de `this`:** Las funciones miembro no est√°ticas tienen acceso al puntero `this`, permitiendo operar sobre la instancia actual, mientras que las funciones est√°ticas no lo tienen.
 
 ##### Ejemplo Comparativo
 
@@ -92,26 +92,26 @@ using namespace std;
 
 class Ejemplo {
 private:
-    int instanciaVariable; // Variable miembro no est·tica
-    static int estaticaVariable; // Variable miembro est·tica
+    int instanciaVariable; // Variable miembro no est√°tica
+    static int estaticaVariable; // Variable miembro est√°tica
 
 public:
     Ejemplo(int valor) : instanciaVariable(valor) {
         estaticaVariable += valor;
     }
 
-    // FunciÛn miembro no est·tica
+    // Funci√≥n miembro no est√°tica
     void mostrarInstancia() const {
         cout << "Instancia Variable: " << instanciaVariable << endl;
     }
 
-    // FunciÛn miembro est·tica
+    // Funci√≥n miembro est√°tica
     static void mostrarEstatica() {
         cout << "Estatica Variable: " << estaticaVariable << endl;
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Ejemplo::estaticaVariable = 0;
 
 int main() {
@@ -128,29 +128,29 @@ int main() {
 ```
 
 En este ejemplo:
-- `mostrarInstancia` es una funciÛn miembro no est·tica que accede a `instanciaVariable`.
-- `mostrarEstatica` es una funciÛn miembro est·tica que accede a `estaticaVariable`.
+- `mostrarInstancia` es una funci√≥n miembro no est√°tica que accede a `instanciaVariable`.
+- `mostrarEstatica` es una funci√≥n miembro est√°tica que accede a `estaticaVariable`.
 
-#### Aplicaciones Comunes de Funciones Miembro Est·ticas
+#### Aplicaciones Comunes de Funciones Miembro Est√°ticas
 
-1. **Funciones Utilitarias:** Para realizar operaciones que no dependen del estado de una instancia especÌfica.
-2. **Contadores y EstadÌsticas:** Para rastrear y reportar estadÌsticas globales relacionadas con la clase.
-3. **MÈtodos de F·brica:** Para crear instancias de la clase y realizar otras inicializaciones que no dependen del estado de una instancia.
+1. **Funciones Utilitarias:** Para realizar operaciones que no dependen del estado de una instancia espec√≠fica.
+2. **Contadores y Estad√≠sticas:** Para rastrear y reportar estad√≠sticas globales relacionadas con la clase.
+3. **M√©todos de F√°brica:** Para crear instancias de la clase y realizar otras inicializaciones que no dependen del estado de una instancia.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las funciones miembro est·ticas en C++ son una herramienta poderosa que permite definir funciones asociadas a la clase en lugar de a una instancia especÌfica. Facilitan la implementaciÛn de mÈtodos utilitarios, el manejo de datos compartidos entre todas las instancias de una clase y otras operaciones que no dependen del estado de una instancia. Entender cÛmo y cu·ndo usar funciones miembro est·ticas es esencial para aprovechar al m·ximo las capacidades de la programaciÛn orientada a objetos en C++.
+Las funciones miembro est√°ticas en C++ son una herramienta poderosa que permite definir funciones asociadas a la clase en lugar de a una instancia espec√≠fica. Facilitan la implementaci√≥n de m√©todos utilitarios, el manejo de datos compartidos entre todas las instancias de una clase y otras operaciones que no dependen del estado de una instancia. Entender c√≥mo y cu√°ndo usar funciones miembro est√°ticas es esencial para aprovechar al m√°ximo las capacidades de la programaci√≥n orientada a objetos en C++.
 <---FILES--->
-CaracterÌsticas de las Funciones Miembro Est·ticas
-CaracterÌsticas de las Funciones Miembro Est·ticas Result
+Caracter√≠sticas de las Funciones Miembro Est√°ticas
+Caracter√≠sticas de las Funciones Miembro Est√°ticas Result
 Sintaxis
 Sintaxis Result
-Ejemplo de Funciones Miembro Est·ticas
-Ejemplo de Funciones Miembro Est·ticas Result
+Ejemplo de Funciones Miembro Est√°ticas
+Ejemplo de Funciones Miembro Est√°ticas Result
 Ejemplo Comparativo
 Ejemplo Comparativo Result
-<---CaracterÌsticas de las Funciones Miembro Est·ticas--->
-<---CaracterÌsticas de las Funciones Miembro Est·ticas Result--->
+<---Caracter√≠sticas de las Funciones Miembro Est√°ticas--->
+<---Caracter√≠sticas de las Funciones Miembro Est√°ticas Result--->
 <---Sintaxis--->
 ```cpp
 class Clase {
@@ -159,14 +159,14 @@ public:
     // Otros miembros de la clase
 };
 <---Sintaxis Result--->
-<---Ejemplo de Funciones Miembro Est·ticas--->
+<---Ejemplo de Funciones Miembro Est√°ticas--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Contador {
 private:
-    static int cuenta; // Variable miembro est·tica
+    static int cuenta; // Variable miembro est√°tica
 
 public:
     Contador() {
@@ -177,30 +177,30 @@ public:
         cuenta--;
     }
 
-    static int obtenerCuenta() { // FunciÛn miembro est·tica
+    static int obtenerCuenta() { // Funci√≥n miembro est√°tica
         return cuenta;
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Contador::cuenta = 0;
 
 int main() {
     Contador c1;
     Contador c2;
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     {
         Contador c3;
-        cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
+        cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
     }
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     return 0;
 }
-<---Ejemplo de Funciones Miembro Est·ticas Result--->
+<---Ejemplo de Funciones Miembro Est√°ticas Result--->
 <---Ejemplo Comparativo--->
 ```cpp
 #include <iostream>
@@ -208,26 +208,26 @@ using namespace std;
 
 class Ejemplo {
 private:
-    int instanciaVariable; // Variable miembro no est·tica
-    static int estaticaVariable; // Variable miembro est·tica
+    int instanciaVariable; // Variable miembro no est√°tica
+    static int estaticaVariable; // Variable miembro est√°tica
 
 public:
     Ejemplo(int valor) : instanciaVariable(valor) {
         estaticaVariable += valor;
     }
 
-    // FunciÛn miembro no est·tica
+    // Funci√≥n miembro no est√°tica
     void mostrarInstancia() const {
         cout << "Instancia Variable: " << instanciaVariable << endl;
     }
 
-    // FunciÛn miembro est·tica
+    // Funci√≥n miembro est√°tica
     static void mostrarEstatica() {
         cout << "Estatica Variable: " << estaticaVariable << endl;
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Ejemplo::estaticaVariable = 0;
 
 int main() {

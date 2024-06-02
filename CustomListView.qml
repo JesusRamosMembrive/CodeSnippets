@@ -55,7 +55,7 @@ Column {
             delegate: ItemDelegate {
                 id: itemDelegate
                 width: customListView.width
-                height: 40
+                height: 70
                 font.pointSize: 12
                 icon.color: "#00ffffff"
                 antialiasing: true

@@ -1,17 +1,17 @@
 <---EXPLANATION--->
 ### Control de Flujo: Condicionales en C++
 
-Los condicionales son estructuras de control de flujo que permiten tomar decisiones en el programa basadas en condiciones espec韋icas. C++ proporciona varias estructuras condicionales, incluyendo `if`, `else if`, `else` y `switch`.
+Los condicionales son estructuras de control de flujo que permiten tomar decisiones en el programa basadas en condiciones espec铆ficas. C++ proporciona varias estructuras condicionales, incluyendo `if`, `else if`, `else` y `switch`.
 
 #### 1. **Condicional `if`**
 
-La estructura `if` eval鷄 una condici髇 y ejecuta un bloque de c骴igo si la condici髇 es verdadera.
+La estructura `if` eval煤a una condici贸n y ejecuta un bloque de c贸digo si la condici贸n es verdadera.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 if (condicion) {
-    // C骴igo a ejecutar si la condici髇 es verdadera
+    // C贸digo a ejecutar si la condici贸n es verdadera
 }
 ```
 
@@ -24,7 +24,7 @@ using namespace std;
 int main() {
     int numero = 10;
     if (numero > 5) {
-        cout << "El n鷐ero es mayor que 5." << endl;
+        cout << "El n煤mero es mayor que 5." << endl;
     }
     return 0;
 }
@@ -32,15 +32,15 @@ int main() {
 
 #### 2. **Condicional `if-else`**
 
-La estructura `if-else` proporciona una alternativa en caso de que la condici髇 `if` sea falsa.
+La estructura `if-else` proporciona una alternativa en caso de que la condici贸n `if` sea falsa.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 if (condicion) {
-    // C骴igo a ejecutar si la condici髇 es verdadera
+    // C贸digo a ejecutar si la condici贸n es verdadera
 } else {
-    // C骴igo a ejecutar si la condici髇 es falsa
+    // C贸digo a ejecutar si la condici贸n es falsa
 }
 ```
 
@@ -53,9 +53,9 @@ using namespace std;
 int main() {
     int numero = 3;
     if (numero > 5) {
-        cout << "El n鷐ero es mayor que 5." << endl;
+        cout << "El n煤mero es mayor que 5." << endl;
     } else {
-        cout << "El n鷐ero es 5 o menor." << endl;
+        cout << "El n煤mero es 5 o menor." << endl;
     }
     return 0;
 }
@@ -63,17 +63,17 @@ int main() {
 
 #### 3. **Condicional `if-else if-else`**
 
-La estructura `if-else if-else` permite evaluar m鷏tiples condiciones secuencialmente. Se ejecuta el primer bloque de c骴igo cuya condici髇 es verdadera.
+La estructura `if-else if-else` permite evaluar m煤ltiples condiciones secuencialmente. Se ejecuta el primer bloque de c贸digo cuya condici贸n es verdadera.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 if (condicion1) {
-    // C骴igo a ejecutar si la condici髇1 es verdadera
+    // C贸digo a ejecutar si la condici贸n1 es verdadera
 } else if (condicion2) {
-    // C骴igo a ejecutar si la condici髇2 es verdadera
+    // C贸digo a ejecutar si la condici贸n2 es verdadera
 } else {
-    // C骴igo a ejecutar si ninguna de las condiciones anteriores es verdadera
+    // C贸digo a ejecutar si ninguna de las condiciones anteriores es verdadera
 }
 ```
 
@@ -86,11 +86,11 @@ using namespace std;
 int main() {
     int numero = 7;
     if (numero > 10) {
-        cout << "El n鷐ero es mayor que 10." << endl;
+        cout << "El n煤mero es mayor que 10." << endl;
     } else if (numero > 5) {
-        cout << "El n鷐ero es mayor que 5 pero menor o igual a 10." << endl;
+        cout << "El n煤mero es mayor que 5 pero menor o igual a 10." << endl;
     } else {
-        cout << "El n鷐ero es 5 o menor." << endl;
+        cout << "El n煤mero es 5 o menor." << endl;
     }
     return 0;
 }
@@ -98,21 +98,21 @@ int main() {
 
 #### 4. **Condicional `switch`**
 
-La estructura `switch` es 鷗il cuando se necesita evaluar una variable contra m鷏tiples valores constantes. Es m醩 limpia y legible que anidar m鷏tiples `if-else` cuando se compara una sola variable con varios valores.
+La estructura `switch` es 煤til cuando se necesita evaluar una variable contra m煤ltiples valores constantes. Es m谩s limpia y legible que anidar m煤ltiples `if-else` cuando se compara una sola variable con varios valores.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 switch (variable) {
     case valor1:
-        // C骴igo a ejecutar si variable == valor1
+        // C贸digo a ejecutar si variable == valor1
         break;
     case valor2:
-        // C骴igo a ejecutar si variable == valor2
+        // C贸digo a ejecutar si variable == valor2
         break;
-    // M醩 casos seg鷑 sea necesario
+    // M谩s casos seg煤n sea necesario
     default:
-        // C骴igo a ejecutar si ning鷑 caso coincide
+        // C贸digo a ejecutar si ning煤n caso coincide
 }
 ```
 
@@ -132,7 +132,7 @@ int main() {
             cout << "Martes" << endl;
             break;
         case 3:
-            cout << "Mi閞coles" << endl;
+            cout << "Mi茅rcoles" << endl;
             break;
         case 4:
             cout << "Jueves" << endl;
@@ -141,24 +141,24 @@ int main() {
             cout << "Viernes" << endl;
             break;
         case 6:
-            cout << "S醔ado" << endl;
+            cout << "S谩bado" << endl;
             break;
         case 7:
             cout << "Domingo" << endl;
             break;
         default:
-            cout << "D韆 no v醠ido" << endl;
+            cout << "D铆a no v谩lido" << endl;
             break;
     }
     return 0;
 }
 ```
 
-### Consejos y Buenas Pr醕ticas
+### Consejos y Buenas Pr谩cticas
 
-- **Evitar Anidamiento Extremo:** El anidamiento profundo de condicionales `if` puede hacer que el c骴igo sea dif韈il de leer y mantener. Considera utilizar `switch` o refactorizar el c骴igo para simplificar la l骻ica.
+- **Evitar Anidamiento Extremo:** El anidamiento profundo de condicionales `if` puede hacer que el c贸digo sea dif铆cil de leer y mantener. Considera utilizar `switch` o refactorizar el c贸digo para simplificar la l贸gica.
 - **Usar `default` en `switch`:** Siempre proporciona un caso `default` en una estructura `switch` para manejar valores no esperados.
-- **Condiciones Claras y Comprensibles:** Aseg鷕ate de que las condiciones sean claras y f醕iles de entender. Evita condiciones complejas que puedan ser confusas.
+- **Condiciones Claras y Comprensibles:** Aseg煤rate de que las condiciones sean claras y f谩ciles de entender. Evita condiciones complejas que puedan ser confusas.
 
 ### Ejemplo Completo
 
@@ -168,33 +168,33 @@ using namespace std;
 
 int main() {
     int numero;
-    cout << "Introduce un n鷐ero: ";
+    cout << "Introduce un n煤mero: ";
     cin >> numero;
 
     if (numero > 0) {
-        cout << "El n鷐ero es positivo." << endl;
+        cout << "El n煤mero es positivo." << endl;
     } else if (numero < 0) {
-        cout << "El n鷐ero es negativo." << endl;
+        cout << "El n煤mero es negativo." << endl;
     } else {
-        cout << "El n鷐ero es cero." << endl;
+        cout << "El n煤mero es cero." << endl;
     }
 
     char opcion;
-    cout << "Introduce una opci髇 (a, b, c): ";
+    cout << "Introduce una opci贸n (a, b, c): ";
     cin >> opcion;
 
     switch (opcion) {
         case 'a':
-            cout << "Opci髇 A seleccionada." << endl;
+            cout << "Opci贸n A seleccionada." << endl;
             break;
         case 'b':
-            cout << "Opci髇 B seleccionada." << endl;
+            cout << "Opci贸n B seleccionada." << endl;
             break;
         case 'c':
-            cout << "Opci髇 C seleccionada." << endl;
+            cout << "Opci贸n C seleccionada." << endl;
             break;
         default:
-            cout << "Opci髇 no v醠ida." << endl;
+            cout << "Opci贸n no v谩lida." << endl;
             break;
     }
 
@@ -202,28 +202,28 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-El uso de estructuras condicionales en C++ permite a los programadores controlar el flujo de ejecuci髇 del programa de manera efectiva. Entender c髆o y cu醤do usar `if`, `else if`, `else`, y `switch` es esencial para escribir c骴igo claro y eficiente.
+El uso de estructuras condicionales en C++ permite a los programadores controlar el flujo de ejecuci贸n del programa de manera efectiva. Entender c贸mo y cu谩ndo usar `if`, `else if`, `else`, y `switch` es esencial para escribir c贸digo claro y eficiente.
 <---FILES--->
-Sintaxis B醩ica
-Sintaxis B醩ica Result
+Sintaxis B谩sica
+Sintaxis B谩sica Result
 Ejemplo
 Ejemplo Result
-<---Sintaxis B醩ica--->
+<---Sintaxis B谩sica--->
 ```cpp
 switch (variable) {
     case valor1:
-        // C骴igo a ejecutar si variable == valor1
+        // C贸digo a ejecutar si variable == valor1
         break;
     case valor2:
-        // C骴igo a ejecutar si variable == valor2
+        // C贸digo a ejecutar si variable == valor2
         break;
-    // M醩 casos seg鷑 sea necesario
+    // M谩s casos seg煤n sea necesario
     default:
-        // C骴igo a ejecutar si ning鷑 caso coincide
+        // C贸digo a ejecutar si ning煤n caso coincide
 }
-<---Sintaxis B醩ica Result--->
+<---Sintaxis B谩sica Result--->
 <---Ejemplo--->
 ```cpp
 #include <iostream>
@@ -239,7 +239,7 @@ int main() {
             cout << "Martes" << endl;
             break;
         case 3:
-            cout << "Mi閞coles" << endl;
+            cout << "Mi茅rcoles" << endl;
             break;
         case 4:
             cout << "Jueves" << endl;
@@ -248,13 +248,13 @@ int main() {
             cout << "Viernes" << endl;
             break;
         case 6:
-            cout << "S醔ado" << endl;
+            cout << "S谩bado" << endl;
             break;
         case 7:
             cout << "Domingo" << endl;
             break;
         default:
-            cout << "D韆 no v醠ido" << endl;
+            cout << "D铆a no v谩lido" << endl;
             break;
     }
     return 0;
@@ -265,33 +265,33 @@ using namespace std;
 
 int main() {
     int numero;
-    cout << "Introduce un n鷐ero: ";
+    cout << "Introduce un n煤mero: ";
     cin >> numero;
 
     if (numero > 0) {
-        cout << "El n鷐ero es positivo." << endl;
+        cout << "El n煤mero es positivo." << endl;
     } else if (numero < 0) {
-        cout << "El n鷐ero es negativo." << endl;
+        cout << "El n煤mero es negativo." << endl;
     } else {
-        cout << "El n鷐ero es cero." << endl;
+        cout << "El n煤mero es cero." << endl;
     }
 
     char opcion;
-    cout << "Introduce una opci髇 (a, b, c): ";
+    cout << "Introduce una opci贸n (a, b, c): ";
     cin >> opcion;
 
     switch (opcion) {
         case 'a':
-            cout << "Opci髇 A seleccionada." << endl;
+            cout << "Opci贸n A seleccionada." << endl;
             break;
         case 'b':
-            cout << "Opci髇 B seleccionada." << endl;
+            cout << "Opci贸n B seleccionada." << endl;
             break;
         case 'c':
-            cout << "Opci髇 C seleccionada." << endl;
+            cout << "Opci贸n C seleccionada." << endl;
             break;
         default:
-            cout << "Opci髇 no v醠ida." << endl;
+            cout << "Opci贸n no v谩lida." << endl;
             break;
     }
 

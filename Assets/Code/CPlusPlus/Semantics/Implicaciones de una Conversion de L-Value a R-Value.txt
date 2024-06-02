@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Implicaciones de una ConversiÛn de L-Value a R-Value en C++
+### Implicaciones de una Conversi√≥n de L-Value a R-Value en C++
 
-La conversiÛn de un L-value a un R-value, principalmente a travÈs de `std::move`, tiene varias implicaciones importantes en tÈrminos de sem·ntica del lenguaje, manejo de recursos, y diseÒo del software. Entender estas implicaciones es crucial para escribir cÛdigo eficiente y seguro en C++.
+La conversi√≥n de un L-value a un R-value, principalmente a trav√©s de `std::move`, tiene varias implicaciones importantes en t√©rminos de sem√°ntica del lenguaje, manejo de recursos, y dise√±o del software. Entender estas implicaciones es crucial para escribir c√≥digo eficiente y seguro en C++.
 
-#### 1. **Sem·ntica de Movimiento**
+#### 1. **Sem√°ntica de Movimiento**
 
-La conversiÛn de un L-value a un R-value permite aplicar las move semantics en lugar de las copy semantics. Esto significa que los recursos (como memoria din·mica, archivos, etc.) pueden ser "movidos" de un objeto a otro, en lugar de ser copiados. Este proceso es m·s eficiente porque evita la sobrecarga de duplicar recursos.
+La conversi√≥n de un L-value a un R-value permite aplicar las move semantics en lugar de las copy semantics. Esto significa que los recursos (como memoria din√°mica, archivos, etc.) pueden ser "movidos" de un objeto a otro, en lugar de ser copiados. Este proceso es m√°s eficiente porque evita la sobrecarga de duplicar recursos.
 
 ##### Ejemplo: Move Constructor y Move Assignment Operator
 
@@ -71,22 +71,22 @@ int main() {
 
 #### 2. **Estado del Objeto Original**
 
-DespuÈs de una conversiÛn de L-value a R-value y la consiguiente operaciÛn de movimiento, el objeto original se deja en un estado v·lido pero indeterminado. Es decir, el objeto puede ser destruido, reasignado, o puesto en un estado que no debe ser utilizado hasta que se vuelva a asignar un valor v·lido.
+Despu√©s de una conversi√≥n de L-value a R-value y la consiguiente operaci√≥n de movimiento, el objeto original se deja en un estado v√°lido pero indeterminado. Es decir, el objeto puede ser destruido, reasignado, o puesto en un estado que no debe ser utilizado hasta que se vuelva a asignar un valor v√°lido.
 
 ##### Ejemplo
 
 ```cpp
 MiClase obj1(10);
-MiClase obj2 = std::move(obj1);  // obj1 ahora est· en un estado indeterminado
+MiClase obj2 = std::move(obj1);  // obj1 ahora est√° en un estado indeterminado
 ```
 
 En este ejemplo, `obj1` ha transferido sus recursos a `obj2`, y no debe ser utilizado directamente hasta que se le reasigne un nuevo valor.
 
-#### 3. **OptimizaciÛn de Rendimiento**
+#### 3. **Optimizaci√≥n de Rendimiento**
 
-Las move semantics permiten optimizar el rendimiento, especialmente en situaciones donde los objetos contienen recursos pesados como memoria din·mica o manejadores de archivo. En lugar de copiar estos recursos, que puede ser costoso, los recursos se transfieren, lo que es mucho m·s eficiente.
+Las move semantics permiten optimizar el rendimiento, especialmente en situaciones donde los objetos contienen recursos pesados como memoria din√°mica o manejadores de archivo. En lugar de copiar estos recursos, que puede ser costoso, los recursos se transfieren, lo que es mucho m√°s eficiente.
 
-##### ComparaciÛn de Copy vs Move
+##### Comparaci√≥n de Copy vs Move
 
 ```cpp
 #include <vector>
@@ -97,16 +97,16 @@ std::vector<int> generarVector() {
 }
 
 int main() {
-    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaciÛn
+    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaci√≥n
     return 0;
 }
 ```
 
-En este ejemplo, `generarVector` devuelve un R-value que se mueve en lugar de copiarse, optimizando la operaciÛn.
+En este ejemplo, `generarVector` devuelve un R-value que se mueve en lugar de copiarse, optimizando la operaci√≥n.
 
-#### 4. **DiseÒo de API y Bibliotecas**
+#### 4. **Dise√±o de API y Bibliotecas**
 
-Al diseÒar APIs y bibliotecas, el uso de move semantics permite definir interfaces que son m·s eficientes y expresivas. Las funciones pueden aceptar y devolver R-values para transferir la propiedad de los recursos sin costo adicional de copia.
+Al dise√±ar APIs y bibliotecas, el uso de move semantics permite definir interfaces que son m√°s eficientes y expresivas. Las funciones pueden aceptar y devolver R-values para transferir la propiedad de los recursos sin costo adicional de copia.
 
 ##### Ejemplo de API con Move Semantics
 
@@ -132,23 +132,23 @@ En este ejemplo, `setDatos` acepta un R-value reference, permitiendo que los dat
 
 #### 5. **Uso de `std::move`**
 
-`std::move` es una herramienta poderosa pero debe ser usada con cuidado. Convierte un L-value en un R-value, lo que indica que los recursos del objeto pueden ser transferidos. Sin embargo, es responsabilidad del programador asegurarse de que el objeto original no se utilice de manera inapropiada despuÈs de la operaciÛn de movimiento.
+`std::move` es una herramienta poderosa pero debe ser usada con cuidado. Convierte un L-value en un R-value, lo que indica que los recursos del objeto pueden ser transferidos. Sin embargo, es responsabilidad del programador asegurarse de que el objeto original no se utilice de manera inapropiada despu√©s de la operaci√≥n de movimiento.
 
 ##### Consideraciones al Usar `std::move`
 
-- **Evitar Uso Posterior Inadecuado:** DespuÈs de aplicar `std::move`, el objeto original no debe ser utilizado hasta que se le reasigne un nuevo valor.
-- **ValidaciÛn:** Aseg˙rese de que las clases tienen implementaciones correctas del move constructor y move assignment operator para evitar problemas de manejo de recursos.
+- **Evitar Uso Posterior Inadecuado:** Despu√©s de aplicar `std::move`, el objeto original no debe ser utilizado hasta que se le reasigne un nuevo valor.
+- **Validaci√≥n:** Aseg√∫rese de que las clases tienen implementaciones correctas del move constructor y move assignment operator para evitar problemas de manejo de recursos.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Convertir un L-value a un R-value en C++ mediante `std::move` tiene implicaciones significativas para la gestiÛn de recursos y el rendimiento del software. Las move semantics permiten transferir recursos de manera eficiente, optimizando el rendimiento y reduciendo la sobrecarga. Sin embargo, esta tÈcnica debe ser utilizada con cuidado, asegurando que el objeto original no se utilice indebidamente despuÈs de la operaciÛn de movimiento. Comprender estas implicaciones es crucial para escribir cÛdigo C++ moderno y eficiente.
+Convertir un L-value a un R-value en C++ mediante `std::move` tiene implicaciones significativas para la gesti√≥n de recursos y el rendimiento del software. Las move semantics permiten transferir recursos de manera eficiente, optimizando el rendimiento y reduciendo la sobrecarga. Sin embargo, esta t√©cnica debe ser utilizada con cuidado, asegurando que el objeto original no se utilice indebidamente despu√©s de la operaci√≥n de movimiento. Comprender estas implicaciones es crucial para escribir c√≥digo C++ moderno y eficiente.
 <---FILES--->
 Ejemplo: Move Constructor y Move Assignment Operator
 Ejemplo: Move Constructor y Move Assignment Operator Result
 Ejemplo
 Ejemplo Result
-ComparaciÛn de Copy vs Move
-ComparaciÛn de Copy vs Move Result
+Comparaci√≥n de Copy vs Move
+Comparaci√≥n de Copy vs Move Result
 Ejemplo de API con Move Semantics
 Ejemplo de API con Move Semantics Result
 Consideraciones al Usar `std::move`
@@ -216,9 +216,9 @@ int main() {
 <---Ejemplo--->
 ```cpp
 MiClase obj1(10);
-MiClase obj2 = std::move(obj1);  // obj1 ahora est· en un estado indeterminado
+MiClase obj2 = std::move(obj1);  // obj1 ahora est√° en un estado indeterminado
 <---Ejemplo Result--->
-<---ComparaciÛn de Copy vs Move--->
+<---Comparaci√≥n de Copy vs Move--->
 ```cpp
 #include <vector>
 
@@ -228,10 +228,10 @@ std::vector<int> generarVector() {
 }
 
 int main() {
-    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaciÛn
+    std::vector<int> vec = generarVector();  // Move semantics optimizan esta operaci√≥n
     return 0;
 }
-<---ComparaciÛn de Copy vs Move Result--->
+<---Comparaci√≥n de Copy vs Move Result--->
 <---Ejemplo de API con Move Semantics--->
 ```cpp
 #include <vector>

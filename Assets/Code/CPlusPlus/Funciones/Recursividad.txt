@@ -1,20 +1,20 @@
 <---EXPLANATION--->
 ### Recursividad en C++
 
-La recursividad es una técnica de programación en la que una función se llama a sí misma para resolver subproblemas más pequeños de un problema más grande. Esta técnica puede simplificar la resolución de problemas que tienen una estructura repetitiva o fractal, como problemas matemáticos, algoritmos de búsqueda y problemas relacionados con estructuras de datos.
+La recursividad es una tÃ©cnica de programaciÃ³n en la que una funciÃ³n se llama a sÃ­ misma para resolver subproblemas mÃ¡s pequeÃ±os de un problema mÃ¡s grande. Esta tÃ©cnica puede simplificar la resoluciÃ³n de problemas que tienen una estructura repetitiva o fractal, como problemas matemÃ¡ticos, algoritmos de bÃºsqueda y problemas relacionados con estructuras de datos.
 
-#### Conceptos Básicos de Recursividad
+#### Conceptos BÃ¡sicos de Recursividad
 
-1. **Caso Base:** Es la condición que termina la recursión. Sin un caso base, la función recursiva se llamaría a sí misma indefinidamente, lo que llevaría a un desbordamiento de pila.
-2. **Caso Recursivo:** Es la parte de la función donde se hace la llamada recursiva. Esta llamada divide el problema en subproblemas más pequeños.
+1. **Caso Base:** Es la condiciÃ³n que termina la recursiÃ³n. Sin un caso base, la funciÃ³n recursiva se llamarÃ­a a sÃ­ misma indefinidamente, lo que llevarÃ­a a un desbordamiento de pila.
+2. **Caso Recursivo:** Es la parte de la funciÃ³n donde se hace la llamada recursiva. Esta llamada divide el problema en subproblemas mÃ¡s pequeÃ±os.
 
-#### Ejemplo Clásico: Factorial de un Número
+#### Ejemplo ClÃ¡sico: Factorial de un NÃºmero
 
-El factorial de un número `n` (denotado como `n!`) se define como el producto de todos los números enteros positivos hasta `n`. Matemáticamente, se define como:
+El factorial de un nÃºmero `n` (denotado como `n!`) se define como el producto de todos los nÃºmeros enteros positivos hasta `n`. MatemÃ¡ticamente, se define como:
 - `0! = 1`
 - `n! = n * (n - 1)!` para `n > 0`
 
-##### Implementación Recursiva del Factorial
+##### ImplementaciÃ³n Recursiva del Factorial
 
 ```cpp
 #include <iostream>
@@ -36,17 +36,17 @@ int main() {
 ```
 
 En este ejemplo:
-- **Caso Base:** `if (n == 0) return 1;` detiene la recursión cuando `n` es 0.
-- **Caso Recursivo:** `return n * factorial(n - 1);` llama a la función con `n - 1`.
+- **Caso Base:** `if (n == 0) return 1;` detiene la recursiÃ³n cuando `n` es 0.
+- **Caso Recursivo:** `return n * factorial(n - 1);` llama a la funciÃ³n con `n - 1`.
 
 #### Ejemplo: Serie de Fibonacci
 
-La serie de Fibonacci es una secuencia donde cada número es la suma de los dos anteriores. Matemáticamente, se define como:
+La serie de Fibonacci es una secuencia donde cada nÃºmero es la suma de los dos anteriores. MatemÃ¡ticamente, se define como:
 - `F(0) = 0`
 - `F(1) = 1`
 - `F(n) = F(n - 1) + F(n - 2)` para `n > 1`
 
-##### Implementación Recursiva de Fibonacci
+##### ImplementaciÃ³n Recursiva de Fibonacci
 
 ```cpp
 #include <iostream>
@@ -62,18 +62,18 @@ int fibonacci(int n) {
 
 int main() {
     int numero = 10;
-    cout << "El término " << numero << " de la serie de Fibonacci es " << fibonacci(numero) << endl;
+    cout << "El tÃ©rmino " << numero << " de la serie de Fibonacci es " << fibonacci(numero) << endl;
     return 0;
 }
 ```
 
 En este ejemplo:
-- **Casos Base:** `if (n <= 1) return n;` detiene la recursión cuando `n` es 0 o 1.
-- **Caso Recursivo:** `return fibonacci(n - 1) + fibonacci(n - 2);` llama a la función con `n - 1` y `n - 2`.
+- **Casos Base:** `if (n <= 1) return n;` detiene la recursiÃ³n cuando `n` es 0 o 1.
+- **Caso Recursivo:** `return fibonacci(n - 1) + fibonacci(n - 2);` llama a la funciÃ³n con `n - 1` y `n - 2`.
 
 #### Recursividad de Cola
 
-La recursividad de cola es una forma especial de recursión donde la llamada recursiva es la última operación que se realiza. Los compiladores pueden optimizar la recursividad de cola para evitar el desbordamiento de pila.
+La recursividad de cola es una forma especial de recursiÃ³n donde la llamada recursiva es la Ãºltima operaciÃ³n que se realiza. Los compiladores pueden optimizar la recursividad de cola para evitar el desbordamiento de pila.
 
 ##### Ejemplo de Recursividad de Cola
 
@@ -97,20 +97,20 @@ int main() {
 ```
 
 En este ejemplo:
-- **Caso Base:** `if (n == 0) return acumulador;` detiene la recursión cuando `n` es 0.
-- **Caso Recursivo de Cola:** `return factorialCola(n - 1, n * acumulador);` pasa el cálculo parcial al siguiente llamado.
+- **Caso Base:** `if (n == 0) return acumulador;` detiene la recursiÃ³n cuando `n` es 0.
+- **Caso Recursivo de Cola:** `return factorialCola(n - 1, n * acumulador);` pasa el cÃ¡lculo parcial al siguiente llamado.
 
-#### Consideraciones y Buenas Prácticas
+#### Consideraciones y Buenas PrÃ¡cticas
 
 1. **Evitar Desbordamientos de Pila:** La recursividad profunda puede llevar a un desbordamiento de pila. Utiliza recursividad de cola cuando sea posible y considera algoritmos iterativos para problemas grandes.
-2. **Optimización:** Algunos problemas recursivos pueden beneficiarse de la memoización, donde se almacenan los resultados de subproblemas ya resueltos para evitar cálculos redundantes.
-3. **Claridad del Código:** Asegúrate de que los casos base y recursivos estén claramente definidos y documentados para facilitar el mantenimiento y la comprensión del código.
+2. **OptimizaciÃ³n:** Algunos problemas recursivos pueden beneficiarse de la memoizaciÃ³n, donde se almacenan los resultados de subproblemas ya resueltos para evitar cÃ¡lculos redundantes.
+3. **Claridad del CÃ³digo:** AsegÃºrate de que los casos base y recursivos estÃ©n claramente definidos y documentados para facilitar el mantenimiento y la comprensiÃ³n del cÃ³digo.
 
-#### Ejemplo Completo con Memoización
+#### Ejemplo Completo con MemoizaciÃ³n
 
-Memoización es una técnica de optimización que almacena los resultados de subproblemas para evitar cálculos redundantes.
+MemoizaciÃ³n es una tÃ©cnica de optimizaciÃ³n que almacena los resultados de subproblemas para evitar cÃ¡lculos redundantes.
 
-##### Implementación de Fibonacci con Memoización
+##### ImplementaciÃ³n de Fibonacci con MemoizaciÃ³n
 
 ```cpp
 #include <iostream>
@@ -123,7 +123,7 @@ int fibonacciMemo(int n) {
     if (n <= 1) { // Casos base
         return n;
     }
-    if (memo[n] != -1) { // Verificar si el resultado ya está calculado
+    if (memo[n] != -1) { // Verificar si el resultado ya estÃ¡ calculado
         return memo[n];
     }
     // Calcular y almacenar el resultado
@@ -133,24 +133,24 @@ int fibonacciMemo(int n) {
 
 int main() {
     int numero = 10;
-    cout << "El término " << numero << " de la serie de Fibonacci (con memoización) es " << fibonacciMemo(numero) << endl;
+    cout << "El tÃ©rmino " << numero << " de la serie de Fibonacci (con memoizaciÃ³n) es " << fibonacciMemo(numero) << endl;
     return 0;
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-La recursividad es una herramienta poderosa en C++ que permite resolver problemas complejos dividiéndolos en subproblemas más simples. Entender y aplicar correctamente los casos base y recursivos es crucial para evitar errores y optimizar el rendimiento. La recursividad de cola y la memoización son técnicas avanzadas que pueden mejorar la eficiencia y evitar problemas comunes como el desbordamiento de pila. Con una comprensión sólida de la recursividad, los desarrolladores pueden abordar una amplia gama de problemas algorítmicos de manera efectiva.
+La recursividad es una herramienta poderosa en C++ que permite resolver problemas complejos dividiÃ©ndolos en subproblemas mÃ¡s simples. Entender y aplicar correctamente los casos base y recursivos es crucial para evitar errores y optimizar el rendimiento. La recursividad de cola y la memoizaciÃ³n son tÃ©cnicas avanzadas que pueden mejorar la eficiencia y evitar problemas comunes como el desbordamiento de pila. Con una comprensiÃ³n sÃ³lida de la recursividad, los desarrolladores pueden abordar una amplia gama de problemas algorÃ­tmicos de manera efectiva.
 <---FILES--->
-Implementación Recursiva del Factorial
-Implementación Recursiva del Factorial Result
-Implementación Recursiva de Fibonacci
-Implementación Recursiva de Fibonacci Result
+ImplementaciÃ³n Recursiva del Factorial
+ImplementaciÃ³n Recursiva del Factorial Result
+ImplementaciÃ³n Recursiva de Fibonacci
+ImplementaciÃ³n Recursiva de Fibonacci Result
 Ejemplo de Recursividad de Cola
 Ejemplo de Recursividad de Cola Result
-Implementación de Fibonacci con Memoización
-Implementación de Fibonacci con Memoización Result
-<---Implementación Recursiva del Factorial--->
+ImplementaciÃ³n de Fibonacci con MemoizaciÃ³n
+ImplementaciÃ³n de Fibonacci con MemoizaciÃ³n Result
+<---ImplementaciÃ³n Recursiva del Factorial--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -168,8 +168,8 @@ int main() {
     cout << "El factorial de " << numero << " es " << factorial(numero) << endl;
     return 0;
 }
-<---Implementación Recursiva del Factorial Result--->
-<---Implementación Recursiva de Fibonacci--->
+<---ImplementaciÃ³n Recursiva del Factorial Result--->
+<---ImplementaciÃ³n Recursiva de Fibonacci--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -184,10 +184,10 @@ int fibonacci(int n) {
 
 int main() {
     int numero = 10;
-    cout << "El término " << numero << " de la serie de Fibonacci es " << fibonacci(numero) << endl;
+    cout << "El tÃ©rmino " << numero << " de la serie de Fibonacci es " << fibonacci(numero) << endl;
     return 0;
 }
-<---Implementación Recursiva de Fibonacci Result--->
+<---ImplementaciÃ³n Recursiva de Fibonacci Result--->
 <---Ejemplo de Recursividad de Cola--->
 ```cpp
 #include <iostream>
@@ -207,7 +207,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Recursividad de Cola Result--->
-<---Implementación de Fibonacci con Memoización--->
+<---ImplementaciÃ³n de Fibonacci con MemoizaciÃ³n--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -219,7 +219,7 @@ int fibonacciMemo(int n) {
     if (n <= 1) { // Casos base
         return n;
     }
-    if (memo[n] != -1) { // Verificar si el resultado ya está calculado
+    if (memo[n] != -1) { // Verificar si el resultado ya estÃ¡ calculado
         return memo[n];
     }
     // Calcular y almacenar el resultado
@@ -229,7 +229,7 @@ int fibonacciMemo(int n) {
 
 int main() {
     int numero = 10;
-    cout << "El término " << numero << " de la serie de Fibonacci (con memoización) es " << fibonacciMemo(numero) << endl;
+    cout << "El tÃ©rmino " << numero << " de la serie de Fibonacci (con memoizaciÃ³n) es " << fibonacciMemo(numero) << endl;
     return 0;
 }
-<---Implementación de Fibonacci con Memoización Result--->
+<---ImplementaciÃ³n de Fibonacci con MemoizaciÃ³n Result--->

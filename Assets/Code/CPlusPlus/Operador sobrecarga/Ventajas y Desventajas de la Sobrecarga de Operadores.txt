@@ -1,12 +1,12 @@
 <---EXPLANATION--->
 ### Ventajas y Desventajas de la Sobrecarga de Operadores en C++
 
-La sobrecarga de operadores es una caracter韘tica poderosa en C++ que permite personalizar la funcionalidad de los operadores para tipos de datos definidos por el usuario. Aunque esta funcionalidad puede mejorar la legibilidad y usabilidad del c骴igo, tambi閚 tiene sus inconvenientes. A continuaci髇, se presentan las ventajas y desventajas de la sobrecarga de operadores.
+La sobrecarga de operadores es una caracter铆stica poderosa en C++ que permite personalizar la funcionalidad de los operadores para tipos de datos definidos por el usuario. Aunque esta funcionalidad puede mejorar la legibilidad y usabilidad del c贸digo, tambi茅n tiene sus inconvenientes. A continuaci贸n, se presentan las ventajas y desventajas de la sobrecarga de operadores.
 
 #### Ventajas de la Sobrecarga de Operadores
 
-1. **Legibilidad y Claridad del C骴igo**:
-    - **Ventaja**: La sobrecarga de operadores permite que las clases definidas por el usuario se utilicen de una manera similar a los tipos de datos primitivos. Esto puede hacer que el c骴igo sea m醩 intuitivo y f醕il de entender.
+1. **Legibilidad y Claridad del C贸digo**:
+    - **Ventaja**: La sobrecarga de operadores permite que las clases definidas por el usuario se utilicen de una manera similar a los tipos de datos primitivos. Esto puede hacer que el c贸digo sea m谩s intuitivo y f谩cil de entender.
     - **Ejemplo**: Al sobrecargar el operador `+` para una clase `Vector`, podemos sumar dos vectores utilizando una sintaxis familiar:
     ```cpp
     Vector v1(1, 2);
@@ -14,21 +14,21 @@ La sobrecarga de operadores es una caracter韘tica poderosa en C++ que permite pe
     Vector v3 = v1 + v2;
     ```
 
-2. **Compatibilidad con Bibliotecas Est醤dar**:
-    - **Ventaja**: Las clases que sobrecargan operadores pueden integrarse mejor con las bibliotecas est醤dar de C++ y otras bibliotecas de terceros.
+2. **Compatibilidad con Bibliotecas Est谩ndar**:
+    - **Ventaja**: Las clases que sobrecargan operadores pueden integrarse mejor con las bibliotecas est谩ndar de C++ y otras bibliotecas de terceros.
     - **Ejemplo**: Al sobrecargar el operador `<<` para la clase `Vector`, podemos imprimir vectores utilizando `std::cout`:
     ```cpp
     std::cout << v1;
     ```
 
-3. **Encapsulamiento y Abstracci髇**:
-    - **Ventaja**: La sobrecarga de operadores permite mantener la l骻ica de las operaciones en la propia clase, promoviendo el encapsulamiento y la abstracci髇.
-    - **Ejemplo**: La l骻ica para sumar vectores o comparar matrices puede encapsularse dentro de los operadores sobrecargados, manteniendo el c骴igo cliente limpio y centrado en la l骻ica de negocio.
+3. **Encapsulamiento y Abstracci贸n**:
+    - **Ventaja**: La sobrecarga de operadores permite mantener la l贸gica de las operaciones en la propia clase, promoviendo el encapsulamiento y la abstracci贸n.
+    - **Ejemplo**: La l贸gica para sumar vectores o comparar matrices puede encapsularse dentro de los operadores sobrecargados, manteniendo el c贸digo cliente limpio y centrado en la l贸gica de negocio.
 
 #### Desventajas de la Sobrecarga de Operadores
 
 1. **Complejidad Adicional**:
-    - **Desventaja**: La sobrecarga de operadores puede aumentar la complejidad del c骴igo, especialmente para desarrolladores que no est醤 familiarizados con esta caracter韘tica.
+    - **Desventaja**: La sobrecarga de operadores puede aumentar la complejidad del c贸digo, especialmente para desarrolladores que no est谩n familiarizados con esta caracter铆stica.
     - **Ejemplo**: Un desarrollador nuevo en un proyecto puede tener dificultades para entender la sobrecarga de operadores complejos y sus implicaciones.
 
 2. **Riesgo de Abuso**:
@@ -36,11 +36,11 @@ La sobrecarga de operadores es una caracter韘tica poderosa en C++ que permite pe
     - **Ejemplo**: Sobrecargar el operador `+` para concatenar cadenas y sumar enteros puede ser confuso si no se documenta adecuadamente.
 
 3. **Problemas de Mantenimiento**:
-    - **Desventaja**: El uso extensivo de la sobrecarga de operadores puede dificultar el mantenimiento del c骴igo, ya que las operaciones pueden no estar claras a simple vista.
-    - **Ejemplo**: Mantener un c骴igo donde los operadores sobrecargados realizan operaciones complejas o no triviales puede ser dif韈il y propenso a errores.
+    - **Desventaja**: El uso extensivo de la sobrecarga de operadores puede dificultar el mantenimiento del c贸digo, ya que las operaciones pueden no estar claras a simple vista.
+    - **Ejemplo**: Mantener un c贸digo donde los operadores sobrecargados realizan operaciones complejas o no triviales puede ser dif铆cil y propenso a errores.
 
-4. **Ambig黣dad y Errores Sutiles**:
-    - **Desventaja**: La sobrecarga de operadores puede introducir ambig黣dad y errores sutiles si no se maneja con cuidado.
+4. **Ambig眉edad y Errores Sutiles**:
+    - **Desventaja**: La sobrecarga de operadores puede introducir ambig眉edad y errores sutiles si no se maneja con cuidado.
     - **Ejemplo**: La sobrecarga de operadores como `==` y `!=` puede llevar a comparaciones incorrectas si no se implementan adecuadamente.
 
 #### Ejemplos para Ilustrar Ventajas y Desventajas
@@ -53,21 +53,21 @@ Vector operator+(const Vector& lhs, const Vector& rhs) {
     return Vector(lhs.x + rhs.x, lhs.y + rhs.y);
 }
 ```
-Este ejemplo muestra c髆o la sobrecarga del operador `+` hace que la suma de vectores sea clara y concisa.
+Este ejemplo muestra c贸mo la sobrecarga del operador `+` hace que la suma de vectores sea clara y concisa.
 
 ##### Ejemplo de Desventaja: Complejidad Adicional
 
 ```cpp
-// Sobrecarga del operador ^ para la clase Matriz (operaci髇 personalizada)
+// Sobrecarga del operador ^ para la clase Matriz (operaci贸n personalizada)
 Matriz operator^(const Matriz& lhs, int exponente) {
-    // L骻ica compleja para elevar la matriz a una potencia
+    // L贸gica compleja para elevar la matriz a una potencia
 }
 ```
-Este ejemplo ilustra c髆o una sobrecarga de operador no est醤dar (`^` para la potenciaci髇 de matrices) puede introducir complejidad adicional y confusi髇.
+Este ejemplo ilustra c贸mo una sobrecarga de operador no est谩ndar (`^` para la potenciaci贸n de matrices) puede introducir complejidad adicional y confusi贸n.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores en C++ es una herramienta poderosa que puede mejorar la legibilidad, claridad y compatibilidad del c骴igo. Sin embargo, tambi閚 puede aumentar la complejidad, introducir ambig黣dades y dificultar el mantenimiento si no se utiliza adecuadamente. Es importante utilizar esta caracter韘tica con cuidado y documentar claramente cualquier sobrecarga para evitar malentendidos y errores en el c骴igo.
+La sobrecarga de operadores en C++ es una herramienta poderosa que puede mejorar la legibilidad, claridad y compatibilidad del c贸digo. Sin embargo, tambi茅n puede aumentar la complejidad, introducir ambig眉edades y dificultar el mantenimiento si no se utiliza adecuadamente. Es importante utilizar esta caracter铆stica con cuidado y documentar claramente cualquier sobrecarga para evitar malentendidos y errores en el c贸digo.
 <---FILES--->
 Ejemplo de Ventaja: Legibilidad y Claridad
 Ejemplo de Ventaja: Legibilidad y Claridad Result
@@ -82,8 +82,8 @@ Vector operator+(const Vector& lhs, const Vector& rhs) {
 <---Ejemplo de Ventaja: Legibilidad y Claridad Result--->
 <---Ejemplo de Desventaja: Complejidad Adicional--->
 ```cpp
-// Sobrecarga del operador ^ para la clase Matriz (operaci髇 personalizada)
+// Sobrecarga del operador ^ para la clase Matriz (operaci贸n personalizada)
 Matriz operator^(const Matriz& lhs, int exponente) {
-    // L骻ica compleja para elevar la matriz a una potencia
+    // L贸gica compleja para elevar la matriz a una potencia
 }
 <---Ejemplo de Desventaja: Complejidad Adicional Result--->

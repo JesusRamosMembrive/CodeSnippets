@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### `std::shared_ptr` en Profundidad
 
-`std::shared_ptr` es un puntero inteligente que permite compartir la propiedad de un recurso entre m˙ltiples punteros. Este puntero inteligente utiliza un mecanismo de conteo de referencias para asegurarse de que el recurso se libera autom·ticamente cuando el ˙ltimo `std::shared_ptr` que lo posee es destruido. AquÌ exploraremos su uso en profundidad, mejores pr·cticas y ejemplos de cÛmo integrarlo en proyectos m·s grandes.
+`std::shared_ptr` es un puntero inteligente que permite compartir la propiedad de un recurso entre m√∫ltiples punteros. Este puntero inteligente utiliza un mecanismo de conteo de referencias para asegurarse de que el recurso se libera autom√°ticamente cuando el √∫ltimo `std::shared_ptr` que lo posee es destruido. Aqu√≠ exploraremos su uso en profundidad, mejores pr√°cticas y ejemplos de c√≥mo integrarlo en proyectos m√°s grandes.
 
-#### Declaraciones y Uso B·sico
+#### Declaraciones y Uso B√°sico
 
-##### DeclaraciÛn y AsignaciÛn
+##### Declaraci√≥n y Asignaci√≥n
 
 Para declarar un `std::shared_ptr`, se incluye la cabecera `<memory>` y se puede utilizar `std::make_shared` para asignar memoria.
 
@@ -20,16 +20,16 @@ int main() {
     std::cout << *ptr1 << std::endl; // Salida: 10
     std::cout << "Use count: " << ptr1.use_count() << std::endl; // Salida: 2
 
-    // Memoria liberada autom·ticamente cuando el ˙ltimo shared_ptr sale del alcance
+    // Memoria liberada autom√°ticamente cuando el √∫ltimo shared_ptr sale del alcance
     return 0;
 }
 ```
 
 #### En Clases y Archivos de Cabecera
 
-El uso de `std::shared_ptr` en clases permite una gestiÛn de recursos compartida y segura. AquÌ se muestra cÛmo declarar y definir una clase que utiliza `std::shared_ptr`.
+El uso de `std::shared_ptr` en clases permite una gesti√≥n de recursos compartida y segura. Aqu√≠ se muestra c√≥mo declarar y definir una clase que utiliza `std::shared_ptr`.
 
-##### DeclaraciÛn en el Archivo de Cabecera (.h)
+##### Declaraci√≥n en el Archivo de Cabecera (.h)
 
 ```cpp
 // MiClase.h
@@ -51,7 +51,7 @@ private:
 #endif // MICLASE_H
 ```
 
-##### DefiniciÛn en el Archivo de ImplementaciÛn (.cpp)
+##### Definici√≥n en el Archivo de Implementaci√≥n (.cpp)
 
 ```cpp
 // MiClase.cpp
@@ -62,7 +62,7 @@ private:
 MiClase::MiClase(const std::string& nombre)
     : nombre_(std::make_shared<std::string>(nombre)) {}
 
-// MÈtodo mostrar
+// M√©todo mostrar
 void MiClase::mostrar() const {
     std::cout << "Nombre: " << *nombre_ << std::endl;
 }
@@ -70,9 +70,9 @@ void MiClase::mostrar() const {
 
 #### Mejor Uso de `std::shared_ptr`
 
-##### 1. ComparticiÛn de Recursos
+##### 1. Compartici√≥n de Recursos
 
-`std::shared_ptr` es ideal para situaciones donde m˙ltiples partes del cÛdigo necesitan compartir la propiedad de un recurso. Por ejemplo, en estructuras de datos complejas como gr·ficos o ·rboles donde los nodos pueden ser compartidos por m˙ltiples padres.
+`std::shared_ptr` es ideal para situaciones donde m√∫ltiples partes del c√≥digo necesitan compartir la propiedad de un recurso. Por ejemplo, en estructuras de datos complejas como gr√°ficos o √°rboles donde los nodos pueden ser compartidos por m√∫ltiples padres.
 
 ```cpp
 #include <memory>
@@ -107,7 +107,7 @@ int main() {
     raiz->agregarHijo(hijo1);
     raiz->agregarHijo(hijo2);
 
-    raiz->mostrar(); // Muestra toda la jerarquÌa de nodos
+    raiz->mostrar(); // Muestra toda la jerarqu√≠a de nodos
 
     return 0;
 }
@@ -160,7 +160,7 @@ int main() {
 }
 ```
 
-##### SoluciÛn usando `std::weak_ptr`
+##### Soluci√≥n usando `std::weak_ptr`
 
 ```cpp
 #include <memory>
@@ -205,7 +205,7 @@ int main() {
 
 #### Ejemplo Completo
 
-A continuaciÛn, se muestra un ejemplo m·s completo que incluye la declaraciÛn y el uso de `std::shared_ptr` en una clase, mostrando la gestiÛn de recursos compartidos y evitando ciclos de referencia con `std::weak_ptr`.
+A continuaci√≥n, se muestra un ejemplo m√°s completo que incluye la declaraci√≥n y el uso de `std::shared_ptr` en una clase, mostrando la gesti√≥n de recursos compartidos y evitando ciclos de referencia con `std::weak_ptr`.
 
 ##### Archivo de Cabecera (.h)
 
@@ -238,7 +238,7 @@ private:
 #endif // GESTORRECURSO_H
 ```
 
-##### Archivo de ImplementaciÛn (.cpp)
+##### Archivo de Implementaci√≥n (.cpp)
 
 ```cpp
 // GestorRecurso.cpp
@@ -265,7 +265,7 @@ void Contenedor::mostrar() const {
 }
 ```
 
-##### FunciÛn Principal
+##### Funci√≥n Principal
 
 ```cpp
 #include <iostream>
@@ -283,31 +283,31 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::shared_ptr` es una herramienta esencial en C++ para la gestiÛn segura y eficiente de recursos compartidos. Su uso adecuado en clases, funciones y estructuras de datos complejas permite evitar muchos errores comunes relacionados con la gestiÛn de memoria, como fugas de memoria y accesos a memoria inv·lida. Al seguir las mejores pr·cticas y entender cÛmo utilizar `std::shared_ptr` junto con `std::weak_ptr` para evitar ciclos de referencia, se puede escribir cÛdigo m·s robusto y mantenible.
+`std::shared_ptr` es una herramienta esencial en C++ para la gesti√≥n segura y eficiente de recursos compartidos. Su uso adecuado en clases, funciones y estructuras de datos complejas permite evitar muchos errores comunes relacionados con la gesti√≥n de memoria, como fugas de memoria y accesos a memoria inv√°lida. Al seguir las mejores pr√°cticas y entender c√≥mo utilizar `std::shared_ptr` junto con `std::weak_ptr` para evitar ciclos de referencia, se puede escribir c√≥digo m√°s robusto y mantenible.
 <---FILES--->
-DeclaraciÛn y AsignaciÛn
-DeclaraciÛn y AsignaciÛn Result
-DeclaraciÛn en el Archivo de Cabecera (.h)
-DeclaraciÛn en el Archivo de Cabecera (.h) Result
-DefiniciÛn en el Archivo de ImplementaciÛn (.cpp)
-DefiniciÛn en el Archivo de ImplementaciÛn (.cpp) Result
-1. ComparticiÛn de Recursos
-1. ComparticiÛn de Recursos Result
+Declaraci√≥n y Asignaci√≥n
+Declaraci√≥n y Asignaci√≥n Result
+Declaraci√≥n en el Archivo de Cabecera (.h)
+Declaraci√≥n en el Archivo de Cabecera (.h) Result
+Definici√≥n en el Archivo de Implementaci√≥n (.cpp)
+Definici√≥n en el Archivo de Implementaci√≥n (.cpp) Result
+1. Compartici√≥n de Recursos
+1. Compartici√≥n de Recursos Result
 2. Evitar Ciclos de Referencia
 2. Evitar Ciclos de Referencia Result
 Ejemplo de Ciclo de Referencia
 Ejemplo de Ciclo de Referencia Result
-SoluciÛn usando `std::weak_ptr`
-SoluciÛn usando `std::weak_ptr` Result
+Soluci√≥n usando `std::weak_ptr`
+Soluci√≥n usando `std::weak_ptr` Result
 Archivo de Cabecera (.h)
 Archivo de Cabecera (.h) Result
-Archivo de ImplementaciÛn (.cpp)
-Archivo de ImplementaciÛn (.cpp) Result
-FunciÛn Principal
-FunciÛn Principal Result
-<---DeclaraciÛn y AsignaciÛn--->
+Archivo de Implementaci√≥n (.cpp)
+Archivo de Implementaci√≥n (.cpp) Result
+Funci√≥n Principal
+Funci√≥n Principal Result
+<---Declaraci√≥n y Asignaci√≥n--->
 ```cpp
 #include <iostream>
 #include <memory>
@@ -319,11 +319,11 @@ int main() {
     std::cout << *ptr1 << std::endl; // Salida: 10
     std::cout << "Use count: " << ptr1.use_count() << std::endl; // Salida: 2
 
-    // Memoria liberada autom·ticamente cuando el ˙ltimo shared_ptr sale del alcance
+    // Memoria liberada autom√°ticamente cuando el √∫ltimo shared_ptr sale del alcance
     return 0;
 }
-<---DeclaraciÛn y AsignaciÛn Result--->
-<---DeclaraciÛn en el Archivo de Cabecera (.h)--->
+<---Declaraci√≥n y Asignaci√≥n Result--->
+<---Declaraci√≥n en el Archivo de Cabecera (.h)--->
 ```cpp
 // MiClase.h
 #ifndef MICLASE_H
@@ -342,8 +342,8 @@ private:
 };
 
 #endif // MICLASE_H
-<---DeclaraciÛn en el Archivo de Cabecera (.h) Result--->
-<---DefiniciÛn en el Archivo de ImplementaciÛn (.cpp)--->
+<---Declaraci√≥n en el Archivo de Cabecera (.h) Result--->
+<---Definici√≥n en el Archivo de Implementaci√≥n (.cpp)--->
 ```cpp
 // MiClase.cpp
 #include "MiClase.h"
@@ -353,12 +353,12 @@ private:
 MiClase::MiClase(const std::string& nombre)
     : nombre_(std::make_shared<std::string>(nombre)) {}
 
-// MÈtodo mostrar
+// M√©todo mostrar
 void MiClase::mostrar() const {
     std::cout << "Nombre: " << *nombre_ << std::endl;
 }
-<---DefiniciÛn en el Archivo de ImplementaciÛn (.cpp) Result--->
-<---1. ComparticiÛn de Recursos--->
+<---Definici√≥n en el Archivo de Implementaci√≥n (.cpp) Result--->
+<---1. Compartici√≥n de Recursos--->
 ```cpp
 #include <memory>
 #include <vector>
@@ -392,11 +392,11 @@ int main() {
     raiz->agregarHijo(hijo1);
     raiz->agregarHijo(hijo2);
 
-    raiz->mostrar(); // Muestra toda la jerarquÌa de nodos
+    raiz->mostrar(); // Muestra toda la jerarqu√≠a de nodos
 
     return 0;
 }
-<---1. ComparticiÛn de Recursos Result--->
+<---1. Compartici√≥n de Recursos Result--->
 <---2. Evitar Ciclos de Referencia--->
 <---2. Evitar Ciclos de Referencia Result--->
 <---Ejemplo de Ciclo de Referencia--->
@@ -440,7 +440,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Ciclo de Referencia Result--->
-<---SoluciÛn usando `std::weak_ptr`--->
+<---Soluci√≥n usando `std::weak_ptr`--->
 ```cpp
 #include <memory>
 #include <iostream>
@@ -480,7 +480,7 @@ int main() {
 
     return 0;
 }
-<---SoluciÛn usando `std::weak_ptr` Result--->
+<---Soluci√≥n usando `std::weak_ptr` Result--->
 <---Archivo de Cabecera (.h)--->
 ```cpp
 // GestorRecurso.h
@@ -510,7 +510,7 @@ private:
 
 #endif // GESTORRECURSO_H
 <---Archivo de Cabecera (.h) Result--->
-<---Archivo de ImplementaciÛn (.cpp)--->
+<---Archivo de Implementaci√≥n (.cpp)--->
 ```cpp
 // GestorRecurso.cpp
 #include "GestorRecurso.h"
@@ -534,8 +534,8 @@ void Contenedor::mostrar() const {
         std::cout << "Sin recurso" << std::endl;
     }
 }
-<---Archivo de ImplementaciÛn (.cpp) Result--->
-<---FunciÛn Principal--->
+<---Archivo de Implementaci√≥n (.cpp) Result--->
+<---Funci√≥n Principal--->
 ```cpp
 #include <iostream>
 #include "GestorRecurso.h"
@@ -550,4 +550,4 @@ int main() {
 
     return 0;
 }
-<---FunciÛn Principal Result--->
+<---Funci√≥n Principal Result--->

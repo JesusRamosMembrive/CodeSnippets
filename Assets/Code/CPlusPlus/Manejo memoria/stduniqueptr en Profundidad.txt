@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### `std::unique_ptr` en Profundidad
 
-`std::unique_ptr` es un puntero inteligente que proporciona propiedad exclusiva sobre un recurso. Es una herramienta poderosa para gestionar la memoria din·mica y asegurar que los recursos sean liberados correctamente cuando ya no se necesiten. AquÌ profundizaremos en su uso, las mejores pr·cticas y cÛmo integrarlo en proyectos m·s grandes.
+`std::unique_ptr` es un puntero inteligente que proporciona propiedad exclusiva sobre un recurso. Es una herramienta poderosa para gestionar la memoria din√°mica y asegurar que los recursos sean liberados correctamente cuando ya no se necesiten. Aqu√≠ profundizaremos en su uso, las mejores pr√°cticas y c√≥mo integrarlo en proyectos m√°s grandes.
 
-#### Declaraciones y Uso B·sico
+#### Declaraciones y Uso B√°sico
 
-##### DeclaraciÛn y AsignaciÛn
+##### Declaraci√≥n y Asignaci√≥n
 
 Para declarar un `std::unique_ptr`, se incluye la cabecera `<memory>` y se puede utilizar `std::make_unique` para asignar memoria.
 
@@ -16,16 +16,16 @@ Para declarar un `std::unique_ptr`, se incluye la cabecera `<memory>` y se puede
 int main() {
     std::unique_ptr<int> ptr = std::make_unique<int>(10);
     std::cout << *ptr << std::endl; // Salida: 10
-    // Memoria liberada autom·ticamente al salir del alcance
+    // Memoria liberada autom√°ticamente al salir del alcance
     return 0;
 }
 ```
 
 #### En Clases y Archivos de Cabecera
 
-El uso de `std::unique_ptr` en clases permite una gestiÛn de recursos clara y segura. AquÌ se muestra cÛmo declarar y definir una clase que utiliza `std::unique_ptr`.
+El uso de `std::unique_ptr` en clases permite una gesti√≥n de recursos clara y segura. Aqu√≠ se muestra c√≥mo declarar y definir una clase que utiliza `std::unique_ptr`.
 
-##### DeclaraciÛn en el Archivo de Cabecera (.h)
+##### Declaraci√≥n en el Archivo de Cabecera (.h)
 
 ```cpp
 // MiClase.h
@@ -49,7 +49,7 @@ private:
 #endif // MICLASE_H
 ```
 
-##### DefiniciÛn en el Archivo de ImplementaciÛn (.cpp)
+##### Definici√≥n en el Archivo de Implementaci√≥n (.cpp)
 
 ```cpp
 // MiClase.cpp
@@ -62,10 +62,10 @@ MiClase::MiClase(const std::string& nombre)
 
 // Destructor
 MiClase::~MiClase() {
-    // `std::unique_ptr` libera la memoria autom·ticamente
+    // `std::unique_ptr` libera la memoria autom√°ticamente
 }
 
-// MÈtodo mostrar
+// M√©todo mostrar
 void MiClase::mostrar() const {
     std::cout << "Nombre: " << *nombre_ << std::endl;
 }
@@ -73,7 +73,7 @@ void MiClase::mostrar() const {
 
 #### Transferencia de Propiedad
 
-La propiedad de un `std::unique_ptr` puede transferirse utilizando `std::move`. Esto es ˙til cuando se necesita transferir la propiedad de un recurso a otra funciÛn o objeto.
+La propiedad de un `std::unique_ptr` puede transferirse utilizando `std::move`. Esto es √∫til cuando se necesita transferir la propiedad de un recurso a otra funci√≥n o objeto.
 
 ##### Ejemplo de Transferencia de Propiedad
 
@@ -88,14 +88,14 @@ void mostrar(std::unique_ptr<int> ptr) {
 int main() {
     std::unique_ptr<int> ptr = std::make_unique<int>(42);
     mostrar(std::move(ptr)); // Transferir la propiedad
-    // ptr ya no es v·lido aquÌ
+    // ptr ya no es v√°lido aqu√≠
     return 0;
 }
 ```
 
 #### Mejor Uso de `std::unique_ptr`
 
-##### 1. EncapsulaciÛn de Recursos
+##### 1. Encapsulaci√≥n de Recursos
 
 Utilice `std::unique_ptr` para encapsular recursos en clases. Esto asegura que los recursos sean liberados correctamente cuando la instancia de la clase es destruida.
 
@@ -121,7 +121,7 @@ private:
 
 ##### 2. Uso en Contenedores
 
-Los contenedores de la STL pueden almacenar `std::unique_ptr`, lo que permite una gestiÛn eficiente de colecciones de recursos din·micos.
+Los contenedores de la STL pueden almacenar `std::unique_ptr`, lo que permite una gesti√≥n eficiente de colecciones de recursos din√°micos.
 
 ```cpp
 #include <vector>
@@ -142,11 +142,11 @@ int main() {
 
 ##### 3. Evitar el Uso de Punteros Crudos
 
-Prefiera `std::unique_ptr` sobre los punteros crudos para garantizar la gestiÛn autom·tica de la memoria y reducir el riesgo de fugas de memoria y accesos inv·lidos.
+Prefiera `std::unique_ptr` sobre los punteros crudos para garantizar la gesti√≥n autom√°tica de la memoria y reducir el riesgo de fugas de memoria y accesos inv√°lidos.
 
 #### Ejemplo Completo
 
-A continuaciÛn, se muestra un ejemplo m·s completo que incluye la declaraciÛn y el uso de `std::unique_ptr` en una clase, mostrando la gestiÛn de recursos y la transferencia de propiedad.
+A continuaci√≥n, se muestra un ejemplo m√°s completo que incluye la declaraci√≥n y el uso de `std::unique_ptr` en una clase, mostrando la gesti√≥n de recursos y la transferencia de propiedad.
 
 ##### Archivo de Cabecera (.h)
 
@@ -173,7 +173,7 @@ private:
 #endif // GESTORRECURSO_H
 ```
 
-##### Archivo de ImplementaciÛn (.cpp)
+##### Archivo de Implementaci√≥n (.cpp)
 
 ```cpp
 // GestorRecurso.cpp
@@ -192,7 +192,7 @@ std::unique_ptr<std::string> GestorRecurso::transferirRecurso() {
 }
 ```
 
-##### FunciÛn Principal
+##### Funci√≥n Principal
 
 ```cpp
 #include <iostream>
@@ -207,38 +207,38 @@ int main() {
         std::cout << "Recurso transferido: " << *recurso << std::endl;
     }
 
-    // Intentar mostrar el recurso despuÈs de la transferencia
-    gestor.mostrarRecurso(); // Esto no imprimir· nada ya que el recurso fue transferido
+    // Intentar mostrar el recurso despu√©s de la transferencia
+    gestor.mostrarRecurso(); // Esto no imprimir√° nada ya que el recurso fue transferido
 
     return 0;
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::unique_ptr` es una herramienta esencial en C++ para la gestiÛn segura y eficiente de recursos. Su uso adecuado en clases, funciones y contenedores permite evitar muchos errores comunes relacionados con la gestiÛn de memoria, como fugas de memoria y accesos a memoria inv·lida. Al seguir las mejores pr·cticas y entender cÛmo transferir la propiedad de recursos, se puede escribir cÛdigo m·s robusto y mantenible.
+`std::unique_ptr` es una herramienta esencial en C++ para la gesti√≥n segura y eficiente de recursos. Su uso adecuado en clases, funciones y contenedores permite evitar muchos errores comunes relacionados con la gesti√≥n de memoria, como fugas de memoria y accesos a memoria inv√°lida. Al seguir las mejores pr√°cticas y entender c√≥mo transferir la propiedad de recursos, se puede escribir c√≥digo m√°s robusto y mantenible.
 <---FILES--->
-DeclaraciÛn y AsignaciÛn
-DeclaraciÛn y AsignaciÛn Result
-DeclaraciÛn en el Archivo de Cabecera (.h)
-DeclaraciÛn en el Archivo de Cabecera (.h) Result
-DefiniciÛn en el Archivo de ImplementaciÛn (.cpp)
-DefiniciÛn en el Archivo de ImplementaciÛn (.cpp) Result
+Declaraci√≥n y Asignaci√≥n
+Declaraci√≥n y Asignaci√≥n Result
+Declaraci√≥n en el Archivo de Cabecera (.h)
+Declaraci√≥n en el Archivo de Cabecera (.h) Result
+Definici√≥n en el Archivo de Implementaci√≥n (.cpp)
+Definici√≥n en el Archivo de Implementaci√≥n (.cpp) Result
 Ejemplo de Transferencia de Propiedad
 Ejemplo de Transferencia de Propiedad Result
-1. EncapsulaciÛn de Recursos
-1. EncapsulaciÛn de Recursos Result
+1. Encapsulaci√≥n de Recursos
+1. Encapsulaci√≥n de Recursos Result
 2. Uso en Contenedores
 2. Uso en Contenedores Result
 3. Evitar el Uso de Punteros Crudos
 3. Evitar el Uso de Punteros Crudos Result
 Archivo de Cabecera (.h)
 Archivo de Cabecera (.h) Result
-Archivo de ImplementaciÛn (.cpp)
-Archivo de ImplementaciÛn (.cpp) Result
-FunciÛn Principal
-FunciÛn Principal Result
-<---DeclaraciÛn y AsignaciÛn--->
+Archivo de Implementaci√≥n (.cpp)
+Archivo de Implementaci√≥n (.cpp) Result
+Funci√≥n Principal
+Funci√≥n Principal Result
+<---Declaraci√≥n y Asignaci√≥n--->
 ```cpp
 #include <iostream>
 #include <memory>
@@ -246,11 +246,11 @@ FunciÛn Principal Result
 int main() {
     std::unique_ptr<int> ptr = std::make_unique<int>(10);
     std::cout << *ptr << std::endl; // Salida: 10
-    // Memoria liberada autom·ticamente al salir del alcance
+    // Memoria liberada autom√°ticamente al salir del alcance
     return 0;
 }
-<---DeclaraciÛn y AsignaciÛn Result--->
-<---DeclaraciÛn en el Archivo de Cabecera (.h)--->
+<---Declaraci√≥n y Asignaci√≥n Result--->
+<---Declaraci√≥n en el Archivo de Cabecera (.h)--->
 ```cpp
 // MiClase.h
 #ifndef MICLASE_H
@@ -271,8 +271,8 @@ private:
 };
 
 #endif // MICLASE_H
-<---DeclaraciÛn en el Archivo de Cabecera (.h) Result--->
-<---DefiniciÛn en el Archivo de ImplementaciÛn (.cpp)--->
+<---Declaraci√≥n en el Archivo de Cabecera (.h) Result--->
+<---Definici√≥n en el Archivo de Implementaci√≥n (.cpp)--->
 ```cpp
 // MiClase.cpp
 #include "MiClase.h"
@@ -284,14 +284,14 @@ MiClase::MiClase(const std::string& nombre)
 
 // Destructor
 MiClase::~MiClase() {
-    // `std::unique_ptr` libera la memoria autom·ticamente
+    // `std::unique_ptr` libera la memoria autom√°ticamente
 }
 
-// MÈtodo mostrar
+// M√©todo mostrar
 void MiClase::mostrar() const {
     std::cout << "Nombre: " << *nombre_ << std::endl;
 }
-<---DefiniciÛn en el Archivo de ImplementaciÛn (.cpp) Result--->
+<---Definici√≥n en el Archivo de Implementaci√≥n (.cpp) Result--->
 <---Ejemplo de Transferencia de Propiedad--->
 ```cpp
 #include <iostream>
@@ -304,11 +304,11 @@ void mostrar(std::unique_ptr<int> ptr) {
 int main() {
     std::unique_ptr<int> ptr = std::make_unique<int>(42);
     mostrar(std::move(ptr)); // Transferir la propiedad
-    // ptr ya no es v·lido aquÌ
+    // ptr ya no es v√°lido aqu√≠
     return 0;
 }
 <---Ejemplo de Transferencia de Propiedad Result--->
-<---1. EncapsulaciÛn de Recursos--->
+<---1. Encapsulaci√≥n de Recursos--->
 ```cpp
 class Archivo {
 public:
@@ -327,7 +327,7 @@ public:
 private:
     std::unique_ptr<FILE, decltype(&std::fclose)> archivo_;
 };
-<---1. EncapsulaciÛn de Recursos Result--->
+<---1. Encapsulaci√≥n de Recursos Result--->
 <---2. Uso en Contenedores--->
 ```cpp
 #include <vector>
@@ -370,7 +370,7 @@ private:
 
 #endif // GESTORRECURSO_H
 <---Archivo de Cabecera (.h) Result--->
-<---Archivo de ImplementaciÛn (.cpp)--->
+<---Archivo de Implementaci√≥n (.cpp)--->
 ```cpp
 // GestorRecurso.cpp
 #include "GestorRecurso.h"
@@ -386,8 +386,8 @@ void GestorRecurso::mostrarRecurso() const {
 std::unique_ptr<std::string> GestorRecurso::transferirRecurso() {
     return std::move(recurso_);
 }
-<---Archivo de ImplementaciÛn (.cpp) Result--->
-<---FunciÛn Principal--->
+<---Archivo de Implementaci√≥n (.cpp) Result--->
+<---Funci√≥n Principal--->
 ```cpp
 #include <iostream>
 #include "GestorRecurso.h"
@@ -401,9 +401,9 @@ int main() {
         std::cout << "Recurso transferido: " << *recurso << std::endl;
     }
 
-    // Intentar mostrar el recurso despuÈs de la transferencia
-    gestor.mostrarRecurso(); // Esto no imprimir· nada ya que el recurso fue transferido
+    // Intentar mostrar el recurso despu√©s de la transferencia
+    gestor.mostrarRecurso(); // Esto no imprimir√° nada ya que el recurso fue transferido
 
     return 0;
 }
-<---FunciÛn Principal Result--->
+<---Funci√≥n Principal Result--->

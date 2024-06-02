@@ -1,28 +1,28 @@
 <---EXPLANATION--->
 ### Funciones con Valor de Retorno y Sin Valor de Retorno en C++
 
-Las funciones en C++ pueden estar dise馻das para devolver un valor o no devolver ning鷑 valor. La diferencia entre ambas reside en el tipo de retorno especificado en la declaraci髇 de la funci髇.
+Las funciones en C++ pueden estar dise帽adas para devolver un valor o no devolver ning煤n valor. La diferencia entre ambas reside en el tipo de retorno especificado en la declaraci贸n de la funci贸n.
 
 #### Funciones con Valor de Retorno
 
-Una funci髇 con valor de retorno es una funci髇 que devuelve un valor al llamador cuando la funci髇 termina. El tipo de valor de retorno puede ser cualquier tipo de dato, como `int`, `double`, `string`, objetos de clases definidas por el usuario, entre otros.
+Una funci贸n con valor de retorno es una funci贸n que devuelve un valor al llamador cuando la funci贸n termina. El tipo de valor de retorno puede ser cualquier tipo de dato, como `int`, `double`, `string`, objetos de clases definidas por el usuario, entre otros.
 
 ##### Sintaxis
 
 ```cpp
 tipo_de_retorno nombre_funcion(lista_de_parametros) {
-    // Cuerpo de la funci髇
+    // Cuerpo de la funci贸n
     return valor; // Devolver un valor del tipo especificado
 }
 ```
 
-##### Ejemplo de Funci髇 con Valor de Retorno
+##### Ejemplo de Funci贸n con Valor de Retorno
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que devuelve la suma de dos enteros
+// Funci贸n que devuelve la suma de dos enteros
 int sumar(int a, int b) {
     return a + b;
 }
@@ -34,7 +34,7 @@ int main() {
 }
 ```
 
-En este ejemplo, la funci髇 `sumar` devuelve un valor entero que es el resultado de sumar dos enteros. El valor devuelto se captura en la variable `resultado` en la funci髇 `main`.
+En este ejemplo, la funci贸n `sumar` devuelve un valor entero que es el resultado de sumar dos enteros. El valor devuelto se captura en la variable `resultado` en la funci贸n `main`.
 
 ##### Ejemplo con un Tipo de Dato Diferente
 
@@ -42,7 +42,7 @@ En este ejemplo, la funci髇 `sumar` devuelve un valor entero que es el resultado
 #include <iostream>
 using namespace std;
 
-// Funci髇 que devuelve un saludo como string
+// Funci贸n que devuelve un saludo como string
 string obtenerSaludo(string nombre) {
     return "Hola, " + nombre + "!";
 }
@@ -54,28 +54,28 @@ int main() {
 }
 ```
 
-En este ejemplo, la funci髇 `obtenerSaludo` devuelve una cadena de texto que es un saludo personalizado.
+En este ejemplo, la funci贸n `obtenerSaludo` devuelve una cadena de texto que es un saludo personalizado.
 
 #### Funciones Sin Valor de Retorno
 
-Una funci髇 sin valor de retorno (tambi閚 conocida como funci髇 void) no devuelve ning鷑 valor. Estas funciones se utilizan cuando se desea realizar una acci髇 pero no se necesita devolver informaci髇 al llamador.
+Una funci贸n sin valor de retorno (tambi茅n conocida como funci贸n void) no devuelve ning煤n valor. Estas funciones se utilizan cuando se desea realizar una acci贸n pero no se necesita devolver informaci贸n al llamador.
 
 ##### Sintaxis
 
 ```cpp
 void nombre_funcion(lista_de_parametros) {
-    // Cuerpo de la funci髇
+    // Cuerpo de la funci贸n
     // No hay sentencia return
 }
 ```
 
-##### Ejemplo de Funci髇 Sin Valor de Retorno
+##### Ejemplo de Funci贸n Sin Valor de Retorno
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que imprime un mensaje
+// Funci贸n que imprime un mensaje
 void imprimirMensaje(string mensaje) {
     cout << mensaje << endl;
 }
@@ -86,17 +86,17 @@ int main() {
 }
 ```
 
-En este ejemplo, la funci髇 `imprimirMensaje` no devuelve ning鷑 valor. Simplemente realiza la acci髇 de imprimir un mensaje en la consola.
+En este ejemplo, la funci贸n `imprimirMensaje` no devuelve ning煤n valor. Simplemente realiza la acci贸n de imprimir un mensaje en la consola.
 
-##### Ejemplo con Par醡etros por Referencia
+##### Ejemplo con Par谩metros por Referencia
 
-A veces, se usan funciones `void` para modificar los valores de los par醡etros pasados por referencia.
+A veces, se usan funciones `void` para modificar los valores de los par谩metros pasados por referencia.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que incrementa el valor de una variable
+// Funci贸n que incrementa el valor de una variable
 void incrementar(int& num) {
     num++;
 }
@@ -104,78 +104,78 @@ void incrementar(int& num) {
 int main() {
     int valor = 10;
     incrementar(valor);
-    cout << "Valor despu閟 de incrementar: " << valor << endl;
+    cout << "Valor despu茅s de incrementar: " << valor << endl;
     return 0;
 }
 ```
 
-En este ejemplo, la funci髇 `incrementar` modifica el valor del par醡etro `num` directamente, y esta modificaci髇 se refleja en la variable `valor` en la funci髇 `main`.
+En este ejemplo, la funci贸n `incrementar` modifica el valor del par谩metro `num` directamente, y esta modificaci贸n se refleja en la variable `valor` en la funci贸n `main`.
 
-### Comparaci髇 entre Funciones con y Sin Valor de Retorno
+### Comparaci贸n entre Funciones con y Sin Valor de Retorno
 
-| Caracter韘tica                      | Funci髇 con Valor de Retorno                    | Funci髇 sin Valor de Retorno (void)              |
+| Caracter铆stica                      | Funci贸n con Valor de Retorno                    | Funci贸n sin Valor de Retorno (void)              |
 |-------------------------------------|-------------------------------------------------|-------------------------------------------------|
 | Tipo de Retorno                     | Cualquier tipo de dato                          | `void`                                          |
-| Uso                                 | Devuelve un valor al llamador                   | Realiza una acci髇 sin devolver un valor         |
+| Uso                                 | Devuelve un valor al llamador                   | Realiza una acci贸n sin devolver un valor         |
 | Sintaxis de Retorno                 | `return valor;`                                 | No necesita `return`, pero puede usar `return;`  |
 | Captura de Valor Devuelto           | El valor devuelto puede capturarse en una variable | No devuelve valor para capturar                  |
-| Modificaci髇 de Par醡etros          | No modifica par醡etros a menos que se pasen por referencia o puntero | Puede modificar par醡etros pasados por referencia o puntero |
+| Modificaci贸n de Par谩metros          | No modifica par谩metros a menos que se pasen por referencia o puntero | Puede modificar par谩metros pasados por referencia o puntero |
 
 ### Ejemplo Completo
 
-A continuaci髇, un ejemplo que ilustra tanto funciones con valor de retorno como funciones sin valor de retorno:
+A continuaci贸n, un ejemplo que ilustra tanto funciones con valor de retorno como funciones sin valor de retorno:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 con valor de retorno
+// Funci贸n con valor de retorno
 double calcularAreaCirculo(double radio) {
     return 3.14159 * radio * radio;
 }
 
-// Funci髇 sin valor de retorno
+// Funci贸n sin valor de retorno
 void imprimirArea(double area) {
-    cout << "El 醨ea del c韗culo es: " << area << endl;
+    cout << "El 谩rea del c铆rculo es: " << area << endl;
 }
 
 int main() {
     double radio = 5.0;
-    double area = calcularAreaCirculo(radio); // Llamada a funci髇 con valor de retorno
-    imprimirArea(area);                       // Llamada a funci髇 sin valor de retorno
+    double area = calcularAreaCirculo(radio); // Llamada a funci贸n con valor de retorno
+    imprimirArea(area);                       // Llamada a funci贸n sin valor de retorno
     return 0;
 }
 ```
 
-En este ejemplo, `calcularAreaCirculo` es una funci髇 que devuelve el 醨ea de un c韗culo dado su radio, y `imprimirArea` es una funci髇 que imprime el 醨ea en la consola.
+En este ejemplo, `calcularAreaCirculo` es una funci贸n que devuelve el 谩rea de un c铆rculo dado su radio, y `imprimirArea` es una funci贸n que imprime el 谩rea en la consola.
 
-### Conclusi髇
+### Conclusi贸n
 
-Las funciones con valor de retorno y sin valor de retorno son componentes esenciales en C++ que permiten realizar tareas y devolver informaci髇 鷗il al llamador. Las funciones con valor de retorno son adecuadas cuando se necesita calcular y devolver un resultado, mientras que las funciones `void` son 鷗iles para realizar acciones que no requieren devolver un valor. Comprender cu醤do y c髆o usar cada tipo de funci髇 es crucial para escribir c骴igo claro, eficiente y modular en C++.
+Las funciones con valor de retorno y sin valor de retorno son componentes esenciales en C++ que permiten realizar tareas y devolver informaci贸n 煤til al llamador. Las funciones con valor de retorno son adecuadas cuando se necesita calcular y devolver un resultado, mientras que las funciones `void` son 煤tiles para realizar acciones que no requieren devolver un valor. Comprender cu谩ndo y c贸mo usar cada tipo de funci贸n es crucial para escribir c贸digo claro, eficiente y modular en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo de Funci髇 con Valor de Retorno
-Ejemplo de Funci髇 con Valor de Retorno Result
+Ejemplo de Funci贸n con Valor de Retorno
+Ejemplo de Funci贸n con Valor de Retorno Result
 Ejemplo con un Tipo de Dato Diferente
 Ejemplo con un Tipo de Dato Diferente Result
-Ejemplo de Funci髇 Sin Valor de Retorno
-Ejemplo de Funci髇 Sin Valor de Retorno Result
-Ejemplo con Par醡etros por Referencia
-Ejemplo con Par醡etros por Referencia Result
+Ejemplo de Funci贸n Sin Valor de Retorno
+Ejemplo de Funci贸n Sin Valor de Retorno Result
+Ejemplo con Par谩metros por Referencia
+Ejemplo con Par谩metros por Referencia Result
 <---Sintaxis--->
 ```cpp
 void nombre_funcion(lista_de_parametros) {
-    // Cuerpo de la funci髇
+    // Cuerpo de la funci贸n
     // No hay sentencia return
 }
 <---Sintaxis Result--->
-<---Ejemplo de Funci髇 con Valor de Retorno--->
+<---Ejemplo de Funci贸n con Valor de Retorno--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que devuelve la suma de dos enteros
+// Funci贸n que devuelve la suma de dos enteros
 int sumar(int a, int b) {
     return a + b;
 }
@@ -185,13 +185,13 @@ int main() {
     cout << "La suma es: " << resultado << endl;
     return 0;
 }
-<---Ejemplo de Funci髇 con Valor de Retorno Result--->
+<---Ejemplo de Funci贸n con Valor de Retorno Result--->
 <---Ejemplo con un Tipo de Dato Diferente--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que devuelve un saludo como string
+// Funci贸n que devuelve un saludo como string
 string obtenerSaludo(string nombre) {
     return "Hola, " + nombre + "!";
 }
@@ -202,12 +202,12 @@ int main() {
     return 0;
 }
 <---Ejemplo con un Tipo de Dato Diferente Result--->
-<---Ejemplo de Funci髇 Sin Valor de Retorno--->
+<---Ejemplo de Funci贸n Sin Valor de Retorno--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que imprime un mensaje
+// Funci贸n que imprime un mensaje
 void imprimirMensaje(string mensaje) {
     cout << mensaje << endl;
 }
@@ -216,13 +216,13 @@ int main() {
     imprimirMensaje("Hola, Mundo!");
     return 0;
 }
-<---Ejemplo de Funci髇 Sin Valor de Retorno Result--->
-<---Ejemplo con Par醡etros por Referencia--->
+<---Ejemplo de Funci贸n Sin Valor de Retorno Result--->
+<---Ejemplo con Par谩metros por Referencia--->
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 que incrementa el valor de una variable
+// Funci贸n que incrementa el valor de una variable
 void incrementar(int& num) {
     num++;
 }
@@ -230,27 +230,27 @@ void incrementar(int& num) {
 int main() {
     int valor = 10;
     incrementar(valor);
-    cout << "Valor despu閟 de incrementar: " << valor << endl;
+    cout << "Valor despu茅s de incrementar: " << valor << endl;
     return 0;
 }
 ```cpp
 #include <iostream>
 using namespace std;
 
-// Funci髇 con valor de retorno
+// Funci贸n con valor de retorno
 double calcularAreaCirculo(double radio) {
     return 3.14159 * radio * radio;
 }
 
-// Funci髇 sin valor de retorno
+// Funci贸n sin valor de retorno
 void imprimirArea(double area) {
-    cout << "El 醨ea del c韗culo es: " << area << endl;
+    cout << "El 谩rea del c铆rculo es: " << area << endl;
 }
 
 int main() {
     double radio = 5.0;
-    double area = calcularAreaCirculo(radio); // Llamada a funci髇 con valor de retorno
-    imprimirArea(area);                       // Llamada a funci髇 sin valor de retorno
+    double area = calcularAreaCirculo(radio); // Llamada a funci贸n con valor de retorno
+    imprimirArea(area);                       // Llamada a funci贸n sin valor de retorno
     return 0;
 }
-<---Ejemplo con Par醡etros por Referencia Result--->
+<---Ejemplo con Par谩metros por Referencia Result--->

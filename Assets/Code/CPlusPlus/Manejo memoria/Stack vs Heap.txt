@@ -1,19 +1,19 @@
 <---EXPLANATION--->
 ### Stack vs Heap en C++
 
-En C++, la memoria se puede gestionar de dos maneras principales: en el stack (pila) y en el heap (montÛn). Cada una tiene sus propias caracterÌsticas, ventajas y desventajas. Es fundamental comprender estas diferencias para escribir cÛdigo eficiente y evitar problemas de gestiÛn de memoria.
+En C++, la memoria se puede gestionar de dos maneras principales: en el stack (pila) y en el heap (mont√≥n). Cada una tiene sus propias caracter√≠sticas, ventajas y desventajas. Es fundamental comprender estas diferencias para escribir c√≥digo eficiente y evitar problemas de gesti√≥n de memoria.
 
 #### Memoria en el Stack
 
-El stack es una regiÛn de memoria que gestiona autom·ticamente la vida ˙til de las variables locales y de las llamadas a funciones. Se comporta como una estructura de datos LIFO (Last In, First Out).
+El stack es una regi√≥n de memoria que gestiona autom√°ticamente la vida √∫til de las variables locales y de las llamadas a funciones. Se comporta como una estructura de datos LIFO (Last In, First Out).
 
-##### CaracterÌsticas del Stack
+##### Caracter√≠sticas del Stack
 
-1. **Almacenamiento Autom·tico**: Las variables locales y los par·metros de las funciones se almacenan autom·ticamente en el stack.
-2. **Vida ⁄til Limitada**: Las variables en el stack existen solo durante la ejecuciÛn del bloque de cÛdigo o la funciÛn en la que est·n definidas.
-3. **R·pido Acceso**: El acceso a las variables en el stack es muy r·pido debido a su administraciÛn basada en registros.
-4. **TamaÒo Limitado**: El stack tiene un tamaÒo limitado que puede variar seg˙n el sistema operativo y la configuraciÛn del compilador.
-5. **GestiÛn Autom·tica**: La memoria del stack se gestiona autom·ticamente. No es necesario liberar la memoria manualmente.
+1. **Almacenamiento Autom√°tico**: Las variables locales y los par√°metros de las funciones se almacenan autom√°ticamente en el stack.
+2. **Vida √ötil Limitada**: Las variables en el stack existen solo durante la ejecuci√≥n del bloque de c√≥digo o la funci√≥n en la que est√°n definidas.
+3. **R√°pido Acceso**: El acceso a las variables en el stack es muy r√°pido debido a su administraci√≥n basada en registros.
+4. **Tama√±o Limitado**: El stack tiene un tama√±o limitado que puede variar seg√∫n el sistema operativo y la configuraci√≥n del compilador.
+5. **Gesti√≥n Autom√°tica**: La memoria del stack se gestiona autom√°ticamente. No es necesario liberar la memoria manualmente.
 
 ##### Ejemplo de Uso del Stack
 
@@ -26,24 +26,24 @@ void funcion() {
 }
 
 int main() {
-    funcion(); // Llamada a la funciÛn
+    funcion(); // Llamada a la funci√≥n
     return 0;
 }
 ```
 
-En este ejemplo, `localVar` se almacena en el stack y se destruye autom·ticamente cuando la funciÛn `funcion` termina.
+En este ejemplo, `localVar` se almacena en el stack y se destruye autom√°ticamente cuando la funci√≥n `funcion` termina.
 
 #### Memoria en el Heap
 
-El heap es una regiÛn de memoria utilizada para la asignaciÛn din·mica de memoria. A diferencia del stack, la memoria en el heap debe gestionarse manualmente.
+El heap es una regi√≥n de memoria utilizada para la asignaci√≥n din√°mica de memoria. A diferencia del stack, la memoria en el heap debe gestionarse manualmente.
 
-##### CaracterÌsticas del Heap
+##### Caracter√≠sticas del Heap
 
-1. **Almacenamiento Din·mico**: La memoria en el heap se asigna din·micamente en tiempo de ejecuciÛn usando operadores como `new` y `delete`.
-2. **Vida ⁄til Controlada**: La memoria en el heap permanece hasta que se libera explÌcitamente, lo que permite la gestiÛn flexible de la memoria.
-3. **Acceso m·s Lento**: El acceso a la memoria en el heap es m·s lento comparado con el stack debido a la necesidad de buscar espacio libre y la posibilidad de fragmentaciÛn.
-4. **TamaÒo Grande**: El heap tiene un tamaÒo significativamente mayor que el stack, lo que permite asignar grandes bloques de memoria.
-5. **GestiÛn Manual**: Es necesario liberar manualmente la memoria asignada en el heap para evitar fugas de memoria.
+1. **Almacenamiento Din√°mico**: La memoria en el heap se asigna din√°micamente en tiempo de ejecuci√≥n usando operadores como `new` y `delete`.
+2. **Vida √ötil Controlada**: La memoria en el heap permanece hasta que se libera expl√≠citamente, lo que permite la gesti√≥n flexible de la memoria.
+3. **Acceso m√°s Lento**: El acceso a la memoria en el heap es m√°s lento comparado con el stack debido a la necesidad de buscar espacio libre y la posibilidad de fragmentaci√≥n.
+4. **Tama√±o Grande**: El heap tiene un tama√±o significativamente mayor que el stack, lo que permite asignar grandes bloques de memoria.
+5. **Gesti√≥n Manual**: Es necesario liberar manualmente la memoria asignada en el heap para evitar fugas de memoria.
 
 ##### Ejemplo de Uso del Heap
 
@@ -57,51 +57,51 @@ void funcion() {
 }
 
 int main() {
-    funcion(); // Llamada a la funciÛn
+    funcion(); // Llamada a la funci√≥n
     return 0;
 }
 ```
 
 En este ejemplo, `heapVar` se asigna en el heap y debe liberarse manualmente usando `delete`.
 
-### ComparaciÛn entre Stack y Heap
+### Comparaci√≥n entre Stack y Heap
 
-| CaracterÌstica           | Stack                              | Heap                             |
+| Caracter√≠stica           | Stack                              | Heap                             |
 |--------------------------|-------------------------------------|----------------------------------|
-| **GestiÛn de Memoria**   | Autom·tica                          | Manual                           |
-| **Vida ⁄til**            | Limitada al bloque de cÛdigo        | Controlada por el programador    |
-| **TamaÒo**               | Limitado                            | Relativamente grande             |
-| **Velocidad de Acceso**  | R·pida                              | Lenta                            |
-| **Uso Com˙n**            | Variables locales, llamadas a funciones | AsignaciÛn din·mica, estructuras de datos grandes |
-| **FragmentaciÛn**        | No                                  | SÌ                               |
+| **Gesti√≥n de Memoria**   | Autom√°tica                          | Manual                           |
+| **Vida √ötil**            | Limitada al bloque de c√≥digo        | Controlada por el programador    |
+| **Tama√±o**               | Limitado                            | Relativamente grande             |
+| **Velocidad de Acceso**  | R√°pida                              | Lenta                            |
+| **Uso Com√∫n**            | Variables locales, llamadas a funciones | Asignaci√≥n din√°mica, estructuras de datos grandes |
+| **Fragmentaci√≥n**        | No                                  | S√≠                               |
 
-### Buenas Pr·cticas
+### Buenas Pr√°cticas
 
 #### Uso del Stack
 
-1. **Variables Locales y Par·metros**: Utilice el stack para variables locales y par·metros de funciones, siempre que sea posible, para aprovechar el acceso r·pido y la gestiÛn autom·tica.
-2. **TamaÒo de Variables**: Evite declarar variables de gran tamaÒo en el stack para no agotar el espacio disponible.
+1. **Variables Locales y Par√°metros**: Utilice el stack para variables locales y par√°metros de funciones, siempre que sea posible, para aprovechar el acceso r√°pido y la gesti√≥n autom√°tica.
+2. **Tama√±o de Variables**: Evite declarar variables de gran tama√±o en el stack para no agotar el espacio disponible.
 
 #### Uso del Heap
 
-1. **Memoria Din·mica**: Use el heap para estructuras de datos que necesiten cambiar de tamaÒo en tiempo de ejecuciÛn, como arreglos din·micos, listas enlazadas y ·rboles.
-2. **LiberaciÛn de Memoria**: Siempre libere la memoria asignada en el heap utilizando `delete` o `delete[]` para evitar fugas de memoria.
-3. **Smart Pointers**: Utilice punteros inteligentes (`std::unique_ptr`, `std::shared_ptr`) para gestionar autom·ticamente la vida ˙til de los objetos en el heap y evitar fugas de memoria.
+1. **Memoria Din√°mica**: Use el heap para estructuras de datos que necesiten cambiar de tama√±o en tiempo de ejecuci√≥n, como arreglos din√°micos, listas enlazadas y √°rboles.
+2. **Liberaci√≥n de Memoria**: Siempre libere la memoria asignada en el heap utilizando `delete` o `delete[]` para evitar fugas de memoria.
+3. **Smart Pointers**: Utilice punteros inteligentes (`std::unique_ptr`, `std::shared_ptr`) para gestionar autom√°ticamente la vida √∫til de los objetos en el heap y evitar fugas de memoria.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Comprender las diferencias entre el stack y el heap es crucial para la gestiÛn eficiente de la memoria en C++. Utilizar el stack para variables locales y el heap para memoria din·mica permite aprovechar las ventajas de cada uno, como la velocidad y la flexibilidad. Siguiendo buenas pr·cticas y utilizando herramientas modernas como los punteros inteligentes, se puede escribir cÛdigo m·s seguro y eficiente.
+Comprender las diferencias entre el stack y el heap es crucial para la gesti√≥n eficiente de la memoria en C++. Utilizar el stack para variables locales y el heap para memoria din√°mica permite aprovechar las ventajas de cada uno, como la velocidad y la flexibilidad. Siguiendo buenas pr√°cticas y utilizando herramientas modernas como los punteros inteligentes, se puede escribir c√≥digo m√°s seguro y eficiente.
 <---FILES--->
-CaracterÌsticas del Stack
-CaracterÌsticas del Stack Result
+Caracter√≠sticas del Stack
+Caracter√≠sticas del Stack Result
 Ejemplo de Uso del Stack
 Ejemplo de Uso del Stack Result
-CaracterÌsticas del Heap
-CaracterÌsticas del Heap Result
+Caracter√≠sticas del Heap
+Caracter√≠sticas del Heap Result
 Ejemplo de Uso del Heap
 Ejemplo de Uso del Heap Result
-<---CaracterÌsticas del Stack--->
-<---CaracterÌsticas del Stack Result--->
+<---Caracter√≠sticas del Stack--->
+<---Caracter√≠sticas del Stack Result--->
 <---Ejemplo de Uso del Stack--->
 ```cpp
 #include <iostream>
@@ -112,12 +112,12 @@ void funcion() {
 }
 
 int main() {
-    funcion(); // Llamada a la funciÛn
+    funcion(); // Llamada a la funci√≥n
     return 0;
 }
 <---Ejemplo de Uso del Stack Result--->
-<---CaracterÌsticas del Heap--->
-<---CaracterÌsticas del Heap Result--->
+<---Caracter√≠sticas del Heap--->
+<---Caracter√≠sticas del Heap Result--->
 <---Ejemplo de Uso del Heap--->
 ```cpp
 #include <iostream>
@@ -129,7 +129,7 @@ void funcion() {
 }
 
 int main() {
-    funcion(); // Llamada a la funciÛn
+    funcion(); // Llamada a la funci√≥n
     return 0;
 }
 <---Ejemplo de Uso del Heap Result--->

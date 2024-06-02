@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Objetos Constantes en C++
 
-En C++, un objeto constante es una instancia de una clase que se declara con la palabra clave `const`. Una vez que un objeto se declara como constante, no se pueden modificar sus atributos directamente, ni se pueden llamar mÈtodos no constantes sobre Èl. Los objetos constantes son ˙tiles para asegurar que ciertos datos permanezcan inmutables una vez inicializados.
+En C++, un objeto constante es una instancia de una clase que se declara con la palabra clave `const`. Una vez que un objeto se declara como constante, no se pueden modificar sus atributos directamente, ni se pueden llamar m√©todos no constantes sobre √©l. Los objetos constantes son √∫tiles para asegurar que ciertos datos permanezcan inmutables una vez inicializados.
 
-#### DeclaraciÛn de Objetos Constantes
+#### Declaraci√≥n de Objetos Constantes
 
 Para declarar un objeto constante, se coloca la palabra clave `const` antes del tipo de objeto.
 
-##### Ejemplo de DeclaraciÛn de Objetos Constantes
+##### Ejemplo de Declaraci√≥n de Objetos Constantes
 
 ```cpp
 #include <iostream>
@@ -21,7 +21,7 @@ public:
     // Constructor
     Punto(int x = 0, int y = 0) : x(x), y(y) {}
 
-    // MÈtodos para obtener los valores de los atributos
+    // M√©todos para obtener los valores de los atributos
     int getX() const {
         return x;
     }
@@ -30,13 +30,13 @@ public:
         return y;
     }
 
-    // MÈtodo para establecer los valores de los atributos
+    // M√©todo para establecer los valores de los atributos
     void setXY(int x, int y) {
         this->x = x;
         this->y = y;
     }
 
-    // MÈtodo para mostrar los valores
+    // M√©todo para mostrar los valores
     void mostrar() const {
         cout << "Punto(" << x << ", " << y << ")" << endl;
     }
@@ -46,7 +46,7 @@ int main() {
     const Punto p(10, 20);
     p.mostrar();
 
-    // p.setXY(30, 40); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // p.setXY(30, 40); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "X: " << p.getX() << ", Y: " << p.getY() << endl;
 
@@ -54,13 +54,13 @@ int main() {
 }
 ```
 
-En este ejemplo, `p` es un objeto constante de la clase `Punto`. No se pueden modificar sus atributos, ni llamar a mÈtodos no constantes como `setXY`.
+En este ejemplo, `p` es un objeto constante de la clase `Punto`. No se pueden modificar sus atributos, ni llamar a m√©todos no constantes como `setXY`.
 
 #### Acceso a Miembros de Objetos Constantes
 
-Para que un mÈtodo pueda ser llamado en un objeto constante, debe estar declarado como constante. Esto se hace aÒadiendo la palabra clave `const` al final de la declaraciÛn del mÈtodo.
+Para que un m√©todo pueda ser llamado en un objeto constante, debe estar declarado como constante. Esto se hace a√±adiendo la palabra clave `const` al final de la declaraci√≥n del m√©todo.
 
-##### Ejemplo de MÈtodos Constantes en Objetos Constantes
+##### Ejemplo de M√©todos Constantes en Objetos Constantes
 
 ```cpp
 #include <iostream>
@@ -74,19 +74,19 @@ public:
     // Constructor
     Circulo(double r) : radio(r) {}
 
-    // MÈtodo constante para obtener el radio
+    // M√©todo constante para obtener el radio
     double getRadio() const {
         return radio;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 3.14159 * radio * radio;
     }
 
-    // MÈtodo constante para mostrar el radio
+    // M√©todo constante para mostrar el radio
     void mostrar() const {
-        cout << "Circulo con radio: " << radio << " y ·rea: " << area() << endl;
+        cout << "Circulo con radio: " << radio << " y √°rea: " << area() << endl;
     }
 };
 
@@ -94,22 +94,22 @@ int main() {
     const Circulo c(5.0);
     c.mostrar();
 
-    // c.setRadio(10.0); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // c.setRadio(10.0); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "Radio: " << c.getRadio() << endl;
-    cout << "¡rea: " << c.area() << endl;
+    cout << "√Årea: " << c.area() << endl;
 
     return 0;
 }
 ```
 
-En este ejemplo, `c` es un objeto constante de la clase `Circulo`. Solo se pueden llamar mÈtodos constantes como `getRadio`, `area`, y `mostrar` en este objeto.
+En este ejemplo, `c` es un objeto constante de la clase `Circulo`. Solo se pueden llamar m√©todos constantes como `getRadio`, `area`, y `mostrar` en este objeto.
 
-#### InicializaciÛn de Objetos Constantes
+#### Inicializaci√≥n de Objetos Constantes
 
-Los objetos constantes deben ser inicializados en el momento de su declaraciÛn. Esto se puede hacer directamente en la declaraciÛn o utilizando el constructor de la clase.
+Los objetos constantes deben ser inicializados en el momento de su declaraci√≥n. Esto se puede hacer directamente en la declaraci√≥n o utilizando el constructor de la clase.
 
-##### Ejemplo de InicializaciÛn de Objetos Constantes
+##### Ejemplo de Inicializaci√≥n de Objetos Constantes
 
 ```cpp
 #include <iostream>
@@ -123,24 +123,24 @@ public:
     // Constructor
     Rectangulo(double a, double h) : ancho(a), alto(h) {}
 
-    // MÈtodo constante para obtener el ancho
+    // M√©todo constante para obtener el ancho
     double getAncho() const {
         return ancho;
     }
 
-    // MÈtodo constante para obtener el alto
+    // M√©todo constante para obtener el alto
     double getAlto() const {
         return alto;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return ancho * alto;
     }
 
-    // MÈtodo constante para mostrar el rect·ngulo
+    // M√©todo constante para mostrar el rect√°ngulo
     void mostrar() const {
-        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", ·rea: " << area() << endl;
+        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", √°rea: " << area() << endl;
     }
 };
 
@@ -148,21 +148,21 @@ int main() {
     const Rectangulo r(10.0, 5.0);
     r.mostrar();
 
-    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "Ancho: " << r.getAncho() << endl;
     cout << "Alto: " << r.getAlto() << endl;
-    cout << "¡rea: " << r.area() << endl;
+    cout << "√Årea: " << r.area() << endl;
 
     return 0;
 }
 ```
 
-En este ejemplo, `r` es un objeto constante de la clase `Rectangulo`. Los atributos `ancho` y `alto` se inicializan mediante el constructor y no se pueden modificar despuÈs.
+En este ejemplo, `r` es un objeto constante de la clase `Rectangulo`. Los atributos `ancho` y `alto` se inicializan mediante el constructor y no se pueden modificar despu√©s.
 
 #### Punteros a Objetos Constantes
 
-Se pueden usar punteros para apuntar a objetos constantes. Un puntero a un objeto constante solo puede llamar mÈtodos constantes de ese objeto.
+Se pueden usar punteros para apuntar a objetos constantes. Un puntero a un objeto constante solo puede llamar m√©todos constantes de ese objeto.
 
 ##### Ejemplo de Puntero a Objeto Constante
 
@@ -178,24 +178,24 @@ public:
     // Constructor
     Triangulo(double b, double h) : base(b), altura(h) {}
 
-    // MÈtodo constante para obtener la base
+    // M√©todo constante para obtener la base
     double getBase() const {
         return base;
     }
 
-    // MÈtodo constante para obtener la altura
+    // M√©todo constante para obtener la altura
     double getAltura() const {
         return altura;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 0.5 * base * altura;
     }
 
-    // MÈtodo constante para mostrar el tri·ngulo
+    // M√©todo constante para mostrar el tri√°ngulo
     void mostrar() const {
-        cout << "Triangulo de base: " << base << ", altura: " << altura << ", ·rea: " << area() << endl;
+        cout << "Triangulo de base: " << base << ", altura: " << altura << ", √°rea: " << area() << endl;
     }
 };
 
@@ -205,31 +205,31 @@ int main() {
 
     pt->mostrar();
 
-    // pt->setBase(15.0); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // pt->setBase(15.0); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "Base: " << pt->getBase() << endl;
     cout << "Altura: " << pt->getAltura() << endl;
-    cout << "¡rea: " << pt->area() << endl;
+    cout << "√Årea: " << pt->area() << endl;
 
     return 0;
 }
 ```
 
-En este ejemplo, `pt` es un puntero a un objeto constante `t` de la clase `Triangulo`. Solo se pueden llamar mÈtodos constantes como `getBase`, `getAltura`, `area`, y `mostrar` a travÈs de `pt`.
+En este ejemplo, `pt` es un puntero a un objeto constante `t` de la clase `Triangulo`. Solo se pueden llamar m√©todos constantes como `getBase`, `getAltura`, `area`, y `mostrar` a trav√©s de `pt`.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los objetos constantes en C++ son una herramienta importante para asegurar la inmutabilidad de los datos despuÈs de su inicializaciÛn. Declarar un objeto como `const` garantiza que no se pueden modificar sus atributos ni llamar a mÈtodos no constantes sobre Èl. Utilizar objetos constantes ayuda a proteger la integridad del estado del objeto, mejorar la seguridad del cÛdigo y proporcionar una clara documentaciÛn de la intenciÛn del cÛdigo. Para trabajar efectivamente con objetos constantes, es crucial entender cÛmo declarar y utilizar mÈtodos constantes y asegurarse de que los atributos necesarios se inicialicen adecuadamente.
+Los objetos constantes en C++ son una herramienta importante para asegurar la inmutabilidad de los datos despu√©s de su inicializaci√≥n. Declarar un objeto como `const` garantiza que no se pueden modificar sus atributos ni llamar a m√©todos no constantes sobre √©l. Utilizar objetos constantes ayuda a proteger la integridad del estado del objeto, mejorar la seguridad del c√≥digo y proporcionar una clara documentaci√≥n de la intenci√≥n del c√≥digo. Para trabajar efectivamente con objetos constantes, es crucial entender c√≥mo declarar y utilizar m√©todos constantes y asegurarse de que los atributos necesarios se inicialicen adecuadamente.
 <---FILES--->
-Ejemplo de DeclaraciÛn de Objetos Constantes
-Ejemplo de DeclaraciÛn de Objetos Constantes Result
-Ejemplo de MÈtodos Constantes en Objetos Constantes
-Ejemplo de MÈtodos Constantes en Objetos Constantes Result
-Ejemplo de InicializaciÛn de Objetos Constantes
-Ejemplo de InicializaciÛn de Objetos Constantes Result
+Ejemplo de Declaraci√≥n de Objetos Constantes
+Ejemplo de Declaraci√≥n de Objetos Constantes Result
+Ejemplo de M√©todos Constantes en Objetos Constantes
+Ejemplo de M√©todos Constantes en Objetos Constantes Result
+Ejemplo de Inicializaci√≥n de Objetos Constantes
+Ejemplo de Inicializaci√≥n de Objetos Constantes Result
 Ejemplo de Puntero a Objeto Constante
 Ejemplo de Puntero a Objeto Constante Result
-<---Ejemplo de DeclaraciÛn de Objetos Constantes--->
+<---Ejemplo de Declaraci√≥n de Objetos Constantes--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -242,7 +242,7 @@ public:
     // Constructor
     Punto(int x = 0, int y = 0) : x(x), y(y) {}
 
-    // MÈtodos para obtener los valores de los atributos
+    // M√©todos para obtener los valores de los atributos
     int getX() const {
         return x;
     }
@@ -251,13 +251,13 @@ public:
         return y;
     }
 
-    // MÈtodo para establecer los valores de los atributos
+    // M√©todo para establecer los valores de los atributos
     void setXY(int x, int y) {
         this->x = x;
         this->y = y;
     }
 
-    // MÈtodo para mostrar los valores
+    // M√©todo para mostrar los valores
     void mostrar() const {
         cout << "Punto(" << x << ", " << y << ")" << endl;
     }
@@ -267,14 +267,14 @@ int main() {
     const Punto p(10, 20);
     p.mostrar();
 
-    // p.setXY(30, 40); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // p.setXY(30, 40); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "X: " << p.getX() << ", Y: " << p.getY() << endl;
 
     return 0;
 }
-<---Ejemplo de DeclaraciÛn de Objetos Constantes Result--->
-<---Ejemplo de MÈtodos Constantes en Objetos Constantes--->
+<---Ejemplo de Declaraci√≥n de Objetos Constantes Result--->
+<---Ejemplo de M√©todos Constantes en Objetos Constantes--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -287,19 +287,19 @@ public:
     // Constructor
     Circulo(double r) : radio(r) {}
 
-    // MÈtodo constante para obtener el radio
+    // M√©todo constante para obtener el radio
     double getRadio() const {
         return radio;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 3.14159 * radio * radio;
     }
 
-    // MÈtodo constante para mostrar el radio
+    // M√©todo constante para mostrar el radio
     void mostrar() const {
-        cout << "Circulo con radio: " << radio << " y ·rea: " << area() << endl;
+        cout << "Circulo con radio: " << radio << " y √°rea: " << area() << endl;
     }
 };
 
@@ -307,15 +307,15 @@ int main() {
     const Circulo c(5.0);
     c.mostrar();
 
-    // c.setRadio(10.0); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // c.setRadio(10.0); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "Radio: " << c.getRadio() << endl;
-    cout << "¡rea: " << c.area() << endl;
+    cout << "√Årea: " << c.area() << endl;
 
     return 0;
 }
-<---Ejemplo de MÈtodos Constantes en Objetos Constantes Result--->
-<---Ejemplo de InicializaciÛn de Objetos Constantes--->
+<---Ejemplo de M√©todos Constantes en Objetos Constantes Result--->
+<---Ejemplo de Inicializaci√≥n de Objetos Constantes--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -328,24 +328,24 @@ public:
     // Constructor
     Rectangulo(double a, double h) : ancho(a), alto(h) {}
 
-    // MÈtodo constante para obtener el ancho
+    // M√©todo constante para obtener el ancho
     double getAncho() const {
         return ancho;
     }
 
-    // MÈtodo constante para obtener el alto
+    // M√©todo constante para obtener el alto
     double getAlto() const {
         return alto;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return ancho * alto;
     }
 
-    // MÈtodo constante para mostrar el rect·ngulo
+    // M√©todo constante para mostrar el rect√°ngulo
     void mostrar() const {
-        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", ·rea: " << area() << endl;
+        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", √°rea: " << area() << endl;
     }
 };
 
@@ -353,15 +353,15 @@ int main() {
     const Rectangulo r(10.0, 5.0);
     r.mostrar();
 
-    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "Ancho: " << r.getAncho() << endl;
     cout << "Alto: " << r.getAlto() << endl;
-    cout << "¡rea: " << r.area() << endl;
+    cout << "√Årea: " << r.area() << endl;
 
     return 0;
 }
-<---Ejemplo de InicializaciÛn de Objetos Constantes Result--->
+<---Ejemplo de Inicializaci√≥n de Objetos Constantes Result--->
 <---Ejemplo de Puntero a Objeto Constante--->
 ```cpp
 #include <iostream>
@@ -375,24 +375,24 @@ public:
     // Constructor
     Triangulo(double b, double h) : base(b), altura(h) {}
 
-    // MÈtodo constante para obtener la base
+    // M√©todo constante para obtener la base
     double getBase() const {
         return base;
     }
 
-    // MÈtodo constante para obtener la altura
+    // M√©todo constante para obtener la altura
     double getAltura() const {
         return altura;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 0.5 * base * altura;
     }
 
-    // MÈtodo constante para mostrar el tri·ngulo
+    // M√©todo constante para mostrar el tri√°ngulo
     void mostrar() const {
-        cout << "Triangulo de base: " << base << ", altura: " << altura << ", ·rea: " << area() << endl;
+        cout << "Triangulo de base: " << base << ", altura: " << altura << ", √°rea: " << area() << endl;
     }
 };
 
@@ -402,11 +402,11 @@ int main() {
 
     pt->mostrar();
 
-    // pt->setBase(15.0); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // pt->setBase(15.0); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     cout << "Base: " << pt->getBase() << endl;
     cout << "Altura: " << pt->getAltura() << endl;
-    cout << "¡rea: " << pt->area() << endl;
+    cout << "√Årea: " << pt->area() << endl;
 
     return 0;
 }

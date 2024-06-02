@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Tipos de InicializaciÛn en C++
+### Tipos de Inicializaci√≥n en C++
 
-En C++, existen varios tipos de inicializaciÛn de variables y constantes, cada uno con su propia sintaxis y propÛsito. AquÌ describimos los distintos tipos de inicializaciÛn:
+En C++, existen varios tipos de inicializaci√≥n de variables y constantes, cada uno con su propia sintaxis y prop√≥sito. Aqu√≠ describimos los distintos tipos de inicializaci√≥n:
 
-#### 1. **InicializaciÛn Directa**
+#### 1. **Inicializaci√≥n Directa**
 
-La inicializaciÛn directa se realiza asignando un valor a una variable en el momento de su declaraciÛn, utilizando el operador de asignaciÛn (`=`).
+La inicializaci√≥n directa se realiza asignando un valor a una variable en el momento de su declaraci√≥n, utilizando el operador de asignaci√≥n (`=`).
 
 ```cpp
 int edad = 25;
@@ -14,9 +14,9 @@ char inicial = 'A';
 bool esEstudiante = true;
 ```
 
-#### 2. **InicializaciÛn de Lista (Uniforme)**
+#### 2. **Inicializaci√≥n de Lista (Uniforme)**
 
-La inicializaciÛn de lista, tambiÈn conocida como inicializaciÛn uniforme, utiliza llaves (`{}`) y es preferida en C++11 y versiones posteriores por su consistencia y seguridad, ya que ayuda a evitar conversiones implÌcitas no deseadas.
+La inicializaci√≥n de lista, tambi√©n conocida como inicializaci√≥n uniforme, utiliza llaves (`{}`) y es preferida en C++11 y versiones posteriores por su consistencia y seguridad, ya que ayuda a evitar conversiones impl√≠citas no deseadas.
 
 ```cpp
 int edad {25};
@@ -25,13 +25,13 @@ char inicial {'A'};
 bool esEstudiante {true};
 ```
 
-##### **Ventajas de la InicializaciÛn de Lista**
-- Evita conversiones implÌcitas peligrosas.
+##### **Ventajas de la Inicializaci√≥n de Lista**
+- Evita conversiones impl√≠citas peligrosas.
 - Es consistente para inicializar cualquier tipo de variable, incluidas las de tipo `struct` y `class`.
 
-#### 3. **InicializaciÛn Copiada**
+#### 3. **Inicializaci√≥n Copiada**
 
-La inicializaciÛn copiada se parece a la inicializaciÛn directa pero en realidad llama al constructor de copia para inicializar la variable. Es menos com˙n en la pr·ctica cotidiana.
+La inicializaci√≥n copiada se parece a la inicializaci√≥n directa pero en realidad llama al constructor de copia para inicializar la variable. Es menos com√∫n en la pr√°ctica cotidiana.
 
 ```cpp
 int edad = int(25);
@@ -40,9 +40,9 @@ char inicial = char('A');
 bool esEstudiante = bool(true);
 ```
 
-#### 4. **InicializaciÛn en el Constructor**
+#### 4. **Inicializaci√≥n en el Constructor**
 
-Para las clases y estructuras, la inicializaciÛn se puede realizar en el constructor. Esto es especialmente ˙til para inicializar variables miembro.
+Para las clases y estructuras, la inicializaci√≥n se puede realizar en el constructor. Esto es especialmente √∫til para inicializar variables miembro.
 
 ```cpp
 class Persona {
@@ -50,15 +50,15 @@ public:
     int edad;
     float altura;
 
-    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaciÛn del constructor
+    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaci√≥n del constructor
 };
 
 Persona p(25, 1.75);
 ```
 
-#### 5. **InicializaciÛn Est·tica**
+#### 5. **Inicializaci√≥n Est√°tica**
 
-Las variables est·ticas dentro de una clase o en un archivo pueden ser inicializadas de manera est·tica. Las variables est·ticas dentro de una clase deben ser definidas fuera de la clase.
+Las variables est√°ticas dentro de una clase o en un archivo pueden ser inicializadas de manera est√°tica. Las variables est√°ticas dentro de una clase deben ser definidas fuera de la clase.
 
 ```cpp
 class Contador {
@@ -70,12 +70,12 @@ public:
     }
 };
 
-int Contador::cuenta = 0; // DefiniciÛn e inicializaciÛn de la variable est·tica
+int Contador::cuenta = 0; // Definici√≥n e inicializaci√≥n de la variable est√°tica
 ```
 
-#### 6. **InicializaciÛn en el Lugar de la DeclaraciÛn**
+#### 6. **Inicializaci√≥n en el Lugar de la Declaraci√≥n**
 
-Desde C++11, las variables miembro de una clase pueden ser inicializadas en el lugar de su declaraciÛn dentro de la clase.
+Desde C++11, las variables miembro de una clase pueden ser inicializadas en el lugar de su declaraci√≥n dentro de la clase.
 
 ```cpp
 class Persona {
@@ -89,7 +89,7 @@ public:
 Persona p;
 ```
 
-### Ejemplo Completo con Distintos Tipos de InicializaciÛn
+### Ejemplo Completo con Distintos Tipos de Inicializaci√≥n
 
 ```cpp
 #include <iostream>
@@ -97,28 +97,28 @@ using namespace std;
 
 class Persona {
 public:
-    int edad = 25;           // InicializaciÛn en el lugar de la declaraciÛn
-    float altura {1.75};     // InicializaciÛn de lista
+    int edad = 25;           // Inicializaci√≥n en el lugar de la declaraci√≥n
+    float altura {1.75};     // Inicializaci√≥n de lista
 
-    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaciÛn del constructor
+    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaci√≥n del constructor
 };
 
 int main() {
-    // InicializaciÛn directa
+    // Inicializaci√≥n directa
     int numeroDirecto = 42;
-    // InicializaciÛn de lista
+    // Inicializaci√≥n de lista
     int numeroLista {42};
-    // InicializaciÛn copiada
+    // Inicializaci√≥n copiada
     int numeroCopiado = int(42);
 
-    // InicializaciÛn de objetos
-    Persona p1; // Usa la inicializaciÛn en el lugar de la declaraciÛn
-    Persona p2(30, 1.80); // Usa la lista de inicializaciÛn del constructor
+    // Inicializaci√≥n de objetos
+    Persona p1; // Usa la inicializaci√≥n en el lugar de la declaraci√≥n
+    Persona p2(30, 1.80); // Usa la lista de inicializaci√≥n del constructor
 
     // Salida de los valores
-    cout << "N˙mero (inicializaciÛn directa): " << numeroDirecto << endl;
-    cout << "N˙mero (inicializaciÛn de lista): " << numeroLista << endl;
-    cout << "N˙mero (inicializaciÛn copiada): " << numeroCopiado << endl;
+    cout << "N√∫mero (inicializaci√≥n directa): " << numeroDirecto << endl;
+    cout << "N√∫mero (inicializaci√≥n de lista): " << numeroLista << endl;
+    cout << "N√∫mero (inicializaci√≥n copiada): " << numeroCopiado << endl;
 
     cout << "Persona 1: Edad = " << p1.edad << ", Altura = " << p1.altura << endl;
     cout << "Persona 2: Edad = " << p2.edad << ", Altura = " << p2.altura << endl;
@@ -127,19 +127,19 @@ int main() {
 }
 ```
 
-### ExplicaciÛn del Ejemplo
+### Explicaci√≥n del Ejemplo
 
-1. **InicializaciÛn Directa:** `int numeroDirecto = 42;` - Se asigna un valor a una variable al declararla.
-2. **InicializaciÛn de Lista:** `int numeroLista {42};` - Se utiliza la sintaxis de llaves para inicializar la variable.
-3. **InicializaciÛn Copiada:** `int numeroCopiado = int(42);` - Se usa el constructor de copia para inicializar la variable.
-4. **InicializaciÛn en el Lugar de la DeclaraciÛn:** `int edad = 25;` y `float altura {1.75};` dentro de la clase `Persona`.
-5. **Lista de InicializaciÛn del Constructor:** `Persona(int e, float a) : edad(e), altura(a) {}` - Inicializa los miembros de la clase en el constructor.
+1. **Inicializaci√≥n Directa:** `int numeroDirecto = 42;` - Se asigna un valor a una variable al declararla.
+2. **Inicializaci√≥n de Lista:** `int numeroLista {42};` - Se utiliza la sintaxis de llaves para inicializar la variable.
+3. **Inicializaci√≥n Copiada:** `int numeroCopiado = int(42);` - Se usa el constructor de copia para inicializar la variable.
+4. **Inicializaci√≥n en el Lugar de la Declaraci√≥n:** `int edad = 25;` y `float altura {1.75};` dentro de la clase `Persona`.
+5. **Lista de Inicializaci√≥n del Constructor:** `Persona(int e, float a) : edad(e), altura(a) {}` - Inicializa los miembros de la clase en el constructor.
 
-Estos mÈtodos proporcionan flexibilidad y control sobre cÛmo se inicializan las variables y objetos en C++, permitiendo a los programadores elegir el mÈtodo m·s adecuado para cada situaciÛn.
+Estos m√©todos proporcionan flexibilidad y control sobre c√≥mo se inicializan las variables y objetos en C++, permitiendo a los programadores elegir el m√©todo m√°s adecuado para cada situaci√≥n.
 <---FILES--->
-**Ventajas de la InicializaciÛn de Lista**
-**Ventajas de la InicializaciÛn de Lista** Result
-<---**Ventajas de la InicializaciÛn de Lista**--->
+**Ventajas de la Inicializaci√≥n de Lista**
+**Ventajas de la Inicializaci√≥n de Lista** Result
+<---**Ventajas de la Inicializaci√≥n de Lista**--->
 ```cpp
 int edad = int(25);
 float altura = float(1.75);
@@ -151,7 +151,7 @@ public:
     int edad;
     float altura;
 
-    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaciÛn del constructor
+    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaci√≥n del constructor
 };
 
 Persona p(25, 1.75);
@@ -165,7 +165,7 @@ public:
     }
 };
 
-int Contador::cuenta = 0; // DefiniciÛn e inicializaciÛn de la variable est·tica
+int Contador::cuenta = 0; // Definici√≥n e inicializaci√≥n de la variable est√°tica
 ```cpp
 class Persona {
 public:
@@ -182,32 +182,32 @@ using namespace std;
 
 class Persona {
 public:
-    int edad = 25;           // InicializaciÛn en el lugar de la declaraciÛn
-    float altura {1.75};     // InicializaciÛn de lista
+    int edad = 25;           // Inicializaci√≥n en el lugar de la declaraci√≥n
+    float altura {1.75};     // Inicializaci√≥n de lista
 
-    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaciÛn del constructor
+    Persona(int e, float a) : edad(e), altura(a) {} // Lista de inicializaci√≥n del constructor
 };
 
 int main() {
-    // InicializaciÛn directa
+    // Inicializaci√≥n directa
     int numeroDirecto = 42;
-    // InicializaciÛn de lista
+    // Inicializaci√≥n de lista
     int numeroLista {42};
-    // InicializaciÛn copiada
+    // Inicializaci√≥n copiada
     int numeroCopiado = int(42);
 
-    // InicializaciÛn de objetos
-    Persona p1; // Usa la inicializaciÛn en el lugar de la declaraciÛn
-    Persona p2(30, 1.80); // Usa la lista de inicializaciÛn del constructor
+    // Inicializaci√≥n de objetos
+    Persona p1; // Usa la inicializaci√≥n en el lugar de la declaraci√≥n
+    Persona p2(30, 1.80); // Usa la lista de inicializaci√≥n del constructor
 
     // Salida de los valores
-    cout << "N˙mero (inicializaciÛn directa): " << numeroDirecto << endl;
-    cout << "N˙mero (inicializaciÛn de lista): " << numeroLista << endl;
-    cout << "N˙mero (inicializaciÛn copiada): " << numeroCopiado << endl;
+    cout << "N√∫mero (inicializaci√≥n directa): " << numeroDirecto << endl;
+    cout << "N√∫mero (inicializaci√≥n de lista): " << numeroLista << endl;
+    cout << "N√∫mero (inicializaci√≥n copiada): " << numeroCopiado << endl;
 
     cout << "Persona 1: Edad = " << p1.edad << ", Altura = " << p1.altura << endl;
     cout << "Persona 2: Edad = " << p2.edad << ", Altura = " << p2.altura << endl;
 
     return 0;
 }
-<---**Ventajas de la InicializaciÛn de Lista** Result--->
+<---**Ventajas de la Inicializaci√≥n de Lista** Result--->

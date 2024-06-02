@@ -1,27 +1,27 @@
 <---EXPLANATION--->
 ### C-Strings en C++
 
-Los C-Strings, tambi閚 conocidos como cadenas de caracteres en C, son arrays de caracteres terminados con un car醕ter nulo (`'\0'`). Aunque C++ proporciona la clase `std::string` que facilita el manejo de cadenas de caracteres, los C-Strings a鷑 son ampliamente utilizados debido a su compatibilidad con el lenguaje C y su eficiencia en ciertas aplicaciones.
+Los C-Strings, tambi茅n conocidos como cadenas de caracteres en C, son arrays de caracteres terminados con un car谩cter nulo (`'\0'`). Aunque C++ proporciona la clase `std::string` que facilita el manejo de cadenas de caracteres, los C-Strings a煤n son ampliamente utilizados debido a su compatibilidad con el lenguaje C y su eficiencia en ciertas aplicaciones.
 
-#### Declaraci髇 y Inicializaci髇 de C-Strings
+#### Declaraci贸n y Inicializaci贸n de C-Strings
 
 Los C-Strings se pueden declarar e inicializar de varias maneras.
 
-##### Declaraci髇 B醩ica
+##### Declaraci贸n B谩sica
 
 ```cpp
 char cadena[6] = {'H', 'o', 'l', 'a', '\0'};
 ```
 
-##### Declaraci髇 y Inicializaci髇 Simplificada
+##### Declaraci贸n y Inicializaci贸n Simplificada
 
 ```cpp
 char cadena[] = "Hola";
 ```
 
-En este caso, el compilador agrega autom醫icamente el car醕ter nulo al final de la cadena.
+En este caso, el compilador agrega autom谩ticamente el car谩cter nulo al final de la cadena.
 
-##### Ejemplo Completo de Declaraci髇 y Inicializaci髇
+##### Ejemplo Completo de Declaraci贸n y Inicializaci贸n
 
 ```cpp
 #include <iostream>
@@ -38,7 +38,7 @@ int main() {
 }
 ```
 
-#### Manipulaci髇 de C-Strings
+#### Manipulaci贸n de C-Strings
 
 C++ proporciona una serie de funciones en la biblioteca `<cstring>` para manipular C-Strings. Estas funciones incluyen `strcpy`, `strcat`, `strlen`, `strcmp`, entre otras.
 
@@ -61,7 +61,7 @@ int main() {
 }
 ```
 
-##### Concatenaci髇 de Cadenas: `strcat`
+##### Concatenaci贸n de Cadenas: `strcat`
 
 ```cpp
 #include <iostream>
@@ -97,7 +97,7 @@ int main() {
 }
 ```
 
-##### Comparaci髇 de Cadenas: `strcmp`
+##### Comparaci贸n de Cadenas: `strcmp`
 
 ```cpp
 #include <iostream>
@@ -124,7 +124,7 @@ int main() {
 
 #### Entrada y Salida con C-Strings
 
-Se pueden utilizar las funciones est醤dar de entrada y salida para manejar C-Strings.
+Se pueden utilizar las funciones est谩ndar de entrada y salida para manejar C-Strings.
 
 ##### Lectura de C-Strings con `cin`
 
@@ -162,16 +162,16 @@ int main() {
 }
 ```
 
-### Consideraciones y Buenas Pr醕ticas
+### Consideraciones y Buenas Pr谩cticas
 
-- **Terminaci髇 Nula:** Siempre aseg鷕ate de que las C-Strings terminen con un car醕ter nulo (`'\0'`) para evitar comportamientos inesperados.
-- **Tama駉 del Array:** Declara arrays de caracteres lo suficientemente grandes para almacenar la cadena m醩 el car醕ter nulo.
+- **Terminaci贸n Nula:** Siempre aseg煤rate de que las C-Strings terminen con un car谩cter nulo (`'\0'`) para evitar comportamientos inesperados.
+- **Tama帽o del Array:** Declara arrays de caracteres lo suficientemente grandes para almacenar la cadena m谩s el car谩cter nulo.
 - **Seguridad:** Usa funciones seguras como `strncpy` y `strncat` para evitar desbordamientos de buffer.
-- **Uso de `std::string`:** Siempre que sea posible, considera usar `std::string` de la STL de C++, ya que maneja muchos problemas de gesti髇 de memoria autom醫icamente y proporciona una interfaz m醩 segura y f醕il de usar.
+- **Uso de `std::string`:** Siempre que sea posible, considera usar `std::string` de la STL de C++, ya que maneja muchos problemas de gesti贸n de memoria autom谩ticamente y proporciona una interfaz m谩s segura y f谩cil de usar.
 
 ### Ejemplo Completo
 
-A continuaci髇, un ejemplo completo que demuestra varias operaciones con C-Strings:
+A continuaci贸n, un ejemplo completo que demuestra varias operaciones con C-Strings:
 
 ```cpp
 #include <iostream>
@@ -179,13 +179,13 @@ A continuaci髇, un ejemplo completo que demuestra varias operaciones con C-Strin
 using namespace std;
 
 int main() {
-    // Declaraci髇 e inicializaci髇
+    // Declaraci贸n e inicializaci贸n
     char saludo[50] = "Hola";
     const char* mundo = " Mundo";
 
-    // Concatenaci髇
+    // Concatenaci贸n
     strcat(saludo, mundo);
-    cout << "Concatenaci髇: " << saludo << endl;
+    cout << "Concatenaci贸n: " << saludo << endl;
 
     // Copia
     char copia[50];
@@ -196,7 +196,7 @@ int main() {
     size_t longitud = strlen(copia);
     cout << "Longitud de la copia: " << longitud << endl;
 
-    // Comparaci髇
+    // Comparaci贸n
     const char* otraCadena = "Hola Mundo";
     if (strcmp(copia, otraCadena) == 0) {
         cout << "Las cadenas son iguales." << endl;
@@ -214,37 +214,37 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Los C-Strings son una estructura de datos fundamental en C++ para manejar cadenas de caracteres de manera eficiente. Aunque `std::string` es m醩 conveniente y seguro para la mayor韆 de los casos, comprender y saber usar C-Strings es esencial para trabajar con bibliotecas y aplicaciones que requieren interoperabilidad con C y un control m醩 fino sobre la gesti髇 de la memoria.
+Los C-Strings son una estructura de datos fundamental en C++ para manejar cadenas de caracteres de manera eficiente. Aunque `std::string` es m谩s conveniente y seguro para la mayor铆a de los casos, comprender y saber usar C-Strings es esencial para trabajar con bibliotecas y aplicaciones que requieren interoperabilidad con C y un control m谩s fino sobre la gesti贸n de la memoria.
 <---FILES--->
-Declaraci髇 B醩ica
-Declaraci髇 B醩ica Result
-Declaraci髇 y Inicializaci髇 Simplificada
-Declaraci髇 y Inicializaci髇 Simplificada Result
-Ejemplo Completo de Declaraci髇 y Inicializaci髇
-Ejemplo Completo de Declaraci髇 y Inicializaci髇 Result
+Declaraci贸n B谩sica
+Declaraci贸n B谩sica Result
+Declaraci贸n y Inicializaci贸n Simplificada
+Declaraci贸n y Inicializaci贸n Simplificada Result
+Ejemplo Completo de Declaraci贸n y Inicializaci贸n
+Ejemplo Completo de Declaraci贸n y Inicializaci贸n Result
 Copia de Cadenas: `strcpy`
 Copia de Cadenas: `strcpy` Result
-Concatenaci髇 de Cadenas: `strcat`
-Concatenaci髇 de Cadenas: `strcat` Result
+Concatenaci贸n de Cadenas: `strcat`
+Concatenaci贸n de Cadenas: `strcat` Result
 Longitud de la Cadena: `strlen`
 Longitud de la Cadena: `strlen` Result
-Comparaci髇 de Cadenas: `strcmp`
-Comparaci髇 de Cadenas: `strcmp` Result
+Comparaci贸n de Cadenas: `strcmp`
+Comparaci贸n de Cadenas: `strcmp` Result
 Lectura de C-Strings con `cin`
 Lectura de C-Strings con `cin` Result
 Lectura de Cadenas con Espacios usando `cin.getline`
 Lectura de Cadenas con Espacios usando `cin.getline` Result
-<---Declaraci髇 B醩ica--->
+<---Declaraci贸n B谩sica--->
 ```cpp
 char cadena[6] = {'H', 'o', 'l', 'a', '\0'};
-<---Declaraci髇 B醩ica Result--->
-<---Declaraci髇 y Inicializaci髇 Simplificada--->
+<---Declaraci贸n B谩sica Result--->
+<---Declaraci贸n y Inicializaci贸n Simplificada--->
 ```cpp
 char cadena[] = "Hola";
-<---Declaraci髇 y Inicializaci髇 Simplificada Result--->
-<---Ejemplo Completo de Declaraci髇 y Inicializaci髇--->
+<---Declaraci贸n y Inicializaci贸n Simplificada Result--->
+<---Ejemplo Completo de Declaraci贸n y Inicializaci贸n--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -258,7 +258,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Completo de Declaraci髇 y Inicializaci髇 Result--->
+<---Ejemplo Completo de Declaraci贸n y Inicializaci贸n Result--->
 <---Copia de Cadenas: `strcpy`--->
 ```cpp
 #include <iostream>
@@ -276,7 +276,7 @@ int main() {
     return 0;
 }
 <---Copia de Cadenas: `strcpy` Result--->
-<---Concatenaci髇 de Cadenas: `strcat`--->
+<---Concatenaci贸n de Cadenas: `strcat`--->
 ```cpp
 #include <iostream>
 #include <cstring>
@@ -292,7 +292,7 @@ int main() {
 
     return 0;
 }
-<---Concatenaci髇 de Cadenas: `strcat` Result--->
+<---Concatenaci贸n de Cadenas: `strcat` Result--->
 <---Longitud de la Cadena: `strlen`--->
 ```cpp
 #include <iostream>
@@ -308,7 +308,7 @@ int main() {
     return 0;
 }
 <---Longitud de la Cadena: `strlen` Result--->
-<---Comparaci髇 de Cadenas: `strcmp`--->
+<---Comparaci贸n de Cadenas: `strcmp`--->
 ```cpp
 #include <iostream>
 #include <cstring>
@@ -330,7 +330,7 @@ int main() {
 
     return 0;
 }
-<---Comparaci髇 de Cadenas: `strcmp` Result--->
+<---Comparaci贸n de Cadenas: `strcmp` Result--->
 <---Lectura de C-Strings con `cin`--->
 ```cpp
 #include <iostream>
@@ -368,13 +368,13 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaraci髇 e inicializaci髇
+    // Declaraci贸n e inicializaci贸n
     char saludo[50] = "Hola";
     const char* mundo = " Mundo";
 
-    // Concatenaci髇
+    // Concatenaci贸n
     strcat(saludo, mundo);
-    cout << "Concatenaci髇: " << saludo << endl;
+    cout << "Concatenaci贸n: " << saludo << endl;
 
     // Copia
     char copia[50];
@@ -385,7 +385,7 @@ int main() {
     size_t longitud = strlen(copia);
     cout << "Longitud de la copia: " << longitud << endl;
 
-    // Comparaci髇
+    // Comparaci贸n
     const char* otraCadena = "Hola Mundo";
     if (strcmp(copia, otraCadena) == 0) {
         cout << "Las cadenas son iguales." << endl;

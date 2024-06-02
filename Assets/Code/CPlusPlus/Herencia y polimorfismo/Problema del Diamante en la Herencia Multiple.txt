@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Problema del Diamante en la Herencia Múltiple
+### Problema del Diamante en la Herencia MÃºltiple
 
-El problema del diamante es una complicación que surge en lenguajes de programación que permiten la herencia múltiple, como C++. Se produce cuando una clase deriva de dos clases base que a su vez derivan de una misma clase ancestro. Esto crea una ambigüedad en la jerarquía de herencia y puede llevar a problemas de duplicación de miembros de la clase ancestro.
+El problema del diamante es una complicaciÃ³n que surge en lenguajes de programaciÃ³n que permiten la herencia mÃºltiple, como C++. Se produce cuando una clase deriva de dos clases base que a su vez derivan de una misma clase ancestro. Esto crea una ambigÃ¼edad en la jerarquÃ­a de herencia y puede llevar a problemas de duplicaciÃ³n de miembros de la clase ancestro.
 
 #### Estructura del Problema del Diamante
 
-Imaginemos una jerarquía de clases en la que `ClaseA` es la clase base más alta, `ClaseB` y `ClaseC` derivan de `ClaseA`, y `ClaseD` deriva de `ClaseB` y `ClaseC`. Esto crea una estructura de diamante:
+Imaginemos una jerarquÃ­a de clases en la que `ClaseA` es la clase base mÃ¡s alta, `ClaseB` y `ClaseC` derivan de `ClaseA`, y `ClaseD` deriva de `ClaseB` y `ClaseC`. Esto crea una estructura de diamante:
 
 ```
        ClaseA
@@ -15,7 +15,7 @@ Imaginemos una jerarquía de clases en la que `ClaseA` es la clase base más alta,
        ClaseD
 ```
 
-##### Ejemplo sin Solución
+##### Ejemplo sin SoluciÃ³n
 
 ```cpp
 #include <iostream>
@@ -44,11 +44,11 @@ int main() {
 }
 ```
 
-En este ejemplo, `ClaseD` hereda de `ClaseB` y `ClaseC`, que ambos heredan de `ClaseA`. Si intentamos llamar a `mostrar` en un objeto de `ClaseD`, el compilador no sabrá cuál versión de `mostrar` usar, la heredada de `ClaseB` o la heredada de `ClaseC`.
+En este ejemplo, `ClaseD` hereda de `ClaseB` y `ClaseC`, que ambos heredan de `ClaseA`. Si intentamos llamar a `mostrar` en un objeto de `ClaseD`, el compilador no sabrÃ¡ cuÃ¡l versiÃ³n de `mostrar` usar, la heredada de `ClaseB` o la heredada de `ClaseC`.
 
-#### Solución: Herencia Virtual
+#### SoluciÃ³n: Herencia Virtual
 
-Para resolver el problema del diamante, se utiliza la herencia virtual. La herencia virtual asegura que solo se crea una instancia de la clase base compartida (`ClaseA`) cuando se utiliza en una estructura de diamante. Esto elimina la ambigüedad y la duplicación de miembros de la clase base.
+Para resolver el problema del diamante, se utiliza la herencia virtual. La herencia virtual asegura que solo se crea una instancia de la clase base compartida (`ClaseA`) cuando se utiliza en una estructura de diamante. Esto elimina la ambigÃ¼edad y la duplicaciÃ³n de miembros de la clase base.
 
 ##### Ejemplo con Herencia Virtual
 
@@ -85,8 +85,8 @@ En este ejemplo:
 
 #### Herencia Virtual en Detalle
 
-1. **Declaración:** La herencia virtual se declara añadiendo la palabra clave `virtual` antes del nombre de la clase base en la lista de herencia.
-2. **Instancias Únicas:** La herencia virtual garantiza que solo se crea una única instancia de la clase base en la jerarquía de herencia, eliminando la ambigüedad en la llamada a funciones miembro y la duplicación de datos miembro.
+1. **DeclaraciÃ³n:** La herencia virtual se declara aÃ±adiendo la palabra clave `virtual` antes del nombre de la clase base en la lista de herencia.
+2. **Instancias Ãšnicas:** La herencia virtual garantiza que solo se crea una Ãºnica instancia de la clase base en la jerarquÃ­a de herencia, eliminando la ambigÃ¼edad en la llamada a funciones miembro y la duplicaciÃ³n de datos miembro.
 
 ##### Ejemplo Ampliado
 
@@ -135,21 +135,21 @@ int main() {
 ```
 
 En este ejemplo:
-- `ClaseA` tiene un miembro `valor` y una función `mostrar`.
+- `ClaseA` tiene un miembro `valor` y una funciÃ³n `mostrar`.
 - `ClaseB` y `ClaseC` heredan virtualmente de `ClaseA` y asignan diferentes valores a `valor`.
-- `ClaseD` hereda de `ClaseB` y `ClaseC`, y se asegura que solo hay una instancia de `ClaseA`, permitiendo que `valor` sea accesible y modificado sin ambigüedad.
+- `ClaseD` hereda de `ClaseB` y `ClaseC`, y se asegura que solo hay una instancia de `ClaseA`, permitiendo que `valor` sea accesible y modificado sin ambigÃ¼edad.
 
-### Conclusión
+### ConclusiÃ³n
 
-El problema del diamante es una complicación común en la herencia múltiple que puede llevar a ambigüedades y duplicación de miembros de la clase base. La herencia virtual en C++ es la solución para este problema, garantizando que solo se cree una instancia de la clase base compartida en la jerarquía de herencia. Comprender y aplicar correctamente la herencia virtual es crucial para diseñar jerarquías de clases complejas y evitar problemas de ambigüedad y duplicación en C++.
+El problema del diamante es una complicaciÃ³n comÃºn en la herencia mÃºltiple que puede llevar a ambigÃ¼edades y duplicaciÃ³n de miembros de la clase base. La herencia virtual en C++ es la soluciÃ³n para este problema, garantizando que solo se cree una instancia de la clase base compartida en la jerarquÃ­a de herencia. Comprender y aplicar correctamente la herencia virtual es crucial para diseÃ±ar jerarquÃ­as de clases complejas y evitar problemas de ambigÃ¼edad y duplicaciÃ³n en C++.
 <---FILES--->
-Ejemplo sin Solución
-Ejemplo sin Solución Result
+Ejemplo sin SoluciÃ³n
+Ejemplo sin SoluciÃ³n Result
 Ejemplo con Herencia Virtual
 Ejemplo con Herencia Virtual Result
 Ejemplo Ampliado
 Ejemplo Ampliado Result
-<---Ejemplo sin Solución--->
+<---Ejemplo sin SoluciÃ³n--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -175,7 +175,7 @@ int main() {
     // obj.mostrar(); // Error: llamada ambigua a mostrar()
     return 0;
 }
-<---Ejemplo sin Solución Result--->
+<---Ejemplo sin SoluciÃ³n Result--->
 <---Ejemplo con Herencia Virtual--->
 ```cpp
 #include <iostream>

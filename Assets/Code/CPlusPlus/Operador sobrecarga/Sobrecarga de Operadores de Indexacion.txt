@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Sobrecarga de Operadores de Indexación en C++
+### Sobrecarga de Operadores de IndexaciÃ³n en C++
 
-La sobrecarga del operador de indexación `[]` permite definir cómo se deben comportar los objetos de una clase cuando se accede a sus elementos mediante un índice. Esta funcionalidad es especialmente útil para clases que representan colecciones o contenedores, como arrays, vectores, matrices, etc.
+La sobrecarga del operador de indexaciÃ³n `[]` permite definir cÃ³mo se deben comportar los objetos de una clase cuando se accede a sus elementos mediante un Ã­ndice. Esta funcionalidad es especialmente Ãºtil para clases que representan colecciones o contenedores, como arrays, vectores, matrices, etc.
 
 #### Ejemplo: Clase `DynamicArray` para Sobrecargar el Operador `[]`
 
-Vamos a definir una clase `DynamicArray` que representa un array dinámico y sobrecargaremos el operador de indexación `[]`.
+Vamos a definir una clase `DynamicArray` que representa un array dinÃ¡mico y sobrecargaremos el operador de indexaciÃ³n `[]`.
 
 ```cpp
 // DynamicArray.h
@@ -36,7 +36,7 @@ public:
     // Sobrecarga del operador []
     int& operator[](size_t index) {
         if (index >= size) {
-            throw std::out_of_range("Índice fuera de rango");
+            throw std::out_of_range("Ãndice fuera de rango");
         }
         return data[index];
     }
@@ -44,12 +44,12 @@ public:
     // Sobrecarga del operador [] para acceso constante
     const int& operator[](size_t index) const {
         if (index >= size) {
-            throw std::out_of_range("Índice fuera de rango");
+            throw std::out_of_range("Ãndice fuera de rango");
         }
         return data[index];
     }
 
-    // Método para obtener el tamaño del array
+    // MÃ©todo para obtener el tamaÃ±o del array
     size_t getSize() const {
         return size;
     }
@@ -93,58 +93,58 @@ int main() {
 }
 ```
 
-### Explicación de los Operadores Sobrecargados
+### ExplicaciÃ³n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `[]`
 
-##### Versión No Constante
+##### VersiÃ³n No Constante
 
 ```cpp
 int& operator[](size_t index) {
     if (index >= size) {
-        throw std::out_of_range("Índice fuera de rango");
+        throw std::out_of_range("Ãndice fuera de rango");
     }
     return data[index];
 }
 ```
-Esta versión permite el acceso y la modificación de los elementos del array. Si el índice está fuera del rango, se lanza una excepción `std::out_of_range`.
+Esta versiÃ³n permite el acceso y la modificaciÃ³n de los elementos del array. Si el Ã­ndice estÃ¡ fuera del rango, se lanza una excepciÃ³n `std::out_of_range`.
 
-##### Versión Constante
+##### VersiÃ³n Constante
 
 ```cpp
 const int& operator[](size_t index) const {
     if (index >= size) {
-        throw std::out_of_range("Índice fuera de rango");
+        throw std::out_of_range("Ãndice fuera de rango");
     }
     return data[index];
 }
 ```
-Esta versión constante permite el acceso a los elementos del array sin permitir su modificación. También lanza una excepción `std::out_of_range` si el índice está fuera del rango.
+Esta versiÃ³n constante permite el acceso a los elementos del array sin permitir su modificaciÃ³n. TambiÃ©n lanza una excepciÃ³n `std::out_of_range` si el Ã­ndice estÃ¡ fuera del rango.
 
-### Ventajas de la Sobrecarga del Operador de Indexación
+### Ventajas de la Sobrecarga del Operador de IndexaciÃ³n
 
 1. **Legibilidad y Facilidad de Uso**: Permite utilizar una sintaxis intuitiva y clara para acceder a los elementos de un contenedor, similar a la utilizada para arrays y punteros.
-2. **Encapsulación**: Encapsula la lógica de acceso dentro de la clase, asegurando que los detalles de implementación estén
+2. **EncapsulaciÃ³n**: Encapsula la lÃ³gica de acceso dentro de la clase, asegurando que los detalles de implementaciÃ³n estÃ©n
 <---FILES--->
-Versión No Constante
-Versión No Constante Result
-Versión Constante
-Versión Constante Result
-<---Versión No Constante--->
+VersiÃ³n No Constante
+VersiÃ³n No Constante Result
+VersiÃ³n Constante
+VersiÃ³n Constante Result
+<---VersiÃ³n No Constante--->
 ```cpp
 int& operator[](size_t index) {
     if (index >= size) {
-        throw std::out_of_range("Índice fuera de rango");
+        throw std::out_of_range("Ãndice fuera de rango");
     }
     return data[index];
 }
-<---Versión No Constante Result--->
-<---Versión Constante--->
+<---VersiÃ³n No Constante Result--->
+<---VersiÃ³n Constante--->
 ```cpp
 const int& operator[](size_t index) const {
     if (index >= size) {
-        throw std::out_of_range("Índice fuera de rango");
+        throw std::out_of_range("Ãndice fuera de rango");
     }
     return data[index];
 }
-<---Versión Constante Result--->
+<---VersiÃ³n Constante Result--->

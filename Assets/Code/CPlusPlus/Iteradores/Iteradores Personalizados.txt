@@ -1,15 +1,15 @@
 <---EXPLANATION--->
 ### Iteradores Personalizados en C++
 
-En C++, adem醩 de los iteradores proporcionados por los contenedores de la STL, es posible crear iteradores personalizados para recorrer estructuras de datos no est醤dar o para proporcionar iteraciones especializadas. La creaci髇 de iteradores personalizados implica implementar ciertas funcionalidades requeridas por el concepto de iterador en C++.
+En C++, adem谩s de los iteradores proporcionados por los contenedores de la STL, es posible crear iteradores personalizados para recorrer estructuras de datos no est谩ndar o para proporcionar iteraciones especializadas. La creaci贸n de iteradores personalizados implica implementar ciertas funcionalidades requeridas por el concepto de iterador en C++.
 
 #### Requisitos de un Iterador
 
-Un iterador debe cumplir con ciertos requisitos dependiendo de su categor韆 (input, output, forward, bidirectional, random access). Estos requisitos incluyen la sobrecarga de operadores espec韋icos y la provisi髇 de ciertos tipos.
+Un iterador debe cumplir con ciertos requisitos dependiendo de su categor铆a (input, output, forward, bidirectional, random access). Estos requisitos incluyen la sobrecarga de operadores espec铆ficos y la provisi贸n de ciertos tipos.
 
-### Implementaci髇 de un Iterador Personalizado
+### Implementaci贸n de un Iterador Personalizado
 
-A continuaci髇, se presenta un ejemplo de c髆o implementar un iterador bidireccional personalizado para una estructura de datos simple.
+A continuaci贸n, se presenta un ejemplo de c贸mo implementar un iterador bidireccional personalizado para una estructura de datos simple.
 
 ##### Ejemplo: Iterador Bidireccional para una Lista Enlazada Simple
 
@@ -69,7 +69,7 @@ public:
         return temp;
     }
 
-    // Comparaci髇
+    // Comparaci贸n
     bool operator==(const ListIterator& other) const { return node == other.node; }
     bool operator!=(const ListIterator& other) const { return node != other.node; }
 
@@ -122,29 +122,29 @@ int main() {
 
 ### Desglose del Ejemplo
 
-1. **Definici髇 del Nodo:**
+1. **Definici贸n del Nodo:**
    - `Node` es una estructura que representa un nodo en una lista enlazada doblemente.
    - Contiene un dato (`data`) y punteros al siguiente y al nodo anterior (`next`, `prev`).
 
-2. **Definici髇 del Iterador:**
-   - `ListIterator` es una clase plantilla que act鷄 como un iterador bidireccional para la lista.
-   - Implementa los operadores requeridos para la iteraci髇 (`operator*`, `operator->`, `operator++`, `operator--`, `operator==`, `operator!=`).
+2. **Definici贸n del Iterador:**
+   - `ListIterator` es una clase plantilla que act煤a como un iterador bidireccional para la lista.
+   - Implementa los operadores requeridos para la iteraci贸n (`operator*`, `operator->`, `operator++`, `operator--`, `operator==`, `operator!=`).
    - Los tipos requeridos (`iterator_category`, `value_type`, `difference_type`, `pointer`, `reference`) se definen utilizando `using`.
 
 3. **Operadores de Incremento y Decremento:**
    - `operator++` y `operator--` permiten avanzar y retroceder el iterador.
    - Ambos operadores tienen versiones pre y postfijo.
 
-4. **Definici髇 de la Lista Enlazada:**
+4. **Definici贸n de la Lista Enlazada:**
    - `LinkedList` es una clase plantilla que representa una lista enlazada doblemente.
-   - Implementa los m閠odos `push_back` para a馻dir elementos al final de la lista y proporciona `begin` y `end` para obtener iteradores al inicio y al final de la lista.
+   - Implementa los m茅todos `push_back` para a帽adir elementos al final de la lista y proporciona `begin` y `end` para obtener iteradores al inicio y al final de la lista.
 
 5. **Uso del Iterador Personalizado:**
-   - En `main`, se crea una lista, se a馻den elementos y se usa un bucle `for` con el iterador personalizado para recorrer y mostrar los elementos de la lista.
+   - En `main`, se crea una lista, se a帽aden elementos y se usa un bucle `for` con el iterador personalizado para recorrer y mostrar los elementos de la lista.
 
-### Conclusi髇
+### Conclusi贸n
 
-Crear iteradores personalizados en C++ permite extender la funcionalidad de las estructuras de datos no est醤dar y personalizar el comportamiento de iteraci髇. La implementaci髇 de iteradores personalizados implica sobrecargar varios operadores y definir ciertos tipos requeridos por la interfaz del iterador. Esta habilidad es esencial para escribir c骴igo C++ flexible y eficiente, adaptado a necesidades espec韋icas.
+Crear iteradores personalizados en C++ permite extender la funcionalidad de las estructuras de datos no est谩ndar y personalizar el comportamiento de iteraci贸n. La implementaci贸n de iteradores personalizados implica sobrecargar varios operadores y definir ciertos tipos requeridos por la interfaz del iterador. Esta habilidad es esencial para escribir c贸digo C++ flexible y eficiente, adaptado a necesidades espec铆ficas.
 <---FILES--->
 Ejemplo: Iterador Bidireccional para una Lista Enlazada Simple
 Ejemplo: Iterador Bidireccional para una Lista Enlazada Simple Result
@@ -203,7 +203,7 @@ public:
         return temp;
     }
 
-    // Comparaci髇
+    // Comparaci贸n
     bool operator==(const ListIterator& other) const { return node == other.node; }
     bool operator!=(const ListIterator& other) const { return node != other.node; }
 

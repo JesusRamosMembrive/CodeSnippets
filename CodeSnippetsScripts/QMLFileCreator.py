@@ -15,7 +15,7 @@ class QMLFileCreator:
             for element in topics[key]:
                 name_filter = element.replace(".txt", "")
                 list_element_lines += 'ListElement{ name: "' + f"{name_filter}" + '"}' + "\n"
-                print(f"Element: {element}")
+                # print(f"Element: {element}")
             final_text = "import QtQuick" + "\n"
             final_text = final_text + "Item{" + "\n" + property_line + "\n" + list_element_lines + "}" + "\n" + "}"
             with open(fr"{path}/{key_camel_case}.qml", "w", encoding='utf-8') as f:

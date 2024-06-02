@@ -1,27 +1,27 @@
 <---EXPLANATION--->
 ### Clases Sanitizadas en C++
 
-En el contexto de la programaciÛn en C++, la sanitizaciÛn de clases (a menudo referida como ìClass Sanity Checksî) no es un concepto formal del lenguaje, pero se refiere a las pr·cticas y tÈcnicas empleadas para asegurar que las clases se comporten correctamente y sus estados internos se mantengan v·lidos en todo momento. Este concepto abarca validaciones de invariantes, chequeo de precondiciones y postcondiciones, y el uso de herramientas de depuraciÛn y pruebas para detectar y corregir errores.
+En el contexto de la programaci√≥n en C++, la sanitizaci√≥n de clases (a menudo referida como ‚ÄúClass Sanity Checks‚Äù) no es un concepto formal del lenguaje, pero se refiere a las pr√°cticas y t√©cnicas empleadas para asegurar que las clases se comporten correctamente y sus estados internos se mantengan v√°lidos en todo momento. Este concepto abarca validaciones de invariantes, chequeo de precondiciones y postcondiciones, y el uso de herramientas de depuraci√≥n y pruebas para detectar y corregir errores.
 
-#### Importancia de la SanitizaciÛn de Clases
+#### Importancia de la Sanitizaci√≥n de Clases
 
-1. **Robustez:** Ayuda a prevenir errores y comportamientos inesperados al asegurar que las clases se mantengan en un estado v·lido.
-2. **Mantenibilidad:** Facilita la detecciÛn y correcciÛn de errores, haciendo el cÛdigo m·s f·cil de mantener.
-3. **Confiabilidad:** Aumenta la confiabilidad del software al reducir la probabilidad de fallos en tiempo de ejecuciÛn.
+1. **Robustez:** Ayuda a prevenir errores y comportamientos inesperados al asegurar que las clases se mantengan en un estado v√°lido.
+2. **Mantenibilidad:** Facilita la detecci√≥n y correcci√≥n de errores, haciendo el c√≥digo m√°s f√°cil de mantener.
+3. **Confiabilidad:** Aumenta la confiabilidad del software al reducir la probabilidad de fallos en tiempo de ejecuci√≥n.
 
-#### TÈcnicas para Sanitizar Clases
+#### T√©cnicas para Sanitizar Clases
 
-1. **Invariantes de Clase:** Son condiciones que deben ser verdaderas en todo momento para los objetos de la clase, excepto durante la ejecuciÛn de sus mÈtodos.
-2. **Precondiciones y Postcondiciones:** Las precondiciones son condiciones que deben ser verdaderas antes de la ejecuciÛn de un mÈtodo, mientras que las postcondiciones son condiciones que deben ser verdaderas despuÈs de su ejecuciÛn.
-3. **Aserciones:** Son expresiones que se eval˙an en tiempo de ejecuciÛn para verificar que ciertas condiciones se cumplan. Si la condiciÛn es falsa, el programa se detiene.
-4. **Pruebas Unitarias:** Se escriben pruebas automatizadas para verificar que los mÈtodos de la clase funcionen correctamente.
-5. **DepuraciÛn y Herramientas de An·lisis:** Uso de herramientas como sanitizadores de memoria, an·lisis est·tico y din·mico para detectar errores y posibles vulnerabilidades.
+1. **Invariantes de Clase:** Son condiciones que deben ser verdaderas en todo momento para los objetos de la clase, excepto durante la ejecuci√≥n de sus m√©todos.
+2. **Precondiciones y Postcondiciones:** Las precondiciones son condiciones que deben ser verdaderas antes de la ejecuci√≥n de un m√©todo, mientras que las postcondiciones son condiciones que deben ser verdaderas despu√©s de su ejecuci√≥n.
+3. **Aserciones:** Son expresiones que se eval√∫an en tiempo de ejecuci√≥n para verificar que ciertas condiciones se cumplan. Si la condici√≥n es falsa, el programa se detiene.
+4. **Pruebas Unitarias:** Se escriben pruebas automatizadas para verificar que los m√©todos de la clase funcionen correctamente.
+5. **Depuraci√≥n y Herramientas de An√°lisis:** Uso de herramientas como sanitizadores de memoria, an√°lisis est√°tico y din√°mico para detectar errores y posibles vulnerabilidades.
 
-#### Ejemplo de SanitizaciÛn de una Clase
+#### Ejemplo de Sanitizaci√≥n de una Clase
 
-Consideremos una clase `CuentaBancaria` que representa una cuenta bancaria simple. Implementaremos algunas tÈcnicas de sanitizaciÛn para asegurar que la cuenta nunca tenga un saldo negativo.
+Consideremos una clase `CuentaBancaria` que representa una cuenta bancaria simple. Implementaremos algunas t√©cnicas de sanitizaci√≥n para asegurar que la cuenta nunca tenga un saldo negativo.
 
-##### DefiniciÛn de la Clase
+##### Definici√≥n de la Clase
 
 ```cpp
 #include <iostream>
@@ -79,15 +79,15 @@ int main() {
     try {
         CuentaBancaria cuenta(100.0);
         cuenta.depositar(50.0);
-        cout << "Saldo despuÈs de depositar 50: " << cuenta.obtenerSaldo() << endl;
+        cout << "Saldo despu√©s de depositar 50: " << cuenta.obtenerSaldo() << endl;
 
         cuenta.retirar(30.0);
-        cout << "Saldo despuÈs de retirar 30: " << cuenta.obtenerSaldo() << endl;
+        cout << "Saldo despu√©s de retirar 30: " << cuenta.obtenerSaldo() << endl;
 
-        // Esta lÌnea generar· una excepciÛn debido a fondos insuficientes
+        // Esta l√≠nea generar√° una excepci√≥n debido a fondos insuficientes
         // cuenta.retirar(150.0);
 
-        // Esta lÌnea generar· una excepciÛn debido a cantidad negativa
+        // Esta l√≠nea generar√° una excepci√≥n debido a cantidad negativa
         // cuenta.depositar(-20.0);
 
     } catch (const exception& e) {
@@ -99,16 +99,16 @@ int main() {
 ```
 
 En este ejemplo:
-- **Invariante de Clase:** Se asegura de que `saldo` nunca sea negativo usando la funciÛn `verificarInvariante()`.
-- **Precondiciones:** Los mÈtodos `depositar` y `retirar` verifican que la cantidad no sea negativa y que haya suficientes fondos para retirar.
-- **Postcondiciones:** Las aserciones en `verificarInvariante` se usan para asegurarse de que el saldo sea v·lido despuÈs de cada operaciÛn.
+- **Invariante de Clase:** Se asegura de que `saldo` nunca sea negativo usando la funci√≥n `verificarInvariante()`.
+- **Precondiciones:** Los m√©todos `depositar` y `retirar` verifican que la cantidad no sea negativa y que haya suficientes fondos para retirar.
+- **Postcondiciones:** Las aserciones en `verificarInvariante` se usan para asegurarse de que el saldo sea v√°lido despu√©s de cada operaci√≥n.
 - **Manejo de Excepciones:** Se utilizan excepciones para manejar condiciones de error como saldos negativos y retiros excesivos.
 
-#### Herramientas y Pr·cticas Adicionales
+#### Herramientas y Pr√°cticas Adicionales
 
-1. **Sanitizers:** Herramientas como AddressSanitizer, MemorySanitizer y UndefinedBehaviorSanitizer pueden detectar errores de memoria y comportamientos indefinidos en tiempo de ejecuciÛn.
-2. **An·lisis Est·tico:** Herramientas de an·lisis est·tico pueden detectar errores potenciales y violaciones de estilo de cÛdigo antes de que el cÛdigo se ejecute.
-3. **Pruebas Unitarias Automatizadas:** Frameworks de pruebas como Google Test pueden automatizar la validaciÛn de las funciones y asegurar que los invariantes se mantengan.
+1. **Sanitizers:** Herramientas como AddressSanitizer, MemorySanitizer y UndefinedBehaviorSanitizer pueden detectar errores de memoria y comportamientos indefinidos en tiempo de ejecuci√≥n.
+2. **An√°lisis Est√°tico:** Herramientas de an√°lisis est√°tico pueden detectar errores potenciales y violaciones de estilo de c√≥digo antes de que el c√≥digo se ejecute.
+3. **Pruebas Unitarias Automatizadas:** Frameworks de pruebas como Google Test pueden automatizar la validaci√≥n de las funciones y asegurar que los invariantes se mantengan.
 
 ##### Ejemplo de Pruebas Unitarias con Google Test
 
@@ -137,15 +137,15 @@ int main(int argc, char **argv) {
 En este ejemplo:
 - Se utilizan pruebas unitarias con Google Test para validar el comportamiento de la clase `CuentaBancaria`.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La sanitizaciÛn de clases en C++ es una pr·ctica esencial para asegurar la robustez y confiabilidad del software. Mediante la implementaciÛn de invariantes, precondiciones, postcondiciones, y el uso de herramientas de depuraciÛn y pruebas, los desarrolladores pueden detectar y corregir errores de manera m·s efectiva. Estas tÈcnicas no solo mejoran la calidad del cÛdigo sino que tambiÈn facilitan su mantenimiento a largo plazo.
+La sanitizaci√≥n de clases en C++ es una pr√°ctica esencial para asegurar la robustez y confiabilidad del software. Mediante la implementaci√≥n de invariantes, precondiciones, postcondiciones, y el uso de herramientas de depuraci√≥n y pruebas, los desarrolladores pueden detectar y corregir errores de manera m√°s efectiva. Estas t√©cnicas no solo mejoran la calidad del c√≥digo sino que tambi√©n facilitan su mantenimiento a largo plazo.
 <---FILES--->
-DefiniciÛn de la Clase
-DefiniciÛn de la Clase Result
+Definici√≥n de la Clase
+Definici√≥n de la Clase Result
 Ejemplo de Pruebas Unitarias con Google Test
 Ejemplo de Pruebas Unitarias con Google Test Result
-<---DefiniciÛn de la Clase--->
+<---Definici√≥n de la Clase--->
 ```cpp
 #include <iostream>
 #include <stdexcept>
@@ -202,15 +202,15 @@ int main() {
     try {
         CuentaBancaria cuenta(100.0);
         cuenta.depositar(50.0);
-        cout << "Saldo despuÈs de depositar 50: " << cuenta.obtenerSaldo() << endl;
+        cout << "Saldo despu√©s de depositar 50: " << cuenta.obtenerSaldo() << endl;
 
         cuenta.retirar(30.0);
-        cout << "Saldo despuÈs de retirar 30: " << cuenta.obtenerSaldo() << endl;
+        cout << "Saldo despu√©s de retirar 30: " << cuenta.obtenerSaldo() << endl;
 
-        // Esta lÌnea generar· una excepciÛn debido a fondos insuficientes
+        // Esta l√≠nea generar√° una excepci√≥n debido a fondos insuficientes
         // cuenta.retirar(150.0);
 
-        // Esta lÌnea generar· una excepciÛn debido a cantidad negativa
+        // Esta l√≠nea generar√° una excepci√≥n debido a cantidad negativa
         // cuenta.depositar(-20.0);
 
     } catch (const exception& e) {
@@ -219,7 +219,7 @@ int main() {
 
     return 0;
 }
-<---DefiniciÛn de la Clase Result--->
+<---Definici√≥n de la Clase Result--->
 <---Ejemplo de Pruebas Unitarias con Google Test--->
 ```cpp
 #include <gtest/gtest.h>

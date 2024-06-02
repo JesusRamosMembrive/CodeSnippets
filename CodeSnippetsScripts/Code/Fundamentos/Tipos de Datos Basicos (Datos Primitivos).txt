@@ -97,3 +97,4 @@ int main() {
 
 Este ejemplo muestra cómo declarar, inicializar y utilizar diferentes tipos de datos básicos en C++. Cada tipo de dato se adapta a necesidades específicas dependiendo del rango y precisión que se requiera para las operaciones en un programa.
 <---FILES--->
+NA.

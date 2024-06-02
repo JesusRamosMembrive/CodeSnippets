@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmos de la Biblioteca Est·ndar: `std::max` y `std::min`
+### Algoritmos de la Biblioteca Est√°ndar: `std::max` y `std::min`
 
-Las funciones `std::max` y `std::min` son parte de la biblioteca est·ndar de C++ y se utilizan para encontrar el mayor y el menor de dos valores, respectivamente. TambiÈn existen versiones de estas funciones que operan sobre rangos de elementos. Estas funciones son parte del encabezado `<algorithm>`.
+Las funciones `std::max` y `std::min` son parte de la biblioteca est√°ndar de C++ y se utilizan para encontrar el mayor y el menor de dos valores, respectivamente. Tambi√©n existen versiones de estas funciones que operan sobre rangos de elementos. Estas funciones son parte del encabezado `<algorithm>`.
 
 #### Sintaxis de `std::max` y `std::min`
 
@@ -41,14 +41,14 @@ template <class ForwardIt, class Compare>
 ForwardIt min_element(ForwardIt first, ForwardIt last, Compare comp);
 ```
 
-#### DescripciÛn
+#### Descripci√≥n
 
-- **`std::max` y `std::min`:** Devuelven el mayor y el menor de dos valores, respectivamente. Se puede proporcionar una funciÛn de comparaciÛn personalizada.
-- **`std::max_element` y `std::min_element`:** Encuentran el mayor y el menor elemento en un rango de elementos, respectivamente. Se puede proporcionar una funciÛn de comparaciÛn personalizada.
+- **`std::max` y `std::min`:** Devuelven el mayor y el menor de dos valores, respectivamente. Se puede proporcionar una funci√≥n de comparaci√≥n personalizada.
+- **`std::max_element` y `std::min_element`:** Encuentran el mayor y el menor elemento en un rango de elementos, respectivamente. Se puede proporcionar una funci√≥n de comparaci√≥n personalizada.
 
 #### Ejemplo de Uso de `std::max` y `std::min`
 
-##### Ejemplo B·sico con Dos Valores
+##### Ejemplo B√°sico con Dos Valores
 
 ```cpp
 #include <iostream>
@@ -57,11 +57,11 @@ ForwardIt min_element(ForwardIt first, ForwardIt last, Compare comp);
 int main() {
     int a = 10, b = 20;
 
-    // Encontrar el valor m·ximo
+    // Encontrar el valor m√°ximo
     int maxVal = std::max(a, b);
     std::cout << "El mayor de " << a << " y " << b << " es " << maxVal << std::endl;
 
-    // Encontrar el valor mÌnimo
+    // Encontrar el valor m√≠nimo
     int minVal = std::min(a, b);
     std::cout << "El menor de " << a << " y " << b << " es " << minVal << std::endl;
 
@@ -73,7 +73,7 @@ En este ejemplo:
 - `std::max(a, b)` devuelve el mayor de `a` y `b`.
 - `std::min(a, b)` devuelve el menor de `a` y `b`.
 
-##### Ejemplo con ComparaciÛn Personalizada
+##### Ejemplo con Comparaci√≥n Personalizada
 
 ```cpp
 #include <iostream>
@@ -99,7 +99,7 @@ En este ejemplo:
 
 #### Uso de `std::max_element` y `std::min_element`
 
-##### Ejemplo B·sico con un Rango de Elementos
+##### Ejemplo B√°sico con un Rango de Elementos
 
 ```cpp
 #include <iostream>
@@ -109,23 +109,23 @@ En este ejemplo:
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
-    // Encontrar el elemento m·ximo
+    // Encontrar el elemento m√°ximo
     auto maxIt = std::max_element(vec.begin(), vec.end());
-    std::cout << "El elemento m·ximo es: " << *maxIt << std::endl;
+    std::cout << "El elemento m√°ximo es: " << *maxIt << std::endl;
 
-    // Encontrar el elemento mÌnimo
+    // Encontrar el elemento m√≠nimo
     auto minIt = std::min_element(vec.begin(), vec.end());
-    std::cout << "El elemento mÌnimo es: " << *minIt << std::endl;
+    std::cout << "El elemento m√≠nimo es: " << *minIt << std::endl;
 
     return 0;
 }
 ```
 
 En este ejemplo:
-- `std::max_element(vec.begin(), vec.end())` devuelve un iterador al elemento m·ximo en el vector.
-- `std::min_element(vec.begin(), vec.end())` devuelve un iterador al elemento mÌnimo en el vector.
+- `std::max_element(vec.begin(), vec.end())` devuelve un iterador al elemento m√°ximo en el vector.
+- `std::min_element(vec.begin(), vec.end())` devuelve un iterador al elemento m√≠nimo en el vector.
 
-##### Ejemplo con ComparaciÛn Personalizada
+##### Ejemplo con Comparaci√≥n Personalizada
 
 ```cpp
 #include <iostream>
@@ -143,41 +143,41 @@ bool compararPorDistancia(const Punto& p1, const Punto& p2) {
 int main() {
     std::vector<Punto> puntos = {{1, 2}, {3, 4}, {0, 5}, {-1, -1}};
 
-    // Encontrar el punto m·s lejano del origen
+    // Encontrar el punto m√°s lejano del origen
     auto maxIt = std::max_element(puntos.begin(), puntos.end(), compararPorDistancia);
-    std::cout << "El punto m·s lejano es: (" << maxIt->x << ", " << maxIt->y << ")" << std::endl;
+    std::cout << "El punto m√°s lejano es: (" << maxIt->x << ", " << maxIt->y << ")" << std::endl;
 
-    // Encontrar el punto m·s cercano al origen
+    // Encontrar el punto m√°s cercano al origen
     auto minIt = std::min_element(puntos.begin(), puntos.end(), compararPorDistancia);
-    std::cout << "El punto m·s cercano es: (" << minIt->x << ", " << minIt->y << ")" << std::endl;
+    std::cout << "El punto m√°s cercano es: (" << minIt->x << ", " << minIt->y << ")" << std::endl;
 
     return 0;
 }
 ```
 
 En este ejemplo:
-- `compararPorDistancia` es una funciÛn que compara dos puntos por su distancia al origen.
-- `std::max_element` y `std::min_element` usan esta funciÛn para encontrar el punto m·s lejano y el m·s cercano, respectivamente.
+- `compararPorDistancia` es una funci√≥n que compara dos puntos por su distancia al origen.
+- `std::max_element` y `std::min_element` usan esta funci√≥n para encontrar el punto m√°s lejano y el m√°s cercano, respectivamente.
 
 ### Consideraciones
 
-- **Rendimiento:** `std::max` y `std::min` operan en tiempo constante, mientras que `std::max_element` y `std::min_element` tienen un rendimiento lineal respecto al n˙mero de elementos en el rango.
-- **Flexibilidad:** Se pueden usar con cualquier tipo de datos que soporte las operaciones de comparaciÛn necesarias.
+- **Rendimiento:** `std::max` y `std::min` operan en tiempo constante, mientras que `std::max_element` y `std::min_element` tienen un rendimiento lineal respecto al n√∫mero de elementos en el rango.
+- **Flexibilidad:** Se pueden usar con cualquier tipo de datos que soporte las operaciones de comparaci√≥n necesarias.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::max` y `std::min` son funciones ˙tiles de la biblioteca est·ndar de C++ para encontrar el mayor y el menor de dos valores, respectivamente. `std::max_element` y `std::min_element` extienden esta funcionalidad para operar sobre rangos de elementos. La capacidad de proporcionar funciones de comparaciÛn personalizadas hace que estos algoritmos sean extremadamente flexibles y poderosos, permitiendo su uso en una amplia variedad de escenarios de programaciÛn.
+`std::max` y `std::min` son funciones √∫tiles de la biblioteca est√°ndar de C++ para encontrar el mayor y el menor de dos valores, respectivamente. `std::max_element` y `std::min_element` extienden esta funcionalidad para operar sobre rangos de elementos. La capacidad de proporcionar funciones de comparaci√≥n personalizadas hace que estos algoritmos sean extremadamente flexibles y poderosos, permitiendo su uso en una amplia variedad de escenarios de programaci√≥n.
 <---FILES--->
 `std::max`
 `std::max` Result
 `std::min`
 `std::min` Result
-Ejemplo B·sico con Dos Valores
-Ejemplo B·sico con Dos Valores Result
-Ejemplo con ComparaciÛn Personalizada
-Ejemplo con ComparaciÛn Personalizada Result
-Ejemplo B·sico con un Rango de Elementos
-Ejemplo B·sico con un Rango de Elementos Result
+Ejemplo B√°sico con Dos Valores
+Ejemplo B√°sico con Dos Valores Result
+Ejemplo con Comparaci√≥n Personalizada
+Ejemplo con Comparaci√≥n Personalizada Result
+Ejemplo B√°sico con un Rango de Elementos
+Ejemplo B√°sico con un Rango de Elementos Result
 <---`std::max`--->
 ```cpp
 #include <algorithm>
@@ -210,7 +210,7 @@ ForwardIt min_element(ForwardIt first, ForwardIt last);
 template <class ForwardIt, class Compare>
 ForwardIt min_element(ForwardIt first, ForwardIt last, Compare comp);
 <---`std::min` Result--->
-<---Ejemplo B·sico con Dos Valores--->
+<---Ejemplo B√°sico con Dos Valores--->
 ```cpp
 #include <iostream>
 #include <algorithm>
@@ -218,18 +218,18 @@ ForwardIt min_element(ForwardIt first, ForwardIt last, Compare comp);
 int main() {
     int a = 10, b = 20;
 
-    // Encontrar el valor m·ximo
+    // Encontrar el valor m√°ximo
     int maxVal = std::max(a, b);
     std::cout << "El mayor de " << a << " y " << b << " es " << maxVal << std::endl;
 
-    // Encontrar el valor mÌnimo
+    // Encontrar el valor m√≠nimo
     int minVal = std::min(a, b);
     std::cout << "El menor de " << a << " y " << b << " es " << minVal << std::endl;
 
     return 0;
 }
-<---Ejemplo B·sico con Dos Valores Result--->
-<---Ejemplo con ComparaciÛn Personalizada--->
+<---Ejemplo B√°sico con Dos Valores Result--->
+<---Ejemplo con Comparaci√≥n Personalizada--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -246,18 +246,18 @@ bool compararPorDistancia(const Punto& p1, const Punto& p2) {
 int main() {
     std::vector<Punto> puntos = {{1, 2}, {3, 4}, {0, 5}, {-1, -1}};
 
-    // Encontrar el punto m·s lejano del origen
+    // Encontrar el punto m√°s lejano del origen
     auto maxIt = std::max_element(puntos.begin(), puntos.end(), compararPorDistancia);
-    std::cout << "El punto m·s lejano es: (" << maxIt->x << ", " << maxIt->y << ")" << std::endl;
+    std::cout << "El punto m√°s lejano es: (" << maxIt->x << ", " << maxIt->y << ")" << std::endl;
 
-    // Encontrar el punto m·s cercano al origen
+    // Encontrar el punto m√°s cercano al origen
     auto minIt = std::min_element(puntos.begin(), puntos.end(), compararPorDistancia);
-    std::cout << "El punto m·s cercano es: (" << minIt->x << ", " << minIt->y << ")" << std::endl;
+    std::cout << "El punto m√°s cercano es: (" << minIt->x << ", " << minIt->y << ")" << std::endl;
 
     return 0;
 }
-<---Ejemplo con ComparaciÛn Personalizada Result--->
-<---Ejemplo B·sico con un Rango de Elementos--->
+<---Ejemplo con Comparaci√≥n Personalizada Result--->
+<---Ejemplo B√°sico con un Rango de Elementos--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -266,14 +266,14 @@ int main() {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5};
 
-    // Encontrar el elemento m·ximo
+    // Encontrar el elemento m√°ximo
     auto maxIt = std::max_element(vec.begin(), vec.end());
-    std::cout << "El elemento m·ximo es: " << *maxIt << std::endl;
+    std::cout << "El elemento m√°ximo es: " << *maxIt << std::endl;
 
-    // Encontrar el elemento mÌnimo
+    // Encontrar el elemento m√≠nimo
     auto minIt = std::min_element(vec.begin(), vec.end());
-    std::cout << "El elemento mÌnimo es: " << *minIt << std::endl;
+    std::cout << "El elemento m√≠nimo es: " << *minIt << std::endl;
 
     return 0;
 }
-<---Ejemplo B·sico con un Rango de Elementos Result--->
+<---Ejemplo B√°sico con un Rango de Elementos Result--->

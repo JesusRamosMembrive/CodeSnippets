@@ -7,7 +7,7 @@ def listar_carpetas(ruta):
         ruta_completa = os.path.join(ruta, entrada)
         if os.path.isdir(ruta_completa):
             carpetas.append(entrada)
-    print(f"Carpetas: {carpetas}")
+    # print(f"Carpetas: {carpetas}")
     return carpetas
 
 
@@ -18,7 +18,7 @@ def listar_archivos_en_carpetas(ruta_base, carpetas):
         archivos = [archivo for archivo in os.listdir(ruta_carpeta) if
                     os.path.isfile(os.path.join(ruta_carpeta, archivo))]
         archivos_por_carpeta[carpeta] = archivos
-    print(f"Archivos por carpeta: {archivos_por_carpeta}")
+    # print(f"Archivos por carpeta: {archivos_por_carpeta}")
     return archivos_por_carpeta
 
 
@@ -34,10 +34,10 @@ def list_all_files(folder_path: str) -> list:
 def ensure_folder_exists(folder_path: str) -> None:
     """Check if a folder exists, and create it if it does not."""
     try:
-        print(f"Folder path: {folder_path}")
+        # print(f"Folder path: {folder_path}")
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
-            print(f"Folder '{folder_path}' created.")
+            # print(f"Folder '{folder_path}' created.")
     except OSError as e:
         print(f"Error: {e}")
     finally:

@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Variables Miembro Est·ticas Inline en C++
+### Variables Miembro Est√°ticas Inline en C++
 
-A partir de C++17, el est·ndar del lenguaje introdujo la posibilidad de declarar variables miembro est·ticas `inline` dentro de la propia clase. Esta caracterÌstica simplifica la definiciÛn y inicializaciÛn de variables est·ticas, permitiendo que todo el cÛdigo relacionado con la clase permanezca dentro de la misma definiciÛn de clase.
+A partir de C++17, el est√°ndar del lenguaje introdujo la posibilidad de declarar variables miembro est√°ticas `inline` dentro de la propia clase. Esta caracter√≠stica simplifica la definici√≥n y inicializaci√≥n de variables est√°ticas, permitiendo que todo el c√≥digo relacionado con la clase permanezca dentro de la misma definici√≥n de clase.
 
-#### Variables Miembro Est·ticas Inline
+#### Variables Miembro Est√°ticas Inline
 
-Las variables miembro est·ticas `inline` se declaran y definen dentro de la propia clase, eliminando la necesidad de definirlas fuera de la clase. Esto puede mejorar la claridad y la organizaciÛn del cÛdigo.
+Las variables miembro est√°ticas `inline` se declaran y definen dentro de la propia clase, eliminando la necesidad de definirlas fuera de la clase. Esto puede mejorar la claridad y la organizaci√≥n del c√≥digo.
 
 ##### Sintaxis
 
@@ -17,11 +17,11 @@ public:
 };
 ```
 
-#### Ejemplo de Variables Miembro Est·ticas Inline
+#### Ejemplo de Variables Miembro Est√°ticas Inline
 
-Consideremos un ejemplo similar al anterior, pero usando la palabra clave `inline` para las variables miembro est·ticas.
+Consideremos un ejemplo similar al anterior, pero usando la palabra clave `inline` para las variables miembro est√°ticas.
 
-##### Ejemplo de ImplementaciÛn
+##### Ejemplo de Implementaci√≥n
 
 ```cpp
 #include <iostream>
@@ -29,7 +29,7 @@ using namespace std;
 
 class Contador {
 private:
-    inline static int cuenta = 0; // DeclaraciÛn y definiciÛn de variable miembro est·tica inline
+    inline static int cuenta = 0; // Declaraci√≥n y definici√≥n de variable miembro est√°tica inline
 
 public:
     Contador() {
@@ -49,30 +49,30 @@ int main() {
     Contador c1;
     Contador c2;
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     {
         Contador c3;
-        cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
+        cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
     }
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     return 0;
 }
 ```
 
 En este ejemplo:
-- `cuenta` es una variable miembro est·tica inline de la clase `Contador`.
+- `cuenta` es una variable miembro est√°tica inline de la clase `Contador`.
 - La variable `cuenta` se declara y define dentro de la clase, lo que elimina la necesidad de definirla fuera de la clase.
 
-#### Ventajas de las Variables Miembro Est·ticas Inline
+#### Ventajas de las Variables Miembro Est√°ticas Inline
 
-1. **SimplificaciÛn del CÛdigo:** Al declarar y definir las variables miembro est·ticas inline dentro de la clase, el cÛdigo se vuelve m·s limpio y f·cil de entender, ya que toda la informaciÛn relevante sobre la clase est· en un solo lugar.
-2. **ReducciÛn de Errores:** Al mantener la declaraciÛn y la definiciÛn juntas, se reduce el riesgo de errores relacionados con la definiciÛn fuera de la clase.
-3. **Mejor OrganizaciÛn:** La organizaciÛn del cÛdigo mejora al eliminar la necesidad de tener definiciones separadas para variables miembro est·ticas.
+1. **Simplificaci√≥n del C√≥digo:** Al declarar y definir las variables miembro est√°ticas inline dentro de la clase, el c√≥digo se vuelve m√°s limpio y f√°cil de entender, ya que toda la informaci√≥n relevante sobre la clase est√° en un solo lugar.
+2. **Reducci√≥n de Errores:** Al mantener la declaraci√≥n y la definici√≥n juntas, se reduce el riesgo de errores relacionados con la definici√≥n fuera de la clase.
+3. **Mejor Organizaci√≥n:** La organizaci√≥n del c√≥digo mejora al eliminar la necesidad de tener definiciones separadas para variables miembro est√°ticas.
 
-##### ComparaciÛn con la Sintaxis Tradicional
+##### Comparaci√≥n con la Sintaxis Tradicional
 
 ```cpp
 #include <iostream>
@@ -80,7 +80,7 @@ using namespace std;
 
 class Ejemplo {
 private:
-    inline static int estaticaVariable = 0; // Variable miembro est·tica inline
+    inline static int estaticaVariable = 0; // Variable miembro est√°tica inline
 
 public:
     Ejemplo(int valor) {
@@ -110,25 +110,25 @@ int main() {
 ```
 
 En este ejemplo:
-- `estaticaVariable` es una variable miembro est·tica inline.
+- `estaticaVariable` es una variable miembro est√°tica inline.
 - La variable se declara y define dentro de la clase `Ejemplo`.
 
-#### Consideraciones y Buenas Pr·cticas
+#### Consideraciones y Buenas Pr√°cticas
 
-1. **Compatibilidad:** Las variables miembro est·ticas inline requieren C++17 o posterior. Aseg˙rese de que su compilador y configuraciÛn de proyecto sean compatibles.
-2. **Uso Apropiado:** Use variables miembro est·ticas inline cuando desee mantener el cÛdigo m·s limpio y organizado. Sin embargo, considere si es necesario usar variables est·ticas, ya que estas comparten estado entre todas las instancias de la clase.
-3. **DocumentaciÛn:** Documente el uso de variables miembro est·ticas inline adecuadamente para mantener la claridad en el cÛdigo, especialmente en proyectos grandes o de equipo.
+1. **Compatibilidad:** Las variables miembro est√°ticas inline requieren C++17 o posterior. Aseg√∫rese de que su compilador y configuraci√≥n de proyecto sean compatibles.
+2. **Uso Apropiado:** Use variables miembro est√°ticas inline cuando desee mantener el c√≥digo m√°s limpio y organizado. Sin embargo, considere si es necesario usar variables est√°ticas, ya que estas comparten estado entre todas las instancias de la clase.
+3. **Documentaci√≥n:** Documente el uso de variables miembro est√°ticas inline adecuadamente para mantener la claridad en el c√≥digo, especialmente en proyectos grandes o de equipo.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las variables miembro est·ticas inline introducidas en C++17 ofrecen una forma simplificada y organizada de declarar y definir variables est·ticas dentro de una clase. Esto mejora la claridad y reduce los errores al mantener toda la informaciÛn relevante dentro de la misma definiciÛn de clase. Usar esta caracterÌstica adecuadamente puede resultar en un cÛdigo m·s limpio y mantenible.
+Las variables miembro est√°ticas inline introducidas en C++17 ofrecen una forma simplificada y organizada de declarar y definir variables est√°ticas dentro de una clase. Esto mejora la claridad y reduce los errores al mantener toda la informaci√≥n relevante dentro de la misma definici√≥n de clase. Usar esta caracter√≠stica adecuadamente puede resultar en un c√≥digo m√°s limpio y mantenible.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo de ImplementaciÛn
-Ejemplo de ImplementaciÛn Result
-ComparaciÛn con la Sintaxis Tradicional
-ComparaciÛn con la Sintaxis Tradicional Result
+Ejemplo de Implementaci√≥n
+Ejemplo de Implementaci√≥n Result
+Comparaci√≥n con la Sintaxis Tradicional
+Comparaci√≥n con la Sintaxis Tradicional Result
 <---Sintaxis--->
 ```cpp
 class Clase {
@@ -137,14 +137,14 @@ public:
     // Otros miembros de la clase
 };
 <---Sintaxis Result--->
-<---Ejemplo de ImplementaciÛn--->
+<---Ejemplo de Implementaci√≥n--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Contador {
 private:
-    inline static int cuenta = 0; // DeclaraciÛn y definiciÛn de variable miembro est·tica inline
+    inline static int cuenta = 0; // Declaraci√≥n y definici√≥n de variable miembro est√°tica inline
 
 public:
     Contador() {
@@ -164,26 +164,26 @@ int main() {
     Contador c1;
     Contador c2;
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     {
         Contador c3;
-        cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
+        cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
     }
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     return 0;
 }
-<---Ejemplo de ImplementaciÛn Result--->
-<---ComparaciÛn con la Sintaxis Tradicional--->
+<---Ejemplo de Implementaci√≥n Result--->
+<---Comparaci√≥n con la Sintaxis Tradicional--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Ejemplo {
 private:
-    inline static int estaticaVariable = 0; // Variable miembro est·tica inline
+    inline static int estaticaVariable = 0; // Variable miembro est√°tica inline
 
 public:
     Ejemplo(int valor) {
@@ -210,4 +210,4 @@ int main() {
 
     return 0;
 }
-<---ComparaciÛn con la Sintaxis Tradicional Result--->
+<---Comparaci√≥n con la Sintaxis Tradicional Result--->

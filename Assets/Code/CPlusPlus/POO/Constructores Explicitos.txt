@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Constructores Explícitos en C++
+### Constructores ExplÃ­citos en C++
 
-En C++, un constructor explícito es un constructor que se define con la palabra clave `explicit`. Esta característica se utiliza para evitar conversiones implícitas no deseadas, mejorando la seguridad del tipo y la claridad del código. Al marcar un constructor como explícito, se asegura que las conversiones que involucran ese constructor solo se realicen explícitamente, lo que ayuda a prevenir errores sutiles y difíciles de depurar.
+En C++, un constructor explÃ­cito es un constructor que se define con la palabra clave `explicit`. Esta caracterÃ­stica se utiliza para evitar conversiones implÃ­citas no deseadas, mejorando la seguridad del tipo y la claridad del cÃ³digo. Al marcar un constructor como explÃ­cito, se asegura que las conversiones que involucran ese constructor solo se realicen explÃ­citamente, lo que ayuda a prevenir errores sutiles y difÃ­ciles de depurar.
 
-#### Definición de Constructores Explícitos
+#### DefiniciÃ³n de Constructores ExplÃ­citos
 
-Un constructor explícito se declara añadiendo la palabra clave `explicit` antes de la declaración del constructor.
+Un constructor explÃ­cito se declara aÃ±adiendo la palabra clave `explicit` antes de la declaraciÃ³n del constructor.
 
 ##### Sintaxis
 
@@ -17,11 +17,11 @@ public:
 };
 ```
 
-#### Ejemplo de Constructor Explícito
+#### Ejemplo de Constructor ExplÃ­cito
 
 Consideremos una clase `Tiempo` que tiene un constructor que toma un solo argumento de tipo `int`, que representa los minutos.
 
-##### Sin Constructor Explícito
+##### Sin Constructor ExplÃ­cito
 
 ```cpp
 #include <iostream>
@@ -35,7 +35,7 @@ public:
     // Constructor
     Tiempo(int m) : minutos(m) {}
 
-    // Método para mostrar el tiempo
+    // MÃ©todo para mostrar el tiempo
     void mostrar() const {
         cout << "Tiempo: " << minutos << " minutos" << endl;
     }
@@ -46,18 +46,18 @@ void imprimirTiempo(const Tiempo& t) {
 }
 
 int main() {
-    Tiempo t1 = 120;  // Conversión implícita
+    Tiempo t1 = 120;  // ConversiÃ³n implÃ­cita
     t1.mostrar();
 
-    imprimirTiempo(90);  // Conversión implícita
+    imprimirTiempo(90);  // ConversiÃ³n implÃ­cita
 
     return 0;
 }
 ```
 
-En este ejemplo, las conversiones implícitas permiten crear un objeto `Tiempo` a partir de un entero, lo que puede llevar a errores inadvertidos.
+En este ejemplo, las conversiones implÃ­citas permiten crear un objeto `Tiempo` a partir de un entero, lo que puede llevar a errores inadvertidos.
 
-##### Con Constructor Explícito
+##### Con Constructor ExplÃ­cito
 
 ```cpp
 #include <iostream>
@@ -68,10 +68,10 @@ private:
     int minutos;
 
 public:
-    // Constructor explícito
+    // Constructor explÃ­cito
     explicit Tiempo(int m) : minutos(m) {}
 
-    // Método para mostrar el tiempo
+    // MÃ©todo para mostrar el tiempo
     void mostrar() const {
         cout << "Tiempo: " << minutos << " minutos" << endl;
     }
@@ -82,28 +82,28 @@ void imprimirTiempo(const Tiempo& t) {
 }
 
 int main() {
-    // Tiempo t1 = 120;  // Error: conversión implícita no permitida
-    Tiempo t1(120);  // Correcto: conversión explícita
+    // Tiempo t1 = 120;  // Error: conversiÃ³n implÃ­cita no permitida
+    Tiempo t1(120);  // Correcto: conversiÃ³n explÃ­cita
     t1.mostrar();
 
-    // imprimirTiempo(90);  // Error: conversión implícita no permitida
-    imprimirTiempo(Tiempo(90));  // Correcto: conversión explícita
+    // imprimirTiempo(90);  // Error: conversiÃ³n implÃ­cita no permitida
+    imprimirTiempo(Tiempo(90));  // Correcto: conversiÃ³n explÃ­cita
 
     return 0;
 }
 ```
 
-En este ejemplo, al marcar el constructor como explícito, se evita la conversión implícita de `int` a `Tiempo`, forzando al programador a realizar la conversión explícitamente.
+En este ejemplo, al marcar el constructor como explÃ­cito, se evita la conversiÃ³n implÃ­cita de `int` a `Tiempo`, forzando al programador a realizar la conversiÃ³n explÃ­citamente.
 
-#### Ventajas de los Constructores Explícitos
+#### Ventajas de los Constructores ExplÃ­citos
 
-1. **Prevención de Errores:** Evitan conversiones implícitas no deseadas que pueden llevar a errores difíciles de detectar.
-2. **Claridad:** Hacen que las conversiones necesarias sean explícitas en el código, mejorando la legibilidad y la comprensión.
-3. **Seguridad del Tipo:** Mejoran la seguridad del tipo al asegurar que solo se realicen conversiones explícitas, garantizando que los datos se manejen de manera apropiada.
+1. **PrevenciÃ³n de Errores:** Evitan conversiones implÃ­citas no deseadas que pueden llevar a errores difÃ­ciles de detectar.
+2. **Claridad:** Hacen que las conversiones necesarias sean explÃ­citas en el cÃ³digo, mejorando la legibilidad y la comprensiÃ³n.
+3. **Seguridad del Tipo:** Mejoran la seguridad del tipo al asegurar que solo se realicen conversiones explÃ­citas, garantizando que los datos se manejen de manera apropiada.
 
-#### Uso de Constructores Explícitos en Conversiones
+#### Uso de Constructores ExplÃ­citos en Conversiones
 
-Los constructores explícitos son particularmente útiles cuando una clase puede ser construida a partir de un solo argumento de un tipo diferente, para evitar conversiones implícitas no deseadas.
+Los constructores explÃ­citos son particularmente Ãºtiles cuando una clase puede ser construida a partir de un solo argumento de un tipo diferente, para evitar conversiones implÃ­citas no deseadas.
 
 ##### Ejemplo con Conversiones
 
@@ -117,10 +117,10 @@ private:
     string valor;
 
 public:
-    // Constructor explícito
+    // Constructor explÃ­cito
     explicit Cadena(const char* s) : valor(s) {}
 
-    // Método para mostrar la cadena
+    // MÃ©todo para mostrar la cadena
     void mostrar() const {
         cout << "Cadena: " << valor << endl;
     }
@@ -131,24 +131,24 @@ void imprimirCadena(const Cadena& c) {
 }
 
 int main() {
-    // Cadena c1 = "Hola";  // Error: conversión implícita no permitida
-    Cadena c1("Hola");  // Correcto: conversión explícita
+    // Cadena c1 = "Hola";  // Error: conversiÃ³n implÃ­cita no permitida
+    Cadena c1("Hola");  // Correcto: conversiÃ³n explÃ­cita
     c1.mostrar();
 
-    // imprimirCadena("Mundo");  // Error: conversión implícita no permitida
-    imprimirCadena(Cadena("Mundo"));  // Correcto: conversión explícita
+    // imprimirCadena("Mundo");  // Error: conversiÃ³n implÃ­cita no permitida
+    imprimirCadena(Cadena("Mundo"));  // Correcto: conversiÃ³n explÃ­cita
 
     return 0;
 }
 ```
 
-En este ejemplo, la clase `Cadena` tiene un constructor explícito que toma un `const char*`. Esto previene conversiones implícitas no deseadas desde `const char*` a `Cadena`.
+En este ejemplo, la clase `Cadena` tiene un constructor explÃ­cito que toma un `const char*`. Esto previene conversiones implÃ­citas no deseadas desde `const char*` a `Cadena`.
 
-#### Comparación con Constructores Implícitos
+#### ComparaciÃ³n con Constructores ImplÃ­citos
 
-Para entender mejor la diferencia entre constructores explícitos e implícitos, considere la siguiente comparación:
+Para entender mejor la diferencia entre constructores explÃ­citos e implÃ­citos, considere la siguiente comparaciÃ³n:
 
-##### Constructor Implícito
+##### Constructor ImplÃ­cito
 
 ```cpp
 class Impl {
@@ -159,12 +159,12 @@ public:
 void f(Impl) {}
 
 int main() {
-    f(42);  // Correcto: conversión implícita permitida
+    f(42);  // Correcto: conversiÃ³n implÃ­cita permitida
     return 0;
 }
 ```
 
-##### Constructor Explícito
+##### Constructor ExplÃ­cito
 
 ```cpp
 class Expl {
@@ -175,30 +175,30 @@ public:
 void f(Expl) {}
 
 int main() {
-    // f(42);  // Error: conversión implícita no permitida
-    f(Expl(42));  // Correcto: conversión explícita
+    // f(42);  // Error: conversiÃ³n implÃ­cita no permitida
+    f(Expl(42));  // Correcto: conversiÃ³n explÃ­cita
     return 0;
 }
 ```
 
-En el caso del constructor implícito, la conversión de `int` a `Impl` se realiza automáticamente, mientras que en el caso del constructor explícito, se requiere una conversión explícita de `int` a `Expl`.
+En el caso del constructor implÃ­cito, la conversiÃ³n de `int` a `Impl` se realiza automÃ¡ticamente, mientras que en el caso del constructor explÃ­cito, se requiere una conversiÃ³n explÃ­cita de `int` a `Expl`.
 
-### Conclusión
+### ConclusiÃ³n
 
-Los constructores explícitos son una característica importante de C++ que mejora la seguridad del tipo y la claridad del código al evitar conversiones implícitas no deseadas. Al usar la palabra clave `explicit`, los programadores pueden controlar mejor cuándo y cómo se realizan las conversiones, previniendo errores y asegurando que las intenciones del código sean claras y precisas. Implementar constructores explícitos es una práctica recomendada cuando se diseña clases que pueden ser construidas a partir de un solo argumento de un tipo diferente.
+Los constructores explÃ­citos son una caracterÃ­stica importante de C++ que mejora la seguridad del tipo y la claridad del cÃ³digo al evitar conversiones implÃ­citas no deseadas. Al usar la palabra clave `explicit`, los programadores pueden controlar mejor cuÃ¡ndo y cÃ³mo se realizan las conversiones, previniendo errores y asegurando que las intenciones del cÃ³digo sean claras y precisas. Implementar constructores explÃ­citos es una prÃ¡ctica recomendada cuando se diseÃ±a clases que pueden ser construidas a partir de un solo argumento de un tipo diferente.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Sin Constructor Explícito
-Sin Constructor Explícito Result
-Con Constructor Explícito
-Con Constructor Explícito Result
+Sin Constructor ExplÃ­cito
+Sin Constructor ExplÃ­cito Result
+Con Constructor ExplÃ­cito
+Con Constructor ExplÃ­cito Result
 Ejemplo con Conversiones
 Ejemplo con Conversiones Result
-Constructor Implícito
-Constructor Implícito Result
-Constructor Explícito
-Constructor Explícito Result
+Constructor ImplÃ­cito
+Constructor ImplÃ­cito Result
+Constructor ExplÃ­cito
+Constructor ExplÃ­cito Result
 <---Sintaxis--->
 ```cpp
 class Clase {
@@ -207,7 +207,7 @@ public:
     // Otros miembros...
 };
 <---Sintaxis Result--->
-<---Sin Constructor Explícito--->
+<---Sin Constructor ExplÃ­cito--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -220,7 +220,7 @@ public:
     // Constructor
     Tiempo(int m) : minutos(m) {}
 
-    // Método para mostrar el tiempo
+    // MÃ©todo para mostrar el tiempo
     void mostrar() const {
         cout << "Tiempo: " << minutos << " minutos" << endl;
     }
@@ -231,15 +231,15 @@ void imprimirTiempo(const Tiempo& t) {
 }
 
 int main() {
-    Tiempo t1 = 120;  // Conversión implícita
+    Tiempo t1 = 120;  // ConversiÃ³n implÃ­cita
     t1.mostrar();
 
-    imprimirTiempo(90);  // Conversión implícita
+    imprimirTiempo(90);  // ConversiÃ³n implÃ­cita
 
     return 0;
 }
-<---Sin Constructor Explícito Result--->
-<---Con Constructor Explícito--->
+<---Sin Constructor ExplÃ­cito Result--->
+<---Con Constructor ExplÃ­cito--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -249,10 +249,10 @@ private:
     int minutos;
 
 public:
-    // Constructor explícito
+    // Constructor explÃ­cito
     explicit Tiempo(int m) : minutos(m) {}
 
-    // Método para mostrar el tiempo
+    // MÃ©todo para mostrar el tiempo
     void mostrar() const {
         cout << "Tiempo: " << minutos << " minutos" << endl;
     }
@@ -263,16 +263,16 @@ void imprimirTiempo(const Tiempo& t) {
 }
 
 int main() {
-    // Tiempo t1 = 120;  // Error: conversión implícita no permitida
-    Tiempo t1(120);  // Correcto: conversión explícita
+    // Tiempo t1 = 120;  // Error: conversiÃ³n implÃ­cita no permitida
+    Tiempo t1(120);  // Correcto: conversiÃ³n explÃ­cita
     t1.mostrar();
 
-    // imprimirTiempo(90);  // Error: conversión implícita no permitida
-    imprimirTiempo(Tiempo(90));  // Correcto: conversión explícita
+    // imprimirTiempo(90);  // Error: conversiÃ³n implÃ­cita no permitida
+    imprimirTiempo(Tiempo(90));  // Correcto: conversiÃ³n explÃ­cita
 
     return 0;
 }
-<---Con Constructor Explícito Result--->
+<---Con Constructor ExplÃ­cito Result--->
 <---Ejemplo con Conversiones--->
 ```cpp
 #include <iostream>
@@ -284,10 +284,10 @@ private:
     string valor;
 
 public:
-    // Constructor explícito
+    // Constructor explÃ­cito
     explicit Cadena(const char* s) : valor(s) {}
 
-    // Método para mostrar la cadena
+    // MÃ©todo para mostrar la cadena
     void mostrar() const {
         cout << "Cadena: " << valor << endl;
     }
@@ -298,17 +298,17 @@ void imprimirCadena(const Cadena& c) {
 }
 
 int main() {
-    // Cadena c1 = "Hola";  // Error: conversión implícita no permitida
-    Cadena c1("Hola");  // Correcto: conversión explícita
+    // Cadena c1 = "Hola";  // Error: conversiÃ³n implÃ­cita no permitida
+    Cadena c1("Hola");  // Correcto: conversiÃ³n explÃ­cita
     c1.mostrar();
 
-    // imprimirCadena("Mundo");  // Error: conversión implícita no permitida
-    imprimirCadena(Cadena("Mundo"));  // Correcto: conversión explícita
+    // imprimirCadena("Mundo");  // Error: conversiÃ³n implÃ­cita no permitida
+    imprimirCadena(Cadena("Mundo"));  // Correcto: conversiÃ³n explÃ­cita
 
     return 0;
 }
 <---Ejemplo con Conversiones Result--->
-<---Constructor Implícito--->
+<---Constructor ImplÃ­cito--->
 ```cpp
 class Impl {
 public:
@@ -318,11 +318,11 @@ public:
 void f(Impl) {}
 
 int main() {
-    f(42);  // Correcto: conversión implícita permitida
+    f(42);  // Correcto: conversiÃ³n implÃ­cita permitida
     return 0;
 }
-<---Constructor Implícito Result--->
-<---Constructor Explícito--->
+<---Constructor ImplÃ­cito Result--->
+<---Constructor ExplÃ­cito--->
 ```cpp
 class Expl {
 public:
@@ -332,8 +332,8 @@ public:
 void f(Expl) {}
 
 int main() {
-    // f(42);  // Error: conversión implícita no permitida
-    f(Expl(42));  // Correcto: conversión explícita
+    // f(42);  // Error: conversiÃ³n implÃ­cita no permitida
+    f(Expl(42));  // Correcto: conversiÃ³n explÃ­cita
     return 0;
 }
-<---Constructor Explícito Result--->
+<---Constructor ExplÃ­cito Result--->

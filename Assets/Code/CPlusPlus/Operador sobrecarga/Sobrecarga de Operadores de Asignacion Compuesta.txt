@@ -1,9 +1,9 @@
 <---EXPLANATION--->
-### Sobrecarga de Operadores de Asignaci髇 Compuesta en C++
+### Sobrecarga de Operadores de Asignaci贸n Compuesta en C++
 
-Los operadores de asignaci髇 compuesta (`+=`, `-=`, `*=`, `/=`, etc.) combinan una operaci髇 aritm閠ica con una asignaci髇, lo que puede hacer que el c骴igo sea m醩 conciso y legible. Sobrecargar estos operadores permite definir c髆o se deben comportar estas operaciones en tipos de datos definidos por el usuario.
+Los operadores de asignaci贸n compuesta (`+=`, `-=`, `*=`, `/=`, etc.) combinan una operaci贸n aritm茅tica con una asignaci贸n, lo que puede hacer que el c贸digo sea m谩s conciso y legible. Sobrecargar estos operadores permite definir c贸mo se deben comportar estas operaciones en tipos de datos definidos por el usuario.
 
-#### Ejemplo: Clase `Vector` para Sobrecargar Operadores de Asignaci髇 Compuesta
+#### Ejemplo: Clase `Vector` para Sobrecargar Operadores de Asignaci贸n Compuesta
 
 Vamos a definir una clase `Vector` que representa un vector en dos dimensiones y sobrecargaremos los operadores `+=`, `-=`, `*=`, y `/=`.
 
@@ -48,7 +48,7 @@ public:
             x /= scalar;
             y /= scalar;
         } else {
-            std::cerr << "Error: Divisi髇 por cero." << std::endl;
+            std::cerr << "Error: Divisi贸n por cero." << std::endl;
         }
         return *this;
     }
@@ -91,7 +91,7 @@ int main() {
 }
 ```
 
-### Explicaci髇 de los Operadores Sobrecargados
+### Explicaci贸n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `+=`
 
@@ -102,7 +102,7 @@ Vector& operator+=(const Vector& other) {
     return *this;
 }
 ```
-Este operador a馻de las componentes `x` e `y` del vector `other` a las componentes del vector `this`, modificando el vector `this` en el proceso.
+Este operador a帽ade las componentes `x` e `y` del vector `other` a las componentes del vector `this`, modificando el vector `this` en el proceso.
 
 #### Sobrecarga del Operador `-=`
 
@@ -134,26 +134,27 @@ Vector& operator/=(double scalar) {
         x /= scalar;
         y /= scalar;
     } else {
-        std::cerr << "Error: Divisi髇 por cero." << std::endl;
+        std::cerr << "Error: Divisi贸n por cero." << std::endl;
     }
     return *this;
 }
 ```
 Este operador divide las componentes `x` e `y` del vector `this` por un escalar, modificando el vector `this` en el proceso. Si el escalar es cero, muestra un mensaje de error.
 
-### Ventajas de la Sobrecarga de Operadores de Asignaci髇 Compuesta
+### Ventajas de la Sobrecarga de Operadores de Asignaci贸n Compuesta
 
-1. **Legibilidad y Concisi髇**: Permite escribir c骴igo m醩 conciso y legible, haciendo que las operaciones compuestas sean m醩 claras.
+1. **Legibilidad y Concisi贸n**: Permite escribir c贸digo m谩s conciso y legible, haciendo que las operaciones compuestas sean m谩s claras.
 2. **Consistencia**: Facilita la consistencia en el uso de operadores, proporcionando una interfaz uniforme para tipos de datos definidos por el usuario.
-3. **Encapsulaci髇**: Encapsula la l骻ica de la operaci髇 compuesta dentro de la clase, asegurando que los detalles de la implementaci髇 est閚 ocultos y el c骴igo cliente sea m醩 limpio.
+3. **Encapsulaci贸n**: Encapsula la l贸gica de la operaci贸n compuesta dentro de la clase, asegurando que los detalles de la implementaci贸n est茅n ocultos y el c贸digo cliente sea m谩s limpio.
 
-### Desventajas de la Sobrecarga de Operadores de Asignaci髇 Compuesta
+### Desventajas de la Sobrecarga de Operadores de Asignaci贸n Compuesta
 
-1. **Complejidad Adicional**: Puede agregar complejidad al c骴igo de la clase, lo que puede dificultar su comprensi髇 y mantenimiento.
-2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores dif韈iles de detectar, como operaciones incorrectas o fallos en la asignaci髇.
+1. **Complejidad Adicional**: Puede agregar complejidad al c贸digo de la clase, lo que puede dificultar su comprensi贸n y mantenimiento.
+2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores dif铆ciles de detectar, como operaciones incorrectas o fallos en la asignaci贸n.
 3. **Sobrecarga Cognitiva**: Los desarrolladores deben recordar y entender el comportamiento personalizado de los operadores sobrecargados, lo que puede aumentar la sobrecarga cognitiva.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores de asignaci髇 compuesta en C++ permite realizar operaciones compuestas de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c骴igo, haciendo que las clases sean m醩 f醕iles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c骴igo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
+La sobrecarga de operadores de asignaci贸n compuesta en C++ permite realizar operaciones compuestas de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c贸digo, haciendo que las clases sean m谩s f谩ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c贸digo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
 <---FILES--->
+NA.

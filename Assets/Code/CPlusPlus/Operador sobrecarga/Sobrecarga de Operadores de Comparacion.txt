@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Sobrecarga de Operadores de Comparaci髇 en C++
+### Sobrecarga de Operadores de Comparaci贸n en C++
 
-La sobrecarga de operadores de comparaci髇 permite definir c髆o se deben comportar los operadores de comparaci髇 est醤dar (`==`, `!=`, `<`, `<=`, `>`, `>=`) cuando se utilizan con tipos de datos definidos por el usuario. Estos operadores son esenciales para comparar objetos y son especialmente 鷗iles para clases que representan entidades con propiedades comparables, como vectores, fechas, etc.
+La sobrecarga de operadores de comparaci贸n permite definir c贸mo se deben comportar los operadores de comparaci贸n est谩ndar (`==`, `!=`, `<`, `<=`, `>`, `>=`) cuando se utilizan con tipos de datos definidos por el usuario. Estos operadores son esenciales para comparar objetos y son especialmente 煤tiles para clases que representan entidades con propiedades comparables, como vectores, fechas, etc.
 
-#### Ejemplo: Clase `Date` para Sobrecargar Operadores de Comparaci髇
+#### Ejemplo: Clase `Date` para Sobrecargar Operadores de Comparaci贸n
 
-Vamos a definir una clase `Date` que representa una fecha y sobrecargaremos los operadores de comparaci髇 `==`, `!=`, `<`, `<=`, `>`, y `>=`.
+Vamos a definir una clase `Date` que representa una fecha y sobrecargaremos los operadores de comparaci贸n `==`, `!=`, `<`, `<=`, `>`, y `>=`.
 
 ```cpp
 // Date.h
@@ -88,7 +88,7 @@ int main() {
 }
 ```
 
-### Explicaci髇 de los Operadores Sobrecargados
+### Explicaci贸n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `==`
 
@@ -117,7 +117,7 @@ bool operator<(const Date& other) const {
     return day < other.day;
 }
 ```
-Este operador compara dos objetos `Date` de manera lexicogr醘ica: primero por a駉, luego por mes y finalmente por d韆.
+Este operador compara dos objetos `Date` de manera lexicogr谩fica: primero por a帽o, luego por mes y finalmente por d铆a.
 
 #### Sobrecarga del Operador `<=`
 
@@ -146,19 +146,20 @@ bool operator>=(const Date& other) const {
 ```
 Este operador utiliza la sobrecarga del operador `<` para determinar si un objeto `Date` es mayor o igual que otro.
 
-### Ventajas de la Sobrecarga de Operadores de Comparaci髇
+### Ventajas de la Sobrecarga de Operadores de Comparaci贸n
 
-1. **Legibilidad y Claridad**: Permite comparar objetos utilizando una sintaxis clara y familiar, haciendo que el c骴igo sea m醩 f醕il de leer y entender.
-2. **Consistencia**: Proporciona una interfaz consistente para la comparaci髇 de objetos, facilitando el uso de las clases en algoritmos y estructuras de datos est醤dar.
-3. **Flexibilidad**: Permite definir comportamientos personalizados para la comparaci髇, adapt醤dolos a las necesidades espec韋icas de la clase.
+1. **Legibilidad y Claridad**: Permite comparar objetos utilizando una sintaxis clara y familiar, haciendo que el c贸digo sea m谩s f谩cil de leer y entender.
+2. **Consistencia**: Proporciona una interfaz consistente para la comparaci贸n de objetos, facilitando el uso de las clases en algoritmos y estructuras de datos est谩ndar.
+3. **Flexibilidad**: Permite definir comportamientos personalizados para la comparaci贸n, adapt谩ndolos a las necesidades espec铆ficas de la clase.
 
-### Desventajas de la Sobrecarga de Operadores de Comparaci髇
+### Desventajas de la Sobrecarga de Operadores de Comparaci贸n
 
-1. **Complejidad Adicional**: Puede agregar complejidad al c骴igo de la clase, lo que puede dificultar su comprensi髇 y mantenimiento.
-2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores sutiles que pueden ser dif韈iles de detectar y depurar.
+1. **Complejidad Adicional**: Puede agregar complejidad al c贸digo de la clase, lo que puede dificultar su comprensi贸n y mantenimiento.
+2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores sutiles que pueden ser dif铆ciles de detectar y depurar.
 3. **Sobrecarga Cognitiva**: Los desarrolladores deben recordar y entender el comportamiento personalizado de los operadores sobrecargados, lo que puede aumentar la sobrecarga cognitiva.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores de comparaci髇 en C++ permite realizar comparaciones de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c骴igo, haciendo que las clases sean m醩 f醕iles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c骴igo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
+La sobrecarga de operadores de comparaci贸n en C++ permite realizar comparaciones de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c贸digo, haciendo que las clases sean m谩s f谩ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c贸digo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
 <---FILES--->
+NA.

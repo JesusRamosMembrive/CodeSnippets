@@ -17,7 +17,7 @@ qt_add_executable(appCodeSnippetApp
     resources.qrc
 )
 
-qt_add_qml_module(appCodeSnippetApp
+qt6_add_qml_module(appCodeSnippetApp
     URI CodeSnippetApp
     VERSION 1.0
     QML_FILES Main.qml
@@ -38,7 +38,7 @@ qt_add_qml_module(appCodeSnippetApp
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
     QML_FILES Modules/Style/Theme.qml
-    QML_FILES Modules/ListsOfModels/Concepts.qml Modules/ListsOfModels/ConstYMiembrosEstaticos.qml Modules/ListsOfModels/ControlDeFlujo.qml Modules/ListsOfModels/Corutinas.qml Modules/ListsOfModels/EstructurasDeDatos.qml Modules/ListsOfModels/ExpresionesDeRango.qml Modules/ListsOfModels/Friends.qml Modules/ListsOfModels/Funciones.qml Modules/ListsOfModels/FuncionesComoEntidades.qml Modules/ListsOfModels/Fundamentos.qml Modules/ListsOfModels/HerenciaYPolimorfismo.qml Modules/ListsOfModels/Iteradores.qml Modules/ListsOfModels/ManejoMemoria.qml Modules/ListsOfModels/Namespaces.qml Modules/ListsOfModels/OperadorSobrecarga.qml Modules/ListsOfModels/PlantillasYGenericas.qml Modules/ListsOfModels/Poo.qml Modules/ListsOfModels/Semantics.qml Modules/ListsOfModels/StdAlgoritmos.qml
+    QML_FILES Modules/ListsOfModels/Amigas.qml Modules/ListsOfModels/Concepts.qml Modules/ListsOfModels/ControlDeFlujo.qml Modules/ListsOfModels/EstructurasDeDatos.qml Modules/ListsOfModels/ExpresionesDeRango.qml Modules/ListsOfModels/Funciones.qml Modules/ListsOfModels/FuncionesComoEntidades.qml Modules/ListsOfModels/Fundamentos.qml Modules/ListsOfModels/GestionDeLaMemoria.qml Modules/ListsOfModels/HerenciaYPolimorfismo.qml Modules/ListsOfModels/Iteradores.qml Modules/ListsOfModels/MiemborsStaticYConst.qml Modules/ListsOfModels/Namespace.qml Modules/ListsOfModels/Plantillas.qml Modules/ListsOfModels/Poo.qml Modules/ListsOfModels/Semantics.qml Modules/ListsOfModels/SobrecargaDeOperadores.qml Modules/ListsOfModels/StdAlgorithms.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

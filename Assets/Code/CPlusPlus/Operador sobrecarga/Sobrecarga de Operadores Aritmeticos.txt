@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Sobrecarga de Operadores AritmÈticos en C++
+### Sobrecarga de Operadores Aritm√©ticos en C++
 
-La sobrecarga de operadores aritmÈticos permite definir cÛmo se deben comportar los operadores matem·ticos est·ndar (como `+`, `-`, `*`, `/`, `%`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Esta capacidad es especialmente ˙til para clases que representan conceptos matem·ticos o numÈricos, como vectores, matrices, complejos, etc.
+La sobrecarga de operadores aritm√©ticos permite definir c√≥mo se deben comportar los operadores matem√°ticos est√°ndar (como `+`, `-`, `*`, `/`, `%`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Esta capacidad es especialmente √∫til para clases que representan conceptos matem√°ticos o num√©ricos, como vectores, matrices, complejos, etc.
 
-A continuaciÛn, veremos cÛmo sobrecargar algunos operadores aritmÈticos b·sicos en C++.
+A continuaci√≥n, veremos c√≥mo sobrecargar algunos operadores aritm√©ticos b√°sicos en C++.
 
-#### Ejemplo: Clase `Complex` para N˙meros Complejos
+#### Ejemplo: Clase `Complex` para N√∫meros Complejos
 
-Vamos a definir una clase `Complex` que representa n˙meros complejos y sobrecargaremos los operadores `+`, `-`, `*` y `/`.
+Vamos a definir una clase `Complex` que representa n√∫meros complejos y sobrecargaremos los operadores `+`, `-`, `*` y `/`.
 
 ```cpp
 // Complex.h
@@ -79,7 +79,7 @@ int main() {
 }
 ```
 
-### ExplicaciÛn de los Operadores Sobrecargados
+### Explicaci√≥n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `+`
 
@@ -106,7 +106,7 @@ Complex operator*(const Complex& other) const {
     return Complex(real * other.real - imag * other.imag, real * other.imag + imag * other.real);
 }
 ```
-Este operador devuelve un nuevo objeto `Complex` que resulta de la multiplicaciÛn de dos n˙meros complejos seg˙n la fÛrmula:
+Este operador devuelve un nuevo objeto `Complex` que resulta de la multiplicaci√≥n de dos n√∫meros complejos seg√∫n la f√≥rmula:
 \[ (a + bi) * (c + di) = (ac - bd) + (ad + bc)i \]
 
 #### Sobrecarga del Operador `/`
@@ -117,22 +117,23 @@ Complex operator/(const Complex& other) const {
     return Complex((real * other.real + imag * other.imag) / denom, (imag * other.real - real * other.imag) / denom);
 }
 ```
-Este operador devuelve un nuevo objeto `Complex` que resulta de la divisiÛn de dos n˙meros complejos seg˙n la fÛrmula:
+Este operador devuelve un nuevo objeto `Complex` que resulta de la divisi√≥n de dos n√∫meros complejos seg√∫n la f√≥rmula:
 \[ \frac{a + bi}{c + di} = \frac{(ac + bd) + (bc - ad)i}{c^2 + d^2} \]
 
-### Ventajas de la Sobrecarga de Operadores AritmÈticos
+### Ventajas de la Sobrecarga de Operadores Aritm√©ticos
 
-1. **Naturalidad y Legibilidad**: Permite escribir cÛdigo que es m·s natural y f·cil de leer, como `c1 + c2` en lugar de `c1.add(c2)`.
+1. **Naturalidad y Legibilidad**: Permite escribir c√≥digo que es m√°s natural y f√°cil de leer, como `c1 + c2` en lugar de `c1.add(c2)`.
 2. **Consistencia**: Hace que las clases definidas por el usuario sean consistentes con los tipos de datos incorporados.
-3. **Facilita el Uso de LibrerÌas**: Las librerÌas matem·ticas y de ·lgebra lineal pueden integrarse m·s f·cilmente.
+3. **Facilita el Uso de Librer√≠as**: Las librer√≠as matem√°ticas y de √°lgebra lineal pueden integrarse m√°s f√°cilmente.
 
-### Desventajas de la Sobrecarga de Operadores AritmÈticos
+### Desventajas de la Sobrecarga de Operadores Aritm√©ticos
 
-1. **Complejidad Adicional**: AÒade complejidad al cÛdigo, lo que puede hacer que sea m·s difÌcil de entender y mantener.
-2. **Riesgo de Abuso**: Los operadores sobrecargados pueden ser utilizados de manera inapropiada, lo que puede llevar a cÛdigo confuso o difÌcil de entender.
-3. **Ambig¸edades**: La sobrecarga de operadores puede introducir ambig¸edades, especialmente si no se usa de manera clara y consistente.
+1. **Complejidad Adicional**: A√±ade complejidad al c√≥digo, lo que puede hacer que sea m√°s dif√≠cil de entender y mantener.
+2. **Riesgo de Abuso**: Los operadores sobrecargados pueden ser utilizados de manera inapropiada, lo que puede llevar a c√≥digo confuso o dif√≠cil de entender.
+3. **Ambig√ºedades**: La sobrecarga de operadores puede introducir ambig√ºedades, especialmente si no se usa de manera clara y consistente.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La sobrecarga de operadores aritmÈticos en C++ es una tÈcnica poderosa que puede hacer que el cÛdigo sea m·s legible y f·cil de usar. Sin embargo, debe ser utilizada con cuidado para evitar complejidades innecesarias y ambig¸edades. Al sobrecargar operadores, es importante seguir las convenciones est·ndar y documentar claramente las operaciones realizadas.
+La sobrecarga de operadores aritm√©ticos en C++ es una t√©cnica poderosa que puede hacer que el c√≥digo sea m√°s legible y f√°cil de usar. Sin embargo, debe ser utilizada con cuidado para evitar complejidades innecesarias y ambig√ºedades. Al sobrecargar operadores, es importante seguir las convenciones est√°ndar y documentar claramente las operaciones realizadas.
 <---FILES--->
+NA.

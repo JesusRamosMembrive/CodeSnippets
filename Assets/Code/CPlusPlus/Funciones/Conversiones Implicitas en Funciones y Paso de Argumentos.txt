@@ -1,44 +1,44 @@
 <---EXPLANATION--->
-### Conversiones Impl韈itas en Funciones y Paso de Argumentos en C++
+### Conversiones Impl铆citas en Funciones y Paso de Argumentos en C++
 
-Las conversiones impl韈itas son una caracter韘tica del lenguaje C++ que permite que los tipos de datos se conviertan autom醫icamente de un tipo a otro en ciertas circunstancias. Cuando se pasan argumentos a las funciones, estas conversiones impl韈itas pueden ocurrir para hacer coincidir los tipos de los argumentos con los tipos de los par醡etros de la funci髇. Esta caracter韘tica facilita la escritura de funciones m醩 flexibles y reutilizables.
+Las conversiones impl铆citas son una caracter铆stica del lenguaje C++ que permite que los tipos de datos se conviertan autom谩ticamente de un tipo a otro en ciertas circunstancias. Cuando se pasan argumentos a las funciones, estas conversiones impl铆citas pueden ocurrir para hacer coincidir los tipos de los argumentos con los tipos de los par谩metros de la funci贸n. Esta caracter铆stica facilita la escritura de funciones m谩s flexibles y reutilizables.
 
-#### Concepto de Conversiones Impl韈itas
+#### Concepto de Conversiones Impl铆citas
 
-Las conversiones impl韈itas se producen autom醫icamente cuando un tipo de dato puede ser convertido a otro sin necesidad de una conversi髇 expl韈ita por parte del programador. Estas conversiones son 鷗iles para asegurar que los tipos de datos sean compatibles cuando se pasan como argumentos a las funciones.
+Las conversiones impl铆citas se producen autom谩ticamente cuando un tipo de dato puede ser convertido a otro sin necesidad de una conversi贸n expl铆cita por parte del programador. Estas conversiones son 煤tiles para asegurar que los tipos de datos sean compatibles cuando se pasan como argumentos a las funciones.
 
-##### Ejemplo de Conversi髇 Impl韈ita
+##### Ejemplo de Conversi贸n Impl铆cita
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 void imprimirNumero(double num) {
-    cout << "N鷐ero: " << num << endl;
+    cout << "N煤mero: " << num << endl;
 }
 
 int main() {
     int entero = 42;
     float flotante = 3.14f;
 
-    imprimirNumero(entero);    // Conversi髇 impl韈ita de int a double
-    imprimirNumero(flotante);  // Conversi髇 impl韈ita de float a double
+    imprimirNumero(entero);    // Conversi贸n impl铆cita de int a double
+    imprimirNumero(flotante);  // Conversi贸n impl铆cita de float a double
 
     return 0;
 }
 ```
 
-En este ejemplo, las variables `entero` y `flotante` se convierten impl韈itamente a `double` cuando se pasan a la funci髇 `imprimirNumero`.
+En este ejemplo, las variables `entero` y `flotante` se convierten impl铆citamente a `double` cuando se pasan a la funci贸n `imprimirNumero`.
 
-#### Conversiones Impl韈itas Comunes
+#### Conversiones Impl铆citas Comunes
 
 1. **De tipos enteros a tipos de punto flotante**
-2. **De tipos m醩 peque駉s a tipos m醩 grandes (promoci髇 de tipos)**
+2. **De tipos m谩s peque帽os a tipos m谩s grandes (promoci贸n de tipos)**
 3. **De tipos derivados a tipos base en herencia**
 
-##### Promoci髇 de Tipos
+##### Promoci贸n de Tipos
 
-Cuando se pasan argumentos a una funci髇, los tipos de datos m醩 peque駉s pueden promocionarse a tipos m醩 grandes autom醫icamente.
+Cuando se pasan argumentos a una funci贸n, los tipos de datos m谩s peque帽os pueden promocionarse a tipos m谩s grandes autom谩ticamente.
 
 ```cpp
 #include <iostream>
@@ -53,19 +53,19 @@ int main() {
     short s = 10;
     int i = 100;
 
-    mostrarLong(c); // Conversi髇 impl韈ita de char a long
-    mostrarLong(s); // Conversi髇 impl韈ita de short a long
-    mostrarLong(i); // Conversi髇 impl韈ita de int a long
+    mostrarLong(c); // Conversi贸n impl铆cita de char a long
+    mostrarLong(s); // Conversi贸n impl铆cita de short a long
+    mostrarLong(i); // Conversi贸n impl铆cita de int a long
 
     return 0;
 }
 ```
 
-En este ejemplo, los tipos `char`, `short` e `int` se convierten impl韈itamente a `long` cuando se pasan a la funci髇 `mostrarLong`.
+En este ejemplo, los tipos `char`, `short` e `int` se convierten impl铆citamente a `long` cuando se pasan a la funci贸n `mostrarLong`.
 
 #### Conversiones con Tipos Derivados y Base
 
-En el contexto de la herencia, un puntero o referencia a un tipo derivado puede convertirse impl韈itamente en un puntero o referencia a un tipo base.
+En el contexto de la herencia, un puntero o referencia a un tipo derivado puede convertirse impl铆citamente en un puntero o referencia a un tipo base.
 
 ##### Ejemplo con Herencia
 
@@ -95,22 +95,22 @@ int main() {
     Base b;
     Derivado d;
 
-    llamarMostrar(b); // No hay conversi髇
-    llamarMostrar(d); // Conversi髇 impl韈ita de Derivado a Base
+    llamarMostrar(b); // No hay conversi贸n
+    llamarMostrar(d); // Conversi贸n impl铆cita de Derivado a Base
 
     return 0;
 }
 ```
 
-En este ejemplo, un objeto de tipo `Derivado` se convierte impl韈itamente a `Base` cuando se pasa a la funci髇 `llamarMostrar`.
+En este ejemplo, un objeto de tipo `Derivado` se convierte impl铆citamente a `Base` cuando se pasa a la funci贸n `llamarMostrar`.
 
-#### Consideraciones y Buenas Pr醕ticas
+#### Consideraciones y Buenas Pr谩cticas
 
-1. **Cuidado con la P閞dida de Datos**: Las conversiones impl韈itas pueden provocar la p閞dida de precisi髇 o informaci髇. Por ejemplo, convertir un `double` a un `int` puede truncar el valor decimal.
-2. **Uso de `const` y Referencias**: Para evitar copias innecesarias y posibles errores de conversi髇, usa referencias constantes (`const &`) en los par醡etros de las funciones.
-3. **Constructores de Conversi髇**: Define constructores de conversi髇 para permitir conversiones impl韈itas seguras entre clases.
+1. **Cuidado con la P茅rdida de Datos**: Las conversiones impl铆citas pueden provocar la p茅rdida de precisi贸n o informaci贸n. Por ejemplo, convertir un `double` a un `int` puede truncar el valor decimal.
+2. **Uso de `const` y Referencias**: Para evitar copias innecesarias y posibles errores de conversi贸n, usa referencias constantes (`const &`) en los par谩metros de las funciones.
+3. **Constructores de Conversi贸n**: Define constructores de conversi贸n para permitir conversiones impl铆citas seguras entre clases.
 
-##### Ejemplo con Constructor de Conversi髇
+##### Ejemplo con Constructor de Conversi贸n
 
 ```cpp
 #include <iostream>
@@ -132,17 +132,17 @@ void mostrarEntero(const Entero& e) {
 }
 
 int main() {
-    mostrarEntero(42); // Conversi髇 impl韈ita de int a Entero
+    mostrarEntero(42); // Conversi贸n impl铆cita de int a Entero
 
     return 0;
 }
 ```
 
-En este ejemplo, el constructor de `Entero` permite la conversi髇 impl韈ita de `int` a `Entero` cuando se llama a la funci髇 `mostrarEntero`.
+En este ejemplo, el constructor de `Entero` permite la conversi贸n impl铆cita de `int` a `Entero` cuando se llama a la funci贸n `mostrarEntero`.
 
 ### Ejemplo Completo
 
-A continuaci髇, un ejemplo completo que ilustra diversas conversiones impl韈itas cuando se pasan argumentos a las funciones:
+A continuaci贸n, un ejemplo completo que ilustra diversas conversiones impl铆citas cuando se pasan argumentos a las funciones:
 
 ```cpp
 #include <iostream>
@@ -163,7 +163,7 @@ public:
 };
 
 void imprimirNumero(double num) {
-    cout << "N鷐ero: " << num << endl;
+    cout << "N煤mero: " << num << endl;
 }
 
 void mostrarLong(long num) {
@@ -190,67 +190,67 @@ void mostrarEntero(const Entero& e) {
 }
 
 int main() {
-    // Conversi髇 impl韈ita de tipos primitivos
+    // Conversi贸n impl铆cita de tipos primitivos
     int entero = 42;
     float flotante = 3.14f;
 
-    imprimirNumero(entero);    // Conversi髇 impl韈ita de int a double
-    imprimirNumero(flotante);  // Conversi髇 impl韈ita de float a double
+    imprimirNumero(entero);    // Conversi贸n impl铆cita de int a double
+    imprimirNumero(flotante);  // Conversi贸n impl铆cita de float a double
 
     char c = 'A';
     short s = 10;
     int i = 100;
 
-    mostrarLong(c); // Conversi髇 impl韈ita de char a long
-    mostrarLong(s); // Conversi髇 impl韈ita de short a long
-    mostrarLong(i); // Conversi髇 impl韈ita de int a long
+    mostrarLong(c); // Conversi贸n impl铆cita de char a long
+    mostrarLong(s); // Conversi贸n impl铆cita de short a long
+    mostrarLong(i); // Conversi贸n impl铆cita de int a long
 
-    // Conversi髇 impl韈ita en herencia
+    // Conversi贸n impl铆cita en herencia
     Base b;
     Derivado d;
 
-    llamarMostrar(b); // No hay conversi髇
-    llamarMostrar(d); // Conversi髇 impl韈ita de Derivado a Base
+    llamarMostrar(b); // No hay conversi贸n
+    llamarMostrar(d); // Conversi贸n impl铆cita de Derivado a Base
 
-    // Conversi髇 impl韈ita usando constructor
-    mostrarEntero(42); // Conversi髇 impl韈ita de int a Entero
+    // Conversi贸n impl铆cita usando constructor
+    mostrarEntero(42); // Conversi贸n impl铆cita de int a Entero
 
     return 0;
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Las conversiones impl韈itas en C++ facilitan la interoperabilidad entre diferentes tipos de datos, especialmente al pasar argumentos a funciones. Sin embargo, es crucial manejarlas con cuidado para evitar la p閞dida de datos y garantizar la seguridad del tipo. Comprender c髆o y cu醤do ocurren estas conversiones permite a los desarrolladores escribir funciones m醩 flexibles y robustas, mejorando la eficiencia y la legibilidad del c骴igo.
+Las conversiones impl铆citas en C++ facilitan la interoperabilidad entre diferentes tipos de datos, especialmente al pasar argumentos a funciones. Sin embargo, es crucial manejarlas con cuidado para evitar la p茅rdida de datos y garantizar la seguridad del tipo. Comprender c贸mo y cu谩ndo ocurren estas conversiones permite a los desarrolladores escribir funciones m谩s flexibles y robustas, mejorando la eficiencia y la legibilidad del c贸digo.
 <---FILES--->
-Ejemplo de Conversi髇 Impl韈ita
-Ejemplo de Conversi髇 Impl韈ita Result
-Promoci髇 de Tipos
-Promoci髇 de Tipos Result
+Ejemplo de Conversi贸n Impl铆cita
+Ejemplo de Conversi贸n Impl铆cita Result
+Promoci贸n de Tipos
+Promoci贸n de Tipos Result
 Ejemplo con Herencia
 Ejemplo con Herencia Result
-Ejemplo con Constructor de Conversi髇
-Ejemplo con Constructor de Conversi髇 Result
-<---Ejemplo de Conversi髇 Impl韈ita--->
+Ejemplo con Constructor de Conversi贸n
+Ejemplo con Constructor de Conversi贸n Result
+<---Ejemplo de Conversi贸n Impl铆cita--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 void imprimirNumero(double num) {
-    cout << "N鷐ero: " << num << endl;
+    cout << "N煤mero: " << num << endl;
 }
 
 int main() {
     int entero = 42;
     float flotante = 3.14f;
 
-    imprimirNumero(entero);    // Conversi髇 impl韈ita de int a double
-    imprimirNumero(flotante);  // Conversi髇 impl韈ita de float a double
+    imprimirNumero(entero);    // Conversi贸n impl铆cita de int a double
+    imprimirNumero(flotante);  // Conversi贸n impl铆cita de float a double
 
     return 0;
 }
-<---Ejemplo de Conversi髇 Impl韈ita Result--->
-<---Promoci髇 de Tipos--->
+<---Ejemplo de Conversi贸n Impl铆cita Result--->
+<---Promoci贸n de Tipos--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -264,13 +264,13 @@ int main() {
     short s = 10;
     int i = 100;
 
-    mostrarLong(c); // Conversi髇 impl韈ita de char a long
-    mostrarLong(s); // Conversi髇 impl韈ita de short a long
-    mostrarLong(i); // Conversi髇 impl韈ita de int a long
+    mostrarLong(c); // Conversi贸n impl铆cita de char a long
+    mostrarLong(s); // Conversi贸n impl铆cita de short a long
+    mostrarLong(i); // Conversi贸n impl铆cita de int a long
 
     return 0;
 }
-<---Promoci髇 de Tipos Result--->
+<---Promoci贸n de Tipos Result--->
 <---Ejemplo con Herencia--->
 ```cpp
 #include <iostream>
@@ -298,13 +298,13 @@ int main() {
     Base b;
     Derivado d;
 
-    llamarMostrar(b); // No hay conversi髇
-    llamarMostrar(d); // Conversi髇 impl韈ita de Derivado a Base
+    llamarMostrar(b); // No hay conversi贸n
+    llamarMostrar(d); // Conversi贸n impl铆cita de Derivado a Base
 
     return 0;
 }
 <---Ejemplo con Herencia Result--->
-<---Ejemplo con Constructor de Conversi髇--->
+<---Ejemplo con Constructor de Conversi贸n--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -325,7 +325,7 @@ void mostrarEntero(const Entero& e) {
 }
 
 int main() {
-    mostrarEntero(42); // Conversi髇 impl韈ita de int a Entero
+    mostrarEntero(42); // Conversi贸n impl铆cita de int a Entero
 
     return 0;
 }
@@ -348,7 +348,7 @@ public:
 };
 
 void imprimirNumero(double num) {
-    cout << "N鷐ero: " << num << endl;
+    cout << "N煤mero: " << num << endl;
 }
 
 void mostrarLong(long num) {
@@ -375,31 +375,31 @@ void mostrarEntero(const Entero& e) {
 }
 
 int main() {
-    // Conversi髇 impl韈ita de tipos primitivos
+    // Conversi贸n impl铆cita de tipos primitivos
     int entero = 42;
     float flotante = 3.14f;
 
-    imprimirNumero(entero);    // Conversi髇 impl韈ita de int a double
-    imprimirNumero(flotante);  // Conversi髇 impl韈ita de float a double
+    imprimirNumero(entero);    // Conversi贸n impl铆cita de int a double
+    imprimirNumero(flotante);  // Conversi贸n impl铆cita de float a double
 
     char c = 'A';
     short s = 10;
     int i = 100;
 
-    mostrarLong(c); // Conversi髇 impl韈ita de char a long
-    mostrarLong(s); // Conversi髇 impl韈ita de short a long
-    mostrarLong(i); // Conversi髇 impl韈ita de int a long
+    mostrarLong(c); // Conversi贸n impl铆cita de char a long
+    mostrarLong(s); // Conversi贸n impl铆cita de short a long
+    mostrarLong(i); // Conversi贸n impl铆cita de int a long
 
-    // Conversi髇 impl韈ita en herencia
+    // Conversi贸n impl铆cita en herencia
     Base b;
     Derivado d;
 
-    llamarMostrar(b); // No hay conversi髇
-    llamarMostrar(d); // Conversi髇 impl韈ita de Derivado a Base
+    llamarMostrar(b); // No hay conversi贸n
+    llamarMostrar(d); // Conversi贸n impl铆cita de Derivado a Base
 
-    // Conversi髇 impl韈ita usando constructor
-    mostrarEntero(42); // Conversi髇 impl韈ita de int a Entero
+    // Conversi贸n impl铆cita usando constructor
+    mostrarEntero(42); // Conversi贸n impl铆cita de int a Entero
 
     return 0;
 }
-<---Ejemplo con Constructor de Conversi髇 Result--->
+<---Ejemplo con Constructor de Conversi贸n Result--->

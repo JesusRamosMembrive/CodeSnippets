@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Est醤dar: `std::set_difference`
+### Algoritmo de la Biblioteca Est谩ndar: `std::set_difference`
 
-El algoritmo `std::set_difference` es parte de la biblioteca est醤dar de C++ y se utiliza para calcular la diferencia de conjuntos entre dos rangos ordenados, es decir, los elementos que est醤 presentes en el primer rango pero no en el segundo. Es parte del encabezado `<algorithm>`.
+El algoritmo `std::set_difference` es parte de la biblioteca est谩ndar de C++ y se utiliza para calcular la diferencia de conjuntos entre dos rangos ordenados, es decir, los elementos que est谩n presentes en el primer rango pero no en el segundo. Es parte del encabezado `<algorithm>`.
 
 #### Sintaxis de `std::set_difference`
 
@@ -16,19 +16,19 @@ OutputIt set_difference(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputI
 ```
 
 - **`InputIt1 first1`**: Iterador al primer elemento del primer rango.
-- **`InputIt1 last1`**: Iterador al elemento despu閟 del 鷏timo en el primer rango.
+- **`InputIt1 last1`**: Iterador al elemento despu茅s del 煤ltimo en el primer rango.
 - **`InputIt2 first2`**: Iterador al primer elemento del segundo rango.
-- **`InputIt2 last2`**: Iterador al elemento despu閟 del 鷏timo en el segundo rango.
+- **`InputIt2 last2`**: Iterador al elemento despu茅s del 煤ltimo en el segundo rango.
 - **`OutputIt d_first`**: Iterador al primer elemento del rango de destino.
-- **`Compare comp`**: (Opcional) Funci髇 de comparaci髇 que toma dos argumentos.
+- **`Compare comp`**: (Opcional) Funci贸n de comparaci贸n que toma dos argumentos.
 
-#### Descripci髇
+#### Descripci贸n
 
-`std::set_difference` copia los elementos que est醤 presentes en el primer rango ordenado `[first1, last1)` pero no en el segundo rango ordenado `[first2, last2)` en el rango comenzando en `d_first`. Si se proporciona una funci髇 de comparaci髇 `comp`, se utiliza para comparar los elementos en lugar del operador `<`.
+`std::set_difference` copia los elementos que est谩n presentes en el primer rango ordenado `[first1, last1)` pero no en el segundo rango ordenado `[first2, last2)` en el rango comenzando en `d_first`. Si se proporciona una funci贸n de comparaci贸n `comp`, se utiliza para comparar los elementos en lugar del operador `<`.
 
 #### Ejemplo de Uso de `std::set_difference`
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
@@ -58,13 +58,13 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::set_difference(vec1.begin(), vec1.end(), vec2.begin(), vec2.end(), std::back_inserter(result))` encuentra los elementos que est醤 presentes en `vec1` pero no en `vec2` y los copia en `result`.
+- `std::set_difference(vec1.begin(), vec1.end(), vec2.begin(), vec2.end(), std::back_inserter(result))` encuentra los elementos que est谩n presentes en `vec1` pero no en `vec2` y los copia en `result`.
 
-### Uso con Comparaci髇 Personalizada
+### Uso con Comparaci贸n Personalizada
 
-`std::set_difference` puede utilizar una funci髇 de comparaci髇 personalizada para comparar elementos seg鷑 un criterio espec韋ico.
+`std::set_difference` puede utilizar una funci贸n de comparaci贸n personalizada para comparar elementos seg煤n un criterio espec铆fico.
 
-##### Ejemplo con Comparaci髇 Personalizada
+##### Ejemplo con Comparaci贸n Personalizada
 
 ```cpp
 #include <iostream>
@@ -89,7 +89,7 @@ int main() {
     std::sort(grupo1.begin(), grupo1.end(), compararPorEdad);
     std::sort(grupo2.begin(), grupo2.end(), compararPorEdad);
 
-    // Usar std::set_difference con comparaci髇 personalizada para encontrar la diferencia
+    // Usar std::set_difference con comparaci贸n personalizada para encontrar la diferencia
     std::set_difference(grupo1.begin(), grupo1.end(), grupo2.begin(), grupo2.end(), std::back_inserter(resultado), compararPorEdad);
 
     // Mostrar las personas en la diferencia
@@ -104,17 +104,17 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::set_difference(grupo1.begin(), grupo1.end(), grupo2.begin(), grupo2.end(), std::back_inserter(resultado), compararPorEdad)` encuentra las personas que est醤 en `grupo1` pero no en `grupo2` bas醤dose en la edad y las copia en `resultado`.
+- `std::set_difference(grupo1.begin(), grupo1.end(), grupo2.begin(), grupo2.end(), std::back_inserter(resultado), compararPorEdad)` encuentra las personas que est谩n en `grupo1` pero no en `grupo2` bas谩ndose en la edad y las copia en `resultado`.
 
 ### Consideraciones
 
-- **Rendimiento:** `std::set_difference` tiene una complejidad lineal (`O(N + M)`), donde `N` y `M` son los tama駉s de los dos rangos de entrada.
-- **Orden:** Los rangos de entrada deben estar ordenados seg鷑 el mismo criterio de comparaci髇 (ya sea por el operador `<` o una funci髇 de comparaci髇 personalizada).
-- **Tama駉 del Rango de Salida:** El rango de salida debe ser lo suficientemente grande para contener todos los elementos de la diferencia. Utilizar `std::back_inserter` puede ser conveniente para manejar esto autom醫icamente.
+- **Rendimiento:** `std::set_difference` tiene una complejidad lineal (`O(N + M)`), donde `N` y `M` son los tama帽os de los dos rangos de entrada.
+- **Orden:** Los rangos de entrada deben estar ordenados seg煤n el mismo criterio de comparaci贸n (ya sea por el operador `<` o una funci贸n de comparaci贸n personalizada).
+- **Tama帽o del Rango de Salida:** El rango de salida debe ser lo suficientemente grande para contener todos los elementos de la diferencia. Utilizar `std::back_inserter` puede ser conveniente para manejar esto autom谩ticamente.
 
 ### Variantes Relacionadas
 
-Existen otros algoritmos similares que trabajan con conjuntos ordenados, como `std::set_union`, `std::set_intersection` y `std::set_symmetric_difference`, cada uno de los cuales realiza una operaci髇 espec韋ica sobre dos conjuntos ordenados.
+Existen otros algoritmos similares que trabajan con conjuntos ordenados, como `std::set_union`, `std::set_intersection` y `std::set_symmetric_difference`, cada uno de los cuales realiza una operaci贸n espec铆fica sobre dos conjuntos ordenados.
 
 #### `std::set_union`
 
@@ -158,17 +158,17 @@ template <class InputIt1, class InputIt2, class OutputIt, class Compare>
 OutputIt set_symmetric_difference(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt d_first, Compare comp);
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-`std::set_difference` es un algoritmo eficiente de la biblioteca est醤dar de C++ que permite calcular la diferencia de conjuntos entre dos rangos ordenados, copiando los elementos que est醤 presentes en el primer rango pero no en el segundo. Es fundamental para trabajar con conjuntos de datos ordenados y puede utilizar comparaciones personalizadas para manejar criterios espec韋icos. Comprender y utilizar `std::set_difference`, junto con otros algoritmos relacionados como `std::set_union`, `std::set_intersection` y `std::set_symmetric_difference`, es esencial para realizar operaciones de conjuntos eficientes en C++.
+`std::set_difference` es un algoritmo eficiente de la biblioteca est谩ndar de C++ que permite calcular la diferencia de conjuntos entre dos rangos ordenados, copiando los elementos que est谩n presentes en el primer rango pero no en el segundo. Es fundamental para trabajar con conjuntos de datos ordenados y puede utilizar comparaciones personalizadas para manejar criterios espec铆ficos. Comprender y utilizar `std::set_difference`, junto con otros algoritmos relacionados como `std::set_union`, `std::set_intersection` y `std::set_symmetric_difference`, es esencial para realizar operaciones de conjuntos eficientes en C++.
 <---FILES--->
-Ejemplo B醩ico
-Ejemplo B醩ico Result
-Ejemplo con Comparaci髇 Personalizada
-Ejemplo con Comparaci髇 Personalizada Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
+Ejemplo con Comparaci贸n Personalizada
+Ejemplo con Comparaci贸n Personalizada Result
 Sintaxis
 Sintaxis Result
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -194,8 +194,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B醩ico Result--->
-<---Ejemplo con Comparaci髇 Personalizada--->
+<---Ejemplo B谩sico Result--->
+<---Ejemplo con Comparaci贸n Personalizada--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -219,7 +219,7 @@ int main() {
     std::sort(grupo1.begin(), grupo1.end(), compararPorEdad);
     std::sort(grupo2.begin(), grupo2.end(), compararPorEdad);
 
-    // Usar std::set_difference con comparaci髇 personalizada para encontrar la diferencia
+    // Usar std::set_difference con comparaci贸n personalizada para encontrar la diferencia
     std::set_difference(grupo1.begin(), grupo1.end(), grupo2.begin(), grupo2.end(), std::back_inserter(resultado), compararPorEdad);
 
     // Mostrar las personas en la diferencia
@@ -231,7 +231,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Comparaci髇 Personalizada Result--->
+<---Ejemplo con Comparaci贸n Personalizada Result--->
 <---Sintaxis--->
 ```cpp
 template <class InputIt1, class InputIt2, class OutputIt>

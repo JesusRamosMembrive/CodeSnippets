@@ -1,18 +1,18 @@
 <---EXPLANATION--->
-### Plantillas en Funciones con M鷏tiples Tipos de Datos
+### Plantillas en Funciones con M煤ltiples Tipos de Datos
 
-Las plantillas en funciones que aceptan m鷏tiples tipos de datos permiten crear funciones m醩 vers醫iles y flexibles. Esto se logra definiendo plantillas con varios par醡etros de tipo, lo que permite que las funciones trabajen con diferentes combinaciones de tipos de datos.
+Las plantillas en funciones que aceptan m煤ltiples tipos de datos permiten crear funciones m谩s vers谩tiles y flexibles. Esto se logra definiendo plantillas con varios par谩metros de tipo, lo que permite que las funciones trabajen con diferentes combinaciones de tipos de datos.
 
-#### Definici髇 de Plantillas de Funci髇 con M鷏tiples Par醡etros de Tipo
+#### Definici贸n de Plantillas de Funci贸n con M煤ltiples Par谩metros de Tipo
 
-Para definir una plantilla de funci髇 con m鷏tiples par醡etros de tipo, se utiliza la palabra clave `template` seguida de una lista de par醡etros de tipo separados por comas.
+Para definir una plantilla de funci贸n con m煤ltiples par谩metros de tipo, se utiliza la palabra clave `template` seguida de una lista de par谩metros de tipo separados por comas.
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
 
-// Definici髇 de la plantilla de funci髇 con dos par醡etros de tipo
+// Definici贸n de la plantilla de funci贸n con dos par谩metros de tipo
 template <typename T1, typename T2>
 void imprimirAmbos(T1 a, T2 b) {
     std::cout << "Valor 1: " << a << ", Valor 2: " << b << std::endl;
@@ -27,19 +27,19 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `imprimirAmbos` se define como una plantilla con dos par醡etros de tipo (`T1` y `T2`).
-- La funci髇 imprime dos valores de tipos diferentes en una sola llamada.
+- La funci贸n `imprimirAmbos` se define como una plantilla con dos par谩metros de tipo (`T1` y `T2`).
+- La funci贸n imprime dos valores de tipos diferentes en una sola llamada.
 
-#### Plantillas de Funci髇 con Par醡etros de Tipo y No Tipo
+#### Plantillas de Funci贸n con Par谩metros de Tipo y No Tipo
 
-Las plantillas de funci髇 tambi閚 pueden incluir par醡etros que no son tipos (por ejemplo, enteros constantes). Esto permite una mayor flexibilidad en la definici髇 de funciones gen閞icas.
+Las plantillas de funci贸n tambi茅n pueden incluir par谩metros que no son tipos (por ejemplo, enteros constantes). Esto permite una mayor flexibilidad en la definici贸n de funciones gen茅ricas.
 
 ##### Ejemplo
 
 ```cpp
 #include <iostream>
 
-// Definici髇 de la plantilla de funci髇 con un par醡etro de tipo y un par醡etro no tipo
+// Definici贸n de la plantilla de funci贸n con un par谩metro de tipo y un par谩metro no tipo
 template <typename T, int N>
 void imprimirArray(const T (&arr)[N]) {
     for (int i = 0; i < N; ++i) {
@@ -63,29 +63,29 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `imprimirArray` se define como una plantilla con un par醡etro de tipo (`T`) y un par醡etro no tipo (`int N`).
-- El par醡etro `N` representa el tama駉 del array, lo que permite que la funci髇 trabaje con arrays de cualquier tama駉 y tipo.
+- La funci贸n `imprimirArray` se define como una plantilla con un par谩metro de tipo (`T`) y un par谩metro no tipo (`int N`).
+- El par谩metro `N` representa el tama帽o del array, lo que permite que la funci贸n trabaje con arrays de cualquier tama帽o y tipo.
 
-#### Especializaci髇 de Plantillas de Funci髇 con M鷏tiples Par醡etros de Tipo
+#### Especializaci贸n de Plantillas de Funci贸n con M煤ltiples Par谩metros de Tipo
 
-Al igual que con plantillas de funci髇 simples, es posible especializar plantillas de funci髇 con m鷏tiples par醡etros de tipo para tipos de datos espec韋icos.
+Al igual que con plantillas de funci贸n simples, es posible especializar plantillas de funci贸n con m煤ltiples par谩metros de tipo para tipos de datos espec铆ficos.
 
-##### Ejemplo de Especializaci髇
+##### Ejemplo de Especializaci贸n
 
 ```cpp
 #include <iostream>
 #include <cstring>
 
-// Definici髇 de la plantilla de funci髇 gen閞ica
+// Definici贸n de la plantilla de funci贸n gen茅rica
 template <typename T1, typename T2>
 void comparar(T1 a, T2 b) {
-    std::cout << "Comparaci髇 gen閞ica: " << (a == b) << std::endl;
+    std::cout << "Comparaci贸n gen茅rica: " << (a == b) << std::endl;
 }
 
-// Especializaci髇 para const char* y const char*
+// Especializaci贸n para const char* y const char*
 template <>
 void comparar<const char*, const char*>(const char* a, const char* b) {
-    std::cout << "Comparaci髇 de cadenas: " << (std::strcmp(a, b) == 0) << std::endl;
+    std::cout << "Comparaci贸n de cadenas: " << (std::strcmp(a, b) == 0) << std::endl;
 }
 
 int main() {
@@ -98,14 +98,14 @@ int main() {
 ```
 
 En este ejemplo:
-- La funci髇 `comparar` se especializa para comparar cadenas de caracteres (`const char*`).
-- La especializaci髇 utiliza `std::strcmp` para comparar las cadenas.
+- La funci贸n `comparar` se especializa para comparar cadenas de caracteres (`const char*`).
+- La especializaci贸n utiliza `std::strcmp` para comparar las cadenas.
 
-### Buenas Pr醕ticas para el Uso de Plantillas con M鷏tiples Par醡etros de Tipo
+### Buenas Pr谩cticas para el Uso de Plantillas con M煤ltiples Par谩metros de Tipo
 
-#### 1. Utilizar Nombres Claros y Significativos para los Par醡etros de Tipo
+#### 1. Utilizar Nombres Claros y Significativos para los Par谩metros de Tipo
 
-Usar nombres de par醡etros de tipo claros y significativos mejora la legibilidad del c骴igo.
+Usar nombres de par谩metros de tipo claros y significativos mejora la legibilidad del c贸digo.
 
 ##### Ejemplo
 
@@ -116,14 +116,14 @@ void imprimirValores(Tipo1 a, Tipo2 b) {
 }
 ```
 
-#### 2. Documentar las Plantillas de Funci髇
+#### 2. Documentar las Plantillas de Funci贸n
 
-Documentar adecuadamente las plantillas de funci髇 para explicar el prop髎ito de cada par醡etro de tipo y c髆o se deben utilizar.
+Documentar adecuadamente las plantillas de funci贸n para explicar el prop贸sito de cada par谩metro de tipo y c贸mo se deben utilizar.
 
 ##### Ejemplo
 
 ```cpp
-// Funci髇 plantilla que imprime dos valores de cualquier tipo
+// Funci贸n plantilla que imprime dos valores de cualquier tipo
 // Tipo1: tipo del primer valor
 // Tipo2: tipo del segundo valor
 template <typename Tipo1, typename Tipo2>
@@ -134,7 +134,7 @@ void imprimirValores(Tipo1 a, Tipo2 b) {
 
 #### 3. Probar las Plantillas con Diferentes Combinaciones de Tipos
 
-Asegurarse de probar las plantillas de funci髇 con diferentes combinaciones de tipos de datos para verificar su funcionamiento y detectar posibles problemas.
+Asegurarse de probar las plantillas de funci贸n con diferentes combinaciones de tipos de datos para verificar su funcionamiento y detectar posibles problemas.
 
 ##### Ejemplo
 
@@ -147,21 +147,21 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Las plantillas en funciones con m鷏tiples tipos de datos en C++ permiten crear funciones m醩 vers醫iles y flexibles, capaces de trabajar con diferentes combinaciones de tipos. Seguir buenas pr醕ticas como utilizar nombres claros para los par醡etros de tipo, documentar adecuadamente y probar con diferentes combinaciones de tipos, ayuda a crear c骴igo m醩 robusto y mantenible. Las plantillas son una herramienta esencial para cualquier desarrollador de C++ que busca escribir c骴igo eficiente y reutilizable.
+Las plantillas en funciones con m煤ltiples tipos de datos en C++ permiten crear funciones m谩s vers谩tiles y flexibles, capaces de trabajar con diferentes combinaciones de tipos. Seguir buenas pr谩cticas como utilizar nombres claros para los par谩metros de tipo, documentar adecuadamente y probar con diferentes combinaciones de tipos, ayuda a crear c贸digo m谩s robusto y mantenible. Las plantillas son una herramienta esencial para cualquier desarrollador de C++ que busca escribir c贸digo eficiente y reutilizable.
 <---FILES--->
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo
 Ejemplo Result
-Ejemplo de Especializaci髇
-Ejemplo de Especializaci髇 Result
-<---Ejemplo B醩ico--->
+Ejemplo de Especializaci贸n
+Ejemplo de Especializaci贸n Result
+<---Ejemplo B谩sico--->
 ```cpp
 #include <iostream>
 
-// Definici髇 de la plantilla de funci髇 con dos par醡etros de tipo
+// Definici贸n de la plantilla de funci贸n con dos par谩metros de tipo
 template <typename T1, typename T2>
 void imprimirAmbos(T1 a, T2 b) {
     std::cout << "Valor 1: " << a << ", Valor 2: " << b << std::endl;
@@ -173,7 +173,7 @@ int main() {
     imprimirAmbos(5, std::string("Mundo")); // Uso con int y std::string
     return 0;
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo--->
 ```cpp
 int main() {
@@ -183,21 +183,21 @@ int main() {
     return 0;
 }
 <---Ejemplo Result--->
-<---Ejemplo de Especializaci髇--->
+<---Ejemplo de Especializaci贸n--->
 ```cpp
 #include <iostream>
 #include <cstring>
 
-// Definici髇 de la plantilla de funci髇 gen閞ica
+// Definici贸n de la plantilla de funci贸n gen茅rica
 template <typename T1, typename T2>
 void comparar(T1 a, T2 b) {
-    std::cout << "Comparaci髇 gen閞ica: " << (a == b) << std::endl;
+    std::cout << "Comparaci贸n gen茅rica: " << (a == b) << std::endl;
 }
 
-// Especializaci髇 para const char* y const char*
+// Especializaci贸n para const char* y const char*
 template <>
 void comparar<const char*, const char*>(const char* a, const char* b) {
-    std::cout << "Comparaci髇 de cadenas: " << (std::strcmp(a, b) == 0) << std::endl;
+    std::cout << "Comparaci贸n de cadenas: " << (std::strcmp(a, b) == 0) << std::endl;
 }
 
 int main() {
@@ -207,4 +207,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Especializaci髇 Result--->
+<---Ejemplo de Especializaci贸n Result--->

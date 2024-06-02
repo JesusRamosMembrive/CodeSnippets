@@ -1,15 +1,15 @@
 <---EXPLANATION--->
-### Polimorfismo Est醫ico y Din醡ico en C++
+### Polimorfismo Est谩tico y Din谩mico en C++
 
-El polimorfismo en C++ se puede clasificar en dos tipos principales: polimorfismo est醫ico y polimorfismo din醡ico. Ambos tipos permiten que las funciones se comporten de diferentes maneras dependiendo de c髆o se invocan, pero difieren en cu醤do se resuelve la llamada a la funci髇 (en tiempo de compilaci髇 o en tiempo de ejecuci髇) y en c髆o se implementan.
+El polimorfismo en C++ se puede clasificar en dos tipos principales: polimorfismo est谩tico y polimorfismo din谩mico. Ambos tipos permiten que las funciones se comporten de diferentes maneras dependiendo de c贸mo se invocan, pero difieren en cu谩ndo se resuelve la llamada a la funci贸n (en tiempo de compilaci贸n o en tiempo de ejecuci贸n) y en c贸mo se implementan.
 
-#### Polimorfismo Est醫ico
+#### Polimorfismo Est谩tico
 
-El polimorfismo est醫ico, tambi閚 conocido como polimorfismo en tiempo de compilaci髇, se resuelve durante la compilaci髇 del programa. Se logra principalmente mediante sobrecarga de funciones y plantillas (templates).
+El polimorfismo est谩tico, tambi茅n conocido como polimorfismo en tiempo de compilaci贸n, se resuelve durante la compilaci贸n del programa. Se logra principalmente mediante sobrecarga de funciones y plantillas (templates).
 
 ##### Sobrecarga de Funciones
 
-La sobrecarga de funciones permite definir m鷏tiples funciones con el mismo nombre pero con diferentes listas de par醡etros.
+La sobrecarga de funciones permite definir m煤ltiples funciones con el mismo nombre pero con diferentes listas de par谩metros.
 
 ```cpp
 #include <iostream>
@@ -39,11 +39,11 @@ int main() {
 }
 ```
 
-En este ejemplo, la clase `Sobrecarga` tiene tres versiones de la funci髇 `imprimir`, cada una con diferentes par醡etros. La selecci髇 de la funci髇 correcta se realiza en tiempo de compilaci髇.
+En este ejemplo, la clase `Sobrecarga` tiene tres versiones de la funci贸n `imprimir`, cada una con diferentes par谩metros. La selecci贸n de la funci贸n correcta se realiza en tiempo de compilaci贸n.
 
 ##### Plantillas (Templates)
 
-Las plantillas permiten crear funciones y clases gen閞icas que pueden trabajar con cualquier tipo de datos.
+Las plantillas permiten crear funciones y clases gen茅ricas que pueden trabajar con cualquier tipo de datos.
 
 ```cpp
 #include <iostream>
@@ -62,13 +62,13 @@ int main() {
 }
 ```
 
-En este ejemplo, la funci髇 plantilla `imprimir` puede tomar cualquier tipo de argumento. El compilador genera la versi髇 adecuada de la funci髇 para cada llamada en tiempo de compilaci髇.
+En este ejemplo, la funci贸n plantilla `imprimir` puede tomar cualquier tipo de argumento. El compilador genera la versi贸n adecuada de la funci贸n para cada llamada en tiempo de compilaci贸n.
 
-#### Polimorfismo Din醡ico
+#### Polimorfismo Din谩mico
 
-El polimorfismo din醡ico, tambi閚 conocido como polimorfismo en tiempo de ejecuci髇, se resuelve durante la ejecuci髇 del programa. Se logra mediante herencia y funciones virtuales. Permite que una llamada a una funci髇 miembro se dirija a diferentes implementaciones seg鷑 el tipo real del objeto que invoca la funci髇.
+El polimorfismo din谩mico, tambi茅n conocido como polimorfismo en tiempo de ejecuci贸n, se resuelve durante la ejecuci贸n del programa. Se logra mediante herencia y funciones virtuales. Permite que una llamada a una funci贸n miembro se dirija a diferentes implementaciones seg煤n el tipo real del objeto que invoca la funci贸n.
 
-##### Ejemplo de Polimorfismo Din醡ico
+##### Ejemplo de Polimorfismo Din谩mico
 
 ```cpp
 #include <iostream>
@@ -92,7 +92,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -116,36 +116,36 @@ int main() {
 }
 ```
 
-En este ejemplo, la funci髇 `hacerSonidoAnimal` acepta una referencia a `Animal` pero llama a la implementaci髇 correcta de `hacerSonido` en tiempo de ejecuci髇 seg鷑 el tipo real del objeto (`Animal`, `Perro`, `Gato`).
+En este ejemplo, la funci贸n `hacerSonidoAnimal` acepta una referencia a `Animal` pero llama a la implementaci贸n correcta de `hacerSonido` en tiempo de ejecuci贸n seg煤n el tipo real del objeto (`Animal`, `Perro`, `Gato`).
 
-#### Diferencias entre Polimorfismo Est醫ico y Din醡ico
+#### Diferencias entre Polimorfismo Est谩tico y Din谩mico
 
-1. **Resoluci髇:**
-   - **Polimorfismo Est醫ico:** Se resuelve en tiempo de compilaci髇.
-   - **Polimorfismo Din醡ico:** Se resuelve en tiempo de ejecuci髇.
+1. **Resoluci贸n:**
+   - **Polimorfismo Est谩tico:** Se resuelve en tiempo de compilaci贸n.
+   - **Polimorfismo Din谩mico:** Se resuelve en tiempo de ejecuci贸n.
 
 2. **Mecanismo:**
-   - **Polimorfismo Est醫ico:** Se implementa mediante sobrecarga de funciones y plantillas.
-   - **Polimorfismo Din醡ico:** Se implementa mediante herencia y funciones virtuales.
+   - **Polimorfismo Est谩tico:** Se implementa mediante sobrecarga de funciones y plantillas.
+   - **Polimorfismo Din谩mico:** Se implementa mediante herencia y funciones virtuales.
 
 3. **Flexibilidad:**
-   - **Polimorfismo Est醫ico:** Menos flexible ya que las decisiones se toman en tiempo de compilaci髇.
-   - **Polimorfismo Din醡ico:** M醩 flexible ya que las decisiones se toman en tiempo de ejecuci髇.
+   - **Polimorfismo Est谩tico:** Menos flexible ya que las decisiones se toman en tiempo de compilaci贸n.
+   - **Polimorfismo Din谩mico:** M谩s flexible ya que las decisiones se toman en tiempo de ejecuci贸n.
 
 4. **Uso de Recursos:**
-   - **Polimorfismo Est醫ico:** Generalmente m醩 eficiente en t閞minos de uso de recursos ya que no hay sobrecarga en tiempo de ejecuci髇.
-   - **Polimorfismo Din醡ico:** Puede tener una sobrecarga en tiempo de ejecuci髇 debido a la resoluci髇 din醡ica de las funciones.
+   - **Polimorfismo Est谩tico:** Generalmente m谩s eficiente en t茅rminos de uso de recursos ya que no hay sobrecarga en tiempo de ejecuci贸n.
+   - **Polimorfismo Din谩mico:** Puede tener una sobrecarga en tiempo de ejecuci贸n debido a la resoluci贸n din谩mica de las funciones.
 
-### Conclusi髇
+### Conclusi贸n
 
-El polimorfismo es una caracter韘tica fundamental de la programaci髇 orientada a objetos que permite a las funciones comportarse de manera diferente seg鷑 el contexto. En C++, el polimorfismo puede ser est醫ico o din醡ico. El polimorfismo est醫ico se resuelve en tiempo de compilaci髇 mediante sobrecarga de funciones y plantillas, mientras que el polimorfismo din醡ico se resuelve en tiempo de ejecuci髇 mediante herencia y funciones virtuales. Entender y utilizar ambos tipos de polimorfismo permite a los desarrolladores dise馻r sistemas m醩 flexibles, reutilizables y eficientes.
+El polimorfismo es una caracter铆stica fundamental de la programaci贸n orientada a objetos que permite a las funciones comportarse de manera diferente seg煤n el contexto. En C++, el polimorfismo puede ser est谩tico o din谩mico. El polimorfismo est谩tico se resuelve en tiempo de compilaci贸n mediante sobrecarga de funciones y plantillas, mientras que el polimorfismo din谩mico se resuelve en tiempo de ejecuci贸n mediante herencia y funciones virtuales. Entender y utilizar ambos tipos de polimorfismo permite a los desarrolladores dise帽ar sistemas m谩s flexibles, reutilizables y eficientes.
 <---FILES--->
 Sobrecarga de Funciones
 Sobrecarga de Funciones Result
 Plantillas (Templates)
 Plantillas (Templates) Result
-Ejemplo de Polimorfismo Din醡ico
-Ejemplo de Polimorfismo Din醡ico Result
+Ejemplo de Polimorfismo Din谩mico
+Ejemplo de Polimorfismo Din谩mico Result
 <---Sobrecarga de Funciones--->
 ```cpp
 #include <iostream>
@@ -191,7 +191,7 @@ int main() {
     return 0;
 }
 <---Plantillas (Templates) Result--->
-<---Ejemplo de Polimorfismo Din醡ico--->
+<---Ejemplo de Polimorfismo Din谩mico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -214,7 +214,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -236,4 +236,4 @@ int main() {
     delete g;
     return 0;
 }
-<---Ejemplo de Polimorfismo Din醡ico Result--->
+<---Ejemplo de Polimorfismo Din谩mico Result--->

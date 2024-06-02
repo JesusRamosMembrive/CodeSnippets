@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Sobrecarga de Operadores de Acceso en C++
 
-La sobrecarga de operadores de acceso permite definir cÛmo se deben comportar los operadores de acceso a elementos (`[]`), desreferencia (`*`), acceso a miembros (`->`) y desreferencia de puntero a miembro (`.*`, `->*`) cuando se utilizan con tipos de datos definidos por el usuario. Estos operadores son esenciales para permitir que las clases personalizadas proporcionen una interfaz intuitiva y familiar para acceder a sus elementos internos.
+La sobrecarga de operadores de acceso permite definir c√≥mo se deben comportar los operadores de acceso a elementos (`[]`), desreferencia (`*`), acceso a miembros (`->`) y desreferencia de puntero a miembro (`.*`, `->*`) cuando se utilizan con tipos de datos definidos por el usuario. Estos operadores son esenciales para permitir que las clases personalizadas proporcionen una interfaz intuitiva y familiar para acceder a sus elementos internos.
 
 #### Ejemplo: Clase `DynamicArray` para Sobrecargar el Operador `[]`
 
-Vamos a definir una clase `DynamicArray` que representa un array din·mico y sobrecargaremos el operador de acceso a elementos `[]`.
+Vamos a definir una clase `DynamicArray` que representa un array din√°mico y sobrecargaremos el operador de acceso a elementos `[]`.
 
 ```cpp
 // DynamicArray.h
@@ -36,7 +36,7 @@ public:
     // Sobrecarga del operador []
     int& operator[](size_t index) {
         if (index >= size) {
-            throw std::out_of_range("Õndice fuera de rango");
+            throw std::out_of_range("√çndice fuera de rango");
         }
         return data[index];
     }
@@ -44,12 +44,12 @@ public:
     // Sobrecarga del operador [] para acceso constante
     const int& operator[](size_t index) const {
         if (index >= size) {
-            throw std::out_of_range("Õndice fuera de rango");
+            throw std::out_of_range("√çndice fuera de rango");
         }
         return data[index];
     }
 
-    // MÈtodo para obtener el tamaÒo del array
+    // M√©todo para obtener el tama√±o del array
     size_t getSize() const {
         return size;
     }
@@ -93,51 +93,51 @@ int main() {
 }
 ```
 
-### ExplicaciÛn de los Operadores Sobrecargados
+### Explicaci√≥n de los Operadores Sobrecargados
 
 #### Sobrecarga del Operador `[]`
 
-##### VersiÛn No Constante
+##### Versi√≥n No Constante
 
 ```cpp
 int& operator[](size_t index) {
     if (index >= size) {
-        throw std::out_of_range("Õndice fuera de rango");
+        throw std::out_of_range("√çndice fuera de rango");
     }
     return data[index];
 }
 ```
-Este operador permite el acceso y la modificaciÛn de los elementos del array. Si el Ìndice est· fuera del rango, se lanza una excepciÛn `std::out_of_range`.
+Este operador permite el acceso y la modificaci√≥n de los elementos del array. Si el √≠ndice est√° fuera del rango, se lanza una excepci√≥n `std::out_of_range`.
 
-##### VersiÛn Constante
+##### Versi√≥n Constante
 
 ```cpp
 const int& operator[](size_t index) const {
     if (index >= size) {
-        throw std::out_of_range("Õndice fuera de rango");
+        throw std::out_of_range("√çndice fuera de rango");
     }
     return data[index];
 }
 ```
-Esta versiÛn constante del operador `[]` permite el acceso a los elementos del array sin permitir su modificaciÛn. TambiÈn lanza una excepciÛn `std::out_of_range` si el Ìndice est· fuera del rango.
+Esta versi√≥n constante del operador `[]` permite el acceso a los elementos del array sin permitir su modificaci√≥n. Tambi√©n lanza una excepci√≥n `std::out_of_range` si el √≠ndice est√° fuera del rango.
 
 ### Ventajas de la Sobrecarga de Operadores de Acceso
 
 1. **Legibilidad y Facilidad de Uso**: Permite utilizar una sintaxis intuitiva y clara para acceder a los elementos de un contenedor, similar a la utilizada para arrays y punteros.
-2. **EncapsulaciÛn**: Encapsula la lÛgica de acceso dentro de la clase, asegurando que los detalles de implementaciÛn estÈn ocultos y el cÛdigo cliente sea m·s limpio.
-3. **Seguridad**: Permite agregar lÛgica adicional para verificar los lÌmites y manejar excepciones, mejorando la seguridad del cÛdigo.
+2. **Encapsulaci√≥n**: Encapsula la l√≥gica de acceso dentro de la clase, asegurando que los detalles de implementaci√≥n est√©n ocultos y el c√≥digo cliente sea m√°s limpio.
+3. **Seguridad**: Permite agregar l√≥gica adicional para verificar los l√≠mites y manejar excepciones, mejorando la seguridad del c√≥digo.
 
 ### Desventajas de la Sobrecarga de Operadores de Acceso
 
-1. **Complejidad Adicional**: Puede agregar complejidad al cÛdigo de la clase, especialmente si la lÛgica de acceso es compleja.
-2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores difÌciles de detectar y depurar.
+1. **Complejidad Adicional**: Puede agregar complejidad al c√≥digo de la clase, especialmente si la l√≥gica de acceso es compleja.
+2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores dif√≠ciles de detectar y depurar.
 3. **Sobrecarga Cognitiva**: Los desarrolladores deben recordar y entender el comportamiento personalizado de los operadores sobrecargados, lo que puede aumentar la sobrecarga cognitiva.
 
 ### Otros Operadores de Acceso
 
 #### Sobrecarga del Operador `->`
 
-El operador `->` se utiliza para acceder a los miembros de un objeto a travÈs de un puntero. Puede sobrecargarse para permitir acceso a los miembros de una clase personalizada que simula un puntero.
+El operador `->` se utiliza para acceder a los miembros de un objeto a trav√©s de un puntero. Puede sobrecargarse para permitir acceso a los miembros de una clase personalizada que simula un puntero.
 
 ```cpp
 class SmartPointer {
@@ -156,28 +156,28 @@ public:
 };
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La sobrecarga de operadores de acceso en C++ permite realizar operaciones de acceso de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del cÛdigo, haciendo que las clases sean m·s f·ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el cÛdigo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
+La sobrecarga de operadores de acceso en C++ permite realizar operaciones de acceso de manera intuitiva y natural en clases definidas por el usuario. Esto mejora la legibilidad y usabilidad del c√≥digo, haciendo que las clases sean m√°s f√°ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c√≥digo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
 <---FILES--->
-VersiÛn No Constante
-VersiÛn No Constante Result
-VersiÛn Constante
-VersiÛn Constante Result
-<---VersiÛn No Constante--->
+Versi√≥n No Constante
+Versi√≥n No Constante Result
+Versi√≥n Constante
+Versi√≥n Constante Result
+<---Versi√≥n No Constante--->
 ```cpp
 int& operator[](size_t index) {
     if (index >= size) {
-        throw std::out_of_range("Õndice fuera de rango");
+        throw std::out_of_range("√çndice fuera de rango");
     }
     return data[index];
 }
-<---VersiÛn No Constante Result--->
-<---VersiÛn Constante--->
+<---Versi√≥n No Constante Result--->
+<---Versi√≥n Constante--->
 ```cpp
 const int& operator[](size_t index) const {
     if (index >= size) {
-        throw std::out_of_range("Õndice fuera de rango");
+        throw std::out_of_range("√çndice fuera de rango");
     }
     return data[index];
 }
@@ -196,4 +196,4 @@ public:
         return ptr;
     }
 };
-<---VersiÛn Constante Result--->
+<---Versi√≥n Constante Result--->

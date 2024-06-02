@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### `std::next` y `std::prev` en C++
 
-Las funciones `std::next` y `std::prev` son utilidades de la biblioteca est·ndar de C++ que proporcionan una forma conveniente de obtener iteradores desplazados desde una posiciÛn dada. Estas funciones son parte del encabezado `<iterator>` y permiten avanzar o retroceder iteradores sin modificar el iterador original.
+Las funciones `std::next` y `std::prev` son utilidades de la biblioteca est√°ndar de C++ que proporcionan una forma conveniente de obtener iteradores desplazados desde una posici√≥n dada. Estas funciones son parte del encabezado `<iterator>` y permiten avanzar o retroceder iteradores sin modificar el iterador original.
 
 #### `std::next`
 
-`std::next` devuelve un iterador que es el resultado de avanzar un iterador dado un n˙mero especÌfico de posiciones. No modifica el iterador original.
+`std::next` devuelve un iterador que es el resultado de avanzar un iterador dado un n√∫mero espec√≠fico de posiciones. No modifica el iterador original.
 
 ##### Sintaxis
 
@@ -16,8 +16,8 @@ template <class ForwardIterator>
 ForwardIterator next(ForwardIterator it, typename std::iterator_traits<ForwardIterator>::difference_type n = 1);
 ```
 
-- `it`: El iterador desde el cual se comenzar·.
-- `n`: El n˙mero de posiciones a avanzar (por defecto es 1).
+- `it`: El iterador desde el cual se comenzar√°.
+- `n`: El n√∫mero de posiciones a avanzar (por defecto es 1).
 
 ##### Ejemplo de Uso de `std::next`
 
@@ -33,7 +33,7 @@ int main() {
     auto it = std::next(vec.begin(), 3);
 
     // Mostrar el valor del elemento apuntado por el nuevo iterador
-    std::cout << "Elemento en la posiciÛn 3: " << *it << std::endl;
+    std::cout << "Elemento en la posici√≥n 3: " << *it << std::endl;
 
     return 0;
 }
@@ -44,7 +44,7 @@ En este ejemplo:
 
 #### `std::prev`
 
-`std::prev` devuelve un iterador que es el resultado de retroceder un iterador dado un n˙mero especÌfico de posiciones. No modifica el iterador original.
+`std::prev` devuelve un iterador que es el resultado de retroceder un iterador dado un n√∫mero espec√≠fico de posiciones. No modifica el iterador original.
 
 ##### Sintaxis
 
@@ -55,8 +55,8 @@ template <class BidirectionalIterator>
 BidirectionalIterator prev(BidirectionalIterator it, typename std::iterator_traits<BidirectionalIterator>::difference_type n = 1);
 ```
 
-- `it`: El iterador desde el cual se comenzar·.
-- `n`: El n˙mero de posiciones a retroceder (por defecto es 1).
+- `it`: El iterador desde el cual se comenzar√°.
+- `n`: El n√∫mero de posiciones a retroceder (por defecto es 1).
 
 ##### Ejemplo de Uso de `std::prev`
 
@@ -68,7 +68,7 @@ BidirectionalIterator prev(BidirectionalIterator it, typename std::iterator_trai
 int main() {
     std::list<int> lst = {10, 20, 30, 40, 50};
 
-    // Obtener un iterador 2 posiciones atr·s desde el final
+    // Obtener un iterador 2 posiciones atr√°s desde el final
     auto it = std::prev(lst.end(), 2);
 
     // Mostrar el valor del elemento apuntado por el nuevo iterador
@@ -79,11 +79,11 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::prev(lst.end(), 2)` devuelve un iterador que apunta al cuarto elemento de la lista (pen˙ltimo elemento).
+- `std::prev(lst.end(), 2)` devuelve un iterador que apunta al cuarto elemento de la lista (pen√∫ltimo elemento).
 
 ### Uso Combinado de `std::next` y `std::prev`
 
-A menudo, `std::next` y `std::prev` se pueden usar juntos para realizar operaciones m·s complejas con iteradores.
+A menudo, `std::next` y `std::prev` se pueden usar juntos para realizar operaciones m√°s complejas con iteradores.
 
 ##### Ejemplo Combinado
 
@@ -100,8 +100,8 @@ int main() {
     auto it2 = std::prev(vec.end(), 3);    // Retroceder 3 posiciones desde el final
 
     // Mostrar los valores apuntados por los iteradores
-    std::cout << "Elemento en la posiciÛn 2 desde el inicio: " << *it1 << std::endl;
-    std::cout << "Elemento en la posiciÛn 3 desde el final: " << *it2 << std::endl;
+    std::cout << "Elemento en la posici√≥n 2 desde el inicio: " << *it1 << std::endl;
+    std::cout << "Elemento en la posici√≥n 3 desde el final: " << *it2 << std::endl;
 
     return 0;
 }
@@ -113,12 +113,12 @@ En este ejemplo:
 
 ### Consideraciones de Eficiencia
 
-- **`std::next`:** Es muy eficiente para iteradores de acceso aleatorio como los de `std::vector`, ya que puede calcular la nueva posiciÛn en tiempo constante. Para otros tipos de iteradores, puede ser menos eficiente porque debe avanzar paso a paso.
+- **`std::next`:** Es muy eficiente para iteradores de acceso aleatorio como los de `std::vector`, ya que puede calcular la nueva posici√≥n en tiempo constante. Para otros tipos de iteradores, puede ser menos eficiente porque debe avanzar paso a paso.
 - **`std::prev`:** Similar a `std::next`, es eficiente para iteradores bidireccionales y de acceso aleatorio. Para otros tipos de iteradores, puede requerir retroceder paso a paso.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::next` y `std::prev` son funciones muy ˙tiles de la biblioteca est·ndar de C++ que permiten obtener iteradores desplazados sin modificar el iterador original. Son especialmente ˙tiles cuando se necesita avanzar o retroceder iteradores de manera eficiente y legible. Comprender cÛmo y cu·ndo usar estas funciones es esencial para trabajar de manera efectiva con iteradores en C++.
+`std::next` y `std::prev` son funciones muy √∫tiles de la biblioteca est√°ndar de C++ que permiten obtener iteradores desplazados sin modificar el iterador original. Son especialmente √∫tiles cuando se necesita avanzar o retroceder iteradores de manera eficiente y legible. Comprender c√≥mo y cu√°ndo usar estas funciones es esencial para trabajar de manera efectiva con iteradores en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
@@ -148,7 +148,7 @@ int main() {
     auto it = std::next(vec.begin(), 3);
 
     // Mostrar el valor del elemento apuntado por el nuevo iterador
-    std::cout << "Elemento en la posiciÛn 3: " << *it << std::endl;
+    std::cout << "Elemento en la posici√≥n 3: " << *it << std::endl;
 
     return 0;
 }
@@ -162,7 +162,7 @@ int main() {
 int main() {
     std::list<int> lst = {10, 20, 30, 40, 50};
 
-    // Obtener un iterador 2 posiciones atr·s desde el final
+    // Obtener un iterador 2 posiciones atr√°s desde el final
     auto it = std::prev(lst.end(), 2);
 
     // Mostrar el valor del elemento apuntado por el nuevo iterador
@@ -185,8 +185,8 @@ int main() {
     auto it2 = std::prev(vec.end(), 3);    // Retroceder 3 posiciones desde el final
 
     // Mostrar los valores apuntados por los iteradores
-    std::cout << "Elemento en la posiciÛn 2 desde el inicio: " << *it1 << std::endl;
-    std::cout << "Elemento en la posiciÛn 3 desde el final: " << *it2 << std::endl;
+    std::cout << "Elemento en la posici√≥n 2 desde el inicio: " << *it1 << std::endl;
+    std::cout << "Elemento en la posici√≥n 3 desde el final: " << *it2 << std::endl;
 
     return 0;
 }

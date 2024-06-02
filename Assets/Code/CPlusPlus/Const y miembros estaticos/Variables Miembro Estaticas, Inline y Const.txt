@@ -1,15 +1,15 @@
 <---EXPLANATION--->
-### Variables Miembro Est·ticas, Inline y Const en C++
+### Variables Miembro Est√°ticas, Inline y Const en C++
 
-En C++, las variables miembro de una clase pueden combinar varias calificaciones como `static`, `inline` y `const` para lograr diferentes propÛsitos de diseÒo. Estas combinaciones permiten definir variables que son constantes, compartidas entre todas las instancias de la clase, y que pueden ser definidas directamente dentro de la clase.
+En C++, las variables miembro de una clase pueden combinar varias calificaciones como `static`, `inline` y `const` para lograr diferentes prop√≥sitos de dise√±o. Estas combinaciones permiten definir variables que son constantes, compartidas entre todas las instancias de la clase, y que pueden ser definidas directamente dentro de la clase.
 
-#### Variables Miembro Est·ticas, Inline y Const
+#### Variables Miembro Est√°ticas, Inline y Const
 
-Una variable miembro `static` es compartida por todas las instancias de la clase, `inline` permite definirla dentro de la propia clase, y `const` indica que su valor no puede ser modificado despuÈs de su inicializaciÛn.
+Una variable miembro `static` es compartida por todas las instancias de la clase, `inline` permite definirla dentro de la propia clase, y `const` indica que su valor no puede ser modificado despu√©s de su inicializaci√≥n.
 
-##### DeclaraciÛn y DefiniciÛn
+##### Declaraci√≥n y Definici√≥n
 
-La combinaciÛn `static inline const` se usa para declarar y definir variables constantes que son compartidas entre todas las instancias de la clase y cuya definiciÛn est· incluida en la declaraciÛn de la clase.
+La combinaci√≥n `static inline const` se usa para declarar y definir variables constantes que son compartidas entre todas las instancias de la clase y cuya definici√≥n est√° incluida en la declaraci√≥n de la clase.
 
 ##### Sintaxis
 
@@ -21,11 +21,11 @@ public:
 };
 ```
 
-#### Ejemplo de Variables Miembro Est·ticas, Inline y Const
+#### Ejemplo de Variables Miembro Est√°ticas, Inline y Const
 
 Consideremos un ejemplo donde definimos constantes que son compartidas por todas las instancias de una clase utilizando `static inline const`.
 
-##### Ejemplo de ImplementaciÛn
+##### Ejemplo de Implementaci√≥n
 
 ```cpp
 #include <iostream>
@@ -33,7 +33,7 @@ using namespace std;
 
 class Configuracion {
 public:
-    // DeclaraciÛn y definiciÛn de variables miembro est·ticas, inline y const
+    // Declaraci√≥n y definici√≥n de variables miembro est√°ticas, inline y const
     inline static const int MAX_USUARIOS = 100;
     inline static const double VERSION = 1.01;
     inline static const char TIPO_USUARIO = 'A';
@@ -46,7 +46,7 @@ public:
 };
 
 int main() {
-    // Acceso a variables est·ticas inline const a travÈs de la clase
+    // Acceso a variables est√°ticas inline const a trav√©s de la clase
     Configuracion::mostrarConfiguracion();
 
     return 0;
@@ -54,17 +54,17 @@ int main() {
 ```
 
 En este ejemplo:
-- `MAX_USUARIOS`, `VERSION` y `TIPO_USUARIO` son variables miembro est·ticas, inline y const.
-- Estas variables son definidas y inicializadas dentro de la declaraciÛn de la clase `Configuracion`.
+- `MAX_USUARIOS`, `VERSION` y `TIPO_USUARIO` son variables miembro est√°ticas, inline y const.
+- Estas variables son definidas y inicializadas dentro de la declaraci√≥n de la clase `Configuracion`.
 
 #### Ventajas de Usar `static inline const`
 
-1. **CentralizaciÛn de Constantes:** Permite centralizar las constantes relacionadas con la clase dentro de la definiciÛn de la clase, mejorando la organizaciÛn del cÛdigo.
-2. **Eficiencia:** Las constantes pueden ser evaluadas en tiempo de compilaciÛn, mejorando la eficiencia del programa.
-3. **Claridad y Mantenimiento:** Mantener la declaraciÛn y la definiciÛn juntas dentro de la clase facilita la lectura y el mantenimiento del cÛdigo.
+1. **Centralizaci√≥n de Constantes:** Permite centralizar las constantes relacionadas con la clase dentro de la definici√≥n de la clase, mejorando la organizaci√≥n del c√≥digo.
+2. **Eficiencia:** Las constantes pueden ser evaluadas en tiempo de compilaci√≥n, mejorando la eficiencia del programa.
+3. **Claridad y Mantenimiento:** Mantener la declaraci√≥n y la definici√≥n juntas dentro de la clase facilita la lectura y el mantenimiento del c√≥digo.
 4. **Encapsulamiento:** Las constantes pueden estar asociadas a la clase a la que pertenecen, manteniendo un buen nivel de encapsulamiento y evitando el uso de variables globales.
 
-#### ComparaciÛn con Otros Enfoques
+#### Comparaci√≥n con Otros Enfoques
 
 ##### Variables Constantes Globales
 
@@ -86,11 +86,11 @@ int main() {
 ```
 
 En este enfoque:
-- Las constantes est·n definidas fuera de cualquier clase, lo cual puede llevar a una menor organizaciÛn y encapsulamiento comparado con el enfoque de variables miembro est·ticas, inline y const.
+- Las constantes est√°n definidas fuera de cualquier clase, lo cual puede llevar a una menor organizaci√≥n y encapsulamiento comparado con el enfoque de variables miembro est√°ticas, inline y const.
 
 ##### Variables Miembro Constantes sin `inline`
 
-Antes de C++17, las variables miembro est·ticas const se declaraban dentro de la clase y se definÌan fuera de la clase.
+Antes de C++17, las variables miembro est√°ticas const se declaraban dentro de la clase y se defin√≠an fuera de la clase.
 
 ```cpp
 #include <iostream>
@@ -109,7 +109,7 @@ public:
     }
 };
 
-// DefiniciÛn de variables miembro est·ticas const fuera de la clase
+// Definici√≥n de variables miembro est√°ticas const fuera de la clase
 const int Configuracion::MAX_USUARIOS = 100;
 const double Configuracion::VERSION = 1.01;
 const char Configuracion::TIPO_USUARIO = 'A';
@@ -121,24 +121,24 @@ int main() {
 ```
 
 En este enfoque:
-- Las constantes est·n declaradas dentro de la clase pero deben ser definidas fuera de la clase, lo cual puede fragmentar la definiciÛn de la clase y hacer el cÛdigo m·s difÌcil de seguir.
+- Las constantes est√°n declaradas dentro de la clase pero deben ser definidas fuera de la clase, lo cual puede fragmentar la definici√≥n de la clase y hacer el c√≥digo m√°s dif√≠cil de seguir.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-El uso de variables miembro est·ticas, inline y const en C++ proporciona una manera eficiente y clara de definir constantes que son compartidas entre todas las instancias de una clase. Este enfoque mejora la organizaciÛn del cÛdigo, mantiene un buen encapsulamiento y facilita el mantenimiento del software. La combinaciÛn de `static`, `inline` y `const` es especialmente ˙til para definir constantes relacionadas con la configuraciÛn o par·metros globales de una clase, asegurando que todas las instancias compartan los mismos valores constantes de manera eficiente.
+El uso de variables miembro est√°ticas, inline y const en C++ proporciona una manera eficiente y clara de definir constantes que son compartidas entre todas las instancias de una clase. Este enfoque mejora la organizaci√≥n del c√≥digo, mantiene un buen encapsulamiento y facilita el mantenimiento del software. La combinaci√≥n de `static`, `inline` y `const` es especialmente √∫til para definir constantes relacionadas con la configuraci√≥n o par√°metros globales de una clase, asegurando que todas las instancias compartan los mismos valores constantes de manera eficiente.
 <---FILES--->
-DeclaraciÛn y DefiniciÛn
-DeclaraciÛn y DefiniciÛn Result
+Declaraci√≥n y Definici√≥n
+Declaraci√≥n y Definici√≥n Result
 Sintaxis
 Sintaxis Result
-Ejemplo de ImplementaciÛn
-Ejemplo de ImplementaciÛn Result
+Ejemplo de Implementaci√≥n
+Ejemplo de Implementaci√≥n Result
 Variables Constantes Globales
 Variables Constantes Globales Result
 Variables Miembro Constantes sin `inline`
 Variables Miembro Constantes sin `inline` Result
-<---DeclaraciÛn y DefiniciÛn--->
-<---DeclaraciÛn y DefiniciÛn Result--->
+<---Declaraci√≥n y Definici√≥n--->
+<---Declaraci√≥n y Definici√≥n Result--->
 <---Sintaxis--->
 ```cpp
 class Clase {
@@ -147,14 +147,14 @@ public:
     // Otros miembros de la clase
 };
 <---Sintaxis Result--->
-<---Ejemplo de ImplementaciÛn--->
+<---Ejemplo de Implementaci√≥n--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Configuracion {
 public:
-    // DeclaraciÛn y definiciÛn de variables miembro est·ticas, inline y const
+    // Declaraci√≥n y definici√≥n de variables miembro est√°ticas, inline y const
     inline static const int MAX_USUARIOS = 100;
     inline static const double VERSION = 1.01;
     inline static const char TIPO_USUARIO = 'A';
@@ -167,12 +167,12 @@ public:
 };
 
 int main() {
-    // Acceso a variables est·ticas inline const a travÈs de la clase
+    // Acceso a variables est√°ticas inline const a trav√©s de la clase
     Configuracion::mostrarConfiguracion();
 
     return 0;
 }
-<---Ejemplo de ImplementaciÛn Result--->
+<---Ejemplo de Implementaci√≥n Result--->
 <---Variables Constantes Globales--->
 ```cpp
 #include <iostream>
@@ -208,7 +208,7 @@ public:
     }
 };
 
-// DefiniciÛn de variables miembro est·ticas const fuera de la clase
+// Definici√≥n de variables miembro est√°ticas const fuera de la clase
 const int Configuracion::MAX_USUARIOS = 100;
 const double Configuracion::VERSION = 1.01;
 const char Configuracion::TIPO_USUARIO = 'A';

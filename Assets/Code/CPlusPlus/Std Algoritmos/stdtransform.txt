@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Estándar: `std::transform`
+### Algoritmo de la Biblioteca EstÃ¡ndar: `std::transform`
 
-La función `std::transform` es un algoritmo de la biblioteca estándar de C++ que se utiliza para aplicar una operación a un rango de elementos y almacenar los resultados en otro rango (o el mismo). Es parte del encabezado `<algorithm>` y es muy útil para transformar elementos de contenedores mediante la aplicación de una función.
+La funciÃ³n `std::transform` es un algoritmo de la biblioteca estÃ¡ndar de C++ que se utiliza para aplicar una operaciÃ³n a un rango de elementos y almacenar los resultados en otro rango (o el mismo). Es parte del encabezado `<algorithm>` y es muy Ãºtil para transformar elementos de contenedores mediante la aplicaciÃ³n de una funciÃ³n.
 
 #### Sintaxis de `std::transform`
 
 Hay dos variantes de `std::transform`:
 
-1. Aplicar una función unaria a cada elemento de un rango:
+1. Aplicar una funciÃ³n unaria a cada elemento de un rango:
 
 ```cpp
 #include <algorithm>
@@ -17,11 +17,11 @@ OutputIt transform(InputIt first, InputIt last, OutputIt d_first, UnaryOperation
 ```
 
 - **`InputIt first`**: Iterador al primer elemento del rango de entrada.
-- **`InputIt last`**: Iterador al elemento después del último en el rango de entrada.
+- **`InputIt last`**: Iterador al elemento despuÃ©s del Ãºltimo en el rango de entrada.
 - **`OutputIt d_first`**: Iterador al primer elemento del rango de destino.
-- **`UnaryOperation unary_op`**: Función o función objeto que se aplicará a cada elemento del rango de entrada.
+- **`UnaryOperation unary_op`**: FunciÃ³n o funciÃ³n objeto que se aplicarÃ¡ a cada elemento del rango de entrada.
 
-2. Aplicar una función binaria a cada par de elementos de dos rangos:
+2. Aplicar una funciÃ³n binaria a cada par de elementos de dos rangos:
 
 ```cpp
 #include <algorithm>
@@ -31,14 +31,14 @@ OutputIt transform(InputIt1 first1, InputIt1 last1, InputIt2 first2, OutputIt d_
 ```
 
 - **`InputIt1 first1`**: Iterador al primer elemento del primer rango de entrada.
-- **`InputIt1 last1`**: Iterador al elemento después del último en el primer rango de entrada.
+- **`InputIt1 last1`**: Iterador al elemento despuÃ©s del Ãºltimo en el primer rango de entrada.
 - **`InputIt2 first2`**: Iterador al primer elemento del segundo rango de entrada.
 - **`OutputIt d_first`**: Iterador al primer elemento del rango de destino.
-- **`BinaryOperation binary_op`**: Función o función objeto que se aplicará a cada par de elementos de los dos rangos de entrada.
+- **`BinaryOperation binary_op`**: FunciÃ³n o funciÃ³n objeto que se aplicarÃ¡ a cada par de elementos de los dos rangos de entrada.
 
 #### Ejemplo de Uso de `std::transform`
 
-##### Ejemplo Básico (Función Unaria)
+##### Ejemplo BÃ¡sico (FunciÃ³n Unaria)
 
 ```cpp
 #include <iostream>
@@ -68,7 +68,7 @@ int main() {
 En este ejemplo:
 - `std::transform(origen.begin(), origen.end(), destino.begin(), [](int x) { return x * 2; })` aplica una lambda que duplica cada elemento del vector `origen` y almacena los resultados en el vector `destino`.
 
-##### Ejemplo con Función Binaria
+##### Ejemplo con FunciÃ³n Binaria
 
 ```cpp
 #include <iostream>
@@ -135,21 +135,21 @@ En este ejemplo:
 
 ### Consideraciones
 
-- **Rendimiento:** `std::transform` es muy eficiente y tiene un rendimiento lineal (`O(n)`) respecto al número de elementos.
+- **Rendimiento:** `std::transform` es muy eficiente y tiene un rendimiento lineal (`O(n)`) respecto al nÃºmero de elementos.
 - **Flexibilidad:** Puede usar funciones, funtores y lambdas para definir las transformaciones.
 - **Requisito de Espacio:** El rango de destino debe ser lo suficientemente grande para contener todos los elementos transformados.
 
-### Conclusión
+### ConclusiÃ³n
 
-`std::transform` es un algoritmo de la biblioteca estándar de C++ muy útil para aplicar operaciones a los elementos de un contenedor y almacenar los resultados en otro. Su uso con funciones, funtores y lambdas proporciona una gran flexibilidad y permite escribir código conciso y claro. Comprender y utilizar `std::transform` es esencial para realizar transformaciones eficientes en datos en C++.
+`std::transform` es un algoritmo de la biblioteca estÃ¡ndar de C++ muy Ãºtil para aplicar operaciones a los elementos de un contenedor y almacenar los resultados en otro. Su uso con funciones, funtores y lambdas proporciona una gran flexibilidad y permite escribir cÃ³digo conciso y claro. Comprender y utilizar `std::transform` es esencial para realizar transformaciones eficientes en datos en C++.
 <---FILES--->
-Ejemplo Básico (Función Unaria)
-Ejemplo Básico (Función Unaria) Result
-Ejemplo con Función Binaria
-Ejemplo con Función Binaria Result
+Ejemplo BÃ¡sico (FunciÃ³n Unaria)
+Ejemplo BÃ¡sico (FunciÃ³n Unaria) Result
+Ejemplo con FunciÃ³n Binaria
+Ejemplo con FunciÃ³n Binaria Result
 Transformar una Lista
 Transformar una Lista Result
-<---Ejemplo Básico (Función Unaria)--->
+<---Ejemplo BÃ¡sico (FunciÃ³n Unaria)--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -173,8 +173,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo Básico (Función Unaria) Result--->
-<---Ejemplo con Función Binaria--->
+<---Ejemplo BÃ¡sico (FunciÃ³n Unaria) Result--->
+<---Ejemplo con FunciÃ³n Binaria--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -199,7 +199,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Función Binaria Result--->
+<---Ejemplo con FunciÃ³n Binaria Result--->
 <---Transformar una Lista--->
 ```cpp
 #include <iostream>

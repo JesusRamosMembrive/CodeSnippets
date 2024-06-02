@@ -1,22 +1,22 @@
 <---EXPLANATION--->
 ### Funciones con Tipo de Dato Deducido en el Retorno en C++
 
-En C++14, se introdujo la capacidad de deducir el tipo de retorno de una funci髇 autom醫icamente utilizando la palabra clave `auto`. Esta caracter韘tica simplifica la declaraci髇 de funciones, especialmente cuando el tipo de retorno es complicado o depende de los par醡etros de la funci髇. A partir de C++14, esta funcionalidad se ampl韆 con `decltype(auto)`, que proporciona a鷑 m醩 flexibilidad.
+En C++14, se introdujo la capacidad de deducir el tipo de retorno de una funci贸n autom谩ticamente utilizando la palabra clave `auto`. Esta caracter铆stica simplifica la declaraci贸n de funciones, especialmente cuando el tipo de retorno es complicado o depende de los par谩metros de la funci贸n. A partir de C++14, esta funcionalidad se ampl铆a con `decltype(auto)`, que proporciona a煤n m谩s flexibilidad.
 
-#### `auto` para la Deducci髇 del Tipo de Retorno
+#### `auto` para la Deducci贸n del Tipo de Retorno
 
-La palabra clave `auto` permite al compilador deducir el tipo de retorno de una funci髇 bas醤dose en la expresi髇 de retorno dentro de la funci髇.
+La palabra clave `auto` permite al compilador deducir el tipo de retorno de una funci贸n bas谩ndose en la expresi贸n de retorno dentro de la funci贸n.
 
 ##### Sintaxis
 
 ```cpp
 auto nombre_funcion(parametros) {
-    // Cuerpo de la funci髇
+    // Cuerpo de la funci贸n
     return expresion;
 }
 ```
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 #include <iostream>
@@ -33,17 +33,17 @@ int main() {
 }
 ```
 
-En este ejemplo, el compilador deduce que la funci髇 `sumar` devuelve un `int` porque la expresi髇 `a + b` es de tipo `int`.
+En este ejemplo, el compilador deduce que la funci贸n `sumar` devuelve un `int` porque la expresi贸n `a + b` es de tipo `int`.
 
-#### `decltype(auto)` para la Deducci髇 del Tipo de Retorno
+#### `decltype(auto)` para la Deducci贸n del Tipo de Retorno
 
-La palabra clave `decltype(auto)` se utiliza cuando se desea que el tipo de retorno sea exactamente el tipo deducido de la expresi髇 de retorno, incluyendo referencias.
+La palabra clave `decltype(auto)` se utiliza cuando se desea que el tipo de retorno sea exactamente el tipo deducido de la expresi贸n de retorno, incluyendo referencias.
 
 ##### Sintaxis
 
 ```cpp
 decltype(auto) nombre_funcion(parametros) {
-    // Cuerpo de la funci髇
+    // Cuerpo de la funci贸n
     return expresion;
 }
 ```
@@ -81,13 +81,13 @@ En este ejemplo:
 
 #### Ventajas de Usar `auto` y `decltype(auto)`
 
-1. **Simplicidad:** Simplifica la declaraci髇 de funciones, especialmente para tipos de retorno complejos.
-2. **Flexibilidad:** Permite que el tipo de retorno se adapte autom醫icamente a cambios en el cuerpo de la funci髇.
-3. **Mantenimiento:** Reduce la necesidad de actualizar la declaraci髇 de la funci髇 si se cambia el tipo de retorno.
+1. **Simplicidad:** Simplifica la declaraci贸n de funciones, especialmente para tipos de retorno complejos.
+2. **Flexibilidad:** Permite que el tipo de retorno se adapte autom谩ticamente a cambios en el cuerpo de la funci贸n.
+3. **Mantenimiento:** Reduce la necesidad de actualizar la declaraci贸n de la funci贸n si se cambia el tipo de retorno.
 
 #### Ejemplos Adicionales
 
-##### Funci髇 con Tipo de Retorno Complicado
+##### Funci贸n con Tipo de Retorno Complicado
 
 ```cpp
 #include <iostream>
@@ -103,15 +103,15 @@ int main() {
     vector<int> numeros = {1, 3, 5, 7, 9};
     auto it = encontrarMaximo(numeros);
     if (it != numeros.end()) {
-        cout << "El valor m醲imo es: " << *it << endl;
+        cout << "El valor m谩ximo es: " << *it << endl;
     }
     return 0;
 }
 ```
 
-En este ejemplo, `encontrarMaximo` devuelve un iterador al elemento m醲imo del vector, y el tipo de retorno se deduce autom醫icamente.
+En este ejemplo, `encontrarMaximo` devuelve un iterador al elemento m谩ximo del vector, y el tipo de retorno se deduce autom谩ticamente.
 
-##### Funci髇 que Devuelve un `std::pair`
+##### Funci贸n que Devuelve un `std::pair`
 
 ```cpp
 #include <iostream>
@@ -129,7 +129,7 @@ int main() {
 }
 ```
 
-En este ejemplo, `crearPar` devuelve un `std::pair<int, double>` y el tipo de retorno se deduce autom醫icamente.
+En este ejemplo, `crearPar` devuelve un `std::pair<int, double>` y el tipo de retorno se deduce autom谩ticamente.
 
 ##### Uso de `decltype(auto)` para Tipos de Retorno con Referencias
 
@@ -158,30 +158,30 @@ int main() {
 
 En este ejemplo, `obtenerElemento` devuelve una referencia al elemento del vector, permitiendo modificar el elemento directamente.
 
-### Conclusi髇
+### Conclusi贸n
 
-El uso de `auto` y `decltype(auto)` para deducir el tipo de retorno de funciones en C++ mejora la flexibilidad y simplicidad del c骴igo, especialmente para funciones con tipos de retorno complejos o cuando se requiere mantener la compatibilidad con referencias. Estas caracter韘ticas permiten a los desarrolladores escribir c骴igo m醩 claro y adaptable, facilitando el mantenimiento y la evoluci髇 del software.
+El uso de `auto` y `decltype(auto)` para deducir el tipo de retorno de funciones en C++ mejora la flexibilidad y simplicidad del c贸digo, especialmente para funciones con tipos de retorno complejos o cuando se requiere mantener la compatibilidad con referencias. Estas caracter铆sticas permiten a los desarrolladores escribir c贸digo m谩s claro y adaptable, facilitando el mantenimiento y la evoluci贸n del software.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo con `decltype(auto)`
 Ejemplo con `decltype(auto)` Result
-Funci髇 con Tipo de Retorno Complicado
-Funci髇 con Tipo de Retorno Complicado Result
-Funci髇 que Devuelve un `std::pair`
-Funci髇 que Devuelve un `std::pair` Result
+Funci贸n con Tipo de Retorno Complicado
+Funci贸n con Tipo de Retorno Complicado Result
+Funci贸n que Devuelve un `std::pair`
+Funci贸n que Devuelve un `std::pair` Result
 Uso de `decltype(auto)` para Tipos de Retorno con Referencias
 Uso de `decltype(auto)` para Tipos de Retorno con Referencias Result
 <---Sintaxis--->
 ```cpp
 decltype(auto) nombre_funcion(parametros) {
-    // Cuerpo de la funci髇
+    // Cuerpo de la funci贸n
     return expresion;
 }
 <---Sintaxis Result--->
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -195,7 +195,7 @@ int main() {
     cout << "La suma es: " << resultado << endl;
     return 0;
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo con `decltype(auto)`--->
 ```cpp
 #include <iostream>
@@ -221,7 +221,7 @@ int main() {
     return 0;
 }
 <---Ejemplo con `decltype(auto)` Result--->
-<---Funci髇 con Tipo de Retorno Complicado--->
+<---Funci贸n con Tipo de Retorno Complicado--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -236,12 +236,12 @@ int main() {
     vector<int> numeros = {1, 3, 5, 7, 9};
     auto it = encontrarMaximo(numeros);
     if (it != numeros.end()) {
-        cout << "El valor m醲imo es: " << *it << endl;
+        cout << "El valor m谩ximo es: " << *it << endl;
     }
     return 0;
 }
-<---Funci髇 con Tipo de Retorno Complicado Result--->
-<---Funci髇 que Devuelve un `std::pair`--->
+<---Funci贸n con Tipo de Retorno Complicado Result--->
+<---Funci贸n que Devuelve un `std::pair`--->
 ```cpp
 #include <iostream>
 #include <utility>
@@ -256,7 +256,7 @@ int main() {
     cout << "Par: (" << p.first << ", " << p.second << ")" << endl;
     return 0;
 }
-<---Funci髇 que Devuelve un `std::pair` Result--->
+<---Funci贸n que Devuelve un `std::pair` Result--->
 <---Uso de `decltype(auto)` para Tipos de Retorno con Referencias--->
 ```cpp
 #include <iostream>

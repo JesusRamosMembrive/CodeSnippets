@@ -1,35 +1,35 @@
 <---EXPLANATION--->
-### Mejora de los Mensajes de Error y Errores de CompilaciÛn con Concepts en C++
+### Mejora de los Mensajes de Error y Errores de Compilaci√≥n con Concepts en C++
 
-Una de las ventajas m·s significativas de usar Concepts en C++20 es la mejora de los mensajes de error de compilaciÛn. Los Concepts permiten especificar de manera clara y precisa las restricciones de tipo, lo que ayuda a los compiladores a proporcionar mensajes de error m·s significativos y ˙tiles cuando un tipo no cumple con los requisitos de una plantilla.
+Una de las ventajas m√°s significativas de usar Concepts en C++20 es la mejora de los mensajes de error de compilaci√≥n. Los Concepts permiten especificar de manera clara y precisa las restricciones de tipo, lo que ayuda a los compiladores a proporcionar mensajes de error m√°s significativos y √∫tiles cuando un tipo no cumple con los requisitos de una plantilla.
 
 ### Ejemplos de Mejora de Mensajes de Error
 
 #### Sin Concepts
 
-Supongamos que tenemos una funciÛn plantilla que espera un tipo que tenga un mÈtodo `size()`. Sin Concepts, los mensajes de error pueden ser confusos y difÌciles de interpretar.
+Supongamos que tenemos una funci√≥n plantilla que espera un tipo que tenga un m√©todo `size()`. Sin Concepts, los mensajes de error pueden ser confusos y dif√≠ciles de interpretar.
 
 ```cpp
 #include <iostream>
 
 template<typename T>
 void mostrarTamano(const T& contenedor) {
-    std::cout << "TamaÒo: " << contenedor.size() << std::endl;
+    std::cout << "Tama√±o: " << contenedor.size() << std::endl;
 }
 
 int main() {
     int num = 42;
-    mostrarTamano(num);  // Error de compilaciÛn
+    mostrarTamano(num);  // Error de compilaci√≥n
 }
 ```
 
-En este ejemplo, si intentamos compilar el cÛdigo, obtendremos un mensaje de error que podrÌa no ser muy claro:
+En este ejemplo, si intentamos compilar el c√≥digo, obtendremos un mensaje de error que podr√≠a no ser muy claro:
 
 ```
 error: 'int' has no member named 'size'
 ```
 
-Este mensaje de error indica que `int` no tiene un mÈtodo `size()`, pero no proporciona informaciÛn clara sobre quÈ se esperaba.
+Este mensaje de error indica que `int` no tiene un m√©todo `size()`, pero no proporciona informaci√≥n clara sobre qu√© se esperaba.
 
 #### Con Concepts
 
@@ -39,7 +39,7 @@ Ahora, reescribamos el ejemplo anterior utilizando un Concept para mejorar los m
 #include <concepts>
 #include <iostream>
 
-// Concept que requiere que T tenga un mÈtodo `size()`
+// Concept que requiere que T tenga un m√©todo `size()`
 template<typename T>
 concept HasSizeMethod = requires(T a) {
     { a.size() } -> std::convertible_to<std::size_t>;
@@ -47,16 +47,16 @@ concept HasSizeMethod = requires(T a) {
 
 template<HasSizeMethod T>
 void mostrarTamano(const T& contenedor) {
-    std::cout << "TamaÒo: " << contenedor.size() << std::endl;
+    std::cout << "Tama√±o: " << contenedor.size() << std::endl;
 }
 
 int main() {
     int num = 42;
-    mostrarTamano(num);  // Error de compilaciÛn
+    mostrarTamano(num);  // Error de compilaci√≥n
 }
 ```
 
-El mensaje de error ahora ser· m·s especÌfico y ˙til:
+El mensaje de error ahora ser√° m√°s espec√≠fico y √∫til:
 
 ```
 error: no matching function for call to 'mostrarTamano(int&)'
@@ -66,18 +66,18 @@ note: the following constraints were not satisfied:
       with T = int
 ```
 
-Este mensaje de error proporciona informaciÛn m·s detallada sobre por quÈ `int` no cumple con el Concept `HasSizeMethod`.
+Este mensaje de error proporciona informaci√≥n m√°s detallada sobre por qu√© `int` no cumple con el Concept `HasSizeMethod`.
 
 ### Ejemplo: Mejora de Mensajes de Error con Concepts Personalizados
 
-Vamos a crear un Concept personalizado y ver cÛmo mejora los mensajes de error.
+Vamos a crear un Concept personalizado y ver c√≥mo mejora los mensajes de error.
 
 ```cpp
 #include <concepts>
 #include <iostream>
 #include <type_traits>
 
-// Concept personalizado que verifica si T tiene un mÈtodo `size()`
+// Concept personalizado que verifica si T tiene un m√©todo `size()`
 template<typename T>
 concept HasSizeMethod = requires(T a) {
     { a.size() } -> std::convertible_to<std::size_t>;
@@ -89,7 +89,7 @@ concept DefaultConstructible = std::is_default_constructible_v<T>;
 
 template<HasSizeMethod T>
 void procesar(T& contenedor) {
-    std::cout << "Procesando contenedor de tamaÒo: " << contenedor.size() << std::endl;
+    std::cout << "Procesando contenedor de tama√±o: " << contenedor.size() << std::endl;
 }
 
 template<DefaultConstructible T>
@@ -100,7 +100,7 @@ void inicializar(T& obj) {
 
 int main() {
     int num = 42;
-    procesar(num);  // Error de compilaciÛn: `int` no tiene `size()`
+    procesar(num);  // Error de compilaci√≥n: `int` no tiene `size()`
 
     std::string str = "Hola";
     inicializar(str);  // Funciona: `std::string` es default constructible
@@ -109,14 +109,14 @@ int main() {
     //     NoDefaultConstructor(int) {}
     // };
     // NoDefaultConstructor ndc(5);
-    // inicializar(ndc);  // Error de compilaciÛn: `NoDefaultConstructor` no es default constructible
+    // inicializar(ndc);  // Error de compilaci√≥n: `NoDefaultConstructor` no es default constructible
 }
 ```
 
 ### Mejoras en los Mensajes de Error
 
-1. **Concept `HasSizeMethod`**: Al intentar llamar a `procesar` con un tipo que no tiene un mÈtodo `size()`, el mensaje de error indicar· claramente que el tipo no satisface el Concept `HasSizeMethod`.
-2. **Concept `DefaultConstructible`**: Al intentar llamar a `inicializar` con un tipo que no es default constructible, el mensaje de error indicar· claramente que el tipo no satisface el Concept `DefaultConstructible`.
+1. **Concept `HasSizeMethod`**: Al intentar llamar a `procesar` con un tipo que no tiene un m√©todo `size()`, el mensaje de error indicar√° claramente que el tipo no satisface el Concept `HasSizeMethod`.
+2. **Concept `DefaultConstructible`**: Al intentar llamar a `inicializar` con un tipo que no es default constructible, el mensaje de error indicar√° claramente que el tipo no satisface el Concept `DefaultConstructible`.
 
 ### Mensajes de Error Detallados
 
@@ -136,9 +136,10 @@ int main() {
       with T = int
   ```
 
-Este mensaje de error detalla especÌficamente quÈ requisitos no fueron cumplidos, haciendo m·s f·cil para el desarrollador identificar y corregir el problema.
+Este mensaje de error detalla espec√≠ficamente qu√© requisitos no fueron cumplidos, haciendo m√°s f√°cil para el desarrollador identificar y corregir el problema.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los Concepts en C++ no solo permiten imponer restricciones claras y precisas en plantillas, sino que tambiÈn mejoran significativamente los mensajes de error de compilaciÛn. Esto ayuda a los desarrolladores a identificar y corregir problemas de tipo de manera m·s r·pida y eficiente. Al utilizar Concepts personalizados y predefinidos, se puede asegurar que los tipos utilizados en plantillas cumplen con los requisitos esperados, mejorando la robustez y la mantenibilidad del cÛdigo.
+Los Concepts en C++ no solo permiten imponer restricciones claras y precisas en plantillas, sino que tambi√©n mejoran significativamente los mensajes de error de compilaci√≥n. Esto ayuda a los desarrolladores a identificar y corregir problemas de tipo de manera m√°s r√°pida y eficiente. Al utilizar Concepts personalizados y predefinidos, se puede asegurar que los tipos utilizados en plantillas cumplen con los requisitos esperados, mejorando la robustez y la mantenibilidad del c√≥digo.
 <---FILES--->
+NA.

@@ -90,7 +90,7 @@ ScrollView {
             id: estructurasDeDatosButton
             width: widthButtons
             height: 40
-            buttonText: "Funciones"
+            buttonText: "Estructura de datos"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
@@ -161,13 +161,169 @@ ScrollView {
         CustomListView {
             id: friendsList
             width: parent.width
-            customModel: friendsModel.friendsType
+            customModel: amigasModel.amigasType
             customButton: friendsButton
             searchFilter: textField.text
         }
 
+        CustomButton {
+            id: constAndStaticMembersButton
+            width: widthButtons
+            height: 40
+            buttonText: "Const and static members"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
+        CustomListView {
+            id: constAndStaticMembersList
+            width: parent.width
+            customModel: constYMiembrosEstaticosModel.miemborsStaticYConstType
+            customButton: constAndStaticMembersButton
+            searchFilter: textField.text
+        }
 
+        CustomButton {
+            id: namespaceButton
+            width: widthButtons
+            height: 40
+            buttonText: "Namespace"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
+        CustomListView {
+            id: namespaceList
+            width: parent.width
+            customModel: namespacesModel.namespaceType
+            customButton: namespaceButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: gestionMemoriaButton
+            width: widthButtons
+            height: 40
+            buttonText: "Const and static members"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: gestionMemoriaList
+            width: parent.width
+            customModel: manejoMemoriaModel.gestionDeLaMemoriaType
+            customButton: gestionMemoriaButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: sobrecargaButton
+            width: widthButtons
+            height: 40
+            buttonText: "Sobrecarga de operadores"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: sobrecargaList
+            width: parent.width
+            customModel: operadorSobrecargaModel.sobrecargaDeOperadoresType
+            customButton: sobrecargaButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: templatesButton
+            width: widthButtons
+            height: 40
+            buttonText: "Plantillas"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: templatesList
+            width: parent.width
+            customModel: plantillasYGenericasModel.plantillasType
+            customButton: templatesButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: conceptsButton
+            width: widthButtons
+            height: 40
+            buttonText: "Concepts"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: conceptsList
+            width: parent.width
+            customModel: conceptsModel.conceptsType
+            customButton: conceptsButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: semanticButton
+            width: widthButtons
+            height: 40
+            buttonText: "Semantics"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: semanticList
+            width: parent.width
+            customModel: semanticsModel.semanticsType
+            customButton: semanticButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: functionsLikeEntitiesButton
+            width: widthButtons
+            height: 40
+            buttonText: "Funciones como entidades"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: functionsLikeEntitiesList
+            width: parent.width
+            customModel: funcionesComoEntidadesModel.funcionesComoEntidadesType
+            customButton: functionsLikeEntitiesButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: iteratorButton
+            width: widthButtons
+            height: 40
+            buttonText: "Iteradores"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: iteratorList
+            width: parent.width
+            customModel: iteradoresModel.iteradoresType
+            customButton: iteratorButton
+            searchFilter: textField.text
+        }
+
+        CustomButton {
+            id: stdAlgorithmsButton
+            width: widthButtons
+            height: 40
+            buttonText: "std::algorithms"
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        CustomListView {
+            id: stdAlgorithmsList
+            width: parent.width
+            customModel: stdAlgoritmosModel.stdAlgorithmsType
+            customButton: stdAlgorithmsButton
+            searchFilter: textField.text
+        }
     }
 }

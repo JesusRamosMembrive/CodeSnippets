@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Funciones Lambda en C++
 
-Las funciones lambda, introducidas en C++11, son funciones anÛnimas que permiten definir funciones en lÌnea en el lugar donde se necesitan, sin tener que declararlas por separado. Las lambdas son ˙tiles para pasar funciones como argumentos a otras funciones, especialmente en algoritmos de la biblioteca est·ndar, como `std::sort`, `std::for_each`, etc.
+Las funciones lambda, introducidas en C++11, son funciones an√≥nimas que permiten definir funciones en l√≠nea en el lugar donde se necesitan, sin tener que declararlas por separado. Las lambdas son √∫tiles para pasar funciones como argumentos a otras funciones, especialmente en algoritmos de la biblioteca est√°ndar, como `std::sort`, `std::for_each`, etc.
 
-#### Sintaxis B·sica de las Lambdas
+#### Sintaxis B√°sica de las Lambdas
 
-La sintaxis b·sica de una lambda en C++ es la siguiente:
+La sintaxis b√°sica de una lambda en C++ es la siguiente:
 
 ```cpp
 [captura](parametros) -> tipo_retorno {
@@ -14,11 +14,11 @@ La sintaxis b·sica de una lambda en C++ es la siguiente:
 ```
 
 - **Captura (`[]`):** Define el alcance de las variables externas que la lambda puede usar.
-- **Par·metros (`()`):** Especifica los par·metros que la lambda toma (opcional).
-- **Tipo de Retorno (`->`):** Define explÌcitamente el tipo de retorno de la lambda (opcional, usualmente deducido).
-- **Cuerpo (`{}`):** El bloque de cÛdigo que define el comportamiento de la lambda.
+- **Par√°metros (`()`):** Especifica los par√°metros que la lambda toma (opcional).
+- **Tipo de Retorno (`->`):** Define expl√≠citamente el tipo de retorno de la lambda (opcional, usualmente deducido).
+- **Cuerpo (`{}`):** El bloque de c√≥digo que define el comportamiento de la lambda.
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -43,7 +43,7 @@ Las lambdas pueden capturar variables del entorno donde se definen. Existen dife
 
 - **Por Valor (`[=]`):** Captura todas las variables usadas en la lambda por valor.
 - **Por Referencia (`[&]`):** Captura todas las variables usadas en la lambda por referencia.
-- **Captura ExplÌcita:** Captura variables especÌficas por valor o referencia.
+- **Captura Expl√≠cita:** Captura variables espec√≠ficas por valor o referencia.
 
 ##### Ejemplo con Captura por Valor y Referencia
 
@@ -67,7 +67,7 @@ int main() {
     cout << "Resultado (por valor): " << lambdaPorValor() << endl;
 
     lambdaPorReferencia();
-    cout << "x: " << x << ", y: " << y << " (despuÈs de modificar por referencia)" << endl;
+    cout << "x: " << x << ", y: " << y << " (despu√©s de modificar por referencia)" << endl;
 
     return 0;
 }
@@ -79,7 +79,7 @@ En este ejemplo:
 
 #### Tipos de Retorno
 
-Las lambdas pueden deducir su tipo de retorno autom·ticamente o especificarlo explÌcitamente.
+Las lambdas pueden deducir su tipo de retorno autom√°ticamente o especificarlo expl√≠citamente.
 
 ##### Ejemplo con Tipo de Retorno Deducido y Especificado
 
@@ -94,23 +94,23 @@ int main() {
 
     auto dividir = [](int a, int b) -> double {
         if (b == 0) {
-            throw invalid_argument("DivisiÛn por cero");
+            throw invalid_argument("Divisi√≥n por cero");
         }
         return static_cast<double>(a) / b;
     };
 
     cout << "La suma de 3 y 4 es: " << sumar(3, 4) << endl;
-    cout << "La divisiÛn de 10 por 2 es: " << dividir(10, 2) << endl;
+    cout << "La divisi√≥n de 10 por 2 es: " << dividir(10, 2) << endl;
 
     return 0;
 }
 ```
 
-En este ejemplo, `sumar` tiene su tipo de retorno deducido autom·ticamente como `int`, mientras que `dividir` especifica explÌcitamente su tipo de retorno como `double`.
+En este ejemplo, `sumar` tiene su tipo de retorno deducido autom√°ticamente como `int`, mientras que `dividir` especifica expl√≠citamente su tipo de retorno como `double`.
 
-#### Uso en Algoritmos de la Biblioteca Est·ndar
+#### Uso en Algoritmos de la Biblioteca Est√°ndar
 
-Las lambdas son extremadamente ˙tiles cuando se utilizan con algoritmos de la biblioteca est·ndar.
+Las lambdas son extremadamente √∫tiles cuando se utilizan con algoritmos de la biblioteca est√°ndar.
 
 ##### Ejemplo con `std::sort`
 
@@ -127,7 +127,7 @@ int main() {
         return a < b;
     });
 
-    cout << "N˙meros ordenados: ";
+    cout << "N√∫meros ordenados: ";
     for (int num : numeros) {
         cout << num << " ";
     }
@@ -137,7 +137,7 @@ int main() {
 }
 ```
 
-En este ejemplo, se usa una lambda para definir el criterio de ordenaciÛn en `std::sort`.
+En este ejemplo, se usa una lambda para definir el criterio de ordenaci√≥n en `std::sort`.
 
 #### Lambdas Capturando por Valor y Modificables
 
@@ -168,7 +168,7 @@ En este ejemplo, `modificar` captura `x` por valor pero usa `mutable` para permi
 
 ### Ejemplo Completo
 
-A continuaciÛn, un ejemplo completo que demuestra el uso de lambdas en varias situaciones, incluyendo captura por valor, referencia, y uso en algoritmos de la biblioteca est·ndar.
+A continuaci√≥n, un ejemplo completo que demuestra el uso de lambdas en varias situaciones, incluyendo captura por valor, referencia, y uso en algoritmos de la biblioteca est√°ndar.
 
 ```cpp
 #include <iostream>
@@ -202,37 +202,37 @@ int main() {
     // Lambda con tipo de retorno especificado
     auto dividir = [](int a, int b) -> double {
         if (b == 0) {
-            throw invalid_argument("DivisiÛn por cero");
+            throw invalid_argument("Divisi√≥n por cero");
         }
         return static_cast<double>(a) / b;
     };
 
-    cout << "N˙meros originales: ";
+    cout << "N√∫meros originales: ";
     imprimir();
 
     incrementar();
-    cout << "N˙meros incrementados: ";
+    cout << "N√∫meros incrementados: ";
     imprimir();
 
     sort(numeros.begin(), numeros.end(), [](int a, int b) {
         return a < b;
     });
-    cout << "N˙meros ordenados: ";
+    cout << "N√∫meros ordenados: ";
     imprimir();
 
     cout << "La suma de 3 y 4 es: " << sumar(3, 4) << endl;
-    cout << "La divisiÛn de 10 por 2 es: " << dividir(10, 2) << endl;
+    cout << "La divisi√≥n de 10 por 2 es: " << dividir(10, 2) << endl;
 
     return 0;
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las funciones lambda en C++ son una poderosa herramienta para definir funciones en lÌnea de manera concisa y flexible. Facilitan el paso de funciones como argumentos a otras funciones y mejoran la legibilidad y mantenibilidad del cÛdigo. Las lambdas pueden capturar variables por valor o por referencia y permiten deducir o especificar explÌcitamente el tipo de retorno. Con una comprensiÛn sÛlida de las lambdas, los desarrolladores pueden escribir cÛdigo C++ m·s limpio y eficiente.
+Las funciones lambda en C++ son una poderosa herramienta para definir funciones en l√≠nea de manera concisa y flexible. Facilitan el paso de funciones como argumentos a otras funciones y mejoran la legibilidad y mantenibilidad del c√≥digo. Las lambdas pueden capturar variables por valor o por referencia y permiten deducir o especificar expl√≠citamente el tipo de retorno. Con una comprensi√≥n s√≥lida de las lambdas, los desarrolladores pueden escribir c√≥digo C++ m√°s limpio y eficiente.
 <---FILES--->
-Ejemplo B·sico
-Ejemplo B·sico Result
+Ejemplo B√°sico
+Ejemplo B√°sico Result
 Ejemplo con Captura por Valor y Referencia
 Ejemplo con Captura por Valor y Referencia Result
 Ejemplo con Tipo de Retorno Deducido y Especificado
@@ -241,7 +241,7 @@ Ejemplo con `std::sort`
 Ejemplo con `std::sort` Result
 Ejemplo con `mutable`
 Ejemplo con `mutable` Result
-<---Ejemplo B·sico--->
+<---Ejemplo B√°sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -255,7 +255,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico Result--->
+<---Ejemplo B√°sico Result--->
 <---Ejemplo con Captura por Valor y Referencia--->
 ```cpp
 #include <iostream>
@@ -277,7 +277,7 @@ int main() {
     cout << "Resultado (por valor): " << lambdaPorValor() << endl;
 
     lambdaPorReferencia();
-    cout << "x: " << x << ", y: " << y << " (despuÈs de modificar por referencia)" << endl;
+    cout << "x: " << x << ", y: " << y << " (despu√©s de modificar por referencia)" << endl;
 
     return 0;
 }
@@ -294,13 +294,13 @@ int main() {
 
     auto dividir = [](int a, int b) -> double {
         if (b == 0) {
-            throw invalid_argument("DivisiÛn por cero");
+            throw invalid_argument("Divisi√≥n por cero");
         }
         return static_cast<double>(a) / b;
     };
 
     cout << "La suma de 3 y 4 es: " << sumar(3, 4) << endl;
-    cout << "La divisiÛn de 10 por 2 es: " << dividir(10, 2) << endl;
+    cout << "La divisi√≥n de 10 por 2 es: " << dividir(10, 2) << endl;
 
     return 0;
 }
@@ -319,7 +319,7 @@ int main() {
         return a < b;
     });
 
-    cout << "N˙meros ordenados: ";
+    cout << "N√∫meros ordenados: ";
     for (int num : numeros) {
         cout << num << " ";
     }
@@ -378,26 +378,26 @@ int main() {
     // Lambda con tipo de retorno especificado
     auto dividir = [](int a, int b) -> double {
         if (b == 0) {
-            throw invalid_argument("DivisiÛn por cero");
+            throw invalid_argument("Divisi√≥n por cero");
         }
         return static_cast<double>(a) / b;
     };
 
-    cout << "N˙meros originales: ";
+    cout << "N√∫meros originales: ";
     imprimir();
 
     incrementar();
-    cout << "N˙meros incrementados: ";
+    cout << "N√∫meros incrementados: ";
     imprimir();
 
     sort(numeros.begin(), numeros.end(), [](int a, int b) {
         return a < b;
     });
-    cout << "N˙meros ordenados: ";
+    cout << "N√∫meros ordenados: ";
     imprimir();
 
     cout << "La suma de 3 y 4 es: " << sumar(3, 4) << endl;
-    cout << "La divisiÛn de 10 por 2 es: " << dividir(10, 2) << endl;
+    cout << "La divisi√≥n de 10 por 2 es: " << dividir(10, 2) << endl;
 
     return 0;
 }

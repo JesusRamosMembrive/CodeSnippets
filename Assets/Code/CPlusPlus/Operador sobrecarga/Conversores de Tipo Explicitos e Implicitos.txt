@@ -1,15 +1,15 @@
 <---EXPLANATION--->
-### Conversores de Tipo Expl韈itos e Impl韈itos en C++
+### Conversores de Tipo Expl铆citos e Impl铆citos en C++
 
-La conversi髇 de tipos en C++ permite convertir objetos de una clase a otra clase o tipo. Esto puede ser 鷗il para proporcionar una interfaz intuitiva para trabajar con diferentes tipos de datos. Hay dos tipos de conversi髇 de tipo en C++: expl韈ita e impl韈ita.
+La conversi贸n de tipos en C++ permite convertir objetos de una clase a otra clase o tipo. Esto puede ser 煤til para proporcionar una interfaz intuitiva para trabajar con diferentes tipos de datos. Hay dos tipos de conversi贸n de tipo en C++: expl铆cita e impl铆cita.
 
-#### Conversi髇 Impl韈ita
+#### Conversi贸n Impl铆cita
 
-La conversi髇 impl韈ita ocurre autom醫icamente cuando se necesita una conversi髇 entre tipos. Para permitir la conversi髇 impl韈ita, se puede definir un constructor de conversi髇 o un operador de conversi髇 en la clase.
+La conversi贸n impl铆cita ocurre autom谩ticamente cuando se necesita una conversi贸n entre tipos. Para permitir la conversi贸n impl铆cita, se puede definir un constructor de conversi贸n o un operador de conversi贸n en la clase.
 
-##### Ejemplo: Constructor de Conversi髇 Impl韈ita
+##### Ejemplo: Constructor de Conversi贸n Impl铆cita
 
-Vamos a definir una clase `Fraction` que representa una fracci髇 y una clase `Decimal` que representa un n鷐ero decimal. Queremos que una `Fraction` se convierta impl韈itamente en un `Decimal`.
+Vamos a definir una clase `Fraction` que representa una fracci贸n y una clase `Decimal` que representa un n煤mero decimal. Queremos que una `Fraction` se convierta impl铆citamente en un `Decimal`.
 
 ```cpp
 // Fraction.h
@@ -23,7 +23,7 @@ private:
 public:
     Fraction(int num, int denom) : numerator(num), denominator(denom) {}
 
-    // Sobrecarga del operador de conversi髇 a double
+    // Sobrecarga del operador de conversi贸n a double
     operator double() const {
         return static_cast<double>(numerator) / denominator;
     }
@@ -39,7 +39,7 @@ public:
 
 int main() {
     Fraction frac(3, 4);
-    double decimal = frac; // Conversi髇 impl韈ita de Fraction a double
+    double decimal = frac; // Conversi贸n impl铆cita de Fraction a double
 
     std::cout << "Fraction as double: " << decimal << std::endl;
 
@@ -48,15 +48,15 @@ int main() {
 ```
 
 En este ejemplo:
-- La clase `Fraction` tiene un operador de conversi髇 a `double`, lo que permite la conversi髇 impl韈ita de `Fraction` a `double`.
+- La clase `Fraction` tiene un operador de conversi贸n a `double`, lo que permite la conversi贸n impl铆cita de `Fraction` a `double`.
 
-#### Conversi髇 Expl韈ita
+#### Conversi贸n Expl铆cita
 
-La conversi髇 expl韈ita requiere el uso de un cast expl韈ito. Esto se hace para evitar conversiones accidentales o no deseadas que podr韆n ocurrir con la conversi髇 impl韈ita.
+La conversi贸n expl铆cita requiere el uso de un cast expl铆cito. Esto se hace para evitar conversiones accidentales o no deseadas que podr铆an ocurrir con la conversi贸n impl铆cita.
 
-##### Ejemplo: Operador de Conversi髇 Expl韈ito
+##### Ejemplo: Operador de Conversi贸n Expl铆cito
 
-Vamos a modificar la clase `Fraction` para permitir la conversi髇 expl韈ita a `double`.
+Vamos a modificar la clase `Fraction` para permitir la conversi贸n expl铆cita a `double`.
 
 ```cpp
 // Fraction.h
@@ -70,7 +70,7 @@ private:
 public:
     Fraction(int num, int denom) : numerator(num), denominator(denom) {}
 
-    // Sobrecarga del operador de conversi髇 a double
+    // Sobrecarga del operador de conversi贸n a double
     explicit operator double() const {
         return static_cast<double>(numerator) / denominator;
     }
@@ -86,7 +86,7 @@ public:
 
 int main() {
     Fraction frac(3, 4);
-    double decimal = static_cast<double>(frac); // Conversi髇 expl韈ita de Fraction a double
+    double decimal = static_cast<double>(frac); // Conversi贸n expl铆cita de Fraction a double
 
     std::cout << "Fraction as double: " << decimal << std::endl;
 
@@ -95,40 +95,40 @@ int main() {
 ```
 
 En este ejemplo:
-- La clase `Fraction` tiene un operador de conversi髇 expl韈ito a `double`, lo que requiere el uso de `static_cast` para convertir un objeto `Fraction` a `double`.
+- La clase `Fraction` tiene un operador de conversi贸n expl铆cito a `double`, lo que requiere el uso de `static_cast` para convertir un objeto `Fraction` a `double`.
 
 ### Resumen de las Conversiones
 
-#### Conversi髇 Impl韈ita
+#### Conversi贸n Impl铆cita
 
-- **Constructor de Conversi髇**: Permite la conversi髇 autom醫ica al tipo de destino.
-- **Operador de Conversi髇 Impl韈ito**: Se define como `operator tipo() const`.
+- **Constructor de Conversi贸n**: Permite la conversi贸n autom谩tica al tipo de destino.
+- **Operador de Conversi贸n Impl铆cito**: Se define como `operator tipo() const`.
 - **Ventajas**:
   - Facilita el uso de la clase en expresiones y operaciones.
-  - Simplifica el c骴igo al eliminar la necesidad de conversiones expl韈itas.
+  - Simplifica el c贸digo al eliminar la necesidad de conversiones expl铆citas.
 - **Desventajas**:
-  - Puede llevar a conversiones no intencionadas y errores dif韈iles de depurar.
-  - Reduce el control sobre cu醤do y c髆o ocurren las conversiones.
+  - Puede llevar a conversiones no intencionadas y errores dif铆ciles de depurar.
+  - Reduce el control sobre cu谩ndo y c贸mo ocurren las conversiones.
 
-#### Conversi髇 Expl韈ita
+#### Conversi贸n Expl铆cita
 
-- **Constructor de Conversi髇 Expl韈ito**: Se define con la palabra clave `explicit` para evitar conversiones impl韈itas.
-- **Operador de Conversi髇 Expl韈ito**: Se define como `explicit operator tipo() const`.
+- **Constructor de Conversi贸n Expl铆cito**: Se define con la palabra clave `explicit` para evitar conversiones impl铆citas.
+- **Operador de Conversi贸n Expl铆cito**: Se define como `explicit operator tipo() const`.
 - **Ventajas**:
   - Proporciona un mayor control sobre las conversiones de tipos.
   - Evita conversiones accidentales y mejora la seguridad del tipo.
 - **Desventajas**:
-  - Requiere casts expl韈itos, lo que puede hacer que el c骴igo sea m醩 verboso.
+  - Requiere casts expl铆citos, lo que puede hacer que el c贸digo sea m谩s verboso.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores de conversi髇 en C++ es una herramienta poderosa que permite definir conversiones entre tipos de datos definidos por el usuario. La conversi髇 impl韈ita facilita el uso de la clase en expresiones, pero puede llevar a errores si no se maneja con cuidado. La conversi髇 expl韈ita proporciona un mayor control y seguridad, evitando conversiones accidentales. Es crucial elegir el tipo de conversi髇 adecuado seg鷑 las necesidades del dise駉 y la seguridad del tipo en el contexto de la aplicaci髇.
+La sobrecarga de operadores de conversi贸n en C++ es una herramienta poderosa que permite definir conversiones entre tipos de datos definidos por el usuario. La conversi贸n impl铆cita facilita el uso de la clase en expresiones, pero puede llevar a errores si no se maneja con cuidado. La conversi贸n expl铆cita proporciona un mayor control y seguridad, evitando conversiones accidentales. Es crucial elegir el tipo de conversi贸n adecuado seg煤n las necesidades del dise帽o y la seguridad del tipo en el contexto de la aplicaci贸n.
 <---FILES--->
-Ejemplo: Constructor de Conversi髇 Impl韈ita
-Ejemplo: Constructor de Conversi髇 Impl韈ita Result
-Ejemplo: Operador de Conversi髇 Expl韈ito
-Ejemplo: Operador de Conversi髇 Expl韈ito Result
-<---Ejemplo: Constructor de Conversi髇 Impl韈ita--->
+Ejemplo: Constructor de Conversi贸n Impl铆cita
+Ejemplo: Constructor de Conversi贸n Impl铆cita Result
+Ejemplo: Operador de Conversi贸n Expl铆cito
+Ejemplo: Operador de Conversi贸n Expl铆cito Result
+<---Ejemplo: Constructor de Conversi贸n Impl铆cita--->
 ```cpp
 // Fraction.h
 #ifndef FRACTION_H
@@ -141,7 +141,7 @@ private:
 public:
     Fraction(int num, int denom) : numerator(num), denominator(denom) {}
 
-    // Sobrecarga del operador de conversi髇 a double
+    // Sobrecarga del operador de conversi贸n a double
     operator double() const {
         return static_cast<double>(numerator) / denominator;
     }
@@ -155,14 +155,14 @@ public:
 
 int main() {
     Fraction frac(3, 4);
-    double decimal = frac; // Conversi髇 impl韈ita de Fraction a double
+    double decimal = frac; // Conversi贸n impl铆cita de Fraction a double
 
     std::cout << "Fraction as double: " << decimal << std::endl;
 
     return 0;
 }
-<---Ejemplo: Constructor de Conversi髇 Impl韈ita Result--->
-<---Ejemplo: Operador de Conversi髇 Expl韈ito--->
+<---Ejemplo: Constructor de Conversi贸n Impl铆cita Result--->
+<---Ejemplo: Operador de Conversi贸n Expl铆cito--->
 ```cpp
 // Fraction.h
 #ifndef FRACTION_H
@@ -175,7 +175,7 @@ private:
 public:
     Fraction(int num, int denom) : numerator(num), denominator(denom) {}
 
-    // Sobrecarga del operador de conversi髇 a double
+    // Sobrecarga del operador de conversi贸n a double
     explicit operator double() const {
         return static_cast<double>(numerator) / denominator;
     }
@@ -189,10 +189,10 @@ public:
 
 int main() {
     Fraction frac(3, 4);
-    double decimal = static_cast<double>(frac); // Conversi髇 expl韈ita de Fraction a double
+    double decimal = static_cast<double>(frac); // Conversi贸n expl铆cita de Fraction a double
 
     std::cout << "Fraction as double: " << decimal << std::endl;
 
     return 0;
 }
-<---Ejemplo: Operador de Conversi髇 Expl韈ito Result--->
+<---Ejemplo: Operador de Conversi贸n Expl铆cito Result--->

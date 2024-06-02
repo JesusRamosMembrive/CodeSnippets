@@ -1,17 +1,17 @@
 <---EXPLANATION--->
 ### Control de Flujo: Bucles en C++
 
-Los bucles son estructuras de control de flujo que permiten ejecutar un bloque de c骴igo repetidamente. C++ proporciona varios tipos de bucles: `for`, `while`, y `do-while`, cada uno con sus propias caracter韘ticas y usos espec韋icos.
+Los bucles son estructuras de control de flujo que permiten ejecutar un bloque de c贸digo repetidamente. C++ proporciona varios tipos de bucles: `for`, `while`, y `do-while`, cada uno con sus propias caracter铆sticas y usos espec铆ficos.
 
 #### 1. **Bucle `for`**
 
-El bucle `for` se utiliza cuando se conoce de antemano el n鷐ero de iteraciones que se desea realizar. Se compone de tres partes: inicializaci髇, condici髇 y actualizaci髇.
+El bucle `for` se utiliza cuando se conoce de antemano el n煤mero de iteraciones que se desea realizar. Se compone de tres partes: inicializaci贸n, condici贸n y actualizaci贸n.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 for (inicializacion; condicion; actualizacion) {
-    // C骴igo a ejecutar en cada iteraci髇
+    // C贸digo a ejecutar en cada iteraci贸n
 }
 ```
 
@@ -23,7 +23,7 @@ using namespace std;
 
 int main() {
     for (int i = 0; i < 10; ++i) {
-        cout << "Iteraci髇 " << i << endl;
+        cout << "Iteraci贸n " << i << endl;
     }
     return 0;
 }
@@ -31,13 +31,13 @@ int main() {
 
 #### 2. **Bucle `while`**
 
-El bucle `while` se utiliza cuando se desea repetir un bloque de c骴igo mientras se cumpla una condici髇 espec韋ica. La condici髇 se eval鷄 antes de cada iteraci髇.
+El bucle `while` se utiliza cuando se desea repetir un bloque de c贸digo mientras se cumpla una condici贸n espec铆fica. La condici贸n se eval煤a antes de cada iteraci贸n.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 while (condicion) {
-    // C骴igo a ejecutar en cada iteraci髇
+    // C贸digo a ejecutar en cada iteraci贸n
 }
 ```
 
@@ -50,7 +50,7 @@ using namespace std;
 int main() {
     int i = 0;
     while (i < 10) {
-        cout << "Iteraci髇 " << i << endl;
+        cout << "Iteraci贸n " << i << endl;
         ++i;
     }
     return 0;
@@ -59,13 +59,13 @@ int main() {
 
 #### 3. **Bucle `do-while`**
 
-El bucle `do-while` es similar al bucle `while`, pero garantiza que el bloque de c骴igo se ejecuta al menos una vez, ya que la condici髇 se eval鷄 al final de cada iteraci髇.
+El bucle `do-while` es similar al bucle `while`, pero garantiza que el bloque de c贸digo se ejecuta al menos una vez, ya que la condici贸n se eval煤a al final de cada iteraci贸n.
 
-##### Sintaxis B醩ica
+##### Sintaxis B谩sica
 
 ```cpp
 do {
-    // C骴igo a ejecutar en cada iteraci髇
+    // C贸digo a ejecutar en cada iteraci贸n
 } while (condicion);
 ```
 
@@ -78,7 +78,7 @@ using namespace std;
 int main() {
     int i = 0;
     do {
-        cout << "Iteraci髇 " << i << endl;
+        cout << "Iteraci贸n " << i << endl;
         ++i;
     } while (i < 10);
     return 0;
@@ -87,7 +87,7 @@ int main() {
 
 ### Bucles Anidados
 
-Los bucles pueden anidarse, lo que significa que un bucle puede contener otro bucle dentro de su cuerpo. Esto es 鷗il para trabajar con estructuras de datos multidimensionales, como matrices.
+Los bucles pueden anidarse, lo que significa que un bucle puede contener otro bucle dentro de su cuerpo. Esto es 煤til para trabajar con estructuras de datos multidimensionales, como matrices.
 
 ##### Ejemplo de Bucles Anidados
 
@@ -109,7 +109,7 @@ int main() {
 ### Control de Flujo en Bucles
 
 - **`break`**: Termina el bucle inmediatamente.
-- **`continue`**: Salta la iteraci髇 actual y contin鷄 con la siguiente iteraci髇 del bucle.
+- **`continue`**: Salta la iteraci贸n actual y contin煤a con la siguiente iteraci贸n del bucle.
 
 ##### Ejemplo de `break` y `continue`
 
@@ -123,9 +123,9 @@ int main() {
             break; // Salir del bucle cuando i es 5
         }
         if (i % 2 == 0) {
-            continue; // Saltar los n鷐eros pares
+            continue; // Saltar los n煤meros pares
         }
-        cout << "Iteraci髇 " << i << endl;
+        cout << "Iteraci贸n " << i << endl;
     }
     return 0;
 }
@@ -133,7 +133,7 @@ int main() {
 
 ### Bucles con Rango (C++11 y Posterior)
 
-El bucle `for` basado en rango simplifica la iteraci髇 sobre contenedores, como vectores y arrays, introducido en C++11.
+El bucle `for` basado en rango simplifica la iteraci贸n sobre contenedores, como vectores y arrays, introducido en C++11.
 
 ##### Ejemplo de Bucle con Rango
 
@@ -146,18 +146,18 @@ int main() {
     vector<int> numeros = {1, 2, 3, 4, 5};
 
     for (int numero : numeros) {
-        cout << "N鷐ero: " << numero << endl;
+        cout << "N煤mero: " << numero << endl;
     }
 
     return 0;
 }
 ```
 
-### Buenas Pr醕ticas
+### Buenas Pr谩cticas
 
-- **Evitar Bucles Infinito:** Aseg鷕ate de que las condiciones de terminaci髇 de los bucles se cumplan para evitar bucles infinitos.
+- **Evitar Bucles Infinito:** Aseg煤rate de que las condiciones de terminaci贸n de los bucles se cumplan para evitar bucles infinitos.
 - **Usar Comentarios:** Documenta bucles complejos con comentarios claros.
-- **Evitar Uso Excesivo de `break` y `continue`:** Aunque 鷗iles, un uso excesivo puede hacer que el c骴igo sea dif韈il de leer y mantener. Util韟alos con moderaci髇 y cuando sea absolutamente necesario.
+- **Evitar Uso Excesivo de `break` y `continue`:** Aunque 煤tiles, un uso excesivo puede hacer que el c贸digo sea dif铆cil de leer y mantener. Util铆zalos con moderaci贸n y cuando sea absolutamente necesario.
 
 ### Ejemplo Completo
 
@@ -169,27 +169,27 @@ using namespace std;
 int main() {
     // Bucle for
     for (int i = 0; i < 5; ++i) {
-        cout << "For loop, iteraci髇: " << i << endl;
+        cout << "For loop, iteraci贸n: " << i << endl;
     }
 
     // Bucle while
     int j = 0;
     while (j < 5) {
-        cout << "While loop, iteraci髇: " << j << endl;
+        cout << "While loop, iteraci贸n: " << j << endl;
         ++j;
     }
 
     // Bucle do-while
     int k = 0;
     do {
-        cout << "Do-While loop, iteraci髇: " << k << endl;
+        cout << "Do-While loop, iteraci贸n: " << k << endl;
         ++k;
     } while (k < 5);
 
     // Bucle for con rango
     vector<int> numeros = {10, 20, 30, 40, 50};
     for (int numero : numeros) {
-        cout << "Bucle con rango, n鷐ero: " << numero << endl;
+        cout << "Bucle con rango, n煤mero: " << numero << endl;
     }
 
     // Bucle anidado
@@ -204,12 +204,12 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Comprender y utilizar correctamente los diferentes tipos de bucles en C++ es fundamental para controlar el flujo de ejecuci髇 de un programa y realizar tareas repetitivas de manera eficiente. Cada tipo de bucle tiene sus propias ventajas y se adapta a diferentes situaciones de programaci髇, lo que permite escribir c骴igo m醩 limpio, legible y eficiente.
+Comprender y utilizar correctamente los diferentes tipos de bucles en C++ es fundamental para controlar el flujo de ejecuci贸n de un programa y realizar tareas repetitivas de manera eficiente. Cada tipo de bucle tiene sus propias ventajas y se adapta a diferentes situaciones de programaci贸n, lo que permite escribir c贸digo m谩s limpio, legible y eficiente.
 <---FILES--->
-Sintaxis B醩ica
-Sintaxis B醩ica Result
+Sintaxis B谩sica
+Sintaxis B谩sica Result
 Ejemplo
 Ejemplo Result
 Ejemplo de Bucles Anidados
@@ -218,12 +218,12 @@ Ejemplo de `break` y `continue`
 Ejemplo de `break` y `continue` Result
 Ejemplo de Bucle con Rango
 Ejemplo de Bucle con Rango Result
-<---Sintaxis B醩ica--->
+<---Sintaxis B谩sica--->
 ```cpp
 do {
-    // C骴igo a ejecutar en cada iteraci髇
+    // C贸digo a ejecutar en cada iteraci贸n
 } while (condicion);
-<---Sintaxis B醩ica Result--->
+<---Sintaxis B谩sica Result--->
 <---Ejemplo--->
 ```cpp
 #include <iostream>
@@ -232,7 +232,7 @@ using namespace std;
 int main() {
     int i = 0;
     do {
-        cout << "Iteraci髇 " << i << endl;
+        cout << "Iteraci贸n " << i << endl;
         ++i;
     } while (i < 10);
     return 0;
@@ -264,9 +264,9 @@ int main() {
             break; // Salir del bucle cuando i es 5
         }
         if (i % 2 == 0) {
-            continue; // Saltar los n鷐eros pares
+            continue; // Saltar los n煤meros pares
         }
-        cout << "Iteraci髇 " << i << endl;
+        cout << "Iteraci贸n " << i << endl;
     }
     return 0;
 }
@@ -281,7 +281,7 @@ int main() {
     vector<int> numeros = {1, 2, 3, 4, 5};
 
     for (int numero : numeros) {
-        cout << "N鷐ero: " << numero << endl;
+        cout << "N煤mero: " << numero << endl;
     }
 
     return 0;
@@ -294,27 +294,27 @@ using namespace std;
 int main() {
     // Bucle for
     for (int i = 0; i < 5; ++i) {
-        cout << "For loop, iteraci髇: " << i << endl;
+        cout << "For loop, iteraci贸n: " << i << endl;
     }
 
     // Bucle while
     int j = 0;
     while (j < 5) {
-        cout << "While loop, iteraci髇: " << j << endl;
+        cout << "While loop, iteraci贸n: " << j << endl;
         ++j;
     }
 
     // Bucle do-while
     int k = 0;
     do {
-        cout << "Do-While loop, iteraci髇: " << k << endl;
+        cout << "Do-While loop, iteraci贸n: " << k << endl;
         ++k;
     } while (k < 5);
 
     // Bucle for con rango
     vector<int> numeros = {10, 20, 30, 40, 50};
     for (int numero : numeros) {
-        cout << "Bucle con rango, n鷐ero: " << numero << endl;
+        cout << "Bucle con rango, n煤mero: " << numero << endl;
     }
 
     // Bucle anidado

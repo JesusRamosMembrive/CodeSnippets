@@ -1,6 +1,6 @@
 import QtQuick
 Item{
-property ListModel constYMiembrosEstaticosType: ListModel{
+property ListModel miemborsStaticYConstType: ListModel{
 
 ListElement{ name: "Clases Sanitizadas"}
 ListElement{ name: "Funciones Miembro Estaticas"}

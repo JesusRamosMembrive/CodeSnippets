@@ -1,21 +1,21 @@
 <---EXPLANATION--->
 ### Variables Miembro del Tipo `self` en C++
 
-En lenguajes de programación orientados a objetos, la referencia a `self` (o `this` en C++) se utiliza dentro de los métodos de una clase para referirse al objeto actual. En C++, `this` es un puntero implícito a la instancia de la clase desde la cual se llama al método. Usar `this` es útil en varios contextos, como cuando se necesita acceder a miembros de la clase, encadenar llamadas a métodos o pasar el objeto actual a otras funciones.
+En lenguajes de programaciÃ³n orientados a objetos, la referencia a `self` (o `this` en C++) se utiliza dentro de los mÃ©todos de una clase para referirse al objeto actual. En C++, `this` es un puntero implÃ­cito a la instancia de la clase desde la cual se llama al mÃ©todo. Usar `this` es Ãºtil en varios contextos, como cuando se necesita acceder a miembros de la clase, encadenar llamadas a mÃ©todos o pasar el objeto actual a otras funciones.
 
 #### El Puntero `this`
 
-El puntero `this` es un puntero implícito disponible en todos los métodos no estáticos de una clase. Siempre apunta a la instancia de la clase desde la cual se invoca el método.
+El puntero `this` es un puntero implÃ­cito disponible en todos los mÃ©todos no estÃ¡ticos de una clase. Siempre apunta a la instancia de la clase desde la cual se invoca el mÃ©todo.
 
-##### Características del Puntero `this`
+##### CaracterÃ­sticas del Puntero `this`
 
 1. **Tipo de Dato:** El puntero `this` tiene el tipo `ClassName*` (donde `ClassName` es el nombre de la clase).
-2. **Sólo en Métodos No Estáticos:** `this` sólo está disponible en métodos no estáticos porque los métodos estáticos no están asociados a ninguna instancia en particular.
-3. **Constancia:** Dentro de un método constante (`const`), el puntero `this` tiene el tipo `const ClassName*`.
+2. **SÃ³lo en MÃ©todos No EstÃ¡ticos:** `this` sÃ³lo estÃ¡ disponible en mÃ©todos no estÃ¡ticos porque los mÃ©todos estÃ¡ticos no estÃ¡n asociados a ninguna instancia en particular.
+3. **Constancia:** Dentro de un mÃ©todo constante (`const`), el puntero `this` tiene el tipo `const ClassName*`.
 
-#### Ejemplo Básico de Uso del Puntero `this`
+#### Ejemplo BÃ¡sico de Uso del Puntero `this`
 
-Consideremos una clase simple `Persona` que utiliza el puntero `this` para acceder a sus miembros y encadenar métodos.
+Consideremos una clase simple `Persona` que utiliza el puntero `this` para acceder a sus miembros y encadenar mÃ©todos.
 
 ```cpp
 #include <iostream>
@@ -30,19 +30,19 @@ private:
 public:
     Persona(const string& n, int e) : nombre(n), edad(e) {}
 
-    // Método para establecer el nombre utilizando `this`
+    // MÃ©todo para establecer el nombre utilizando `this`
     Persona& setNombre(const string& n) {
         this->nombre = n;
         return *this; // Devuelve el objeto actual
     }
 
-    // Método para establecer la edad utilizando `this`
+    // MÃ©todo para establecer la edad utilizando `this`
     Persona& setEdad(int e) {
         this->edad = e;
         return *this; // Devuelve el objeto actual
     }
 
-    // Método para mostrar información
+    // MÃ©todo para mostrar informaciÃ³n
     void mostrarInformacion() const {
         cout << "Nombre: " << this->nombre << ", Edad: " << this->edad << endl;
     }
@@ -52,7 +52,7 @@ int main() {
     Persona p("Juan", 30);
     p.mostrarInformacion();
 
-    // Encadenar llamadas a métodos
+    // Encadenar llamadas a mÃ©todos
     p.setNombre("Maria").setEdad(25);
     p.mostrarInformacion();
 
@@ -61,14 +61,14 @@ int main() {
 ```
 
 En este ejemplo:
-- El puntero `this` se utiliza para acceder a los miembros `nombre` y `edad` dentro de los métodos `setNombre` y `setEdad`.
-- Los métodos `setNombre` y `setEdad` devuelven una referencia al objeto actual (`*this`), permitiendo la encadenación de llamadas a métodos.
+- El puntero `this` se utiliza para acceder a los miembros `nombre` y `edad` dentro de los mÃ©todos `setNombre` y `setEdad`.
+- Los mÃ©todos `setNombre` y `setEdad` devuelven una referencia al objeto actual (`*this`), permitiendo la encadenaciÃ³n de llamadas a mÃ©todos.
 
-#### Uso del Puntero `this` para Diferenciar entre Miembros y Parámetros
+#### Uso del Puntero `this` para Diferenciar entre Miembros y ParÃ¡metros
 
-Cuando los nombres de los parámetros de un método son los mismos que los nombres de los miembros de la clase, se utiliza el puntero `this` para diferenciar entre ellos.
+Cuando los nombres de los parÃ¡metros de un mÃ©todo son los mismos que los nombres de los miembros de la clase, se utiliza el puntero `this` para diferenciar entre ellos.
 
-##### Ejemplo de Diferenciación
+##### Ejemplo de DiferenciaciÃ³n
 
 ```cpp
 #include <iostream>
@@ -82,7 +82,7 @@ private:
 
 public:
     Rectangulo(int ancho, int alto) {
-        // Utiliza `this` para diferenciar entre el miembro y el parámetro
+        // Utiliza `this` para diferenciar entre el miembro y el parÃ¡metro
         this->ancho = ancho;
         this->alto = alto;
     }
@@ -99,13 +99,13 @@ int main() {
 }
 ```
 
-En este ejemplo, el puntero `this` se utiliza para diferenciar entre los parámetros `ancho` y `alto` y los miembros de la clase `ancho` y `alto`.
+En este ejemplo, el puntero `this` se utiliza para diferenciar entre los parÃ¡metros `ancho` y `alto` y los miembros de la clase `ancho` y `alto`.
 
-#### Encadenamiento de Métodos
+#### Encadenamiento de MÃ©todos
 
-El encadenamiento de métodos es una técnica comúnmente utilizada en la que los métodos devuelven `*this` para permitir que múltiples métodos se llamen en una sola línea de código.
+El encadenamiento de mÃ©todos es una tÃ©cnica comÃºnmente utilizada en la que los mÃ©todos devuelven `*this` para permitir que mÃºltiples mÃ©todos se llamen en una sola lÃ­nea de cÃ³digo.
 
-##### Ejemplo de Encadenamiento de Métodos
+##### Ejemplo de Encadenamiento de MÃ©todos
 
 ```cpp
 #include <iostream>
@@ -129,18 +129,18 @@ public:
 
 int main() {
     Cadena c;
-    c.agregar("Hola, ").agregar("mundo!").agregar(" ¿Cómo estás?");
-    c.mostrar(); // Muestra: Cadena: Hola, mundo! ¿Cómo estás?
+    c.agregar("Hola, ").agregar("mundo!").agregar(" Â¿CÃ³mo estÃ¡s?");
+    c.mostrar(); // Muestra: Cadena: Hola, mundo! Â¿CÃ³mo estÃ¡s?
 
     return 0;
 }
 ```
 
-En este ejemplo, los métodos `agregar` devuelven una referencia al objeto actual (`*this`), permitiendo el encadenamiento de llamadas a `agregar`.
+En este ejemplo, los mÃ©todos `agregar` devuelven una referencia al objeto actual (`*this`), permitiendo el encadenamiento de llamadas a `agregar`.
 
 #### Pasar el Objeto Actual a Otras Funciones
 
-El puntero `this` se puede usar para pasar el objeto actual a otras funciones o métodos.
+El puntero `this` se puede usar para pasar el objeto actual a otras funciones o mÃ©todos.
 
 ##### Ejemplo de Pasar el Objeto Actual
 
@@ -151,7 +151,7 @@ using namespace std;
 class MiClase {
 public:
     void mostrarDireccion() const {
-        cout << "Dirección del objeto: " << this << endl;
+        cout << "DirecciÃ³n del objeto: " << this << endl;
     }
 };
 
@@ -169,21 +169,21 @@ int main() {
 }
 ```
 
-En este ejemplo, el método `mostrarDireccion` usa `this` para imprimir la dirección del objeto, y esta dirección se pasa a la función `imprimirObjeto`.
+En este ejemplo, el mÃ©todo `mostrarDireccion` usa `this` para imprimir la direcciÃ³n del objeto, y esta direcciÃ³n se pasa a la funciÃ³n `imprimirObjeto`.
 
-### Conclusión
+### ConclusiÃ³n
 
-El puntero `this` en C++ es una herramienta poderosa que permite a los métodos de una clase acceder y manipular el objeto actual. Es útil para diferenciar entre miembros de la clase y parámetros, encadenar métodos, y pasar el objeto actual a otras funciones. Entender y utilizar `this` correctamente es fundamental para escribir código orientado a objetos claro y eficiente en C++.
+El puntero `this` en C++ es una herramienta poderosa que permite a los mÃ©todos de una clase acceder y manipular el objeto actual. Es Ãºtil para diferenciar entre miembros de la clase y parÃ¡metros, encadenar mÃ©todos, y pasar el objeto actual a otras funciones. Entender y utilizar `this` correctamente es fundamental para escribir cÃ³digo orientado a objetos claro y eficiente en C++.
 <---FILES--->
-Características del Puntero `this`
-Características del Puntero `this` Result
-Ejemplo de Diferenciación
-Ejemplo de Diferenciación Result
-Ejemplo de Encadenamiento de Métodos
-Ejemplo de Encadenamiento de Métodos Result
+CaracterÃ­sticas del Puntero `this`
+CaracterÃ­sticas del Puntero `this` Result
+Ejemplo de DiferenciaciÃ³n
+Ejemplo de DiferenciaciÃ³n Result
+Ejemplo de Encadenamiento de MÃ©todos
+Ejemplo de Encadenamiento de MÃ©todos Result
 Ejemplo de Pasar el Objeto Actual
 Ejemplo de Pasar el Objeto Actual Result
-<---Características del Puntero `this`--->
+<---CaracterÃ­sticas del Puntero `this`--->
 ```cpp
 #include <iostream>
 #include <string>
@@ -197,19 +197,19 @@ private:
 public:
     Persona(const string& n, int e) : nombre(n), edad(e) {}
 
-    // Método para establecer el nombre utilizando `this`
+    // MÃ©todo para establecer el nombre utilizando `this`
     Persona& setNombre(const string& n) {
         this->nombre = n;
         return *this; // Devuelve el objeto actual
     }
 
-    // Método para establecer la edad utilizando `this`
+    // MÃ©todo para establecer la edad utilizando `this`
     Persona& setEdad(int e) {
         this->edad = e;
         return *this; // Devuelve el objeto actual
     }
 
-    // Método para mostrar información
+    // MÃ©todo para mostrar informaciÃ³n
     void mostrarInformacion() const {
         cout << "Nombre: " << this->nombre << ", Edad: " << this->edad << endl;
     }
@@ -219,14 +219,14 @@ int main() {
     Persona p("Juan", 30);
     p.mostrarInformacion();
 
-    // Encadenar llamadas a métodos
+    // Encadenar llamadas a mÃ©todos
     p.setNombre("Maria").setEdad(25);
     p.mostrarInformacion();
 
     return 0;
 }
-<---Características del Puntero `this` Result--->
-<---Ejemplo de Diferenciación--->
+<---CaracterÃ­sticas del Puntero `this` Result--->
+<---Ejemplo de DiferenciaciÃ³n--->
 ```cpp
 #include <iostream>
 #include <string>
@@ -239,7 +239,7 @@ private:
 
 public:
     Rectangulo(int ancho, int alto) {
-        // Utiliza `this` para diferenciar entre el miembro y el parámetro
+        // Utiliza `this` para diferenciar entre el miembro y el parÃ¡metro
         this->ancho = ancho;
         this->alto = alto;
     }
@@ -254,8 +254,8 @@ int main() {
     r.mostrarDimensiones();
     return 0;
 }
-<---Ejemplo de Diferenciación Result--->
-<---Ejemplo de Encadenamiento de Métodos--->
+<---Ejemplo de DiferenciaciÃ³n Result--->
+<---Ejemplo de Encadenamiento de MÃ©todos--->
 ```cpp
 #include <iostream>
 #include <string>
@@ -278,12 +278,12 @@ public:
 
 int main() {
     Cadena c;
-    c.agregar("Hola, ").agregar("mundo!").agregar(" ¿Cómo estás?");
-    c.mostrar(); // Muestra: Cadena: Hola, mundo! ¿Cómo estás?
+    c.agregar("Hola, ").agregar("mundo!").agregar(" Â¿CÃ³mo estÃ¡s?");
+    c.mostrar(); // Muestra: Cadena: Hola, mundo! Â¿CÃ³mo estÃ¡s?
 
     return 0;
 }
-<---Ejemplo de Encadenamiento de Métodos Result--->
+<---Ejemplo de Encadenamiento de MÃ©todos Result--->
 <---Ejemplo de Pasar el Objeto Actual--->
 ```cpp
 #include <iostream>
@@ -292,7 +292,7 @@ using namespace std;
 class MiClase {
 public:
     void mostrarDireccion() const {
-        cout << "Dirección del objeto: " << this << endl;
+        cout << "DirecciÃ³n del objeto: " << this << endl;
     }
 };
 

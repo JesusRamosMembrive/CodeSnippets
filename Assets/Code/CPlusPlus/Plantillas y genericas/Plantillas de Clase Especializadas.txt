@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Plantillas de Clase Especializadas en C++
 
-Las plantillas de clase especializadas permiten definir implementaciones especÌficas para ciertos tipos de datos, proporcionando flexibilidad adicional cuando la implementaciÛn genÈrica no es adecuada.
+Las plantillas de clase especializadas permiten definir implementaciones espec√≠ficas para ciertos tipos de datos, proporcionando flexibilidad adicional cuando la implementaci√≥n gen√©rica no es adecuada.
 
-#### DefiniciÛn de Plantillas de Clase
+#### Definici√≥n de Plantillas de Clase
 
-Las plantillas de clase se definen utilizando la palabra clave `template` seguida de una lista de par·metros de tipo entre corchetes angulares (`< >`).
+Las plantillas de clase se definen utilizando la palabra clave `template` seguida de una lista de par√°metros de tipo entre corchetes angulares (`< >`).
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 // PlantillaClase.h
@@ -42,11 +42,11 @@ void MiClase<T>::mostrarValor() {
 }
 ```
 
-#### EspecializaciÛn Completa de Plantillas de Clase
+#### Especializaci√≥n Completa de Plantillas de Clase
 
-La especializaciÛn completa de una plantilla de clase implica definir una implementaciÛn especÌfica para un tipo de dato particular.
+La especializaci√≥n completa de una plantilla de clase implica definir una implementaci√≥n espec√≠fica para un tipo de dato particular.
 
-##### Ejemplo de EspecializaciÛn Completa
+##### Ejemplo de Especializaci√≥n Completa
 
 ```cpp
 // PlantillaClaseEspecializada.h
@@ -56,7 +56,7 @@ La especializaciÛn completa de una plantilla de clase implica definir una implem
 #include <iostream>
 #include <cstring>
 
-// Plantilla de clase genÈrica
+// Plantilla de clase gen√©rica
 template <typename T>
 class MiClase {
 public:
@@ -66,7 +66,7 @@ private:
     T valor;
 };
 
-// EspecializaciÛn completa para const char*
+// Especializaci√≥n completa para const char*
 template <>
 class MiClase<const char*> {
 public:
@@ -84,7 +84,7 @@ private:
 // PlantillaClaseEspecializada.cpp
 #include "PlantillaClaseEspecializada.h"
 
-// ImplementaciÛn genÈrica
+// Implementaci√≥n gen√©rica
 template <typename T>
 MiClase<T>::MiClase(T v) : valor(v) {}
 
@@ -93,7 +93,7 @@ void MiClase<T>::mostrarValor() {
     std::cout << "El valor es: " << valor << std::endl;
 }
 
-// ImplementaciÛn especializada
+// Implementaci√≥n especializada
 MiClase<const char*>::MiClase(const char* v) : valor(v) {}
 
 void MiClase<const char*>::mostrarValor() {
@@ -121,18 +121,18 @@ int main() {
 
 En este ejemplo:
 - La clase `MiClase` se especializa completamente para el tipo `const char*`.
-- La especializaciÛn proporciona una implementaciÛn especÌfica para el tipo `const char*`.
+- La especializaci√≥n proporciona una implementaci√≥n espec√≠fica para el tipo `const char*`.
 
-#### EspecializaciÛn Parcial de Plantillas de Clase
+#### Especializaci√≥n Parcial de Plantillas de Clase
 
-C++ no permite la especializaciÛn parcial de clases directamente, pero se puede utilizar una combinaciÛn de plantillas de clases y funciones para lograr un efecto similar.
+C++ no permite la especializaci√≥n parcial de clases directamente, pero se puede utilizar una combinaci√≥n de plantillas de clases y funciones para lograr un efecto similar.
 
-##### Ejemplo de EspecializaciÛn Parcial
+##### Ejemplo de Especializaci√≥n Parcial
 
 ```cpp
 #include <iostream>
 
-// Plantilla de clase genÈrica
+// Plantilla de clase gen√©rica
 template <typename T1, typename T2>
 class MiClase {
 public:
@@ -143,7 +143,7 @@ private:
     T2 valor2;
 };
 
-// ImplementaciÛn genÈrica
+// Implementaci√≥n gen√©rica
 template <typename T1, typename T2>
 MiClase<T1, T2>::MiClase(T1 v1, T2 v2) : valor1(v1), valor2(v2) {}
 
@@ -152,7 +152,7 @@ void MiClase<T1, T2>::mostrarValores() {
     std::cout << "Valor 1: " << valor1 << ", Valor 2: " << valor2 << std::endl;
 }
 
-// EspecializaciÛn parcial para T1=int
+// Especializaci√≥n parcial para T1=int
 template <typename T2>
 class MiClase<int, T2> {
 public:
@@ -163,7 +163,7 @@ private:
     T2 valor2;
 };
 
-// ImplementaciÛn de la especializaciÛn parcial
+// Implementaci√≥n de la especializaci√≥n parcial
 template <typename T2>
 MiClase<int, T2>::MiClase(int v1, T2 v2) : valor1(v1), valor2(v2) {}
 
@@ -185,18 +185,18 @@ int main() {
 
 En este ejemplo:
 - La clase `MiClase` se especializa parcialmente para el caso en que `T1` es `int`.
-- La especializaciÛn proporciona una implementaciÛn especÌfica cuando el primer tipo de dato es `int`.
+- La especializaci√≥n proporciona una implementaci√≥n espec√≠fica cuando el primer tipo de dato es `int`.
 
-### Buenas Pr·cticas para el Uso de Plantillas de Clase Especializadas
+### Buenas Pr√°cticas para el Uso de Plantillas de Clase Especializadas
 
 #### 1. Documentar las Especializaciones
 
-Es importante documentar las especializaciones para explicar por quÈ son necesarias y cÛmo difieren de la implementaciÛn genÈrica.
+Es importante documentar las especializaciones para explicar por qu√© son necesarias y c√≥mo difieren de la implementaci√≥n gen√©rica.
 
 ##### Ejemplo
 
 ```cpp
-// Plantilla de clase genÈrica
+// Plantilla de clase gen√©rica
 template <typename T>
 class MiClase {
 public:
@@ -206,7 +206,7 @@ private:
     T valor;
 };
 
-// EspecializaciÛn completa para const char*
+// Especializaci√≥n completa para const char*
 template <>
 class MiClase<const char*> {
 public:
@@ -217,13 +217,13 @@ private:
 };
 ```
 
-#### 2. Mantener la Coherencia en la ImplementaciÛn
+#### 2. Mantener la Coherencia en la Implementaci√≥n
 
-Aseg˙rese de que la especializaciÛn mantenga el comportamiento esperado y sea coherente con la versiÛn genÈrica de la plantilla.
+Aseg√∫rese de que la especializaci√≥n mantenga el comportamiento esperado y sea coherente con la versi√≥n gen√©rica de la plantilla.
 
 #### 3. Probar las Especializaciones
 
-Aseg˙rese de probar tanto la implementaciÛn genÈrica como las especializaciones para verificar que funcionen correctamente con diferentes tipos de datos.
+Aseg√∫rese de probar tanto la implementaci√≥n gen√©rica como las especializaciones para verificar que funcionen correctamente con diferentes tipos de datos.
 
 ##### Ejemplo
 
@@ -242,19 +242,19 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las plantillas de clase especializadas en C++ permiten definir implementaciones especÌficas para ciertos tipos de datos, proporcionando una mayor flexibilidad y control sobre el comportamiento de las clases plantilla. Al seguir buenas pr·cticas como documentar las especializaciones, mantener la coherencia y probar exhaustivamente, se puede asegurar que las plantillas funcionen correctamente y sean f·ciles de mantener. Las plantillas especializadas son una herramienta poderosa en C++ para escribir cÛdigo genÈrico y eficiente.
+Las plantillas de clase especializadas en C++ permiten definir implementaciones espec√≠ficas para ciertos tipos de datos, proporcionando una mayor flexibilidad y control sobre el comportamiento de las clases plantilla. Al seguir buenas pr√°cticas como documentar las especializaciones, mantener la coherencia y probar exhaustivamente, se puede asegurar que las plantillas funcionen correctamente y sean f√°ciles de mantener. Las plantillas especializadas son una herramienta poderosa en C++ para escribir c√≥digo gen√©rico y eficiente.
 <---FILES--->
-Ejemplo B·sico
-Ejemplo B·sico Result
-Ejemplo de EspecializaciÛn Completa
-Ejemplo de EspecializaciÛn Completa Result
-Ejemplo de EspecializaciÛn Parcial
-Ejemplo de EspecializaciÛn Parcial Result
+Ejemplo B√°sico
+Ejemplo B√°sico Result
+Ejemplo de Especializaci√≥n Completa
+Ejemplo de Especializaci√≥n Completa Result
+Ejemplo de Especializaci√≥n Parcial
+Ejemplo de Especializaci√≥n Parcial Result
 Ejemplo
 Ejemplo Result
-<---Ejemplo B·sico--->
+<---Ejemplo B√°sico--->
 ```cpp
 // PlantillaClase.h
 #ifndef PLANTILLACLASE_H
@@ -284,8 +284,8 @@ template <typename T>
 void MiClase<T>::mostrarValor() {
     std::cout << "El valor es: " << valor << std::endl;
 }
-<---Ejemplo B·sico Result--->
-<---Ejemplo de EspecializaciÛn Completa--->
+<---Ejemplo B√°sico Result--->
+<---Ejemplo de Especializaci√≥n Completa--->
 ```cpp
 // PlantillaClaseEspecializada.h
 #ifndef PLANTILLACLASEESPECIALIZADA_H
@@ -294,7 +294,7 @@ void MiClase<T>::mostrarValor() {
 #include <iostream>
 #include <cstring>
 
-// Plantilla de clase genÈrica
+// Plantilla de clase gen√©rica
 template <typename T>
 class MiClase {
 public:
@@ -304,7 +304,7 @@ private:
     T valor;
 };
 
-// EspecializaciÛn completa para const char*
+// Especializaci√≥n completa para const char*
 template <>
 class MiClase<const char*> {
 public:
@@ -320,7 +320,7 @@ private:
 // PlantillaClaseEspecializada.cpp
 #include "PlantillaClaseEspecializada.h"
 
-// ImplementaciÛn genÈrica
+// Implementaci√≥n gen√©rica
 template <typename T>
 MiClase<T>::MiClase(T v) : valor(v) {}
 
@@ -329,7 +329,7 @@ void MiClase<T>::mostrarValor() {
     std::cout << "El valor es: " << valor << std::endl;
 }
 
-// ImplementaciÛn especializada
+// Implementaci√≥n especializada
 MiClase<const char*>::MiClase(const char* v) : valor(v) {}
 
 void MiClase<const char*>::mostrarValor() {
@@ -351,12 +351,12 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de EspecializaciÛn Completa Result--->
-<---Ejemplo de EspecializaciÛn Parcial--->
+<---Ejemplo de Especializaci√≥n Completa Result--->
+<---Ejemplo de Especializaci√≥n Parcial--->
 ```cpp
 #include <iostream>
 
-// Plantilla de clase genÈrica
+// Plantilla de clase gen√©rica
 template <typename T1, typename T2>
 class MiClase {
 public:
@@ -367,7 +367,7 @@ private:
     T2 valor2;
 };
 
-// ImplementaciÛn genÈrica
+// Implementaci√≥n gen√©rica
 template <typename T1, typename T2>
 MiClase<T1, T2>::MiClase(T1 v1, T2 v2) : valor1(v1), valor2(v2) {}
 
@@ -376,7 +376,7 @@ void MiClase<T1, T2>::mostrarValores() {
     std::cout << "Valor 1: " << valor1 << ", Valor 2: " << valor2 << std::endl;
 }
 
-// EspecializaciÛn parcial para T1=int
+// Especializaci√≥n parcial para T1=int
 template <typename T2>
 class MiClase<int, T2> {
 public:
@@ -387,7 +387,7 @@ private:
     T2 valor2;
 };
 
-// ImplementaciÛn de la especializaciÛn parcial
+// Implementaci√≥n de la especializaci√≥n parcial
 template <typename T2>
 MiClase<int, T2>::MiClase(int v1, T2 v2) : valor1(v1), valor2(v2) {}
 
@@ -405,7 +405,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de EspecializaciÛn Parcial Result--->
+<---Ejemplo de Especializaci√≥n Parcial Result--->
 <---Ejemplo--->
 ```cpp
 int main() {

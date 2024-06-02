@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Encapsulamiento en C++
 
-El encapsulamiento es uno de los principios fundamentales de la programación orientada a objetos (POO). Este principio consiste en ocultar los detalles internos de la implementación de una clase y proporcionar una interfaz pública para interactuar con los objetos de esa clase. El encapsulamiento ayuda a proteger los datos y a mantener la integridad del estado del objeto, facilitando la modularidad y el mantenimiento del código.
+El encapsulamiento es uno de los principios fundamentales de la programaciÃ³n orientada a objetos (POO). Este principio consiste en ocultar los detalles internos de la implementaciÃ³n de una clase y proporcionar una interfaz pÃºblica para interactuar con los objetos de esa clase. El encapsulamiento ayuda a proteger los datos y a mantener la integridad del estado del objeto, facilitando la modularidad y el mantenimiento del cÃ³digo.
 
 #### Conceptos Clave del Encapsulamiento
 
-1. **Acceso Controlado:** Solo los métodos permitidos pueden acceder o modificar los datos de un objeto.
-2. **Ocultamiento de Información:** Los detalles internos de la implementación se ocultan al usuario.
-3. **Interfaz Pública:** Se proporciona una interfaz clara y estable para interactuar con los datos del objeto.
+1. **Acceso Controlado:** Solo los mÃ©todos permitidos pueden acceder o modificar los datos de un objeto.
+2. **Ocultamiento de InformaciÃ³n:** Los detalles internos de la implementaciÃ³n se ocultan al usuario.
+3. **Interfaz PÃºblica:** Se proporciona una interfaz clara y estable para interactuar con los datos del objeto.
 
 #### Modificadores de Acceso
 
@@ -17,7 +17,7 @@ En C++, los modificadores de acceso se utilizan para controlar el nivel de acces
 2. **`private`:** Los miembros declarados como `private` solo son accesibles desde dentro de la propia clase.
 3. **`protected`:** Los miembros declarados como `protected` son accesibles desde dentro de la clase y las clases derivadas.
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -28,17 +28,17 @@ private:
     int datoPrivado; // Acceso privado
 
 public:
-    int datoPublico; // Acceso público
+    int datoPublico; // Acceso pÃºblico
 
     // Constructor
     Ejemplo(int privado, int publico) : datoPrivado(privado), datoPublico(publico) {}
 
-    // Método público para acceder al dato privado
+    // MÃ©todo pÃºblico para acceder al dato privado
     int getDatoPrivado() const {
         return datoPrivado;
     }
 
-    // Método público para modificar el dato privado
+    // MÃ©todo pÃºblico para modificar el dato privado
     void setDatoPrivado(int valor) {
         datoPrivado = valor;
     }
@@ -47,10 +47,10 @@ public:
 int main() {
     Ejemplo obj(10, 20);
 
-    // Acceso al dato público
-    cout << "Dato público: " << obj.datoPublico << endl;
+    // Acceso al dato pÃºblico
+    cout << "Dato pÃºblico: " << obj.datoPublico << endl;
 
-    // Acceso al dato privado a través de métodos públicos
+    // Acceso al dato privado a travÃ©s de mÃ©todos pÃºblicos
     cout << "Dato privado: " << obj.getDatoPrivado() << endl;
     obj.setDatoPrivado(30);
     cout << "Dato privado modificado: " << obj.getDatoPrivado() << endl;
@@ -59,18 +59,18 @@ int main() {
 }
 ```
 
-En este ejemplo, `datoPrivado` es un miembro privado y solo puede ser accedido y modificado a través de los métodos públicos `getDatoPrivado` y `setDatoPrivado`. `datoPublico` es un miembro público y puede ser accedido directamente.
+En este ejemplo, `datoPrivado` es un miembro privado y solo puede ser accedido y modificado a travÃ©s de los mÃ©todos pÃºblicos `getDatoPrivado` y `setDatoPrivado`. `datoPublico` es un miembro pÃºblico y puede ser accedido directamente.
 
 #### Beneficios del Encapsulamiento
 
-1. **Protección de Datos:** Los datos internos de un objeto están protegidos contra modificaciones indebidas.
-2. **Mantenimiento:** Los detalles de implementación pueden cambiar sin afectar a los usuarios de la clase, siempre y cuando la interfaz pública permanezca constante.
-3. **Modularidad:** Facilita la división del programa en módulos manejables y comprensibles.
-4. **Reusabilidad:** Las clases encapsuladas pueden ser reutilizadas fácilmente en diferentes partes de un programa o en otros proyectos.
+1. **ProtecciÃ³n de Datos:** Los datos internos de un objeto estÃ¡n protegidos contra modificaciones indebidas.
+2. **Mantenimiento:** Los detalles de implementaciÃ³n pueden cambiar sin afectar a los usuarios de la clase, siempre y cuando la interfaz pÃºblica permanezca constante.
+3. **Modularidad:** Facilita la divisiÃ³n del programa en mÃ³dulos manejables y comprensibles.
+4. **Reusabilidad:** Las clases encapsuladas pueden ser reutilizadas fÃ¡cilmente en diferentes partes de un programa o en otros proyectos.
 
 #### Encapsulamiento y Setters/Getters
 
-Los setters y getters son métodos que proporcionan un acceso controlado a los atributos privados de una clase. A través de estos métodos, se puede aplicar lógica adicional para validar o transformar los datos antes de acceder o modificar los atributos.
+Los setters y getters son mÃ©todos que proporcionan un acceso controlado a los atributos privados de una clase. A travÃ©s de estos mÃ©todos, se puede aplicar lÃ³gica adicional para validar o transformar los datos antes de acceder o modificar los atributos.
 
 ##### Ejemplo con Setters y Getters
 
@@ -102,16 +102,16 @@ public:
         return edad;
     }
 
-    // Setter para edad con validación
+    // Setter para edad con validaciÃ³n
     void setEdad(int e) {
         if (e > 0) {
             edad = e;
         } else {
-            cout << "Edad no válida" << endl;
+            cout << "Edad no vÃ¡lida" << endl;
         }
     }
 
-    // Método para mostrar información
+    // MÃ©todo para mostrar informaciÃ³n
     void mostrarInformacion() const {
         cout << "Nombre: " << nombre << ", Edad: " << edad << endl;
     }
@@ -126,7 +126,7 @@ int main() {
     juan.setEdad(31);
     juan.mostrarInformacion();
 
-    // Intentar establecer una edad no válida
+    // Intentar establecer una edad no vÃ¡lida
     juan.setEdad(-5);
     juan.mostrarInformacion();
 
@@ -134,11 +134,11 @@ int main() {
 }
 ```
 
-En este ejemplo, `setNombre` y `setEdad` son métodos setters que permiten modificar los atributos privados `nombre` y `edad`. El método `setEdad` incluye una validación para asegurarse de que la edad sea positiva.
+En este ejemplo, `setNombre` y `setEdad` son mÃ©todos setters que permiten modificar los atributos privados `nombre` y `edad`. El mÃ©todo `setEdad` incluye una validaciÃ³n para asegurarse de que la edad sea positiva.
 
 #### Encapsulamiento y Herencia
 
-El encapsulamiento también juega un papel importante en la herencia. Los miembros `protected` pueden ser accedidos en clases derivadas, mientras que los miembros `private` no pueden ser accedidos directamente.
+El encapsulamiento tambiÃ©n juega un papel importante en la herencia. Los miembros `protected` pueden ser accedidos en clases derivadas, mientras que los miembros `private` no pueden ser accedidos directamente.
 
 ##### Ejemplo con Herencia
 
@@ -174,7 +174,7 @@ public:
     void mostrarDatos() {
         // cout << "Dato privado: " << getDatoPrivado() << endl; // No se puede acceder directamente
         cout << "Dato protegido: " << getDatoProtegido() << endl;
-        cout << "Dato público: " << datoPublico << endl;
+        cout << "Dato pÃºblico: " << datoPublico << endl;
     }
 };
 
@@ -186,19 +186,19 @@ int main() {
 }
 ```
 
-En este ejemplo, la clase `Derivada` hereda de la clase `Base`. Puede acceder al miembro `datoProtegido` a través de un método protegido en la clase base, pero no puede acceder directamente al miembro `datoPrivado`.
+En este ejemplo, la clase `Derivada` hereda de la clase `Base`. Puede acceder al miembro `datoProtegido` a travÃ©s de un mÃ©todo protegido en la clase base, pero no puede acceder directamente al miembro `datoPrivado`.
 
-### Conclusión
+### ConclusiÃ³n
 
-El encapsulamiento es una técnica fundamental en la programación orientada a objetos que mejora la seguridad, la modularidad y la mantenibilidad del código. Al utilizar modificadores de acceso como `private`, `protected` y `public`, se puede controlar cómo se accede y modifica el estado interno de los objetos. Los setters y getters son herramientas esenciales para implementar el encapsulamiento, proporcionando un acceso controlado a los atributos privados. Con una comprensión sólida del encapsulamiento, los desarrolladores pueden crear clases robustas y seguras que faciliten el desarrollo de software de alta calidad.
+El encapsulamiento es una tÃ©cnica fundamental en la programaciÃ³n orientada a objetos que mejora la seguridad, la modularidad y la mantenibilidad del cÃ³digo. Al utilizar modificadores de acceso como `private`, `protected` y `public`, se puede controlar cÃ³mo se accede y modifica el estado interno de los objetos. Los setters y getters son herramientas esenciales para implementar el encapsulamiento, proporcionando un acceso controlado a los atributos privados. Con una comprensiÃ³n sÃ³lida del encapsulamiento, los desarrolladores pueden crear clases robustas y seguras que faciliten el desarrollo de software de alta calidad.
 <---FILES--->
-Ejemplo Básico
-Ejemplo Básico Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
 Ejemplo con Setters y Getters
 Ejemplo con Setters y Getters Result
 Ejemplo con Herencia
 Ejemplo con Herencia Result
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -208,17 +208,17 @@ private:
     int datoPrivado; // Acceso privado
 
 public:
-    int datoPublico; // Acceso público
+    int datoPublico; // Acceso pÃºblico
 
     // Constructor
     Ejemplo(int privado, int publico) : datoPrivado(privado), datoPublico(publico) {}
 
-    // Método público para acceder al dato privado
+    // MÃ©todo pÃºblico para acceder al dato privado
     int getDatoPrivado() const {
         return datoPrivado;
     }
 
-    // Método público para modificar el dato privado
+    // MÃ©todo pÃºblico para modificar el dato privado
     void setDatoPrivado(int valor) {
         datoPrivado = valor;
     }
@@ -227,17 +227,17 @@ public:
 int main() {
     Ejemplo obj(10, 20);
 
-    // Acceso al dato público
-    cout << "Dato público: " << obj.datoPublico << endl;
+    // Acceso al dato pÃºblico
+    cout << "Dato pÃºblico: " << obj.datoPublico << endl;
 
-    // Acceso al dato privado a través de métodos públicos
+    // Acceso al dato privado a travÃ©s de mÃ©todos pÃºblicos
     cout << "Dato privado: " << obj.getDatoPrivado() << endl;
     obj.setDatoPrivado(30);
     cout << "Dato privado modificado: " << obj.getDatoPrivado() << endl;
 
     return 0;
 }
-<---Ejemplo Básico Result--->
+<---Ejemplo BÃ¡sico Result--->
 <---Ejemplo con Setters y Getters--->
 ```cpp
 #include <iostream>
@@ -267,16 +267,16 @@ public:
         return edad;
     }
 
-    // Setter para edad con validación
+    // Setter para edad con validaciÃ³n
     void setEdad(int e) {
         if (e > 0) {
             edad = e;
         } else {
-            cout << "Edad no válida" << endl;
+            cout << "Edad no vÃ¡lida" << endl;
         }
     }
 
-    // Método para mostrar información
+    // MÃ©todo para mostrar informaciÃ³n
     void mostrarInformacion() const {
         cout << "Nombre: " << nombre << ", Edad: " << edad << endl;
     }
@@ -291,7 +291,7 @@ int main() {
     juan.setEdad(31);
     juan.mostrarInformacion();
 
-    // Intentar establecer una edad no válida
+    // Intentar establecer una edad no vÃ¡lida
     juan.setEdad(-5);
     juan.mostrarInformacion();
 
@@ -331,7 +331,7 @@ public:
     void mostrarDatos() {
         // cout << "Dato privado: " << getDatoPrivado() << endl; // No se puede acceder directamente
         cout << "Dato protegido: " << getDatoProtegido() << endl;
-        cout << "Dato público: " << datoPublico << endl;
+        cout << "Dato pÃºblico: " << datoPublico << endl;
     }
 };
 

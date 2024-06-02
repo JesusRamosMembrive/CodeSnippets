@@ -4,10 +4,10 @@ import FolderAndPathsUtils as fpu
 
 
 def main():
-    path_of_files_to_process = r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\TextToProcess"
+    path_of_files_to_process = r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\TextToProcess"
     files = fpu.list_all_files(path_of_files_to_process)
-    path_base = r"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\Code"
-    path_qml_files = fr"D:\Personal\Qt\CodeSnippetApp\CodeSnippetsScripts\QMLFiles"
+    path_base = r"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\Code"
+    path_qml_files = fr"C:\Users\jesus\Documents\Git\CodeSnippets\CodeSnippetsScripts\QMLFiles"
 
     # Generate the files and save them in the correct path
     for file in files:

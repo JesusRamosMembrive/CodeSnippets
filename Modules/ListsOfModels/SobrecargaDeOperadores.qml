@@ -1,6 +1,6 @@
 import QtQuick
 Item{
-property ListModel operadorSobrecargaType: ListModel{
+property ListModel sobrecargaDeOperadoresType: ListModel{
 
 ListElement{ name: "Conversores de Tipo Explicitos e Implicitos"}
 ListElement{ name: "Sobrecarga de Operadores Aritmeticos"}

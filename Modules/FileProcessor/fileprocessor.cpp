@@ -6,7 +6,6 @@ FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
 
 void FileProcessor::processFile(const QString &filePath)
 {
-    qInfo() << "Processing file: " << filePath;
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
@@ -19,8 +18,6 @@ void FileProcessor::processFile(const QString &filePath)
 
     // Extraer EXPLANATION
     extractSection(content, "<---EXPLANATION--->", "<---", m_explanation);
-
-    qInfo() << "EXPLANATION: " << m_explanation;
 
     // Extraer el listado de archivos y su contenido
     QString filesSection;
@@ -70,7 +67,6 @@ QString FileProcessor::getFileTitle(const QString &fileName)
     QStringList metaTitle = fileName.split("/");
     QStringList titleTmp = metaTitle.back().split(".");
     m_title = titleTmp[0];
-    qInfo() << "Title: " << m_title;
     return m_title;
 }
 

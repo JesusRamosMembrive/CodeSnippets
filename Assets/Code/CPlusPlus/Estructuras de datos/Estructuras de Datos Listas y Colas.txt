@@ -1,17 +1,17 @@
 <---EXPLANATION--->
 ### Estructuras de Datos: Listas y Colas en C++
 
-Las listas y las colas son estructuras de datos fundamentales que permiten almacenar y manipular colecciones de elementos de manera eficiente. En C++, estas estructuras se implementan comúnmente utilizando la biblioteca estándar (STL).
+Las listas y las colas son estructuras de datos fundamentales que permiten almacenar y manipular colecciones de elementos de manera eficiente. En C++, estas estructuras se implementan comÃºnmente utilizando la biblioteca estÃ¡ndar (STL).
 
 #### Listas
 
-Una lista es una estructura de datos lineal que permite la inserción y eliminación de elementos en cualquier punto de la secuencia. La STL proporciona la clase `std::list` para manejar listas doblemente enlazadas.
+Una lista es una estructura de datos lineal que permite la inserciÃ³n y eliminaciÃ³n de elementos en cualquier punto de la secuencia. La STL proporciona la clase `std::list` para manejar listas doblemente enlazadas.
 
-##### Características de `std::list`
+##### CaracterÃ­sticas de `std::list`
 
 - **Doble Enlazado:** Cada elemento tiene un puntero al elemento anterior y al siguiente.
-- **Inserción/Eiminación Eficiente:** Las operaciones de inserción y eliminación en cualquier posición son eficientes (O(1)).
-- **Acceso Secuencial:** El acceso a elementos es secuencial, lo que significa que encontrar un elemento específico es O(n).
+- **InserciÃ³n/EiminaciÃ³n Eficiente:** Las operaciones de inserciÃ³n y eliminaciÃ³n en cualquier posiciÃ³n son eficientes (O(1)).
+- **Acceso Secuencial:** El acceso a elementos es secuencial, lo que significa que encontrar un elemento especÃ­fico es O(n).
 
 ##### Ejemplo de Uso de `std::list`
 
@@ -21,24 +21,24 @@ Una lista es una estructura de datos lineal que permite la inserción y eliminaci
 using namespace std;
 
 int main() {
-    // Declaración e inicialización de una lista
+    // DeclaraciÃ³n e inicializaciÃ³n de una lista
     list<int> miLista = {10, 20, 30, 40};
 
-    // Inserción de elementos
-    miLista.push_back(50);  // Añade al final
-    miLista.push_front(5);  // Añade al inicio
+    // InserciÃ³n de elementos
+    miLista.push_back(50);  // AÃ±ade al final
+    miLista.push_front(5);  // AÃ±ade al inicio
 
-    // Iteración y acceso a los elementos
+    // IteraciÃ³n y acceso a los elementos
     for (int elemento : miLista) {
         cout << elemento << " ";
     }
     cout << endl;
 
-    // Eliminación de elementos
-    miLista.pop_back();  // Elimina el último elemento
+    // EliminaciÃ³n de elementos
+    miLista.pop_back();  // Elimina el Ãºltimo elemento
     miLista.pop_front(); // Elimina el primer elemento
 
-    // Iteración y acceso a los elementos después de la eliminación
+    // IteraciÃ³n y acceso a los elementos despuÃ©s de la eliminaciÃ³n
     for (int elemento : miLista) {
         cout << elemento << " ";
     }
@@ -50,22 +50,22 @@ int main() {
 
 ### Operaciones Comunes en `std::list`
 
-- **`push_back(valor)`**: Añade un elemento al final de la lista.
-- **`push_front(valor)`**: Añade un elemento al inicio de la lista.
-- **`pop_back()`**: Elimina el último elemento de la lista.
+- **`push_back(valor)`**: AÃ±ade un elemento al final de la lista.
+- **`push_front(valor)`**: AÃ±ade un elemento al inicio de la lista.
+- **`pop_back()`**: Elimina el Ãºltimo elemento de la lista.
 - **`pop_front()`**: Elimina el primer elemento de la lista.
-- **`insert(it, valor)`**: Inserta un elemento en la posición indicada por el iterador `it`.
-- **`erase(it)`**: Elimina el elemento en la posición indicada por el iterador `it`.
-- **`size()`**: Devuelve el número de elementos en la lista.
+- **`insert(it, valor)`**: Inserta un elemento en la posiciÃ³n indicada por el iterador `it`.
+- **`erase(it)`**: Elimina el elemento en la posiciÃ³n indicada por el iterador `it`.
+- **`size()`**: Devuelve el nÃºmero de elementos en la lista.
 
 ### Colas
 
 Una cola es una estructura de datos lineal que sigue el principio FIFO (First In, First Out), donde el primer elemento en entrar es el primero en salir. La STL proporciona la clase `std::queue` para manejar colas.
 
-##### Características de `std::queue`
+##### CaracterÃ­sticas de `std::queue`
 
 - **FIFO:** Los elementos se insertan por un extremo (trasero) y se eliminan por el otro extremo (frontal).
-- **Acceso Restricto:** Solo se puede acceder al primer y al último elemento.
+- **Acceso Restricto:** Solo se puede acceder al primer y al Ãºltimo elemento.
 
 ##### Ejemplo de Uso de `std::queue`
 
@@ -75,23 +75,23 @@ Una cola es una estructura de datos lineal que sigue el principio FIFO (First In
 using namespace std;
 
 int main() {
-    // Declaración e inicialización de una cola
+    // DeclaraciÃ³n e inicializaciÃ³n de una cola
     queue<int> miCola;
 
-    // Inserción de elementos
+    // InserciÃ³n de elementos
     miCola.push(10);
     miCola.push(20);
     miCola.push(30);
 
-    // Acceso al primer y último elemento
+    // Acceso al primer y Ãºltimo elemento
     cout << "Frente: " << miCola.front() << endl;
     cout << "Final: " << miCola.back() << endl;
 
-    // Eliminación de elementos
+    // EliminaciÃ³n de elementos
     miCola.pop(); // Elimina el primer elemento (10)
 
-    // Acceso después de la eliminación
-    cout << "Frente después de pop: " << miCola.front() << endl;
+    // Acceso despuÃ©s de la eliminaciÃ³n
+    cout << "Frente despuÃ©s de pop: " << miCola.front() << endl;
 
     return 0;
 }
@@ -99,16 +99,16 @@ int main() {
 
 ### Operaciones Comunes en `std::queue`
 
-- **`push(valor)`**: Añade un elemento al final de la cola.
+- **`push(valor)`**: AÃ±ade un elemento al final de la cola.
 - **`pop()`**: Elimina el primer elemento de la cola.
 - **`front()`**: Devuelve una referencia al primer elemento de la cola.
-- **`back()`**: Devuelve una referencia al último elemento de la cola.
-- **`size()`**: Devuelve el número de elementos en la cola.
-- **`empty()`**: Devuelve `true` si la cola está vacía.
+- **`back()`**: Devuelve una referencia al Ãºltimo elemento de la cola.
+- **`size()`**: Devuelve el nÃºmero de elementos en la cola.
+- **`empty()`**: Devuelve `true` si la cola estÃ¡ vacÃ­a.
 
 ### Ejemplo Completo
 
-A continuación, un ejemplo que combina el uso de listas y colas para ilustrar sus diferencias y usos comunes:
+A continuaciÃ³n, un ejemplo que combina el uso de listas y colas para ilustrar sus diferencias y usos comunes:
 
 ```cpp
 #include <iostream>
@@ -131,7 +131,7 @@ int main() {
     miLista.pop_back();
     miLista.pop_front();
 
-    cout << "Lista después de pop: ";
+    cout << "Lista despuÃ©s de pop: ";
     for (int elemento : miLista) {
         cout << elemento << " ";
     }
@@ -145,26 +145,26 @@ int main() {
 
     cout << "Cola frente: " << miCola.front() << ", final: " << miCola.back() << endl;
     miCola.pop();
-    cout << "Cola frente después de pop: " << miCola.front() << endl;
+    cout << "Cola frente despuÃ©s de pop: " << miCola.front() << endl;
 
     return 0;
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-Las listas y las colas son estructuras de datos esenciales en C++ que proporcionan flexibilidad y eficiencia para diferentes tipos de operaciones. Las listas permiten inserciones y eliminaciones eficientes en cualquier posición, mientras que las colas facilitan un acceso ordenado y secuencial siguiendo el principio FIFO. Conocer cómo y cuándo usar cada estructura de datos es fundamental para escribir programas eficientes y bien estructurados en C++.
+Las listas y las colas son estructuras de datos esenciales en C++ que proporcionan flexibilidad y eficiencia para diferentes tipos de operaciones. Las listas permiten inserciones y eliminaciones eficientes en cualquier posiciÃ³n, mientras que las colas facilitan un acceso ordenado y secuencial siguiendo el principio FIFO. Conocer cÃ³mo y cuÃ¡ndo usar cada estructura de datos es fundamental para escribir programas eficientes y bien estructurados en C++.
 <---FILES--->
-Características de `std::list`
-Características de `std::list` Result
+CaracterÃ­sticas de `std::list`
+CaracterÃ­sticas de `std::list` Result
 Ejemplo de Uso de `std::list`
 Ejemplo de Uso de `std::list` Result
-Características de `std::queue`
-Características de `std::queue` Result
+CaracterÃ­sticas de `std::queue`
+CaracterÃ­sticas de `std::queue` Result
 Ejemplo de Uso de `std::queue`
 Ejemplo de Uso de `std::queue` Result
-<---Características de `std::list`--->
-<---Características de `std::list` Result--->
+<---CaracterÃ­sticas de `std::list`--->
+<---CaracterÃ­sticas de `std::list` Result--->
 <---Ejemplo de Uso de `std::list`--->
 ```cpp
 #include <iostream>
@@ -172,24 +172,24 @@ Ejemplo de Uso de `std::queue` Result
 using namespace std;
 
 int main() {
-    // Declaración e inicialización de una lista
+    // DeclaraciÃ³n e inicializaciÃ³n de una lista
     list<int> miLista = {10, 20, 30, 40};
 
-    // Inserción de elementos
-    miLista.push_back(50);  // Añade al final
-    miLista.push_front(5);  // Añade al inicio
+    // InserciÃ³n de elementos
+    miLista.push_back(50);  // AÃ±ade al final
+    miLista.push_front(5);  // AÃ±ade al inicio
 
-    // Iteración y acceso a los elementos
+    // IteraciÃ³n y acceso a los elementos
     for (int elemento : miLista) {
         cout << elemento << " ";
     }
     cout << endl;
 
-    // Eliminación de elementos
-    miLista.pop_back();  // Elimina el último elemento
+    // EliminaciÃ³n de elementos
+    miLista.pop_back();  // Elimina el Ãºltimo elemento
     miLista.pop_front(); // Elimina el primer elemento
 
-    // Iteración y acceso a los elementos después de la eliminación
+    // IteraciÃ³n y acceso a los elementos despuÃ©s de la eliminaciÃ³n
     for (int elemento : miLista) {
         cout << elemento << " ";
     }
@@ -198,8 +198,8 @@ int main() {
     return 0;
 }
 <---Ejemplo de Uso de `std::list` Result--->
-<---Características de `std::queue`--->
-<---Características de `std::queue` Result--->
+<---CaracterÃ­sticas de `std::queue`--->
+<---CaracterÃ­sticas de `std::queue` Result--->
 <---Ejemplo de Uso de `std::queue`--->
 ```cpp
 #include <iostream>
@@ -207,23 +207,23 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaración e inicialización de una cola
+    // DeclaraciÃ³n e inicializaciÃ³n de una cola
     queue<int> miCola;
 
-    // Inserción de elementos
+    // InserciÃ³n de elementos
     miCola.push(10);
     miCola.push(20);
     miCola.push(30);
 
-    // Acceso al primer y último elemento
+    // Acceso al primer y Ãºltimo elemento
     cout << "Frente: " << miCola.front() << endl;
     cout << "Final: " << miCola.back() << endl;
 
-    // Eliminación de elementos
+    // EliminaciÃ³n de elementos
     miCola.pop(); // Elimina el primer elemento (10)
 
-    // Acceso después de la eliminación
-    cout << "Frente después de pop: " << miCola.front() << endl;
+    // Acceso despuÃ©s de la eliminaciÃ³n
+    cout << "Frente despuÃ©s de pop: " << miCola.front() << endl;
 
     return 0;
 }
@@ -248,7 +248,7 @@ int main() {
     miLista.pop_back();
     miLista.pop_front();
 
-    cout << "Lista después de pop: ";
+    cout << "Lista despuÃ©s de pop: ";
     for (int elemento : miLista) {
         cout << elemento << " ";
     }
@@ -262,7 +262,7 @@ int main() {
 
     cout << "Cola frente: " << miCola.front() << ", final: " << miCola.back() << endl;
     miCola.pop();
-    cout << "Cola frente después de pop: " << miCola.front() << endl;
+    cout << "Cola frente despuÃ©s de pop: " << miCola.front() << endl;
 
     return 0;
 }

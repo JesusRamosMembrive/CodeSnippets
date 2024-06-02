@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Est·ndar: `std::remove`
+### Algoritmo de la Biblioteca Est√°ndar: `std::remove`
 
-La funciÛn `std::remove` es un algoritmo de la biblioteca est·ndar de C++ que se utiliza para eliminar elementos de un contenedor que son iguales a un valor especÌfico. Sin embargo, `std::remove` no elimina fÌsicamente los elementos del contenedor, sino que los mueve al final del rango y devuelve un iterador al nuevo final lÛgico del rango sin los elementos eliminados. Es parte del encabezado `<algorithm>`.
+La funci√≥n `std::remove` es un algoritmo de la biblioteca est√°ndar de C++ que se utiliza para eliminar elementos de un contenedor que son iguales a un valor espec√≠fico. Sin embargo, `std::remove` no elimina f√≠sicamente los elementos del contenedor, sino que los mueve al final del rango y devuelve un iterador al nuevo final l√≥gico del rango sin los elementos eliminados. Es parte del encabezado `<algorithm>`.
 
 #### Sintaxis de `std::remove`
 
@@ -13,16 +13,16 @@ ForwardIt remove(ForwardIt first, ForwardIt last, const T& value);
 ```
 
 - **`ForwardIt first`**: Iterador al primer elemento del rango.
-- **`ForwardIt last`**: Iterador al elemento despuÈs del ˙ltimo en el rango.
+- **`ForwardIt last`**: Iterador al elemento despu√©s del √∫ltimo en el rango.
 - **`const T& value`**: Valor de los elementos a eliminar.
 
-#### DescripciÛn
+#### Descripci√≥n
 
-`std::remove` reordena los elementos del rango `[first, last)` de modo que todos los elementos que no son iguales a `value` se encuentran al principio del rango, y devuelve un iterador al nuevo final lÛgico del rango que no contiene los elementos eliminados.
+`std::remove` reordena los elementos del rango `[first, last)` de modo que todos los elementos que no son iguales a `value` se encuentran al principio del rango, y devuelve un iterador al nuevo final l√≥gico del rango que no contiene los elementos eliminados.
 
 #### Ejemplo de Uso de `std::remove`
 
-##### Ejemplo B·sico
+##### Ejemplo B√°sico
 
 ```cpp
 #include <iostream>
@@ -35,11 +35,11 @@ int main() {
     // Usar std::remove para mover los elementos que no son 2 al principio
     auto it = std::remove(vec.begin(), vec.end(), 2);
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     vec.erase(it, vec.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos del vector despuÈs de std::remove y erase: ";
+    std::cout << "Elementos del vector despu√©s de std::remove y erase: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -50,8 +50,8 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::remove(vec.begin(), vec.end(), 2)` reordena los elementos del vector `vec` moviendo todos los `2` al final y devuelve un iterador al nuevo final lÛgico del vector.
-- `vec.erase(it, vec.end())` elimina fÌsicamente los elementos desde el nuevo final lÛgico hasta el final real del vector.
+- `std::remove(vec.begin(), vec.end(), 2)` reordena los elementos del vector `vec` moviendo todos los `2` al final y devuelve un iterador al nuevo final l√≥gico del vector.
+- `vec.erase(it, vec.end())` elimina f√≠sicamente los elementos desde el nuevo final l√≥gico hasta el final real del vector.
 
 ### Uso con Diferentes Tipos de Contenedores
 
@@ -70,11 +70,11 @@ int main() {
     // Usar std::remove para mover los elementos que no son 2 al principio
     auto it = std::remove(lst.begin(), lst.end(), 2);
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     lst.erase(it, lst.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos de la lista despuÈs de std::remove y erase: ";
+    std::cout << "Elementos de la lista despu√©s de std::remove y erase: ";
     for (int elem : lst) {
         std::cout << elem << " ";
     }
@@ -86,11 +86,11 @@ int main() {
 
 En este ejemplo:
 - `std::remove` se utiliza para mover todas las ocurrencias del valor `2` al final de la lista `lst`.
-- `lst.erase(it, lst.end())` elimina fÌsicamente estos elementos.
+- `lst.erase(it, lst.end())` elimina f√≠sicamente estos elementos.
 
 ### Variantes: `std::remove_if`
 
-Adem·s de `std::remove`, existe una variante llamada `std::remove_if` que elimina elementos basados en un predicado.
+Adem√°s de `std::remove`, existe una variante llamada `std::remove_if` que elimina elementos basados en un predicado.
 
 #### Sintaxis de `std::remove_if`
 
@@ -102,12 +102,12 @@ ForwardIt remove_if(ForwardIt first, ForwardIt last, UnaryPredicate p);
 ```
 
 - **`ForwardIt first`**: Iterador al primer elemento del rango.
-- **`ForwardIt last`**: Iterador al elemento despuÈs del ˙ltimo en el rango.
-- **`UnaryPredicate p`**: Predicado que define la condiciÛn de eliminaciÛn.
+- **`ForwardIt last`**: Iterador al elemento despu√©s del √∫ltimo en el rango.
+- **`UnaryPredicate p`**: Predicado que define la condici√≥n de eliminaci√≥n.
 
 #### Ejemplo de Uso de `std::remove_if`
 
-##### Ejemplo B·sico con `std::remove_if`
+##### Ejemplo B√°sico con `std::remove_if`
 
 ```cpp
 #include <iostream>
@@ -121,14 +121,14 @@ bool esPar(int n) {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::remove_if para mover los n˙meros pares al final
+    // Usar std::remove_if para mover los n√∫meros pares al final
     auto it = std::remove_if(vec.begin(), vec.end(), esPar);
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     vec.erase(it, vec.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos del vector despuÈs de std::remove_if y erase: ";
+    std::cout << "Elementos del vector despu√©s de std::remove_if y erase: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -139,8 +139,8 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::remove_if(vec.begin(), vec.end(), esPar)` reordena los elementos del vector `vec` moviendo todos los n˙meros pares al final y devuelve un iterador al nuevo final lÛgico del vector.
-- `vec.erase(it, vec.end())` elimina fÌsicamente estos elementos.
+- `std::remove_if(vec.begin(), vec.end(), esPar)` reordena los elementos del vector `vec` moviendo todos los n√∫meros pares al final y devuelve un iterador al nuevo final l√≥gico del vector.
+- `vec.erase(it, vec.end())` elimina f√≠sicamente estos elementos.
 
 ##### Ejemplo con Lambda
 
@@ -152,14 +152,14 @@ En este ejemplo:
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::remove_if con una lambda para mover los n˙meros mayores que 3 al final
+    // Usar std::remove_if con una lambda para mover los n√∫meros mayores que 3 al final
     auto it = std::remove_if(vec.begin(), vec.end(), [](int n) { return n > 3; });
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     vec.erase(it, vec.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos del vector despuÈs de std::remove_if y erase: ";
+    std::cout << "Elementos del vector despu√©s de std::remove_if y erase: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -170,28 +170,28 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::remove_if(vec.begin(), vec.end(), [](int n) { return n > 3; })` mueve todos los n˙meros mayores que `3` al final del vector `vec`.
-- `vec.erase(it, vec.end())` elimina fÌsicamente estos elementos.
+- `std::remove_if(vec.begin(), vec.end(), [](int n) { return n > 3; })` mueve todos los n√∫meros mayores que `3` al final del vector `vec`.
+- `vec.erase(it, vec.end())` elimina f√≠sicamente estos elementos.
 
 ### Consideraciones
 
 - **Rendimiento:** `std::remove` y `std::remove_if` tienen un rendimiento lineal (`O(n)`), ya que necesitan recorrer todo el rango de elementos.
-- **Uso de Predicados:** `std::remove_if` puede utilizar funciones, funtores y lambdas como predicados, lo que lo hace extremadamente vers·til.
-- **Eliminar FÌsicamente:** Aunque `std::remove` y `std::remove_if` reorganizan los elementos para mover los que se van a eliminar al final del rango, es necesario utilizar `erase` para eliminar fÌsicamente los elementos del contenedor.
+- **Uso de Predicados:** `std::remove_if` puede utilizar funciones, funtores y lambdas como predicados, lo que lo hace extremadamente vers√°til.
+- **Eliminar F√≠sicamente:** Aunque `std::remove` y `std::remove_if` reorganizan los elementos para mover los que se van a eliminar al final del rango, es necesario utilizar `erase` para eliminar f√≠sicamente los elementos del contenedor.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-`std::remove` y `std::remove_if` son algoritmos de la biblioteca est·ndar de C++ que proporcionan una manera eficiente de eliminar elementos de un contenedor basados en un valor o una condiciÛn. Estos algoritmos reorganizan los elementos y devuelven un iterador al nuevo final lÛgico del rango, lo que permite una eliminaciÛn fÌsica posterior. Comprender y utilizar `std::remove` y `std::remove_if` es esencial para realizar operaciones de eliminaciÛn eficientes en contenedores en C++.
+`std::remove` y `std::remove_if` son algoritmos de la biblioteca est√°ndar de C++ que proporcionan una manera eficiente de eliminar elementos de un contenedor basados en un valor o una condici√≥n. Estos algoritmos reorganizan los elementos y devuelven un iterador al nuevo final l√≥gico del rango, lo que permite una eliminaci√≥n f√≠sica posterior. Comprender y utilizar `std::remove` y `std::remove_if` es esencial para realizar operaciones de eliminaci√≥n eficientes en contenedores en C++.
 <---FILES--->
-Ejemplo B·sico
-Ejemplo B·sico Result
+Ejemplo B√°sico
+Ejemplo B√°sico Result
 Ejemplo con `std::list`
 Ejemplo con `std::list` Result
-Ejemplo B·sico con `std::remove_if`
-Ejemplo B·sico con `std::remove_if` Result
+Ejemplo B√°sico con `std::remove_if`
+Ejemplo B√°sico con `std::remove_if` Result
 Ejemplo con Lambda
 Ejemplo con Lambda Result
-<---Ejemplo B·sico--->
+<---Ejemplo B√°sico--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -203,11 +203,11 @@ int main() {
     // Usar std::remove para mover los elementos que no son 2 al principio
     auto it = std::remove(vec.begin(), vec.end(), 2);
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     vec.erase(it, vec.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos del vector despuÈs de std::remove y erase: ";
+    std::cout << "Elementos del vector despu√©s de std::remove y erase: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -215,7 +215,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico Result--->
+<---Ejemplo B√°sico Result--->
 <---Ejemplo con `std::list`--->
 ```cpp
 #include <iostream>
@@ -228,11 +228,11 @@ int main() {
     // Usar std::remove para mover los elementos que no son 2 al principio
     auto it = std::remove(lst.begin(), lst.end(), 2);
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     lst.erase(it, lst.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos de la lista despuÈs de std::remove y erase: ";
+    std::cout << "Elementos de la lista despu√©s de std::remove y erase: ";
     for (int elem : lst) {
         std::cout << elem << " ";
     }
@@ -246,7 +246,7 @@ int main() {
 template <class ForwardIt, class UnaryPredicate>
 ForwardIt remove_if(ForwardIt first, ForwardIt last, UnaryPredicate p);
 <---Ejemplo con `std::list` Result--->
-<---Ejemplo B·sico con `std::remove_if`--->
+<---Ejemplo B√°sico con `std::remove_if`--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -259,14 +259,14 @@ bool esPar(int n) {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::remove_if para mover los n˙meros pares al final
+    // Usar std::remove_if para mover los n√∫meros pares al final
     auto it = std::remove_if(vec.begin(), vec.end(), esPar);
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     vec.erase(it, vec.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos del vector despuÈs de std::remove_if y erase: ";
+    std::cout << "Elementos del vector despu√©s de std::remove_if y erase: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }
@@ -274,7 +274,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico con `std::remove_if` Result--->
+<---Ejemplo B√°sico con `std::remove_if` Result--->
 <---Ejemplo con Lambda--->
 ```cpp
 #include <iostream>
@@ -284,14 +284,14 @@ int main() {
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6};
 
-    // Usar std::remove_if con una lambda para mover los n˙meros mayores que 3 al final
+    // Usar std::remove_if con una lambda para mover los n√∫meros mayores que 3 al final
     auto it = std::remove_if(vec.begin(), vec.end(), [](int n) { return n > 3; });
 
-    // Eliminar fÌsicamente los elementos despuÈs del nuevo final lÛgico
+    // Eliminar f√≠sicamente los elementos despu√©s del nuevo final l√≥gico
     vec.erase(it, vec.end());
 
     // Mostrar los elementos restantes
-    std::cout << "Elementos del vector despuÈs de std::remove_if y erase: ";
+    std::cout << "Elementos del vector despu√©s de std::remove_if y erase: ";
     for (int elem : vec) {
         std::cout << elem << " ";
     }

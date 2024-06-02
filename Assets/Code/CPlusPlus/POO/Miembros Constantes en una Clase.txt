@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Miembros Constantes en una Clase en C++
 
-En C++, los miembros constantes de una clase son aquellos que no pueden ser modificados una vez que se les ha asignado un valor. Esto puede aplicarse tanto a los atributos como a los mÈtodos de una clase. El uso de miembros constantes ayuda a proteger la integridad del estado de los objetos, asegurando que ciertos datos permanezcan inmutables despuÈs de su inicializaciÛn.
+En C++, los miembros constantes de una clase son aquellos que no pueden ser modificados una vez que se les ha asignado un valor. Esto puede aplicarse tanto a los atributos como a los m√©todos de una clase. El uso de miembros constantes ayuda a proteger la integridad del estado de los objetos, asegurando que ciertos datos permanezcan inmutables despu√©s de su inicializaci√≥n.
 
 #### Atributos Constantes
 
-Los atributos constantes de una clase se declaran utilizando la palabra clave `const`. Un atributo constante debe ser inicializado en el momento de su declaraciÛn o en la lista de inicializaciÛn del constructor.
+Los atributos constantes de una clase se declaran utilizando la palabra clave `const`. Un atributo constante debe ser inicializado en el momento de su declaraci√≥n o en la lista de inicializaci√≥n del constructor.
 
 ##### Ejemplo de Atributos Constantes
 
@@ -19,10 +19,10 @@ private:
     const int y;
 
 public:
-    // Constructor con lista de inicializaciÛn
+    // Constructor con lista de inicializaci√≥n
     Punto(int x, int y) : x(x), y(y) {}
 
-    // MÈtodos para obtener los valores de los atributos
+    // M√©todos para obtener los valores de los atributos
     int getX() const {
         return x;
     }
@@ -31,7 +31,7 @@ public:
         return y;
     }
 
-    // MÈtodo para mostrar los valores
+    // M√©todo para mostrar los valores
     void mostrar() const {
         cout << "Punto(" << x << ", " << y << ")" << endl;
     }
@@ -48,13 +48,13 @@ int main() {
 }
 ```
 
-En este ejemplo, `x` y `y` son atributos constantes de la clase `Punto`, y se inicializan en la lista de inicializaciÛn del constructor. Una vez inicializados, no pueden ser modificados.
+En este ejemplo, `x` y `y` son atributos constantes de la clase `Punto`, y se inicializan en la lista de inicializaci√≥n del constructor. Una vez inicializados, no pueden ser modificados.
 
-#### MÈtodos Constantes
+#### M√©todos Constantes
 
-Un mÈtodo constante de una clase se declara aÒadiendo la palabra clave `const` al final de su declaraciÛn. Un mÈtodo constante garantiza que no modificar· ning˙n atributo del objeto.
+Un m√©todo constante de una clase se declara a√±adiendo la palabra clave `const` al final de su declaraci√≥n. Un m√©todo constante garantiza que no modificar√° ning√∫n atributo del objeto.
 
-##### Ejemplo de MÈtodos Constantes
+##### Ejemplo de M√©todos Constantes
 
 ```cpp
 #include <iostream>
@@ -68,19 +68,19 @@ public:
     // Constructor
     Circulo(double r) : radio(r) {}
 
-    // MÈtodo constante para obtener el radio
+    // M√©todo constante para obtener el radio
     double getRadio() const {
         return radio;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 3.14159 * radio * radio;
     }
 
-    // MÈtodo constante para mostrar el radio
+    // M√©todo constante para mostrar el radio
     void mostrar() const {
-        cout << "Circulo con radio: " << radio << " y ·rea: " << area() << endl;
+        cout << "Circulo con radio: " << radio << " y √°rea: " << area() << endl;
     }
 };
 
@@ -94,11 +94,11 @@ int main() {
 }
 ```
 
-En este ejemplo, `getRadio`, `area` y `mostrar` son mÈtodos constantes de la clase `Circulo`. Estos mÈtodos garantizan que no se modificar·n los atributos del objeto.
+En este ejemplo, `getRadio`, `area` y `mostrar` son m√©todos constantes de la clase `Circulo`. Estos m√©todos garantizan que no se modificar√°n los atributos del objeto.
 
 #### Const Correctness
 
-El concepto de const correctness se refiere a la pr·ctica de usar `const` correctamente para garantizar que los mÈtodos y atributos que no deben modificar el estado del objeto estÈn marcados como `const`. Esto ayuda a evitar errores y a documentar claramente la intenciÛn del cÛdigo.
+El concepto de const correctness se refiere a la pr√°ctica de usar `const` correctamente para garantizar que los m√©todos y atributos que no deben modificar el estado del objeto est√©n marcados como `const`. Esto ayuda a evitar errores y a documentar claramente la intenci√≥n del c√≥digo.
 
 ##### Ejemplo de Const Correctness
 
@@ -115,30 +115,30 @@ public:
     // Constructor
     Rectangulo(double a, double h) : ancho(a), alto(h) {}
 
-    // MÈtodo constante para obtener el ancho
+    // M√©todo constante para obtener el ancho
     double getAncho() const {
         return ancho;
     }
 
-    // MÈtodo constante para obtener el alto
+    // M√©todo constante para obtener el alto
     double getAlto() const {
         return alto;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return ancho * alto;
     }
 
-    // MÈtodo para cambiar el tamaÒo del rect·ngulo
+    // M√©todo para cambiar el tama√±o del rect√°ngulo
     void cambiarTamano(double a, double h) {
         ancho = a;
         alto = h;
     }
 
-    // MÈtodo constante para mostrar el rect·ngulo
+    // M√©todo constante para mostrar el rect√°ngulo
     void mostrar() const {
-        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", ·rea: " << area() << endl;
+        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", √°rea: " << area() << endl;
     }
 };
 
@@ -146,19 +146,19 @@ int main() {
     const Rectangulo r(10.0, 5.0);
     r.mostrar();
 
-    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     return 0;
 }
 ```
 
-En este ejemplo, `getAncho`, `getAlto`, `area` y `mostrar` son mÈtodos constantes que no modifican los atributos del objeto `Rectangulo`. El mÈtodo `cambiarTamano` no es constante, por lo que no puede ser llamado en un objeto constante.
+En este ejemplo, `getAncho`, `getAlto`, `area` y `mostrar` son m√©todos constantes que no modifican los atributos del objeto `Rectangulo`. El m√©todo `cambiarTamano` no es constante, por lo que no puede ser llamado en un objeto constante.
 
-#### Puntero `this` en MÈtodos Constantes
+#### Puntero `this` en M√©todos Constantes
 
-En mÈtodos constantes, el puntero `this` es un puntero a un objeto constante (`const`). Esto asegura que los mÈtodos constantes no puedan modificar el estado del objeto.
+En m√©todos constantes, el puntero `this` es un puntero a un objeto constante (`const`). Esto asegura que los m√©todos constantes no puedan modificar el estado del objeto.
 
-##### Ejemplo con Puntero `this` en MÈtodos Constantes
+##### Ejemplo con Puntero `this` en M√©todos Constantes
 
 ```cpp
 #include <iostream>
@@ -173,24 +173,24 @@ public:
     // Constructor
     Triangulo(double b, double h) : base(b), altura(h) {}
 
-    // MÈtodo constante para obtener la base
+    // M√©todo constante para obtener la base
     double getBase() const {
         return this->base;
     }
 
-    // MÈtodo constante para obtener la altura
+    // M√©todo constante para obtener la altura
     double getAltura() const {
         return this->altura;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 0.5 * this->base * this->altura;
     }
 
-    // MÈtodo constante para mostrar el tri·ngulo
+    // M√©todo constante para mostrar el tri√°ngulo
     void mostrar() const {
-        cout << "Triangulo de base: " << this->getBase() << ", altura: " << this->getAltura() << ", ·rea: " << this->area() << endl;
+        cout << "Triangulo de base: " << this->getBase() << ", altura: " << this->getAltura() << ", √°rea: " << this->area() << endl;
     }
 };
 
@@ -202,20 +202,20 @@ int main() {
 }
 ```
 
-En este ejemplo, `getBase`, `getAltura`, `area` y `mostrar` son mÈtodos constantes que utilizan el puntero `this` para acceder a los miembros de la clase `Triangulo`.
+En este ejemplo, `getBase`, `getAltura`, `area` y `mostrar` son m√©todos constantes que utilizan el puntero `this` para acceder a los miembros de la clase `Triangulo`.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-El uso de miembros constantes en una clase en C++ es una pr·ctica fundamental para proteger la integridad del estado del objeto y asegurar la constancia donde sea necesario. Los atributos constantes no pueden ser modificados despuÈs de su inicializaciÛn, y los mÈtodos constantes garantizan que no se modifiquen los atributos del objeto. Implementar const correctness ayuda a escribir cÛdigo m·s seguro, legible y mantenible, y proporciona una clara documentaciÛn de la intenciÛn del cÛdigo.
+El uso de miembros constantes en una clase en C++ es una pr√°ctica fundamental para proteger la integridad del estado del objeto y asegurar la constancia donde sea necesario. Los atributos constantes no pueden ser modificados despu√©s de su inicializaci√≥n, y los m√©todos constantes garantizan que no se modifiquen los atributos del objeto. Implementar const correctness ayuda a escribir c√≥digo m√°s seguro, legible y mantenible, y proporciona una clara documentaci√≥n de la intenci√≥n del c√≥digo.
 <---FILES--->
 Ejemplo de Atributos Constantes
 Ejemplo de Atributos Constantes Result
-Ejemplo de MÈtodos Constantes
-Ejemplo de MÈtodos Constantes Result
+Ejemplo de M√©todos Constantes
+Ejemplo de M√©todos Constantes Result
 Ejemplo de Const Correctness
 Ejemplo de Const Correctness Result
-Ejemplo con Puntero `this` en MÈtodos Constantes
-Ejemplo con Puntero `this` en MÈtodos Constantes Result
+Ejemplo con Puntero `this` en M√©todos Constantes
+Ejemplo con Puntero `this` en M√©todos Constantes Result
 <---Ejemplo de Atributos Constantes--->
 ```cpp
 #include <iostream>
@@ -227,10 +227,10 @@ private:
     const int y;
 
 public:
-    // Constructor con lista de inicializaciÛn
+    // Constructor con lista de inicializaci√≥n
     Punto(int x, int y) : x(x), y(y) {}
 
-    // MÈtodos para obtener los valores de los atributos
+    // M√©todos para obtener los valores de los atributos
     int getX() const {
         return x;
     }
@@ -239,7 +239,7 @@ public:
         return y;
     }
 
-    // MÈtodo para mostrar los valores
+    // M√©todo para mostrar los valores
     void mostrar() const {
         cout << "Punto(" << x << ", " << y << ")" << endl;
     }
@@ -255,7 +255,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Atributos Constantes Result--->
-<---Ejemplo de MÈtodos Constantes--->
+<---Ejemplo de M√©todos Constantes--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -268,19 +268,19 @@ public:
     // Constructor
     Circulo(double r) : radio(r) {}
 
-    // MÈtodo constante para obtener el radio
+    // M√©todo constante para obtener el radio
     double getRadio() const {
         return radio;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 3.14159 * radio * radio;
     }
 
-    // MÈtodo constante para mostrar el radio
+    // M√©todo constante para mostrar el radio
     void mostrar() const {
-        cout << "Circulo con radio: " << radio << " y ·rea: " << area() << endl;
+        cout << "Circulo con radio: " << radio << " y √°rea: " << area() << endl;
     }
 };
 
@@ -292,7 +292,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de MÈtodos Constantes Result--->
+<---Ejemplo de M√©todos Constantes Result--->
 <---Ejemplo de Const Correctness--->
 ```cpp
 #include <iostream>
@@ -307,30 +307,30 @@ public:
     // Constructor
     Rectangulo(double a, double h) : ancho(a), alto(h) {}
 
-    // MÈtodo constante para obtener el ancho
+    // M√©todo constante para obtener el ancho
     double getAncho() const {
         return ancho;
     }
 
-    // MÈtodo constante para obtener el alto
+    // M√©todo constante para obtener el alto
     double getAlto() const {
         return alto;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return ancho * alto;
     }
 
-    // MÈtodo para cambiar el tamaÒo del rect·ngulo
+    // M√©todo para cambiar el tama√±o del rect√°ngulo
     void cambiarTamano(double a, double h) {
         ancho = a;
         alto = h;
     }
 
-    // MÈtodo constante para mostrar el rect·ngulo
+    // M√©todo constante para mostrar el rect√°ngulo
     void mostrar() const {
-        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", ·rea: " << area() << endl;
+        cout << "Rectangulo de ancho: " << ancho << ", alto: " << alto << ", √°rea: " << area() << endl;
     }
 };
 
@@ -338,12 +338,12 @@ int main() {
     const Rectangulo r(10.0, 5.0);
     r.mostrar();
 
-    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un mÈtodo no constante en un objeto constante
+    // r.cambiarTamano(15.0, 7.5); // Error: no se puede llamar a un m√©todo no constante en un objeto constante
 
     return 0;
 }
 <---Ejemplo de Const Correctness Result--->
-<---Ejemplo con Puntero `this` en MÈtodos Constantes--->
+<---Ejemplo con Puntero `this` en M√©todos Constantes--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -357,24 +357,24 @@ public:
     // Constructor
     Triangulo(double b, double h) : base(b), altura(h) {}
 
-    // MÈtodo constante para obtener la base
+    // M√©todo constante para obtener la base
     double getBase() const {
         return this->base;
     }
 
-    // MÈtodo constante para obtener la altura
+    // M√©todo constante para obtener la altura
     double getAltura() const {
         return this->altura;
     }
 
-    // MÈtodo constante para calcular el ·rea
+    // M√©todo constante para calcular el √°rea
     double area() const {
         return 0.5 * this->base * this->altura;
     }
 
-    // MÈtodo constante para mostrar el tri·ngulo
+    // M√©todo constante para mostrar el tri√°ngulo
     void mostrar() const {
-        cout << "Triangulo de base: " << this->getBase() << ", altura: " << this->getAltura() << ", ·rea: " << this->area() << endl;
+        cout << "Triangulo de base: " << this->getBase() << ", altura: " << this->getAltura() << ", √°rea: " << this->area() << endl;
     }
 };
 
@@ -384,4 +384,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Puntero `this` en MÈtodos Constantes Result--->
+<---Ejemplo con Puntero `this` en M√©todos Constantes Result--->

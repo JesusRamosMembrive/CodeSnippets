@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Constructor de Movimiento en C++
 
-El constructor de movimiento es una caracterÌstica introducida en C++11 que permite la transferencia eficiente de recursos de un objeto a otro sin la necesidad de realizar copias profundas. Es especialmente ˙til para optimizar el rendimiento de las aplicaciones que manejan grandes cantidades de datos o recursos din·micos. Utilizar el constructor de movimiento puede reducir significativamente el costo de las operaciones de copia, mejorando la eficiencia general del programa.
+El constructor de movimiento es una caracter√≠stica introducida en C++11 que permite la transferencia eficiente de recursos de un objeto a otro sin la necesidad de realizar copias profundas. Es especialmente √∫til para optimizar el rendimiento de las aplicaciones que manejan grandes cantidades de datos o recursos din√°micos. Utilizar el constructor de movimiento puede reducir significativamente el costo de las operaciones de copia, mejorando la eficiencia general del programa.
 
 #### Fundamentos del Constructor de Movimiento
 
-1. **DefiniciÛn:** Un constructor de movimiento toma un rvalue reference (un valor que puede ser movido) al objeto de la misma clase.
-2. **Sintaxis:** Se declara utilizando la notaciÛn `&&` para los rvalue references.
-3. **Objetivo:** Transferir los recursos del objeto fuente al objeto destino, dejando el objeto fuente en un estado v·lido pero no especificado.
+1. **Definici√≥n:** Un constructor de movimiento toma un rvalue reference (un valor que puede ser movido) al objeto de la misma clase.
+2. **Sintaxis:** Se declara utilizando la notaci√≥n `&&` para los rvalue references.
+3. **Objetivo:** Transferir los recursos del objeto fuente al objeto destino, dejando el objeto fuente en un estado v√°lido pero no especificado.
 
 ##### Sintaxis
 
@@ -19,9 +19,9 @@ public:
 };
 ```
 
-#### Ejemplo B·sico de Constructor de Movimiento
+#### Ejemplo B√°sico de Constructor de Movimiento
 
-Consideremos una clase `Vector` que maneja un arreglo din·mico. Implementemos un constructor de movimiento para esta clase.
+Consideremos una clase `Vector` que maneja un arreglo din√°mico. Implementemos un constructor de movimiento para esta clase.
 
 ```cpp
 #include <iostream>
@@ -56,11 +56,11 @@ public:
 
     // Constructor de movimiento
     Vector(Vector&& other) noexcept : data(other.data), size(other.size) {
-        other.data = nullptr; // Dejar el objeto fuente en un estado v·lido
+        other.data = nullptr; // Dejar el objeto fuente en un estado v√°lido
         other.size = 0;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Vector& operator=(Vector&& other) noexcept {
         if (this != &other) {
             delete[] data;
@@ -72,7 +72,7 @@ public:
         return *this;
     }
 
-    // MÈtodo para mostrar el contenido del vector
+    // M√©todo para mostrar el contenido del vector
     void mostrar() const {
         for (size_t i = 0; i < size; ++i) {
             cout << data[i] << " ";
@@ -88,25 +88,25 @@ int main() {
     Vector v2 = move(v1); // Llamada al constructor de movimiento
     v2.mostrar();
 
-    // El estado de v1 es v·lido pero no especificado
-    cout << "DespuÈs de mover, v1: ";
+    // El estado de v1 es v√°lido pero no especificado
+    cout << "Despu√©s de mover, v1: ";
     v1.mostrar();
 
     return 0;
 }
 ```
 
-En este ejemplo, `Vector` implementa un constructor de movimiento que transfiere la propiedad del arreglo din·mico de `v1` a `v2`, dejando `v1` en un estado v·lido pero no especificado.
+En este ejemplo, `Vector` implementa un constructor de movimiento que transfiere la propiedad del arreglo din√°mico de `v1` a `v2`, dejando `v1` en un estado v√°lido pero no especificado.
 
 #### Ventajas del Constructor de Movimiento
 
 1. **Eficiencia:** Reduce el costo de las copias profundas al transferir recursos en lugar de duplicarlos.
-2. **OptimizaciÛn:** Mejora el rendimiento de las operaciones de copia en contenedores de la biblioteca est·ndar (como `std::vector`, `std::string`, etc.) y en clases que manejan recursos din·micos.
-3. **Seguridad del Estado:** Asegura que el objeto fuente quede en un estado v·lido despuÈs del movimiento, evitando problemas de recursos compartidos o liberaciones dobles.
+2. **Optimizaci√≥n:** Mejora el rendimiento de las operaciones de copia en contenedores de la biblioteca est√°ndar (como `std::vector`, `std::string`, etc.) y en clases que manejan recursos din√°micos.
+3. **Seguridad del Estado:** Asegura que el objeto fuente quede en un estado v√°lido despu√©s del movimiento, evitando problemas de recursos compartidos o liberaciones dobles.
 
-#### Ejemplo con Recursos Din·micos
+#### Ejemplo con Recursos Din√°micos
 
-El constructor de movimiento es particularmente ˙til cuando una clase gestiona recursos como memoria din·mica, archivos, o conexiones de red.
+El constructor de movimiento es particularmente √∫til cuando una clase gestiona recursos como memoria din√°mica, archivos, o conexiones de red.
 
 ##### Ejemplo con Clase de Recursos
 
@@ -142,7 +142,7 @@ public:
         other.str = nullptr;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Cadena& operator=(Cadena&& other) noexcept {
         if (this != &other) {
             delete[] str;
@@ -152,9 +152,9 @@ public:
         return *this;
     }
 
-    // MÈtodo para mostrar la cadena
+    // M√©todo para mostrar la cadena
     void mostrar() const {
-        cout << (str ? str : "Cadena vacÌa") << endl;
+        cout << (str ? str : "Cadena vac√≠a") << endl;
     }
 };
 
@@ -165,19 +165,19 @@ int main() {
     Cadena c2 = move(c1); // Llamada al constructor de movimiento
     c2.mostrar();
 
-    // El estado de c1 es v·lido pero no especificado
-    cout << "DespuÈs de mover, c1: ";
+    // El estado de c1 es v√°lido pero no especificado
+    cout << "Despu√©s de mover, c1: ";
     c1.mostrar();
 
     return 0;
 }
 ```
 
-En este ejemplo, `Cadena` implementa un constructor de movimiento que transfiere la propiedad de la cadena din·mica de `c1` a `c2`, dejando `c1` en un estado v·lido pero no especificado.
+En este ejemplo, `Cadena` implementa un constructor de movimiento que transfiere la propiedad de la cadena din√°mica de `c1` a `c2`, dejando `c1` en un estado v√°lido pero no especificado.
 
 #### La Regla de Cinco
 
-La regla de cinco extiende la regla de tres (destructor, constructor de copia, y operador de asignaciÛn de copia) para incluir el constructor de movimiento y el operador de asignaciÛn de movimiento. Si una clase necesita cualquiera de estos cinco mÈtodos especiales, probablemente necesite implementarlos todos para gestionar correctamente los recursos.
+La regla de cinco extiende la regla de tres (destructor, constructor de copia, y operador de asignaci√≥n de copia) para incluir el constructor de movimiento y el operador de asignaci√≥n de movimiento. Si una clase necesita cualquiera de estos cinco m√©todos especiales, probablemente necesite implementarlos todos para gestionar correctamente los recursos.
 
 ##### Ejemplo Completo con la Regla de Cinco
 
@@ -205,7 +205,7 @@ public:
         data = new int(*other.data);
     }
 
-    // Operador de asignaciÛn de copia
+    // Operador de asignaci√≥n de copia
     Recurso& operator=(const Recurso& other) {
         if (this != &other) {
             delete data;
@@ -219,7 +219,7 @@ public:
         other.data = nullptr;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Recurso& operator=(Recurso&& other) noexcept {
         if (this != &other) {
             delete data;
@@ -229,7 +229,7 @@ public:
         return *this;
     }
 
-    // MÈtodo para mostrar el valor
+    // M√©todo para mostrar el valor
     void mostrar() const {
         cout << "Valor: " << *data << endl;
     }
@@ -239,21 +239,21 @@ int main() {
     Recurso r1(10);
     Recurso r2 = move(r1); // Llamada al constructor de movimiento
     Recurso r3(20);
-    r3 = move(r2); // Llamada al operador de asignaciÛn de movimiento
+    r3 = move(r2); // Llamada al operador de asignaci√≥n de movimiento
 
-    r1.mostrar(); // Estado v·lido pero no especificado
-    r2.mostrar(); // Estado v·lido pero no especificado
+    r1.mostrar(); // Estado v√°lido pero no especificado
+    r2.mostrar(); // Estado v√°lido pero no especificado
     r3.mostrar();
 
     return 0;
 }
 ```
 
-En este ejemplo, `Recurso` implementa la regla de cinco, asegurando una correcta gestiÛn de la memoria din·mica mediante constructores y operadores de movimiento y copia.
+En este ejemplo, `Recurso` implementa la regla de cinco, asegurando una correcta gesti√≥n de la memoria din√°mica mediante constructores y operadores de movimiento y copia.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-El constructor de movimiento es una herramienta poderosa en C++ que permite la transferencia eficiente de recursos entre objetos, mejorando el rendimiento y la eficiencia del programa. Junto con el operador de asignaciÛn de movimiento, forma parte de la regla de cinco, que es esencial para la correcta gestiÛn de recursos en clases que manejan memoria din·mica u otros recursos no triviales. Implementar correctamente estos mÈtodos asegura que los objetos se manejen de manera segura y eficiente, evitando problemas comunes como la doble liberaciÛn de memoria y las copias innecesarias.
+El constructor de movimiento es una herramienta poderosa en C++ que permite la transferencia eficiente de recursos entre objetos, mejorando el rendimiento y la eficiencia del programa. Junto con el operador de asignaci√≥n de movimiento, forma parte de la regla de cinco, que es esencial para la correcta gesti√≥n de recursos en clases que manejan memoria din√°mica u otros recursos no triviales. Implementar correctamente estos m√©todos asegura que los objetos se manejen de manera segura y eficiente, evitando problemas comunes como la doble liberaci√≥n de memoria y las copias innecesarias.
 <---FILES--->
 Sintaxis
 Sintaxis Result
@@ -301,11 +301,11 @@ public:
 
     // Constructor de movimiento
     Vector(Vector&& other) noexcept : data(other.data), size(other.size) {
-        other.data = nullptr; // Dejar el objeto fuente en un estado v·lido
+        other.data = nullptr; // Dejar el objeto fuente en un estado v√°lido
         other.size = 0;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Vector& operator=(Vector&& other) noexcept {
         if (this != &other) {
             delete[] data;
@@ -317,7 +317,7 @@ public:
         return *this;
     }
 
-    // MÈtodo para mostrar el contenido del vector
+    // M√©todo para mostrar el contenido del vector
     void mostrar() const {
         for (size_t i = 0; i < size; ++i) {
             cout << data[i] << " ";
@@ -333,8 +333,8 @@ int main() {
     Vector v2 = move(v1); // Llamada al constructor de movimiento
     v2.mostrar();
 
-    // El estado de v1 es v·lido pero no especificado
-    cout << "DespuÈs de mover, v1: ";
+    // El estado de v1 es v√°lido pero no especificado
+    cout << "Despu√©s de mover, v1: ";
     v1.mostrar();
 
     return 0;
@@ -373,7 +373,7 @@ public:
         other.str = nullptr;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Cadena& operator=(Cadena&& other) noexcept {
         if (this != &other) {
             delete[] str;
@@ -383,9 +383,9 @@ public:
         return *this;
     }
 
-    // MÈtodo para mostrar la cadena
+    // M√©todo para mostrar la cadena
     void mostrar() const {
-        cout << (str ? str : "Cadena vacÌa") << endl;
+        cout << (str ? str : "Cadena vac√≠a") << endl;
     }
 };
 
@@ -396,8 +396,8 @@ int main() {
     Cadena c2 = move(c1); // Llamada al constructor de movimiento
     c2.mostrar();
 
-    // El estado de c1 es v·lido pero no especificado
-    cout << "DespuÈs de mover, c1: ";
+    // El estado de c1 es v√°lido pero no especificado
+    cout << "Despu√©s de mover, c1: ";
     c1.mostrar();
 
     return 0;
@@ -428,7 +428,7 @@ public:
         data = new int(*other.data);
     }
 
-    // Operador de asignaciÛn de copia
+    // Operador de asignaci√≥n de copia
     Recurso& operator=(const Recurso& other) {
         if (this != &other) {
             delete data;
@@ -442,7 +442,7 @@ public:
         other.data = nullptr;
     }
 
-    // Operador de asignaciÛn de movimiento
+    // Operador de asignaci√≥n de movimiento
     Recurso& operator=(Recurso&& other) noexcept {
         if (this != &other) {
             delete data;
@@ -452,7 +452,7 @@ public:
         return *this;
     }
 
-    // MÈtodo para mostrar el valor
+    // M√©todo para mostrar el valor
     void mostrar() const {
         cout << "Valor: " << *data << endl;
     }
@@ -462,10 +462,10 @@ int main() {
     Recurso r1(10);
     Recurso r2 = move(r1); // Llamada al constructor de movimiento
     Recurso r3(20);
-    r3 = move(r2); // Llamada al operador de asignaciÛn de movimiento
+    r3 = move(r2); // Llamada al operador de asignaci√≥n de movimiento
 
-    r1.mostrar(); // Estado v·lido pero no especificado
-    r2.mostrar(); // Estado v·lido pero no especificado
+    r1.mostrar(); // Estado v√°lido pero no especificado
+    r2.mostrar(); // Estado v√°lido pero no especificado
     r3.mostrar();
 
     return 0;

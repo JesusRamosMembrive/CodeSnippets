@@ -1,16 +1,16 @@
 <---EXPLANATION--->
-### Composici髇 de Vista y Operador `|` (Pipe)
+### Composici贸n de Vista y Operador `|` (Pipe)
 
-C++20 introdujo la capacidad de componer vistas utilizando el operador `|` (pipe), que permite encadenar m鷏tiples adaptadores de vistas de manera legible y concisa. Esta caracter韘tica facilita la construcci髇 de operaciones complejas sobre secuencias de datos sin necesidad de crear variables intermedias.
+C++20 introdujo la capacidad de componer vistas utilizando el operador `|` (pipe), que permite encadenar m煤ltiples adaptadores de vistas de manera legible y concisa. Esta caracter铆stica facilita la construcci贸n de operaciones complejas sobre secuencias de datos sin necesidad de crear variables intermedias.
 
 #### Conceptos Clave
 
-- **Composici髇 de Vistas:** Proceso de aplicar m鷏tiples adaptadores de vistas de manera secuencial a una secuencia de datos.
+- **Composici贸n de Vistas:** Proceso de aplicar m煤ltiples adaptadores de vistas de manera secuencial a una secuencia de datos.
 - **Operador `|` (Pipe):** Operador que permite encadenar adaptadores de vistas.
 
-### Ejemplos de Composici髇 de Vistas
+### Ejemplos de Composici贸n de Vistas
 
-#### Filtrado y Transformaci髇
+#### Filtrado y Transformaci贸n
 
 Vamos a combinar `std::views::filter` y `std::views::transform` para filtrar y luego transformar los elementos de una secuencia.
 
@@ -22,13 +22,13 @@ Vamos a combinar `std::views::filter` y `std::views::transform` para filtrar y l
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    // Filtrar n鷐eros pares y luego cuadrarlos
+    // Filtrar n煤meros pares y luego cuadrarlos
     auto even_squares = vec
                         | std::views::filter([](int n) { return n % 2 == 0; })
                         | std::views::transform([](int n) { return n * n; });
 
     // Mostrar los resultados
-    std::cout << "Cuadrados de n鷐eros pares: ";
+    std::cout << "Cuadrados de n煤meros pares: ";
     for (int n : even_squares) {
         std::cout << n << " ";
     }
@@ -39,13 +39,13 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::views::filter` se utiliza para filtrar los n鷐eros pares.
-- `std::views::transform` se utiliza para cuadrar los n鷐eros pares filtrados.
+- `std::views::filter` se utiliza para filtrar los n煤meros pares.
+- `std::views::transform` se utiliza para cuadrar los n煤meros pares filtrados.
 - El operador `|` (pipe) encadena las operaciones de manera legible.
 
-#### Composici髇 de M鷏tiples Adaptadores
+#### Composici贸n de M煤ltiples Adaptadores
 
-Vamos a combinar `std::views::filter`, `std::views::transform`, y `std::views::take` para una operaci髇 m醩 compleja.
+Vamos a combinar `std::views::filter`, `std::views::transform`, y `std::views::take` para una operaci贸n m谩s compleja.
 
 ```cpp
 #include <iostream>
@@ -55,14 +55,14 @@ Vamos a combinar `std::views::filter`, `std::views::transform`, y `std::views::t
 int main() {
     std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    // Filtrar n鷐eros impares, multiplicar por 2, y tomar los primeros 3 resultados
+    // Filtrar n煤meros impares, multiplicar por 2, y tomar los primeros 3 resultados
     auto result = vec
                   | std::views::filter([](int n) { return n % 2 != 0; })
                   | std::views::transform([](int n) { return n * 2; })
                   | std::views::take(3);
 
     // Mostrar los resultados
-    std::cout << "Resultado de la composici髇 de vistas: ";
+    std::cout << "Resultado de la composici贸n de vistas: ";
     for (int n : result) {
         std::cout << n << " ";
     }
@@ -73,15 +73,15 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::views::filter` filtra los n鷐eros impares.
-- `std::views::transform` multiplica los n鷐eros impares por 2.
-- `std::views::take` toma los primeros 3 resultados de la transformaci髇.
+- `std::views::filter` filtra los n煤meros impares.
+- `std::views::transform` multiplica los n煤meros impares por 2.
+- `std::views::take` toma los primeros 3 resultados de la transformaci贸n.
 
 ### Adaptadores de Vista Comunes
 
 #### `std::views::filter`
 
-Filtra los elementos de un rango bas醤dose en un predicado.
+Filtra los elementos de un rango bas谩ndose en un predicado.
 
 ```cpp
 auto even_numbers = vec | std::views::filter([](int n) { return n % 2 == 0; });
@@ -89,7 +89,7 @@ auto even_numbers = vec | std::views::filter([](int n) { return n % 2 == 0; });
 
 #### `std::views::transform`
 
-Transforma los elementos de un rango aplicando una funci髇.
+Transforma los elementos de un rango aplicando una funci贸n.
 
 ```cpp
 auto squares = vec | std::views::transform([](int n) { return n * n; });
@@ -185,7 +185,8 @@ int main() {
 
 En este ejemplo, `std::views::split` divide el texto en palabras utilizando el espacio como delimitador.
 
-### Conclusi髇
+### Conclusi贸n
 
-El operador `|` (pipe) y los adaptadores de vista de `std::ranges` en C++20 proporcionan una forma poderosa y expresiva de componer operaciones sobre secuencias de datos. Los adaptadores de vista permiten transformar y filtrar datos de manera eficiente sin crear variables intermedias, lo que hace que el c骴igo sea m醩 legible y conciso. Utilizar estas caracter韘ticas puede simplificar significativamente la manipulaci髇 de secuencias en C++.
+El operador `|` (pipe) y los adaptadores de vista de `std::ranges` en C++20 proporcionan una forma poderosa y expresiva de componer operaciones sobre secuencias de datos. Los adaptadores de vista permiten transformar y filtrar datos de manera eficiente sin crear variables intermedias, lo que hace que el c贸digo sea m谩s legible y conciso. Utilizar estas caracter铆sticas puede simplificar significativamente la manipulaci贸n de secuencias en C++.
 <---FILES--->
+NA.

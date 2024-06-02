@@ -1,17 +1,17 @@
 <---EXPLANATION--->
 ### Bucles Anidados (Nested Loops) en C++
 
-Los bucles anidados (nested loops) son una estructura de control de flujo donde un bucle se encuentra dentro de otro bucle. Los bucles anidados son 鷗iles para trabajar con estructuras de datos multidimensionales, como matrices, o para realizar operaciones repetitivas en varios niveles.
+Los bucles anidados (nested loops) son una estructura de control de flujo donde un bucle se encuentra dentro de otro bucle. Los bucles anidados son 煤tiles para trabajar con estructuras de datos multidimensionales, como matrices, o para realizar operaciones repetitivas en varios niveles.
 
 #### Tipos Comunes de Bucles Anidados
 
 1. **`for` anidados**
 2. **`while` anidados**
-3. **Combinaci髇 de `for` y `while`**
+3. **Combinaci贸n de `for` y `while`**
 
 ### 1. `for` Anidados
 
-El uso m醩 com鷑 de bucles anidados es con bucles `for`, especialmente para iterar sobre matrices bidimensionales.
+El uso m谩s com煤n de bucles anidados es con bucles `for`, especialmente para iterar sobre matrices bidimensionales.
 
 ##### Ejemplo: Matriz Bidimensional
 
@@ -20,14 +20,14 @@ El uso m醩 com鷑 de bucles anidados es con bucles `for`, especialmente para iter
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    // Iteraci髇 sobre la matriz usando bucles for anidados
+    // Iteraci贸n sobre la matriz usando bucles for anidados
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             cout << "Elemento [" << i << "][" << j << "]: " << matriz[i][j] << endl;
@@ -42,7 +42,7 @@ En este ejemplo, el bucle externo itera sobre las filas de la matriz, mientras q
 
 ### 2. `while` Anidados
 
-Los bucles `while` tambi閚 pueden anidarse, aunque es menos com鷑 que con los bucles `for`.
+Los bucles `while` tambi茅n pueden anidarse, aunque es menos com煤n que con los bucles `for`.
 
 ##### Ejemplo: Matriz Bidimensional con `while`
 
@@ -51,14 +51,14 @@ Los bucles `while` tambi閚 pueden anidarse, aunque es menos com鷑 que con los bu
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    // Iteraci髇 sobre la matriz usando bucles while anidados
+    // Iteraci贸n sobre la matriz usando bucles while anidados
     int i = 0;
     while (i < 3) {
         int j = 0;
@@ -73,9 +73,9 @@ int main() {
 }
 ```
 
-### 3. Combinaci髇 de `for` y `while`
+### 3. Combinaci贸n de `for` y `while`
 
-A veces, puede ser 鷗il combinar diferentes tipos de bucles anidados para situaciones espec韋icas.
+A veces, puede ser 煤til combinar diferentes tipos de bucles anidados para situaciones espec铆ficas.
 
 ##### Ejemplo: `for` Externo y `while` Interno
 
@@ -84,7 +84,7 @@ A veces, puede ser 鷗il combinar diferentes tipos de bucles anidados para situac
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
@@ -107,27 +107,27 @@ int main() {
 ### Aplicaciones de Bucles Anidados
 
 1. **Procesamiento de Matrices:** Trabajar con datos bidimensionales.
-2. **Algoritmos de B鷖queda:** Implementaci髇 de algoritmos como la b鷖queda de fuerza bruta.
-3. **Generaci髇 de Combinaciones:** Crear todas las combinaciones posibles de un conjunto de elementos.
-4. **Tablas de Multiplicaci髇:** Generaci髇 de tablas de multiplicar.
+2. **Algoritmos de B煤squeda:** Implementaci贸n de algoritmos como la b煤squeda de fuerza bruta.
+3. **Generaci贸n de Combinaciones:** Crear todas las combinaciones posibles de un conjunto de elementos.
+4. **Tablas de Multiplicaci贸n:** Generaci贸n de tablas de multiplicar.
 
-### Consideraciones y Buenas Pr醕ticas
+### Consideraciones y Buenas Pr谩cticas
 
 - **Complejidad Temporal:** Los bucles anidados pueden incrementar significativamente la complejidad temporal de un algoritmo. Por ejemplo, dos bucles anidados tienen una complejidad O(n^2).
-- **Evitar Bucles Anidados Innecesarios:** Si es posible, refactoriza el c骴igo para reducir la cantidad de bucles anidados.
-- **Legibilidad:** Aseg鷕ate de que los bucles anidados sean f醕iles de leer y entender. Usa nombres de variables descriptivos y comenta el c骴igo cuando sea necesario.
-- **Uso de `break` y `continue`:** Estas declaraciones pueden ser 鷗iles para controlar el flujo dentro de bucles anidados, pero 鷖alas con moderaci髇 para evitar complicar la l骻ica del bucle.
+- **Evitar Bucles Anidados Innecesarios:** Si es posible, refactoriza el c贸digo para reducir la cantidad de bucles anidados.
+- **Legibilidad:** Aseg煤rate de que los bucles anidados sean f谩ciles de leer y entender. Usa nombres de variables descriptivos y comenta el c贸digo cuando sea necesario.
+- **Uso de `break` y `continue`:** Estas declaraciones pueden ser 煤tiles para controlar el flujo dentro de bucles anidados, pero 煤salas con moderaci贸n para evitar complicar la l贸gica del bucle.
 
 ### Ejemplo Completo
 
-A continuaci髇, un ejemplo que utiliza bucles anidados para calcular la suma de los elementos de una matriz bidimensional:
+A continuaci贸n, un ejemplo que utiliza bucles anidados para calcular la suma de los elementos de una matriz bidimensional:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
@@ -136,7 +136,7 @@ int main() {
 
     int suma = 0;
 
-    // Iteraci髇 sobre la matriz usando bucles for anidados
+    // Iteraci贸n sobre la matriz usando bucles for anidados
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             suma += matriz[i][j];
@@ -151,9 +151,9 @@ int main() {
 
 En este ejemplo, los bucles anidados se utilizan para iterar sobre cada elemento de la matriz y calcular su suma total.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los bucles anidados son una herramienta poderosa en C++ para manejar datos multidimensionales y realizar operaciones repetitivas a varios niveles. Comprender c髆o y cu醤do utilizarlos de manera efectiva es crucial para escribir c骴igo eficiente y claro. Sin embargo, es importante tener en cuenta la complejidad temporal y la legibilidad del c骴igo al usar bucles anidados.
+Los bucles anidados son una herramienta poderosa en C++ para manejar datos multidimensionales y realizar operaciones repetitivas a varios niveles. Comprender c贸mo y cu谩ndo utilizarlos de manera efectiva es crucial para escribir c贸digo eficiente y claro. Sin embargo, es importante tener en cuenta la complejidad temporal y la legibilidad del c贸digo al usar bucles anidados.
 <---FILES--->
 Ejemplo: Matriz Bidimensional
 Ejemplo: Matriz Bidimensional Result
@@ -167,14 +167,14 @@ Ejemplo: `for` Externo y `while` Interno Result
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    // Iteraci髇 sobre la matriz usando bucles for anidados
+    // Iteraci贸n sobre la matriz usando bucles for anidados
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             cout << "Elemento [" << i << "][" << j << "]: " << matriz[i][j] << endl;
@@ -190,14 +190,14 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    // Iteraci髇 sobre la matriz usando bucles while anidados
+    // Iteraci贸n sobre la matriz usando bucles while anidados
     int i = 0;
     while (i < 3) {
         int j = 0;
@@ -217,7 +217,7 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
@@ -240,7 +240,7 @@ int main() {
 using namespace std;
 
 int main() {
-    // Declaraci髇 de una matriz 3x3
+    // Declaraci贸n de una matriz 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
@@ -249,7 +249,7 @@ int main() {
 
     int suma = 0;
 
-    // Iteraci髇 sobre la matriz usando bucles for anidados
+    // Iteraci贸n sobre la matriz usando bucles for anidados
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             suma += matriz[i][j];

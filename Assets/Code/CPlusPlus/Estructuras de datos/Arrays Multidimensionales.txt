@@ -1,18 +1,18 @@
 <---EXPLANATION--->
 ### Arrays Multidimensionales en C++
 
-Los arrays multidimensionales son arrays que contienen otros arrays como elementos, permitiendo almacenar datos en una estructura en varias dimensiones, como matrices (2D), cubos (3D), etc. Los m醩 comunes son los arrays bidimensionales, que se utilizan para representar tablas o matrices.
+Los arrays multidimensionales son arrays que contienen otros arrays como elementos, permitiendo almacenar datos en una estructura en varias dimensiones, como matrices (2D), cubos (3D), etc. Los m谩s comunes son los arrays bidimensionales, que se utilizan para representar tablas o matrices.
 
-#### Declaraci髇 y Uso de Arrays Bidimensionales
+#### Declaraci贸n y Uso de Arrays Bidimensionales
 
-Un array bidimensional se puede declarar especificando el tama駉 en ambas dimensiones. Por ejemplo, un array 3x3 se declara de la siguiente manera:
+Un array bidimensional se puede declarar especificando el tama帽o en ambas dimensiones. Por ejemplo, un array 3x3 se declara de la siguiente manera:
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Declaraci髇 de un array 3x3
+    // Declaraci贸n de un array 3x3
     int matriz[3][3] = {
         {1, 2, 3},
         {4, 5, 6},
@@ -30,11 +30,11 @@ int main() {
 }
 ```
 
-### Inicializaci髇 de Arrays Multidimensionales
+### Inicializaci贸n de Arrays Multidimensionales
 
-Los arrays multidimensionales se pueden inicializar en el momento de su declaraci髇, como se muestra en el ejemplo anterior. Tambi閚 se pueden inicializar din醡icamente.
+Los arrays multidimensionales se pueden inicializar en el momento de su declaraci贸n, como se muestra en el ejemplo anterior. Tambi茅n se pueden inicializar din谩micamente.
 
-##### Inicializaci髇 Est醫ica
+##### Inicializaci贸n Est谩tica
 
 ```cpp
 int matriz[2][3] = {
@@ -43,9 +43,9 @@ int matriz[2][3] = {
 };
 ```
 
-##### Inicializaci髇 Din醡ica
+##### Inicializaci贸n Din谩mica
 
-Para inicializar arrays multidimensionales din醡icamente, es necesario usar punteros y asignar memoria en el mont髇 (`heap`).
+Para inicializar arrays multidimensionales din谩micamente, es necesario usar punteros y asignar memoria en el mont贸n (`heap`).
 
 ```cpp
 #include <iostream>
@@ -55,15 +55,15 @@ int main() {
     int filas = 3;
     int columnas = 3;
 
-    // Declaraci髇 de un puntero a puntero
+    // Declaraci贸n de un puntero a puntero
     int** matriz = new int*[filas];
 
-    // Asignaci髇 de memoria para cada fila
+    // Asignaci贸n de memoria para cada fila
     for (int i = 0; i < filas; ++i) {
         matriz[i] = new int[columnas];
     }
 
-    // Inicializaci髇 de la matriz
+    // Inicializaci贸n de la matriz
     int contador = 1;
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
@@ -78,7 +78,7 @@ int main() {
         }
     }
 
-    // Liberaci髇 de la memoria
+    // Liberaci贸n de la memoria
     for (int i = 0; i < filas; ++i) {
         delete[] matriz[i];
     }
@@ -88,9 +88,9 @@ int main() {
 }
 ```
 
-### Arrays Multidimensionales de Mayor Dimensi髇
+### Arrays Multidimensionales de Mayor Dimensi贸n
 
-C++ permite la declaraci髇 de arrays de m醩 de dos dimensiones de forma similar a los bidimensionales.
+C++ permite la declaraci贸n de arrays de m谩s de dos dimensiones de forma similar a los bidimensionales.
 
 ##### Ejemplo de Array Tridimensional
 
@@ -99,7 +99,7 @@ C++ permite la declaraci髇 de arrays de m醩 de dos dimensiones de forma similar 
 using namespace std;
 
 int main() {
-    // Declaraci髇 de un array 2x2x2
+    // Declaraci贸n de un array 2x2x2
     int cubo[2][2][2] = {
         {
             {1, 2},
@@ -126,21 +126,21 @@ int main() {
 
 ### Usos Comunes de Arrays Multidimensionales
 
-1. **Matrices:** Utilizados en 醠gebra lineal, gr醘icos por computadora, y procesamiento de im醙enes.
-2. **Tablas de Datos:** Representaci髇 de datos tabulares, como tablas de multiplicar o tablas de b鷖queda.
-3. **Mallas y Redes:** Modelado de mallas en gr醘icos 3D y simulaciones.
-4. **Juegos de Mesa:** Representaci髇 de tableros de juegos como el ajedrez o el Sudoku.
+1. **Matrices:** Utilizados en 谩lgebra lineal, gr谩ficos por computadora, y procesamiento de im谩genes.
+2. **Tablas de Datos:** Representaci贸n de datos tabulares, como tablas de multiplicar o tablas de b煤squeda.
+3. **Mallas y Redes:** Modelado de mallas en gr谩ficos 3D y simulaciones.
+4. **Juegos de Mesa:** Representaci贸n de tableros de juegos como el ajedrez o el Sudoku.
 
-### Consideraciones y Buenas Pr醕ticas
+### Consideraciones y Buenas Pr谩cticas
 
-- **Tama駉 Fijo:** Los arrays multidimensionales tienen un tama駉 fijo, lo que puede ser una limitaci髇 si se necesita un tama駉 din醡ico.
+- **Tama帽o Fijo:** Los arrays multidimensionales tienen un tama帽o fijo, lo que puede ser una limitaci贸n si se necesita un tama帽o din谩mico.
 - **Uso de Memoria:** Pueden consumir mucha memoria, especialmente los de dimensiones altas.
-- **Eficiencia:** Son eficientes en t閞minos de acceso debido a la contig黫dad de la memoria, pero pueden ser menos flexibles que otras estructuras de datos como los vectores de vectores.
-- **Liberaci髇 de Memoria:** Cuando se asigna memoria din醡icamente, es crucial liberar la memoria para evitar fugas.
+- **Eficiencia:** Son eficientes en t茅rminos de acceso debido a la contig眉idad de la memoria, pero pueden ser menos flexibles que otras estructuras de datos como los vectores de vectores.
+- **Liberaci贸n de Memoria:** Cuando se asigna memoria din谩micamente, es crucial liberar la memoria para evitar fugas.
 
 ### Ejemplo Completo
 
-A continuaci髇, un ejemplo completo que muestra la creaci髇, inicializaci髇, acceso y liberaci髇 de un array bidimensional din醡ico:
+A continuaci贸n, un ejemplo completo que muestra la creaci贸n, inicializaci贸n, acceso y liberaci贸n de un array bidimensional din谩mico:
 
 ```cpp
 #include <iostream>
@@ -150,15 +150,15 @@ int main() {
     int filas = 3;
     int columnas = 3;
 
-    // Declaraci髇 de un puntero a puntero
+    // Declaraci贸n de un puntero a puntero
     int** matriz = new int*[filas];
 
-    // Asignaci髇 de memoria para cada fila
+    // Asignaci贸n de memoria para cada fila
     for (int i = 0; i < filas; ++i) {
         matriz[i] = new int[columnas];
     }
 
-    // Inicializaci髇 de la matriz
+    // Inicializaci贸n de la matriz
     int contador = 1;
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
@@ -175,7 +175,7 @@ int main() {
         cout << endl;
     }
 
-    // Liberaci髇 de la memoria
+    // Liberaci贸n de la memoria
     for (int i = 0; i < filas; ++i) {
         delete[] matriz[i];
     }
@@ -185,24 +185,24 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Los arrays multidimensionales son una herramienta poderosa en C++ para manejar datos estructurados en m鷏tiples dimensiones. Permiten una representaci髇 clara y eficiente de datos como matrices y tablas, aunque su uso debe ser cuidadosamente gestionado para evitar problemas de memoria y flexibilidad. Comprender c髆o declararlos, inicializarlos y acceder a ellos es esencial para aprovechar al m醲imo esta estructura de datos en aplicaciones complejas.
+Los arrays multidimensionales son una herramienta poderosa en C++ para manejar datos estructurados en m煤ltiples dimensiones. Permiten una representaci贸n clara y eficiente de datos como matrices y tablas, aunque su uso debe ser cuidadosamente gestionado para evitar problemas de memoria y flexibilidad. Comprender c贸mo declararlos, inicializarlos y acceder a ellos es esencial para aprovechar al m谩ximo esta estructura de datos en aplicaciones complejas.
 <---FILES--->
-Inicializaci髇 Est醫ica
-Inicializaci髇 Est醫ica Result
-Inicializaci髇 Din醡ica
-Inicializaci髇 Din醡ica Result
+Inicializaci贸n Est谩tica
+Inicializaci贸n Est谩tica Result
+Inicializaci贸n Din谩mica
+Inicializaci贸n Din谩mica Result
 Ejemplo de Array Tridimensional
 Ejemplo de Array Tridimensional Result
-<---Inicializaci髇 Est醫ica--->
+<---Inicializaci贸n Est谩tica--->
 ```cpp
 int matriz[2][3] = {
     {1, 2, 3},
     {4, 5, 6}
 };
-<---Inicializaci髇 Est醫ica Result--->
-<---Inicializaci髇 Din醡ica--->
+<---Inicializaci贸n Est谩tica Result--->
+<---Inicializaci贸n Din谩mica--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -211,15 +211,15 @@ int main() {
     int filas = 3;
     int columnas = 3;
 
-    // Declaraci髇 de un puntero a puntero
+    // Declaraci贸n de un puntero a puntero
     int** matriz = new int*[filas];
 
-    // Asignaci髇 de memoria para cada fila
+    // Asignaci贸n de memoria para cada fila
     for (int i = 0; i < filas; ++i) {
         matriz[i] = new int[columnas];
     }
 
-    // Inicializaci髇 de la matriz
+    // Inicializaci贸n de la matriz
     int contador = 1;
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
@@ -234,7 +234,7 @@ int main() {
         }
     }
 
-    // Liberaci髇 de la memoria
+    // Liberaci贸n de la memoria
     for (int i = 0; i < filas; ++i) {
         delete[] matriz[i];
     }
@@ -242,14 +242,14 @@ int main() {
 
     return 0;
 }
-<---Inicializaci髇 Din醡ica Result--->
+<---Inicializaci贸n Din谩mica Result--->
 <---Ejemplo de Array Tridimensional--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Declaraci髇 de un array 2x2x2
+    // Declaraci贸n de un array 2x2x2
     int cubo[2][2][2] = {
         {
             {1, 2},
@@ -280,15 +280,15 @@ int main() {
     int filas = 3;
     int columnas = 3;
 
-    // Declaraci髇 de un puntero a puntero
+    // Declaraci贸n de un puntero a puntero
     int** matriz = new int*[filas];
 
-    // Asignaci髇 de memoria para cada fila
+    // Asignaci贸n de memoria para cada fila
     for (int i = 0; i < filas; ++i) {
         matriz[i] = new int[columnas];
     }
 
-    // Inicializaci髇 de la matriz
+    // Inicializaci贸n de la matriz
     int contador = 1;
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < columnas; ++j) {
@@ -305,7 +305,7 @@ int main() {
         cout << endl;
     }
 
-    // Liberaci髇 de la memoria
+    // Liberaci贸n de la memoria
     for (int i = 0; i < filas; ++i) {
         delete[] matriz[i];
     }

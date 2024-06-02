@@ -36,18 +36,17 @@ Window {
     Funciones { id: funcionesModel }
     Poo { id: pooModel }
     HerenciaYPolimorfismo { id: herenciaYPolimorfismoModel }
-    Friends { id: friendsModel }
-    ConstYMiembrosEstaticos { id: constYMiembrosEstaticosModel }
-    Namespaces { id: namespacesModel }
-    ManejoMemoria { id: manejoMemoriaModel }
-    OperadorSobrecarga { id: operadorSobrecargaModel }
-    PlantillasYGenericas { id: plantillasYGenericasModel }
+    Amigas { id: amigasModel }
+    MiemborsStaticYConst { id: constYMiembrosEstaticosModel }
+    Namespace { id: namespacesModel }
+    GestionDeLaMemoria { id: manejoMemoriaModel }
+    SobrecargaDeOperadores { id: operadorSobrecargaModel }
+    Plantillas { id: plantillasYGenericasModel }
     Concepts { id: conceptsModel }
     Semantics { id: semanticsModel }
     FuncionesComoEntidades { id: funcionesComoEntidadesModel }
     Iteradores { id: iteradoresModel }
-    StdAlgoritmos { id: stdAlgoritmosModel }
-    Corutinas { id: corutinasModel }
+    StdAlgorithms { id: stdAlgoritmosModel }
 
     FileReader { id: fileReader }
 
@@ -64,7 +63,6 @@ Window {
     function createFilesMap() {
         var map = {};
         var topics = [];
-        console.log("===============createFilesMap==================");
         for (var i = 0; i < fundamentosModel.fundamentosType.count; i++) {
             var item = fundamentosModel.fundamentosType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Fundamentos/" + item.name + ".txt";
@@ -95,33 +93,33 @@ Window {
             map[item.name] = ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < friendsModel.friendsType.count; i++) {
-            var item = friendsModel.friendsType.get(i);
+        for (var i = 0; i < amigasModel.amigasType.count; i++) {
+            var item = amigasModel.amigasType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Friends/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < constYMiembrosEstaticosModel.constYMiembrosEstaticosType.count; i++) {
-            var item = constYMiembrosEstaticosModel.constYMiembrosEstaticosType.get(i);
+        for (var i = 0; i < constYMiembrosEstaticosModel.miemborsStaticYConstType.count; i++) {
+            var item = constYMiembrosEstaticosModel.miemborsStaticYConstType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Const y miembros estaticos/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < namespacesModel.namespacesType.count; i++) {
-            var item = namespacesModel.namespacesType.get(i);
+        for (var i = 0; i < namespacesModel.namespaceType.count; i++) {
+            var item = namespacesModel.namespaceType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/namespaces/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < manejoMemoriaModel.manejoMemoriaType.count; i++) {
-            var item = manejoMemoriaModel.manejoMemoriaType.get(i);
+        for (var i = 0; i < manejoMemoriaModel.gestionDeLaMemoriaType.count; i++) {
+            var item = manejoMemoriaModel.gestionDeLaMemoriaType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Manejo de memoria/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < operadorSobrecargaModel.operadorSobrecargaType.count; i++) {
-            var item = operadorSobrecargaModel.operadorSobrecargaType.get(i);
+        for (var i = 0; i < operadorSobrecargaModel.sobrecargaDeOperadoresType.count; i++) {
+            var item = operadorSobrecargaModel.sobrecargaDeOperadoresType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Operador sobrecarga/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < plantillasYGenericasModel.plantillasYGenericasType.count; i++) {
-            var item = plantillasYGenericasModel.plantillasYGenericasType.get(i);
+        for (var i = 0; i < plantillasYGenericasModel.plantillasType.count; i++) {
+            var item = plantillasYGenericasModel.plantillasType.get(i);
             map[item.name] = ":/Assets/Code/CPlusPlus/Plantillas y genericas/" + item.name + ".txt";
             topics.push(item.name);
         }
@@ -145,24 +143,13 @@ Window {
             map[item.name] = ":/Assets/Code/CPlusPlus/Iteradores/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < stdAlgoritmosModel.stdAlgoritmosType.count; i++) {
-            var item = stdAlgoritmosModel.stdAlgoritmosType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/StdAlgoritmos/" + item.name + ".txt";
+        for (var i = 0; i < stdAlgoritmosModel.stdAlgorithmsType.count; i++) {
+            var item = stdAlgoritmosModel.stdAlgorithmsType.get(i);
+            map[item.name] = ":/Assets/Code/CPlusPlus/Std Algoritmos/" + item.name + ".txt";
             topics.push(item.name);
         }
-        for (var i = 0; i < corutinasModel.corutinasType.count; i++) {
-            var item = corutinasModel.corutinasType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Corutinas/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-
 
         combinedTopics = topics;
-        console.log("=================================");
-        for (var key in map) {
-            console.log("=================================");
-            console.log(key, map[key]);
-        }
         return map;
     }
 

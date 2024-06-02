@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Arreglos Din醡icos en C++
+### Arreglos Din谩micos en C++
 
-Los arreglos din醡icos en C++ permiten la gesti髇 flexible de la memoria, adapt醤dose a necesidades de tama駉 que no se pueden determinar en tiempo de compilaci髇. A diferencia de los arreglos est醫icos, cuyo tama駉 es fijo, los arreglos din醡icos pueden redimensionarse en tiempo de ejecuci髇. Esto se logra mediante la asignaci髇 y liberaci髇 manual de memoria en el heap.
+Los arreglos din谩micos en C++ permiten la gesti贸n flexible de la memoria, adapt谩ndose a necesidades de tama帽o que no se pueden determinar en tiempo de compilaci贸n. A diferencia de los arreglos est谩ticos, cuyo tama帽o es fijo, los arreglos din谩micos pueden redimensionarse en tiempo de ejecuci贸n. Esto se logra mediante la asignaci贸n y liberaci贸n manual de memoria en el heap.
 
-#### Declaraci髇 y Uso B醩ico
+#### Declaraci贸n y Uso B谩sico
 
-##### Asignaci髇 y Liberaci髇 de Memoria con `new` y `delete[]`
+##### Asignaci贸n y Liberaci贸n de Memoria con `new` y `delete[]`
 
-Para manejar arreglos din醡icos en C++, se utilizan los operadores `new[]` y `delete[]`.
+Para manejar arreglos din谩micos en C++, se utilizan los operadores `new[]` y `delete[]`.
 
 ```cpp
 #include <iostream>
@@ -32,10 +32,10 @@ int main() {
 }
 ```
 
-#### Redimensionamiento de Arreglos Din醡icos
+#### Redimensionamiento de Arreglos Din谩micos
 
-Dado que los arreglos din醡icos no pueden cambiar de tama駉 una vez asignados, para redimensionar un arreglo se debe:
-1. Asignar un nuevo bloque de memoria de mayor tama駉.
+Dado que los arreglos din谩micos no pueden cambiar de tama帽o una vez asignados, para redimensionar un arreglo se debe:
+1. Asignar un nuevo bloque de memoria de mayor tama帽o.
 2. Copiar los elementos existentes al nuevo bloque.
 3. Liberar el bloque de memoria original.
 
@@ -54,7 +54,7 @@ int main() {
         arr[i] = i * 10;
     }
 
-    // Nuevo tama駉 del arreglo
+    // Nuevo tama帽o del arreglo
     int newSize = 10;
     int* newArr = new int[newSize]; // Asignar memoria para el nuevo arreglo
 
@@ -83,13 +83,13 @@ int main() {
 }
 ```
 
-### Arreglos Din醡icos con Clases
+### Arreglos Din谩micos con Clases
 
-#### Uso de Clases para Encapsular Arreglos Din醡icos
+#### Uso de Clases para Encapsular Arreglos Din谩micos
 
-Encapsular la gesti髇 de arreglos din醡icos dentro de una clase es una buena pr醕tica que mejora la legibilidad y mantenibilidad del c骴igo.
+Encapsular la gesti贸n de arreglos din谩micos dentro de una clase es una buena pr谩ctica que mejora la legibilidad y mantenibilidad del c贸digo.
 
-##### Declaraci髇 en el Archivo de Cabecera (.h)
+##### Declaraci贸n en el Archivo de Cabecera (.h)
 
 ```cpp
 // ArregloDinamico.h
@@ -112,7 +112,7 @@ private:
 #endif // ARREGLODINAMICO_H
 ```
 
-##### Definici髇 en el Archivo de Implementaci髇 (.cpp)
+##### Definici贸n en el Archivo de Implementaci贸n (.cpp)
 
 ```cpp
 // ArregloDinamico.cpp
@@ -150,7 +150,7 @@ void ArregloDinamico::mostrar() const {
 }
 ```
 
-##### Funci髇 Principal
+##### Funci贸n Principal
 
 ```cpp
 #include <iostream>
@@ -167,11 +167,11 @@ int main() {
 }
 ```
 
-### Uso de `std::vector` para Arreglos Din醡icos
+### Uso de `std::vector` para Arreglos Din谩micos
 
-Aunque manejar la memoria manualmente es una habilidad importante, la biblioteca est醤dar de C++ proporciona `std::vector`, que es una implementaci髇 optimizada y segura de un arreglo din醡ico.
+Aunque manejar la memoria manualmente es una habilidad importante, la biblioteca est谩ndar de C++ proporciona `std::vector`, que es una implementaci贸n optimizada y segura de un arreglo din谩mico.
 
-#### Ejemplo B醩ico de `std::vector`
+#### Ejemplo B谩sico de `std::vector`
 
 ```cpp
 #include <iostream>
@@ -194,25 +194,25 @@ int main() {
 
 #### Ventajas de `std::vector`
 
-- **Redimensionamiento autom醫ico**: `std::vector` gestiona la memoria y se redimensiona autom醫icamente seg鷑 sea necesario.
-- **Seguridad y facilidad de uso**: Proporciona m閠odos y operadores que facilitan el manejo de datos.
-- **Compatibilidad con algoritmos STL**: `std::vector` funciona perfectamente con los algoritmos de la biblioteca est醤dar.
+- **Redimensionamiento autom谩tico**: `std::vector` gestiona la memoria y se redimensiona autom谩ticamente seg煤n sea necesario.
+- **Seguridad y facilidad de uso**: Proporciona m茅todos y operadores que facilitan el manejo de datos.
+- **Compatibilidad con algoritmos STL**: `std::vector` funciona perfectamente con los algoritmos de la biblioteca est谩ndar.
 
-### Conclusi髇
+### Conclusi贸n
 
-El manejo de arreglos din醡icos en C++ permite una mayor flexibilidad en la gesti髇 de la memoria. Aunque es crucial comprender c髆o funcionan `new[]` y `delete[]` para la asignaci髇 y liberaci髇 manual de memoria, el uso de `std::vector` es generalmente preferible por su simplicidad y eficiencia. Encapsular la l骻ica de manejo de arreglos din醡icos dentro de clases puede mejorar la estructura y mantenibilidad del c骴igo.
+El manejo de arreglos din谩micos en C++ permite una mayor flexibilidad en la gesti贸n de la memoria. Aunque es crucial comprender c贸mo funcionan `new[]` y `delete[]` para la asignaci贸n y liberaci贸n manual de memoria, el uso de `std::vector` es generalmente preferible por su simplicidad y eficiencia. Encapsular la l贸gica de manejo de arreglos din谩micos dentro de clases puede mejorar la estructura y mantenibilidad del c贸digo.
 <---FILES--->
-Asignaci髇 y Liberaci髇 de Memoria con `new` y `delete[]`
-Asignaci髇 y Liberaci髇 de Memoria con `new` y `delete[]` Result
+Asignaci贸n y Liberaci贸n de Memoria con `new` y `delete[]`
+Asignaci贸n y Liberaci贸n de Memoria con `new` y `delete[]` Result
 Ejemplo de Redimensionamiento
 Ejemplo de Redimensionamiento Result
-Declaraci髇 en el Archivo de Cabecera (.h)
-Declaraci髇 en el Archivo de Cabecera (.h) Result
-Definici髇 en el Archivo de Implementaci髇 (.cpp)
-Definici髇 en el Archivo de Implementaci髇 (.cpp) Result
-Funci髇 Principal
-Funci髇 Principal Result
-<---Asignaci髇 y Liberaci髇 de Memoria con `new` y `delete[]`--->
+Declaraci贸n en el Archivo de Cabecera (.h)
+Declaraci贸n en el Archivo de Cabecera (.h) Result
+Definici贸n en el Archivo de Implementaci贸n (.cpp)
+Definici贸n en el Archivo de Implementaci贸n (.cpp) Result
+Funci贸n Principal
+Funci贸n Principal Result
+<---Asignaci贸n y Liberaci贸n de Memoria con `new` y `delete[]`--->
 ```cpp
 #include <iostream>
 
@@ -234,7 +234,7 @@ int main() {
     delete[] arr; // Liberar la memoria asignada para el arreglo
     return 0;
 }
-<---Asignaci髇 y Liberaci髇 de Memoria con `new` y `delete[]` Result--->
+<---Asignaci贸n y Liberaci贸n de Memoria con `new` y `delete[]` Result--->
 <---Ejemplo de Redimensionamiento--->
 ```cpp
 #include <iostream>
@@ -249,7 +249,7 @@ int main() {
         arr[i] = i * 10;
     }
 
-    // Nuevo tama駉 del arreglo
+    // Nuevo tama帽o del arreglo
     int newSize = 10;
     int* newArr = new int[newSize]; // Asignar memoria para el nuevo arreglo
 
@@ -277,7 +277,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Redimensionamiento Result--->
-<---Declaraci髇 en el Archivo de Cabecera (.h)--->
+<---Declaraci贸n en el Archivo de Cabecera (.h)--->
 ```cpp
 // ArregloDinamico.h
 #ifndef ARREGLODINAMICO_H
@@ -297,8 +297,8 @@ private:
 };
 
 #endif // ARREGLODINAMICO_H
-<---Declaraci髇 en el Archivo de Cabecera (.h) Result--->
-<---Definici髇 en el Archivo de Implementaci髇 (.cpp)--->
+<---Declaraci贸n en el Archivo de Cabecera (.h) Result--->
+<---Definici贸n en el Archivo de Implementaci贸n (.cpp)--->
 ```cpp
 // ArregloDinamico.cpp
 #include "ArregloDinamico.h"
@@ -333,8 +333,8 @@ void ArregloDinamico::mostrar() const {
     }
     std::cout << std::endl;
 }
-<---Definici髇 en el Archivo de Implementaci髇 (.cpp) Result--->
-<---Funci髇 Principal--->
+<---Definici贸n en el Archivo de Implementaci贸n (.cpp) Result--->
+<---Funci贸n Principal--->
 ```cpp
 #include <iostream>
 #include "ArregloDinamico.h"
@@ -365,4 +365,4 @@ int main() {
 
     return 0;
 }
-<---Funci髇 Principal Result--->
+<---Funci贸n Principal Result--->

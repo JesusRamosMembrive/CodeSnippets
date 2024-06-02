@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Uso de `break` y `continue` en Bucles en C++
 
-Los comandos `break` y `continue` son declaraciones de control de flujo que alteran la ejecución normal de los bucles. `break` se utiliza para salir de un bucle prematuramente, mientras que `continue` se utiliza para saltar la iteración actual y pasar a la siguiente iteración del bucle.
+Los comandos `break` y `continue` son declaraciones de control de flujo que alteran la ejecuciÃ³n normal de los bucles. `break` se utiliza para salir de un bucle prematuramente, mientras que `continue` se utiliza para saltar la iteraciÃ³n actual y pasar a la siguiente iteraciÃ³n del bucle.
 
 #### `break`
 
-La declaración `break` se utiliza para terminar el bucle más interno que la contiene. Cuando se ejecuta `break`, el control del programa sale del bucle y continúa con la ejecución del código que sigue al bucle.
+La declaraciÃ³n `break` se utiliza para terminar el bucle mÃ¡s interno que la contiene. Cuando se ejecuta `break`, el control del programa sale del bucle y continÃºa con la ejecuciÃ³n del cÃ³digo que sigue al bucle.
 
 ##### Sintaxis
 
@@ -24,18 +24,18 @@ int main() {
         if (i == 5) {
             break; // Sale del bucle cuando i es 5
         }
-        cout << "Iteración " << i << endl;
+        cout << "IteraciÃ³n " << i << endl;
     }
     cout << "Bucle terminado" << endl;
     return 0;
 }
 ```
 
-En este ejemplo, el bucle `for` se detiene cuando `i` es igual a 5, gracias a la declaración `break`.
+En este ejemplo, el bucle `for` se detiene cuando `i` es igual a 5, gracias a la declaraciÃ³n `break`.
 
 #### `continue`
 
-La declaración `continue` se utiliza para saltar la iteración actual de un bucle y pasar a la siguiente iteración. En un bucle `for`, `continue` hace que el control del programa salte a la actualización de la variable de control. En un bucle `while` o `do-while`, salta directamente a la evaluación de la condición.
+La declaraciÃ³n `continue` se utiliza para saltar la iteraciÃ³n actual de un bucle y pasar a la siguiente iteraciÃ³n. En un bucle `for`, `continue` hace que el control del programa salte a la actualizaciÃ³n de la variable de control. En un bucle `while` o `do-while`, salta directamente a la evaluaciÃ³n de la condiciÃ³n.
 
 ##### Sintaxis
 
@@ -52,20 +52,20 @@ using namespace std;
 int main() {
     for (int i = 0; i < 10; ++i) {
         if (i % 2 == 0) {
-            continue; // Salta los números pares
+            continue; // Salta los nÃºmeros pares
         }
-        cout << "Iteración " << i << endl;
+        cout << "IteraciÃ³n " << i << endl;
     }
     cout << "Bucle terminado" << endl;
     return 0;
 }
 ```
 
-En este ejemplo, el bucle `for` salta las iteraciones donde `i` es par, debido a la declaración `continue`.
+En este ejemplo, el bucle `for` salta las iteraciones donde `i` es par, debido a la declaraciÃ³n `continue`.
 
 #### Uso de `break` y `continue` en Bucles Anidados
 
-Cuando se utilizan `break` y `continue` en bucles anidados, afectan al bucle más interno que las contiene.
+Cuando se utilizan `break` y `continue` en bucles anidados, afectan al bucle mÃ¡s interno que las contiene.
 
 ##### Ejemplo con Bucles Anidados
 
@@ -77,7 +77,7 @@ int main() {
     for (int i = 0; i < 5; ++i) {
         for (int j = 0; j < 5; ++j) {
             if (j == 2) {
-                continue; // Salta la iteración actual del bucle interno
+                continue; // Salta la iteraciÃ³n actual del bucle interno
             }
             if (i == 3) {
                 break; // Sale del bucle interno cuando i es 3
@@ -91,18 +91,18 @@ int main() {
 ```
 
 En este ejemplo:
-- `continue` se utiliza para saltar la iteración actual del bucle interno cuando `j` es 2.
-- `break` se utiliza para salir del bucle interno cuando `i` es 3, pero el bucle externo sigue ejecutándose.
+- `continue` se utiliza para saltar la iteraciÃ³n actual del bucle interno cuando `j` es 2.
+- `break` se utiliza para salir del bucle interno cuando `i` es 3, pero el bucle externo sigue ejecutÃ¡ndose.
 
-### Consideraciones y Buenas Prácticas
+### Consideraciones y Buenas PrÃ¡cticas
 
-- **Evitar el uso excesivo:** Aunque `break` y `continue` son útiles, un uso excesivo puede hacer que el código sea difícil de leer y mantener. Úsalos con moderación y solo cuando realmente simplifiquen el control del flujo.
-- **Claritad del Código:** Asegúrate de que el uso de `break` y `continue` no comprometa la claridad del código. A veces, es mejor reestructurar el bucle o usar condiciones más claras que depender de estas declaraciones.
-- **Documentación:** Documenta claramente el propósito de `break` y `continue` en tu código, especialmente en bucles complejos, para que otros desarrolladores (o tú mismo en el futuro) puedan entender fácilmente el flujo del programa.
+- **Evitar el uso excesivo:** Aunque `break` y `continue` son Ãºtiles, un uso excesivo puede hacer que el cÃ³digo sea difÃ­cil de leer y mantener. Ãšsalos con moderaciÃ³n y solo cuando realmente simplifiquen el control del flujo.
+- **Claritad del CÃ³digo:** AsegÃºrate de que el uso de `break` y `continue` no comprometa la claridad del cÃ³digo. A veces, es mejor reestructurar el bucle o usar condiciones mÃ¡s claras que depender de estas declaraciones.
+- **DocumentaciÃ³n:** Documenta claramente el propÃ³sito de `break` y `continue` en tu cÃ³digo, especialmente en bucles complejos, para que otros desarrolladores (o tÃº mismo en el futuro) puedan entender fÃ¡cilmente el flujo del programa.
 
 ### Ejemplo Completo
 
-A continuación, un ejemplo más complejo que utiliza tanto `break` como `continue` en un contexto más realista:
+A continuaciÃ³n, un ejemplo mÃ¡s complejo que utiliza tanto `break` como `continue` en un contexto mÃ¡s realista:
 
 ```cpp
 #include <iostream>
@@ -114,12 +114,12 @@ int main() {
 
     for (int numero : numeros) {
         if (numero % 2 == 0) {
-            continue; // Saltar los números pares
+            continue; // Saltar los nÃºmeros pares
         }
         if (numero > 7) {
-            break; // Terminar el bucle si el número es mayor que 7
+            break; // Terminar el bucle si el nÃºmero es mayor que 7
         }
-        cout << "Número impar menor o igual a 7: " << numero << endl;
+        cout << "NÃºmero impar menor o igual a 7: " << numero << endl;
     }
     cout << "Proceso terminado" << endl;
 
@@ -128,12 +128,12 @@ int main() {
 ```
 
 En este ejemplo:
-- `continue` se utiliza para saltar los números pares.
-- `break` se utiliza para salir del bucle cuando se encuentra un número mayor que 7.
+- `continue` se utiliza para saltar los nÃºmeros pares.
+- `break` se utiliza para salir del bucle cuando se encuentra un nÃºmero mayor que 7.
 
-### Conclusión
+### ConclusiÃ³n
 
-Las declaraciones `break` y `continue` son herramientas poderosas para controlar el flujo de bucles en C++. Entender cómo y cuándo usarlas de manera efectiva puede mejorar significativamente la flexibilidad y eficiencia del código, permitiendo a los desarrolladores manejar casos especiales y optimizar el rendimiento de sus programas.
+Las declaraciones `break` y `continue` son herramientas poderosas para controlar el flujo de bucles en C++. Entender cÃ³mo y cuÃ¡ndo usarlas de manera efectiva puede mejorar significativamente la flexibilidad y eficiencia del cÃ³digo, permitiendo a los desarrolladores manejar casos especiales y optimizar el rendimiento de sus programas.
 <---FILES--->
 Sintaxis
 Sintaxis Result
@@ -157,7 +157,7 @@ int main() {
         if (i == 5) {
             break; // Sale del bucle cuando i es 5
         }
-        cout << "Iteración " << i << endl;
+        cout << "IteraciÃ³n " << i << endl;
     }
     cout << "Bucle terminado" << endl;
     return 0;
@@ -171,9 +171,9 @@ using namespace std;
 int main() {
     for (int i = 0; i < 10; ++i) {
         if (i % 2 == 0) {
-            continue; // Salta los números pares
+            continue; // Salta los nÃºmeros pares
         }
-        cout << "Iteración " << i << endl;
+        cout << "IteraciÃ³n " << i << endl;
     }
     cout << "Bucle terminado" << endl;
     return 0;
@@ -188,7 +188,7 @@ int main() {
     for (int i = 0; i < 5; ++i) {
         for (int j = 0; j < 5; ++j) {
             if (j == 2) {
-                continue; // Salta la iteración actual del bucle interno
+                continue; // Salta la iteraciÃ³n actual del bucle interno
             }
             if (i == 3) {
                 break; // Sale del bucle interno cuando i es 3
@@ -209,12 +209,12 @@ int main() {
 
     for (int numero : numeros) {
         if (numero % 2 == 0) {
-            continue; // Saltar los números pares
+            continue; // Saltar los nÃºmeros pares
         }
         if (numero > 7) {
-            break; // Terminar el bucle si el número es mayor que 7
+            break; // Terminar el bucle si el nÃºmero es mayor que 7
         }
-        cout << "Número impar menor o igual a 7: " << numero << endl;
+        cout << "NÃºmero impar menor o igual a 7: " << numero << endl;
     }
     cout << "Proceso terminado" << endl;
 

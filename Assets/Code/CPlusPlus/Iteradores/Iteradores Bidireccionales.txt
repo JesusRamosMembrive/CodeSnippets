@@ -1,20 +1,20 @@
 <---EXPLANATION--->
 ### Iteradores Bidireccionales en C++
 
-Los **iteradores bidireccionales** son una categorÌa de iteradores en C++ que permiten recorrer una secuencia en ambas direcciones: hacia adelante y hacia atr·s. A diferencia de los iteradores de avance, los iteradores bidireccionales soportan tanto el incremento como el decremento, lo que los hace m·s flexibles y potentes para manipular contenedores.
+Los **iteradores bidireccionales** son una categor√≠a de iteradores en C++ que permiten recorrer una secuencia en ambas direcciones: hacia adelante y hacia atr√°s. A diferencia de los iteradores de avance, los iteradores bidireccionales soportan tanto el incremento como el decremento, lo que los hace m√°s flexibles y potentes para manipular contenedores.
 
-#### CaracterÌsticas de los Iteradores Bidireccionales
+#### Caracter√≠sticas de los Iteradores Bidireccionales
 
 1. **Lectura y Escritura:** Permiten leer y escribir elementos en la secuencia.
 2. **Bidireccionalidad:** Permiten avanzar y retroceder en la secuencia.
-3. **Multipasada:** Se garantiza que se pueden recorrer m˙ltiples veces, lo que significa que se pueden copiar y cada copia puede recorrer la secuencia independientemente.
+3. **Multipasada:** Se garantiza que se pueden recorrer m√∫ltiples veces, lo que significa que se pueden copiar y cada copia puede recorrer la secuencia independientemente.
 4. **Igualdad y Desigualdad:** Pueden compararse con otros iteradores bidireccionales usando `==` y `!=`.
 
 #### Uso de Iteradores Bidireccionales
 
-Los iteradores bidireccionales son com˙nmente utilizados en contenedores como `std::list`, `std::set`, y `std::map`.
+Los iteradores bidireccionales son com√∫nmente utilizados en contenedores como `std::list`, `std::set`, y `std::map`.
 
-##### Ejemplo B·sico con `std::list`
+##### Ejemplo B√°sico con `std::list`
 
 ```cpp
 #include <iostream>
@@ -34,8 +34,8 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer y mostrar los elementos hacia atr·s
-    std::cout << "Atr·s: ";
+    // Recorrer y mostrar los elementos hacia atr√°s
+    std::cout << "Atr√°s: ";
     it = lst.end();
     do {
         --it;
@@ -49,7 +49,7 @@ int main() {
 
 En este ejemplo:
 - `std::list<int>::iterator` es el tipo de iterador bidireccional para `std::list<int>`.
-- El iterador se usa para recorrer la lista tanto hacia adelante como hacia atr·s.
+- El iterador se usa para recorrer la lista tanto hacia adelante como hacia atr√°s.
 
 #### Algoritmos de la STL con Iteradores Bidireccionales
 
@@ -105,8 +105,8 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer y mostrar los elementos hacia atr·s
-    std::cout << "Atr·s: ";
+    // Recorrer y mostrar los elementos hacia atr√°s
+    std::cout << "Atr√°s: ";
     it = lst.cend();
     do {
         --it;
@@ -120,13 +120,13 @@ int main() {
 
 En este ejemplo:
 - `std::list<int>::const_iterator` es el tipo de iterador constante bidireccional para `std::list<int>`.
-- El iterador constante se usa para recorrer la lista tanto hacia adelante como hacia atr·s sin modificar los elementos.
+- El iterador constante se usa para recorrer la lista tanto hacia adelante como hacia atr√°s sin modificar los elementos.
 
-### ImplementaciÛn Personalizada de un Iterador Bidireccional
+### Implementaci√≥n Personalizada de un Iterador Bidireccional
 
-Si es necesario, se pueden definir iteradores bidireccionales personalizados para estructuras de datos no est·ndar.
+Si es necesario, se pueden definir iteradores bidireccionales personalizados para estructuras de datos no est√°ndar.
 
-##### Ejemplo de ImplementaciÛn Personalizada
+##### Ejemplo de Implementaci√≥n Personalizada
 
 ```cpp
 #include <iostream>
@@ -187,8 +187,8 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer y mostrar los elementos hacia atr·s
-    std::cout << "Atr·s: ";
+    // Recorrer y mostrar los elementos hacia atr√°s
+    std::cout << "Atr√°s: ";
     for (auto it = itEnd; it != itBegin;) {
         --it;
         std::cout << *it << " ";
@@ -200,21 +200,21 @@ int main() {
 ```
 
 En este ejemplo:
-- `BidirectionalIterator` es un iterador bidireccional personalizado que puede recorrer un `std::vector<int>` tanto hacia adelante como hacia atr·s.
+- `BidirectionalIterator` es un iterador bidireccional personalizado que puede recorrer un `std::vector<int>` tanto hacia adelante como hacia atr√°s.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Los iteradores bidireccionales son una herramienta flexible y poderosa en C++ que permiten recorrer y manipular elementos en una secuencia en ambas direcciones. Proporcionan una interfaz unificada para acceder y modificar elementos en diferentes tipos de contenedores y se integran bien con los algoritmos de la STL. Comprender cÛmo utilizar y, si es necesario, implementar iteradores bidireccionales personalizados es esencial para escribir cÛdigo C++ robusto y eficiente.
+Los iteradores bidireccionales son una herramienta flexible y poderosa en C++ que permiten recorrer y manipular elementos en una secuencia en ambas direcciones. Proporcionan una interfaz unificada para acceder y modificar elementos en diferentes tipos de contenedores y se integran bien con los algoritmos de la STL. Comprender c√≥mo utilizar y, si es necesario, implementar iteradores bidireccionales personalizados es esencial para escribir c√≥digo C++ robusto y eficiente.
 <---FILES--->
-Ejemplo B·sico con `std::list`
-Ejemplo B·sico con `std::list` Result
+Ejemplo B√°sico con `std::list`
+Ejemplo B√°sico con `std::list` Result
 Ejemplo con `std::reverse`
 Ejemplo con `std::reverse` Result
 Ejemplo de Iteradores Constantes
 Ejemplo de Iteradores Constantes Result
-Ejemplo de ImplementaciÛn Personalizada
-Ejemplo de ImplementaciÛn Personalizada Result
-<---Ejemplo B·sico con `std::list`--->
+Ejemplo de Implementaci√≥n Personalizada
+Ejemplo de Implementaci√≥n Personalizada Result
+<---Ejemplo B√°sico con `std::list`--->
 ```cpp
 #include <iostream>
 #include <list>
@@ -233,8 +233,8 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer y mostrar los elementos hacia atr·s
-    std::cout << "Atr·s: ";
+    // Recorrer y mostrar los elementos hacia atr√°s
+    std::cout << "Atr√°s: ";
     it = lst.end();
     do {
         --it;
@@ -244,7 +244,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B·sico con `std::list` Result--->
+<---Ejemplo B√°sico con `std::list` Result--->
 <---Ejemplo con `std::reverse`--->
 ```cpp
 #include <iostream>
@@ -285,8 +285,8 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer y mostrar los elementos hacia atr·s
-    std::cout << "Atr·s: ";
+    // Recorrer y mostrar los elementos hacia atr√°s
+    std::cout << "Atr√°s: ";
     it = lst.cend();
     do {
         --it;
@@ -297,7 +297,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Iteradores Constantes Result--->
-<---Ejemplo de ImplementaciÛn Personalizada--->
+<---Ejemplo de Implementaci√≥n Personalizada--->
 ```cpp
 #include <iostream>
 #include <iterator>
@@ -357,8 +357,8 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Recorrer y mostrar los elementos hacia atr·s
-    std::cout << "Atr·s: ";
+    // Recorrer y mostrar los elementos hacia atr√°s
+    std::cout << "Atr√°s: ";
     for (auto it = itEnd; it != itBegin;) {
         --it;
         std::cout << *it << " ";
@@ -367,4 +367,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de ImplementaciÛn Personalizada Result--->
+<---Ejemplo de Implementaci√≥n Personalizada Result--->

@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### Namespaces en Archivos de Cabecera y Buenas Pr醕ticas
+### Namespaces en Archivos de Cabecera y Buenas Pr谩cticas
 
-Utilizar namespaces en archivos de cabecera (`.h`) en C++ es una pr醕tica com鷑 y 鷗il para organizar el c骴igo y evitar conflictos de nombres. Sin embargo, es crucial seguir buenas pr醕ticas para evitar problemas de ambig黣dad y asegurar la claridad y mantenibilidad del c骴igo.
+Utilizar namespaces en archivos de cabecera (`.h`) en C++ es una pr谩ctica com煤n y 煤til para organizar el c贸digo y evitar conflictos de nombres. Sin embargo, es crucial seguir buenas pr谩cticas para evitar problemas de ambig眉edad y asegurar la claridad y mantenibilidad del c贸digo.
 
 #### Uso de Namespaces en Archivos de Cabecera
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 // MiClase.h
@@ -36,13 +36,13 @@ namespace MiNamespace {
 
 En este ejemplo:
 - El archivo de cabecera `MiClase.h` define la clase `MiClase` dentro del namespace `MiNamespace`.
-- El archivo de implementaci髇 `MiClase.cpp` proporciona la implementaci髇 del m閠odo `mostrarMensaje` dentro del mismo namespace.
+- El archivo de implementaci贸n `MiClase.cpp` proporciona la implementaci贸n del m茅todo `mostrarMensaje` dentro del mismo namespace.
 
-### Buenas Pr醕ticas para Namespaces en Archivos de Cabecera
+### Buenas Pr谩cticas para Namespaces en Archivos de Cabecera
 
 #### 1. Evitar `using namespace` en Archivos de Cabecera
 
-El uso de `using namespace` en archivos de cabecera puede causar conflictos de nombres y ambig黣dades cuando otros archivos incluyen ese archivo de cabecera. Esto puede llevar a errores dif韈iles de depurar.
+El uso de `using namespace` en archivos de cabecera puede causar conflictos de nombres y ambig眉edades cuando otros archivos incluyen ese archivo de cabecera. Esto puede llevar a errores dif铆ciles de depurar.
 
 ##### Ejemplo a Evitar
 
@@ -61,7 +61,7 @@ namespace MiNamespace {
 
 ##### Problema Potencial
 
-Si `MiClase.h` se incluye en varios archivos, cualquier nombre en el namespace `std` puede causar conflictos de nombres, especialmente si otros archivos tambi閚 utilizan `using namespace std`.
+Si `MiClase.h` se incluye en varios archivos, cualquier nombre en el namespace `std` puede causar conflictos de nombres, especialmente si otros archivos tambi茅n utilizan `using namespace std`.
 
 #### 2. Usar Declaraciones Adelantadas
 
@@ -98,7 +98,7 @@ namespace MiNamespace {
 
 #### 3. Mantener Namespaces Consistentes
 
-Aseg鷕ese de que la definici髇 e implementaci髇 de clases y funciones permanezcan dentro del mismo namespace. Esto facilita la organizaci髇 y evita errores de ambig黣dad.
+Aseg煤rese de que la definici贸n e implementaci贸n de clases y funciones permanezcan dentro del mismo namespace. Esto facilita la organizaci贸n y evita errores de ambig眉edad.
 
 ##### Ejemplo
 
@@ -129,9 +129,9 @@ namespace MiNamespace {
 }
 ```
 
-#### 4. Utilizar Guardas de Inclusi髇
+#### 4. Utilizar Guardas de Inclusi贸n
 
-Siempre utilice guardas de inclusi髇 (`#ifndef`, `#define`, `#endif`) para evitar problemas de m鷏tiples inclusiones.
+Siempre utilice guardas de inclusi贸n (`#ifndef`, `#define`, `#endif`) para evitar problemas de m煤ltiples inclusiones.
 
 ##### Ejemplo
 
@@ -150,9 +150,9 @@ namespace MiNamespace {
 #endif // MICLASE_H
 ```
 
-#### 5. Documentaci髇 y Comentarios
+#### 5. Documentaci贸n y Comentarios
 
-Documente adecuadamente el prop髎ito de cada namespace y sus componentes para facilitar la comprensi髇 y el mantenimiento del c骴igo.
+Documente adecuadamente el prop贸sito de cada namespace y sus componentes para facilitar la comprensi贸n y el mantenimiento del c贸digo.
 
 ##### Ejemplo
 
@@ -166,7 +166,7 @@ namespace MiNamespace {
     // Clase MiClase: Representa una clase de ejemplo
     class MiClase {
     public:
-        // Muestra un mensaje en la salida est醤dar
+        // Muestra un mensaje en la salida est谩ndar
         void mostrarMensaje();
     };
 }
@@ -176,7 +176,7 @@ namespace MiNamespace {
 
 #### 6. Evitar Dependencias Circulares
 
-Dise馿 su c骴igo para evitar dependencias circulares, que pueden causar problemas de compilaci髇 y dificultar el mantenimiento.
+Dise帽e su c贸digo para evitar dependencias circulares, que pueden causar problemas de compilaci贸n y dificultar el mantenimiento.
 
 ##### Ejemplo de Dependencia Circular
 
@@ -188,7 +188,7 @@ Dise馿 su c骴igo para evitar dependencias circulares, que pueden causar problema
 #include "ClaseB.h" // Dependencia circular potencial
 
 class ClaseA {
-    ClaseB b; // Uso de ClaseB antes de su definici髇 completa
+    ClaseB b; // Uso de ClaseB antes de su definici贸n completa
 public:
     void metodo();
 };
@@ -204,7 +204,7 @@ public:
 #include "ClaseA.h" // Dependencia circular potencial
 
 class ClaseB {
-    ClaseA a; // Uso de ClaseA antes de su definici髇 completa
+    ClaseA a; // Uso de ClaseA antes de su definici贸n completa
 public:
     void metodo();
 };
@@ -212,7 +212,7 @@ public:
 #endif // CLASEB_H
 ```
 
-##### Soluci髇
+##### Soluci贸n
 
 Utilice declaraciones adelantadas para resolver dependencias circulares.
 
@@ -221,7 +221,7 @@ Utilice declaraciones adelantadas para resolver dependencias circulares.
 #ifndef CLASEA_H
 #define CLASEA_H
 
-class ClaseB; // Declaraci髇 adelantada
+class ClaseB; // Declaraci贸n adelantada
 
 class ClaseA {
     ClaseB* b; // Puntero o referencia a ClaseB
@@ -237,7 +237,7 @@ public:
 #ifndef CLASEB_H
 #define CLASEB_H
 
-class ClaseA; // Declaraci髇 adelantada
+class ClaseA; // Declaraci贸n adelantada
 
 class ClaseB {
     ClaseA* a; // Puntero o referencia a ClaseA
@@ -248,12 +248,12 @@ public:
 #endif // CLASEB_H
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-El uso adecuado de namespaces en archivos de cabecera en C++ es crucial para mantener un c骴igo limpio, organizado y libre de conflictos de nombres. Evitar `using namespace` en archivos de cabecera, utilizar guardas de inclusi髇, mantener namespaces consistentes y documentar adecuadamente son buenas pr醕ticas que mejoran la claridad y mantenibilidad del c骴igo. Adem醩, manejar las dependencias de manera eficiente previene problemas de compilaci髇 y facilita el desarrollo en proyectos grandes.
+El uso adecuado de namespaces en archivos de cabecera en C++ es crucial para mantener un c贸digo limpio, organizado y libre de conflictos de nombres. Evitar `using namespace` en archivos de cabecera, utilizar guardas de inclusi贸n, mantener namespaces consistentes y documentar adecuadamente son buenas pr谩cticas que mejoran la claridad y mantenibilidad del c贸digo. Adem谩s, manejar las dependencias de manera eficiente previene problemas de compilaci贸n y facilita el desarrollo en proyectos grandes.
 <---FILES--->
-Ejemplo B醩ico
-Ejemplo B醩ico Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
 Ejemplo a Evitar
 Ejemplo a Evitar Result
 Problema Potencial
@@ -262,9 +262,9 @@ Ejemplo
 Ejemplo Result
 Ejemplo de Dependencia Circular
 Ejemplo de Dependencia Circular Result
-Soluci髇
-Soluci髇 Result
-<---Ejemplo B醩ico--->
+Soluci贸n
+Soluci贸n Result
+<---Ejemplo B谩sico--->
 ```cpp
 // MiClase.h
 #ifndef MICLASE_H
@@ -288,7 +288,7 @@ namespace MiNamespace {
         std::cout << "Hola desde MiClase" << std::endl;
     }
 }
-<---Ejemplo B醩ico Result--->
+<---Ejemplo B谩sico Result--->
 <---Ejemplo a Evitar--->
 ```cpp
 // MiClase.h
@@ -315,7 +315,7 @@ namespace MiNamespace {
     // Clase MiClase: Representa una clase de ejemplo
     class MiClase {
     public:
-        // Muestra un mensaje en la salida est醤dar
+        // Muestra un mensaje en la salida est谩ndar
         void mostrarMensaje();
     };
 }
@@ -331,7 +331,7 @@ namespace MiNamespace {
 #include "ClaseB.h" // Dependencia circular potencial
 
 class ClaseA {
-    ClaseB b; // Uso de ClaseB antes de su definici髇 completa
+    ClaseB b; // Uso de ClaseB antes de su definici贸n completa
 public:
     void metodo();
 };
@@ -345,20 +345,20 @@ public:
 #include "ClaseA.h" // Dependencia circular potencial
 
 class ClaseB {
-    ClaseA a; // Uso de ClaseA antes de su definici髇 completa
+    ClaseA a; // Uso de ClaseA antes de su definici贸n completa
 public:
     void metodo();
 };
 
 #endif // CLASEB_H
 <---Ejemplo de Dependencia Circular Result--->
-<---Soluci髇--->
+<---Soluci贸n--->
 ```cpp
 // ClaseA.h
 #ifndef CLASEA_H
 #define CLASEA_H
 
-class ClaseB; // Declaraci髇 adelantada
+class ClaseB; // Declaraci贸n adelantada
 
 class ClaseA {
     ClaseB* b; // Puntero o referencia a ClaseB
@@ -372,7 +372,7 @@ public:
 #ifndef CLASEB_H
 #define CLASEB_H
 
-class ClaseA; // Declaraci髇 adelantada
+class ClaseA; // Declaraci贸n adelantada
 
 class ClaseB {
     ClaseA* a; // Puntero o referencia a ClaseA
@@ -381,4 +381,4 @@ public:
 };
 
 #endif // CLASEB_H
-<---Soluci髇 Result--->
+<---Soluci贸n Result--->

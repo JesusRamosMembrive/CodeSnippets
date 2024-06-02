@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Literales en C++
 
-Los literales en C++ son valores fijos que se utilizan directamente en el c骴igo para representar valores constantes. Estos literales pueden ser de varios tipos, incluyendo enteros, flotantes, caracteres y cadenas, y se pueden modificar con sufijos para especificar m醩 detalles sobre su tipo y precisi髇.
+Los literales en C++ son valores fijos que se utilizan directamente en el c贸digo para representar valores constantes. Estos literales pueden ser de varios tipos, incluyendo enteros, flotantes, caracteres y cadenas, y se pueden modificar con sufijos para especificar m谩s detalles sobre su tipo y precisi贸n.
 
 #### 1. **Literales Enteros**
 
-Los literales enteros pueden ser representados en varias bases: decimal, octal y hexadecimal. Adem醩, pueden tener sufijos para especificar su tipo.
+Los literales enteros pueden ser representados en varias bases: decimal, octal y hexadecimal. Adem谩s, pueden tener sufijos para especificar su tipo.
 
 ##### Sintaxis y Ejemplos
 
@@ -49,7 +49,7 @@ Los literales enteros pueden ser representados en varias bases: decimal, octal y
 
 #### 2. **Literales Flotantes**
 
-Los literales flotantes representan n鷐eros con punto decimal y pueden tener sufijos para especificar su precisi髇.
+Los literales flotantes representan n煤meros con punto decimal y pueden tener sufijos para especificar su precisi贸n.
 
 ##### Sintaxis y Ejemplos
 
@@ -58,7 +58,7 @@ Los literales flotantes representan n鷐eros con punto decimal y pueden tener suf
   float decimal = 3.14f;
   ```
 
-- **Notaci髇 Cient韋ica:** Utilizando `e` o `E` para indicar la potencia de 10.
+- **Notaci贸n Cient铆fica:** Utilizando `e` o `E` para indicar la potencia de 10.
   ```cpp
   double cientifico = 3.14e2; // 3.14 * 10^2 = 314.0
   ```
@@ -70,29 +70,29 @@ Los literales flotantes representan n鷐eros con punto decimal y pueden tener suf
   float flotante = 3.14f;
   ```
 
-- **`l` o `L`:** Especifica un n鷐ero de precisi髇 extendida (`long double`).
+- **`l` o `L`:** Especifica un n煤mero de precisi贸n extendida (`long double`).
   ```cpp
   long double largo = 3.14L;
   ```
 
-#### 3. **Literales de Car醕ter**
+#### 3. **Literales de Car谩cter**
 
-Los literales de car醕ter representan caracteres individuales y pueden ser especificados en varios formatos.
+Los literales de car谩cter representan caracteres individuales y pueden ser especificados en varios formatos.
 
 ##### Sintaxis y Ejemplos
 
-- **Car醕ter Simple:** Entre comillas simples.
+- **Car谩cter Simple:** Entre comillas simples.
   ```cpp
   char letra = 'A';
   ```
 
 - **Caracteres de Escape:** Utilizando secuencias de escape.
   ```cpp
-  char nuevaLinea = '\n'; // Nueva l韓ea
+  char nuevaLinea = '\n'; // Nueva l铆nea
   char tabulador = '\t';  // Tabulador
   ```
 
-- **Car醕ter Unicode:** Utilizando `\u` para c骴igo UTF-16 o `\U` para c骴igo UTF-32.
+- **Car谩cter Unicode:** Utilizando `\u` para c贸digo UTF-16 o `\U` para c贸digo UTF-32.
   ```cpp
   char16_t unicode16 = u'\u03A9'; // Omega en UTF-16
   char32_t unicode32 = U'\U000003A9'; // Omega en UTF-32
@@ -111,7 +111,7 @@ Los literales de cadena son secuencias de caracteres encerradas entre comillas d
 
 - **Cadena con Caracteres de Escape:**
   ```cpp
-  const char* multilinea = "L韓ea 1\nL韓ea 2";
+  const char* multilinea = "L铆nea 1\nL铆nea 2";
   ```
 
 - **Cadena Raw (sin procesar):** Utilizando `R"()"` para evitar el procesamiento de secuencias de escape.
@@ -143,7 +143,7 @@ Los literales booleanos representan valores verdaderos o falsos.
 
 ### Ejemplo Completo
 
-A continuaci髇, se presenta un programa que utiliza diversos literales en C++:
+A continuaci贸n, se presenta un programa que utiliza diversos literales en C++:
 
 ```cpp
 #include <iostream>
@@ -161,7 +161,7 @@ int main() {
     double doble = 2.718;
     long double largoDoble = 3.14L;
 
-    // Literales de car醕ter
+    // Literales de car谩cter
     char letra = 'A';
     char nuevaLinea = '\n';
     char16_t unicode16 = u'\u03A9';
@@ -188,9 +188,9 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Comprender los literales en C++ y c髆o usarlos correctamente es esencial para escribir c骴igo claro y eficiente. Los sufijos para los literales proporcionan una forma de especificar el tipo exacto de datos, lo que puede ser crucial para asegurar que el programa se comporte como se espera, especialmente cuando se trabaja con diferentes tipos de datos y precisiones.
+Comprender los literales en C++ y c贸mo usarlos correctamente es esencial para escribir c贸digo claro y eficiente. Los sufijos para los literales proporcionan una forma de especificar el tipo exacto de datos, lo que puede ser crucial para asegurar que el programa se comporte como se espera, especialmente cuando se trabaja con diferentes tipos de datos y precisiones.
 <---FILES--->
 Sintaxis y Ejemplos
 Sintaxis y Ejemplos Result
@@ -215,7 +215,7 @@ int main() {
     double doble = 2.718;
     long double largoDoble = 3.14L;
 
-    // Literales de car醕ter
+    // Literales de car谩cter
     char letra = 'A';
     char nuevaLinea = '\n';
     char16_t unicode16 = u'\u03A9';

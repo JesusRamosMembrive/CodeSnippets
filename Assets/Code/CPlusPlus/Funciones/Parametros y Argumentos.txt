@@ -1,76 +1,76 @@
 <---EXPLANATION--->
-### Par·metros y Argumentos en C++
+### Par√°metros y Argumentos en C++
 
-Los par·metros y argumentos son conceptos fundamentales en la programaciÛn de funciones. Los par·metros son variables en la definiciÛn de la funciÛn que act˙an como marcadores de posiciÛn para los valores que se pasar·n a la funciÛn cuando se llame. Los argumentos son los valores reales que se pasan a la funciÛn cuando se invoca.
+Los par√°metros y argumentos son conceptos fundamentales en la programaci√≥n de funciones. Los par√°metros son variables en la definici√≥n de la funci√≥n que act√∫an como marcadores de posici√≥n para los valores que se pasar√°n a la funci√≥n cuando se llame. Los argumentos son los valores reales que se pasan a la funci√≥n cuando se invoca.
 
-#### Par·metros
+#### Par√°metros
 
-Los par·metros se declaran en la definiciÛn de la funciÛn. Act˙an como variables locales dentro del cuerpo de la funciÛn, permitiendo que la funciÛn opere con los valores proporcionados en la llamada.
+Los par√°metros se declaran en la definici√≥n de la funci√≥n. Act√∫an como variables locales dentro del cuerpo de la funci√≥n, permitiendo que la funci√≥n opere con los valores proporcionados en la llamada.
 
-##### Tipos de Par·metros
+##### Tipos de Par√°metros
 
-1. **Par·metros por Valor**
-2. **Par·metros por Referencia**
-3. **Par·metros por Puntero**
-4. **Par·metros Predeterminados**
+1. **Par√°metros por Valor**
+2. **Par√°metros por Referencia**
+3. **Par√°metros por Puntero**
+4. **Par√°metros Predeterminados**
 
-##### Par·metros por Valor
+##### Par√°metros por Valor
 
-Cuando se pasan par·metros por valor, se copia el valor del argumento en el par·metro de la funciÛn. Los cambios hechos a los par·metros dentro de la funciÛn no afectan a los argumentos originales.
+Cuando se pasan par√°metros por valor, se copia el valor del argumento en el par√°metro de la funci√≥n. Los cambios hechos a los par√°metros dentro de la funci√≥n no afectan a los argumentos originales.
 
 ```cpp
 void incrementarPorValor(int x) {
     x++;
-    cout << "Dentro de la funciÛn: " << x << endl;
+    cout << "Dentro de la funci√≥n: " << x << endl;
 }
 
 int main() {
     int numero = 5;
     incrementarPorValor(numero);
-    cout << "Fuera de la funciÛn: " << numero << endl; // Salida: 5
+    cout << "Fuera de la funci√≥n: " << numero << endl; // Salida: 5
     return 0;
 }
 ```
 
-##### Par·metros por Referencia
+##### Par√°metros por Referencia
 
-Cuando se pasan par·metros por referencia, se pasa la referencia del argumento a la funciÛn, permitiendo que la funciÛn modifique el valor original.
+Cuando se pasan par√°metros por referencia, se pasa la referencia del argumento a la funci√≥n, permitiendo que la funci√≥n modifique el valor original.
 
 ```cpp
 void incrementarPorReferencia(int& x) {
     x++;
-    cout << "Dentro de la funciÛn: " << x << endl;
+    cout << "Dentro de la funci√≥n: " << x << endl;
 }
 
 int main() {
     int numero = 5;
     incrementarPorReferencia(numero);
-    cout << "Fuera de la funciÛn: " << numero << endl; // Salida: 6
+    cout << "Fuera de la funci√≥n: " << numero << endl; // Salida: 6
     return 0;
 }
 ```
 
-##### Par·metros por Puntero
+##### Par√°metros por Puntero
 
-Los punteros pueden utilizarse para pasar la direcciÛn de una variable a una funciÛn, permitiendo que la funciÛn modifique la variable original.
+Los punteros pueden utilizarse para pasar la direcci√≥n de una variable a una funci√≥n, permitiendo que la funci√≥n modifique la variable original.
 
 ```cpp
 void incrementarPorPuntero(int* x) {
     (*x)++;
-    cout << "Dentro de la funciÛn: " << *x << endl;
+    cout << "Dentro de la funci√≥n: " << *x << endl;
 }
 
 int main() {
     int numero = 5;
     incrementarPorPuntero(&numero);
-    cout << "Fuera de la funciÛn: " << numero << endl; // Salida: 6
+    cout << "Fuera de la funci√≥n: " << numero << endl; // Salida: 6
     return 0;
 }
 ```
 
-##### Par·metros Predeterminados
+##### Par√°metros Predeterminados
 
-C++ permite especificar valores predeterminados para los par·metros. Si no se proporcionan argumentos para estos par·metros en la llamada a la funciÛn, se utilizan los valores predeterminados.
+C++ permite especificar valores predeterminados para los par√°metros. Si no se proporcionan argumentos para estos par√°metros en la llamada a la funci√≥n, se utilizan los valores predeterminados.
 
 ```cpp
 void saludar(string nombre = "Mundo") {
@@ -86,7 +86,7 @@ int main() {
 
 #### Argumentos
 
-Los argumentos son los valores que se pasan a la funciÛn cuando se invoca. Pueden ser constantes, variables, expresiones, o incluso llamadas a otras funciones.
+Los argumentos son los valores que se pasan a la funci√≥n cuando se invoca. Pueden ser constantes, variables, expresiones, o incluso llamadas a otras funciones.
 
 ##### Ejemplo de Argumentos
 
@@ -104,13 +104,13 @@ int main() {
 }
 ```
 
-En este ejemplo, `x` y `y` son argumentos cuando se llama a la funciÛn `sumar`.
+En este ejemplo, `x` y `y` son argumentos cuando se llama a la funci√≥n `sumar`.
 
-### Funciones con M˙ltiples Par·metros
+### Funciones con M√∫ltiples Par√°metros
 
-Las funciones pueden aceptar m˙ltiples par·metros, lo que permite realizar operaciones m·s complejas.
+Las funciones pueden aceptar m√∫ltiples par√°metros, lo que permite realizar operaciones m√°s complejas.
 
-##### Ejemplo con M˙ltiples Par·metros
+##### Ejemplo con M√∫ltiples Par√°metros
 
 ```cpp
 #include <iostream>
@@ -128,9 +128,9 @@ int main() {
 }
 ```
 
-### Paso de Par·metros por Constante
+### Paso de Par√°metros por Constante
 
-Es una buena pr·ctica pasar par·metros por referencia constante cuando no se requiere modificar el argumento, especialmente para objetos grandes, para evitar copias innecesarias.
+Es una buena pr√°ctica pasar par√°metros por referencia constante cuando no se requiere modificar el argumento, especialmente para objetos grandes, para evitar copias innecesarias.
 
 ##### Ejemplo con Referencia Constante
 
@@ -146,71 +146,71 @@ int main() {
 }
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Entender la diferencia entre par·metros y argumentos, y cÛmo se pueden pasar a las funciones, es esencial para escribir funciones flexibles y eficientes en C++. El uso adecuado de par·metros por valor, referencia, puntero, y valores predeterminados permite a los desarrolladores manipular datos de diversas maneras, mejorar el rendimiento y mantener el cÛdigo limpio y f·cil de entender. Con estas habilidades, se puede maximizar la reutilizaciÛn y modularidad del cÛdigo en C++.
+Entender la diferencia entre par√°metros y argumentos, y c√≥mo se pueden pasar a las funciones, es esencial para escribir funciones flexibles y eficientes en C++. El uso adecuado de par√°metros por valor, referencia, puntero, y valores predeterminados permite a los desarrolladores manipular datos de diversas maneras, mejorar el rendimiento y mantener el c√≥digo limpio y f√°cil de entender. Con estas habilidades, se puede maximizar la reutilizaci√≥n y modularidad del c√≥digo en C++.
 <---FILES--->
-Tipos de Par·metros
-Tipos de Par·metros Result
-Par·metros por Valor
-Par·metros por Valor Result
-Par·metros por Referencia
-Par·metros por Referencia Result
-Par·metros por Puntero
-Par·metros por Puntero Result
-Par·metros Predeterminados
-Par·metros Predeterminados Result
+Tipos de Par√°metros
+Tipos de Par√°metros Result
+Par√°metros por Valor
+Par√°metros por Valor Result
+Par√°metros por Referencia
+Par√°metros por Referencia Result
+Par√°metros por Puntero
+Par√°metros por Puntero Result
+Par√°metros Predeterminados
+Par√°metros Predeterminados Result
 Ejemplo de Argumentos
 Ejemplo de Argumentos Result
-Ejemplo con M˙ltiples Par·metros
-Ejemplo con M˙ltiples Par·metros Result
+Ejemplo con M√∫ltiples Par√°metros
+Ejemplo con M√∫ltiples Par√°metros Result
 Ejemplo con Referencia Constante
 Ejemplo con Referencia Constante Result
-<---Tipos de Par·metros--->
-<---Tipos de Par·metros Result--->
-<---Par·metros por Valor--->
+<---Tipos de Par√°metros--->
+<---Tipos de Par√°metros Result--->
+<---Par√°metros por Valor--->
 ```cpp
 void incrementarPorValor(int x) {
     x++;
-    cout << "Dentro de la funciÛn: " << x << endl;
+    cout << "Dentro de la funci√≥n: " << x << endl;
 }
 
 int main() {
     int numero = 5;
     incrementarPorValor(numero);
-    cout << "Fuera de la funciÛn: " << numero << endl; // Salida: 5
+    cout << "Fuera de la funci√≥n: " << numero << endl; // Salida: 5
     return 0;
 }
-<---Par·metros por Valor Result--->
-<---Par·metros por Referencia--->
+<---Par√°metros por Valor Result--->
+<---Par√°metros por Referencia--->
 ```cpp
 void incrementarPorReferencia(int& x) {
     x++;
-    cout << "Dentro de la funciÛn: " << x << endl;
+    cout << "Dentro de la funci√≥n: " << x << endl;
 }
 
 int main() {
     int numero = 5;
     incrementarPorReferencia(numero);
-    cout << "Fuera de la funciÛn: " << numero << endl; // Salida: 6
+    cout << "Fuera de la funci√≥n: " << numero << endl; // Salida: 6
     return 0;
 }
-<---Par·metros por Referencia Result--->
-<---Par·metros por Puntero--->
+<---Par√°metros por Referencia Result--->
+<---Par√°metros por Puntero--->
 ```cpp
 void incrementarPorPuntero(int* x) {
     (*x)++;
-    cout << "Dentro de la funciÛn: " << *x << endl;
+    cout << "Dentro de la funci√≥n: " << *x << endl;
 }
 
 int main() {
     int numero = 5;
     incrementarPorPuntero(&numero);
-    cout << "Fuera de la funciÛn: " << numero << endl; // Salida: 6
+    cout << "Fuera de la funci√≥n: " << numero << endl; // Salida: 6
     return 0;
 }
-<---Par·metros por Puntero Result--->
-<---Par·metros Predeterminados--->
+<---Par√°metros por Puntero Result--->
+<---Par√°metros Predeterminados--->
 ```cpp
 void saludar(string nombre = "Mundo") {
     cout << "Hola, " << nombre << "!" << endl;
@@ -221,7 +221,7 @@ int main() {
     saludar("Juan"); // Usa el argumento proporcionado: Juan
     return 0;
 }
-<---Par·metros Predeterminados Result--->
+<---Par√°metros Predeterminados Result--->
 <---Ejemplo de Argumentos--->
 ```cpp
 int sumar(int a, int b) {
@@ -236,7 +236,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Argumentos Result--->
-<---Ejemplo con M˙ltiples Par·metros--->
+<---Ejemplo con M√∫ltiples Par√°metros--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -251,7 +251,7 @@ int main() {
     imprimirDatos("Juan", 30, 1.75);
     return 0;
 }
-<---Ejemplo con M˙ltiples Par·metros Result--->
+<---Ejemplo con M√∫ltiples Par√°metros Result--->
 <---Ejemplo con Referencia Constante--->
 ```cpp
 void mostrarMensaje(const string& mensaje) {

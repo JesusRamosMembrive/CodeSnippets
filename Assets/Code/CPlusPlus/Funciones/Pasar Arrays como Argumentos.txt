@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Pasar Arrays como Argumentos en C++
 
-Pasar arrays como argumentos a las funciones es una t閏nica com鷑 en C++ que permite a las funciones operar sobre colecciones de datos. A diferencia de otros lenguajes de programaci髇, en C++ hay varias maneras de pasar arrays a las funciones, cada una con sus propias caracter韘ticas y ventajas.
+Pasar arrays como argumentos a las funciones es una t茅cnica com煤n en C++ que permite a las funciones operar sobre colecciones de datos. A diferencia de otros lenguajes de programaci贸n, en C++ hay varias maneras de pasar arrays a las funciones, cada una con sus propias caracter铆sticas y ventajas.
 
 #### Pasar Arrays por Puntero
 
-Cuando se pasa un array a una funci髇, lo que realmente se pasa es un puntero al primer elemento del array. Esto significa que los cambios realizados en el array dentro de la funci髇 afectan al array original.
+Cuando se pasa un array a una funci贸n, lo que realmente se pasa es un puntero al primer elemento del array. Esto significa que los cambios realizados en el array dentro de la funci贸n afectan al array original.
 
 ##### Ejemplo de Pasar Arrays por Puntero
 
@@ -24,17 +24,17 @@ int main() {
     int numeros[] = {1, 2, 3, 4, 5};
     int tam = sizeof(numeros) / sizeof(numeros[0]);
 
-    imprimirArray(numeros, tam); // Pasar array a la funci髇
+    imprimirArray(numeros, tam); // Pasar array a la funci贸n
 
     return 0;
 }
 ```
 
-En este ejemplo, el array `numeros` se pasa a la funci髇 `imprimirArray` como un puntero al primer elemento del array.
+En este ejemplo, el array `numeros` se pasa a la funci贸n `imprimirArray` como un puntero al primer elemento del array.
 
 #### Pasar Arrays por Referencia
 
-C++ permite pasar arrays por referencia, lo que asegura que la funci髇 recibe una referencia al array original. Esto evita la ambig黣dad que puede surgir al pasar arrays por puntero y facilita la lectura del c骴igo.
+C++ permite pasar arrays por referencia, lo que asegura que la funci贸n recibe una referencia al array original. Esto evita la ambig眉edad que puede surgir al pasar arrays por puntero y facilita la lectura del c贸digo.
 
 ##### Ejemplo de Pasar Arrays por Referencia
 
@@ -53,17 +53,17 @@ void imprimirArrayPorReferencia(int (&arr)[N]) {
 int main() {
     int numeros[] = {1, 2, 3, 4, 5};
 
-    imprimirArrayPorReferencia(numeros); // Pasar array a la funci髇 por referencia
+    imprimirArrayPorReferencia(numeros); // Pasar array a la funci贸n por referencia
 
     return 0;
 }
 ```
 
-En este ejemplo, la funci髇 `imprimirArrayPorReferencia` recibe una referencia al array, asegurando que se trata del array completo y no solo de un puntero al primer elemento.
+En este ejemplo, la funci贸n `imprimirArrayPorReferencia` recibe una referencia al array, asegurando que se trata del array completo y no solo de un puntero al primer elemento.
 
 #### Pasar Arrays de Cadenas
 
-Los arrays de cadenas (C-strings) se pueden pasar de la misma manera que los arrays de enteros. Dado que los C-strings son arrays de caracteres terminados en nulo, se puede usar la misma t閏nica para pasarlos como argumentos.
+Los arrays de cadenas (C-strings) se pueden pasar de la misma manera que los arrays de enteros. Dado que los C-strings son arrays de caracteres terminados en nulo, se puede usar la misma t茅cnica para pasarlos como argumentos.
 
 ##### Ejemplo de Pasar Arrays de Cadenas
 
@@ -78,20 +78,20 @@ void imprimirCadenas(const char* cadenas[], int tam) {
 }
 
 int main() {
-    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D醫il"};
+    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D谩til"};
 
     int tam = sizeof(frutas) / sizeof(frutas[0]);
-    imprimirCadenas(frutas, tam); // Pasar array de cadenas a la funci髇
+    imprimirCadenas(frutas, tam); // Pasar array de cadenas a la funci贸n
 
     return 0;
 }
 ```
 
-En este ejemplo, el array de C-strings `frutas` se pasa a la funci髇 `imprimirCadenas` como un puntero a un array de punteros a caracteres.
+En este ejemplo, el array de C-strings `frutas` se pasa a la funci贸n `imprimirCadenas` como un puntero a un array de punteros a caracteres.
 
 ### Pasar Arrays Multidimensionales
 
-Los arrays multidimensionales tambi閚 pueden pasarse a las funciones. Es importante especificar todas las dimensiones excepto la primera al pasar el array a la funci髇.
+Los arrays multidimensionales tambi茅n pueden pasarse a las funciones. Es importante especificar todas las dimensiones excepto la primera al pasar el array a la funci贸n.
 
 ##### Ejemplo de Pasar Arrays Bidimensionales
 
@@ -114,25 +114,25 @@ int main() {
         {4, 5, 6}
     };
 
-    imprimirMatriz(matriz, 2); // Pasar array bidimensional a la funci髇
+    imprimirMatriz(matriz, 2); // Pasar array bidimensional a la funci贸n
 
     return 0;
 }
 ```
 
-En este ejemplo, el array bidimensional `matriz` se pasa a la funci髇 `imprimirMatriz`, donde se especifica la segunda dimensi髇 en la declaraci髇 de la funci髇.
+En este ejemplo, el array bidimensional `matriz` se pasa a la funci贸n `imprimirMatriz`, donde se especifica la segunda dimensi贸n en la declaraci贸n de la funci贸n.
 
-### Consideraciones y Buenas Pr醕ticas
+### Consideraciones y Buenas Pr谩cticas
 
-1. **Uso de `const`**: Siempre que sea posible, usa `const` para proteger los arrays de modificaciones no deseadas dentro de la funci髇.
+1. **Uso de `const`**: Siempre que sea posible, usa `const` para proteger los arrays de modificaciones no deseadas dentro de la funci贸n.
 
    ```cpp
    void imprimirArray(const int* arr, int tam) {
-       // C骴igo para imprimir el array
+       // C贸digo para imprimir el array
    }
    ```
 
-2. **Tama駉 del Array**: Aseg鷕ate de pasar tambi閚 el tama駉 del array a la funci髇 para evitar accesos fuera de los l韒ites.
+2. **Tama帽o del Array**: Aseg煤rate de pasar tambi茅n el tama帽o del array a la funci贸n para evitar accesos fuera de los l铆mites.
 
    ```cpp
    void imprimirArray(const int* arr, int tam) {
@@ -143,7 +143,7 @@ En este ejemplo, el array bidimensional `matriz` se pasa a la funci髇 `imprimirM
    }
    ```
 
-3. **Referencias y Plantillas**: Para arrays de tama駉 fijo, las referencias y las plantillas pueden hacer el c骴igo m醩 seguro y claro.
+3. **Referencias y Plantillas**: Para arrays de tama帽o fijo, las referencias y las plantillas pueden hacer el c贸digo m谩s seguro y claro.
 
    ```cpp
    template<size_t N>
@@ -159,13 +159,13 @@ En este ejemplo, el array bidimensional `matriz` se pasa a la funci髇 `imprimirM
 
    ```cpp
    void imprimirMatriz(int matriz[][3], int filas) {
-       // C骴igo para imprimir la matriz
+       // C贸digo para imprimir la matriz
    }
    ```
 
 ### Ejemplo Completo
 
-A continuaci髇, un ejemplo completo que ilustra diversas formas de pasar arrays a las funciones:
+A continuaci贸n, un ejemplo completo que ilustra diversas formas de pasar arrays a las funciones:
 
 ```cpp
 #include <iostream>
@@ -214,7 +214,7 @@ int main() {
     imprimirArrayPorReferencia(numeros);
 
     // Array de cadenas
-    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D醫il"};
+    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D谩til"};
     int tamFrutas = sizeof(frutas) / sizeof(frutas[0]);
 
     imprimirCadenas(frutas, tamFrutas);
@@ -231,9 +231,9 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Pasar arrays como argumentos a funciones en C++ es una t閏nica fundamental que permite manejar colecciones de datos de manera eficiente. Entender las diferentes formas de pasar arrays, ya sea por puntero, referencia, o utilizando plantillas, es esencial para escribir funciones vers醫iles y seguras. Con estas habilidades, los desarrolladores pueden crear programas m醩 robustos y modulares.
+Pasar arrays como argumentos a funciones en C++ es una t茅cnica fundamental que permite manejar colecciones de datos de manera eficiente. Entender las diferentes formas de pasar arrays, ya sea por puntero, referencia, o utilizando plantillas, es esencial para escribir funciones vers谩tiles y seguras. Con estas habilidades, los desarrolladores pueden crear programas m谩s robustos y modulares.
 <---FILES--->
 Ejemplo de Pasar Arrays por Puntero
 Ejemplo de Pasar Arrays por Puntero Result
@@ -259,7 +259,7 @@ int main() {
     int numeros[] = {1, 2, 3, 4, 5};
     int tam = sizeof(numeros) / sizeof(numeros[0]);
 
-    imprimirArray(numeros, tam); // Pasar array a la funci髇
+    imprimirArray(numeros, tam); // Pasar array a la funci贸n
 
     return 0;
 }
@@ -280,7 +280,7 @@ void imprimirArrayPorReferencia(int (&arr)[N]) {
 int main() {
     int numeros[] = {1, 2, 3, 4, 5};
 
-    imprimirArrayPorReferencia(numeros); // Pasar array a la funci髇 por referencia
+    imprimirArrayPorReferencia(numeros); // Pasar array a la funci贸n por referencia
 
     return 0;
 }
@@ -297,10 +297,10 @@ void imprimirCadenas(const char* cadenas[], int tam) {
 }
 
 int main() {
-    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D醫il"};
+    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D谩til"};
 
     int tam = sizeof(frutas) / sizeof(frutas[0]);
-    imprimirCadenas(frutas, tam); // Pasar array de cadenas a la funci髇
+    imprimirCadenas(frutas, tam); // Pasar array de cadenas a la funci贸n
 
     return 0;
 }
@@ -325,7 +325,7 @@ int main() {
         {4, 5, 6}
     };
 
-    imprimirMatriz(matriz, 2); // Pasar array bidimensional a la funci髇
+    imprimirMatriz(matriz, 2); // Pasar array bidimensional a la funci贸n
 
     return 0;
 }
@@ -376,7 +376,7 @@ int main() {
     imprimirArrayPorReferencia(numeros);
 
     // Array de cadenas
-    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D醫il"};
+    const char* frutas[] = {"Manzana", "Banana", "Cereza", "D谩til"};
     int tamFrutas = sizeof(frutas) / sizeof(frutas[0]);
 
     imprimirCadenas(frutas, tamFrutas);

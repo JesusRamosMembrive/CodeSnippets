@@ -1,28 +1,28 @@
 <---EXPLANATION--->
 ### Punteros en C++
 
-Los punteros son una caracter韘tica fundamental en C++ que permite a los desarrolladores manipular la memoria directamente. Un puntero es una variable que almacena la direcci髇 de memoria de otra variable. Comprender c髆o funcionan los punteros es crucial para gestionar la memoria din醡ica, realizar operaciones avanzadas y optimizar el rendimiento del c骴igo.
+Los punteros son una caracter铆stica fundamental en C++ que permite a los desarrolladores manipular la memoria directamente. Un puntero es una variable que almacena la direcci贸n de memoria de otra variable. Comprender c贸mo funcionan los punteros es crucial para gestionar la memoria din谩mica, realizar operaciones avanzadas y optimizar el rendimiento del c贸digo.
 
-#### Declaraci髇 y Uso de Punteros
+#### Declaraci贸n y Uso de Punteros
 
-##### Declaraci髇 de Punteros
+##### Declaraci贸n de Punteros
 
-La sintaxis b醩ica para declarar un puntero es:
+La sintaxis b谩sica para declarar un puntero es:
 
 ```cpp
 int* ptr; // Declara un puntero a un entero
 ```
 
-##### Asignaci髇 y Acceso a Datos
+##### Asignaci贸n y Acceso a Datos
 
-Para asignar una direcci髇 a un puntero y acceder a los datos apuntados, se utilizan los operadores `&` (referencia) y `*` (desreferencia).
+Para asignar una direcci贸n a un puntero y acceder a los datos apuntados, se utilizan los operadores `&` (referencia) y `*` (desreferencia).
 
 ```cpp
 int var = 10;
-int* ptr = &var; // ptr apunta a la direcci髇 de var
+int* ptr = &var; // ptr apunta a la direcci贸n de var
 
 std::cout << "Valor de var: " << var << std::endl; // Salida: 10
-std::cout << "Direcci髇 de var: " << &var << std::endl; // Direcci髇 de var
+std::cout << "Direcci贸n de var: " << &var << std::endl; // Direcci贸n de var
 std::cout << "Valor apuntado por ptr: " << *ptr << std::endl; // Salida: 10
 ```
 
@@ -30,7 +30,7 @@ std::cout << "Valor apuntado por ptr: " << *ptr << std::endl; // Salida: 10
 
 #### Punteros y Arreglos
 
-Los punteros y arreglos est醤 estrechamente relacionados en C++. El nombre de un arreglo es un puntero constante al primer elemento del arreglo.
+Los punteros y arreglos est谩n estrechamente relacionados en C++. El nombre de un arreglo es un puntero constante al primer elemento del arreglo.
 
 ```cpp
 int arr[5] = {1, 2, 3, 4, 5};
@@ -42,9 +42,9 @@ for(int i = 0; i < 5; ++i) {
 // Salida: 1 2 3 4 5
 ```
 
-#### Aritm閠ica de Punteros
+#### Aritm茅tica de Punteros
 
-La aritm閠ica de punteros permite realizar operaciones como suma y resta sobre punteros para navegar por arreglos y estructuras de datos.
+La aritm茅tica de punteros permite realizar operaciones como suma y resta sobre punteros para navegar por arreglos y estructuras de datos.
 
 ```cpp
 int arr[5] = {1, 2, 3, 4, 5};
@@ -57,7 +57,7 @@ std::cout << "Segundo elemento: " << *ptr << std::endl; // Salida: 2
 
 #### Punteros a Punteros
 
-Un puntero a puntero es una variable que almacena la direcci髇 de otro puntero.
+Un puntero a puntero es una variable que almacena la direcci贸n de otro puntero.
 
 ```cpp
 int var = 10;
@@ -69,11 +69,11 @@ std::cout << "Valor apuntado por ptr: " << *ptr << std::endl; // Salida: 10
 std::cout << "Valor apuntado por ptr2: " << **ptr2 << std::endl; // Salida: 10
 ```
 
-### Buenas Pr醕ticas con Punteros
+### Buenas Pr谩cticas con Punteros
 
 #### Inicializar Punteros
 
-Siempre inicialice los punteros, ya sea asign醤doles una direcci髇 v醠ida o estableci閚dolos a `nullptr`.
+Siempre inicialice los punteros, ya sea asign谩ndoles una direcci贸n v谩lida o estableci茅ndolos a `nullptr`.
 
 ```cpp
 int* ptr = nullptr; // Puntero inicializado a nullptr
@@ -81,7 +81,7 @@ int* ptr = nullptr; // Puntero inicializado a nullptr
 
 #### Liberar Memoria
 
-Cuando se utiliza memoria din醡ica, es crucial liberar la memoria usando `delete` o `delete[]` para evitar fugas de memoria.
+Cuando se utiliza memoria din谩mica, es crucial liberar la memoria usando `delete` o `delete[]` para evitar fugas de memoria.
 
 ```cpp
 int* ptr = new int(10);
@@ -91,7 +91,7 @@ ptr = nullptr; // Evitar acceso a memoria liberada
 
 #### Evitar Punteros Colgantes
 
-Un puntero colgante apunta a una memoria que ha sido liberada. Asignar `nullptr` a los punteros despu閟 de liberar la memoria ayuda a evitar este problema.
+Un puntero colgante apunta a una memoria que ha sido liberada. Asignar `nullptr` a los punteros despu茅s de liberar la memoria ayuda a evitar este problema.
 
 ```cpp
 int* ptr = new int(10);
@@ -103,7 +103,7 @@ ptr = nullptr; // Ahora ptr no es un puntero colgante
 
 #### Punteros y Funciones
 
-Los punteros pueden pasarse a funciones para modificar variables fuera del 醡bito de la funci髇.
+Los punteros pueden pasarse a funciones para modificar variables fuera del 谩mbito de la funci贸n.
 
 ##### Paso por Referencia usando Punteros
 
@@ -117,7 +117,7 @@ void incrementar(int* ptr) {
 int main() {
     int var = 10;
     incrementar(&var);
-    std::cout << "Valor de var despu閟 de incrementar: " << var << std::endl; // Salida: 11
+    std::cout << "Valor de var despu茅s de incrementar: " << var << std::endl; // Salida: 11
 
     return 0;
 }
@@ -125,9 +125,9 @@ int main() {
 
 #### Punteros a Funciones
 
-Los punteros a funciones permiten almacenar y llamar funciones din醡icamente.
+Los punteros a funciones permiten almacenar y llamar funciones din谩micamente.
 
-##### Ejemplo de Puntero a Funci髇
+##### Ejemplo de Puntero a Funci贸n
 
 ```cpp
 #include <iostream>
@@ -148,29 +148,29 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Los punteros en C++ son una herramienta poderosa que permite un control fino sobre la memoria y la gesti髇 de recursos. Sin embargo, tambi閚 requieren una comprensi髇 cuidadosa y atenci髇 a los detalles para evitar errores comunes como fugas de memoria, punteros colgantes y accesos inv醠idos. Con una buena pr醕tica y el uso de punteros inteligentes, se puede escribir c骴igo eficiente y seguro que aproveche al m醲imo las capacidades del lenguaje C++.
+Los punteros en C++ son una herramienta poderosa que permite un control fino sobre la memoria y la gesti贸n de recursos. Sin embargo, tambi茅n requieren una comprensi贸n cuidadosa y atenci贸n a los detalles para evitar errores comunes como fugas de memoria, punteros colgantes y accesos inv谩lidos. Con una buena pr谩ctica y el uso de punteros inteligentes, se puede escribir c贸digo eficiente y seguro que aproveche al m谩ximo las capacidades del lenguaje C++.
 <---FILES--->
-Declaraci髇 de Punteros
-Declaraci髇 de Punteros Result
-Asignaci髇 y Acceso a Datos
-Asignaci髇 y Acceso a Datos Result
+Declaraci贸n de Punteros
+Declaraci贸n de Punteros Result
+Asignaci贸n y Acceso a Datos
+Asignaci贸n y Acceso a Datos Result
 Paso por Referencia usando Punteros
 Paso por Referencia usando Punteros Result
-Ejemplo de Puntero a Funci髇
-Ejemplo de Puntero a Funci髇 Result
-<---Declaraci髇 de Punteros--->
+Ejemplo de Puntero a Funci贸n
+Ejemplo de Puntero a Funci贸n Result
+<---Declaraci贸n de Punteros--->
 ```cpp
 int* ptr; // Declara un puntero a un entero
-<---Declaraci髇 de Punteros Result--->
-<---Asignaci髇 y Acceso a Datos--->
+<---Declaraci贸n de Punteros Result--->
+<---Asignaci贸n y Acceso a Datos--->
 ```cpp
 int var = 10;
-int* ptr = &var; // ptr apunta a la direcci髇 de var
+int* ptr = &var; // ptr apunta a la direcci贸n de var
 
 std::cout << "Valor de var: " << var << std::endl; // Salida: 10
-std::cout << "Direcci髇 de var: " << &var << std::endl; // Direcci髇 de var
+std::cout << "Direcci贸n de var: " << &var << std::endl; // Direcci贸n de var
 std::cout << "Valor apuntado por ptr: " << *ptr << std::endl; // Salida: 10
 ```cpp
 int arr[5] = {1, 2, 3, 4, 5};
@@ -205,7 +205,7 @@ ptr = nullptr; // Evitar acceso a memoria liberada
 int* ptr = new int(10);
 delete ptr;
 ptr = nullptr; // Ahora ptr no es un puntero colgante
-<---Asignaci髇 y Acceso a Datos Result--->
+<---Asignaci贸n y Acceso a Datos Result--->
 <---Paso por Referencia usando Punteros--->
 ```cpp
 #include <iostream>
@@ -217,12 +217,12 @@ void incrementar(int* ptr) {
 int main() {
     int var = 10;
     incrementar(&var);
-    std::cout << "Valor de var despu閟 de incrementar: " << var << std::endl; // Salida: 11
+    std::cout << "Valor de var despu茅s de incrementar: " << var << std::endl; // Salida: 11
 
     return 0;
 }
 <---Paso por Referencia usando Punteros Result--->
-<---Ejemplo de Puntero a Funci髇--->
+<---Ejemplo de Puntero a Funci贸n--->
 ```cpp
 #include <iostream>
 
@@ -240,4 +240,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Puntero a Funci髇 Result--->
+<---Ejemplo de Puntero a Funci贸n Result--->

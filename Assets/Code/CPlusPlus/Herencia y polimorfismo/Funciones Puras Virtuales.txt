@@ -1,28 +1,28 @@
 <---EXPLANATION--->
 ### Funciones Puras Virtuales en C++
 
-Las funciones puras virtuales son un elemento clave en la programación orientada a objetos en C++. Permiten definir interfaces que deben ser implementadas por las clases derivadas. Estas funciones no tienen implementación en la clase base y se utilizan para crear clases abstractas que no pueden ser instanciadas directamente.
+Las funciones puras virtuales son un elemento clave en la programaciÃ³n orientada a objetos en C++. Permiten definir interfaces que deben ser implementadas por las clases derivadas. Estas funciones no tienen implementaciÃ³n en la clase base y se utilizan para crear clases abstractas que no pueden ser instanciadas directamente.
 
-#### Definición de Función Pura Virtual
+#### DefiniciÃ³n de FunciÃ³n Pura Virtual
 
-Una función pura virtual es una función miembro que no tiene implementación en la clase base y debe ser implementada por cualquier clase derivada concreta. Se declara añadiendo `= 0` al final de su declaración dentro de la clase base.
+Una funciÃ³n pura virtual es una funciÃ³n miembro que no tiene implementaciÃ³n en la clase base y debe ser implementada por cualquier clase derivada concreta. Se declara aÃ±adiendo `= 0` al final de su declaraciÃ³n dentro de la clase base.
 
 ##### Sintaxis
 
 ```cpp
 class NombreClaseAbstracta {
 public:
-    virtual void nombreFuncion() = 0; // Función pura virtual
+    virtual void nombreFuncion() = 0; // FunciÃ³n pura virtual
 };
 ```
 
-Cuando una clase contiene al menos una función pura virtual, se convierte en una clase abstracta y no puede ser instanciada directamente.
+Cuando una clase contiene al menos una funciÃ³n pura virtual, se convierte en una clase abstracta y no puede ser instanciada directamente.
 
-#### Ejemplo de Función Pura Virtual
+#### Ejemplo de FunciÃ³n Pura Virtual
 
-Consideremos un ejemplo en el que queremos definir una jerarquía de clases para diferentes tipos de figuras geométricas. La clase base `Figura` será una clase abstracta con una función pura virtual `dibujar`.
+Consideremos un ejemplo en el que queremos definir una jerarquÃ­a de clases para diferentes tipos de figuras geomÃ©tricas. La clase base `Figura` serÃ¡ una clase abstracta con una funciÃ³n pura virtual `dibujar`.
 
-##### Ejemplo de Implementación
+##### Ejemplo de ImplementaciÃ³n
 
 ```cpp
 #include <iostream>
@@ -30,7 +30,7 @@ using namespace std;
 
 class Figura {
 public:
-    virtual void dibujar() const = 0; // Función pura virtual
+    virtual void dibujar() const = 0; // FunciÃ³n pura virtual
 
     virtual ~Figura() {
         // Destructor virtual
@@ -40,7 +40,7 @@ public:
 class Circulo : public Figura {
 public:
     void dibujar() const override {
-        cout << "Dibujando un círculo" << endl;
+        cout << "Dibujando un cÃ­rculo" << endl;
     }
 };
 
@@ -68,20 +68,20 @@ int main() {
 ```
 
 En este ejemplo:
-- `Figura` es una clase abstracta porque contiene una función pura virtual `dibujar`.
-- `Circulo` y `Cuadrado` son clases derivadas que implementan la función `dibujar`.
+- `Figura` es una clase abstracta porque contiene una funciÃ³n pura virtual `dibujar`.
+- `Circulo` y `Cuadrado` son clases derivadas que implementan la funciÃ³n `dibujar`.
 
 #### Ventajas de Usar Funciones Puras Virtuales
 
-1. **Definición de Interfaces:** Permiten definir interfaces que deben ser implementadas por las clases derivadas, asegurando una estructura común.
-2. **Flexibilidad y Extensibilidad:** Facilitan la creación de sistemas extensibles y flexibles, ya que las nuevas clases derivadas pueden añadirse sin cambiar la interfaz de la clase base.
-3. **Polimorfismo:** Habilitan el polimorfismo, permitiendo que las funciones se comporten de manera diferente según el tipo de objeto.
+1. **DefiniciÃ³n de Interfaces:** Permiten definir interfaces que deben ser implementadas por las clases derivadas, asegurando una estructura comÃºn.
+2. **Flexibilidad y Extensibilidad:** Facilitan la creaciÃ³n de sistemas extensibles y flexibles, ya que las nuevas clases derivadas pueden aÃ±adirse sin cambiar la interfaz de la clase base.
+3. **Polimorfismo:** Habilitan el polimorfismo, permitiendo que las funciones se comporten de manera diferente segÃºn el tipo de objeto.
 
-#### Uso de Funciones Puras Virtuales en Jerarquías de Clases
+#### Uso de Funciones Puras Virtuales en JerarquÃ­as de Clases
 
-Las funciones puras virtuales son particularmente útiles en jerarquías de clases donde se desea que las clases derivadas proporcionen implementaciones específicas de ciertas funciones definidas en la clase base.
+Las funciones puras virtuales son particularmente Ãºtiles en jerarquÃ­as de clases donde se desea que las clases derivadas proporcionen implementaciones especÃ­ficas de ciertas funciones definidas en la clase base.
 
-##### Ejemplo con Múltiples Clases Derivadas
+##### Ejemplo con MÃºltiples Clases Derivadas
 
 ```cpp
 #include <iostream>
@@ -90,7 +90,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // Función pura virtual
+    virtual void hacerSonido() const = 0; // FunciÃ³n pura virtual
 
     virtual ~Animal() {
         // Destructor virtual
@@ -107,7 +107,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato maúlla" << endl;
+        cout << "El gato maÃºlla" << endl;
     }
 };
 
@@ -139,41 +139,41 @@ int main() {
 ```
 
 En este ejemplo:
-- `Animal` es una clase abstracta con una función pura virtual `hacerSonido`.
+- `Animal` es una clase abstracta con una funciÃ³n pura virtual `hacerSonido`.
 - `Perro` y `Gato` son clases derivadas que implementan `hacerSonido`.
-- La función `hacerSonidoAnimal` demuestra el uso del polimorfismo con referencias a la clase base.
+- La funciÃ³n `hacerSonidoAnimal` demuestra el uso del polimorfismo con referencias a la clase base.
 
 #### Consideraciones Importantes
 
-1. **Destructores Virtuales:** Es crucial declarar destructores virtuales en clases abstractas para asegurar la correcta liberación de recursos en las clases derivadas.
-2. **Implementaciones Opcionales en Clases Base:** En algunos casos, puede ser útil proporcionar una implementación predeterminada para funciones virtuales no puras en la clase base, permitiendo a las clases derivadas anularlas si es necesario.
-3. **Evitar Instanciación Directa:** Las clases abstractas no pueden ser instanciadas directamente. Solo pueden ser usadas como clases base.
+1. **Destructores Virtuales:** Es crucial declarar destructores virtuales en clases abstractas para asegurar la correcta liberaciÃ³n de recursos en las clases derivadas.
+2. **Implementaciones Opcionales en Clases Base:** En algunos casos, puede ser Ãºtil proporcionar una implementaciÃ³n predeterminada para funciones virtuales no puras en la clase base, permitiendo a las clases derivadas anularlas si es necesario.
+3. **Evitar InstanciaciÃ³n Directa:** Las clases abstractas no pueden ser instanciadas directamente. Solo pueden ser usadas como clases base.
 
-### Conclusión
+### ConclusiÃ³n
 
-Las funciones puras virtuales son un componente esencial de las clases abstractas en C++. Permiten definir interfaces que deben ser implementadas por las clases derivadas, promoviendo una estructura común y facilitando el polimorfismo. Usar funciones puras virtuales permite diseñar sistemas orientados a objetos que son flexibles, extensibles y fáciles de mantener. Comprender cómo y cuándo usar funciones puras virtuales es crucial para aprovechar al máximo las capacidades de la programación orientada a objetos en C++.
+Las funciones puras virtuales son un componente esencial de las clases abstractas en C++. Permiten definir interfaces que deben ser implementadas por las clases derivadas, promoviendo una estructura comÃºn y facilitando el polimorfismo. Usar funciones puras virtuales permite diseÃ±ar sistemas orientados a objetos que son flexibles, extensibles y fÃ¡ciles de mantener. Comprender cÃ³mo y cuÃ¡ndo usar funciones puras virtuales es crucial para aprovechar al mÃ¡ximo las capacidades de la programaciÃ³n orientada a objetos en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo de Implementación
-Ejemplo de Implementación Result
-Ejemplo con Múltiples Clases Derivadas
-Ejemplo con Múltiples Clases Derivadas Result
+Ejemplo de ImplementaciÃ³n
+Ejemplo de ImplementaciÃ³n Result
+Ejemplo con MÃºltiples Clases Derivadas
+Ejemplo con MÃºltiples Clases Derivadas Result
 <---Sintaxis--->
 ```cpp
 class NombreClaseAbstracta {
 public:
-    virtual void nombreFuncion() = 0; // Función pura virtual
+    virtual void nombreFuncion() = 0; // FunciÃ³n pura virtual
 };
 <---Sintaxis Result--->
-<---Ejemplo de Implementación--->
+<---Ejemplo de ImplementaciÃ³n--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Figura {
 public:
-    virtual void dibujar() const = 0; // Función pura virtual
+    virtual void dibujar() const = 0; // FunciÃ³n pura virtual
 
     virtual ~Figura() {
         // Destructor virtual
@@ -183,7 +183,7 @@ public:
 class Circulo : public Figura {
 public:
     void dibujar() const override {
-        cout << "Dibujando un círculo" << endl;
+        cout << "Dibujando un cÃ­rculo" << endl;
     }
 };
 
@@ -208,8 +208,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Implementación Result--->
-<---Ejemplo con Múltiples Clases Derivadas--->
+<---Ejemplo de ImplementaciÃ³n Result--->
+<---Ejemplo con MÃºltiples Clases Derivadas--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -217,7 +217,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // Función pura virtual
+    virtual void hacerSonido() const = 0; // FunciÃ³n pura virtual
 
     virtual ~Animal() {
         // Destructor virtual
@@ -234,7 +234,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato maúlla" << endl;
+        cout << "El gato maÃºlla" << endl;
     }
 };
 
@@ -263,4 +263,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Múltiples Clases Derivadas Result--->
+<---Ejemplo con MÃºltiples Clases Derivadas Result--->

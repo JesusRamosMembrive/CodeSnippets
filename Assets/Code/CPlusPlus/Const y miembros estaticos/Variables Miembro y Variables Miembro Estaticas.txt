@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Variables Miembro y Variables Miembro Est·ticas en C++
+### Variables Miembro y Variables Miembro Est√°ticas en C++
 
-En C++, las variables miembro son atributos que pertenecen a instancias especÌficas de una clase, mientras que las variables miembro est·ticas son atributos que pertenecen a la clase en sÌ y son compartidas por todas las instancias de esa clase. Comprender la diferencia entre estas dos tipos de variables es esencial para aprovechar al m·ximo las capacidades de la programaciÛn orientada a objetos en C++.
+En C++, las variables miembro son atributos que pertenecen a instancias espec√≠ficas de una clase, mientras que las variables miembro est√°ticas son atributos que pertenecen a la clase en s√≠ y son compartidas por todas las instancias de esa clase. Comprender la diferencia entre estas dos tipos de variables es esencial para aprovechar al m√°ximo las capacidades de la programaci√≥n orientada a objetos en C++.
 
 #### Variables Miembro
 
 Las variables miembro son atributos de una clase que existen independientemente en cada instancia de la clase. Cada objeto de la clase tiene su propia copia de estas variables, y sus valores pueden ser diferentes para cada objeto.
 
-##### DeclaraciÛn y Uso de Variables Miembro
+##### Declaraci√≥n y Uso de Variables Miembro
 
 ```cpp
 #include <iostream>
@@ -22,7 +22,7 @@ public:
     // Constructor
     Persona(string n, int e) : nombre(n), edad(e) {}
 
-    // MÈtodo para mostrar informaciÛn
+    // M√©todo para mostrar informaci√≥n
     void mostrarInformacion() const {
         cout << "Nombre: " << nombre << ", Edad: " << edad << endl;
     }
@@ -41,16 +41,16 @@ int main() {
 
 En este ejemplo, `nombre` y `edad` son variables miembro de la clase `Persona`. Cada instancia de `Persona` (`p1` y `p2`) tiene su propia copia de estas variables.
 
-#### Variables Miembro Est·ticas
+#### Variables Miembro Est√°ticas
 
-Las variables miembro est·ticas, por otro lado, son atributos que pertenecen a la clase en sÌ y no a instancias individuales. Solo existe una copia de una variable miembro est·tica, compartida por todas las instancias de la clase. Las variables est·ticas se utilizan com˙nmente para almacenar datos que deben ser comunes a todas las instancias de una clase.
+Las variables miembro est√°ticas, por otro lado, son atributos que pertenecen a la clase en s√≠ y no a instancias individuales. Solo existe una copia de una variable miembro est√°tica, compartida por todas las instancias de la clase. Las variables est√°ticas se utilizan com√∫nmente para almacenar datos que deben ser comunes a todas las instancias de una clase.
 
-##### DeclaraciÛn y Uso de Variables Miembro Est·ticas
+##### Declaraci√≥n y Uso de Variables Miembro Est√°ticas
 
-1. **DeclaraciÛn en la Clase:** Se declaran dentro de la clase con la palabra clave `static`.
-2. **DefiniciÛn Fuera de la Clase:** Deben ser definidas fuera de la clase para que el compilador las asigne.
+1. **Declaraci√≥n en la Clase:** Se declaran dentro de la clase con la palabra clave `static`.
+2. **Definici√≥n Fuera de la Clase:** Deben ser definidas fuera de la clase para que el compilador las asigne.
 
-##### Ejemplo de Variables Miembro Est·ticas
+##### Ejemplo de Variables Miembro Est√°ticas
 
 ```cpp
 #include <iostream>
@@ -58,7 +58,7 @@ using namespace std;
 
 class Contador {
 private:
-    static int cuenta; // DeclaraciÛn de variable miembro est·tica
+    static int cuenta; // Declaraci√≥n de variable miembro est√°tica
 
 public:
     Contador() {
@@ -74,44 +74,44 @@ public:
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Contador::cuenta = 0;
 
 int main() {
     Contador c1;
     Contador c2;
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     {
         Contador c3;
-        cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
+        cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
     }
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     return 0;
 }
 ```
 
 En este ejemplo:
-- `cuenta` es una variable miembro est·tica de la clase `Contador`.
-- La variable `cuenta` es incrementada en el constructor y decrementada en el destructor, rastreando el n˙mero de instancias de `Contador`.
-- `obtenerCuenta` es un mÈtodo est·tico que devuelve el valor de `cuenta`.
+- `cuenta` es una variable miembro est√°tica de la clase `Contador`.
+- La variable `cuenta` es incrementada en el constructor y decrementada en el destructor, rastreando el n√∫mero de instancias de `Contador`.
+- `obtenerCuenta` es un m√©todo est√°tico que devuelve el valor de `cuenta`.
 
-#### Diferencias Clave entre Variables Miembro y Variables Miembro Est·ticas
+#### Diferencias Clave entre Variables Miembro y Variables Miembro Est√°ticas
 
-1. **Alcance y Vida ⁄til:**
-   - **Variables Miembro:** Existen por separado en cada instancia de la clase y tienen la vida ˙til del objeto.
-   - **Variables Miembro Est·ticas:** Existen una sola vez, independientemente del n˙mero de instancias, y tienen la vida ˙til del programa.
+1. **Alcance y Vida √ötil:**
+   - **Variables Miembro:** Existen por separado en cada instancia de la clase y tienen la vida √∫til del objeto.
+   - **Variables Miembro Est√°ticas:** Existen una sola vez, independientemente del n√∫mero de instancias, y tienen la vida √∫til del programa.
 
 2. **Acceso:**
-   - **Variables Miembro:** Accedidas a travÈs de objetos de la clase.
-   - **Variables Miembro Est·ticas:** Pueden ser accedidas a travÈs de la clase o de objetos de la clase.
+   - **Variables Miembro:** Accedidas a trav√©s de objetos de la clase.
+   - **Variables Miembro Est√°ticas:** Pueden ser accedidas a trav√©s de la clase o de objetos de la clase.
 
-3. **InicializaciÛn:**
+3. **Inicializaci√≥n:**
    - **Variables Miembro:** Se inicializan cuando se crea un objeto.
-   - **Variables Miembro Est·ticas:** Deben ser definidas fuera de la clase y se pueden inicializar en esa definiciÛn.
+   - **Variables Miembro Est√°ticas:** Deben ser definidas fuera de la clase y se pueden inicializar en esa definici√≥n.
 
 ##### Ejemplo de Diferencias
 
@@ -122,7 +122,7 @@ using namespace std;
 class Ejemplo {
 private:
     int instanciaVariable;       // Variable miembro
-    static int estaticaVariable; // Variable miembro est·tica
+    static int estaticaVariable; // Variable miembro est√°tica
 
 public:
     Ejemplo(int valor) : instanciaVariable(valor) {
@@ -139,7 +139,7 @@ public:
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Ejemplo::estaticaVariable = 0;
 
 int main() {
@@ -157,21 +157,21 @@ int main() {
 
 En este ejemplo:
 - `instanciaVariable` es una variable miembro y tiene un valor diferente en cada instancia (`e1` y `e2`).
-- `estaticaVariable` es una variable miembro est·tica y su valor es compartido por todas las instancias.
+- `estaticaVariable` es una variable miembro est√°tica y su valor es compartido por todas las instancias.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las variables miembro y las variables miembro est·ticas en C++ son herramientas fundamentales para la gestiÛn de datos en la programaciÛn orientada a objetos. Las variables miembro permiten que cada instancia de una clase mantenga su propio estado, mientras que las variables miembro est·ticas permiten compartir datos entre todas las instancias de una clase. Entender cÛmo y cu·ndo usar estos tipos de variables es crucial para diseÒar clases eficientes y efectivas en C++.
+Las variables miembro y las variables miembro est√°ticas en C++ son herramientas fundamentales para la gesti√≥n de datos en la programaci√≥n orientada a objetos. Las variables miembro permiten que cada instancia de una clase mantenga su propio estado, mientras que las variables miembro est√°ticas permiten compartir datos entre todas las instancias de una clase. Entender c√≥mo y cu√°ndo usar estos tipos de variables es crucial para dise√±ar clases eficientes y efectivas en C++.
 <---FILES--->
-DeclaraciÛn y Uso de Variables Miembro
-DeclaraciÛn y Uso de Variables Miembro Result
-DeclaraciÛn y Uso de Variables Miembro Est·ticas
-DeclaraciÛn y Uso de Variables Miembro Est·ticas Result
-Ejemplo de Variables Miembro Est·ticas
-Ejemplo de Variables Miembro Est·ticas Result
+Declaraci√≥n y Uso de Variables Miembro
+Declaraci√≥n y Uso de Variables Miembro Result
+Declaraci√≥n y Uso de Variables Miembro Est√°ticas
+Declaraci√≥n y Uso de Variables Miembro Est√°ticas Result
+Ejemplo de Variables Miembro Est√°ticas
+Ejemplo de Variables Miembro Est√°ticas Result
 Ejemplo de Diferencias
 Ejemplo de Diferencias Result
-<---DeclaraciÛn y Uso de Variables Miembro--->
+<---Declaraci√≥n y Uso de Variables Miembro--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -185,7 +185,7 @@ public:
     // Constructor
     Persona(string n, int e) : nombre(n), edad(e) {}
 
-    // MÈtodo para mostrar informaciÛn
+    // M√©todo para mostrar informaci√≥n
     void mostrarInformacion() const {
         cout << "Nombre: " << nombre << ", Edad: " << edad << endl;
     }
@@ -200,17 +200,17 @@ int main() {
 
     return 0;
 }
-<---DeclaraciÛn y Uso de Variables Miembro Result--->
-<---DeclaraciÛn y Uso de Variables Miembro Est·ticas--->
-<---DeclaraciÛn y Uso de Variables Miembro Est·ticas Result--->
-<---Ejemplo de Variables Miembro Est·ticas--->
+<---Declaraci√≥n y Uso de Variables Miembro Result--->
+<---Declaraci√≥n y Uso de Variables Miembro Est√°ticas--->
+<---Declaraci√≥n y Uso de Variables Miembro Est√°ticas Result--->
+<---Ejemplo de Variables Miembro Est√°ticas--->
 ```cpp
 #include <iostream>
 using namespace std;
 
 class Contador {
 private:
-    static int cuenta; // DeclaraciÛn de variable miembro est·tica
+    static int cuenta; // Declaraci√≥n de variable miembro est√°tica
 
 public:
     Contador() {
@@ -226,25 +226,25 @@ public:
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Contador::cuenta = 0;
 
 int main() {
     Contador c1;
     Contador c2;
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     {
         Contador c3;
-        cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
+        cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 3
     }
 
-    cout << "N˙mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
+    cout << "N√∫mero de objetos Contador: " << Contador::obtenerCuenta() << endl; // Muestra: 2
 
     return 0;
 }
-<---Ejemplo de Variables Miembro Est·ticas Result--->
+<---Ejemplo de Variables Miembro Est√°ticas Result--->
 <---Ejemplo de Diferencias--->
 ```cpp
 #include <iostream>
@@ -253,7 +253,7 @@ using namespace std;
 class Ejemplo {
 private:
     int instanciaVariable;       // Variable miembro
-    static int estaticaVariable; // Variable miembro est·tica
+    static int estaticaVariable; // Variable miembro est√°tica
 
 public:
     Ejemplo(int valor) : instanciaVariable(valor) {
@@ -270,7 +270,7 @@ public:
     }
 };
 
-// DefiniciÛn de la variable miembro est·tica
+// Definici√≥n de la variable miembro est√°tica
 int Ejemplo::estaticaVariable = 0;
 
 int main() {

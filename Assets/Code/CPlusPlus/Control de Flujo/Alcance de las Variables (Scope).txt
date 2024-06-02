@@ -1,19 +1,19 @@
 <---EXPLANATION--->
 ### Alcance de las Variables (Scope) en C++
 
-El alcance de una variable (scope) se refiere a la regiÛn del cÛdigo donde la variable est· definida y accesible. En C++, el alcance de las variables determina su visibilidad y su tiempo de vida. Entender el alcance es crucial para evitar errores de programaciÛn, como conflictos de nombres y uso de variables no inicializadas.
+El alcance de una variable (scope) se refiere a la regi√≥n del c√≥digo donde la variable est√° definida y accesible. En C++, el alcance de las variables determina su visibilidad y su tiempo de vida. Entender el alcance es crucial para evitar errores de programaci√≥n, como conflictos de nombres y uso de variables no inicializadas.
 
 #### Tipos de Alcance
 
 1. **Alcance de Bloque (Local)**
-2. **Alcance de FunciÛn (Local a la FunciÛn)**
+2. **Alcance de Funci√≥n (Local a la Funci√≥n)**
 3. **Alcance de Clase (Variables Miembro)**
 4. **Alcance de Archivo (Global)**
 5. **Alcance de Espacio de Nombres (Namespace)**
 
 ### 1. Alcance de Bloque
 
-Las variables declaradas dentro de un bloque de cÛdigo, delimitado por llaves `{}`, tienen alcance de bloque. Estas variables son accesibles solo dentro del bloque donde se declaran.
+Las variables declaradas dentro de un bloque de c√≥digo, delimitado por llaves `{}`, tienen alcance de bloque. Estas variables son accesibles solo dentro del bloque donde se declaran.
 
 ```cpp
 #include <iostream>
@@ -24,27 +24,27 @@ int main() {
         int x = 10; // Variable con alcance de bloque
         cout << "Dentro del bloque: " << x << endl;
     }
-    // cout << x; // Error: x no est· definida fuera del bloque
+    // cout << x; // Error: x no est√° definida fuera del bloque
     return 0;
 }
 ```
 
-### 2. Alcance de FunciÛn
+### 2. Alcance de Funci√≥n
 
-Las variables locales declaradas dentro de una funciÛn tienen alcance local a esa funciÛn. No son accesibles fuera de la funciÛn.
+Las variables locales declaradas dentro de una funci√≥n tienen alcance local a esa funci√≥n. No son accesibles fuera de la funci√≥n.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 void miFuncion() {
-    int y = 20; // Variable con alcance local a la funciÛn
-    cout << "Dentro de la funciÛn: " << y << endl;
+    int y = 20; // Variable con alcance local a la funci√≥n
+    cout << "Dentro de la funci√≥n: " << y << endl;
 }
 
 int main() {
     miFuncion();
-    // cout << y; // Error: y no est· definida en main
+    // cout << y; // Error: y no est√° definida en main
     return 0;
 }
 ```
@@ -81,7 +81,7 @@ int main() {
 
 ### 4. Alcance de Archivo (Global)
 
-Las variables globales tienen alcance de archivo. Se declaran fuera de todas las funciones y son accesibles desde cualquier funciÛn dentro del mismo archivo.
+Las variables globales tienen alcance de archivo. Se declaran fuera de todas las funciones y son accesibles desde cualquier funci√≥n dentro del mismo archivo.
 
 ```cpp
 #include <iostream>
@@ -121,16 +121,16 @@ int main() {
 }
 ```
 
-### Alcance Est·tico
+### Alcance Est√°tico
 
-Las variables declaradas con la palabra clave `static` dentro de una funciÛn o un bloque tienen alcance de bloque, pero su tiempo de vida es el de todo el programa. Esto significa que retienen su valor entre llamadas a la funciÛn.
+Las variables declaradas con la palabra clave `static` dentro de una funci√≥n o un bloque tienen alcance de bloque, pero su tiempo de vida es el de todo el programa. Esto significa que retienen su valor entre llamadas a la funci√≥n.
 
 ```cpp
 #include <iostream>
 using namespace std;
 
 void contar() {
-    static int contador = 0; // Variable est·tica
+    static int contador = 0; // Variable est√°tica
     contador++;
     cout << "Contador: " << contador << endl;
 }
@@ -146,13 +146,14 @@ int main() {
 ### Resumen del Alcance de Variables
 
 1. **Bloque:** Accesible solo dentro del bloque `{}` donde se declara.
-2. **FunciÛn:** Accesible solo dentro de la funciÛn donde se declara.
+2. **Funci√≥n:** Accesible solo dentro de la funci√≥n donde se declara.
 3. **Clase:** Variables miembro accesibles mediante instancias de la clase.
 4. **Archivo (Global):** Accesible en todo el archivo donde se declara.
 5. **Espacio de Nombres:** Accesible dentro del namespace donde se declara.
-6. **Est·tico:** Accesible solo dentro del bloque donde se declara, pero retiene su valor entre llamadas.
+6. **Est√°tico:** Accesible solo dentro del bloque donde se declara, pero retiene su valor entre llamadas.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-El alcance de las variables es una parte fundamental de la programaciÛn en C++, ya que determina dÛnde y cu·ndo una variable es accesible. Comprender los diferentes tipos de alcance ayuda a escribir cÛdigo m·s seguro y libre de errores, evitando conflictos de nombres y asegurando que las variables se utilicen de manera adecuada dentro de sus contextos especÌficos.
+El alcance de las variables es una parte fundamental de la programaci√≥n en C++, ya que determina d√≥nde y cu√°ndo una variable es accesible. Comprender los diferentes tipos de alcance ayuda a escribir c√≥digo m√°s seguro y libre de errores, evitando conflictos de nombres y asegurando que las variables se utilicen de manera adecuada dentro de sus contextos espec√≠ficos.
 <---FILES--->
+NA.

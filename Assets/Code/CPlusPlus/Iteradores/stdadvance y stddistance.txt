@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### `std::advance` y `std::distance` en C++
 
-Las funciones `std::advance` y `std::distance` son utilidades de la biblioteca estándar de C++ que proporcionan operaciones convenientes sobre iteradores. Estas funciones son parte del encabezado `<iterator>` y se utilizan para manipular y calcular distancias entre iteradores de manera eficiente.
+Las funciones `std::advance` y `std::distance` son utilidades de la biblioteca estÃ¡ndar de C++ que proporcionan operaciones convenientes sobre iteradores. Estas funciones son parte del encabezado `<iterator>` y se utilizan para manipular y calcular distancias entre iteradores de manera eficiente.
 
 #### `std::advance`
 
-`std::advance` es una función que incrementa o decrementa un iterador por un número especificado de pasos. Es útil cuando se necesita mover un iterador una cantidad específica de posiciones sin escribir bucles explícitos.
+`std::advance` es una funciÃ³n que incrementa o decrementa un iterador por un nÃºmero especificado de pasos. Es Ãºtil cuando se necesita mover un iterador una cantidad especÃ­fica de posiciones sin escribir bucles explÃ­citos.
 
 ##### Sintaxis
 
@@ -33,7 +33,7 @@ int main() {
     std::advance(it, 3);
 
     // Mostrar el valor del elemento apuntado por el iterador
-    std::cout << "Elemento en la posición 3: " << *it << std::endl;
+    std::cout << "Elemento en la posiciÃ³n 3: " << *it << std::endl;
 
     return 0;
 }
@@ -44,7 +44,7 @@ En este ejemplo:
 
 #### `std::distance`
 
-`std::distance` es una función que calcula la distancia (el número de pasos) entre dos iteradores. Es útil cuando se necesita conocer cuántos elementos hay entre dos iteradores.
+`std::distance` es una funciÃ³n que calcula la distancia (el nÃºmero de pasos) entre dos iteradores. Es Ãºtil cuando se necesita conocer cuÃ¡ntos elementos hay entre dos iteradores.
 
 ##### Sintaxis
 
@@ -79,11 +79,11 @@ int main() {
 ```
 
 En este ejemplo:
-- `std::distance(it1, it2)` calcula el número de elementos entre los iteradores `it1` e `it2`.
+- `std::distance(it1, it2)` calcula el nÃºmero de elementos entre los iteradores `it1` e `it2`.
 
 ### Uso Combinado de `std::advance` y `std::distance`
 
-A menudo, `std::advance` y `std::distance` se pueden usar juntos para realizar operaciones más complejas con iteradores.
+A menudo, `std::advance` y `std::distance` se pueden usar juntos para realizar operaciones mÃ¡s complejas con iteradores.
 
 ##### Ejemplo Combinado
 
@@ -113,16 +113,16 @@ int main() {
 
 En este ejemplo:
 - `std::advance(it1, 5)` mueve el iterador `it1` cinco posiciones hacia adelante en la lista.
-- `std::distance(it1, it2)` calcula la distancia entre `it1` e `it2`, que es el número de elementos desde la sexta posición hasta el final de la lista.
+- `std::distance(it1, it2)` calcula la distancia entre `it1` e `it2`, que es el nÃºmero de elementos desde la sexta posiciÃ³n hasta el final de la lista.
 
 ### Consideraciones de Eficiencia
 
 - **`std::advance`:** Para iteradores de acceso aleatorio (como los de `std::vector`), `std::advance` es muy eficiente porque simplemente agrega el desplazamiento al iterador. Para iteradores de otros tipos (como los de `std::list`), puede ser menos eficiente porque debe recorrer la secuencia paso a paso.
 - **`std::distance`:** Similar a `std::advance`, es muy eficiente para iteradores de acceso aleatorio porque puede calcular la distancia en tiempo constante. Para otros tipos de iteradores, la eficiencia depende de tener que recorrer la secuencia para contar los elementos.
 
-### Conclusión
+### ConclusiÃ³n
 
-`std::advance` y `std::distance` son funciones muy útiles para manipular y calcular posiciones de iteradores de manera eficiente en C++. Permiten escribir código más limpio y legible, evitando la necesidad de bucles explícitos para mover iteradores o calcular distancias entre ellos. Comprender cómo y cuándo usar estas funciones es esencial para trabajar de manera efectiva con iteradores en C++.
+`std::advance` y `std::distance` son funciones muy Ãºtiles para manipular y calcular posiciones de iteradores de manera eficiente en C++. Permiten escribir cÃ³digo mÃ¡s limpio y legible, evitando la necesidad de bucles explÃ­citos para mover iteradores o calcular distancias entre ellos. Comprender cÃ³mo y cuÃ¡ndo usar estas funciones es esencial para trabajar de manera efectiva con iteradores en C++.
 <---FILES--->
 Sintaxis
 Sintaxis Result
@@ -156,7 +156,7 @@ int main() {
     std::advance(it, 3);
 
     // Mostrar el valor del elemento apuntado por el iterador
-    std::cout << "Elemento en la posición 3: " << *it << std::endl;
+    std::cout << "Elemento en la posiciÃ³n 3: " << *it << std::endl;
 
     return 0;
 }

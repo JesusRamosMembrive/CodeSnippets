@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Especialización de Plantillas con Funciones
+### EspecializaciÃ³n de Plantillas con Funciones
 
-La especialización de plantillas de funciones permite definir implementaciones específicas de una plantilla para tipos de datos particulares. Esto es útil cuando una implementación genérica no es adecuada para ciertos tipos y se requiere un comportamiento especializado.
+La especializaciÃ³n de plantillas de funciones permite definir implementaciones especÃ­ficas de una plantilla para tipos de datos particulares. Esto es Ãºtil cuando una implementaciÃ³n genÃ©rica no es adecuada para ciertos tipos y se requiere un comportamiento especializado.
 
-#### Definición de Plantillas de Función
+#### DefiniciÃ³n de Plantillas de FunciÃ³n
 
-Primero, veamos cómo se define una plantilla de función genérica.
+Primero, veamos cÃ³mo se define una plantilla de funciÃ³n genÃ©rica.
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -25,27 +25,27 @@ int main() {
 ```
 
 En este ejemplo:
-- La función `obtenerMayor` es una plantilla que puede trabajar con cualquier tipo de dato (`int`, `double`, etc.).
+- La funciÃ³n `obtenerMayor` es una plantilla que puede trabajar con cualquier tipo de dato (`int`, `double`, etc.).
 
-#### Especialización de Plantillas de Función
+#### EspecializaciÃ³n de Plantillas de FunciÃ³n
 
-La especialización de plantillas de función permite definir una implementación específica para un tipo de dato particular.
+La especializaciÃ³n de plantillas de funciÃ³n permite definir una implementaciÃ³n especÃ­fica para un tipo de dato particular.
 
-##### Ejemplo de Especialización
+##### Ejemplo de EspecializaciÃ³n
 
-Supongamos que queremos una especialización para comparar cadenas de caracteres (`const char*`).
+Supongamos que queremos una especializaciÃ³n para comparar cadenas de caracteres (`const char*`).
 
 ```cpp
 #include <iostream>
 #include <cstring>
 
-// Plantilla de función genérica
+// Plantilla de funciÃ³n genÃ©rica
 template <typename T>
 T obtenerMayor(T a, T b) {
     return (a > b) ? a : b;
 }
 
-// Especialización para const char*
+// EspecializaciÃ³n para const char*
 template <>
 const char* obtenerMayor(const char* a, const char* b) {
     return (std::strcmp(a, b) > 0) ? a : b;
@@ -60,20 +60,20 @@ int main() {
 ```
 
 En este ejemplo:
-- La función `obtenerMayor` se especializa para el tipo `const char*`.
-- La especialización utiliza `std::strcmp` para comparar las cadenas.
+- La funciÃ³n `obtenerMayor` se especializa para el tipo `const char*`.
+- La especializaciÃ³n utiliza `std::strcmp` para comparar las cadenas.
 
-#### Especialización Parcial de Plantillas
+#### EspecializaciÃ³n Parcial de Plantillas
 
-En C++, no se permite la especialización parcial de funciones plantilla directamente. Sin embargo, es posible especializar parcialmente una clase plantilla y luego usarla en una función.
+En C++, no se permite la especializaciÃ³n parcial de funciones plantilla directamente. Sin embargo, es posible especializar parcialmente una clase plantilla y luego usarla en una funciÃ³n.
 
-##### Ejemplo de Especialización Parcial usando Clases
+##### Ejemplo de EspecializaciÃ³n Parcial usando Clases
 
 ```cpp
 #include <iostream>
 #include <cstring>
 
-// Plantilla de clase genérica
+// Plantilla de clase genÃ©rica
 template <typename T>
 class Comparador {
 public:
@@ -82,7 +82,7 @@ public:
     }
 };
 
-// Especialización parcial para const char*
+// EspecializaciÃ³n parcial para const char*
 template <>
 class Comparador<const char*> {
 public:
@@ -91,7 +91,7 @@ public:
     }
 };
 
-// Función plantilla que usa la clase Comparador
+// FunciÃ³n plantilla que usa la clase Comparador
 template <typename T>
 T obtenerMayor(T a, T b) {
     return Comparador<T>::obtenerMayor(a, b);
@@ -107,37 +107,37 @@ int main() {
 
 En este ejemplo:
 - La clase `Comparador` se especializa para el tipo `const char*`.
-- La función plantilla `obtenerMayor` utiliza la clase `Comparador` para obtener el mayor valor.
+- La funciÃ³n plantilla `obtenerMayor` utiliza la clase `Comparador` para obtener el mayor valor.
 
-### Buenas Prácticas para la Especialización de Plantillas
+### Buenas PrÃ¡cticas para la EspecializaciÃ³n de Plantillas
 
 #### 1. Documentar las Especializaciones
 
-Es importante documentar las especializaciones para explicar por qué son necesarias y cómo difieren de la implementación genérica.
+Es importante documentar las especializaciones para explicar por quÃ© son necesarias y cÃ³mo difieren de la implementaciÃ³n genÃ©rica.
 
 ##### Ejemplo
 
 ```cpp
-// Plantilla de función genérica que devuelve el mayor de dos valores
+// Plantilla de funciÃ³n genÃ©rica que devuelve el mayor de dos valores
 template <typename T>
 T obtenerMayor(T a, T b) {
     return (a > b) ? a : b;
 }
 
-// Especialización para const char* que compara cadenas de caracteres
+// EspecializaciÃ³n para const char* que compara cadenas de caracteres
 template <>
 const char* obtenerMayor(const char* a, const char* b) {
     return (std::strcmp(a, b) > 0) ? a : b;
 }
 ```
 
-#### 2. Mantener la Coherencia en la Implementación
+#### 2. Mantener la Coherencia en la ImplementaciÃ³n
 
-Asegúrese de que la especialización mantenga el comportamiento esperado y sea coherente con la versión genérica de la plantilla.
+AsegÃºrese de que la especializaciÃ³n mantenga el comportamiento esperado y sea coherente con la versiÃ³n genÃ©rica de la plantilla.
 
 #### 3. Probar las Especializaciones
 
-Asegúrese de probar tanto la implementación genérica como las especializaciones para verificar que funcionen correctamente con diferentes tipos de datos.
+AsegÃºrese de probar tanto la implementaciÃ³n genÃ©rica como las especializaciones para verificar que funcionen correctamente con diferentes tipos de datos.
 
 ##### Ejemplo
 
@@ -150,19 +150,19 @@ int main() {
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-La especialización de plantillas en funciones permite crear implementaciones específicas para tipos de datos particulares, proporcionando mayor flexibilidad y control sobre el comportamiento de las funciones plantilla. Al seguir buenas prácticas como documentar las especializaciones, mantener la coherencia y probar exhaustivamente, se puede asegurar que las plantillas funcionen correctamente y sean fáciles de mantener. Las plantillas especializadas son una herramienta poderosa en C++ para escribir código genérico y eficiente.
+La especializaciÃ³n de plantillas en funciones permite crear implementaciones especÃ­ficas para tipos de datos particulares, proporcionando mayor flexibilidad y control sobre el comportamiento de las funciones plantilla. Al seguir buenas prÃ¡cticas como documentar las especializaciones, mantener la coherencia y probar exhaustivamente, se puede asegurar que las plantillas funcionen correctamente y sean fÃ¡ciles de mantener. Las plantillas especializadas son una herramienta poderosa en C++ para escribir cÃ³digo genÃ©rico y eficiente.
 <---FILES--->
-Ejemplo Básico
-Ejemplo Básico Result
-Ejemplo de Especialización
-Ejemplo de Especialización Result
-Ejemplo de Especialización Parcial usando Clases
-Ejemplo de Especialización Parcial usando Clases Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
+Ejemplo de EspecializaciÃ³n
+Ejemplo de EspecializaciÃ³n Result
+Ejemplo de EspecializaciÃ³n Parcial usando Clases
+Ejemplo de EspecializaciÃ³n Parcial usando Clases Result
 Ejemplo
 Ejemplo Result
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 
@@ -176,19 +176,19 @@ int main() {
     std::cout << "Mayor entre 5.5 y 2.2: " << obtenerMayor(5.5, 2.2) << std::endl; // Uso con double
     return 0;
 }
-<---Ejemplo Básico Result--->
-<---Ejemplo de Especialización--->
+<---Ejemplo BÃ¡sico Result--->
+<---Ejemplo de EspecializaciÃ³n--->
 ```cpp
 #include <iostream>
 #include <cstring>
 
-// Plantilla de función genérica
+// Plantilla de funciÃ³n genÃ©rica
 template <typename T>
 T obtenerMayor(T a, T b) {
     return (a > b) ? a : b;
 }
 
-// Especialización para const char*
+// EspecializaciÃ³n para const char*
 template <>
 const char* obtenerMayor(const char* a, const char* b) {
     return (std::strcmp(a, b) > 0) ? a : b;
@@ -200,13 +200,13 @@ int main() {
     std::cout << "Mayor entre 'abc' y 'xyz': " << obtenerMayor("abc", "xyz") << std::endl; // Uso con const char*
     return 0;
 }
-<---Ejemplo de Especialización Result--->
-<---Ejemplo de Especialización Parcial usando Clases--->
+<---Ejemplo de EspecializaciÃ³n Result--->
+<---Ejemplo de EspecializaciÃ³n Parcial usando Clases--->
 ```cpp
 #include <iostream>
 #include <cstring>
 
-// Plantilla de clase genérica
+// Plantilla de clase genÃ©rica
 template <typename T>
 class Comparador {
 public:
@@ -215,7 +215,7 @@ public:
     }
 };
 
-// Especialización parcial para const char*
+// EspecializaciÃ³n parcial para const char*
 template <>
 class Comparador<const char*> {
 public:
@@ -224,7 +224,7 @@ public:
     }
 };
 
-// Función plantilla que usa la clase Comparador
+// FunciÃ³n plantilla que usa la clase Comparador
 template <typename T>
 T obtenerMayor(T a, T b) {
     return Comparador<T>::obtenerMayor(a, b);
@@ -236,7 +236,7 @@ int main() {
     std::cout << "Mayor entre 'abc' y 'xyz': " << obtenerMayor("abc", "xyz") << std::endl; // Uso con const char*
     return 0;
 }
-<---Ejemplo de Especialización Parcial usando Clases Result--->
+<---Ejemplo de EspecializaciÃ³n Parcial usando Clases Result--->
 <---Ejemplo--->
 ```cpp
 int main() {

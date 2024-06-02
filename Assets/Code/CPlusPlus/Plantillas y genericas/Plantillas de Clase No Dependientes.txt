@@ -1,17 +1,17 @@
 <---EXPLANATION--->
 ### Plantillas de Clase No Dependientes
 
-Las plantillas de clase no dependientes son aquellas en las que ciertas partes del cÛdigo no dependen del par·metro de tipo de la plantilla. Esto puede simplificar la implementaciÛn y mejorar la claridad del cÛdigo.
+Las plantillas de clase no dependientes son aquellas en las que ciertas partes del c√≥digo no dependen del par√°metro de tipo de la plantilla. Esto puede simplificar la implementaci√≥n y mejorar la claridad del c√≥digo.
 
-#### IntroducciÛn
+#### Introducci√≥n
 
-En una plantilla de clase, algunas funciones miembro o mÈtodos pueden no depender del tipo de plantilla. Estas funciones se pueden definir fuera de la plantilla para mantener el cÛdigo m·s limpio y organizado.
+En una plantilla de clase, algunas funciones miembro o m√©todos pueden no depender del tipo de plantilla. Estas funciones se pueden definir fuera de la plantilla para mantener el c√≥digo m√°s limpio y organizado.
 
-#### Ejemplo B·sico de Plantilla de Clase No Dependiente
+#### Ejemplo B√°sico de Plantilla de Clase No Dependiente
 
-Supongamos que tenemos una clase plantilla que maneja una colecciÛn de elementos. Algunos mÈtodos, como `size` (que devuelve el n˙mero de elementos), no dependen del tipo de elemento.
+Supongamos que tenemos una clase plantilla que maneja una colecci√≥n de elementos. Algunos m√©todos, como `size` (que devuelve el n√∫mero de elementos), no dependen del tipo de elemento.
 
-##### DefiniciÛn y ImplementaciÛn
+##### Definici√≥n y Implementaci√≥n
 
 ```cpp
 // Coleccion.h
@@ -26,24 +26,24 @@ class Coleccion {
 public:
     void agregar(const T& elemento);
     void mostrarElementos() const;
-    std::size_t size() const; // MÈtodo no dependiente del tipo
+    std::size_t size() const; // M√©todo no dependiente del tipo
 private:
     std::vector<T> elementos;
 };
 
-// ImplementaciÛn del mÈtodo no dependiente del tipo
+// Implementaci√≥n del m√©todo no dependiente del tipo
 template <typename T>
 std::size_t Coleccion<T>::size() const {
     return elementos.size();
 }
 
-// ImplementaciÛn del mÈtodo dependiente del tipo
+// Implementaci√≥n del m√©todo dependiente del tipo
 template <typename T>
 void Coleccion<T>::agregar(const T& elemento) {
     elementos.push_back(elemento);
 }
 
-// ImplementaciÛn del mÈtodo dependiente del tipo
+// Implementaci√≥n del m√©todo dependiente del tipo
 template <typename T>
 void Coleccion<T>::mostrarElementos() const {
     for (const auto& elemento : elementos) {
@@ -69,7 +69,7 @@ int main() {
 
     std::cout << "Elementos en coleccionEnteros: ";
     coleccionEnteros.mostrarElementos();
-    std::cout << "TamaÒo de coleccionEnteros: " << coleccionEnteros.size() << std::endl;
+    std::cout << "Tama√±o de coleccionEnteros: " << coleccionEnteros.size() << std::endl;
 
     Coleccion<std::string> coleccionCadenas;
     coleccionCadenas.agregar("Hola");
@@ -77,7 +77,7 @@ int main() {
 
     std::cout << "Elementos en coleccionCadenas: ";
     coleccionCadenas.mostrarElementos();
-    std::cout << "TamaÒo de coleccionCadenas: " << coleccionCadenas.size() << std::endl;
+    std::cout << "Tama√±o de coleccionCadenas: " << coleccionCadenas.size() << std::endl;
 
     return 0;
 }
@@ -85,19 +85,19 @@ int main() {
 
 En este ejemplo:
 - La clase `Coleccion` es una plantilla que puede manejar diferentes tipos de datos (`int`, `std::string`, etc.).
-- El mÈtodo `size` no depende del tipo de elemento `T`, por lo que se puede definir de manera genÈrica para cualquier `Coleccion<T>`.
+- El m√©todo `size` no depende del tipo de elemento `T`, por lo que se puede definir de manera gen√©rica para cualquier `Coleccion<T>`.
 
 ### Beneficios de las Plantillas de Clase No Dependientes
 
-1. **Claridad del CÛdigo**: Mantener los mÈtodos no dependientes del tipo fuera de las partes especÌficas de la plantilla puede hacer que el cÛdigo sea m·s f·cil de leer y mantener.
-2. **ReutilizaciÛn**: Los mÈtodos no dependientes del tipo se pueden reutilizar m·s f·cilmente en diferentes contextos.
-3. **CompilaciÛn M·s R·pida**: Separar los mÈtodos dependientes y no dependientes puede reducir el tiempo de compilaciÛn, ya que el compilador no tiene que regenerar cÛdigo redundante.
+1. **Claridad del C√≥digo**: Mantener los m√©todos no dependientes del tipo fuera de las partes espec√≠ficas de la plantilla puede hacer que el c√≥digo sea m√°s f√°cil de leer y mantener.
+2. **Reutilizaci√≥n**: Los m√©todos no dependientes del tipo se pueden reutilizar m√°s f√°cilmente en diferentes contextos.
+3. **Compilaci√≥n M√°s R√°pida**: Separar los m√©todos dependientes y no dependientes puede reducir el tiempo de compilaci√≥n, ya que el compilador no tiene que regenerar c√≥digo redundante.
 
-### Buenas Pr·cticas para Plantillas de Clase No Dependientes
+### Buenas Pr√°cticas para Plantillas de Clase No Dependientes
 
-#### 1. Identificar MÈtodos No Dependientes del Tipo
+#### 1. Identificar M√©todos No Dependientes del Tipo
 
-Identifique los mÈtodos que no dependen del par·metro de tipo y sep·relos de los mÈtodos que sÌ dependen.
+Identifique los m√©todos que no dependen del par√°metro de tipo y sep√°relos de los m√©todos que s√≠ dependen.
 
 ##### Ejemplo
 
@@ -111,42 +111,42 @@ private:
     T valor;
 };
 
-// ImplementaciÛn de mÈtodo no dependiente
+// Implementaci√≥n de m√©todo no dependiente
 template <typename T>
 void Ejemplo<T>::metodoNoDependiente() const {
-    std::cout << "MÈtodo no dependiente del tipo T" << std::endl;
+    std::cout << "M√©todo no dependiente del tipo T" << std::endl;
 }
 
-// ImplementaciÛn de mÈtodo dependiente
+// Implementaci√≥n de m√©todo dependiente
 template <typename T>
 void Ejemplo<T>::metodoDependiente(const T& valor) {
     this->valor = valor;
-    std::cout << "MÈtodo dependiente del tipo T: " << valor << std::endl;
+    std::cout << "M√©todo dependiente del tipo T: " << valor << std::endl;
 }
 ```
 
-#### 2. Mantener la Coherencia en la ImplementaciÛn
+#### 2. Mantener la Coherencia en la Implementaci√≥n
 
-Aseg˙rese de que los mÈtodos dependientes y no dependientes mantengan la coherencia en su implementaciÛn y sigan las mismas convenciones de codificaciÛn.
+Aseg√∫rese de que los m√©todos dependientes y no dependientes mantengan la coherencia en su implementaci√≥n y sigan las mismas convenciones de codificaci√≥n.
 
 #### 3. Documentar las Funciones
 
-Documente claramente quÈ mÈtodos son dependientes y cu·les no lo son, para facilitar la comprensiÛn del cÛdigo a otros desarrolladores.
+Documente claramente qu√© m√©todos son dependientes y cu√°les no lo son, para facilitar la comprensi√≥n del c√≥digo a otros desarrolladores.
 
 ##### Ejemplo
 
 ```cpp
-// Clase plantilla que maneja una colecciÛn de elementos de tipo T
+// Clase plantilla que maneja una colecci√≥n de elementos de tipo T
 template <typename T>
 class Coleccion {
 public:
-    // Agrega un elemento a la colecciÛn (dependiente del tipo T)
+    // Agrega un elemento a la colecci√≥n (dependiente del tipo T)
     void agregar(const T& elemento);
 
-    // Muestra los elementos de la colecciÛn (dependiente del tipo T)
+    // Muestra los elementos de la colecci√≥n (dependiente del tipo T)
     void mostrarElementos() const;
 
-    // Devuelve el tamaÒo de la colecciÛn (no dependiente del tipo T)
+    // Devuelve el tama√±o de la colecci√≥n (no dependiente del tipo T)
     std::size_t size() const;
 
 private:
@@ -154,17 +154,17 @@ private:
 };
 ```
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las plantillas de clase no dependientes en C++ permiten escribir cÛdigo m·s claro y eficiente al separar los mÈtodos que no dependen del tipo de los que sÌ dependen. Al identificar y separar estos mÈtodos, se mejora la reutilizaciÛn y el mantenimiento del cÛdigo. Seguir buenas pr·cticas como documentar adecuadamente y mantener la coherencia en la implementaciÛn asegura que el cÛdigo sea robusto y f·cil de entender. Las plantillas de clase no dependientes son una herramienta poderosa para cualquier desarrollador de C++ que busca escribir cÛdigo eficiente y reutilizable.
+Las plantillas de clase no dependientes en C++ permiten escribir c√≥digo m√°s claro y eficiente al separar los m√©todos que no dependen del tipo de los que s√≠ dependen. Al identificar y separar estos m√©todos, se mejora la reutilizaci√≥n y el mantenimiento del c√≥digo. Seguir buenas pr√°cticas como documentar adecuadamente y mantener la coherencia en la implementaci√≥n asegura que el c√≥digo sea robusto y f√°cil de entender. Las plantillas de clase no dependientes son una herramienta poderosa para cualquier desarrollador de C++ que busca escribir c√≥digo eficiente y reutilizable.
 <---FILES--->
-DefiniciÛn y ImplementaciÛn
-DefiniciÛn y ImplementaciÛn Result
+Definici√≥n y Implementaci√≥n
+Definici√≥n y Implementaci√≥n Result
 Uso de la Plantilla de Clase
 Uso de la Plantilla de Clase Result
 Ejemplo
 Ejemplo Result
-<---DefiniciÛn y ImplementaciÛn--->
+<---Definici√≥n y Implementaci√≥n--->
 ```cpp
 // Coleccion.h
 #ifndef COLECCION_H
@@ -178,24 +178,24 @@ class Coleccion {
 public:
     void agregar(const T& elemento);
     void mostrarElementos() const;
-    std::size_t size() const; // MÈtodo no dependiente del tipo
+    std::size_t size() const; // M√©todo no dependiente del tipo
 private:
     std::vector<T> elementos;
 };
 
-// ImplementaciÛn del mÈtodo no dependiente del tipo
+// Implementaci√≥n del m√©todo no dependiente del tipo
 template <typename T>
 std::size_t Coleccion<T>::size() const {
     return elementos.size();
 }
 
-// ImplementaciÛn del mÈtodo dependiente del tipo
+// Implementaci√≥n del m√©todo dependiente del tipo
 template <typename T>
 void Coleccion<T>::agregar(const T& elemento) {
     elementos.push_back(elemento);
 }
 
-// ImplementaciÛn del mÈtodo dependiente del tipo
+// Implementaci√≥n del m√©todo dependiente del tipo
 template <typename T>
 void Coleccion<T>::mostrarElementos() const {
     for (const auto& elemento : elementos) {
@@ -205,7 +205,7 @@ void Coleccion<T>::mostrarElementos() const {
 }
 
 #endif // COLECCION_H
-<---DefiniciÛn y ImplementaciÛn Result--->
+<---Definici√≥n y Implementaci√≥n Result--->
 <---Uso de la Plantilla de Clase--->
 ```cpp
 // main.cpp
@@ -219,7 +219,7 @@ int main() {
 
     std::cout << "Elementos en coleccionEnteros: ";
     coleccionEnteros.mostrarElementos();
-    std::cout << "TamaÒo de coleccionEnteros: " << coleccionEnteros.size() << std::endl;
+    std::cout << "Tama√±o de coleccionEnteros: " << coleccionEnteros.size() << std::endl;
 
     Coleccion<std::string> coleccionCadenas;
     coleccionCadenas.agregar("Hola");
@@ -227,24 +227,24 @@ int main() {
 
     std::cout << "Elementos en coleccionCadenas: ";
     coleccionCadenas.mostrarElementos();
-    std::cout << "TamaÒo de coleccionCadenas: " << coleccionCadenas.size() << std::endl;
+    std::cout << "Tama√±o de coleccionCadenas: " << coleccionCadenas.size() << std::endl;
 
     return 0;
 }
 <---Uso de la Plantilla de Clase Result--->
 <---Ejemplo--->
 ```cpp
-// Clase plantilla que maneja una colecciÛn de elementos de tipo T
+// Clase plantilla que maneja una colecci√≥n de elementos de tipo T
 template <typename T>
 class Coleccion {
 public:
-    // Agrega un elemento a la colecciÛn (dependiente del tipo T)
+    // Agrega un elemento a la colecci√≥n (dependiente del tipo T)
     void agregar(const T& elemento);
 
-    // Muestra los elementos de la colecciÛn (dependiente del tipo T)
+    // Muestra los elementos de la colecci√≥n (dependiente del tipo T)
     void mostrarElementos() const;
 
-    // Devuelve el tamaÒo de la colecciÛn (no dependiente del tipo T)
+    // Devuelve el tama√±o de la colecci√≥n (no dependiente del tipo T)
     std::size_t size() const;
 
 private:

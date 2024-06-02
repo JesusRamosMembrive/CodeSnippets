@@ -3,23 +3,23 @@
 
 #### 1. **Variables**
 
-Las variables son contenedores que almacenan datos y cuyo valor puede cambiar durante la ejecución del programa. Para declarar una variable, se especifica su tipo seguido del nombre de la variable.
+Las variables son contenedores que almacenan datos y cuyo valor puede cambiar durante la ejecuciÃ³n del programa. Para declarar una variable, se especifica su tipo seguido del nombre de la variable.
 
-##### **Declaración y Asignación**
+##### **DeclaraciÃ³n y AsignaciÃ³n**
 
 ```cpp
-int edad;            // Declaración de una variable entera
-edad = 25;           // Asignación de un valor a la variable
+int edad;            // DeclaraciÃ³n de una variable entera
+edad = 25;           // AsignaciÃ³n de un valor a la variable
 
-float altura = 1.75; // Declaración y asignación en una sola línea
+float altura = 1.75; // DeclaraciÃ³n y asignaciÃ³n en una sola lÃ­nea
 ```
 
 ##### **Tipos Comunes de Variables**
 
-- **Entero (`int`):** Almacena números enteros.
-- **Flotante (`float`):** Almacena números con decimales.
-- **Doble (`double`):** Almacena números con mayor precisión decimal.
-- **Carácter (`char`):** Almacena un solo carácter.
+- **Entero (`int`):** Almacena nÃºmeros enteros.
+- **Flotante (`float`):** Almacena nÃºmeros con decimales.
+- **Doble (`double`):** Almacena nÃºmeros con mayor precisiÃ³n decimal.
+- **CarÃ¡cter (`char`):** Almacena un solo carÃ¡cter.
 - **Booleano (`bool`):** Almacena valores `true` o `false`.
 
 ##### **Ejemplo de Uso de Variables**
@@ -37,7 +37,7 @@ int main() {
     cout << "Edad: " << edad << endl;
     cout << "Altura: " << altura << endl;
     cout << "Inicial: " << inicial << endl;
-    cout << "Es estudiante: " << (esEstudiante ? "Sí" : "No") << endl;
+    cout << "Es estudiante: " << (esEstudiante ? "SÃ­" : "No") << endl;
 
     return 0;
 }
@@ -45,7 +45,7 @@ int main() {
 
 #### 2. **Constantes**
 
-Las constantes son similares a las variables, pero su valor no puede cambiar una vez asignado. Se utilizan para valores que deben permanecer constantes durante la ejecución del programa. En C++, se pueden definir constantes utilizando la palabra clave `const` o la directiva de preprocesador `#define`.
+Las constantes son similares a las variables, pero su valor no puede cambiar una vez asignado. Se utilizan para valores que deben permanecer constantes durante la ejecuciÃ³n del programa. En C++, se pueden definir constantes utilizando la palabra clave `const` o la directiva de preprocesador `#define`.
 
 ##### **Constantes con `const`**
 
@@ -74,12 +74,12 @@ int main() {
     const float PI = 3.14159;
     int dias = 365;
 
-    cout << "Días en una semana: " << DIAS_EN_SEMANA << endl;
+    cout << "DÃ­as en una semana: " << DIAS_EN_SEMANA << endl;
     cout << "Pi: " << PI << endl;
-    cout << "Meses en un año: " << MESES_EN_ANO << endl;
-    cout << "Días en un año: " << dias << endl;
+    cout << "Meses en un aÃ±o: " << MESES_EN_ANO << endl;
+    cout << "DÃ­as en un aÃ±o: " << dias << endl;
 
-    // Intentar modificar una constante resultará en un error
+    // Intentar modificar una constante resultarÃ¡ en un error
     // DIAS_EN_SEMANA = 8; // Error: no se puede asignar un nuevo valor a una constante
 
     return 0;
@@ -89,23 +89,23 @@ int main() {
 ### Diferencias Clave entre Variables y Constantes
 
 - **Mutabilidad:**
-  - **Variables:** Su valor puede cambiar durante la ejecución del programa.
+  - **Variables:** Su valor puede cambiar durante la ejecuciÃ³n del programa.
   - **Constantes:** Su valor no puede cambiar una vez asignado.
 
-- **Sintaxis de Declaración:**
+- **Sintaxis de DeclaraciÃ³n:**
   - **Variables:** Tipo seguido del nombre de la variable.
   - **Constantes:** `const` seguido del tipo y el nombre de la constante, o `#define` seguido del nombre y el valor de la constante.
 
-### Buenas Prácticas
+### Buenas PrÃ¡cticas
 
-- Utiliza constantes para valores que no deben cambiar para mejorar la legibilidad y el mantenimiento del código.
-- Nombra las constantes utilizando letras mayúsculas y separadores de subrayado (`_`) para distinguirlas fácilmente de las variables.
-- Declara variables lo más cerca posible de su primer uso para mejorar la claridad del código y evitar errores.
+- Utiliza constantes para valores que no deben cambiar para mejorar la legibilidad y el mantenimiento del cÃ³digo.
+- Nombra las constantes utilizando letras mayÃºsculas y separadores de subrayado (`_`) para distinguirlas fÃ¡cilmente de las variables.
+- Declara variables lo mÃ¡s cerca posible de su primer uso para mejorar la claridad del cÃ³digo y evitar errores.
 
-Estas prácticas te ayudarán a escribir código más claro y fácil de mantener, asegurando que los valores importantes no se modifiquen accidentalmente durante la ejecución del programa.
+Estas prÃ¡cticas te ayudarÃ¡n a escribir cÃ³digo mÃ¡s claro y fÃ¡cil de mantener, asegurando que los valores importantes no se modifiquen accidentalmente durante la ejecuciÃ³n del programa.
 <---FILES--->
-**Declaración y Asignación**
-**Declaración y Asignación** Result
+**DeclaraciÃ³n y AsignaciÃ³n**
+**DeclaraciÃ³n y AsignaciÃ³n** Result
 **Tipos Comunes de Variables**
 **Tipos Comunes de Variables** Result
 **Ejemplo de Uso de Variables**
@@ -116,13 +116,13 @@ Estas prácticas te ayudarán a escribir código más claro y fácil de mantener, ase
 **Constantes con `#define`** Result
 **Ejemplo de Uso de Constantes**
 **Ejemplo de Uso de Constantes** Result
-<---**Declaración y Asignación**--->
+<---**DeclaraciÃ³n y AsignaciÃ³n**--->
 ```cpp
-int edad;            // Declaración de una variable entera
-edad = 25;           // Asignación de un valor a la variable
+int edad;            // DeclaraciÃ³n de una variable entera
+edad = 25;           // AsignaciÃ³n de un valor a la variable
 
-float altura = 1.75; // Declaración y asignación en una sola línea
-<---**Declaración y Asignación** Result--->
+float altura = 1.75; // DeclaraciÃ³n y asignaciÃ³n en una sola lÃ­nea
+<---**DeclaraciÃ³n y AsignaciÃ³n** Result--->
 <---**Tipos Comunes de Variables**--->
 <---**Tipos Comunes de Variables** Result--->
 <---**Ejemplo de Uso de Variables**--->
@@ -139,7 +139,7 @@ int main() {
     cout << "Edad: " << edad << endl;
     cout << "Altura: " << altura << endl;
     cout << "Inicial: " << inicial << endl;
-    cout << "Es estudiante: " << (esEstudiante ? "Sí" : "No") << endl;
+    cout << "Es estudiante: " << (esEstudiante ? "SÃ­" : "No") << endl;
 
     return 0;
 }
@@ -166,12 +166,12 @@ int main() {
     const float PI = 3.14159;
     int dias = 365;
 
-    cout << "Días en una semana: " << DIAS_EN_SEMANA << endl;
+    cout << "DÃ­as en una semana: " << DIAS_EN_SEMANA << endl;
     cout << "Pi: " << PI << endl;
-    cout << "Meses en un año: " << MESES_EN_ANO << endl;
-    cout << "Días en un año: " << dias << endl;
+    cout << "Meses en un aÃ±o: " << MESES_EN_ANO << endl;
+    cout << "DÃ­as en un aÃ±o: " << dias << endl;
 
-    // Intentar modificar una constante resultará en un error
+    // Intentar modificar una constante resultarÃ¡ en un error
     // DIAS_EN_SEMANA = 8; // Error: no se puede asignar un nuevo valor a una constante
 
     return 0;

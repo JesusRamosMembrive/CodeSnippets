@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Alias de Tipos en C++: `typedef` y `using`
 
-En C++, `typedef` y `using` se utilizan para crear alias de tipos de datos, lo que puede hacer que el código sea más legible y manejable. Ambos permiten definir un nombre alternativo para un tipo existente, pero `using` ofrece más flexibilidad y características adicionales en C++11 y posteriores.
+En C++, `typedef` y `using` se utilizan para crear alias de tipos de datos, lo que puede hacer que el cÃ³digo sea mÃ¡s legible y manejable. Ambos permiten definir un nombre alternativo para un tipo existente, pero `using` ofrece mÃ¡s flexibilidad y caracterÃ­sticas adicionales en C++11 y posteriores.
 
 #### `typedef`
 
-`typedef` es una palabra clave tradicional en C++ que se utiliza para crear alias de tipos de datos. Es especialmente útil para simplificar tipos complejos y mejorar la legibilidad del código.
+`typedef` es una palabra clave tradicional en C++ que se utiliza para crear alias de tipos de datos. Es especialmente Ãºtil para simplificar tipos complejos y mejorar la legibilidad del cÃ³digo.
 
 ##### Sintaxis
 
@@ -13,7 +13,7 @@ En C++, `typedef` y `using` se utilizan para crear alias de tipos de datos, lo q
 typedef tipo_original nuevo_nombre;
 ```
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -23,7 +23,7 @@ typedef unsigned long ulong;
 
 int main() {
     ulong numero = 1000000;
-    cout << "Número: " << numero << endl;
+    cout << "NÃºmero: " << numero << endl;
     return 0;
 }
 ```
@@ -49,11 +49,11 @@ int main() {
 }
 ```
 
-En este ejemplo, `typedef` se usa para crear un alias `FuncionPtr` para un puntero a función que toma dos `int` y devuelve un `int`.
+En este ejemplo, `typedef` se usa para crear un alias `FuncionPtr` para un puntero a funciÃ³n que toma dos `int` y devuelve un `int`.
 
 #### `using`
 
-`using` es una forma más moderna y flexible de crear alias de tipos en C++. Introducido en C++11, `using` puede hacer todo lo que `typedef` hace y más, como alias de plantillas.
+`using` es una forma mÃ¡s moderna y flexible de crear alias de tipos en C++. Introducido en C++11, `using` puede hacer todo lo que `typedef` hace y mÃ¡s, como alias de plantillas.
 
 ##### Sintaxis
 
@@ -61,7 +61,7 @@ En este ejemplo, `typedef` se usa para crear un alias `FuncionPtr` para un punte
 using nuevo_nombre = tipo_original;
 ```
 
-##### Ejemplo Básico
+##### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -71,7 +71,7 @@ using ulong = unsigned long;
 
 int main() {
     ulong numero = 1000000;
-    cout << "Número: " << numero << endl;
+    cout << "NÃºmero: " << numero << endl;
     return 0;
 }
 ```
@@ -97,7 +97,7 @@ int main() {
 
 ##### Alias de Plantillas
 
-Una de las características más poderosas de `using` es su capacidad para crear alias de plantillas, lo que `typedef` no puede hacer.
+Una de las caracterÃ­sticas mÃ¡s poderosas de `using` es su capacidad para crear alias de plantillas, lo que `typedef` no puede hacer.
 
 ```cpp
 #include <iostream>
@@ -117,21 +117,21 @@ int main() {
 }
 ```
 
-En este ejemplo, `Vec<T>` es un alias de plantilla para `std::vector<T>`, simplificando la declaración de vectores.
+En este ejemplo, `Vec<T>` es un alias de plantilla para `std::vector<T>`, simplificando la declaraciÃ³n de vectores.
 
-#### Comparación entre `typedef` y `using`
+#### ComparaciÃ³n entre `typedef` y `using`
 
-| Característica            | `typedef`                      | `using`                                |
+| CaracterÃ­stica            | `typedef`                      | `using`                                |
 |---------------------------|--------------------------------|----------------------------------------|
 | Sintaxis                  | Tradicional                    | Moderna (C++11 y posteriores)          |
-| Alias para Tipos Simples  | Sí                             | Sí                                     |
-| Alias para Tipos Complejos| Sí                             | Sí                                     |
-| Alias de Plantillas       | No                             | Sí                                     |
-| Legibilidad               | Menos intuitivo                | Más claro y legible                    |
+| Alias para Tipos Simples  | SÃ­                             | SÃ­                                     |
+| Alias para Tipos Complejos| SÃ­                             | SÃ­                                     |
+| Alias de Plantillas       | No                             | SÃ­                                     |
+| Legibilidad               | Menos intuitivo                | MÃ¡s claro y legible                    |
 
 #### Ejemplo Completo
 
-A continuación, un ejemplo que muestra el uso de `typedef` y `using` para crear alias de tipos simples, complejos y plantillas:
+A continuaciÃ³n, un ejemplo que muestra el uso de `typedef` y `using` para crear alias de tipos simples, complejos y plantillas:
 
 ```cpp
 #include <iostream>
@@ -157,13 +157,13 @@ int main() {
     // Uso de typedef
     ulong numero1 = 1000000;
     FuncionPtr fp1 = sumar;
-    cout << "Número1: " << numero1 << endl;
+    cout << "NÃºmero1: " << numero1 << endl;
     cout << "Suma1: " << fp1(5, 3) << endl;
 
     // Uso de using
     ulong_alias numero2 = 2000000;
     FuncionPtr_alias fp2 = sumar;
-    cout << "Número2: " << numero2 << endl;
+    cout << "NÃºmero2: " << numero2 << endl;
     cout << "Suma2: " << fp2(7, 2) << endl;
 
     // Uso de alias de plantilla con using
@@ -177,14 +177,14 @@ int main() {
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-`typedef` y `using` son herramientas útiles en C++ para crear alias de tipos de datos, mejorando la legibilidad y manejabilidad del código. Mientras que `typedef` ha sido la forma tradicional de hacerlo, `using` introduce una sintaxis más moderna y flexible, especialmente útil para alias de plantillas. Comprender cómo y cuándo usar cada uno es esencial para escribir código C++ limpio y eficiente.
+`typedef` y `using` son herramientas Ãºtiles en C++ para crear alias de tipos de datos, mejorando la legibilidad y manejabilidad del cÃ³digo. Mientras que `typedef` ha sido la forma tradicional de hacerlo, `using` introduce una sintaxis mÃ¡s moderna y flexible, especialmente Ãºtil para alias de plantillas. Comprender cÃ³mo y cuÃ¡ndo usar cada uno es esencial para escribir cÃ³digo C++ limpio y eficiente.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-Ejemplo Básico
-Ejemplo Básico Result
+Ejemplo BÃ¡sico
+Ejemplo BÃ¡sico Result
 Alias para Tipos Complejos
 Alias para Tipos Complejos Result
 Alias de Plantillas
@@ -193,7 +193,7 @@ Alias de Plantillas Result
 ```cpp
 using nuevo_nombre = tipo_original;
 <---Sintaxis Result--->
-<---Ejemplo Básico--->
+<---Ejemplo BÃ¡sico--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -202,10 +202,10 @@ using ulong = unsigned long;
 
 int main() {
     ulong numero = 1000000;
-    cout << "Número: " << numero << endl;
+    cout << "NÃºmero: " << numero << endl;
     return 0;
 }
-<---Ejemplo Básico Result--->
+<---Ejemplo BÃ¡sico Result--->
 <---Alias para Tipos Complejos--->
 ```cpp
 #include <iostream>
@@ -264,13 +264,13 @@ int main() {
     // Uso de typedef
     ulong numero1 = 1000000;
     FuncionPtr fp1 = sumar;
-    cout << "Número1: " << numero1 << endl;
+    cout << "NÃºmero1: " << numero1 << endl;
     cout << "Suma1: " << fp1(5, 3) << endl;
 
     // Uso de using
     ulong_alias numero2 = 2000000;
     FuncionPtr_alias fp2 = sumar;
-    cout << "Número2: " << numero2 << endl;
+    cout << "NÃºmero2: " << numero2 << endl;
     cout << "Suma2: " << fp2(7, 2) << endl;
 
     // Uso de alias de plantilla con using

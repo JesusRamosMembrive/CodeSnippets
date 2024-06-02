@@ -127,3 +127,4 @@ En este ejemplo:
 
 La sobrecarga de operadores en C++ mejora la legibilidad y usabilidad de las clases personalizadas. Al decidir si sobrecargar un operador como miembro de clase o como una función no miembro (amiga), considere cómo se utilizará el operador y si necesita acceso directo a los miembros privados de la clase. Las funciones no miembros son útiles cuando la operación debe interactuar con diferentes tipos de objetos, mientras que las funciones miembro son convenientes para operaciones que solo involucran objetos de la misma clase.
 <---FILES--->
+NA.

@@ -1,6 +1,6 @@
 import QtQuick
 Item{
-property ListModel manejoMemoriaType: ListModel{
+property ListModel gestionDeLaMemoriaType: ListModel{
 
 ListElement{ name: "Arreglos Dinamicos"}
 ListElement{ name: "Fugas de Memoria"}

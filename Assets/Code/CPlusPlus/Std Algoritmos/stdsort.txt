@@ -1,7 +1,7 @@
 <---EXPLANATION--->
-### Algoritmo de la Biblioteca Est醤dar: `std::sort`
+### Algoritmo de la Biblioteca Est谩ndar: `std::sort`
 
-La funci髇 `std::sort` es un algoritmo de la biblioteca est醤dar de C++ que se utiliza para ordenar los elementos de un rango. Es parte del encabezado `<algorithm>` y es ampliamente utilizada debido a su eficiencia y flexibilidad.
+La funci贸n `std::sort` es un algoritmo de la biblioteca est谩ndar de C++ que se utiliza para ordenar los elementos de un rango. Es parte del encabezado `<algorithm>` y es ampliamente utilizada debido a su eficiencia y flexibilidad.
 
 #### Sintaxis de `std::sort`
 
@@ -16,16 +16,16 @@ void sort(RandomIt first, RandomIt last, Compare comp);
 ```
 
 - **`RandomIt first`**: Iterador al primer elemento del rango.
-- **`RandomIt last`**: Iterador al elemento despu閟 del 鷏timo en el rango.
-- **`Compare comp`**: (Opcional) Funci髇 o funci髇 objeto que define el criterio de comparaci髇.
+- **`RandomIt last`**: Iterador al elemento despu茅s del 煤ltimo en el rango.
+- **`Compare comp`**: (Opcional) Funci贸n o funci贸n objeto que define el criterio de comparaci贸n.
 
-#### Descripci髇
+#### Descripci贸n
 
-`std::sort` ordena los elementos en el rango `[first, last)` en orden ascendente por defecto. Si se proporciona una funci髇 de comparaci髇, se utiliza esa funci髇 para determinar el orden.
+`std::sort` ordena los elementos en el rango `[first, last)` en orden ascendente por defecto. Si se proporciona una funci贸n de comparaci贸n, se utiliza esa funci贸n para determinar el orden.
 
 #### Ejemplo de Uso de `std::sort`
 
-##### Ejemplo B醩ico (Orden Ascendente)
+##### Ejemplo B谩sico (Orden Ascendente)
 
 ```cpp
 #include <iostream>
@@ -52,7 +52,7 @@ int main() {
 En este ejemplo:
 - `std::sort(vec.begin(), vec.end())` ordena todos los elementos del vector `vec` en orden ascendente.
 
-##### Ejemplo con Comparaci髇 Personalizada (Orden Descendente)
+##### Ejemplo con Comparaci贸n Personalizada (Orden Descendente)
 
 ```cpp
 #include <iostream>
@@ -62,7 +62,7 @@ En este ejemplo:
 int main() {
     std::vector<int> vec = {5, 2, 9, 1, 5, 6};
 
-    // Usar std::sort con una funci髇 de comparaci髇 para ordenar en orden descendente
+    // Usar std::sort con una funci贸n de comparaci贸n para ordenar en orden descendente
     std::sort(vec.begin(), vec.end(), std::greater<int>());
 
     // Mostrar los elementos ordenados
@@ -110,13 +110,13 @@ int main() {
 En este ejemplo:
 - `std::sort` se usa para ordenar los elementos de
 <---FILES--->
-Ejemplo B醩ico (Orden Ascendente)
-Ejemplo B醩ico (Orden Ascendente) Result
-Ejemplo con Comparaci髇 Personalizada (Orden Descendente)
-Ejemplo con Comparaci髇 Personalizada (Orden Descendente) Result
+Ejemplo B谩sico (Orden Ascendente)
+Ejemplo B谩sico (Orden Ascendente) Result
+Ejemplo con Comparaci贸n Personalizada (Orden Descendente)
+Ejemplo con Comparaci贸n Personalizada (Orden Descendente) Result
 Ordenar un `std::array`
 Ordenar un `std::array` Result
-<---Ejemplo B醩ico (Orden Ascendente)--->
+<---Ejemplo B谩sico (Orden Ascendente)--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -137,8 +137,8 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B醩ico (Orden Ascendente) Result--->
-<---Ejemplo con Comparaci髇 Personalizada (Orden Descendente)--->
+<---Ejemplo B谩sico (Orden Ascendente) Result--->
+<---Ejemplo con Comparaci贸n Personalizada (Orden Descendente)--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -147,7 +147,7 @@ int main() {
 int main() {
     std::vector<int> vec = {5, 2, 9, 1, 5, 6};
 
-    // Usar std::sort con una funci髇 de comparaci髇 para ordenar en orden descendente
+    // Usar std::sort con una funci贸n de comparaci贸n para ordenar en orden descendente
     std::sort(vec.begin(), vec.end(), std::greater<int>());
 
     // Mostrar los elementos ordenados
@@ -159,7 +159,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Comparaci髇 Personalizada (Orden Descendente) Result--->
+<---Ejemplo con Comparaci贸n Personalizada (Orden Descendente) Result--->
 <---Ordenar un `std::array`--->
 ```cpp
 #include <iostream>

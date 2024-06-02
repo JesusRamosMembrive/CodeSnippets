@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### Concepts Predefinidos en C++
 
-C++20 introdujo una serie de Concepts predefinidos en la biblioteca estándar, que cubren un amplio rango de propiedades y operaciones comunes. Estos Concepts predefinidos facilitan la creación de plantillas al proporcionar restricciones listas para usar que aseguran que los tipos cumplan con ciertos requisitos.
+C++20 introdujo una serie de Concepts predefinidos en la biblioteca estÃ¡ndar, que cubren un amplio rango de propiedades y operaciones comunes. Estos Concepts predefinidos facilitan la creaciÃ³n de plantillas al proporcionar restricciones listas para usar que aseguran que los tipos cumplan con ciertos requisitos.
 
 #### Lista de Concepts Predefinidos
 
-Aquí hay algunos de los Concepts predefinidos más importantes:
+AquÃ­ hay algunos de los Concepts predefinidos mÃ¡s importantes:
 
 1. `Same`
 2. `DerivedFrom`
@@ -32,7 +32,7 @@ El Concept `Same` verifica si dos tipos son el mismo.
 #include <concepts>
 #include <iostream>
 
-// Función plantilla que solo acepta argumentos del mismo tipo
+// FunciÃ³n plantilla que solo acepta argumentos del mismo tipo
 template<std::same_as<int> T>
 void imprimir(T valor) {
     std::cout << valor << std::endl;
@@ -41,7 +41,7 @@ void imprimir(T valor) {
 int main() {
     imprimir(42);  // Funciona: 42 es un int
 
-    // imprimir(42.0);  // Error de compilación: 42.0 es un double
+    // imprimir(42.0);  // Error de compilaciÃ³n: 42.0 es un double
 }
 ```
 
@@ -58,7 +58,7 @@ El Concept `DerivedFrom` verifica si un tipo es derivado de otro.
 class Base {};
 class Derivada : public Base {};
 
-// Función plantilla que solo acepta tipos derivados de Base
+// FunciÃ³n plantilla que solo acepta tipos derivados de Base
 template<std::derived_from<Base> T>
 void mostrarBase(const T&) {
     std::cout << "Derivado de Base" << std::endl;
@@ -70,7 +70,7 @@ int main() {
 
     mostrarBase(d);  // Funciona: Derivada es derivada de Base
 
-    // mostrarBase(b);  // Error de compilación: Base no es derivada de Base
+    // mostrarBase(b);  // Error de compilaciÃ³n: Base no es derivada de Base
 }
 ```
 
@@ -84,7 +84,7 @@ El Concept `ConvertibleTo` verifica si un tipo puede ser convertido a otro.
 #include <concepts>
 #include <iostream>
 
-// Función plantilla que solo acepta tipos convertibles a int
+// FunciÃ³n plantilla que solo acepta tipos convertibles a int
 template<std::convertible_to<int> T>
 void convertir(T valor) {
     int convertido = static_cast<int>(valor);
@@ -95,13 +95,13 @@ int main() {
     convertir(42);     // Funciona: int es convertible a int
     convertir(42.0);   // Funciona: double es convertible a int
 
-    // convertir("42");  // Error de compilación: const char* no es convertible a int
+    // convertir("42");  // Error de compilaciÃ³n: const char* no es convertible a int
 }
 ```
 
 #### 4. Concept `Common`
 
-El Concept `Common` verifica si hay un tipo común entre dos tipos dados.
+El Concept `Common` verifica si hay un tipo comÃºn entre dos tipos dados.
 
 ##### Ejemplo
 
@@ -109,17 +109,17 @@ El Concept `Common` verifica si hay un tipo común entre dos tipos dados.
 #include <concepts>
 #include <iostream>
 
-// Función plantilla que solo acepta tipos con un tipo común
+// FunciÃ³n plantilla que solo acepta tipos con un tipo comÃºn
 template<std::common_with<int> T>
 void sumarComun(T a, T b) {
     std::cout << (a + b) << std::endl;
 }
 
 int main() {
-    sumarComun(3, 5);   // Funciona: int es común con int
-    sumarComun(3.0, 5); // Funciona: double es común con int
+    sumarComun(3, 5);   // Funciona: int es comÃºn con int
+    sumarComun(3.0, 5); // Funciona: double es comÃºn con int
 
-    // sumarComun("3", 5);  // Error de compilación: const char* no es común con int
+    // sumarComun("3", 5);  // Error de compilaciÃ³n: const char* no es comÃºn con int
 }
 ```
 
@@ -133,7 +133,7 @@ El Concept `Integral` verifica si un tipo es un tipo integral.
 #include <concepts>
 #include <iostream>
 
-// Función plantilla que solo acepta tipos integrales
+// FunciÃ³n plantilla que solo acepta tipos integrales
 template<std::integral T>
 T multiplicar(T a, T b) {
     return a * b;
@@ -144,7 +144,7 @@ int main() {
     std::cout << multiplicar(a, b) << std::endl;  // Funciona: int es un tipo integral
 
     // double x = 5.0, y = 3.0;
-    // std::cout << multiplicar(x, y) << std::endl;  // Error de compilación: double no es un tipo integral
+    // std::cout << multiplicar(x, y) << std::endl;  // Error de compilaciÃ³n: double no es un tipo integral
 }
 ```
 
@@ -158,9 +158,9 @@ int main() {
 - **MoveConstructible**: Verifica si un tipo puede ser movido.
 - **CopyConstructible**: Verifica si un tipo puede ser copiado.
 
-### Conclusión
+### ConclusiÃ³n
 
-Los Concepts predefinidos en C++20 son una herramienta poderosa para imponer restricciones de tipos en plantillas. Estos Concepts proporcionan una manera clara y concisa de especificar requisitos de tipos, mejorando la seguridad y legibilidad del código. Al utilizar estos Concepts, puede asegurarse de que sus plantillas solo acepten tipos adecuados y evitar errores de compilación difíciles de diagnosticar.
+Los Concepts predefinidos en C++20 son una herramienta poderosa para imponer restricciones de tipos en plantillas. Estos Concepts proporcionan una manera clara y concisa de especificar requisitos de tipos, mejorando la seguridad y legibilidad del cÃ³digo. Al utilizar estos Concepts, puede asegurarse de que sus plantillas solo acepten tipos adecuados y evitar errores de compilaciÃ³n difÃ­ciles de diagnosticar.
 <---FILES--->
 Ejemplo
 Ejemplo Result
@@ -169,7 +169,7 @@ Ejemplo Result
 #include <concepts>
 #include <iostream>
 
-// Función plantilla que solo acepta tipos integrales
+// FunciÃ³n plantilla que solo acepta tipos integrales
 template<std::integral T>
 T multiplicar(T a, T b) {
     return a * b;
@@ -180,6 +180,6 @@ int main() {
     std::cout << multiplicar(a, b) << std::endl;  // Funciona: int es un tipo integral
 
     // double x = 5.0, y = 3.0;
-    // std::cout << multiplicar(x, y) << std::endl;  // Error de compilación: double no es un tipo integral
+    // std::cout << multiplicar(x, y) << std::endl;  // Error de compilaciÃ³n: double no es un tipo integral
 }
 <---Ejemplo Result--->

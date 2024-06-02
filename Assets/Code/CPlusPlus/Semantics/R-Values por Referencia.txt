@@ -1,11 +1,11 @@
 <---EXPLANATION--->
 ### R-Values por Referencia en C++
 
-Las R-value references introducidas en C++11 proporcionan un mecanismo poderoso para optimizar la gestiÛn de recursos y habilitar las move semantics. Las R-value references permiten capturar y manipular R-values (valores temporales), lo que facilita la implementaciÛn de constructores y operadores de asignaciÛn de movimiento. AquÌ exploraremos en detalle el uso de R-value references, sus beneficios y ejemplos pr·cticos.
+Las R-value references introducidas en C++11 proporcionan un mecanismo poderoso para optimizar la gesti√≥n de recursos y habilitar las move semantics. Las R-value references permiten capturar y manipular R-values (valores temporales), lo que facilita la implementaci√≥n de constructores y operadores de asignaci√≥n de movimiento. Aqu√≠ exploraremos en detalle el uso de R-value references, sus beneficios y ejemplos pr√°cticos.
 
-#### DefiniciÛn de R-Value Reference
+#### Definici√≥n de R-Value Reference
 
-Una **R-value reference** se declara utilizando `&&`. Permite referenciar un R-value, lo que significa que puede referenciar valores temporales que no tienen una direcciÛn de memoria accesible mediante un L-value.
+Una **R-value reference** se declara utilizando `&&`. Permite referenciar un R-value, lo que significa que puede referenciar valores temporales que no tienen una direcci√≥n de memoria accesible mediante un L-value.
 
 ##### Sintaxis
 
@@ -15,8 +15,8 @@ T&& rvalue_ref;
 
 #### Beneficios de R-Value References
 
-1. **OptimizaciÛn de Rendimiento:** Permiten transferir recursos de manera eficiente sin copiar.
-2. **Move Semantics:** Facilitan la implementaciÛn de move constructors y move assignment operators.
+1. **Optimizaci√≥n de Rendimiento:** Permiten transferir recursos de manera eficiente sin copiar.
+2. **Move Semantics:** Facilitan la implementaci√≥n de move constructors y move assignment operators.
 3. **Evitar Copias Innecesarias:** Reducen la sobrecarga asociada con la copia de objetos grandes o complejos.
 
 #### Uso de R-Value References
@@ -71,7 +71,7 @@ En este ejemplo:
 
 ##### Move Assignment Operator
 
-El move assignment operator permite transferir recursos de un objeto a otro durante una operaciÛn de asignaciÛn.
+El move assignment operator permite transferir recursos de un objeto a otro durante una operaci√≥n de asignaci√≥n.
 
 ```cpp
 class MiClase {
@@ -126,9 +126,9 @@ En este ejemplo:
 
 ### R-Value References en Funciones
 
-Las R-value references tambiÈn se pueden utilizar en funciones para optimizar el paso de par·metros y el retorno de valores.
+Las R-value references tambi√©n se pueden utilizar en funciones para optimizar el paso de par√°metros y el retorno de valores.
 
-##### Paso de Par·metros por R-Value Reference
+##### Paso de Par√°metros por R-Value Reference
 
 ```cpp
 #include <iostream>
@@ -147,7 +147,7 @@ int main() {
 ```
 
 En este ejemplo:
-- La funciÛn `procesar` toma un R-value reference como par·metro, permitiendo la transferencia de recursos sin copiar.
+- La funci√≥n `procesar` toma un R-value reference como par√°metro, permitiendo la transferencia de recursos sin copiar.
 
 ##### Retorno de Valores por R-Value Reference
 
@@ -168,15 +168,15 @@ int main() {
 En este ejemplo:
 - `crearObjeto` devuelve un R-value, que se puede mover en lugar de copiarse, optimizando el rendimiento.
 
-### Consideraciones y Buenas Pr·cticas
+### Consideraciones y Buenas Pr√°cticas
 
-1. **Evitar el Uso Inapropiado del Objeto Original:** DespuÈs de mover un objeto, el objeto original queda en un estado v·lido pero indeterminado y no debe ser utilizado hasta que se le reasigne un nuevo valor.
-2. **Implementar Correctamente Move Constructor y Move Assignment Operator:** Aseg˙rese de que las clases implementen correctamente estos operadores para manejar recursos adecuadamente.
+1. **Evitar el Uso Inapropiado del Objeto Original:** Despu√©s de mover un objeto, el objeto original queda en un estado v√°lido pero indeterminado y no debe ser utilizado hasta que se le reasigne un nuevo valor.
+2. **Implementar Correctamente Move Constructor y Move Assignment Operator:** Aseg√∫rese de que las clases implementen correctamente estos operadores para manejar recursos adecuadamente.
 3. **Uso de `std::move`:** Use `std::move` para convertir un L-value en un R-value cuando desee transferir la propiedad de los recursos.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-Las R-value references son una herramienta poderosa en C++ para optimizar la gestiÛn de recursos y mejorar el rendimiento. Al permitir la transferencia eficiente de recursos mediante move constructors y move assignment operators, las R-value references reducen la sobrecarga de copia y habilitan optimizaciones significativas. Comprender y utilizar adecuadamente las R-value references es esencial para escribir cÛdigo C++ moderno y eficiente.
+Las R-value references son una herramienta poderosa en C++ para optimizar la gesti√≥n de recursos y mejorar el rendimiento. Al permitir la transferencia eficiente de recursos mediante move constructors y move assignment operators, las R-value references reducen la sobrecarga de copia y habilitan optimizaciones significativas. Comprender y utilizar adecuadamente las R-value references es esencial para escribir c√≥digo C++ moderno y eficiente.
 <---FILES--->
 Sintaxis
 Sintaxis Result
@@ -184,8 +184,8 @@ Move Constructor
 Move Constructor Result
 Move Assignment Operator
 Move Assignment Operator Result
-Paso de Par·metros por R-Value Reference
-Paso de Par·metros por R-Value Reference Result
+Paso de Par√°metros por R-Value Reference
+Paso de Par√°metros por R-Value Reference Result
 Retorno de Valores por R-Value Reference
 Retorno de Valores por R-Value Reference Result
 <---Sintaxis--->
@@ -281,7 +281,7 @@ int main() {
     return 0;
 }
 <---Move Assignment Operator Result--->
-<---Paso de Par·metros por R-Value Reference--->
+<---Paso de Par√°metros por R-Value Reference--->
 ```cpp
 #include <iostream>
 #include <utility>
@@ -296,7 +296,7 @@ int main() {
 
     return 0;
 }
-<---Paso de Par·metros por R-Value Reference Result--->
+<---Paso de Par√°metros por R-Value Reference Result--->
 <---Retorno de Valores por R-Value Reference--->
 ```cpp
 MiClase crearObjeto() {

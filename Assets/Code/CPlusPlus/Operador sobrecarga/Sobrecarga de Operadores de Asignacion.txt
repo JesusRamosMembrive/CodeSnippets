@@ -1,13 +1,13 @@
 <---EXPLANATION--->
-### Sobrecarga de Operadores de Asignaci髇 en C++
+### Sobrecarga de Operadores de Asignaci贸n en C++
 
-La sobrecarga de operadores de asignaci髇 permite definir c髆o se comportan los operadores de asignaci髇 est醤dar (`=`, `+=`, `-=`, `*=`, `/=`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Este aspecto es crucial para la correcta gesti髇 de los recursos y para asegurar que los objetos se copien de manera adecuada, evitando problemas como la doble liberaci髇 de memoria.
+La sobrecarga de operadores de asignaci贸n permite definir c贸mo se comportan los operadores de asignaci贸n est谩ndar (`=`, `+=`, `-=`, `*=`, `/=`, etc.) cuando se utilizan con tipos de datos definidos por el usuario. Este aspecto es crucial para la correcta gesti贸n de los recursos y para asegurar que los objetos se copien de manera adecuada, evitando problemas como la doble liberaci贸n de memoria.
 
-A continuaci髇, se explica c髆o sobrecargar estos operadores de asignaci髇 en C++.
+A continuaci贸n, se explica c贸mo sobrecargar estos operadores de asignaci贸n en C++.
 
-#### Ejemplo: Clase `Array` para Sobrecargar Operadores de Asignaci髇
+#### Ejemplo: Clase `Array` para Sobrecargar Operadores de Asignaci贸n
 
-Definiremos una clase `Array` que representa un array din醡ico y sobrecargaremos los operadores `=`, `+=`, `-=`, `*=`, y `/=`.
+Definiremos una clase `Array` que representa un array din谩mico y sobrecargaremos los operadores `=`, `+=`, `-=`, `*=`, y `/=`.
 
 ```cpp
 // Array.h
@@ -35,7 +35,7 @@ public:
         delete[] data;
     }
 
-    // Sobrecarga del operador de asignaci髇 =
+    // Sobrecarga del operador de asignaci贸n =
     Array& operator=(const Array& other) {
         if (this != &other) {
             delete[] data; // Liberar la memoria existente
@@ -46,7 +46,7 @@ public:
         return *this;
     }
 
-    // Sobrecarga del operador de asignaci髇 +=
+    // Sobrecarga del operador de asignaci贸n +=
     Array& operator+=(const Array& other) {
         for (size_t i = 0; i < size; ++i) {
             data[i] += other.data[i];
@@ -54,7 +54,7 @@ public:
         return *this;
     }
 
-    // Sobrecarga del operador de asignaci髇 -=
+    // Sobrecarga del operador de asignaci贸n -=
     Array& operator-=(const Array& other) {
         for (size_t i = 0; i < size; ++i) {
             data[i] -= other.data[i];
@@ -62,7 +62,7 @@ public:
         return *this;
     }
 
-    // Sobrecarga del operador de asignaci髇 *=
+    // Sobrecarga del operador de asignaci贸n *=
     Array& operator*=(const Array& other) {
         for (size_t i = 0; i < size; ++i) {
             data[i] *= other.data[i];
@@ -70,7 +70,7 @@ public:
         return *this;
     }
 
-    // Sobrecarga del operador de asignaci髇 /=
+    // Sobrecarga del operador de asignaci贸n /=
     Array& operator/=(const Array& other) {
         for (size_t i = 0; i < size; ++i) {
             data[i] /= other.data[i];
@@ -78,7 +78,7 @@ public:
         return *this;
     }
 
-    // M閠odo para imprimir los elementos del array
+    // M茅todo para imprimir los elementos del array
     void print() const {
         for (size_t i = 0; i < size; ++i) {
             std::cout << data[i] << " ";
@@ -130,9 +130,9 @@ int main() {
 }
 ```
 
-### Explicaci髇 de los Operadores Sobrecargados
+### Explicaci贸n de los Operadores Sobrecargados
 
-#### Sobrecarga del Operador de Asignaci髇 `=`
+#### Sobrecarga del Operador de Asignaci贸n `=`
 
 ```cpp
 Array& operator=(const Array& other) {
@@ -145,9 +145,9 @@ Array& operator=(const Array& other) {
     return *this;
 }
 ```
-Este operador realiza una copia profunda del array. Si el objeto que recibe la asignaci髇 no es el mismo que el objeto asignado (comprobado con `this != &other`), se libera la memoria existente y se copia el contenido del array fuente.
+Este operador realiza una copia profunda del array. Si el objeto que recibe la asignaci贸n no es el mismo que el objeto asignado (comprobado con `this != &other`), se libera la memoria existente y se copia el contenido del array fuente.
 
-#### Sobrecarga del Operador de Asignaci髇 `+=`
+#### Sobrecarga del Operador de Asignaci贸n `+=`
 
 ```cpp
 Array& operator+=(const Array& other) {
@@ -157,9 +157,9 @@ Array& operator+=(const Array& other) {
     return *this;
 }
 ```
-Este operador a馻de los elementos del array fuente a los elementos del array destino, modificando el array destino en el proceso.
+Este operador a帽ade los elementos del array fuente a los elementos del array destino, modificando el array destino en el proceso.
 
-#### Sobrecarga del Operador de Asignaci髇 `-=`
+#### Sobrecarga del Operador de Asignaci贸n `-=`
 
 ```cpp
 Array& operator-=(const Array& other) {
@@ -171,7 +171,7 @@ Array& operator-=(const Array& other) {
 ```
 Este operador resta los elementos del array fuente de los elementos del array destino, modificando el array destino en el proceso.
 
-#### Sobrecarga del Operador de Asignaci髇 `*=`
+#### Sobrecarga del Operador de Asignaci贸n `*=`
 
 ```cpp
 Array& operator*=(const Array& other) {
@@ -183,7 +183,7 @@ Array& operator*=(const Array& other) {
 ```
 Este operador multiplica los elementos del array fuente por los elementos del array destino, modificando el array destino en el proceso.
 
-#### Sobrecarga del Operador de Asignaci髇 `/=`
+#### Sobrecarga del Operador de Asignaci贸n `/=`
 
 ```cpp
 Array& operator/=(const Array& other) {
@@ -195,19 +195,20 @@ Array& operator/=(const Array& other) {
 ```
 Este operador divide los elementos del array destino por los elementos del array fuente, modificando el array destino en el proceso.
 
-### Ventajas de la Sobrecarga de Operadores de Asignaci髇
+### Ventajas de la Sobrecarga de Operadores de Asignaci贸n
 
-1. **Control sobre la Gesti髇 de Recursos**: Permite una gesti髇 adecuada de los recursos, como la memoria din醡ica, asegurando una copia profunda y evitando problemas como la doble liberaci髇 de memoria.
-2. **Consistencia y Claridad**: Facilita operaciones intuitivas y naturales, haciendo que el c骴igo sea m醩 consistente y claro.
-3. **Flexibilidad**: Permite definir comportamientos personalizados para operaciones de asignaci髇 compuestas, adapt醤dolas a las necesidades espec韋icas de la clase.
+1. **Control sobre la Gesti贸n de Recursos**: Permite una gesti贸n adecuada de los recursos, como la memoria din谩mica, asegurando una copia profunda y evitando problemas como la doble liberaci贸n de memoria.
+2. **Consistencia y Claridad**: Facilita operaciones intuitivas y naturales, haciendo que el c贸digo sea m谩s consistente y claro.
+3. **Flexibilidad**: Permite definir comportamientos personalizados para operaciones de asignaci贸n compuestas, adapt谩ndolas a las necesidades espec铆ficas de la clase.
 
-### Desventajas de la Sobrecarga de Operadores de Asignaci髇
+### Desventajas de la Sobrecarga de Operadores de Asignaci贸n
 
-1. **Complejidad Adicional**: Puede agregar complejidad al c骴igo, especialmente en clases con recursos din醡icos, lo que puede dificultar la comprensi髇 y el mantenimiento.
-2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores dif韈iles de detectar, como fugas de memoria o errores de l骻ica.
+1. **Complejidad Adicional**: Puede agregar complejidad al c贸digo, especialmente en clases con recursos din谩micos, lo que puede dificultar la comprensi贸n y el mantenimiento.
+2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores dif铆ciles de detectar, como fugas de memoria o errores de l贸gica.
 3. **Sobrecarga Cognitiva**: Los desarrolladores deben recordar y entender el comportamiento personalizado de los operadores sobrecargados, lo que puede aumentar la sobrecarga cognitiva.
 
-### Conclusi髇
+### Conclusi贸n
 
-La sobrecarga de operadores de asignaci髇 en C++ es esencial para gestionar adecuadamente los recursos y proporcionar una interfaz intuitiva y natural para las clases definidas por el usuario. Aunque puede agregar complejidad y riesgo de errores si no se maneja correctamente, es una herramienta poderosa para asegurar la consistencia y claridad del c骴igo. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
+La sobrecarga de operadores de asignaci贸n en C++ es esencial para gestionar adecuadamente los recursos y proporcionar una interfaz intuitiva y natural para las clases definidas por el usuario. Aunque puede agregar complejidad y riesgo de errores si no se maneja correctamente, es una herramienta poderosa para asegurar la consistencia y claridad del c贸digo. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
 <---FILES--->
+NA.

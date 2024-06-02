@@ -1,21 +1,21 @@
 <---EXPLANATION--->
 ### Operador Ternario en C++
 
-El operador ternario es un operador condicional compacto que permite evaluar una expresión y seleccionar entre dos valores basados en una condición. Es útil para simplificar código que de otra manera requeriría una estructura `if-else` más larga.
+El operador ternario es un operador condicional compacto que permite evaluar una expresiÃ³n y seleccionar entre dos valores basados en una condiciÃ³n. Es Ãºtil para simplificar cÃ³digo que de otra manera requerirÃ­a una estructura `if-else` mÃ¡s larga.
 
 #### Sintaxis del Operador Ternario
 
-El operador ternario utiliza el símbolo `?` para separar la condición de los dos resultados posibles, y el símbolo `:` para separar los dos resultados.
+El operador ternario utiliza el sÃ­mbolo `?` para separar la condiciÃ³n de los dos resultados posibles, y el sÃ­mbolo `:` para separar los dos resultados.
 
 ```cpp
 condicion ? expresion_si_verdadero : expresion_si_falso;
 ```
 
-- **`condicion`:** Una expresión booleana que se evalúa.
-- **`expresion_si_verdadero`:** La expresión que se evalúa y retorna si la condición es verdadera.
-- **`expresion_si_falso`:** La expresión que se evalúa y retorna si la condición es falsa.
+- **`condicion`:** Una expresiÃ³n booleana que se evalÃºa.
+- **`expresion_si_verdadero`:** La expresiÃ³n que se evalÃºa y retorna si la condiciÃ³n es verdadera.
+- **`expresion_si_falso`:** La expresiÃ³n que se evalÃºa y retorna si la condiciÃ³n es falsa.
 
-#### Ejemplo Básico
+#### Ejemplo BÃ¡sico
 
 ```cpp
 #include <iostream>
@@ -33,16 +33,16 @@ int main() {
 }
 ```
 
-En este ejemplo, la condición `(a > b)` se evalúa. Si es verdadera, `mayor` toma el valor de `a`; de lo contrario, toma el valor de `b`.
+En este ejemplo, la condiciÃ³n `(a > b)` se evalÃºa. Si es verdadera, `mayor` toma el valor de `a`; de lo contrario, toma el valor de `b`.
 
-#### Uso Común del Operador Ternario
+#### Uso ComÃºn del Operador Ternario
 
-El operador ternario se utiliza comúnmente para:
+El operador ternario se utiliza comÃºnmente para:
 
-- Asignar valores a variables basándose en una condición.
-- Realizar selecciones rápidas entre dos valores sin usar estructuras `if-else`.
+- Asignar valores a variables basÃ¡ndose en una condiciÃ³n.
+- Realizar selecciones rÃ¡pidas entre dos valores sin usar estructuras `if-else`.
 
-##### Asignación Condicional
+##### AsignaciÃ³n Condicional
 
 ```cpp
 #include <iostream>
@@ -52,10 +52,10 @@ int main() {
     int numero = 8;
     string resultado;
 
-    // Asignación condicional con el operador ternario
+    // AsignaciÃ³n condicional con el operador ternario
     resultado = (numero % 2 == 0) ? "Par" : "Impar";
 
-    cout << "El número " << numero << " es " << resultado << endl;
+    cout << "El nÃºmero " << numero << " es " << resultado << endl;
 
     return 0;
 }
@@ -65,7 +65,7 @@ En este ejemplo, `resultado` se asigna a "Par" si `numero` es divisible por 2, y
 
 ##### Embedding en Expresiones
 
-El operador ternario también se puede utilizar dentro de expresiones más grandes.
+El operador ternario tambiÃ©n se puede utilizar dentro de expresiones mÃ¡s grandes.
 
 ```cpp
 #include <iostream>
@@ -81,13 +81,13 @@ int main() {
 }
 ```
 
-Aquí, el operador ternario se utiliza para construir dinámicamente la cadena `mensaje`.
+AquÃ­, el operador ternario se utiliza para construir dinÃ¡micamente la cadena `mensaje`.
 
-#### Consideraciones y Buenas Prácticas
+#### Consideraciones y Buenas PrÃ¡cticas
 
-- **Legibilidad:** Aunque el operador ternario puede hacer el código más conciso, un uso excesivo o anidado puede dificultar la lectura del código. Úsalo con moderación.
-- **Simplicidad:** Es mejor utilizar el operador ternario para expresiones simples. Para condiciones complejas, una estructura `if-else` puede ser más clara.
-- **Tipos de Retorno:** Asegúrate de que las expresiones `expresion_si_verdadero` y `expresion_si_falso` retornen el mismo tipo de dato o tipos compatibles para evitar errores de compilación.
+- **Legibilidad:** Aunque el operador ternario puede hacer el cÃ³digo mÃ¡s conciso, un uso excesivo o anidado puede dificultar la lectura del cÃ³digo. Ãšsalo con moderaciÃ³n.
+- **Simplicidad:** Es mejor utilizar el operador ternario para expresiones simples. Para condiciones complejas, una estructura `if-else` puede ser mÃ¡s clara.
+- **Tipos de Retorno:** AsegÃºrate de que las expresiones `expresion_si_verdadero` y `expresion_si_falso` retornen el mismo tipo de dato o tipos compatibles para evitar errores de compilaciÃ³n.
 
 #### Ejemplo Completo
 
@@ -99,14 +99,14 @@ int main() {
     int x = 15;
     int y = 30;
 
-    // Determinar el mayor número usando el operador ternario
+    // Determinar el mayor nÃºmero usando el operador ternario
     int mayor = (x > y) ? x : y;
     cout << "El mayor valor es: " << mayor << endl;
 
-    // Determinar si un número es par o impar usando el operador ternario
+    // Determinar si un nÃºmero es par o impar usando el operador ternario
     int numero = 25;
     string paridad = (numero % 2 == 0) ? "par" : "impar";
-    cout << "El número " << numero << " es " << paridad << endl;
+    cout << "El nÃºmero " << numero << " es " << paridad << endl;
 
     // Asignar un mensaje basado en la edad
     int edad = 17;
@@ -117,15 +117,15 @@ int main() {
 }
 ```
 
-### Conclusión
+### ConclusiÃ³n
 
-El operador ternario es una herramienta útil en C++ para simplificar expresiones condicionales y hacer el código más compacto. Sin embargo, es importante usarlo con cuidado para mantener la legibilidad y claridad del código. Para condiciones simples, el operador ternario puede ser muy eficaz, mientras que para condiciones más complejas, una estructura `if-else` puede ser más adecuada.
+El operador ternario es una herramienta Ãºtil en C++ para simplificar expresiones condicionales y hacer el cÃ³digo mÃ¡s compacto. Sin embargo, es importante usarlo con cuidado para mantener la legibilidad y claridad del cÃ³digo. Para condiciones simples, el operador ternario puede ser muy eficaz, mientras que para condiciones mÃ¡s complejas, una estructura `if-else` puede ser mÃ¡s adecuada.
 <---FILES--->
-Asignación Condicional
-Asignación Condicional Result
+AsignaciÃ³n Condicional
+AsignaciÃ³n Condicional Result
 Embedding en Expresiones
 Embedding en Expresiones Result
-<---Asignación Condicional--->
+<---AsignaciÃ³n Condicional--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -134,14 +134,14 @@ int main() {
     int numero = 8;
     string resultado;
 
-    // Asignación condicional con el operador ternario
+    // AsignaciÃ³n condicional con el operador ternario
     resultado = (numero % 2 == 0) ? "Par" : "Impar";
 
-    cout << "El número " << numero << " es " << resultado << endl;
+    cout << "El nÃºmero " << numero << " es " << resultado << endl;
 
     return 0;
 }
-<---Asignación Condicional Result--->
+<---AsignaciÃ³n Condicional Result--->
 <---Embedding en Expresiones--->
 ```cpp
 #include <iostream>
@@ -163,14 +163,14 @@ int main() {
     int x = 15;
     int y = 30;
 
-    // Determinar el mayor número usando el operador ternario
+    // Determinar el mayor nÃºmero usando el operador ternario
     int mayor = (x > y) ? x : y;
     cout << "El mayor valor es: " << mayor << endl;
 
-    // Determinar si un número es par o impar usando el operador ternario
+    // Determinar si un nÃºmero es par o impar usando el operador ternario
     int numero = 25;
     string paridad = (numero % 2 == 0) ? "par" : "impar";
-    cout << "El número " << numero << " es " << paridad << endl;
+    cout << "El nÃºmero " << numero << " es " << paridad << endl;
 
     // Asignar un mensaje basado en la edad
     int edad = 17;

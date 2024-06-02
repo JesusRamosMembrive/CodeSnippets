@@ -1,13 +1,13 @@
 <---EXPLANATION--->
 ### Plantillas de Clase en C++
 
-Las plantillas de clase permiten crear clases gen閞icas que pueden trabajar con cualquier tipo de dato. Esta funcionalidad es especialmente 鷗il para estructuras de datos y clases utilitarias que deben ser reutilizables y eficientes con diferentes tipos de datos.
+Las plantillas de clase permiten crear clases gen茅ricas que pueden trabajar con cualquier tipo de dato. Esta funcionalidad es especialmente 煤til para estructuras de datos y clases utilitarias que deben ser reutilizables y eficientes con diferentes tipos de datos.
 
-#### Definici髇 de Plantillas de Clase
+#### Definici贸n de Plantillas de Clase
 
-Para definir una plantilla de clase, se utiliza la palabra clave `template` seguida de una lista de par醡etros de tipo entre corchetes angulares (`< >`).
+Para definir una plantilla de clase, se utiliza la palabra clave `template` seguida de una lista de par谩metros de tipo entre corchetes angulares (`< >`).
 
-##### Ejemplo B醩ico
+##### Ejemplo B谩sico
 
 ```cpp
 // PlantillaClase.h
@@ -59,18 +59,18 @@ int main() {
 En este ejemplo:
 - La clase `MiClase` es una plantilla que puede manejar diferentes tipos de datos (`int`, `double`, etc.).
 - La palabra clave `template` seguida de `<typename T>` define una plantilla de clase.
-- La implementaci髇 de los m閠odos de la plantilla de clase se encuentra en un archivo separado (`PlantillaClase.cpp`), y se incluye al final del archivo de cabecera.
+- La implementaci贸n de los m茅todos de la plantilla de clase se encuentra en un archivo separado (`PlantillaClase.cpp`), y se incluye al final del archivo de cabecera.
 
-#### Especializaci髇 de Plantillas de Clase
+#### Especializaci贸n de Plantillas de Clase
 
-En algunos casos, puede ser necesario definir una implementaci髇 espec韋ica de una plantilla de clase para un tipo de dato particular. Esto se conoce como especializaci髇 de plantilla.
+En algunos casos, puede ser necesario definir una implementaci贸n espec铆fica de una plantilla de clase para un tipo de dato particular. Esto se conoce como especializaci贸n de plantilla.
 
-##### Ejemplo de Especializaci髇
+##### Ejemplo de Especializaci贸n
 
 ```cpp
 #include <iostream>
 
-// Plantilla de clase gen閞ica
+// Plantilla de clase gen茅rica
 template <typename T>
 class MiClase {
 public:
@@ -82,7 +82,7 @@ private:
     T valor;
 };
 
-// Especializaci髇 de la plantilla de clase para el tipo const char*
+// Especializaci贸n de la plantilla de clase para el tipo const char*
 template <>
 class MiClase<const char*> {
 public:
@@ -110,18 +110,18 @@ int main() {
 
 En este ejemplo:
 - La clase `MiClase` se especializa para el tipo `const char*`.
-- La especializaci髇 proporciona una implementaci髇 espec韋ica para el tipo `const char*`.
+- La especializaci贸n proporciona una implementaci贸n espec铆fica para el tipo `const char*`.
 
-#### Plantillas de Clase con M鷏tiples Par醡etros de Tipo
+#### Plantillas de Clase con M煤ltiples Par谩metros de Tipo
 
-Las plantillas de clase tambi閚 pueden tener m鷏tiples par醡etros de tipo, lo que permite crear clases m醩 vers醫iles.
+Las plantillas de clase tambi茅n pueden tener m煤ltiples par谩metros de tipo, lo que permite crear clases m谩s vers谩tiles.
 
-##### Ejemplo con M鷏tiples Par醡etros de Tipo
+##### Ejemplo con M煤ltiples Par谩metros de Tipo
 
 ```cpp
 #include <iostream>
 
-// Definici髇 de la plantilla de clase con dos par醡etros de tipo
+// Definici贸n de la plantilla de clase con dos par谩metros de tipo
 template <typename T1, typename T2>
 class Par {
 public:
@@ -146,14 +146,14 @@ int main() {
 ```
 
 En este ejemplo:
-- La clase `Par` se define como una plantilla con dos par醡etros de tipo (`T1` y `T2`).
+- La clase `Par` se define como una plantilla con dos par谩metros de tipo (`T1` y `T2`).
 - La clase puede manejar dos tipos de datos diferentes y almacenar un par de valores.
 
-### Buenas Pr醕ticas para el Uso de Plantillas de Clase
+### Buenas Pr谩cticas para el Uso de Plantillas de Clase
 
-#### 1. Mantener la Implementaci髇 de Plantillas en el Archivo de Cabecera
+#### 1. Mantener la Implementaci贸n de Plantillas en el Archivo de Cabecera
 
-Aunque se puede separar la declaraci髇 y la implementaci髇 de plantillas en archivos `.h` y `.cpp` respectivamente, a menudo se recomienda mantener ambas en el archivo de cabecera para evitar problemas de enlace.
+Aunque se puede separar la declaraci贸n y la implementaci贸n de plantillas en archivos `.h` y `.cpp` respectivamente, a menudo se recomienda mantener ambas en el archivo de cabecera para evitar problemas de enlace.
 
 ##### Ejemplo
 
@@ -181,9 +181,9 @@ void MiClase<T>::mostrarValor() {
 #endif // MICLASE_H
 ```
 
-#### 2. Utilizar Nombres Significativos para Par醡etros de Tipo
+#### 2. Utilizar Nombres Significativos para Par谩metros de Tipo
 
-Utilice nombres de par醡etros de tipo que sean significativos para mejorar la legibilidad del c骴igo.
+Utilice nombres de par谩metros de tipo que sean significativos para mejorar la legibilidad del c贸digo.
 
 ##### Ejemplo
 
@@ -199,7 +199,7 @@ public:
 
 #### 3. Documentar las Plantillas Adecuadamente
 
-Aseg鷕ese de documentar las plantillas para explicar el prop髎ito de cada par醡etro de tipo y c髆o se deben utilizar.
+Aseg煤rese de documentar las plantillas para explicar el prop贸sito de cada par谩metro de tipo y c贸mo se deben utilizar.
 
 ##### Ejemplo
 
@@ -211,7 +211,7 @@ class MiClase {
 public:
     // Constructor que inicializa el valor
     MiClase(T valor) : valor(valor) {}
-    // Muestra el valor almacenado en la salida est醤dar
+    // Muestra el valor almacenado en la salida est谩ndar
     void mostrarValor();
 private:
     T valor; // El valor almacenado, de tipo T
@@ -225,7 +225,7 @@ void MiClase<T>::mostrarValor() {
 
 #### 4. Probar las Plantillas con Diferentes Tipos
 
-Aseg鷕ese de probar las plantillas de clase con diferentes tipos de datos para verificar su funcionamiento y detectar posibles problemas.
+Aseg煤rese de probar las plantillas de clase con diferentes tipos de datos para verificar su funcionamiento y detectar posibles problemas.
 
 ##### Ejemplo
 
@@ -244,19 +244,19 @@ int main() {
 }
 ```
 
-### Conclusi髇
+### Conclusi贸n
 
-Las plantillas de clase en C++ permiten crear clases gen閞icas que pueden trabajar con diferentes tipos de datos, mejorando la reutilizaci髇 y flexibilidad del c骴igo. Al seguir buenas pr醕ticas como mantener la implementaci髇 en el archivo de cabecera, utilizar nombres significativos para los par醡etros de tipo, documentar adecuadamente y probar con diferentes tipos de datos, se puede crear c骴igo m醩 robusto y mantenible. Las plantillas son una herramienta esencial para cualquier desarrollador de C++ que busca escribir c骴igo eficiente y reutilizable.
+Las plantillas de clase en C++ permiten crear clases gen茅ricas que pueden trabajar con diferentes tipos de datos, mejorando la reutilizaci贸n y flexibilidad del c贸digo. Al seguir buenas pr谩cticas como mantener la implementaci贸n en el archivo de cabecera, utilizar nombres significativos para los par谩metros de tipo, documentar adecuadamente y probar con diferentes tipos de datos, se puede crear c贸digo m谩s robusto y mantenible. Las plantillas son una herramienta esencial para cualquier desarrollador de C++ que busca escribir c贸digo eficiente y reutilizable.
 <---FILES--->
-Ejemplo B醩ico
-Ejemplo B醩ico Result
-Ejemplo de Especializaci髇
-Ejemplo de Especializaci髇 Result
-Ejemplo con M鷏tiples Par醡etros de Tipo
-Ejemplo con M鷏tiples Par醡etros de Tipo Result
+Ejemplo B谩sico
+Ejemplo B谩sico Result
+Ejemplo de Especializaci贸n
+Ejemplo de Especializaci贸n Result
+Ejemplo con M煤ltiples Par谩metros de Tipo
+Ejemplo con M煤ltiples Par谩metros de Tipo Result
 Ejemplo
 Ejemplo Result
-<---Ejemplo B醩ico--->
+<---Ejemplo B谩sico--->
 ```cpp
 // PlantillaClase.h
 #ifndef PLANTILLACLASE_H
@@ -298,12 +298,12 @@ int main() {
 
     return 0;
 }
-<---Ejemplo B醩ico Result--->
-<---Ejemplo de Especializaci髇--->
+<---Ejemplo B谩sico Result--->
+<---Ejemplo de Especializaci贸n--->
 ```cpp
 #include <iostream>
 
-// Plantilla de clase gen閞ica
+// Plantilla de clase gen茅rica
 template <typename T>
 class MiClase {
 public:
@@ -315,7 +315,7 @@ private:
     T valor;
 };
 
-// Especializaci髇 de la plantilla de clase para el tipo const char*
+// Especializaci贸n de la plantilla de clase para el tipo const char*
 template <>
 class MiClase<const char*> {
 public:
@@ -339,12 +339,12 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Especializaci髇 Result--->
-<---Ejemplo con M鷏tiples Par醡etros de Tipo--->
+<---Ejemplo de Especializaci贸n Result--->
+<---Ejemplo con M煤ltiples Par谩metros de Tipo--->
 ```cpp
 #include <iostream>
 
-// Definici髇 de la plantilla de clase con dos par醡etros de tipo
+// Definici贸n de la plantilla de clase con dos par谩metros de tipo
 template <typename T1, typename T2>
 class Par {
 public:
@@ -366,7 +366,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con M鷏tiples Par醡etros de Tipo Result--->
+<---Ejemplo con M煤ltiples Par谩metros de Tipo Result--->
 <---Ejemplo--->
 ```cpp
 int main() {

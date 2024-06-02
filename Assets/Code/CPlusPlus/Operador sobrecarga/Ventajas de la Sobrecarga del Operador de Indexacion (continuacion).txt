@@ -1,20 +1,20 @@
 <---EXPLANATION--->
-### Ventajas de la Sobrecarga del Operador de IndexaciÛn (continuaciÛn)
+### Ventajas de la Sobrecarga del Operador de Indexaci√≥n (continuaci√≥n)
 
-2. **EncapsulaciÛn**: Encapsula la lÛgica de acceso dentro de la clase, asegurando que los detalles de implementaciÛn estÈn ocultos y el cÛdigo cliente sea m·s limpio.
-3. **Seguridad**: Permite agregar lÛgica adicional para verificar los lÌmites y manejar excepciones, mejorando la seguridad del cÛdigo al evitar accesos fuera de los lÌmites.
+2. **Encapsulaci√≥n**: Encapsula la l√≥gica de acceso dentro de la clase, asegurando que los detalles de implementaci√≥n est√©n ocultos y el c√≥digo cliente sea m√°s limpio.
+3. **Seguridad**: Permite agregar l√≥gica adicional para verificar los l√≠mites y manejar excepciones, mejorando la seguridad del c√≥digo al evitar accesos fuera de los l√≠mites.
 
-### Desventajas de la Sobrecarga del Operador de IndexaciÛn
+### Desventajas de la Sobrecarga del Operador de Indexaci√≥n
 
-1. **Complejidad Adicional**: Puede agregar complejidad al cÛdigo de la clase, especialmente si la lÛgica de acceso es compleja o requiere manejar excepciones.
-2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores difÌciles de detectar y depurar, como accesos a memoria inv·lida.
+1. **Complejidad Adicional**: Puede agregar complejidad al c√≥digo de la clase, especialmente si la l√≥gica de acceso es compleja o requiere manejar excepciones.
+2. **Riesgo de Errores**: Si no se implementan correctamente, los operadores sobrecargados pueden introducir errores dif√≠ciles de detectar y depurar, como accesos a memoria inv√°lida.
 3. **Sobrecarga Cognitiva**: Los desarrolladores deben recordar y entender el comportamiento personalizado de los operadores sobrecargados, lo que puede aumentar la sobrecarga cognitiva.
 
 ### Otros Ejemplos de Sobrecarga del Operador `[]`
 
 #### Clase `Matrix` con Sobrecarga del Operador `[][]`
 
-Vamos a extender el ejemplo a una clase `Matrix` que permite el acceso a elementos mediante una doble indexaciÛn (`[][]`).
+Vamos a extender el ejemplo a una clase `Matrix` que permite el acceso a elementos mediante una doble indexaci√≥n (`[][]`).
 
 ```cpp
 // Matrix.h
@@ -62,7 +62,7 @@ public:
         return data[row];
     }
 
-    // MÈtodo para obtener el tamaÒo de filas y columnas
+    // M√©todo para obtener el tama√±o de filas y columnas
     size_t getRows() const { return rows; }
     size_t getCols() const { return cols; }
 
@@ -111,11 +111,11 @@ int main() {
 }
 ```
 
-### ExplicaciÛn Adicional
+### Explicaci√≥n Adicional
 
 #### Sobrecarga del Operador `[][]` para Matrices
 
-##### VersiÛn No Constante
+##### Versi√≥n No Constante
 
 ```cpp
 int* operator[](size_t row) {
@@ -125,9 +125,9 @@ int* operator[](size_t row) {
     return data[row];
 }
 ```
-Esta versiÛn permite el acceso y la modificaciÛn de los elementos de una fila especÌfica de la matriz. Si la fila est· fuera del rango, se lanza una excepciÛn `std::out_of_range`.
+Esta versi√≥n permite el acceso y la modificaci√≥n de los elementos de una fila espec√≠fica de la matriz. Si la fila est√° fuera del rango, se lanza una excepci√≥n `std::out_of_range`.
 
-##### VersiÛn Constante
+##### Versi√≥n Constante
 
 ```cpp
 const int* operator[](size_t row) const {
@@ -137,17 +137,17 @@ const int* operator[](size_t row) const {
     return data[row];
 }
 ```
-Esta versiÛn constante permite el acceso a los elementos de una fila especÌfica de la matriz sin permitir su modificaciÛn. TambiÈn lanza una excepciÛn `std::out_of_range` si la fila est· fuera del rango.
+Esta versi√≥n constante permite el acceso a los elementos de una fila espec√≠fica de la matriz sin permitir su modificaci√≥n. Tambi√©n lanza una excepci√≥n `std::out_of_range` si la fila est√° fuera del rango.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La sobrecarga de operadores de indexaciÛn en C++ permite realizar operaciones de acceso de manera intuitiva y natural en clases definidas por el usuario que representan colecciones o contenedores. Esto mejora la legibilidad y usabilidad del cÛdigo, haciendo que las clases sean m·s f·ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el cÛdigo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
+La sobrecarga de operadores de indexaci√≥n en C++ permite realizar operaciones de acceso de manera intuitiva y natural en clases definidas por el usuario que representan colecciones o contenedores. Esto mejora la legibilidad y usabilidad del c√≥digo, haciendo que las clases sean m√°s f√°ciles de utilizar y entender. Sin embargo, debe utilizarse con cuidado para evitar agregar complejidad innecesaria y para mantener el c√≥digo claro y mantenible. Es crucial implementar estos operadores con cuidado y documentar claramente su comportamiento para evitar malentendidos y problemas de mantenimiento.
 <---FILES--->
-VersiÛn No Constante
-VersiÛn No Constante Result
-VersiÛn Constante
-VersiÛn Constante Result
-<---VersiÛn No Constante--->
+Versi√≥n No Constante
+Versi√≥n No Constante Result
+Versi√≥n Constante
+Versi√≥n Constante Result
+<---Versi√≥n No Constante--->
 ```cpp
 int* operator[](size_t row) {
     if (row >= rows) {
@@ -155,8 +155,8 @@ int* operator[](size_t row) {
     }
     return data[row];
 }
-<---VersiÛn No Constante Result--->
-<---VersiÛn Constante--->
+<---Versi√≥n No Constante Result--->
+<---Versi√≥n Constante--->
 ```cpp
 const int* operator[](size_t row) const {
     if (row >= rows) {
@@ -164,4 +164,4 @@ const int* operator[](size_t row) const {
     }
     return data[row];
 }
-<---VersiÛn Constante Result--->
+<---Versi√≥n Constante Result--->

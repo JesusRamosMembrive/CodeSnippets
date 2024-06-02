@@ -1,6 +1,6 @@
 import QtQuick
 Item{
-property ListModel plantillasYGenericasType: ListModel{
+property ListModel plantillasType: ListModel{
 
 ListElement{ name: "Especializacion de Plantillas con Funciones"}
 ListElement{ name: "Introduccion a las Plantillas"}

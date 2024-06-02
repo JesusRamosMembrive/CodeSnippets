@@ -1,23 +1,23 @@
 <---EXPLANATION--->
-### Introducci髇 al Polimorfismo en C++
+### Introducci贸n al Polimorfismo en C++
 
-El polimorfismo es uno de los pilares fundamentales de la programaci髇 orientada a objetos (POO). En C++, el polimorfismo permite que una interfaz com鷑 sea utilizada para diferentes tipos de objetos, permitiendo que una misma operaci髇 se ejecute de diferentes maneras seg鷑 el tipo espec韋ico del objeto que la ejecuta. Este comportamiento es crucial para dise馻r sistemas flexibles y reutilizables.
+El polimorfismo es uno de los pilares fundamentales de la programaci贸n orientada a objetos (POO). En C++, el polimorfismo permite que una interfaz com煤n sea utilizada para diferentes tipos de objetos, permitiendo que una misma operaci贸n se ejecute de diferentes maneras seg煤n el tipo espec铆fico del objeto que la ejecuta. Este comportamiento es crucial para dise帽ar sistemas flexibles y reutilizables.
 
-#### Definici髇 de Polimorfismo
+#### Definici贸n de Polimorfismo
 
-El t閞mino polimorfismo proviene del griego "poly" (muchos) y "morph" (forma), lo que significa "muchas formas". En el contexto de la POO, se refiere a la capacidad de una funci髇 o m閠odo para operar con objetos de diferentes tipos de forma uniforme.
+El t茅rmino polimorfismo proviene del griego "poly" (muchos) y "morph" (forma), lo que significa "muchas formas". En el contexto de la POO, se refiere a la capacidad de una funci贸n o m茅todo para operar con objetos de diferentes tipos de forma uniforme.
 
 ##### Tipos de Polimorfismo en C++
 
-1. **Polimorfismo de Sobrecarga (Polimorfismo Ad Hoc):** Permite definir m鷏tiples funciones con el mismo nombre pero diferentes firmas (listas de par醡etros). Se resuelve en tiempo de compilaci髇.
-2. **Polimorfismo Param閠rico:** Se implementa mediante plantillas (templates) en C++, permitiendo que las funciones y clases trabajen con cualquier tipo de datos.
-3. **Polimorfismo de Inclusi髇 (Polimorfismo Subtipo):** Permite que una clase derivada sea tratada como una clase base. Se resuelve en tiempo de ejecuci髇 y es el tipo de polimorfismo m醩 com鷑 en la POO.
+1. **Polimorfismo de Sobrecarga (Polimorfismo Ad Hoc):** Permite definir m煤ltiples funciones con el mismo nombre pero diferentes firmas (listas de par谩metros). Se resuelve en tiempo de compilaci贸n.
+2. **Polimorfismo Param茅trico:** Se implementa mediante plantillas (templates) en C++, permitiendo que las funciones y clases trabajen con cualquier tipo de datos.
+3. **Polimorfismo de Inclusi贸n (Polimorfismo Subtipo):** Permite que una clase derivada sea tratada como una clase base. Se resuelve en tiempo de ejecuci贸n y es el tipo de polimorfismo m谩s com煤n en la POO.
 
-#### Polimorfismo de Inclusi髇
+#### Polimorfismo de Inclusi贸n
 
-El polimorfismo de inclusi髇 se logra mediante la herencia y el uso de funciones virtuales. Permite que un puntero o referencia a una clase base ejecute una funci髇 espec韋ica de la clase derivada a la que realmente pertenece el objeto.
+El polimorfismo de inclusi贸n se logra mediante la herencia y el uso de funciones virtuales. Permite que un puntero o referencia a una clase base ejecute una funci贸n espec铆fica de la clase derivada a la que realmente pertenece el objeto.
 
-##### Ejemplo de Polimorfismo de Inclusi髇
+##### Ejemplo de Polimorfismo de Inclusi贸n
 
 ```cpp
 #include <iostream>
@@ -40,7 +40,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -61,11 +61,11 @@ int main() {
 }
 ```
 
-En este ejemplo, la funci髇 `hacerSonidoAnimal` acepta una referencia a `Animal` pero llama a la implementaci髇 apropiada de `hacerSonido` seg鷑 el tipo real del objeto (`Perro` o `Gato`).
+En este ejemplo, la funci贸n `hacerSonidoAnimal` acepta una referencia a `Animal` pero llama a la implementaci贸n apropiada de `hacerSonido` seg煤n el tipo real del objeto (`Perro` o `Gato`).
 
 #### Clases Abstractas y Funciones Virtuales Puras
 
-Las clases abstractas son clases que no pueden ser instanciadas y se utilizan para definir interfaces comunes para sus clases derivadas. Contienen al menos una funci髇 virtual pura, que se declara utilizando `= 0`.
+Las clases abstractas son clases que no pueden ser instanciadas y se utilizan para definir interfaces comunes para sus clases derivadas. Contienen al menos una funci贸n virtual pura, que se declara utilizando `= 0`.
 
 ##### Ejemplo de Clase Abstracta
 
@@ -75,7 +75,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // Funci髇 virtual pura
+    virtual void hacerSonido() const = 0; // Funci贸n virtual pura
 };
 
 class Perro : public Animal {
@@ -88,7 +88,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -108,13 +108,13 @@ int main() {
 }
 ```
 
-En este ejemplo, `Animal` es una clase abstracta con una funci髇 virtual pura `hacerSonido`. Las clases derivadas `Perro` y `Gato` proporcionan implementaciones espec韋icas de `hacerSonido`.
+En este ejemplo, `Animal` es una clase abstracta con una funci贸n virtual pura `hacerSonido`. Las clases derivadas `Perro` y `Gato` proporcionan implementaciones espec铆ficas de `hacerSonido`.
 
 #### Uso del Polimorfismo en Colecciones
 
-El polimorfismo es especialmente 鷗il cuando se trabaja con colecciones de objetos de diferentes tipos derivados de una misma clase base. Esto permite tratar todos los objetos de manera uniforme mientras se mantiene la capacidad de ejecutar comportamientos espec韋icos.
+El polimorfismo es especialmente 煤til cuando se trabaja con colecciones de objetos de diferentes tipos derivados de una misma clase base. Esto permite tratar todos los objetos de manera uniforme mientras se mantiene la capacidad de ejecutar comportamientos espec铆ficos.
 
-##### Ejemplo con Colecci髇 Polim髍fica
+##### Ejemplo con Colecci贸n Polim贸rfica
 
 ```cpp
 #include <iostream>
@@ -123,7 +123,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // Funci髇 virtual pura
+    virtual void hacerSonido() const = 0; // Funci贸n virtual pura
     virtual ~Animal() {}
 };
 
@@ -137,7 +137,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -147,7 +147,7 @@ int main() {
     animales.push_back(new Gato());
 
     for (const auto& animal : animales) {
-        animal->hacerSonido(); // Llama a la implementaci髇 apropiada
+        animal->hacerSonido(); // Llama a la implementaci贸n apropiada
     }
 
     // Liberar memoria
@@ -159,23 +159,23 @@ int main() {
 }
 ```
 
-En este ejemplo, un vector de punteros a `Animal` contiene objetos de diferentes tipos derivados. El polimorfismo permite que `hacerSonido` llame a la implementaci髇 correcta para cada tipo de objeto.
+En este ejemplo, un vector de punteros a `Animal` contiene objetos de diferentes tipos derivados. El polimorfismo permite que `hacerSonido` llame a la implementaci贸n correcta para cada tipo de objeto.
 
-### Conclusi髇
+### Conclusi贸n
 
-El polimorfismo es una caracter韘tica poderosa de la programaci髇 orientada a objetos que permite a las funciones operar de manera uniforme en objetos de diferentes tipos. En C++, el polimorfismo se logra principalmente a trav閟 de funciones virtuales y herencia. Este mecanismo permite dise馻r sistemas flexibles y reutilizables, facilitando la implementaci髇 de interfaces comunes y comportamientos espec韋icos seg鷑 el tipo de objeto. Comprender y utilizar correctamente el polimorfismo es esencial para aprovechar al m醲imo las capacidades de la programaci髇 orientada a objetos en C++.
+El polimorfismo es una caracter铆stica poderosa de la programaci贸n orientada a objetos que permite a las funciones operar de manera uniforme en objetos de diferentes tipos. En C++, el polimorfismo se logra principalmente a trav茅s de funciones virtuales y herencia. Este mecanismo permite dise帽ar sistemas flexibles y reutilizables, facilitando la implementaci贸n de interfaces comunes y comportamientos espec铆ficos seg煤n el tipo de objeto. Comprender y utilizar correctamente el polimorfismo es esencial para aprovechar al m谩ximo las capacidades de la programaci贸n orientada a objetos en C++.
 <---FILES--->
 Tipos de Polimorfismo en C++
 Tipos de Polimorfismo en C++ Result
-Ejemplo de Polimorfismo de Inclusi髇
-Ejemplo de Polimorfismo de Inclusi髇 Result
+Ejemplo de Polimorfismo de Inclusi贸n
+Ejemplo de Polimorfismo de Inclusi贸n Result
 Ejemplo de Clase Abstracta
 Ejemplo de Clase Abstracta Result
-Ejemplo con Colecci髇 Polim髍fica
-Ejemplo con Colecci髇 Polim髍fica Result
+Ejemplo con Colecci贸n Polim贸rfica
+Ejemplo con Colecci贸n Polim贸rfica Result
 <---Tipos de Polimorfismo en C++--->
 <---Tipos de Polimorfismo en C++ Result--->
-<---Ejemplo de Polimorfismo de Inclusi髇--->
+<---Ejemplo de Polimorfismo de Inclusi贸n--->
 ```cpp
 #include <iostream>
 using namespace std;
@@ -197,7 +197,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -216,7 +216,7 @@ int main() {
 
     return 0;
 }
-<---Ejemplo de Polimorfismo de Inclusi髇 Result--->
+<---Ejemplo de Polimorfismo de Inclusi贸n Result--->
 <---Ejemplo de Clase Abstracta--->
 ```cpp
 #include <iostream>
@@ -224,7 +224,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // Funci髇 virtual pura
+    virtual void hacerSonido() const = 0; // Funci贸n virtual pura
 };
 
 class Perro : public Animal {
@@ -237,7 +237,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -256,7 +256,7 @@ int main() {
     return 0;
 }
 <---Ejemplo de Clase Abstracta Result--->
-<---Ejemplo con Colecci髇 Polim髍fica--->
+<---Ejemplo con Colecci贸n Polim贸rfica--->
 ```cpp
 #include <iostream>
 #include <vector>
@@ -264,7 +264,7 @@ using namespace std;
 
 class Animal {
 public:
-    virtual void hacerSonido() const = 0; // Funci髇 virtual pura
+    virtual void hacerSonido() const = 0; // Funci贸n virtual pura
     virtual ~Animal() {}
 };
 
@@ -278,7 +278,7 @@ public:
 class Gato : public Animal {
 public:
     void hacerSonido() const override {
-        cout << "El gato ma鷏la" << endl;
+        cout << "El gato ma煤lla" << endl;
     }
 };
 
@@ -288,7 +288,7 @@ int main() {
     animales.push_back(new Gato());
 
     for (const auto& animal : animales) {
-        animal->hacerSonido(); // Llama a la implementaci髇 apropiada
+        animal->hacerSonido(); // Llama a la implementaci贸n apropiada
     }
 
     // Liberar memoria
@@ -298,4 +298,4 @@ int main() {
 
     return 0;
 }
-<---Ejemplo con Colecci髇 Polim髍fica Result--->
+<---Ejemplo con Colecci贸n Polim贸rfica Result--->

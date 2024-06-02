@@ -1,11 +1,11 @@
 <---EXPLANATION--->
-### ConversiÛn de un L-Value a un R-Value en C++
+### Conversi√≥n de un L-Value a un R-Value en C++
 
-En C++, convertir un L-value (Left value) a un R-value (Right value) es un proceso fundamental para habilitar ciertas optimizaciones y tÈcnicas avanzadas, como las move semantics. La principal herramienta para realizar esta conversiÛn es la funciÛn `std::move`, introducida en C++11.
+En C++, convertir un L-value (Left value) a un R-value (Right value) es un proceso fundamental para habilitar ciertas optimizaciones y t√©cnicas avanzadas, como las move semantics. La principal herramienta para realizar esta conversi√≥n es la funci√≥n `std::move`, introducida en C++11.
 
 #### `std::move`
 
-`std::move` es una funciÛn de la biblioteca est·ndar que convierte un L-value en un R-value, permitiendo que se aplique el move constructor o el move assignment operator en lugar del copy constructor o copy assignment operator.
+`std::move` es una funci√≥n de la biblioteca est√°ndar que convierte un L-value en un R-value, permitiendo que se aplique el move constructor o el move assignment operator en lugar del copy constructor o copy assignment operator.
 
 ##### Sintaxis
 
@@ -15,11 +15,11 @@ En C++, convertir un L-value (Left value) a un R-value (Right value) es un proce
 std::move(obj);  // Convierte 'obj' en un R-value
 ```
 
-#### Ejemplo Pr·ctico con `std::move`
+#### Ejemplo Pr√°ctico con `std::move`
 
-Vamos a ver un ejemplo detallado de cÛmo `std::move` se usa para convertir un L-value en un R-value y habilitar las move semantics.
+Vamos a ver un ejemplo detallado de c√≥mo `std::move` se usa para convertir un L-value en un R-value y habilitar las move semantics.
 
-##### DefiniciÛn de una Clase con Move Semantics
+##### Definici√≥n de una Clase con Move Semantics
 
 ```cpp
 #include <iostream>
@@ -84,11 +84,11 @@ int main() {
 En este ejemplo:
 - `std::move` se utiliza para convertir `obj1` y `obj2` en R-values, permitiendo que se aplique el move constructor y el move assignment operator.
 
-#### øQuÈ Hace `std::move`?
+#### ¬øQu√© Hace `std::move`?
 
-`std::move` no mueve realmente el objeto. En su lugar, simplemente convierte el L-value en un R-value, lo que indica al compilador que puede aplicar las move semantics. La implementaciÛn de `std::move` es simple y se define en `<utility>`.
+`std::move` no mueve realmente el objeto. En su lugar, simplemente convierte el L-value en un R-value, lo que indica al compilador que puede aplicar las move semantics. La implementaci√≥n de `std::move` es simple y se define en `<utility>`.
 
-##### ImplementaciÛn Simplificada de `std::move`
+##### Implementaci√≥n Simplificada de `std::move`
 
 ```cpp
 namespace std {
@@ -99,7 +99,7 @@ namespace std {
 }
 ```
 
-En esta implementaciÛn:
+En esta implementaci√≥n:
 - `std::move` usa `static_cast` para convertir `arg` en un R-value reference.
 - `remove_reference<T>::type` asegura que se elimine cualquier referencia, devolviendo un R-value reference.
 
@@ -108,32 +108,32 @@ En esta implementaciÛn:
 Convertir L-values a R-values es crucial en varias situaciones:
 
 1. **Move Semantics:** Permite la transferencia eficiente de recursos en lugar de copiar, mejorando el rendimiento.
-2. **OptimizaciÛn de Recursos:** Reduce la sobrecarga en operaciones de copia para objetos grandes o que gestionan recursos externos como memoria din·mica o archivos.
-3. **Interfaces y API Modernas:** Facilita el uso de tÈcnicas avanzadas en el diseÒo de bibliotecas y aplicaciones.
+2. **Optimizaci√≥n de Recursos:** Reduce la sobrecarga en operaciones de copia para objetos grandes o que gestionan recursos externos como memoria din√°mica o archivos.
+3. **Interfaces y API Modernas:** Facilita el uso de t√©cnicas avanzadas en el dise√±o de bibliotecas y aplicaciones.
 
-#### Consideraciones y Buenas Pr·cticas
+#### Consideraciones y Buenas Pr√°cticas
 
-1. **Uso Adecuado:** Use `std::move` solo cuando estÈ seguro de que el objeto no se necesita en su estado original despuÈs de la operaciÛn de movimiento.
-2. **Estado del Objeto:** DespuÈs de aplicar `std::move`, el objeto original queda en un estado v·lido pero indeterminado.
-3. **Compatibilidad:** Aseg˙rese de que las clases y estructuras de datos implementen correctamente el move constructor y el move assignment operator para aprovechar completamente las ventajas de `std::move`.
+1. **Uso Adecuado:** Use `std::move` solo cuando est√© seguro de que el objeto no se necesita en su estado original despu√©s de la operaci√≥n de movimiento.
+2. **Estado del Objeto:** Despu√©s de aplicar `std::move`, el objeto original queda en un estado v√°lido pero indeterminado.
+3. **Compatibilidad:** Aseg√∫rese de que las clases y estructuras de datos implementen correctamente el move constructor y el move assignment operator para aprovechar completamente las ventajas de `std::move`.
 
-### ConclusiÛn
+### Conclusi√≥n
 
-La conversiÛn de un L-value a un R-value en C++ mediante `std::move` es una tÈcnica esencial para habilitar las move semantics y optimizar el manejo de recursos. Entender cÛmo y cu·ndo usar `std::move` permite a los desarrolladores escribir cÛdigo m·s eficiente y moderno, aprovechando al m·ximo las capacidades de C++ en la gestiÛn de memoria y rendimiento.
+La conversi√≥n de un L-value a un R-value en C++ mediante `std::move` es una t√©cnica esencial para habilitar las move semantics y optimizar el manejo de recursos. Entender c√≥mo y cu√°ndo usar `std::move` permite a los desarrolladores escribir c√≥digo m√°s eficiente y moderno, aprovechando al m√°ximo las capacidades de C++ en la gesti√≥n de memoria y rendimiento.
 <---FILES--->
 Sintaxis
 Sintaxis Result
-DefiniciÛn de una Clase con Move Semantics
-DefiniciÛn de una Clase con Move Semantics Result
-ImplementaciÛn Simplificada de `std::move`
-ImplementaciÛn Simplificada de `std::move` Result
+Definici√≥n de una Clase con Move Semantics
+Definici√≥n de una Clase con Move Semantics Result
+Implementaci√≥n Simplificada de `std::move`
+Implementaci√≥n Simplificada de `std::move` Result
 <---Sintaxis--->
 ```cpp
 #include <utility>
 
 std::move(obj);  // Convierte 'obj' en un R-value
 <---Sintaxis Result--->
-<---DefiniciÛn de una Clase con Move Semantics--->
+<---Definici√≥n de una Clase con Move Semantics--->
 ```cpp
 #include <iostream>
 #include <utility>  // Para std::move
@@ -192,8 +192,8 @@ int main() {
 
     return 0;
 }
-<---DefiniciÛn de una Clase con Move Semantics Result--->
-<---ImplementaciÛn Simplificada de `std::move`--->
+<---Definici√≥n de una Clase con Move Semantics Result--->
+<---Implementaci√≥n Simplificada de `std::move`--->
 ```cpp
 namespace std {
     template <typename T>
@@ -201,4 +201,4 @@ namespace std {
         return static_cast<typename remove_reference<T>::type&&>(arg);
     }
 }
-<---ImplementaciÛn Simplificada de `std::move` Result--->
+<---Implementaci√≥n Simplificada de `std::move` Result--->

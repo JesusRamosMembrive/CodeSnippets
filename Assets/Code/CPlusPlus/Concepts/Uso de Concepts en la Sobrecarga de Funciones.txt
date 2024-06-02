@@ -1,24 +1,24 @@
 <---EXPLANATION--->
 ### Uso de Concepts en la Sobrecarga de Funciones en C++
 
-Los Concepts en C++20 no solo permiten restringir los tipos de par醡etros en plantillas, sino que tambi閚 pueden utilizarse para sobrecargar funciones de manera m醩 precisa y clara. Esto facilita la creaci髇 de funciones sobrecargadas que solo aceptan tipos espec韋icos, mejorando la seguridad y la legibilidad del c骴igo.
+Los Concepts en C++20 no solo permiten restringir los tipos de par谩metros en plantillas, sino que tambi茅n pueden utilizarse para sobrecargar funciones de manera m谩s precisa y clara. Esto facilita la creaci贸n de funciones sobrecargadas que solo aceptan tipos espec铆ficos, mejorando la seguridad y la legibilidad del c贸digo.
 
 ### Ejemplos de Uso de Concepts en la Sobrecarga de Funciones
 
 #### Ejemplo 1: Sobrecarga Basada en `std::integral` y `std::floating_point`
 
-Vamos a definir dos versiones de una funci髇 `procesar`, una que acepte tipos integrales y otra que acepte tipos de punto flotante.
+Vamos a definir dos versiones de una funci贸n `procesar`, una que acepte tipos integrales y otra que acepte tipos de punto flotante.
 
 ```cpp
 #include <concepts>
 #include <iostream>
 
-// Funci髇 plantilla que solo acepta tipos integrales
+// Funci贸n plantilla que solo acepta tipos integrales
 void procesar(std::integral auto valor) {
     std::cout << "Procesando un tipo integral: " << valor << std::endl;
 }
 
-// Funci髇 plantilla que solo acepta tipos de punto flotante
+// Funci贸n plantilla que solo acepta tipos de punto flotante
 void procesar(std::floating_point auto valor) {
     std::cout << "Procesando un tipo de punto flotante: " << valor << std::endl;
 }
@@ -27,11 +27,11 @@ int main() {
     int entero = 42;
     double flotante = 3.14;
 
-    procesar(entero);     // Llama a la versi髇 para tipos integrales
-    procesar(flotante);   // Llama a la versi髇 para tipos de punto flotante
+    procesar(entero);     // Llama a la versi贸n para tipos integrales
+    procesar(flotante);   // Llama a la versi贸n para tipos de punto flotante
 
     // std::string texto = "Hola";
-    // procesar(texto);  // Error de compilaci髇: std::string no cumple con std::integral ni std::floating_point
+    // procesar(texto);  // Error de compilaci贸n: std::string no cumple con std::integral ni std::floating_point
 }
 ```
 
@@ -50,12 +50,12 @@ concept Printable = requires(T a) {
     { std::cout << a };
 };
 
-// Funci髇 plantilla que solo acepta tipos que cumplen con Printable
+// Funci贸n plantilla que solo acepta tipos que cumplen con Printable
 void imprimir(Printable auto valor) {
     std::cout << "Valor imprimible: " << valor << std::endl;
 }
 
-// Funci髇 plantilla para tipos no imprimibles
+// Funci贸n plantilla para tipos no imprimibles
 void imprimir(auto valor) {
     std::cout << "Valor no imprimible" << std::endl;
 }
@@ -64,43 +64,43 @@ int main() {
     int numero = 42;
     std::string texto = "Hola";
 
-    imprimir(numero);  // Llama a la versi髇 imprimible
-    imprimir(texto);   // Llama a la versi髇 imprimible
+    imprimir(numero);  // Llama a la versi贸n imprimible
+    imprimir(texto);   // Llama a la versi贸n imprimible
 
     struct NoPrintable {}; // Tipo no imprimible
     NoPrintable np;
-    imprimir(np);  // Llama a la versi髇 no imprimible
+    imprimir(np);  // Llama a la versi贸n no imprimible
 }
 ```
 
 En este ejemplo:
 - Se define un Concept `Printable` para verificar si un tipo puede ser impreso con `std::cout`.
-- Se sobrecarga la funci髇 `imprimir` para manejar tipos imprimibles y no imprimibles.
+- Se sobrecarga la funci贸n `imprimir` para manejar tipos imprimibles y no imprimibles.
 
-### Sobrecarga de Funciones con M鷏tiples Concepts
+### Sobrecarga de Funciones con M煤ltiples Concepts
 
-Los Concepts pueden combinarse para crear sobrecargas m醩 espec韋icas. Por ejemplo, supongamos que queremos sobrecargar una funci髇 `procesar` para diferentes combinaciones de tipos integrales y de punto flotante.
+Los Concepts pueden combinarse para crear sobrecargas m谩s espec铆ficas. Por ejemplo, supongamos que queremos sobrecargar una funci贸n `procesar` para diferentes combinaciones de tipos integrales y de punto flotante.
 
 ```cpp
 #include <concepts>
 #include <iostream>
 
-// Funci髇 plantilla que acepta dos tipos integrales
+// Funci贸n plantilla que acepta dos tipos integrales
 void procesar(std::integral auto a, std::integral auto b) {
     std::cout << "Procesando dos tipos integrales: " << a << " y " << b << std::endl;
 }
 
-// Funci髇 plantilla que acepta dos tipos de punto flotante
+// Funci贸n plantilla que acepta dos tipos de punto flotante
 void procesar(std::floating_point auto a, std::floating_point auto b) {
     std::cout << "Procesando dos tipos de punto flotante: " << a << " y " << b << std::endl;
 }
 
-// Funci髇 plantilla que acepta un tipo integral y uno de punto flotante
+// Funci贸n plantilla que acepta un tipo integral y uno de punto flotante
 void procesar(std::integral auto a, std::floating_point auto b) {
     std::cout << "Procesando un tipo integral y uno de punto flotante: " << a << " y " << b << std::endl;
 }
 
-// Funci髇 plantilla que acepta un tipo de punto flotante y uno integral
+// Funci贸n plantilla que acepta un tipo de punto flotante y uno integral
 void procesar(std::floating_point auto a, std::integral auto b) {
     std::cout << "Procesando un tipo de punto flotante y uno integral: " << a << " y " << b << std::endl;
 }
@@ -109,25 +109,26 @@ int main() {
     int entero1 = 10, entero2 = 20;
     double flotante1 = 1.5, flotante2 = 2.5;
 
-    procesar(entero1, entero2);         // Llama a la versi髇 para dos tipos integrales
-    procesar(flotante1, flotante2);     // Llama a la versi髇 para dos tipos de punto flotante
-    procesar(entero1, flotante1);       // Llama a la versi髇 para un tipo integral y uno de punto flotante
-    procesar(flotante1, entero1);       // Llama a la versi髇 para un tipo de punto flotante y uno integral
+    procesar(entero1, entero2);         // Llama a la versi贸n para dos tipos integrales
+    procesar(flotante1, flotante2);     // Llama a la versi贸n para dos tipos de punto flotante
+    procesar(entero1, flotante1);       // Llama a la versi贸n para un tipo integral y uno de punto flotante
+    procesar(flotante1, entero1);       // Llama a la versi贸n para un tipo de punto flotante y uno integral
 }
 ```
 
 En este ejemplo:
-- Se definen cuatro versiones de la funci髇 `procesar` para manejar diferentes combinaciones de tipos integrales y de punto flotante.
-- Cada sobrecarga de `procesar` maneja una combinaci髇 espec韋ica de tipos.
+- Se definen cuatro versiones de la funci贸n `procesar` para manejar diferentes combinaciones de tipos integrales y de punto flotante.
+- Cada sobrecarga de `procesar` maneja una combinaci贸n espec铆fica de tipos.
 
-### Buenas Pr醕ticas al Usar Concepts en la Sobrecarga de Funciones
+### Buenas Pr谩cticas al Usar Concepts en la Sobrecarga de Funciones
 
-1. **Mantener la Claridad**: Aseg鷕ese de que cada sobrecarga tenga un prop髎ito claro y espec韋ico.
-2. **Definir Concepts Reutilizables**: Defina Concepts reutilizables que puedan ser aplicados en m鷏tiples funciones.
-3. **Documentar los Concepts**: Documente los Concepts y las funciones que los utilizan para facilitar la comprensi髇 del c骴igo.
-4. **Evitar la Ambig黣dad**: Aseg鷕ese de que las sobrecargas sean mutuamente excluyentes para evitar ambig黣dades en la resoluci髇 de sobrecargas.
+1. **Mantener la Claridad**: Aseg煤rese de que cada sobrecarga tenga un prop贸sito claro y espec铆fico.
+2. **Definir Concepts Reutilizables**: Defina Concepts reutilizables que puedan ser aplicados en m煤ltiples funciones.
+3. **Documentar los Concepts**: Documente los Concepts y las funciones que los utilizan para facilitar la comprensi贸n del c贸digo.
+4. **Evitar la Ambig眉edad**: Aseg煤rese de que las sobrecargas sean mutuamente excluyentes para evitar ambig眉edades en la resoluci贸n de sobrecargas.
 
-### Conclusi髇
+### Conclusi贸n
 
-Los Concepts en C++ permiten sobrecargar funciones de manera m醩 precisa y clara, proporcionando una forma poderosa de imponer restricciones de tipos. Esto no solo mejora la seguridad y la robustez del c骴igo, sino que tambi閚 facilita la detecci髇 de errores en tiempo de compilaci髇 y mejora la legibilidad del c骴igo. Al definir y utilizar Concepts personalizados en la sobrecarga de funciones, puede asegurar que sus funciones solo acepten los tipos adecuados, evitando errores y mejorando la mantenibilidad del c骴igo.
+Los Concepts en C++ permiten sobrecargar funciones de manera m谩s precisa y clara, proporcionando una forma poderosa de imponer restricciones de tipos. Esto no solo mejora la seguridad y la robustez del c贸digo, sino que tambi茅n facilita la detecci贸n de errores en tiempo de compilaci贸n y mejora la legibilidad del c贸digo. Al definir y utilizar Concepts personalizados en la sobrecarga de funciones, puede asegurar que sus funciones solo acepten los tipos adecuados, evitando errores y mejorando la mantenibilidad del c贸digo.
 <---FILES--->
+NA.
