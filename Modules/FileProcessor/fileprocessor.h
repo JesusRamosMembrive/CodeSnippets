@@ -6,6 +6,7 @@
 #include <QMap>
 #include <QVariant>
 #include <QVariantList>
+#include <QDebug>
 
 class FileProcessor : public QObject
 {

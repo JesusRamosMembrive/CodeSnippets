@@ -22,14 +22,6 @@ Window {
     Material.theme: Material.Dark
     Material.accent: Material.Orange
 
-    DragHandler {
-        onActiveChanged: if (active) startSystemMove();
-    }
-
-    CustomMouseAreaResize {
-        id: mouseAreaResize
-    }
-
     Fundamentos { id: fundamentosModel }
     ControlDeFlujo { id: controlDeFlujoModel }
     EstructurasDeDatos { id: estructurasDeDatosModel }
@@ -74,7 +66,7 @@ Window {
             { model: amigasModel.amigasType, path: ":/Assets/Code/CPlusPlus/Friends/", label: "Friends" },
             { model: constYMiembrosEstaticosModel.miemborsStaticYConstType, path: ":/Assets/Code/CPlusPlus/Const y miembros estaticos/", label: "Const&Static members" },
             { model: namespacesModel.namespaceType, path: ":/Assets/Code/CPlusPlus/namespaces/", label: "Namespace" },
-            { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo de memoria/", label: "Gestion de Memoria" },
+            { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo memoria/", label: "Gestion de Memoria" },
             { model: operadorSobrecargaModel.sobrecargaDeOperadoresType, path: ":/Assets/Code/CPlusPlus/Operador sobrecarga/", label: "Sobrecarga de operadores" },
             { model: plantillasYGenericasModel.plantillasType, path: ":/Assets/Code/CPlusPlus/Plantillas y genericas/", label: "Plantillas" },
             { model: conceptsModel.conceptsType, path: ":/Assets/Code/CPlusPlus/Concepts/", label: "Concepts" },
@@ -92,7 +84,6 @@ Window {
                 topics.push({ name: item.name, label: topicModel.label, model: topicModel.model });
             }
         }
-
         combinedTopics = topics;
         return map;
     }

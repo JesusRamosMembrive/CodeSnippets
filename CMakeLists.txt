@@ -27,7 +27,7 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES Modules/Utils/FileReader.qml
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
     QML_FILES ScrollViewTopics.qml
-    RESOURCES ScrollViewNotes
+    RESOURCES
     QML_FILES CustomButton.qml
     QML_FILES CustomListView.qml
     QML_FILES FilesListView.qml
