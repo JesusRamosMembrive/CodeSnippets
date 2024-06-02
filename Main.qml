@@ -137,16 +137,6 @@ Window {
         spacing: 15
         width: parent.width
 
-        // RowLayout {
-        //     id: titleBarRow
-        //     Layout.fillHeight: true
-        //     Layout.fillWidth: true
-        //     Layout.preferredHeight: 45
-        //     MyTitleBar {
-        //         id: titleBar
-        //     }
-        // }
-
         // Menu Bar
         MyMenuBar {
             id: menuBar
@@ -157,19 +147,16 @@ Window {
             id: mainContentRow
             Layout.fillHeight: true
             Layout.fillWidth: true
-            height: parent.height
+            height: parent.height - menuBar.height - mainLayout.spacing
             width: parent.width
             padding: 15
             spacing: 30
 
             Column {
                 id: leftMainContent
-                width: 230
+                width: 250
                 height: parent.height *0.92
                 padding: 0
-
-                // anchors.left: parent.left
-                // anchors.leftMargin: 15
 
                 MyGroupbox {
                     id: groupboxTopics
@@ -184,6 +171,7 @@ Window {
                     ScrollViewTopics {
                         id: scrollViewTopics
                         height: groupboxTopics.height
+                        anchors.horizontalCenter: parent.horizontalCenter
                         width: groupboxTopics.width
                         // anchors.fill: groupboxTopics
 
@@ -197,7 +185,7 @@ Window {
                     text: qsTr("Code")
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.top: groupboxTopics.bottom
-                    anchors.topMargin: 10
+                    anchors.topMargin: 20
                     highlighted: false
                     flat: false
                     antialiasing: true

@@ -53,6 +53,7 @@ ScrollView {
         }
 
         Repeater {
+            anchors.horizontalCenter: parent.horizontalCenter
             model: appWindow.topicModels
 
             delegate: TopicSection {
