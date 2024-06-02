@@ -150,5 +150,29 @@
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas de Clase.txt</file>
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Plantillas en Funciones con Multiples Tipos de Datos.txt</file>
         <file>Assets/Code/CPlusPlus/Plantillas y genericas/Uso de Plantillas en Funciones.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/consteval en Funciones.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/constexpr en Funciones.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/Conversiones Implicitas en Funciones y Paso de Argumentos.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/Funciones con Tipo de Dato Deducido en el Retorno.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/Funciones con Valor de Retorno y Sin Valor de Retorno.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/Funciones que Devuelven Referencias o Punteros.txt</file>
+        <file>Assets/Code/CPlusPlus/Funciones/Sobrecarga de Funciones.txt</file>
+        <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Clases Sanitizadas.txt</file>
+        <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Funciones Miembro Estaticas.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de flujo/Alcance de las Variables (Scope).txt</file>
+        <file>Assets/Code/CPlusPlus/Estructuras de datos/Alias de Tipos typedef y using.txt</file>
+        <file>Assets/Code/CPlusPlus/Estructuras de datos/Arrays Multidimensionales.txt</file>
+        <file>Assets/Code/CPlusPlus/Estructuras de datos/Enumeraciones (enum) y Clases de Enumeracion (enum class).txt</file>
+        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras de Datos Listas y Colas.txt</file>
+        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras de Datos Mapas y Diccionarios.txt</file>
+        <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras de Datos Pilas y Conjuntos.txt</file>
+        <file>Assets/Code/CPlusPlus/Expresiones de rango/Composicion de Vista y Operador (Pipe).txt</file>
+        <file>Assets/Code/CPlusPlus/Expresiones de rango/stdranges en Profundidad.txt</file>
+        <file>Assets/Code/CPlusPlus/POO/Miembros Constantes en una Clase.txt</file>
+        <file>Assets/Code/CPlusPlus/POO/Objetos Constantes.txt</file>
+        <file>Assets/Code/CPlusPlus/POO/Sobrecarga de Operadores.txt</file>
+        <file>Assets/Code/CPlusPlus/Iteradores/stdadvance y stddistance.txt</file>
+        <file>Assets/Code/CPlusPlus/Iteradores/stdnext y stdprev.txt</file>
+        <file>Assets/Code/CPlusPlus/Semantics/stdmove.txt</file>
     </qresource>
 </RCC>

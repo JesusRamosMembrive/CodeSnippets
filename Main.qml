@@ -55,6 +55,7 @@ Window {
     property string explanationText: ""
     property string currentTopic: ""
     property Theme theme: Theme {}
+    property var topicModels: []
 
     ListModel {
         id: filteredTopicsModel
@@ -63,90 +64,33 @@ Window {
     function createFilesMap() {
         var map = {};
         var topics = [];
-        for (var i = 0; i < fundamentosModel.fundamentosType.count; i++) {
-            var item = fundamentosModel.fundamentosType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Fundamentos/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < controlDeFlujoModel.controlDeFlujoType.count; i++) {
-            var item = controlDeFlujoModel.controlDeFlujoType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Control de flujo/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < estructurasDeDatosModel.estructurasDeDatosType.count; i++) {
-            var item = estructurasDeDatosModel.estructurasDeDatosType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Estructuras de datos/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < funcionesModel.funcionesType.count; i++) {
-            var item = funcionesModel.funcionesType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Funciones/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < pooModel.pooType.count; i++) {
-            var item = pooModel.pooType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/POO/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < herenciaYPolimorfismoModel.herenciaYPolimorfismoType.count; i++) {
-            var item = herenciaYPolimorfismoModel.herenciaYPolimorfismoType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < amigasModel.amigasType.count; i++) {
-            var item = amigasModel.amigasType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Friends/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < constYMiembrosEstaticosModel.miemborsStaticYConstType.count; i++) {
-            var item = constYMiembrosEstaticosModel.miemborsStaticYConstType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Const y miembros estaticos/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < namespacesModel.namespaceType.count; i++) {
-            var item = namespacesModel.namespaceType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/namespaces/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < manejoMemoriaModel.gestionDeLaMemoriaType.count; i++) {
-            var item = manejoMemoriaModel.gestionDeLaMemoriaType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Manejo de memoria/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < operadorSobrecargaModel.sobrecargaDeOperadoresType.count; i++) {
-            var item = operadorSobrecargaModel.sobrecargaDeOperadoresType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Operador sobrecarga/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < plantillasYGenericasModel.plantillasType.count; i++) {
-            var item = plantillasYGenericasModel.plantillasType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Plantillas y genericas/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < conceptsModel.conceptsType.count; i++) {
-            var item = conceptsModel.conceptsType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Concepts/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < semanticsModel.semanticsType.count; i++) {
-            var item = semanticsModel.semanticsType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Semantics/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < funcionesComoEntidadesModel.funcionesComoEntidadesType.count; i++) {
-            var item = funcionesComoEntidadesModel.funcionesComoEntidadesType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Funciones como entidades/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < iteradoresModel.iteradoresType.count; i++) {
-            var item = iteradoresModel.iteradoresType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Iteradores/" + item.name + ".txt";
-            topics.push(item.name);
-        }
-        for (var i = 0; i < stdAlgoritmosModel.stdAlgorithmsType.count; i++) {
-            var item = stdAlgoritmosModel.stdAlgorithmsType.get(i);
-            map[item.name] = ":/Assets/Code/CPlusPlus/Std Algoritmos/" + item.name + ".txt";
-            topics.push(item.name);
+        topicModels = [
+            { model: fundamentosModel.fundamentosType, path: ":/Assets/Code/CPlusPlus/Fundamentos/", label: "Fundamentos" },
+            { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de flujo/", label: "Control de flujo" },
+            { model: estructurasDeDatosModel.estructurasDeDatosType, path: ":/Assets/Code/CPlusPlus/Estructuras de datos/", label: "Estructura de datos" },
+            { model: funcionesModel.funcionesType, path: ":/Assets/Code/CPlusPlus/Funciones/", label: "Funciones" },
+            { model: pooModel.pooType, path: ":/Assets/Code/CPlusPlus/POO/", label: "Clases" },
+            { model: herenciaYPolimorfismoModel.herenciaYPolimorfismoType, path: ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/", label: "Herencia y polimorfismo" },
+            { model: amigasModel.amigasType, path: ":/Assets/Code/CPlusPlus/Friends/", label: "Friends" },
+            { model: constYMiembrosEstaticosModel.miemborsStaticYConstType, path: ":/Assets/Code/CPlusPlus/Const y miembros estaticos/", label: "Const&Static members" },
+            { model: namespacesModel.namespaceType, path: ":/Assets/Code/CPlusPlus/namespaces/", label: "Namespace" },
+            { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo de memoria/", label: "Gestion de Memoria" },
+            { model: operadorSobrecargaModel.sobrecargaDeOperadoresType, path: ":/Assets/Code/CPlusPlus/Operador sobrecarga/", label: "Sobrecarga de operadores" },
+            { model: plantillasYGenericasModel.plantillasType, path: ":/Assets/Code/CPlusPlus/Plantillas y genericas/", label: "Plantillas" },
+            { model: conceptsModel.conceptsType, path: ":/Assets/Code/CPlusPlus/Concepts/", label: "Concepts" },
+            { model: semanticsModel.semanticsType, path: ":/Assets/Code/CPlusPlus/Semantics/", label: "Semantics" },
+            { model: funcionesComoEntidadesModel.funcionesComoEntidadesType, path: ":/Assets/Code/CPlusPlus/Funciones como entidades/", label: "Funciones como entidades" },
+            { model: iteradoresModel.iteradoresType, path: ":/Assets/Code/CPlusPlus/Iteradores/", label: "Iteradores" },
+            { model: stdAlgoritmosModel.stdAlgorithmsType, path: ":/Assets/Code/CPlusPlus/Std Algoritmos/", label: "std::algorithms" }
+        ];
+
+        for (var j = 0; j < topicModels.length; j++) {
+            var topicModel = topicModels[j];
+            for (var i = 0; i < topicModel.model.count; i++) {
+                var item = topicModel.model.get(i);
+                map[item.name] = topicModel.path + item.name + ".txt";
+                topics.push({ name: item.name, label: topicModel.label, model: topicModel.model });
+            }
         }
 
         combinedTopics = topics;
