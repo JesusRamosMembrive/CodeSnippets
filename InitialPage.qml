@@ -8,13 +8,12 @@ import QtQuick.Dialogs
 
 Item {
     id: initialPageItem
-    width: 1000
-    height: 800
+    width: parent.width
+    height: parent.height
 
     Rectangle {
         id: backgroundInitialPage
         color: "#292929"
-        radius: 15
         anchors.fill: parent
         anchors.leftMargin: 0
         anchors.rightMargin: 0
@@ -37,11 +36,11 @@ Item {
                 x: 153
                 y: 8
                 width: 500
-                height: 150
+                height: 200
                 verticalAlignment: Image.AlignVCenter
-                source: "Assets/Images/logoAPP.png"
-                Layout.maximumHeight: 250
-                Layout.maximumWidth: 450
+                source: "qrc:/Images/Assets/Images/logoAPP.png"
+                Layout.maximumHeight: 350
+                Layout.maximumWidth: 550
                 Layout.fillHeight: false
                 Layout.fillWidth: true
                 cache: true
@@ -56,32 +55,13 @@ Item {
                 fillMode: Image.PreserveAspectFit
             }
 
-            Rectangle{
+            Rectangle {
                 id: lineSeparator
                 width: parent.width * 0.8
                 height: 2
                 Layout.minimumWidth: 900
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                Layout.topMargin: -100
-
-            }
-
-            Text {
-                id: text1
-                x: 114
-                y: 337
-                width: 774
-                height: 50
-                color: "#ffffff"
-                text: qsTr("Coleccion de snippts")
-                font.pixelSize: 33
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignTop
-                Layout.maximumWidth: 65535
-                Layout.fillHeight: false
-                Layout.fillWidth: true
-                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                font.family: "Roboto"
+                Layout.topMargin: -50
             }
 
             GridLayout {
@@ -101,72 +81,78 @@ Item {
                 rows: 2
                 columns: 3
 
-                ButtonMainMenu{
+                ButtonMainMenu {
                     id: buttonC
                     x: 81
                     y: 493
                     iconSource: "qrc:/Images/Assets/Images/c-.png"
                     textTitle: "C ++"
                     textSubTitle: "C++ Plain Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                 }
 
-                ButtonMainMenu{
+                ButtonMainMenu {
                     id: buttonQtC
                     x: 375
                     y: 493
                     iconSource: "qrc:/Images/Assets/Images/python.png"
                     textTitle: "Qt C++"
                     textSubTitle: "Qt C++ Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                 }
 
-                ButtonMainMenu{
+                ButtonMainMenu {
                     id: buttonDesignPatternsC
                     x: 661
                     y: 493
-                    iconSource: "qrc:/Images/Assets/Images/python.png"
+                    iconSource: "qrc:/Images/Assets/Images/qt_logo_green_rgb_whitespace-removebg-preview.png"
                     textTitle: "Design patterns in C++"
                     textSubTitle: "Design patterns for C++ Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                 }
 
-                ButtonMainMenu{
+                ButtonMainMenu {
                     id: buttonPython
                     x: 81
                     y: 634
                     iconSource: "qrc:/Images/Assets/Images/python.png"
                     textTitle: "Python"
                     textSubTitle: "Python Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                 }
 
-                ButtonMainMenu{
+                ButtonMainMenu {
                     id: buttonQtPython
                     x: 375
                     y: 634
-                    iconSource: "qrc:/Images/Assets/Images/python.png"
+                    iconSource: "qrc:/Images/Assets/Images/1200px-Python_and_Qt.svg-380x396.png"
                     textTitle: "Qt Python"
                     textSubTitle: "Qt Python Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                 }
 
-
-
-                ButtonMainMenu{
+                ButtonMainMenu {
                     id: buttonDesignPatternsPython
                     x: 661
                     y: 634
-                    iconSource: "qrc:/Images/Assets/Images/python.png"
+                    iconSource: "qrc:/Images/Assets/Images/_f12212ab-4292-469b-9db4-d7125069102b.jpeg"
                     textTitle: "Design patterns in Python"
                     textSubTitle: "Design patterns for Python Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                 }
             }
         }
-
-
-
-
-
-
     }
-
-
-
-
 }

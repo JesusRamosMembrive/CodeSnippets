@@ -9,6 +9,8 @@ Rectangle {
     id: explanationDisplayPage
     width: parent.width
     height: parent.height
+    Layout.fillHeight: true
+    Layout.fillWidth: true
     radius: 15
     color: theme.backGroundCodeDisplayPageColor
 
@@ -24,6 +26,8 @@ Rectangle {
 
         Text {
             text: "Explanation Area"
+            wrapMode: Text.WordWrap
+            font.family: "Roboto"
             anchors.horizontalCenter: parent.horizontalCenter
             font.pointSize: 20
             color: theme.titleColor

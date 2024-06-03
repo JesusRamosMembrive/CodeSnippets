@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/CodeSnippetApp">/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/CodeSnippetApp</file>
-
-  </qresource>
-</RCC>
