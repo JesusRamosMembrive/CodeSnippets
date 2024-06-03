@@ -1,12 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro del Tipo self.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Bucles Anidados (Nested Loops).txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Control de Flujo Bucles.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Control de Flujo Condicionales.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/if constexpr.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Operador Ternario.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Uso de break y continue en Bucles.txt</file>
         <file>Assets/Code/CPlusPlus/Estructuras de datos/C-Strings.txt</file>
         <file>Assets/Code/CPlusPlus/Estructuras de datos/struct.txt</file>
         <file>Assets/Code/CPlusPlus/Friends/Clases Amigas.txt</file>
@@ -19,11 +13,8 @@
         <file>Assets/Code/CPlusPlus/Funciones como entidades/Funtores con Lambdas.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones como entidades/Funtores.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Constexpr y Constinit.txt</file>
-        <file>Assets/Code/CPlusPlus/Fundamentos/Entrada y Salida de Datos.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Literales.txt</file>
         <file>Assets/Code/CPlusPlus/Fundamentos/Operadores.txt</file>
-        <file>Assets/Code/CPlusPlus/Fundamentos/Overflow y Underflow.txt</file>
-        <file>Assets/Code/CPlusPlus/Fundamentos/Variables y Constantes.txt</file>
         <file>Assets/Code/CPlusPlus/Herencia y polimorfismo/Clases Abstractas.txt</file>
         <file>Assets/Code/CPlusPlus/Herencia y polimorfismo/Funciones Puras Virtuales.txt</file>
         <file>Assets/Code/CPlusPlus/Herencia y polimorfismo/Funciones Virtuales en Herencia.txt</file>
@@ -79,7 +70,6 @@
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro y Variables Miembro Estaticas.txt</file>
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro Estaticas Inline.txt</file>
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Variables Miembro Estaticas, Inline y Const.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Inicializacion dentro de if y switch.txt</file>
         <file>Assets/Code/CPlusPlus/Expresiones de rango/Caracteristicas de C++20 Expresiones de Rango y stdranges.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones/Funciones y Procedimientos Definicion y Declaracion de Funciones.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones/Parametros y Argumentos.txt</file>
@@ -156,10 +146,8 @@
         <file>Assets/Code/CPlusPlus/Funciones/Funciones con Tipo de Dato Deducido en el Retorno.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones/Funciones con Valor de Retorno y Sin Valor de Retorno.txt</file>
         <file>Assets/Code/CPlusPlus/Funciones/Funciones que Devuelven Referencias o Punteros.txt</file>
-        <file>Assets/Code/CPlusPlus/Funciones/Sobrecarga de Funciones.txt</file>
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Clases Sanitizadas.txt</file>
         <file>Assets/Code/CPlusPlus/Const y miembros estaticos/Funciones Miembro Estaticas.txt</file>
-        <file>Assets/Code/CPlusPlus/Control de flujo/Alcance de las Variables (Scope).txt</file>
         <file>Assets/Code/CPlusPlus/Estructuras de datos/Alias de Tipos typedef y using.txt</file>
         <file>Assets/Code/CPlusPlus/Estructuras de datos/Arrays Multidimensionales.txt</file>
         <file>Assets/Code/CPlusPlus/Estructuras de datos/Enumeraciones (enum) y Clases de Enumeracion (enum class).txt</file>
@@ -167,12 +155,31 @@
         <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras de Datos Mapas y Diccionarios.txt</file>
         <file>Assets/Code/CPlusPlus/Estructuras de datos/Estructuras de Datos Pilas y Conjuntos.txt</file>
         <file>Assets/Code/CPlusPlus/Expresiones de rango/Composicion de Vista y Operador (Pipe).txt</file>
-        <file>Assets/Code/CPlusPlus/Expresiones de rango/stdranges en Profundidad.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Miembros Constantes en una Clase.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Objetos Constantes.txt</file>
         <file>Assets/Code/CPlusPlus/POO/Sobrecarga de Operadores.txt</file>
         <file>Assets/Code/CPlusPlus/Iteradores/stdadvance y stddistance.txt</file>
         <file>Assets/Code/CPlusPlus/Iteradores/stdnext y stdprev.txt</file>
         <file>Assets/Code/CPlusPlus/Semantics/stdmove.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Alcance de las Variables (Scope).txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Bucles Anidados (Nested Loops).txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Control de Flujo Bucles.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Control de Flujo Condicionales.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/if constexpr.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Inicializacion dentro de if y switch.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Operador ternario.txt</file>
+        <file>Assets/Code/CPlusPlus/Control de Flujo/Uso de break y continue en Bucles.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Entrada y salida de datos.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Overflow y underflow.txt</file>
+        <file>Assets/Code/CPlusPlus/Fundamentos/Variables y constantes.txt</file>
+    </qresource>
+    <qresource prefix="/Images">
+        <file>Assets/Images/1200px-Python_and_Qt.svg-380x396.png</file>
+        <file>Assets/Images/c-.png</file>
+        <file>Assets/Images/imagen.jpg</file>
+        <file>Assets/Images/python.png</file>
+        <file>Assets/Images/qt_logo_green_rgb_whitespace.png</file>
+        <file>Assets/Images/qt_logo_green_rgb_whitespace-removebg-preview.png</file>
+        <file>Assets/Images/logoAPP.png</file>
     </qresource>
 </RCC>

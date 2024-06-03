@@ -1,0 +1,10 @@
+-I
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug
+-I
+/home/jesuslinux/Qt/6.7.0/gcc_64/./qml
+--resource
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/.rcc/qmake_CodeSnippetApp.qrc
+--resource
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/.rcc/appCodeSnippetApp_raw_qml_0.qrc
+--module
+CodeSnippetApp

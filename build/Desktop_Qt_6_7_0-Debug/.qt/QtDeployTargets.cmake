@@ -1,0 +1,1 @@
+set(__QT_DEPLOY_TARGET_appCodeSnippetApp_FILE /home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/appCodeSnippetApp)

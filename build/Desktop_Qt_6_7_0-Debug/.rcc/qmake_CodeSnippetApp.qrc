@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/CodeSnippetApp">
+    <file alias="qmldir">/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/CodeSnippetApp/qmldir</file>
+  </qresource>
+</RCC>
+

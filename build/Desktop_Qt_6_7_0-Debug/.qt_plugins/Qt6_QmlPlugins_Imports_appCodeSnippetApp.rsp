@@ -1,0 +1,14 @@
+-rootPath
+/home/jesuslinux/Git/CodeSnippets
+-cmake-output
+-output-file
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appCodeSnippetApp.cmake
+-importPath
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/CodeSnippetApp
+-importPath
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug
+-importPath
+/home/jesuslinux/Qt/6.7.0/gcc_64/./qml
+-qrcFiles
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/.rcc/qmake_CodeSnippetApp.qrc
+/home/jesuslinux/Git/CodeSnippets/build/Desktop_Qt_6_7_0-Debug/.rcc/appCodeSnippetApp_raw_qml_0.qrc

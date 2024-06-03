@@ -1,4 +1,4 @@
-#include "FileProcessor.h"
+#include "fileprocessor.h"
 
 FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
 {

@@ -1,0 +1,41 @@
+module CodeSnippetApp
+typeinfo appCodeSnippetApp.qmltypes
+prefer :/CodeSnippetApp/
+Main 1.0 Main.qml
+MyGroupbox 1.0 MyGroupbox.qml
+CodeDisplayPage 1.0 CodeDisplayPage.qml
+CustomTextArea 1.0 Components/CustomTextArea.qml
+FileReader 1.0 Modules/Utils/FileReader.qml
+ScrollViewTopics 1.0 ScrollViewTopics.qml
+CustomButton 1.0 CustomButton.qml
+CustomListView 1.0 CustomListView.qml
+FilesListView 1.0 FilesListView.qml
+DialogExit 1.0 DialogExit.qml
+CustomMouseAreaResize 1.0 CustomMouseAreaResize.qml
+MyTitleBar 1.0 MyTitleBar.qml
+MyMenuBar 1.0 MyMenuBar.qml
+ExplanationPage 1.0 ExplanationPage.qml
+Theme 1.0 Modules/Style/Theme.qml
+Amigas 1.0 Modules/ListsOfModels/Amigas.qml
+Concepts 1.0 Modules/ListsOfModels/Concepts.qml
+ControlDeFlujo 1.0 Modules/ListsOfModels/ControlDeFlujo.qml
+EstructurasDeDatos 1.0 Modules/ListsOfModels/EstructurasDeDatos.qml
+ExpresionesDeRango 1.0 Modules/ListsOfModels/ExpresionesDeRango.qml
+Funciones 1.0 Modules/ListsOfModels/Funciones.qml
+FuncionesComoEntidades 1.0 Modules/ListsOfModels/FuncionesComoEntidades.qml
+Fundamentos 1.0 Modules/ListsOfModels/Fundamentos.qml
+GestionDeLaMemoria 1.0 Modules/ListsOfModels/GestionDeLaMemoria.qml
+HerenciaYPolimorfismo 1.0 Modules/ListsOfModels/HerenciaYPolimorfismo.qml
+Iteradores 1.0 Modules/ListsOfModels/Iteradores.qml
+MiemborsStaticYConst 1.0 Modules/ListsOfModels/MiemborsStaticYConst.qml
+Namespace 1.0 Modules/ListsOfModels/Namespace.qml
+Plantillas 1.0 Modules/ListsOfModels/Plantillas.qml
+Poo 1.0 Modules/ListsOfModels/Poo.qml
+Semantics 1.0 Modules/ListsOfModels/Semantics.qml
+SobrecargaDeOperadores 1.0 Modules/ListsOfModels/SobrecargaDeOperadores.qml
+StdAlgorithms 1.0 Modules/ListsOfModels/StdAlgorithms.qml
+TopicSection 1.0 TopicSection.qml
+CPlusPlusContentPage 1.0 CPlusPlusContentPage.qml
+InitialPage 1.0 InitialPage.qml
+ButtonMainMenu 1.0 ButtonMainMenu.qml
+
