@@ -110,3 +110,11 @@ build/Desktop_Qt_6_7_0-Debug/.rcc/qmllint/
 build/Desktop_Qt_6_7_0-Debug/Testing/Temporary/
 
 build/Desktop_Qt_6_7_0-Debug/
+
+build/Desktop_Qt_6_7_0-Release/CodeSnippetApp/
+
+build/Desktop_Qt_6_7_0-Release/CMakeFiles/
+
+build/Desktop_Qt_6_7_0-Release/meta_types/
+
+build/Desktop_Qt_6_7_0-Release/

@@ -19,7 +19,15 @@ Item {
         anchors.rightMargin: 0
         anchors.topMargin: -1
         anchors.bottomMargin: 1
-
+        MultiEffect {
+            source: backgroundInitialPage
+            anchors.fill: backgroundInitialPage
+            brightness: 0.4
+            saturation: 0.2
+            blurEnabled: true
+            blurMax: 16
+            blur: 1.0
+        }
         ColumnLayout {
             id: columnLayout
             width: 100
@@ -91,6 +99,16 @@ Item {
                     onClicked: {
                         communicationObject.showMainPage()
                     }
+                    MultiEffect {
+                        source: buttonC
+                        anchors.fill: buttonC
+                        shadowBlur: 1.0
+                        shadowEnabled: true
+                        shadowColor: "red"
+                        shadowVerticalOffset: 15
+                        shadowHorizontalOffset: 11
+                    }
+
                 }
 
                 ButtonMainMenu {
