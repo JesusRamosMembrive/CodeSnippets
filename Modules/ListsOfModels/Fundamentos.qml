@@ -3,7 +3,7 @@ Item{
 property ListModel fundamentosType: ListModel{
 
 ListElement{ name: "Constexpr y Constinit"}
-ListElement{ name: "Entrada y Salida de Datos"}
+ListElement{ name: "Entrada y salida de datos"}
 ListElement{ name: "Inicializacion con auto"}
 ListElement{ name: "Literales"}
 ListElement{ name: "Operadores"}

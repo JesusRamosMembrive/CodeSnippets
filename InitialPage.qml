@@ -13,21 +13,16 @@ Item {
 
     Rectangle {
         id: backgroundInitialPage
-        color: "#292929"
+        color: "#1c1c1c"
         anchors.fill: parent
         anchors.leftMargin: 0
         anchors.rightMargin: 0
         anchors.topMargin: -1
         anchors.bottomMargin: 1
-        MultiEffect {
-            source: backgroundInitialPage
-            anchors.fill: backgroundInitialPage
-            brightness: 0.4
-            saturation: 0.2
-            blurEnabled: true
-            blurMax: 16
-            blur: 1.0
-        }
+        radius: 20
+        border.color: "#14ffffff"
+
+
         ColumnLayout {
             id: columnLayout
             width: 100
@@ -99,16 +94,6 @@ Item {
                     onClicked: {
                         communicationObject.showMainPage()
                     }
-                    MultiEffect {
-                        source: buttonC
-                        anchors.fill: buttonC
-                        shadowBlur: 1.0
-                        shadowEnabled: true
-                        shadowColor: "red"
-                        shadowVerticalOffset: 15
-                        shadowHorizontalOffset: 11
-                    }
-
                 }
 
                 ButtonMainMenu {

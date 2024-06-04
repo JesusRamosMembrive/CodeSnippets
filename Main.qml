@@ -1,9 +1,9 @@
 import QtQuick
+import QtQuick.Effects
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Controls.Material
-import QtQuick.Effects
 import QtQuick.Dialogs
 
 import "./Modules/ListsOfModels"
@@ -16,13 +16,15 @@ Window {
     id: appWindow
     width: 1200
     height: 900
+    opacity: 1
     minimumWidth: 1000  // Ancho mínimo de la ventana
     minimumHeight: 800
     visible: true
-    color: "#000000"
+    color: "#ef000000"
     title: qsTr("Code Snippets")
     Material.theme: Material.Dark
     Material.accent: Material.Orange
+
 
     Fundamentos { id: fundamentosModel }
     ControlDeFlujo { id: controlDeFlujoModel }
@@ -52,12 +54,13 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
+
     function createFilesMap() {
         var map = {};
         var topics = [];
         topicModels = [
                     { model: fundamentosModel.fundamentosType, path: ":/Assets/Code/CPlusPlus/Fundamentos/", label: "Fundamentos" },
-                    { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de flujo/", label: "Control de flujo" },
+                    { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de Flujo/", label: "Control de flujo" },
                     { model: estructurasDeDatosModel.estructurasDeDatosType, path: ":/Assets/Code/CPlusPlus/Estructuras de datos/", label: "Estructura de datos" },
                     { model: funcionesModel.funcionesType, path: ":/Assets/Code/CPlusPlus/Funciones/", label: "Funciones" },
                     { model: pooModel.pooType, path: ":/Assets/Code/CPlusPlus/POO/", label: "Clases" },
@@ -143,7 +146,7 @@ Window {
         Column{
             id: columnContent
             height: parent.height - menuBar.height
-            padding: 0
+            padding: 15
             width: parent.width
             Layout.fillHeight: true
             Layout.fillWidth: true
@@ -151,8 +154,9 @@ Window {
             StackView {
                 id: stackView
                 initialItem: "InitialPage.qml"
-                width: columnContent.width
-                height: columnContent.height*0.9
+                width: columnContent.width *0.98
+                height: columnContent.height*0.895
+                anchors.horizontalCenter: parent.horizontalCenter
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
@@ -169,27 +173,25 @@ Window {
                 height: 74
                 text: qsTr("Go to Main Page")
                 anchors.horizontalCenter: stackView.horizontalCenter
-                visible: true
+                visible: false
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
 
 
                 onClicked: {
                     if (stackView.depth > 1) {
                         stackView.pop()
-                    } else {
-                        communicationObject.showMainPage()
+                        switchToMainPageButton.visible = false;
                     }
                 }
             }
         }
     }
 
-
-
     Connections {
         target: communicationObject
         onShowMainPage: {
             stackView.push("MainPage.qml")
+            switchToMainPageButton.visible = true
         }
         onShowExplanationPage: {
             if (stackView.depth > 1) {
@@ -212,3 +214,4 @@ Window {
         signal showExplanationPage
     }
 }
+

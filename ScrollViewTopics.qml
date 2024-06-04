@@ -1,8 +1,8 @@
 // ScrollViewTopics.qml
-import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
-import QtQuick.Controls.Material
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls.Material 2.15
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 
@@ -16,8 +16,6 @@ ScrollView {
     Column {
         id: columnTopics
         width: scrollViewTopics.width
-        height: scrollViewTopics.height
-        topPadding: 5
         spacing: 10
 
         Label {
@@ -47,8 +45,8 @@ ScrollView {
         Rectangle {
             id: lineSeparatorTopics
             width: parent.width * 0.9
-            height: 1  // Altura fina para el separador
-            color: "white"  // Color blanco
+            height: 1
+            color: "white"
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
