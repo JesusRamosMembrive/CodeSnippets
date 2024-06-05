@@ -32,8 +32,8 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES CustomListView.qml
     QML_FILES FilesListView.qml
     RESOURCES Modules/Notes/MyGroupBoxComponent
-    QML_FILES DialogExit.qml
-    QML_FILES CustomMouseAreaResize.qml
+    QML_FILES
+    QML_FILES
     QML_FILES MyTitleBar.qml
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
@@ -45,6 +45,7 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES ButtonMainMenu.qml
     QML_FILES MainPage.qml
     QML_FILES DropShadowEffect.qml
+    QML_FILES CustomRegularButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

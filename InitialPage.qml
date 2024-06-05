@@ -1,10 +1,9 @@
 import QtQuick
-import QtQuick.Window
-import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Controls
 import QtQuick.Controls.Material
+// import Qt5Compat.GraphicalEffects
 import QtQuick.Effects
-import QtQuick.Dialogs
 
 Item {
     id: initialPageItem
@@ -84,6 +83,7 @@ Item {
                 rows: 2
                 columns: 3
 
+
                 ButtonMainMenu {
                     id: buttonC
                     x: 81
@@ -94,7 +94,22 @@ Item {
                     onClicked: {
                         communicationObject.showMainPage()
                     }
+                    layer.enabled: true
+                    layer.effect: MultiEffect{
+                        blurEnabled: false
+                        blurMax: 100
+                        shadowVerticalOffset: 1
+                        shadowHorizontalOffset: 1
+                        shadowColor: "#ffffff"
+                        colorization: 0
+                        colorizationColor: "#ffffff"
+                        shadowEnabled: true
+                        shadowBlur: 1
+                    }
                 }
+
+
+
 
                 ButtonMainMenu {
                     id: buttonQtC
@@ -105,6 +120,18 @@ Item {
                     textSubTitle: "Qt C++ Snippets"
                     onClicked: {
                         communicationObject.showMainPage()
+                    }
+                    layer.enabled: true
+                    layer.effect: MultiEffect{
+                        blurEnabled: false
+                        blurMax: 100
+                        shadowVerticalOffset: 1
+                        shadowHorizontalOffset: 1
+                        shadowColor: "#ffffff"
+                        colorization: 0
+                        colorizationColor: "#ffffff"
+                        shadowEnabled: true
+                        shadowBlur: 1
                     }
                 }
 
@@ -118,6 +145,18 @@ Item {
                     onClicked: {
                         communicationObject.showMainPage()
                     }
+                    layer.enabled: true
+                    layer.effect: MultiEffect{
+                        blurEnabled: false
+                        blurMax: 100
+                        shadowVerticalOffset: 1
+                        shadowHorizontalOffset: 1
+                        shadowColor: "#ffffff"
+                        colorization: 0
+                        colorizationColor: "#ffffff"
+                        shadowEnabled: true
+                        shadowBlur: 1
+                    }
                 }
 
                 ButtonMainMenu {
@@ -130,7 +169,20 @@ Item {
                     onClicked: {
                         communicationObject.showMainPage()
                     }
+                    layer.enabled: true
+                    layer.effect: MultiEffect{
+                        blurEnabled: false
+                        blurMax: 100
+                        shadowVerticalOffset: 1
+                        shadowHorizontalOffset: 1
+                        shadowColor: "#ffffff"
+                        colorization: 0
+                        colorizationColor: "#ffffff"
+                        shadowEnabled: true
+                        shadowBlur: 1
+                    }
                 }
+
 
                 ButtonMainMenu {
                     id: buttonQtPython
@@ -141,6 +193,19 @@ Item {
                     textSubTitle: "Qt Python Snippets"
                     onClicked: {
                         communicationObject.showMainPage()
+                    }
+                    layer.enabled: true
+                    layer.effect: MultiEffect{
+                        blurMultiplier: 0.1
+                        blurEnabled: false
+                        blurMax: 100
+                        shadowVerticalOffset: 1
+                        shadowHorizontalOffset: 1
+                        shadowColor: "#ffffff"
+                        colorization: 0
+                        colorizationColor: "#ffffff"
+                        shadowEnabled: true
+                        shadowBlur: 1
                     }
                 }
 
@@ -153,6 +218,18 @@ Item {
                     textSubTitle: "Design patterns for Python Snippets"
                     onClicked: {
                         communicationObject.showMainPage()
+                    }
+                    layer.enabled: true
+                    layer.effect: MultiEffect{
+                        blurEnabled: false
+                        blurMax: 100
+                        shadowVerticalOffset: 1
+                        shadowHorizontalOffset: 1
+                        shadowColor: "#ffffff"
+                        colorization: 0
+                        colorizationColor: "#ffffff"
+                        shadowEnabled: true
+                        shadowBlur: 1
                     }
                 }
             }

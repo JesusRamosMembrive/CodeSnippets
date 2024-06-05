@@ -1,4 +1,5 @@
 <---EXPLANATION--->
+
 ### Tipos de Datos Básicos (Datos Primitivos) en C++
 
 Los tipos de datos básicos, también conocidos como datos primitivos, son los bloques fundamentales que se utilizan para almacenar datos en un programa. C++ proporciona varios tipos de datos básicos para manejar diferentes tipos de información.

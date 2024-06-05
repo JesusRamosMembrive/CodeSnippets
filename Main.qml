@@ -1,10 +1,8 @@
 import QtQuick
-import QtQuick.Effects
-import QtQuick.Window
-import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Controls
 import QtQuick.Controls.Material
-import QtQuick.Dialogs
+import QtQuick.Effects
 
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
@@ -56,24 +54,24 @@ Window {
         var map = {};
         var topics = [];
         topicModels = [
-            { model: fundamentosModel.fundamentosType, path: ":/Assets/Code/CPlusPlus/Fundamentos/", label: "Fundamentos" },
-            { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de Flujo/", label: "Control de flujo" },
-            { model: estructurasDeDatosModel.estructurasDeDatosType, path: ":/Assets/Code/CPlusPlus/Estructuras de datos/", label: "Estructura de datos" },
-            { model: funcionesModel.funcionesType, path: ":/Assets/Code/CPlusPlus/Funciones/", label: "Funciones" },
-            { model: pooModel.pooType, path: ":/Assets/Code/CPlusPlus/POO/", label: "Clases" },
-            { model: herenciaYPolimorfismoModel.herenciaYPolimorfismoType, path: ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/", label: "Herencia y polimorfismo" },
-            { model: amigasModel.amigasType, path: ":/Assets/Code/CPlusPlus/Friends/", label: "Friends" },
-            { model: constYMiembrosEstaticosModel.miemborsStaticYConstType, path: ":/Assets/Code/CPlusPlus/Const y miembros estaticos/", label: "Const&Static members" },
-            { model: namespacesModel.namespaceType, path: ":/Assets/Code/CPlusPlus/namespaces/", label: "Namespace" },
-            { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo memoria/", label: "Gestion de Memoria" },
-            { model: operadorSobrecargaModel.sobrecargaDeOperadoresType, path: ":/Assets/Code/CPlusPlus/Operador sobrecarga/", label: "Sobrecarga de operadores" },
-            { model: plantillasYGenericasModel.plantillasType, path: ":/Assets/Code/CPlusPlus/Plantillas y genericas/", label: "Plantillas" },
-            { model: conceptsModel.conceptsType, path: ":/Assets/Code/CPlusPlus/Concepts/", label: "Concepts" },
-            { model: semanticsModel.semanticsType, path: ":/Assets/Code/CPlusPlus/Semantics/", label: "Semantics" },
-            { model: funcionesComoEntidadesModel.funcionesComoEntidadesType, path: ":/Assets/Code/CPlusPlus/Funciones como entidades/", label: "Funciones como entidades" },
-            { model: iteradoresModel.iteradoresType, path: ":/Assets/Code/CPlusPlus/Iteradores/", label: "Iteradores" },
-            { model: stdAlgoritmosModel.stdAlgorithmsType, path: ":/Assets/Code/CPlusPlus/Std Algoritmos/", label: "std::algorithms" }
-        ];
+                    { model: fundamentosModel.fundamentosType, path: ":/Assets/Code/CPlusPlus/Fundamentos/", label: "Fundamentos" },
+                    { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de Flujo/", label: "Control de flujo" },
+                    { model: estructurasDeDatosModel.estructurasDeDatosType, path: ":/Assets/Code/CPlusPlus/Estructuras de datos/", label: "Estructura de datos" },
+                    { model: funcionesModel.funcionesType, path: ":/Assets/Code/CPlusPlus/Funciones/", label: "Funciones" },
+                    { model: pooModel.pooType, path: ":/Assets/Code/CPlusPlus/POO/", label: "Clases" },
+                    { model: herenciaYPolimorfismoModel.herenciaYPolimorfismoType, path: ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/", label: "Herencia y polimorfismo" },
+                    { model: amigasModel.amigasType, path: ":/Assets/Code/CPlusPlus/Friends/", label: "Friends" },
+                    { model: constYMiembrosEstaticosModel.miemborsStaticYConstType, path: ":/Assets/Code/CPlusPlus/Const y miembros estaticos/", label: "Const&Static members" },
+                    { model: namespacesModel.namespaceType, path: ":/Assets/Code/CPlusPlus/namespaces/", label: "Namespace" },
+                    { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo memoria/", label: "Gestion de Memoria" },
+                    { model: operadorSobrecargaModel.sobrecargaDeOperadoresType, path: ":/Assets/Code/CPlusPlus/Operador sobrecarga/", label: "Sobrecarga de operadores" },
+                    { model: plantillasYGenericasModel.plantillasType, path: ":/Assets/Code/CPlusPlus/Plantillas y genericas/", label: "Plantillas" },
+                    { model: conceptsModel.conceptsType, path: ":/Assets/Code/CPlusPlus/Concepts/", label: "Concepts" },
+                    { model: semanticsModel.semanticsType, path: ":/Assets/Code/CPlusPlus/Semantics/", label: "Semantics" },
+                    { model: funcionesComoEntidadesModel.funcionesComoEntidadesType, path: ":/Assets/Code/CPlusPlus/Funciones como entidades/", label: "Funciones como entidades" },
+                    { model: iteradoresModel.iteradoresType, path: ":/Assets/Code/CPlusPlus/Iteradores/", label: "Iteradores" },
+                    { model: stdAlgoritmosModel.stdAlgorithmsType, path: ":/Assets/Code/CPlusPlus/Std Algoritmos/", label: "std::algorithms" }
+                ];
 
         for (var j = 0; j < topicModels.length; j++) {
             var topicModel = topicModels[j];
@@ -117,10 +115,6 @@ Window {
         }
     }
 
-    DialogExit {
-        id: messageDialog
-    }
-
     Component.onCompleted: {
         filesMap = createFilesMap();  // Reconstruir el mapa cuando se inicia la aplicación
         filterTopics(""); // Inicializar el modelo filtrado con todos los temas
@@ -148,33 +142,31 @@ Window {
             Layout.fillWidth: true
 
             StackView {
-                id: stackView
+                id: stackViewInitialPage
                 initialItem: "InitialPage.qml"
-                width: columnContent.width * 0.98
-                height: columnContent.height * 0.895
+                width: columnContent.width *0.97
+                height: columnContent.height *0.9
                 anchors.horizontalCenter: parent.horizontalCenter
                 Layout.fillHeight: true
                 Layout.fillWidth: true
 
                 pushEnter: Transition {
-                    PropertyAnimation { property: "x"; from: stackView.height; to: 0; duration: 400; easing.type: Easing.InOutQuad }
+                    PropertyAnimation { property: "x"; from: stackViewInitialPage.height; to: 0; duration: 400; easing.type: Easing.InOutQuad }
                     PropertyAnimation { property: "opacity"; from: 0; to: 1; duration: 400; easing.type: Easing.InOutQuad }
                 }
             }
 
-            Button {
+            CustomRegularButton {
                 id: switchToMainPageButton
-                width: 176
-                height: 74
-                text: qsTr("Go to Main Page")
-                anchors.horizontalCenter: stackView.horizontalCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                height: 75
                 visible: false
-                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-
+                width: 180
+                text: qsTr("Go to Main Page")
                 onClicked: {
-                    if (stackView.depth > 1) {
-                        stackView.pop()
-                        switchToMainPageButton.visible = false;
+                    if (stackViewInitialPage.depth > 1) {
+                        stackViewInitialPage.pop()
+                        switchToMainPageButton.visible = false
                     }
                 }
             }
@@ -182,29 +174,62 @@ Window {
     }
 
     Connections {
-            target: communicationObject
-            function onShowMainPage() {
-                stackView.push("MainPage.qml")
-                switchToMainPageButton.visible = true
-            }
-            function onShowExplanationPage() {
-                if (stackView.depth > 1) {
-                    stackView.pop()
-                }
-            }
+        target: communicationObject
+        function onShowMainPage() {
+            stackViewInitialPage.push("MainPage.qml")
+            switchToMainPageButton.visible = true
+
         }
-
-        Connections {
-            target: fileProcessor
-            function onExplanationChanged() {
-                explanationText = fileProcessor.explanation;
+        function onShowExplanationPage() {
+            if (stackViewInitialPage.depth > 1) {
+                stackViewInitialPage.pop()
             }
-        }
-
-        QtObject {
-            id: communicationObject
-
-            signal showMainPage
-            signal showExplanationPage
         }
     }
+
+    Connections {
+        target: fileProcessor
+        function onExplanationChanged() {
+            explanationText = fileProcessor.explanation;
+        }
+    }
+
+    QtObject {
+        id: communicationObject
+
+        signal showMainPage
+        signal showExplanationPage
+    }
+}
+
+// Window {
+//     visible: true
+//        width: 640
+//        height: 480
+
+//        Rectangle {
+//            id: testRect
+//            width: 200
+//            height: 200
+//            color: "blue"
+//            anchors.centerIn: parent
+
+//            DropShadow {
+//                anchors.fill: testRect
+//                horizontalOffset: 0
+//                verticalOffset: 20
+//                radius: 12.5
+//                color: "#80000000"
+//                source: testRect
+//                cached: true
+//                focus: true
+//                layer.smooth: true
+//                layer.textureMirroring: ShaderEffectSource.NoMirroring
+//                layer.wrapMode: ShaderEffectSource.ClampToEdge
+//                layer.enabled: false
+//                antialiasing: true
+//                spread: 0
+//                samples: 22
+//            }
+//        }
+// }
