@@ -1,0 +1,302 @@
+<---EXPLANATION--->
+### Plantillas Variádicas en Funciones y Clases en C++
+
+Las plantillas variádicas son una poderosa característica introducida en C++11 que permite definir funciones y clases que pueden aceptar un número variable de parámetros de plantilla. Esto facilita la creación de código genérico y reutilizable sin la necesidad de sobrecargar funciones o definir múltiples especializaciones de plantilla.
+
+#### Plantillas Variádicas en Funciones
+
+Las plantillas variádicas permiten definir funciones que pueden aceptar un número variable de argumentos de distintos tipos.
+
+##### Sintaxis
+
+```cpp
+template <typename... Args>
+void funcionVariadica(Args... args) {
+    // Implementación
+}
+```
+
+##### Ejemplo Básico
+
+```cpp
+#include <iostream>
+
+// Plantilla de función variádica
+template <typename... Args>
+void imprimir(Args... args) {
+    (std::cout << ... << args) << std::endl; // Expansión de plegado
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+```
+
+En este ejemplo:
+- La función `imprimir` acepta un número variable de argumentos de cualquier tipo.
+- La expresión `(std::cout << ... << args)` es una expansión de plegado que imprime cada argumento.
+
+##### Ejemplo de Función Recursiva
+
+Las plantillas variádicas a menudo se implementan de manera recursiva para procesar cada argumento individualmente.
+
+```cpp
+#include <iostream>
+
+// Caso base
+void imprimir() {
+    std::cout << std::endl;
+}
+
+// Plantilla de función variádica
+template <typename T, typename... Args>
+void imprimir(T primero, Args... args) {
+    std::cout << primero << " ";
+    imprimir(args...); // Llamada recursiva
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+```
+
+En este ejemplo:
+- La función `imprimir` se llama recursivamente, procesando un argumento en cada llamada hasta que no quedan más argumentos.
+
+#### Plantillas Variádicas en Clases
+
+Las plantillas variádicas también permiten definir clases que pueden aceptar un número variable de parámetros de plantilla.
+
+##### Sintaxis
+
+```cpp
+template <typename... Args>
+class ClaseVariadica {
+    // Implementación
+};
+```
+
+##### Ejemplo Básico
+
+```cpp
+#include <tuple>
+#include <iostream>
+
+// Plantilla de clase variádica
+template <typename... Args>
+class MiClase {
+    std::tuple<Args...> datos; // Almacena los argumentos en un tuple
+
+public:
+    MiClase(Args... args) : datos(args...) {}
+
+    void imprimir() {
+        imprimirTupla(datos, std::index_sequence_for<Args...>{});
+    }
+
+private:
+    template <typename Tuple, std::size_t... I>
+    void imprimirTupla(const Tuple& t, std::index_sequence<I...>) {
+        ((std::cout << std::get<I>(t) << " "), ...) << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int, double, std::string> obj(1, 2.5, "hola");
+    obj.imprimir();
+    return 0;
+}
+```
+
+En este ejemplo:
+- La clase `MiClase` acepta un número variable de parámetros de plantilla y los almacena en un `std::tuple`.
+- La función `imprimir` imprime los valores almacenados en el `tuple` utilizando una expansión de plegado.
+
+##### Ejemplo Avanzado con Herencia
+
+```cpp
+#include <iostream>
+
+// Clase base
+template <typename T>
+class Base {
+public:
+    void mostrar() {
+        std::cout << "Base: " << sizeof(T) << std::endl;
+    }
+};
+
+// Clase derivada variádica
+template <typename... Args>
+class Derivada : public Base<Args>... {
+public:
+    void mostrar() {
+        (Base<Args>::mostrar(), ...); // Llama a mostrar() de cada base
+    }
+};
+
+int main() {
+    Derivada<int, double, char> obj;
+    obj.mostrar();
+    return 0;
+}
+```
+
+En este ejemplo:
+- `Derivada` hereda de múltiples instancias de `Base`, una por cada tipo en `Args`.
+- La función `mostrar` llama a `Base<Args>::mostrar` para cada base utilizando una expansión de plegado.
+
+#### Expansión de Plantillas Variádicas
+
+La expansión de plantillas variádicas permite desempaquetar los parámetros y aplicar operaciones sobre ellos.
+
+##### Expansión de Plegado
+
+Las expansiones de plegado simplifican la aplicación de operaciones sobre múltiples argumentos.
+
+###### Ejemplo con Expansión de Plegado
+
+```cpp
+#include <iostream>
+
+// Plantilla de función variádica
+template <typename... Args>
+void imprimir(Args... args) {
+    (std::cout << ... << args) << std::endl; // Expansión de plegado con operador de salida
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+```
+
+En este ejemplo, `(std::cout << ... << args)` imprime cada argumento.
+
+#### Beneficios y Usos
+
+1. **Flexibilidad:** Permiten escribir funciones y clases que pueden manejar diferentes tipos y números de argumentos.
+2. **Reutilización de Código:** Facilitan la creación de código genérico y reutilizable.
+3. **Simplicidad:** Simplifican el manejo de argumentos múltiples y diversos en comparación con métodos tradicionales como las sobrecargas de funciones.
+
+### Conclusión
+
+Las plantillas variádicas en C++ son una herramienta poderosa para escribir código genérico, flexible y reutilizable. Permiten definir funciones y clases que pueden aceptar un número variable de argumentos, simplificando la creación de bibliotecas y aplicaciones genéricas. Comprender cómo implementar y utilizar plantillas variádicas, incluyendo técnicas como la expansión de plegado y la recursión, es esencial para aprovechar al máximo esta característica avanzada del lenguaje.
+<---FILES--->
+Sintaxis
+Sintaxis Result
+Ejemplo Básico
+Ejemplo Básico Result
+Ejemplo de Función Recursiva
+Ejemplo de Función Recursiva Result
+Ejemplo Avanzado con Herencia
+Ejemplo Avanzado con Herencia Result
+Expansión de Plegado
+Expansión de Plegado Result
+Ejemplo con Expansión de Plegado
+Ejemplo con Expansión de Plegado Result
+<---Sintaxis--->
+```cpp
+template <typename... Args>
+class ClaseVariadica {
+    // Implementación
+};
+<---Sintaxis Result--->
+<---Ejemplo Básico--->
+```cpp
+#include <tuple>
+#include <iostream>
+
+// Plantilla de clase variádica
+template <typename... Args>
+class MiClase {
+    std::tuple<Args...> datos; // Almacena los argumentos en un tuple
+
+public:
+    MiClase(Args... args) : datos(args...) {}
+
+    void imprimir() {
+        imprimirTupla(datos, std::index_sequence_for<Args...>{});
+    }
+
+private:
+    template <typename Tuple, std::size_t... I>
+    void imprimirTupla(const Tuple& t, std::index_sequence<I...>) {
+        ((std::cout << std::get<I>(t) << " "), ...) << std::endl;
+    }
+};
+
+int main() {
+    MiClase<int, double, std::string> obj(1, 2.5, "hola");
+    obj.imprimir();
+    return 0;
+}
+<---Ejemplo Básico Result--->
+<---Ejemplo de Función Recursiva--->
+```cpp
+#include <iostream>
+
+// Caso base
+void imprimir() {
+    std::cout << std::endl;
+}
+
+// Plantilla de función variádica
+template <typename T, typename... Args>
+void imprimir(T primero, Args... args) {
+    std::cout << primero << " ";
+    imprimir(args...); // Llamada recursiva
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+<---Ejemplo de Función Recursiva Result--->
+<---Ejemplo Avanzado con Herencia--->
+```cpp
+#include <iostream>
+
+// Clase base
+template <typename T>
+class Base {
+public:
+    void mostrar() {
+        std::cout << "Base: " << sizeof(T) << std::endl;
+    }
+};
+
+// Clase derivada variádica
+template <typename... Args>
+class Derivada : public Base<Args>... {
+public:
+    void mostrar() {
+        (Base<Args>::mostrar(), ...); // Llama a mostrar() de cada base
+    }
+};
+
+int main() {
+    Derivada<int, double, char> obj;
+    obj.mostrar();
+    return 0;
+}
+<---Ejemplo Avanzado con Herencia Result--->
+<---Expansión de Plegado--->
+<---Expansión de Plegado Result--->
+<---Ejemplo con Expansión de Plegado--->
+```cpp
+#include <iostream>
+
+// Plantilla de función variádica
+template <typename... Args>
+void imprimir(Args... args) {
+    (std::cout << ... << args) << std::endl; // Expansión de plegado con operador de salida
+}
+
+int main() {
+    imprimir(1, 2.5, "hola", 'A');
+    return 0;
+}
+<---Ejemplo con Expansión de Plegado Result--->
