@@ -11,7 +11,6 @@ import "./Modules/Utils"
 import "./Modules/Style"
 
 
-
 Window {
     id: appWindow
     width: 1200
@@ -24,7 +23,6 @@ Window {
     title: qsTr("Code Snippets")
     Material.theme: Material.Dark
     Material.accent: Material.Orange
-
 
     Fundamentos { id: fundamentosModel }
     ControlDeFlujo { id: controlDeFlujoModel }
@@ -47,36 +45,35 @@ Window {
     ListModel { id: filteredTopicsModel }
     FileReader { id: fileReader }
 
-    property var filesMap: createFilesMap()
+    property var filesMap: ({})
     property var combinedTopics: []
     property string explanationText: ""
     property string currentTopic: ""
     property Theme theme: Theme {}
     property var topicModels: []
 
-
     function createFilesMap() {
         var map = {};
         var topics = [];
         topicModels = [
-                    { model: fundamentosModel.fundamentosType, path: ":/Assets/Code/CPlusPlus/Fundamentos/", label: "Fundamentos" },
-                    { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de Flujo/", label: "Control de flujo" },
-                    { model: estructurasDeDatosModel.estructurasDeDatosType, path: ":/Assets/Code/CPlusPlus/Estructuras de datos/", label: "Estructura de datos" },
-                    { model: funcionesModel.funcionesType, path: ":/Assets/Code/CPlusPlus/Funciones/", label: "Funciones" },
-                    { model: pooModel.pooType, path: ":/Assets/Code/CPlusPlus/POO/", label: "Clases" },
-                    { model: herenciaYPolimorfismoModel.herenciaYPolimorfismoType, path: ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/", label: "Herencia y polimorfismo" },
-                    { model: amigasModel.amigasType, path: ":/Assets/Code/CPlusPlus/Friends/", label: "Friends" },
-                    { model: constYMiembrosEstaticosModel.miemborsStaticYConstType, path: ":/Assets/Code/CPlusPlus/Const y miembros estaticos/", label: "Const&Static members" },
-                    { model: namespacesModel.namespaceType, path: ":/Assets/Code/CPlusPlus/namespaces/", label: "Namespace" },
-                    { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo memoria/", label: "Gestion de Memoria" },
-                    { model: operadorSobrecargaModel.sobrecargaDeOperadoresType, path: ":/Assets/Code/CPlusPlus/Operador sobrecarga/", label: "Sobrecarga de operadores" },
-                    { model: plantillasYGenericasModel.plantillasType, path: ":/Assets/Code/CPlusPlus/Plantillas y genericas/", label: "Plantillas" },
-                    { model: conceptsModel.conceptsType, path: ":/Assets/Code/CPlusPlus/Concepts/", label: "Concepts" },
-                    { model: semanticsModel.semanticsType, path: ":/Assets/Code/CPlusPlus/Semantics/", label: "Semantics" },
-                    { model: funcionesComoEntidadesModel.funcionesComoEntidadesType, path: ":/Assets/Code/CPlusPlus/Funciones como entidades/", label: "Funciones como entidades" },
-                    { model: iteradoresModel.iteradoresType, path: ":/Assets/Code/CPlusPlus/Iteradores/", label: "Iteradores" },
-                    { model: stdAlgoritmosModel.stdAlgorithmsType, path: ":/Assets/Code/CPlusPlus/Std Algoritmos/", label: "std::algorithms" }
-                ];
+            { model: fundamentosModel.fundamentosType, path: ":/Assets/Code/CPlusPlus/Fundamentos/", label: "Fundamentos" },
+            { model: controlDeFlujoModel.controlDeFlujoType, path: ":/Assets/Code/CPlusPlus/Control de Flujo/", label: "Control de flujo" },
+            { model: estructurasDeDatosModel.estructurasDeDatosType, path: ":/Assets/Code/CPlusPlus/Estructuras de datos/", label: "Estructura de datos" },
+            { model: funcionesModel.funcionesType, path: ":/Assets/Code/CPlusPlus/Funciones/", label: "Funciones" },
+            { model: pooModel.pooType, path: ":/Assets/Code/CPlusPlus/POO/", label: "Clases" },
+            { model: herenciaYPolimorfismoModel.herenciaYPolimorfismoType, path: ":/Assets/Code/CPlusPlus/Herencia y polimorfismo/", label: "Herencia y polimorfismo" },
+            { model: amigasModel.amigasType, path: ":/Assets/Code/CPlusPlus/Friends/", label: "Friends" },
+            { model: constYMiembrosEstaticosModel.miemborsStaticYConstType, path: ":/Assets/Code/CPlusPlus/Const y miembros estaticos/", label: "Const&Static members" },
+            { model: namespacesModel.namespaceType, path: ":/Assets/Code/CPlusPlus/namespaces/", label: "Namespace" },
+            { model: manejoMemoriaModel.gestionDeLaMemoriaType, path: ":/Assets/Code/CPlusPlus/Manejo memoria/", label: "Gestion de Memoria" },
+            { model: operadorSobrecargaModel.sobrecargaDeOperadoresType, path: ":/Assets/Code/CPlusPlus/Operador sobrecarga/", label: "Sobrecarga de operadores" },
+            { model: plantillasYGenericasModel.plantillasType, path: ":/Assets/Code/CPlusPlus/Plantillas y genericas/", label: "Plantillas" },
+            { model: conceptsModel.conceptsType, path: ":/Assets/Code/CPlusPlus/Concepts/", label: "Concepts" },
+            { model: semanticsModel.semanticsType, path: ":/Assets/Code/CPlusPlus/Semantics/", label: "Semantics" },
+            { model: funcionesComoEntidadesModel.funcionesComoEntidadesType, path: ":/Assets/Code/CPlusPlus/Funciones como entidades/", label: "Funciones como entidades" },
+            { model: iteradoresModel.iteradoresType, path: ":/Assets/Code/CPlusPlus/Iteradores/", label: "Iteradores" },
+            { model: stdAlgoritmosModel.stdAlgorithmsType, path: ":/Assets/Code/CPlusPlus/Std Algoritmos/", label: "std::algorithms" }
+        ];
 
         for (var j = 0; j < topicModels.length; j++) {
             var topicModel = topicModels[j];
@@ -114,8 +111,8 @@ Window {
         filteredTopicsModel.clear();
         for (var i = 0; i < combinedTopics.length; i++) {
             var topic = combinedTopics[i];
-            if (topic.toLowerCase().indexOf(searchText.toLowerCase()) !== -1) {
-                filteredTopicsModel.append({ "name": topic });
+            if (topic.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1) {
+                filteredTopicsModel.append({ "name": topic.name });
             }
         }
     }
@@ -134,7 +131,6 @@ Window {
         width: parent.width
         height: parent.height
 
-
         // Menu Bar
         MyMenuBar {
             id: menuBar
@@ -143,7 +139,7 @@ Window {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
         }
 
-        Column{
+        Column {
             id: columnContent
             height: parent.height - menuBar.height
             padding: 15
@@ -154,8 +150,8 @@ Window {
             StackView {
                 id: stackView
                 initialItem: "InitialPage.qml"
-                width: columnContent.width *0.98
-                height: columnContent.height*0.895
+                width: columnContent.width * 0.98
+                height: columnContent.height * 0.895
                 anchors.horizontalCenter: parent.horizontalCenter
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -166,7 +162,6 @@ Window {
                 }
             }
 
-
             Button {
                 id: switchToMainPageButton
                 width: 176
@@ -175,7 +170,6 @@ Window {
                 anchors.horizontalCenter: stackView.horizontalCenter
                 visible: false
                 Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-
 
                 onClicked: {
                     if (stackView.depth > 1) {
@@ -188,30 +182,29 @@ Window {
     }
 
     Connections {
-        target: communicationObject
-        onShowMainPage: {
-            stackView.push("MainPage.qml")
-            switchToMainPageButton.visible = true
-        }
-        onShowExplanationPage: {
-            if (stackView.depth > 1) {
-                stackView.pop()
+            target: communicationObject
+            function onShowMainPage() {
+                stackView.push("MainPage.qml")
+                switchToMainPageButton.visible = true
+            }
+            function onShowExplanationPage() {
+                if (stackView.depth > 1) {
+                    stackView.pop()
+                }
             }
         }
-    }
 
-    Connections {
-        target: fileProcessor
-        function onExplanationChanged() {
-            explanationText = fileProcessor.explanation;
+        Connections {
+            target: fileProcessor
+            function onExplanationChanged() {
+                explanationText = fileProcessor.explanation;
+            }
+        }
+
+        QtObject {
+            id: communicationObject
+
+            signal showMainPage
+            signal showExplanationPage
         }
     }
-
-    QtObject {
-        id: communicationObject
-
-        signal showMainPage
-        signal showExplanationPage
-    }
-}
-

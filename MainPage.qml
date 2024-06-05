@@ -11,7 +11,7 @@ Column {
     id: mainLayout
     width: parent.width
     height: parent.height
-    spacing: 15
+    spacing: 5
 
     Row {
         id: mainContentRow
@@ -19,41 +19,37 @@ Column {
         Layout.fillWidth: true
         height: parent.height
         width: parent.width
-        padding: 15
-        spacing: 30
+        spacing: 5
 
         Column {
             id: leftMainContent
-            width: 250
+            width: 220
             height: parent.height
+            topPadding: 0
             padding: 0
+            spacing: 15
 
             MyGroupbox {
                 id: groupboxTopics
                 height: parent.height
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.top: parent.top
-                anchors.leftMargin: 10
-                anchors.rightMargin: 10
-                anchors.topMargin: 0
+                width: parent.width
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
                 ScrollViewTopics {
                     id: scrollViewTopics
-                    height: groupboxTopics.height
+                    height: groupboxTopics.height * 0.98
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: groupboxTopics.width
                 }
             }
-
             Button {
                 id: buttonExplanation
                 width: 150
                 height: 55
+
                 text: qsTr("Code")
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: groupboxTopics.bottom
-                anchors.topMargin: 20
+                anchors.horizontalCenter: groupboxTopics.horizontalCenter
                 highlighted: false
                 flat: false
                 antialiasing: true
@@ -71,15 +67,12 @@ Column {
 
         Rectangle {
             id: backGroundStackView
-            height: mainLayout.height
             color: theme.backGroundStackViewColor
+            height: mainLayout.height
+            width: mainLayout.width - leftMainContent.width
             radius: 15
-            anchors.left: leftMainContent.right
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.leftMargin: 5
-            anchors.rightMargin: 10
-            anchors.topMargin: 0
+            Layout.fillHeight: true
+            Layout.fillWidth: true
             StackView {
                 id: stackView
                 initialItem: "ExplanationPage.qml"

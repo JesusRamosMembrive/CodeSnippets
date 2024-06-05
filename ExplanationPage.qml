@@ -26,7 +26,8 @@ Rectangle {
 
         Text {
             text: "Explanation Area"
-            wrapMode: Text.WordWrap
+            wrapMode: Text.WrapAnywhere
+            textFormat: Text.AutoText
             font.family: "Roboto"
             anchors.horizontalCenter: parent.horizontalCenter
             font.pointSize: 20
@@ -75,7 +76,7 @@ Rectangle {
 
     Connections {
         target: fileProcessor
-        onFileSelected: {
+        function onFileSelected() {
             textExplanationCode.text = appWindow.explanationText;
         }
     }

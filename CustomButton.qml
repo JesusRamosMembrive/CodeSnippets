@@ -15,14 +15,17 @@ Control {
     property color endColor: "#f0f0f0"
     property bool checked: false
 
+    property color gradientStart: "#ffffff"
+    property color gradientEnd: "#f0f0f0"
+
     background: Rectangle {
         id: buttonBackground
         width: parent.width
         height: parent.height
         radius: 20
         gradient: Gradient {
-            GradientStop { position: 0.0; color: customButton.startColor }
-            GradientStop { position: 1.0; color: customButton.endColor }
+            GradientStop { position: 0.0; color: customButton.gradientStart }
+            GradientStop { position: 1.0; color: customButton.gradientEnd }
         }
     }
 
@@ -47,7 +50,6 @@ Control {
             anchors.centerIn: parent
             font.pointSize: 12
             font.family: "Roboto"
-
         }
     }
 
@@ -58,8 +60,8 @@ Control {
             PropertyChanges {
                 target: customButton
                 buttonTextColor: "#ffffff"
-                startColor: "#4CAF50"
-                endColor: "#8BC34A"
+                gradientStart: "#4CAF50"
+                gradientEnd: "#8BC34A"
             }
         },
         State {
@@ -68,8 +70,8 @@ Control {
             PropertyChanges {
                 target: customButton
                 buttonTextColor: "#000000"
-                startColor: "#ffffff"
-                endColor: "#f0f0f0"
+                gradientStart: "#ffffff"
+                gradientEnd: "#f0f0f0"
             }
         }
     ]
@@ -80,14 +82,14 @@ Control {
             to: "checked"
             ParallelAnimation {
                 ColorAnimation {
-                    target: buttonBackground.gradient.stops[0]
-                    property: "color"
+                    target: customButton
+                    property: "gradientStart"
                     to: "#4CAF50"
                     duration: 500
                 }
                 ColorAnimation {
-                    target: buttonBackground.gradient.stops[1]
-                    property: "color"
+                    target: customButton
+                    property: "gradientEnd"
                     to: "#8BC34A"
                     duration: 500
                 }
@@ -103,14 +105,14 @@ Control {
             to: "unchecked"
             ParallelAnimation {
                 ColorAnimation {
-                    target: buttonBackground.gradient.stops[0]
-                    property: "color"
+                    target: customButton
+                    property: "gradientStart"
                     to: "#ffffff"
                     duration: 500
                 }
                 ColorAnimation {
-                    target: buttonBackground.gradient.stops[1]
-                    property: "color"
+                    target: customButton
+                    property: "gradientEnd"
                     to: "#f0f0f0"
                     duration: 500
                 }
@@ -122,5 +124,4 @@ Control {
             }
         }
     ]
-
 }

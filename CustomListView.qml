@@ -119,7 +119,7 @@ Column {
 
             Connections {
                 target: listViewContainer
-                onSearchFilterChanged: filterModel()
+                function onSearchFilterChanged() {filterModel()}
             }
         }
 
