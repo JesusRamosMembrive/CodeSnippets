@@ -82,39 +82,35 @@ Item {
                 rows: 2
                 columns: 3
 
-                Rectangle{
-                    id: bgButtonC
-                    height: 150
-                    width: 300
-                    radius:15
+
+               ButtonMainMenu {
+                    id: buttonC
+                    x: 81
+                    y: 493
+                    iconSource: "qrc:/Images/Assets/Images/c-.png"
+                    textTitle: "C ++"
+                    textSubTitle: "C++ Plain Snippets"
+                    onClicked: {
+                        communicationObject.showMainPage()
+                    }
                     DropShadow {
-                        anchors.fill: bgButtonC
+                        anchors.fill: buttonC
                         horizontalOffset: 0
                         verticalOffset: 0
-                        radius: 20
+                        radius: 19
                         color: "#ffffff"
-                        source: bgButtonC
-                        transparentBorder: false
-                        fast: true
+                        source: buttonC
+                        activeFocusOnTab: false
+                        focus: false
+                        antialiasing: false
+                        transparentBorder: true
+                        fast: false
                         cached: true
                         spread: 0
-                        samples: 100
-                    }
-                    ButtonMainMenu {
-                        id: buttonC
-                        x: 81
-                        y: 493
-                        anchors.fill: parent
-                        height: parent.height
-                        width: parent.width
-                        iconSource: "qrc:/Images/Assets/Images/c-.png"
-                        textTitle: "C ++"
-                        textSubTitle: "C++ Plain Snippets"
-                        onClicked: {
-                            communicationObject.showMainPage()
-                        }
+                        samples: 32
                     }
                 }
+
 
 
 
