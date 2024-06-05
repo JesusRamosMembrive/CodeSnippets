@@ -16,6 +16,7 @@ QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            color: #ffffff;
         }
         h1 {
             color: #2E8B57;
@@ -36,16 +37,23 @@ QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
         code {
             font-family: "Courier New", monospace;
             background-color: #000000;
-            border: 1px solid #e1e1e1;
-            padding: 2px 4px;
+            color: #ffffff; /* Texto en blanco */
+            border: none; /* Sin borde */
+            padding: 0; /* Sin padding */
             border-radius: 3px;
+            display: inline-block;
+            white-space: pre-wrap; /* Ajusta el contenido */
         }
         pre {
             background-color: #000000;
-            border: 1px solid #e1e1e1;
+            color: #ffffff; /* Texto en blanco */
+            border: none; /* Sin borde */
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+            margin: 0; /* Sin margen */
+            white-space: pre-wrap; /* Ajusta el contenido */
+            line-height: 1.2; /* Asegura que el texto esté más cerca */
         }
         ul {
             margin: 1em 0;
@@ -60,6 +68,7 @@ QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
             padding: 0.5em 1em;
             background-color: #f9f9f9;
             border-left: 10px solid #ccc;
+            color: #333;
         }
         a {
             color: #1E90FF;
@@ -70,6 +79,7 @@ QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
         }
     </style>
 )";
+
 
     QTextDocument document;
     document.setMarkdown(markdownText);
