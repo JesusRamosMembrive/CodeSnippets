@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
+import QtQuick.Effects
 
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
@@ -155,19 +156,17 @@ Window {
                 }
             }
 
-            Button {
+            CustomRegularButton {
                 id: switchToMainPageButton
-                width: 180
+                anchors.horizontalCenter: parent.horizontalCenter
                 height: 75
-                text: qsTr("Go to Main Page")
-                anchors.horizontalCenter: stackViewInitialPage.horizontalCenter
                 visible: false
-                Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
-
+                width: 180
+                text: qsTr("Go to Main Page")
                 onClicked: {
                     if (stackViewInitialPage.depth > 1) {
                         stackViewInitialPage.pop()
-                        switchToMainPageButton.visible = false;
+                        switchToMainPageButton.visible = false
                     }
                 }
             }

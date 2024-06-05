@@ -16,11 +16,38 @@ Control {
         id: backgroundRect
         width: buttonMenu.width
         height: buttonMenu.height
+        color: "#ffffff"
         radius: 15
-        color: "#FFFFFF"
         border.color: "#ffffff"
         border.width: 0
     }
+
+    HoverHandler {
+        id: hoverHandler
+        enabled: true
+        cursorShape: Qt.PointingHandCursor
+        onHoveredChanged: {
+            if (hovered) {
+                colorAnimation.running = false
+                colorAnimation.from = backgroundRect.color
+                colorAnimation.to = "#fef068"
+                colorAnimation.running = true
+            } else {
+                colorAnimation.running = false
+                colorAnimation.from = backgroundRect.color
+                colorAnimation.to = "#ffffff"
+                colorAnimation.running = true
+            }
+        }
+    }
+
+    PropertyAnimation {
+        id: colorAnimation
+        target: backgroundRect
+        property: "color"
+        duration: 500 // Duración de la animación en milisegundos
+    }
+
 
     // Parte superior azul con esquinas superiores redondeadas
     Rectangle {

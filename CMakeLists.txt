@@ -45,6 +45,7 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES ButtonMainMenu.qml
     QML_FILES MainPage.qml
     QML_FILES DropShadowEffect.qml
+    QML_FILES CustomRegularButton.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

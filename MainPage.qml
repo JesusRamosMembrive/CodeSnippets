@@ -39,23 +39,20 @@ Column {
                     width: groupboxTopics.width
                 }
             }
-            Button {
-                id: buttonExplanation
+            CustomRegularButton {
+                id: switchToMainPageButton
+                anchors.horizontalCenter: parent.horizontalCenter
+                height: 60
                 width: 150
-                height: 55
-
                 text: qsTr("Code")
-                anchors.horizontalCenter: groupboxTopics.horizontalCenter
-                highlighted: false
-                flat: false
-                antialiasing: true
+
                 onClicked: {
                     if (stackView.depth === 1) {
                         stackView.push("CodeDisplayPage.qml")
-                        buttonExplanation.text = qsTr("Explanation")
+                        switchToMainPageButton.text = qsTr("Explanation")
                     } else {
                         stackView.pop()
-                        buttonExplanation.text = qsTr("Code")
+                        switchToMainPageButton.text = qsTr("Code")
                     }
                 }
             }
