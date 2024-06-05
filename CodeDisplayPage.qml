@@ -153,7 +153,7 @@ Rectangle {
 
     Connections {
         target: fileProcessor
-        function onFileSelected() {
+        function onFileSelected(fileTitle, fileContent) {
             textAreaCode.text = fileContent;
             newTitleAreaCode = fileTitle;
         }

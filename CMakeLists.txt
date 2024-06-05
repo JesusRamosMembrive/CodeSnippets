@@ -27,13 +27,10 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES Modules/Utils/FileReader.qml
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
     QML_FILES ScrollViewTopics.qml
-    RESOURCES
     QML_FILES CustomButton.qml
     QML_FILES CustomListView.qml
     QML_FILES FilesListView.qml
     RESOURCES Modules/Notes/MyGroupBoxComponent
-    QML_FILES
-    QML_FILES
     QML_FILES MyTitleBar.qml
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
@@ -46,7 +43,12 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES MainPage.qml
     QML_FILES DropShadowEffect.qml
     QML_FILES CustomRegularButton.qml
+    SOURCES Modules/FileProcessor/markdownprocessor.h Modules/FileProcessor/markdownprocessor.cpp
 )
+
+# Buscar la biblioteca cmark
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(CMARK REQUIRED libcmark)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

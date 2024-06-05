@@ -2,9 +2,9 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickWindow>
-// #include <QtWebEngineQuick/qtwebenginequickglobal.h>
 
 #include "./Modules/FileProcessor/fileprocessor.h"
+#include "./Modules/FileProcessor/markdownprocessor.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,9 @@ int main(int argc, char *argv[])
 
     qDebug() << "ResourceReader creado"; // Mover el debug aquí para confirmar la creación
     FileProcessor fileProcessor;
+    MarkdownProcessor markdownProcessor;
     engine.rootContext()->setContextProperty("fileProcessor", &fileProcessor);
+    engine.rootContext()->setContextProperty("markdownProcessor", &markdownProcessor);
 
     const QUrl url(u"qrc:/CodeSnippetApp/Main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,

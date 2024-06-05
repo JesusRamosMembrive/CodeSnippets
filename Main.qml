@@ -45,6 +45,7 @@ Window {
 
     property var filesMap: ({})
     property var combinedTopics: []
+    property string preExplanationText: ""
     property string explanationText: ""
     property string currentTopic: ""
     property Theme theme: Theme {}
@@ -190,7 +191,8 @@ Window {
     Connections {
         target: fileProcessor
         function onExplanationChanged() {
-            explanationText = fileProcessor.explanation;
+            preExplanationText = fileProcessor.explanation;
+            explanationText = markdownProcessor.processMarkdown(preExplanationText);
         }
     }
 
@@ -201,35 +203,3 @@ Window {
         signal showExplanationPage
     }
 }
-
-// Window {
-//     visible: true
-//        width: 640
-//        height: 480
-
-//        Rectangle {
-//            id: testRect
-//            width: 200
-//            height: 200
-//            color: "blue"
-//            anchors.centerIn: parent
-
-//            DropShadow {
-//                anchors.fill: testRect
-//                horizontalOffset: 0
-//                verticalOffset: 20
-//                radius: 12.5
-//                color: "#80000000"
-//                source: testRect
-//                cached: true
-//                focus: true
-//                layer.smooth: true
-//                layer.textureMirroring: ShaderEffectSource.NoMirroring
-//                layer.wrapMode: ShaderEffectSource.ClampToEdge
-//                layer.enabled: false
-//                antialiasing: true
-//                spread: 0
-//                samples: 22
-//            }
-//        }
-// }
