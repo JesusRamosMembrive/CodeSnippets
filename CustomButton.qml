@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material
-
 Control {
     id: customButton
     width: parent.width * 0.8
@@ -17,6 +16,8 @@ Control {
 
     property color gradientStart: "#ffffff"
     property color gradientEnd: "#f0f0f0"
+    property color hoverStartColor: gradientStart
+    property color hoverEndColor: gradientEnd
 
     background: Rectangle {
         id: buttonBackground
@@ -24,8 +25,40 @@ Control {
         height: parent.height
         radius: 20
         gradient: Gradient {
-            GradientStop { position: 0.0; color: customButton.gradientStart }
-            GradientStop { position: 1.0; color: customButton.gradientEnd }
+            GradientStop { position: 0.0; color: customButton.hoverStartColor }
+            GradientStop { position: 1.0; color: customButton.hoverEndColor }
+        }
+
+        HoverHandler {
+            id: hoverHandler
+            enabled: true
+            cursorShape: Qt.PointingHandCursor
+            onHoveredChanged: {
+                hoverAnimation.running = false
+                if (hovered) {
+                    hoverAnimation.from = customButton.hoverStartColor
+                    hoverAnimation.to = "goldenrod"
+                    hoverAnimation.start()
+                } else {
+                    hoverAnimation.from = customButton.hoverStartColor
+                    hoverAnimation.to = gradientStart
+                    hoverAnimation.start()
+                }
+            }
+        }
+
+        ColorAnimation {
+            id: hoverAnimation
+            target: customButton
+            property: "hoverStartColor"
+            duration: 250
+        }
+
+        ColorAnimation {
+            id: hoverEndAnimation
+            target: customButton
+            property: "hoverEndColor"
+            duration: 250
         }
     }
 
@@ -63,6 +96,8 @@ Control {
                 buttonTextColor: "#ffffff"
                 gradientStart: "#4CAF50"
                 gradientEnd: "#8BC34A"
+                hoverStartColor: "#4CAF50"
+                hoverEndColor: "#8BC34A"
             }
         },
         State {
@@ -73,6 +108,8 @@ Control {
                 buttonTextColor: "#000000"
                 gradientStart: "#ffffff"
                 gradientEnd: "#f0f0f0"
+                hoverStartColor: "#ffffff"
+                hoverEndColor: "#f0f0f0"
             }
         }
     ]
