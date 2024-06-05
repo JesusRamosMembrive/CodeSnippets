@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
-import Qt5Compat.GraphicalEffects
 
 import "./Modules/ListsOfModels"
 import "./Modules/Utils"
@@ -156,8 +155,6 @@ Window {
                 }
             }
 
-
-
             Button {
                 id: switchToMainPageButton
                 width: 180
@@ -182,6 +179,7 @@ Window {
         function onShowMainPage() {
             stackViewInitialPage.push("MainPage.qml")
             switchToMainPageButton.visible = true
+
         }
         function onShowExplanationPage() {
             if (stackViewInitialPage.depth > 1) {
