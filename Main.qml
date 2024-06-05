@@ -1,8 +1,8 @@
 import QtQuick
-import QtQuick.Effects
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Effects
 import QtQuick.Controls.Material
 import QtQuick.Dialogs
 
@@ -160,12 +160,28 @@ Window {
                     PropertyAnimation { property: "x"; from: stackView.height; to: 0; duration: 400; easing.type: Easing.InOutQuad }
                     PropertyAnimation { property: "opacity"; from: 0; to: 1; duration: 400; easing.type: Easing.InOutQuad }
                 }
+
+                // MultiEffect
+                // {
+                //     source: stackView
+                //     shadowBlur: 0.8
+                //     shadowScale: 0.5
+                //     shadowOpacity: 0.5
+                //     anchors.fill: stackView
+                //     shadowVerticalOffset: 0.5
+                //     shadowColor: "#ffffff"
+                //     shadowEnabled: true
+                //     shadowHorizontalOffset: 0.5
+                //     autoPaddingEnabled: true
+                //     blurEnabled: true
+                //     blur: 0.3
+                // }
             }
 
             Button {
                 id: switchToMainPageButton
-                width: 176
-                height: 74
+                width: 180
+                height: 75
                 text: qsTr("Go to Main Page")
                 anchors.horizontalCenter: stackView.horizontalCenter
                 visible: false
@@ -208,3 +224,33 @@ Window {
             signal showExplanationPage
         }
     }
+
+// Window {
+//     visible: true
+//        width: 640
+//        height: 480
+
+//        Rectangle {
+//            id: testRect
+//            width: 200
+//            height: 200
+//            color: "blue"
+//            anchors.centerIn: parent
+
+//            MultiEffect {
+//                source: testRect
+//                maskThresholdMax: 0
+//                shadowBlur: 1
+//                shadowScale: 1
+//                shadowOpacity: 1
+//                anchors.fill: testRect
+//                shadowVerticalOffset: 1
+//                shadowHorizontalOffset: 1
+//                shadowColor: "#ff0000"
+//                shadowEnabled: true
+//                autoPaddingEnabled: true
+//                blurEnabled: true
+//                blur: 0.4
+//            }
+//        }
+// }
