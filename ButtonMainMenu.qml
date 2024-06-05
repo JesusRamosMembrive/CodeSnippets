@@ -1,10 +1,6 @@
 import QtQuick
-import QtQuick.Window
 import QtQuick.Controls
-import QtQuick.Layouts
 import QtQuick.Controls.Material
-import QtQuick.Effects
-import QtQuick.Dialogs
 
 Control {
     id: buttonMenu
@@ -22,7 +18,7 @@ Control {
         height: buttonMenu.height
         radius: 15
         color: "#FFFFFF"
-        border.color: "#000000"
+        border.color: "#ffffff"
         border.width: 0
     }
 
@@ -33,7 +29,7 @@ Control {
         height: buttonMenu.height * 0.2
         radius: 15
         color: "#123456"
-        anchors.top: parent.top
+        // anchors.top: parent.top
 
         // Ocultar las esquinas inferiores del rectángulo azul
         Rectangle {
@@ -109,7 +105,6 @@ Control {
 
 
 // import QtQuick
-// import QtQuick.Window
 // import QtQuick.Controls
 // import QtQuick.Layouts
 // import QtQuick.Controls.Material

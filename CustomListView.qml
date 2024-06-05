@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 import QtQuick.Controls.Material
+
 
 Column {
     id: listViewContainer
@@ -21,16 +21,6 @@ Column {
             }
         }
     }
-
-    // function changeColorBGListViewButtons(){
-    //     console.log("Ejectuo la funcion")
-    //     if(bgListViewButtons.height !== 0 || bgListViewButtons.width !==0){
-    //         console.log("Entro dentro del if")
-    //         bgListViewButtons.color = "#ef0523";
-    //         bgListViewButtons.border.color = "#ef0523";
-    //         bgListViewButtons.radius =  20;
-    //     }
-    // }
 
     Rectangle {
         id: bgListViewButtons

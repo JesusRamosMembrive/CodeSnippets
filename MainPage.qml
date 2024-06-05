@@ -1,16 +1,12 @@
 import QtQuick
-import QtQuick.Window
 import QtQuick.Controls
-import QtQuick.Layouts
 import QtQuick.Controls.Material
-import QtQuick.Effects
-import QtQuick.Dialogs
-
+import QtQuick.Layouts
 
 Column {
     id: mainLayout
-    width: parent.width
-    height: parent.height
+    width: parent ? parent.width : 0
+    height: parent ? parent.height : 0
     spacing: 5
 
     Row {

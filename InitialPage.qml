@@ -1,10 +1,8 @@
 import QtQuick
-import QtQuick.Window
-import QtQuick.Controls
+import Qt5Compat.GraphicalEffects
 import QtQuick.Layouts
+import QtQuick.Controls
 import QtQuick.Controls.Material
-import QtQuick.Effects
-import QtQuick.Dialogs
 
 Item {
     id: initialPageItem
@@ -84,17 +82,41 @@ Item {
                 rows: 2
                 columns: 3
 
-                ButtonMainMenu {
-                    id: buttonC
-                    x: 81
-                    y: 493
-                    iconSource: "qrc:/Images/Assets/Images/c-.png"
-                    textTitle: "C ++"
-                    textSubTitle: "C++ Plain Snippets"
-                    onClicked: {
-                        communicationObject.showMainPage()
+                Rectangle{
+                    id: bgButtonC
+                    height: 150
+                    width: 300
+                    radius:15
+                    DropShadow {
+                        anchors.fill: bgButtonC
+                        horizontalOffset: 0
+                        verticalOffset: 0
+                        radius: 20
+                        color: "#ffffff"
+                        source: bgButtonC
+                        transparentBorder: false
+                        fast: true
+                        cached: true
+                        spread: 0
+                        samples: 100
+                    }
+                    ButtonMainMenu {
+                        id: buttonC
+                        x: 81
+                        y: 493
+                        anchors.fill: parent
+                        height: parent.height
+                        width: parent.width
+                        iconSource: "qrc:/Images/Assets/Images/c-.png"
+                        textTitle: "C ++"
+                        textSubTitle: "C++ Plain Snippets"
+                        onClicked: {
+                            communicationObject.showMainPage()
+                        }
                     }
                 }
+
+
 
                 ButtonMainMenu {
                     id: buttonQtC

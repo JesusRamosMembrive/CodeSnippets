@@ -50,6 +50,7 @@ Control {
             anchors.centerIn: parent
             font.pointSize: 12
             font.family: "Roboto"
+            text: ""
         }
     }
 
