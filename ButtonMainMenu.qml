@@ -121,7 +121,6 @@ Control {
         id: mouseArea
         anchors.fill: parent
         onClicked: {
-            console.log("Boton pulsado-id:mouseArea")
             buttonMenu.clicked()
         }
     }

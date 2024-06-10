@@ -3,7 +3,6 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
 
-import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 
 MenuBar {

@@ -14,8 +14,8 @@ Column {
 
     function filterModel() {
         filteredModel.clear();
-        for (var i = 0; i < customModel.count; i++) {
-            var item = customModel.get(i);
+        for (var i = 0; i < customModel.length; i++) {
+            var item = customModel[i];
             if (item.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
                 filteredModel.append(item);
             }
@@ -25,15 +25,17 @@ Column {
     Rectangle {
         id: bgListViewButtons
         width: parent.width * 0.9
+
         height: customButton && customButton.checked ? customListView.contentHeight : 0
         anchors.horizontalCenter: parent.horizontalCenter
         border.color: "#00ffffff"
+        color: "#00000000"  // Transparent background to help debug
 
         ListView {
             id: customListView
             width: parent.width
-            height: customButton && customButton.checked ? contentHeight : 0
-            visible: customButton && customButton.checked
+            height: customListView.visible ? contentHeight : 0
+            visible: true
             layer.mipmap: false
             antialiasing: true
             anchors.horizontalCenter: parent.horizontalCenter
@@ -72,7 +74,6 @@ Column {
                             position: 1
                             color: "#537895"
                         }
-                        orientation: Gradient.Horizontal
                     }
                     anchors.horizontalCenter: parent.horizontalCenter
 
@@ -98,18 +99,23 @@ Column {
                         id: itemMouseArea
                         anchors.fill: parent
                         onClicked: {
-                            appWindow.loadFileContent(model.name)
-                            // changeColorBGListViewButtons()
+                            appWindow.loadFileContent(model.name + ".txt")
                         }
                     }
                 }
             }
 
-            Component.onCompleted: filterModel()
+            Component.onCompleted: {
+                filterModel();
+            }
+
+            onContentHeightChanged: {
+                bgListViewButtons.height = contentHeight;
+            }
 
             Connections {
                 target: listViewContainer
-                function onSearchFilterChanged() {filterModel()}
+                function onSearchFilterChanged() { filterModel() }
             }
         }
 
@@ -119,7 +125,6 @@ Column {
                 easing.type: Easing.InOutCubic
             }
         }
-        color: "#00000000"
     }
 
     Behavior on height {

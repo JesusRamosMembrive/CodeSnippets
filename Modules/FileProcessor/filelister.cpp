@@ -7,27 +7,35 @@
  * Created: 9/6/2024
  *****************************************************************************/
 #include "filelister.h"
+#include <QDebug>
 
 FileLister::FileLister(QObject *parent) : QObject(parent) {}
 
-QVariantMap FileLister::createFilesMap(const QVariantList &topics) {
+QVariantMap FileLister::createFilesMap(const QString &basePath) {
     QVariantMap result;
-    for (const QVariant &topic : topics) {
-        QVariantMap topicMap = topic.toMap();
-        QString path = topicMap["path"].toString();
-        QString label = topicMap["label"].toString();
+    QDir dir(basePath);
 
-        QDir dir(path);
-        if (dir.exists()) {
-            QStringList files = dir.entryList(QDir::Files);
+    if (dir.exists()) {
+        qInfo() << "Base path exists: " << basePath;
+        QStringList folders = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+        for (const QString &folderName : folders) {
+            qInfo() << "Folder: " << folderName;
+            QDir folderDir(dir.absoluteFilePath(folderName));
+            QStringList files = folderDir.entryList(QDir::Files);
             for (const QString &fileName : files) {
-                result[fileName] = QVariantMap{
-                    {"path", dir.absoluteFilePath(fileName)},
-                    {"label", label}
+                QString filePath = folderDir.absoluteFilePath(fileName);
+                QString key = fileName;
+                qInfo() << "File: " << fileName << " in folder " << folderName;
+                result[key] = QVariantMap{
+                    {"path", filePath},
+                    {"label", folderName}
                 };
             }
         }
+    } else {
+        qWarning() << "Base path does not exist: " << basePath;
     }
+
     return result;
 }
 

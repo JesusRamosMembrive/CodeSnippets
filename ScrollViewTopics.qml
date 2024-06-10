@@ -2,7 +2,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material
 
-import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 
 ScrollView {
@@ -50,7 +49,6 @@ ScrollView {
         }
 
         Repeater {
-            anchors.horizontalCenter: parent.horizontalCenter
             model: appWindow.topicModels
 
             delegate: TopicSection {

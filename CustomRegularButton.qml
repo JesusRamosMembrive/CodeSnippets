@@ -4,7 +4,6 @@ import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtQuick.Effects
 
-import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 import "./Modules/Style"
 

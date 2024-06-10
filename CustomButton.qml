@@ -1,6 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material
+
+
 Control {
     id: customButton
     width: parent.width * 0.8
@@ -67,6 +69,7 @@ Control {
         anchors.fill: buttonBackground
         onClicked: {
             customButton.checked = !customButton.checked
+            customButton.clicked(); // Emitimos la señal clicked correctamente
         }
     }
 
@@ -162,4 +165,6 @@ Control {
             }
         }
     ]
+
+    signal clicked
 }
