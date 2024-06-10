@@ -30,8 +30,10 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
+    property string currentLanguage: "/home/jesuslinux/Git/CodeSnippets/Assets/Code/CPlusPlus"
+
     function createFilesMap() {
-        var basePath = "/home/jesuslinux/Git/CodeSnippets/Assets/Code/CPlusPlus"; // Cambia esto a tu directorio base
+        var basePath = currentLanguage;
         var filesMap = fileLister.createFilesMap(basePath);
 
         var topics = {};
@@ -51,11 +53,29 @@ Window {
             });
         }
 
+        // Ordenar los folders por los números en sus nombres
+        var sortedFolders = Object.keys(topics).sort((a, b) => {
+            var numA = parseInt(a.split('-')[0]);
+            var numB = parseInt(b.split('-')[0]);
+            return numA - numB;
+        });
+
+        // Construir topicModels con folders ordenados
         topicModels = [];
-        for (var folder in topics) {
+        for (var i = 0; i < sortedFolders.length; i++) {
+            var folder = sortedFolders[i];
             topicModels.push({
                 label: folder,
                 model: topics[folder]
+            });
+        }
+
+        // Ordenar los archivos dentro de cada folder por el nombre de archivo
+        for (var j = 0; j < topicModels.length; j++) {
+            topicModels[j].model.sort((a, b) => {
+                var numA = parseInt(a.name.split('-')[0]);
+                var numB = parseInt(b.name.split('-')[0]);
+                return numA - numB;
             });
         }
 
@@ -142,7 +162,7 @@ Window {
                 id: switchToMainPageButton
                 anchors.horizontalCenter: parent.horizontalCenter
                 height: 75
-                visible: true
+                visible: false
                 width: 180
                 text: qsTr("Go to Main Page")
                 onClicked: {
@@ -157,13 +177,15 @@ Window {
 
     Connections {
         target: communicationObject
-        function onShowMainPage() {
+        function onShowMainPage(newLanguage) {
             stackViewInitialPage.push("MainPage.qml");
             switchToMainPageButton.visible = true;
+            appWindow.currentLanguage = newLanguage
         }
         function onShowExplanationPage() {
             if (stackViewInitialPage.depth > 1) {
                 stackViewInitialPage.pop();
+                appWindow.currentLanguage = ""
             }
         }
     }

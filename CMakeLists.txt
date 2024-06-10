@@ -44,6 +44,7 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES CustomRegularButton.qml
     SOURCES Modules/FileProcessor/markdownprocessor.h Modules/FileProcessor/markdownprocessor.cpp
     SOURCES Modules/FileProcessor/filelister.h Modules/FileProcessor/filelister.cpp
+    QML_FILES SelectFolderPage.qml
 )
 
 
