@@ -14,7 +14,6 @@ Window {
 
     property string textResultProperty: ""
 
-
     Component.onCompleted:
     {
         var pathsFilePath = appWindow.basePath + "/paths.json";
@@ -41,7 +40,6 @@ Window {
         width: parent.width
         height: parent.height
         anchors.horizontalCenter: parent.horizontalCenter
-        padding: 5
         spacing: 5
 
         Text {
@@ -360,7 +358,7 @@ Window {
 
     Connections {
         target: selectFolderPageItem
-        onVisibleChanged: {
+        function onVisibleChanged() {
             if (!selectFolderPageItem.visible) {
                 textResult.text = ""
             }

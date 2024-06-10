@@ -9,6 +9,22 @@ Item {
     width: parent.width
     height: parent.height
 
+    Component.onCompleted: {
+            var pathsFilePath ="/home/jesusramos/Git/CodeSnippets/paths.json";
+            var result = jsonHandler.readJsonFile(pathsFilePath);
+            if(result)
+            {
+                if(result.c === null){buttonC.enabled = false;}
+                if(result.cQt === null){buttonQtC.enabled = false;}
+                if(result.cPatterns === null){buttonDesignPatternsC.enabled = false;}
+                if(result.python === null){buttonPython.enabled = false;}
+                if(result.pythonQt === null){buttonQtPython.enabled = false;}
+                if(result.patternPython === null){buttonDesignPatternsPython.enabled = false;}
+            }
+
+
+    }
+
     Rectangle {
         id: backgroundInitialPage
         color: "#1c1c1c"

@@ -30,8 +30,8 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
-    property string currentLanguage: "/home/jesuslinux/Git/CodeSnippets/Assets/Code/CPlusPlus"
-    property string basePath: "/home/jesuslinux/Git/CodeSnippets"
+    property string currentLanguage: ""
+    property string basePath: "/home/jesusramos/Git/CodeSnippets"
 
     function createFilesMap() {
         var basePath = currentLanguage;
@@ -147,7 +147,7 @@ Window {
         Column {
             id: columnContent
             height: parent.height - menuBar.height
-            padding: 15
+            spacing: 10
             width: parent.width
             Layout.fillHeight: true
             Layout.fillWidth: true
