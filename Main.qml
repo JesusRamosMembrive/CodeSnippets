@@ -22,6 +22,7 @@ Window {
     Material.theme: Material.Dark
     Material.accent: Material.Orange
 
+
     Fundamentos { id: fundamentosModel }
     ControlDeFlujo { id: controlDeFlujoModel }
     EstructurasDeDatos { id: estructurasDeDatosModel }

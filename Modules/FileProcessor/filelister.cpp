@@ -8,37 +8,34 @@
  *****************************************************************************/
 #include "filelister.h"
 
-
 FileLister::FileLister(QObject *parent) : QObject(parent) {}
 
-QVariantList FileLister::listFoldersAndFiles(const QString &path) {
-    QVariantList result;
-    QDir dir(path);
+QVariantMap FileLister::createFilesMap(const QVariantList &topics) {
+    QVariantMap result;
+    for (const QVariant &topic : topics) {
+        QVariantMap topicMap = topic.toMap();
+        QString path = topicMap["path"].toString();
+        QString label = topicMap["label"].toString();
 
-    if (dir.exists()) {
-        QStringList folders = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
-        for (const QString &folderName : folders) {
-            QVariantMap folderMap;
-            folderMap["folderName"] = folderName;
-
-            QDir folderDir(dir.absoluteFilePath(folderName));
-            folderMap["files"] = listFilesInDirectory(folderDir);
-            qInfo() << "Folder: " << folderName;
-            result.append(folderMap);
+        QDir dir(path);
+        if (dir.exists()) {
+            QStringList files = dir.entryList(QDir::Files);
+            for (const QString &fileName : files) {
+                result[fileName] = QVariantMap{
+                    {"path", dir.absoluteFilePath(fileName)},
+                    {"label", label}
+                };
+            }
         }
     }
-
     return result;
 }
 
 QVariantList FileLister::listFilesInDirectory(const QDir &directory) {
     QVariantList fileList;
     QStringList files = directory.entryList(QDir::Files);
-
     for (const QString &fileName : files) {
         fileList.append(fileName);
-        qInfo() << "File: " << fileName;
     }
-
     return fileList;
 }

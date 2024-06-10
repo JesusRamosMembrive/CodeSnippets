@@ -11,7 +11,6 @@
 #include <QObject>
 #include <QDir>
 #include <QVariantList>
-#include <QDebug>
 
 class FileLister : public QObject
 {
