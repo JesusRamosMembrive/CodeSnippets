@@ -6,6 +6,7 @@
 #include "./Modules/FileProcessor/fileprocessor.h"
 #include "./Modules/FileProcessor/markdownprocessor.h"
 #include "./Modules/FileProcessor/filelister.h"
+#include "./Modules/FileProcessor/jsonhandler.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,9 +20,10 @@ int main(int argc, char *argv[])
     MarkdownProcessor markdownProcessor;
     engine.rootContext()->setContextProperty("markdownProcessor", &markdownProcessor);
 
-    // FileLister fileLister;
-    // engine.rootContext()->setContextProperty("fileLister", &fileLister);
+    JsonHandler jsonHandler;
+    engine.rootContext()->setContextProperty("jsonHandler", &jsonHandler);
     qmlRegisterType<FileLister>("FileLister", 1, 0, "FileLister");
+
 
     const QUrl url(u"qrc:/CodeSnippetApp/Main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,

@@ -45,6 +45,8 @@ qt6_add_qml_module(appCodeSnippetApp
     SOURCES Modules/FileProcessor/markdownprocessor.h Modules/FileProcessor/markdownprocessor.cpp
     SOURCES Modules/FileProcessor/filelister.h Modules/FileProcessor/filelister.cpp
     QML_FILES SelectFolderPage.qml
+    SOURCES Modules/FileProcessor/jsonhandler.h Modules/FileProcessor/jsonhandler.cpp
+    QML_FILES paths.json
 )
 
 
