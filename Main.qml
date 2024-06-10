@@ -51,6 +51,7 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
+
     function createFilesMap() {
         var map = {};
         var topics = [];
@@ -161,13 +162,18 @@ Window {
                 id: switchToMainPageButton
                 anchors.horizontalCenter: parent.horizontalCenter
                 height: 75
-                visible: false
+                visible: true
                 width: 180
                 text: qsTr("Go to Main Page")
                 onClicked: {
                     if (stackViewInitialPage.depth > 1) {
                         stackViewInitialPage.pop()
                         switchToMainPageButton.visible = false
+                        var result = fileLister.listFoldersAndFiles("/home/jesusramos/Git/CodeSnippets/Assets/Code/CPlusPlus")
+                        var arrayLength = result.length;
+                        for (var i = 0; i < arrayLength; i++) {
+                            console.log(result[i].name);
+                        }
                     }
                 }
             }
