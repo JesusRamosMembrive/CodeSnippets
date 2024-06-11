@@ -27,18 +27,14 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES Modules/Utils/FileReader.qml
     SOURCES Modules/FileProcessor/fileprocessor.h Modules/FileProcessor/fileprocessor.cpp
     QML_FILES ScrollViewTopics.qml
-    RESOURCES
     QML_FILES CustomButton.qml
     QML_FILES CustomListView.qml
     QML_FILES FilesListView.qml
     RESOURCES Modules/Notes/MyGroupBoxComponent
-    QML_FILES
-    QML_FILES
     QML_FILES MyTitleBar.qml
     QML_FILES MyMenuBar.qml
     QML_FILES ExplanationPage.qml
     QML_FILES Modules/Style/Theme.qml
-    QML_FILES Modules/ListsOfModels/Amigas.qml Modules/ListsOfModels/Concepts.qml Modules/ListsOfModels/ControlDeFlujo.qml Modules/ListsOfModels/EstructurasDeDatos.qml Modules/ListsOfModels/ExpresionesDeRango.qml Modules/ListsOfModels/Funciones.qml Modules/ListsOfModels/FuncionesComoEntidades.qml Modules/ListsOfModels/Fundamentos.qml Modules/ListsOfModels/GestionDeLaMemoria.qml Modules/ListsOfModels/HerenciaYPolimorfismo.qml Modules/ListsOfModels/Iteradores.qml Modules/ListsOfModels/MiemborsStaticYConst.qml Modules/ListsOfModels/Namespace.qml Modules/ListsOfModels/Plantillas.qml Modules/ListsOfModels/Poo.qml Modules/ListsOfModels/Semantics.qml Modules/ListsOfModels/SobrecargaDeOperadores.qml Modules/ListsOfModels/StdAlgorithms.qml
     QML_FILES TopicSection.qml
     QML_FILES CPlusPlusContentPage.qml
     QML_FILES InitialPage.qml
@@ -46,7 +42,13 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES MainPage.qml
     QML_FILES DropShadowEffect.qml
     QML_FILES CustomRegularButton.qml
+    SOURCES Modules/FileProcessor/markdownprocessor.h Modules/FileProcessor/markdownprocessor.cpp
+    SOURCES Modules/FileProcessor/filelister.h Modules/FileProcessor/filelister.cpp
+    QML_FILES SelectFolderPage.qml
+    SOURCES Modules/FileProcessor/jsonhandler.h Modules/FileProcessor/jsonhandler.cpp
+    QML_FILES paths.json
 )
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

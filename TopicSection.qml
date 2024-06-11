@@ -15,11 +15,15 @@ Column {
         height: 40
         buttonText: "Button Text"
         anchors.horizontalCenter: parent.horizontalCenter
+        onClicked: {
+            customListView.visible = !customListView.visible
+        }
     }
 
     CustomListView {
         id: customListView
         width: parent.width
-        customButton: topicButton
+        customModel: model
+        visible: false
     }
 }

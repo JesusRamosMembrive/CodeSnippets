@@ -2,20 +2,28 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickWindow>
-// #include <QtWebEngineQuick/qtwebenginequickglobal.h>
-
+#include <QQmlModuleRegistration>
 #include "./Modules/FileProcessor/fileprocessor.h"
+#include "./Modules/FileProcessor/markdownprocessor.h"
+#include "./Modules/FileProcessor/filelister.h"
+#include "./Modules/FileProcessor/jsonhandler.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    // QtWebEngineQuick::initialize();
 
-    qDebug() << "ResourceReader creado"; // Mover el debug aquí para confirmar la creación
     FileProcessor fileProcessor;
     engine.rootContext()->setContextProperty("fileProcessor", &fileProcessor);
+
+    MarkdownProcessor markdownProcessor;
+    engine.rootContext()->setContextProperty("markdownProcessor", &markdownProcessor);
+
+    JsonHandler jsonHandler;
+    engine.rootContext()->setContextProperty("jsonHandler", &jsonHandler);
+    qmlRegisterType<FileLister>("FileLister", 1, 0, "FileLister");
+
 
     const QUrl url(u"qrc:/CodeSnippetApp/Main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,

@@ -58,10 +58,11 @@ Rectangle {
                         y: 0
                         hoverEnabled: false
                         renderType: Text.QtRendering
-                        textFormat: Text.MarkdownText
+                        textFormat: Text.AutoText
                         readOnly: true
                         text: "No example loaded"
                         font.pixelSize: 15
+                        wrapMode: Text.WordWrap
                         antialiasing: true
                         font.family: "Roboto"
                         placeholderText: qsTr("Text Area")
@@ -153,7 +154,7 @@ Rectangle {
 
     Connections {
         target: fileProcessor
-        function onFileSelected() {
+        function onFileSelected(fileTitle, fileContent) {
             textAreaCode.text = fileContent;
             newTitleAreaCode = fileTitle;
         }

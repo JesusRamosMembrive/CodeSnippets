@@ -20,22 +20,38 @@ Control {
         radius: 15
         border.color: "#ffffff"
         border.width: 0
+
+        // Cambiar el color al hover si está desactivado
+        states: State {
+            name: "disabledHover"
+            when: !buttonMenu.enabled && hoverHandler.hovered
+            PropertyChanges {
+                target: backgroundRect
+                color: "red"
+            }
+        }
+
+        transitions: Transition {
+            from: "*"
+            to: "disabledHover"
+            reversible: true
+            ColorAnimation {
+                target: backgroundRect
+                property: "color"
+                duration: 500
+            }
+        }
     }
 
     HoverHandler {
         id: hoverHandler
         enabled: true
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: buttonMenu.enabled ? Qt.PointingHandCursor : Qt.ArrowCursor
         onHoveredChanged: {
-            if (hovered) {
+            if (buttonMenu.enabled) {
                 colorAnimation.running = false
                 colorAnimation.from = backgroundRect.color
-                colorAnimation.to = "#fef068"
-                colorAnimation.running = true
-            } else {
-                colorAnimation.running = false
-                colorAnimation.from = backgroundRect.color
-                colorAnimation.to = "#ffffff"
+                colorAnimation.to = hovered ? "#fef068" : "#ffffff"
                 colorAnimation.running = true
             }
         }
@@ -48,7 +64,6 @@ Control {
         duration: 500 // Duración de la animación en milisegundos
     }
 
-
     // Parte superior azul con esquinas superiores redondeadas
     Rectangle {
         id: rectangle
@@ -56,7 +71,6 @@ Control {
         height: buttonMenu.height * 0.2
         radius: 15
         color: "#123456"
-        // anchors.top: parent.top
 
         // Ocultar las esquinas inferiores del rectángulo azul
         Rectangle {
@@ -120,8 +134,8 @@ Control {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
+        enabled: buttonMenu.enabled
         onClicked: {
-            console.log("Boton pulsado-id:mouseArea")
             buttonMenu.clicked()
         }
     }

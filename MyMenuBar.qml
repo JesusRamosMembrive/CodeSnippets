@@ -3,19 +3,23 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
 
-import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 
 MenuBar {
     id: menuBar
     Layout.fillWidth: true
 
+    signal setPathsTriggered
+
     Menu {
         font.family: "Roboto"
         title: "Options"
         Action {
-            text: "Lenguage"
-            // Conecte la señal "triggered" a su función de manejo
+            text: "Set Paths"
+            onTriggered: {
+                menuBar.setPathsTriggered()
+
+            }
         }
     }
 }
