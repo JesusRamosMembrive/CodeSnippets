@@ -49,9 +49,13 @@ ScrollView {
         }
 
         Repeater {
+            id: repeater
+            anchors.horizontalCenter: parent.horizontalCenter
             model: appWindow.topicModels
 
             delegate: TopicSection {
+                anchors.horizontalCenter: parent.horizontalCenter
+
                 buttonText: modelData.label
                 model: modelData.model
                 searchFilter: textField.text

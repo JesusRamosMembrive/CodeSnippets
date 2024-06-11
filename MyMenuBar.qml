@@ -8,6 +8,7 @@ import "./Modules/Utils"
 MenuBar {
     id: menuBar
     Layout.fillWidth: true
+    height: 40
 
     signal setPathsTriggered
 

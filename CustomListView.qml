@@ -28,6 +28,7 @@ Column {
 
         height: customButton && customButton.checked ? customListView.contentHeight : 0
         border.color: "#00ffffff"
+        anchors.horizontalCenter: parent.horizontalCenter
         color: "#00000000"  // Transparent background to help debug
 
         ListView {
@@ -63,12 +64,12 @@ Column {
                     gradient: Gradient {
                         GradientStop {
                             position: 0
-                            color: "#09203f"
+                            color: "#425774"
                         }
 
                         GradientStop {
                             position: 1
-                            color: "#537895"
+                            color: "#757c82"
                         }
                     }
 
