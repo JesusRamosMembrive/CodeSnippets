@@ -30,7 +30,7 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
-    property var currentAgenda: ""
+    property string currentAgenda: ""
     property string basePath: "/home/jesuslinux/Git/CodeSnippets"
 
     function createFilesMap() {
@@ -54,23 +54,41 @@ Window {
             }
 
             topics[folderName].push({
-                name: fileName,
-                path: file.path,
-                label: folderName
-            });
+                                        name: fileName,
+                                        path: file.path,
+                                        label: folderName
+                                    });
+
+            // Ordenar los folders por los números en sus nombres
+             var sortedFolders = Object.keys(topics).sort((a, b) => {
+                                                              var numA = parseInt(a.split('-')[0]);
+                                                              var numB = parseInt(b.split('-')[0]);
+                                                              return numA - numB;
+                                                          });
+
+             // Construir topicModels con folders ordenados
+             topicModels = [];
+             for (var i = 0; i < sortedFolders.length; i++) {
+                 var foldertmp = sortedFolders[i];
+                 topicModels.push({
+                                      label: foldertmp,
+                                      model: topics[foldertmp]
+                                  });
+             }
+
+             // Ordenar los archivos dentro de cada folder por el nombre de archivo
+             for (var j = 0; j < topicModels.length; j++) {
+                 topicModels[j].model.sort((a, b) => {
+                                               var numA = parseInt(a.name.split('-')[0]);
+                                               var numB = parseInt(b.name.split('-')[0]);
+                                               return numA - numB;
+                                           });
+             }
 
             filesMap[fileName + ".txt"] = {
                 path: file.path,
                 label: folderName
             };
-        }
-
-        topicModels = [];
-        for (var folder in topics) {
-            topicModels.push({
-                label: folder,
-                model: topics[folder]
-            });
         }
 
         combinedTopics = topicModels.reduce((acc, t) => acc.concat(t.model), []);
@@ -117,6 +135,7 @@ Window {
         id: mainLayout
         width: parent.width
         height: parent.height
+        spacing: 10
 
 
         SelectFolderPage {
@@ -159,9 +178,9 @@ Window {
             CustomRegularButton {
                 id: switchToMainPageButton
                 anchors.horizontalCenter: parent.horizontalCenter
-                height: 75
+                height: 65
                 visible: false
-                width: 180
+                width: 170
                 text: qsTr("Go to Main Page")
                 onClicked: {
                     if (stackViewInitialPage.depth > 1) {
@@ -176,7 +195,6 @@ Window {
     Connections {
         target: communicationObject
         function onShowMainPage(newTopcis) {
-            console.log("-------------newTopics", newTopcis);
             currentAgenda = newTopcis
             createFilesMap();
             filterTopics("");
