@@ -2,14 +2,15 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
+import QtWebEngine
 import "./Modules/Style"
 
 Rectangle {
     id: codeDisplayPage
     width: parent ? parent.width : 0
     height: parent ? parent.height : 0
+    color: "#121212"
     radius: 15
-    color: theme.backGroundCodeDisplayPageColor
 
     property Theme theme: Theme {}
     property string newTitleAreaCode: "Code area"
@@ -52,26 +53,41 @@ Rectangle {
                     anchors.fill: parent
                     anchors.margins: 10
 
-                    TextArea {
-                        id: textAreaCode
-                        x: 0
-                        y: 0
-                        hoverEnabled: false
-                        renderType: Text.QtRendering
-                        textFormat: Text.AutoText
-                        readOnly: true
-                        text: "No example loaded"
-                        font.pixelSize: 15
-                        wrapMode: Text.WordWrap
-                        antialiasing: true
-                        font.family: "Roboto"
-                        placeholderText: qsTr("Text Area")
-                        color: theme.letterToReadColor
+                    // TextArea {
+                    //     id: textAreaCode
+                    //     x: 0
+                    //     y: 0
+                    //     hoverEnabled: false
+                    //     renderType: Text.QtRendering
+                    //     textFormat: Text.AutoText
+                    //     readOnly: true
+                    //     text: "No example loaded"
+                    //     font.pixelSize: 15
+                    //     wrapMode: Text.WordWrap
+                    //     antialiasing: true
+                    //     font.family: "Roboto"
+                    //     placeholderText: qsTr("Text Area")
+                    //     color: theme.letterToReadColor
 
-                        background: Rectangle {
-                            color: "transparent"
-                            radius: 20
-                        }
+                    //     background: Rectangle {
+                    //         color: "transparent"
+                    //         radius: 20
+                    //     }
+                    // }
+
+                    WebEngineView {
+                        id: webView
+                        clip: true
+                        height: parent.height
+                        anchors.left: parent.left
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        width: parent.width
+                        antialiasing: true
+                        backgroundColor: "#121212"
+                        url: "about:blank"
+
                     }
                 }
             }
@@ -154,7 +170,8 @@ Rectangle {
     Connections {
         target: fileProcessor
         function onFileSelected(fileTitle, fileContent) {
-            textAreaCode.text = fileContent;
+            var fileContentProcecessed = markdownProcessor.processMarkdown(fileContent);
+            webView.loadHtml(fileContentProcecessed);
             newTitleAreaCode = fileTitle;
         }
     }

@@ -11,10 +11,11 @@ Rectangle {
     id: explanationDisplayPage
     width: parent.width
     height: parent.height
+    color: "#121212"
     Layout.fillHeight: true
     Layout.fillWidth: true
     radius: 8
-    color: theme.backGroundCodeDisplayPageColor
+    border.color: "#9b9b9b"
 
     property Theme theme: Theme {}
 
@@ -36,50 +37,35 @@ Rectangle {
         }
 
         Rectangle {
-            height: parent.height * 0.9
-            color: "#1e1e1e"
+            height: parent.height *0.92
+            color: "#121212"
             radius: 8
-            border.width: 1
+            border.color: "#919191"
+            border.width: 2
             anchors.left: parent.left
             anchors.right: parent.right
-            border.color: theme.borderGroupBoxColor
 
             ScrollView {
                 id: scrollView
                 anchors.fill: parent
+                height: parent.height
+                width: parent.width
                 clip: true
 
                 WebEngineView {
                     id: webView
-                    anchors.fill: parent
+                    clip: true
+                    height: parent.height
+                    anchors.left: parent.left
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width
                     antialiasing: true
-                    backgroundColor: "#2b2b2b"
+                    backgroundColor: "#121212"
                     url: "about:blank"
 
                 }
-                // TextArea {
-                //     id: textExplanationCode
-                //     wrapMode: Text.WordWrap
-                //     tabStopDistance: 20
-                //     renderType: Text.NativeRendering
-                //     readOnly: true
-                //     textFormat: Text.MarkdownText
-                //     font.pointSize: 13
-                //     font.family: "Roboto"
-                //     color: theme.letterToReadColor
-                //     background: Rectangle {
-                //         color: "transparent"
-                //     }
-                //     implicitWidth: parent.width
-                //     implicitHeight: contentHeight
-
-                //     // Optional: For better performance, disable text interaction and focus
-                //     enabled: false
-                //     smooth: false
-                //     activeFocusOnTab: false
-                //     activeFocusOnPress: false
-                //     hoverEnabled: false
-                // }
             }
         }
     }

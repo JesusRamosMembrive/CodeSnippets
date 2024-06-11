@@ -209,30 +209,6 @@ Window {
         }
     }
 
-    // Connections {
-    //     target: fileProcessor
-    //     function onExplanationChanged() {
-    //         var preExplanationText = fileProcessor.explanation;
-    //         var explanationText = markdownProcessor.processMarkdown(preExplanationText);
-    //         textExplanationCode.text = explanationText;
-
-    //     }
-    // }
-
-    // Component.onCompleted: {
-    //     var htmlContent = appWindow.explanationText;
-    //     webView.setHtml(htmlContent);
-    // }
-
-    // Connections {
-    //     target: fileProcessor
-    //     function onExplanationChanged() {
-    //         var preExplanationText = fileProcessor.explanation;
-    //         var explanationText = markdownProcessor.processMarkdown(preExplanationText);
-    //         webView.setHtml(explanationText);
-    //     }
-    // }
-
     QtObject {
         id: communicationObject
 
