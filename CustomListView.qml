@@ -27,7 +27,6 @@ Column {
         width: parent.width * 0.9
 
         height: customButton && customButton.checked ? customListView.contentHeight : 0
-        anchors.horizontalCenter: parent.horizontalCenter
         border.color: "#00ffffff"
         color: "#00000000"  // Transparent background to help debug
 
@@ -36,8 +35,6 @@ Column {
             width: parent.width
             height: customListView.visible ? contentHeight : 0
             visible: true
-            layer.mipmap: false
-            antialiasing: true
             anchors.horizontalCenter: parent.horizontalCenter
             clip: true
 
@@ -62,8 +59,7 @@ Column {
                     color: "#ffffff"
                     border.color: "#c42b3d5f"
                     border.width: 2
-                    layer.wrapMode: ShaderEffectSource.Repeat
-                    layer.enabled: false
+                    radius:15
                     gradient: Gradient {
                         GradientStop {
                             position: 0
@@ -75,7 +71,6 @@ Column {
                             color: "#537895"
                         }
                     }
-                    anchors.horizontalCenter: parent.horizontalCenter
 
                     Text {
                         color: "#ffffff"
@@ -87,11 +82,8 @@ Column {
                         verticalAlignment: Text.AlignVCenter
                         font.family: "Roboto"
                         wrapMode: Text.WordWrap
-                        layer.enabled: true
                         styleColor: "#00ffffff"
                         font.italic: false
-                        fontSizeMode: Text.Fit
-                        renderTypeQuality: Text.VeryHighRenderTypeQuality
                         textFormat: Text.RichText
                     }
 

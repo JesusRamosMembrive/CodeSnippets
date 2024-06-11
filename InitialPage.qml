@@ -9,20 +9,34 @@ Item {
     width: parent.width
     height: parent.height
 
+    property string cPath: ""
+    property string cQtPath: ""
+    property string cPatternsPath: ""
+    property string python: ""
+    property string pythonQt: ""
+    property string pythonPatterns: ""
+
     Component.onCompleted: {
-            var pathsFilePath ="/home/jesusramos/Git/CodeSnippets/paths.json";
-            var result = jsonHandler.readJsonFile(pathsFilePath);
-            if(result)
-            {
-                if(result.c === null){buttonC.enabled = false;}
-                if(result.cQt === null){buttonQtC.enabled = false;}
-                if(result.cPatterns === null){buttonDesignPatternsC.enabled = false;}
-                if(result.python === null){buttonPython.enabled = false;}
-                if(result.pythonQt === null){buttonQtPython.enabled = false;}
-                if(result.patternPython === null){buttonDesignPatternsPython.enabled = false;}
-            }
+        var pathsFilePath = "/home/jesuslinux/Git/CodeSnippets/paths.json";
+        var result = jsonHandler.readJsonFile(pathsFilePath);
 
+        if(result) {
+            cPath = result.c || "";
+            cQtPath = result.cQt || "";
+            cPatternsPath = result.cPatterns || "";
+            pythonPath = result.python || "";
+            pythonQtPath = result.pythonQt || "";
+            pythonPatternsPath = result.patternPython || "";
 
+            buttonC.enabled = !!cPath;
+            buttonQtC.enabled = !!cQtPath;
+            buttonDesignPatternsC.enabled = !!cPatternsPath;
+            buttonPython.enabled = !!pythonPath;
+            buttonQtPython.enabled = !!pythonQtPath;
+            buttonDesignPatternsPython.enabled = !!pythonPatternsPath;
+        }
+
+        console.log("cPath: ", cPath);
     }
 
     Rectangle {
@@ -107,7 +121,7 @@ Item {
                     textTitle: "C ++"
                     textSubTitle: "C++ Plain Snippets"
                     onClicked: {
-                        communicationObject.showMainPage()
+                        communicationObject.showMainPage(cPath)
                     }
                     layer.enabled: true
                     layer.effect: MultiEffect{

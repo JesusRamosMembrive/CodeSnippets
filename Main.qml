@@ -30,16 +30,22 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
-    property string currentLanguage: ""
-    property string basePath: "/home/jesusramos/Git/CodeSnippets"
+    property var currentAgenda: ""
+    property string basePath: "/home/jesuslinux/Git/CodeSnippets"
 
     function createFilesMap() {
-        var basePath = currentLanguage;
-        var filesMap = fileLister.createFilesMap(basePath);
+        console.log("Creating filesMap with currentAgenda:", currentAgenda);
+        if (!currentAgenda) {
+            console.error("No currentAgenda path provided.");
+            return;
+        }
 
-        var topics = {};
-        for (var key in filesMap) {
-            var file = filesMap[key];
+        var result = fileLister.createFilesMap(currentAgenda);
+
+        filesMap = {};
+        var topics = [];
+        for (var key in result) {
+            var file = result[key];
             var folderName = file.label;
             var fileName = key.replace(".txt", "");
 
@@ -48,52 +54,40 @@ Window {
             }
 
             topics[folderName].push({
-                                        name: fileName,
-                                        path: file.path,
-                                        label: folderName
-                                    });
+                name: fileName,
+                path: file.path,
+                label: folderName
+            });
+
+            filesMap[fileName + ".txt"] = {
+                path: file.path,
+                label: folderName
+            };
         }
 
-        // Ordenar los folders por los números en sus nombres
-        var sortedFolders = Object.keys(topics).sort((a, b) => {
-                                                         var numA = parseInt(a.split('-')[0]);
-                                                         var numB = parseInt(b.split('-')[0]);
-                                                         return numA - numB;
-                                                     });
-
-        // Construir topicModels con folders ordenados
         topicModels = [];
-        for (var i = 0; i < sortedFolders.length; i++) {
-            var folder = sortedFolders[i];
+        for (var folder in topics) {
             topicModels.push({
-                                 label: folder,
-                                 model: topics[folder]
-                             });
-        }
-
-        // Ordenar los archivos dentro de cada folder por el nombre de archivo
-        for (var j = 0; j < topicModels.length; j++) {
-            topicModels[j].model.sort((a, b) => {
-                                          var numA = parseInt(a.name.split('-')[0]);
-                                          var numB = parseInt(b.name.split('-')[0]);
-                                          return numA - numB;
-                                      });
+                label: folder,
+                model: topics[folder]
+            });
         }
 
         combinedTopics = topicModels.reduce((acc, t) => acc.concat(t.model), []);
-        return filesMap;
     }
 
     function loadFile(fileName) {
-        if (filesMap[fileName]) {
-            var file = filesMap[fileName].path;
-            currentTopic = fileName;
+        var normalizedFileName = fileName.trim(); // Elimina espacios en blanco al principio y al final
+        if (filesMap[normalizedFileName]) {
+            var file = filesMap[normalizedFileName].path;
+            currentTopic = normalizedFileName;
             return file;
         } else {
-            console.error("File not found in filesMap:", fileName);
+            console.error("File not found in filesMap:", normalizedFileName);
             return null;
         }
     }
+
 
     function loadFileContent(fileName) {
         var filePath = loadFile(fileName);
@@ -117,11 +111,6 @@ Window {
                 filteredTopicsModel.append({ "name": topic.name });
             }
         }
-    }
-
-    Component.onCompleted: {
-        filesMap = createFilesMap();
-        filterTopics("");
     }
 
     Column {
@@ -186,12 +175,18 @@ Window {
 
     Connections {
         target: communicationObject
-        function onShowMainPage() {
+        function onShowMainPage(newTopcis) {
+            console.log("-------------newTopics", newTopcis);
+            currentAgenda = newTopcis
+            createFilesMap();
+            filterTopics("");
             stackViewInitialPage.push("MainPage.qml");
             switchToMainPageButton.visible = true;
         }
         function onShowExplanationPage() {
             if (stackViewInitialPage.depth > 1) {
+                currentAgenda = ""
+                filterTopics("");
                 stackViewInitialPage.pop();
             }
         }
@@ -208,7 +203,7 @@ Window {
     QtObject {
         id: communicationObject
 
-        signal showMainPage
+        signal showMainPage(string newTopics)
         signal showExplanationPage
     }
 }
