@@ -27,23 +27,24 @@ Rectangle {
         spacing: 10
 
         Text {
+            color: "#ffffff"
             text: "Explanation Area"
             wrapMode: Text.WrapAnywhere
             textFormat: Text.AutoText
             font.family: "Roboto"
             anchors.horizontalCenter: parent.horizontalCenter
             font.pointSize: 20
-            color: theme.titleColor
         }
 
         Rectangle {
             height: parent.height *0.92
             color: "#121212"
             radius: 8
-            border.color: "#919191"
-            border.width: 2
-            anchors.left: parent.left
-            anchors.right: parent.right
+            border.color: "#565656"
+            border.width:1
+            width: parent.width
+            anchors.horizontalCenter: parent.horizontalCenter
+
 
             ScrollView {
                 id: scrollView
@@ -55,12 +56,10 @@ Rectangle {
                 WebEngineView {
                     id: webView
                     clip: true
-                    height: parent.height
-                    anchors.left: parent.left
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
+                    height: parent.height *0.97
+                    anchors.verticalCenter: parent.verticalCenter
                     anchors.horizontalCenter: parent.horizontalCenter
-                    width: parent.width
+                    width: parent.width *0.98
                     antialiasing: true
                     backgroundColor: "#121212"
                     url: "about:blank"

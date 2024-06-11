@@ -53,28 +53,6 @@ Rectangle {
                     anchors.fill: parent
                     anchors.margins: 10
 
-                    // TextArea {
-                    //     id: textAreaCode
-                    //     x: 0
-                    //     y: 0
-                    //     hoverEnabled: false
-                    //     renderType: Text.QtRendering
-                    //     textFormat: Text.AutoText
-                    //     readOnly: true
-                    //     text: "No example loaded"
-                    //     font.pixelSize: 15
-                    //     wrapMode: Text.WordWrap
-                    //     antialiasing: true
-                    //     font.family: "Roboto"
-                    //     placeholderText: qsTr("Text Area")
-                    //     color: theme.letterToReadColor
-
-                    //     background: Rectangle {
-                    //         color: "transparent"
-                    //         radius: 20
-                    //     }
-                    // }
-
                     WebEngineView {
                         id: webView
                         clip: true

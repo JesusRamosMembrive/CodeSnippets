@@ -50,20 +50,20 @@ QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
             background-color: #000000;
             color: #ffffff; /* Texto en blanco */
             border: none; /* Sin borde */
-            padding: 50px; /* Reduce el padding a 10px */
+            padding: 5px; /* Reduce el padding a 10px */
             display: inline-block;
-            max-width: 90%;
+            max-width: 100%;
             margin: 5px; /* Reduce el margen a 10px */
             align: center;
         }
         pre {
-            max-width: 90%;
+            max-width: 100%;
             background-color: #000000;
             color: #ffffff; /* Texto en blanco */
             border: none; /* Sin borde */
             padding: 5px; /* Reduce el padding a 10px */
             overflow-x: auto;
-            margin: 50px; /* Reduce el margen a 10px */
+            margin: 5px; /* Reduce el margen a 10px */
             line-height: 1; /* Ajusta la altura de la línea */
             align: center;
         }
