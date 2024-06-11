@@ -2,8 +2,10 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Controls.Material
+import QtWebEngine
 
 import "./Modules/Style"
+
 
 Rectangle {
     id: explanationDisplayPage
@@ -11,7 +13,7 @@ Rectangle {
     height: parent.height
     Layout.fillHeight: true
     Layout.fillWidth: true
-    radius: 15
+    radius: 8
     color: theme.backGroundCodeDisplayPageColor
 
     property Theme theme: Theme {}
@@ -21,7 +23,6 @@ Rectangle {
         anchors.fill: parent
         anchors.leftMargin: 10
         anchors.rightMargin: 10
-
         spacing: 10
 
         Text {
@@ -35,49 +36,65 @@ Rectangle {
         }
 
         Rectangle {
-            height: parent.height *0.92
-            color: theme.backGroundCodeArea
-            radius: 20
-            border.width: 2
+            height: parent.height * 0.9
+            color: "#1e1e1e"
+            radius: 8
+            border.width: 1
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.leftMargin: 0
             border.color: theme.borderGroupBoxColor
 
             ScrollView {
+                id: scrollView
                 anchors.fill: parent
+                clip: true
 
-                TextArea {
-                    id: textExplanationCode
-                    wrapMode: Text.WordWrap
-                    hoverEnabled: false
-                    renderType: Text.QtRendering
-                    textFormat: Text.AutoText
-                    readOnly: true
-                    text: explanationText
-                    font.pointSize: 13
-                    font.family: "Roboto"
-                    placeholderText: qsTr("")
-                    color: theme.letterToReadColor
+                WebEngineView {
+                    id: webView
+                    anchors.fill: parent
+                    antialiasing: true
+                    backgroundColor: "#2b2b2b"
+                    url: "about:blank"
 
-                    background: Rectangle {
-                        color: "transparent"
-                        radius: 20
-                    }
                 }
+                // TextArea {
+                //     id: textExplanationCode
+                //     wrapMode: Text.WordWrap
+                //     tabStopDistance: 20
+                //     renderType: Text.NativeRendering
+                //     readOnly: true
+                //     textFormat: Text.MarkdownText
+                //     font.pointSize: 13
+                //     font.family: "Roboto"
+                //     color: theme.letterToReadColor
+                //     background: Rectangle {
+                //         color: "transparent"
+                //     }
+                //     implicitWidth: parent.width
+                //     implicitHeight: contentHeight
+
+                //     // Optional: For better performance, disable text interaction and focus
+                //     enabled: false
+                //     smooth: false
+                //     activeFocusOnTab: false
+                //     activeFocusOnPress: false
+                //     hoverEnabled: false
+                // }
             }
         }
     }
 
     Component.onCompleted: {
-        textExplanationCode.text = appWindow.explanationText;
+        var htmlContent = appWindow.explanationText;
+        webView.loadHtml(htmlContent);
     }
-
 
     Connections {
         target: fileProcessor
-        function onFileSelected() {
-            textExplanationCode.text = appWindow.explanationText;
+        function onExplanationChanged() {
+            var preExplanationText = fileProcessor.explanation;
+            var explanationText = markdownProcessor.processMarkdown(preExplanationText);
+            webView.loadHtml(explanationText);
         }
     }
 }

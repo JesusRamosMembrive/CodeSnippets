@@ -10,7 +10,6 @@ void FileProcessor::processFile(const QString &filePath)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
 
-    qInfo() << "Processing file: " << filePath;
     getFileTitle(filePath);
 
     QTextStream in(&file);

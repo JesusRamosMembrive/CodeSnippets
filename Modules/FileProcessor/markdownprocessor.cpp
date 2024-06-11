@@ -11,49 +11,56 @@
 MarkdownProcessor::MarkdownProcessor(QObject *parent) : QObject(parent) {}
 
 QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
+
+
+    // Insertar CSS directamente en el cuerpo del documento
     const QString markdownCss = R"(
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, sans-serif;
             line-height: 1.6;
             color: #ffffff;
         }
         h1 {
             color: #2E8B57;
             border-bottom: 2px solid #2E8B57;
-            padding-bottom: 0.5em;
+            padding-bottom: 1.8em;
         }
         h2 {
             color: #4682B4;
             border-bottom: 1px solid #4682B4;
-            padding-bottom: 0.3em;
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
         }
         h3 {
             color: #6A5ACD;
+            font-size: 1.4em;
+            margin-bottom: 0.5em;
         }
         p {
             margin: 1em 0;
         }
         code {
-            font-family: "Courier New", monospace;
+            font-family: "Roboto", monospace;
             background-color: #000000;
             color: #ffffff; /* Texto en blanco */
             border: none; /* Sin borde */
-            padding: 0; /* Sin padding */
-            border-radius: 3px;
+            padding: 10px; /* Reduce el padding a 10px */
             display: inline-block;
-            white-space: pre-wrap; /* Ajusta el contenido */
+            max-width: 80%;
+            margin: 10px; /* Reduce el margen a 10px */
+            align: center;
         }
         pre {
+            max-width: 90%;
             background-color: #000000;
             color: #ffffff; /* Texto en blanco */
             border: none; /* Sin borde */
-            padding: 10px;
-            border-radius: 5px;
+            padding: 10px; /* Reduce el padding a 10px */
             overflow-x: auto;
-            margin: 0; /* Sin margen */
-            white-space: pre-wrap; /* Ajusta el contenido */
-            line-height: 1.2; /* Asegura que el texto esté más cerca */
+            margin: 10px; /* Reduce el margen a 10px */
+            line-height: 1; /* Ajusta la altura de la línea */
+            align: center;
         }
         ul {
             margin: 1em 0;
@@ -77,9 +84,31 @@ QString MarkdownProcessor::processMarkdown(const QString &markdownText) {
         a:hover {
             text-decoration: underline;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th {
+            background-color: #04AA6D;
+            color: white;
+            font-size: 1.2em; /* Tamaño de fuente más grande para los encabezados */
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        td {
+            background-color: #00000000;
+            color: white;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #3a3a3a; /* Alterna el color de fondo para filas pares */
+        }
     </style>
 )";
-
 
     QTextDocument document;
     document.setMarkdown(markdownText);

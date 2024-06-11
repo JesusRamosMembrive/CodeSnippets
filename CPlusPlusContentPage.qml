@@ -3,11 +3,10 @@ import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtQuick.Layouts
 
-import "./Modules/ListsOfModels"
 import "./Modules/Utils"
 import "./Modules/Style"
 
-Fundamentos {
+Item {
     id: fundamentosPage
 
     Column {
@@ -15,7 +14,6 @@ Fundamentos {
         // anchors.fill: parent
         // anchors.centerIn: parent
         height: parent.height
-        padding: 0
         spacing: 15
         width: parent.width
 

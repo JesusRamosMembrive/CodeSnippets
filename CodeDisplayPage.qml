@@ -109,7 +109,6 @@ Rectangle {
                     id: fileListView
                     width: parent.width
                     height: parent.height
-                    anchors.horizontalCenter: parent.horizontalCenter
                     model: fileProcessor.files
                     spacing: 20
 
