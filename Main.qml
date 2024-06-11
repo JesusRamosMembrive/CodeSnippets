@@ -34,7 +34,6 @@ Window {
     property string basePath: "/home/jesuslinux/Git/CodeSnippets"
 
     function createFilesMap() {
-        console.log("Creating filesMap with currentAgenda:", currentAgenda);
         if (!currentAgenda) {
             console.error("No currentAgenda path provided.");
             return;
@@ -60,30 +59,30 @@ Window {
                                     });
 
             // Ordenar los folders por los números en sus nombres
-             var sortedFolders = Object.keys(topics).sort((a, b) => {
-                                                              var numA = parseInt(a.split('-')[0]);
-                                                              var numB = parseInt(b.split('-')[0]);
-                                                              return numA - numB;
-                                                          });
+            var sortedFolders = Object.keys(topics).sort((a, b) => {
+                                                             var numA = parseInt(a.split('-')[0]);
+                                                             var numB = parseInt(b.split('-')[0]);
+                                                             return numA - numB;
+                                                         });
 
-             // Construir topicModels con folders ordenados
-             topicModels = [];
-             for (var i = 0; i < sortedFolders.length; i++) {
-                 var foldertmp = sortedFolders[i];
-                 topicModels.push({
-                                      label: foldertmp,
-                                      model: topics[foldertmp]
-                                  });
-             }
+            // Construir topicModels con folders ordenados
+            topicModels = [];
+            for (var i = 0; i < sortedFolders.length; i++) {
+                var foldertmp = sortedFolders[i];
+                topicModels.push({
+                                     label: foldertmp,
+                                     model: topics[foldertmp]
+                                 });
+            }
 
-             // Ordenar los archivos dentro de cada folder por el nombre de archivo
-             for (var j = 0; j < topicModels.length; j++) {
-                 topicModels[j].model.sort((a, b) => {
-                                               var numA = parseInt(a.name.split('-')[0]);
-                                               var numB = parseInt(b.name.split('-')[0]);
-                                               return numA - numB;
-                                           });
-             }
+            // Ordenar los archivos dentro de cada folder por el nombre de archivo
+            for (var j = 0; j < topicModels.length; j++) {
+                topicModels[j].model.sort((a, b) => {
+                                              var numA = parseInt(a.name.split('-')[0]);
+                                              var numB = parseInt(b.name.split('-')[0]);
+                                              return numA - numB;
+                                          });
+            }
 
             filesMap[fileName + ".txt"] = {
                 path: file.path,
@@ -207,14 +206,6 @@ Window {
                 filterTopics("");
                 stackViewInitialPage.pop();
             }
-        }
-    }
-
-    Connections {
-        target: fileProcessor
-        function onExplanationChanged() {
-            preExplanationText = fileProcessor.explanation;
-            explanationText = markdownProcessor.processMarkdown(preExplanationText);
         }
     }
 

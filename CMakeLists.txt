@@ -7,8 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml)
-# find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml WebEngineQuick)
+# find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml WebEngineQuick)
 
 qt_standard_project_setup()
 
@@ -61,8 +61,12 @@ set_target_properties(appCodeSnippetApp PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appCodeSnippetApp
-    PRIVATE Qt6::Quick
+target_link_libraries(appCodeSnippetApp PUBLIC
+    Qt::Quick
+    Qt::Core
+    Qt::Gui
+    Qt::Qml
+    Qt::WebEngineQuick
 )
 
 include(GNUInstallDirs)

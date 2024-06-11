@@ -10,10 +10,12 @@
 #include <QObject>
 #include <QString>
 #include <QTextDocument>
+#include <QDebug>
 
 class MarkdownProcessor : public QObject {
     Q_OBJECT
 public:
     explicit MarkdownProcessor(QObject *parent = nullptr);
     Q_INVOKABLE QString processMarkdown(const QString &markdownText);
+
 };

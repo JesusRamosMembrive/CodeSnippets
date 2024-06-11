@@ -35,8 +35,6 @@ Item {
             buttonQtPython.enabled = !!pythonQtPath;
             buttonDesignPatternsPython.enabled = !!pythonPatternsPath;
         }
-
-        console.log("cPath: ", cPath);
     }
 
     Rectangle {

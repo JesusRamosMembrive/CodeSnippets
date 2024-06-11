@@ -7,13 +7,16 @@
 #include "./Modules/FileProcessor/markdownprocessor.h"
 #include "./Modules/FileProcessor/filelister.h"
 #include "./Modules/FileProcessor/jsonhandler.h"
+#include <QtWebEngineQuick/qtwebenginequickglobal.h>
 
 int main(int argc, char *argv[])
 {
+
+    QtWebEngineQuick::initialize();
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-
     FileProcessor fileProcessor;
     engine.rootContext()->setContextProperty("fileProcessor", &fileProcessor);
 

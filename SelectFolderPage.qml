@@ -285,7 +285,6 @@ Window {
 
                 var success = jsonHandler.writeJsonFile(pathsFilePath, sampleData);
                 if (success) {
-                    console.log("JSON file written successfully");
                     textResult.text = "JSON file written successfully";
                 }
                 else {

@@ -7,6 +7,7 @@
 #include <QVariant>
 #include <QVariantList>
 #include <QDebug>
+#include <QFileInfo>
 
 class FileProcessor : public QObject
 {
@@ -39,4 +40,6 @@ private:
     QVariantList m_filesList;
 
     void extractSection(const QString &text, const QString &startMarker, const QString &endMarker, QString &section);
+    bool isCodeFile(const QString &filePath);
+    void wrapContent(QString &content, const QString &extension);
 };

@@ -16,16 +16,16 @@ QVariantMap FileLister::createFilesMap(const QString &basePath) {
     QDir dir(basePath);
 
     if (dir.exists()) {
-        qInfo() << "Base path exists: " << basePath;
+        // qInfo() << "Base path exists: " << basePath;
         QStringList folders = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
         for (const QString &folderName : folders) {
-            qInfo() << "Folder: " << folderName;
+            // qInfo() << "Folder: " << folderName;
             QDir folderDir(dir.absoluteFilePath(folderName));
             QStringList files = folderDir.entryList(QDir::Files);
             for (const QString &fileName : files) {
                 QString filePath = folderDir.absoluteFilePath(fileName);
                 QString key = fileName;
-                qInfo() << "File: " << fileName << " in folder " << folderName;
+                // qInfo() << "File: " << fileName << " in folder " << folderName;
                 result[key] = QVariantMap{
                     {"path", filePath},
                     {"label", folderName}

@@ -1,4 +1,5 @@
 #include "fileprocessor.h"
+#include <QFileInfo>
 
 FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
 {
@@ -10,12 +11,25 @@ void FileProcessor::processFile(const QString &filePath)
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
 
-    qInfo() << "Processing file: " << filePath;
-    getFileTitle(filePath);
-
     QTextStream in(&file);
     QString content = in.readAll();
     file.close();
+
+    QString extension = QFileInfo(filePath).suffix();
+    qInfo() << "Processing file with extension: " << extension;
+    if (isCodeFile(extension))
+    {
+        qInfo() << "Code file detected, wrapping content";
+        wrapContent(content, extension);
+        m_explanation = content;  // Asignar el contenido envuelto a m_explanation
+        emit explanationChanged();
+        return;
+    }
+    else{
+        qInfo() << "Not a code file";
+    }
+
+    getFileTitle(filePath);
 
     // Extraer EXPLANATION
     extractSection(content, "<---EXPLANATION--->", "<---", m_explanation);
@@ -76,4 +90,16 @@ void FileProcessor::extractSection(const QString &text, const QString &startMark
     int startIndex = text.indexOf(startMarker) + startMarker.length();
     int endIndex = (endMarker.isEmpty()) ? text.length() : text.indexOf(endMarker, startIndex);
     section = text.mid(startIndex, endIndex - startIndex).trimmed();
+}
+
+bool FileProcessor::isCodeFile(const QString &extension)
+{
+    return (extension == "cpp" || extension == "h" || extension == "py");
+}
+
+void FileProcessor::wrapContent(QString &content, const QString &extension)
+{
+    QString wrappedContent = QString("```%1\n%2\n```").arg(extension, content);
+    content = wrappedContent;
+    qInfo() << "content:" << content;
 }
