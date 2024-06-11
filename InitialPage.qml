@@ -12,9 +12,9 @@ Item {
     property string cPath: ""
     property string cQtPath: ""
     property string cPatternsPath: ""
-    property string python: ""
-    property string pythonQt: ""
-    property string pythonPatterns: ""
+    property string pythonPath: ""
+    property string pythonQtPath: ""
+    property string pythonPatternsPath: ""
 
     Component.onCompleted: {
         var pathsFilePath = "/home/jesuslinux/Git/CodeSnippets/paths.json";

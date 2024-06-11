@@ -55,7 +55,6 @@ ScrollView {
 
             delegate: TopicSection {
                 anchors.horizontalCenter: parent.horizontalCenter
-
                 buttonText: modelData.label
                 model: modelData.model
                 searchFilter: textField.text

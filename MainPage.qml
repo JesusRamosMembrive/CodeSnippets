@@ -21,8 +21,6 @@ Column {
             id: leftMainContent
             width: 220
             height: parent.height
-            topPadding: 0
-            padding: 0
             spacing: 15
 
             MyGroupbox {

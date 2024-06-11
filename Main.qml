@@ -30,7 +30,7 @@ Window {
     property Theme theme: Theme {}
     property var topicModels: []
 
-    property var currentAgenda: ""
+    property string currentAgenda: ""
     property string basePath: "/home/jesuslinux/Git/CodeSnippets"
 
     function createFilesMap() {

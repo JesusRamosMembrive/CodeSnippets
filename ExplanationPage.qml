@@ -52,7 +52,7 @@ Rectangle {
                     wrapMode: Text.WordWrap
                     hoverEnabled: false
                     renderType: Text.QtRendering
-                    textFormat: Text.MarkdownText
+                    textFormat: Text.AutoText
                     readOnly: true
                     text: explanationText
                     font.pointSize: 13

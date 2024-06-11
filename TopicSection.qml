@@ -12,11 +12,12 @@ Column {
     CustomButton {
         id: topicButton
         width: parent.width * 0.9
-        height: 40
+        height: 35
         buttonText: "Button Text"
         anchors.horizontalCenter: parent.horizontalCenter
         onClicked: {
-            customListView.visible = !customListView.visible
+            customListView.visible = !customListView.visible;
+            topicSection.resetHeight();
         }
     }
 
@@ -25,5 +26,9 @@ Column {
         width: parent.width
         customModel: model
         visible: false
+    }
+
+    function resetHeight() {
+        customListView.resetHeight();
     }
 }

@@ -95,7 +95,6 @@ Control {
                 text: "Titulo a rellenar"
                 font.pixelSize: 20
                 font.family: "Roboto"
-                anchors.horizontalCenter: parent.horizontalCenter
                 color: "#ffffff"
                 font.bold: true
             }
@@ -113,7 +112,6 @@ Control {
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
         font.family: "Roboto"
-        anchors.horizontalCenter: parent.horizontalCenter
         color: "#888888"
     }
 
