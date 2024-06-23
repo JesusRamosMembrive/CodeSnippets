@@ -8,7 +8,7 @@ set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
 # find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml)
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml WebEngineQuick)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml QuickControls2 WebEngineQuick)
 
 qt_standard_project_setup()
 
@@ -47,6 +47,14 @@ qt6_add_qml_module(appCodeSnippetApp
     QML_FILES SelectFolderPage.qml
     SOURCES Modules/FileProcessor/jsonhandler.h Modules/FileProcessor/jsonhandler.cpp
     QML_FILES paths.json
+    SOURCES filesystemmodel.h filesystemmodel.cpp
+    SOURCES linenumbermodel.h linenumbermodel.cpp
+    QML_FILES FileSystemView.qml
+    QML_FILES Settings.qml
+    RESOURCES qmldir
+    QML_FILES FileSystemViewItem.qml
+    QML_FILES MyMenu.qml
+    QML_FILES Colors.qml
 )
 
 
@@ -66,6 +74,7 @@ target_link_libraries(appCodeSnippetApp PUBLIC
     Qt::Core
     Qt::Gui
     Qt::Qml
+    Qt6::QuickControls2
     Qt::WebEngineQuick
 )
 

@@ -31,7 +31,7 @@ Window {
     property var topicModels: []
 
     property string currentAgenda: ""
-    property string basePath: "/home/jesuslinux/Git/CodeSnippets"
+    property string basePath: "/home/jesusramos/Git/CodeSnippets"
 
     function createFilesMap() {
         if (!currentAgenda) {
@@ -136,7 +136,6 @@ Window {
         height: parent.height
         spacing: 10
 
-
         SelectFolderPage {
             id: selectFolderPageItem
             visible: false  // Inicialmente oculta
@@ -151,6 +150,7 @@ Window {
                 selectFolderPageItem.textResultProperty = ""
             }
         }
+
         Column {
             id: columnContent
             height: parent.height - menuBar.height
@@ -185,6 +185,8 @@ Window {
                     if (stackViewInitialPage.depth > 1) {
                         stackViewInitialPage.pop();
                         switchToMainPageButton.visible = false;
+                        Settings.displayFileSystemView = false;
+                        // Settings.displayFileSystemView = false;
                     }
                 }
             }
@@ -193,6 +195,7 @@ Window {
 
     Connections {
         target: communicationObject
+
         function onShowMainPage(newTopcis) {
             currentAgenda = newTopcis
             createFilesMap();
@@ -200,11 +203,21 @@ Window {
             stackViewInitialPage.push("MainPage.qml");
             switchToMainPageButton.visible = true;
         }
+
         function onShowExplanationPage() {
             if (stackViewInitialPage.depth > 1) {
                 currentAgenda = ""
                 filterTopics("");
                 stackViewInitialPage.pop();
+                Settings.displayFileSystemView = false;
+            }
+        }
+
+        function onDisplayFileSystemTreeView() {
+            var condition = Settings.getDisplayFileSystemView();
+            if(condition){
+                stackViewInitialPage.push("MainPage.qml");
+                switchToMainPageButton.visible = true;
             }
         }
     }
@@ -214,5 +227,6 @@ Window {
 
         signal showMainPage(string newTopics)
         signal showExplanationPage
+        signal displayFileSystemTreeView
     }
 }

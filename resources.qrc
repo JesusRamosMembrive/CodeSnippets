@@ -13,4 +13,16 @@
         <file>Assets/Images/_f12212ab-4292-469b-9db4-d7125069102b.jpeg</file>
         <file>Assets/Images/Pattern-Logos.jpg</file>
     </qresource>
+    <qresource prefix="/">
+        <file>icons/resize.svg</file>
+        <file>icons/read.svg</file>
+        <file>icons/qt_logo.svg</file>
+        <file>icons/light_bulb.svg</file>
+        <file>icons/info_sign.svg</file>
+        <file>icons/globe.svg</file>
+        <file>icons/generic_file.svg</file>
+        <file>icons/folder_open.svg</file>
+        <file>icons/folder_closed.svg</file>
+        <file>icons/app_icon.svg</file>
+    </qresource>
 </RCC>

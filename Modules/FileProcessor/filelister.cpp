@@ -1,11 +1,3 @@
-/*****************************************************************************
- * filelister.cpp
- * Copyright (C) Overture Life, Inc - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- * Written by Jesus Ramos Membrive <jesusramos@overture.life>
- * Created: 9/6/2024
- *****************************************************************************/
 #include "filelister.h"
 #include <QDebug>
 

@@ -94,6 +94,7 @@ Control {
                 id: buttonText
                 text: "Titulo a rellenar"
                 font.pixelSize: 20
+                anchors.horizontalCenter: parent.horizontalCenter
                 font.family: "Roboto"
                 color: "#ffffff"
                 font.bold: true
@@ -111,6 +112,7 @@ Control {
         font.pixelSize: 16
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
+        anchors.horizontalCenter: parent.horizontalCenter
         font.family: "Roboto"
         color: "#888888"
     }
@@ -126,7 +128,7 @@ Control {
         width: 54
         height: 47
         anchors.top: parent.top
-        anchors.topMargin: 64
+        anchors.topMargin: 80
     }
 
     MouseArea {
