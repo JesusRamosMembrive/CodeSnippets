@@ -7,6 +7,7 @@ FileProcessor::FileProcessor(QObject *parent) : QObject(parent)
 
 void FileProcessor::processFile(const QString &filePath)
 {
+
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
@@ -14,8 +15,12 @@ void FileProcessor::processFile(const QString &filePath)
     QTextStream in(&file);
     QString content = in.readAll();
     file.close();
-
-    QString extension = QFileInfo(filePath).suffix();
+    QString extension = QFileInfo(filePath).suffix().toLower();
+    if (!isCodeFile(extension))
+    {
+        qInfo() << "Not a code file, skipping processing: " << extension;
+        return;
+    }
     qInfo() << "Processing file with extension: " << extension;
     if (isCodeFile(extension))
     {
@@ -74,7 +79,7 @@ QString FileProcessor::getFileContent(const QString &fileName)
         emit fileSelected(fileName, m_files[fileName], m_title);
         return m_files[fileName];
     }
-    return QString();
+    return QString("");
 }
 
 QString FileProcessor::getFileTitle(const QString &fileName)
@@ -94,7 +99,21 @@ void FileProcessor::extractSection(const QString &text, const QString &startMark
 
 bool FileProcessor::isCodeFile(const QString &extension)
 {
-    return (extension == "cpp" || extension == "h" || extension == "py");
+    return (extension == "cpp" || extension == "h" || extension == "py" || extension == "json"
+    || extension == "qml" || extension == "js" || extension == "txt"
+    || extension == "md" || extension == "xml"
+    || extension == "html" || extension == "css"
+    || extension == "java" || extension == "c"
+    || extension == "cs" || extension == "php"
+    || extension == "rb" || extension == "sh" || extension == "pl"
+    || extension == "swift" || extension == "kt" || extension == "go" || extension == "rs"
+    || extension == "m" || extension == "r" || extension == "lua" || extension == "sql"
+    || extension == "asm" || extension == "clj" || extension == "groovy" || extension == "scala"
+    || extension == "ts" || extension == "tsx" || extension == "vue" || extension == "dart"
+    || extension == "coffee" || extension == "less" || extension == "scss" || extension == "sass"
+    || extension == "styl" || extension == "pug" || extension == "ejs" || extension == "haml"
+    || extension == "yaml" || extension == "toml" || extension == "ini" || extension == "conf"
+    || extension == "env" || extension == "gitignore" || extension == "dockerfile" || extension == "yml");
 }
 
 void FileProcessor::wrapContent(QString &content, const QString &extension)

@@ -9,6 +9,21 @@ Column {
     height: parent ? parent.height : 0
     spacing: 5
 
+    property bool showFileSystem: Settings.displayFileSystemView
+
+    Binding {
+        target: mainLayout
+        property: "showFileSystem"
+        value: Settings.displayFileSystemView
+    }
+
+    onShowFileSystemChanged: {
+        function printBool() {
+            console.log("showFileSystem:", showFileSystem)
+        }
+        printBool();
+    }
+
     Row {
         id: mainContentRow
         Layout.fillHeight: true
@@ -30,11 +45,24 @@ Column {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                ScrollViewTopics {
-                    id: scrollViewTopics
-                    height: groupboxTopics.height * 0.98
+
+                Loader {
+                    id: loader
+                    width: groupboxTopics.width *0.95
+                    height: groupboxTopics.height *0.97
                     anchors.horizontalCenter: parent.horizontalCenter
-                    width: groupboxTopics.width
+
+                    sourceComponent: showFileSystem? fileSystemComponent : scrollViewComponent
+
+                    Component {
+                        id: scrollViewComponent
+                        ScrollViewTopics { }
+                    }
+
+                    Component {
+                        id: fileSystemComponent
+                        FileSystemView { }
+                    }
                 }
             }
             CustomRegularButton {

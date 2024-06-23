@@ -11,8 +11,6 @@ Item {
 
     Column {
         id: mainLayout
-        // anchors.fill: parent
-        // anchors.centerIn: parent
         height: parent.height
         spacing: 15
         width: parent.width

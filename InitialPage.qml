@@ -4,6 +4,7 @@ import QtQuick.Controls
 import QtQuick.Controls.Material
 import QtQuick.Effects
 
+
 Item {
     id: initialPageItem
     width: parent.width
@@ -15,9 +16,25 @@ Item {
     property string pythonPath: ""
     property string pythonQtPath: ""
     property string pythonPatternsPath: ""
+    property bool showFileSystem: Settings.displayFileSystemView
+
+    Binding {
+        target: initialPageItem
+        property: "showFileSystem"
+        value: Settings.displayFileSystemView
+    }
+
+    onShowFileSystemChanged: {
+        function changeSwitchState() {
+            console.log("showFileSystem: " + showFileSystem)
+            console.log("Cambiando el switch de posicion:")
+            switchFileSystem.checked = showFileSystem;
+        }
+        changeSwitchState();
+    }
 
     Component.onCompleted: {
-        var pathsFilePath = "/home/jesuslinux/Git/CodeSnippets/paths.json";
+        var pathsFilePath = "/home/jesusramos/Git/CodeSnippets/paths.json";
         var result = jsonHandler.readJsonFile(pathsFilePath);
 
         if(result) {
@@ -48,7 +65,6 @@ Item {
         radius: 20
         border.color: "#14ffffff"
 
-
         ColumnLayout {
             id: columnLayout
             width: 100
@@ -66,7 +82,6 @@ Item {
                 y: 8
                 width: 500
                 height: 200
-                verticalAlignment: Image.AlignVCenter
                 source: "qrc:/Images/Assets/Images/logoAPP.png"
                 Layout.maximumHeight: 350
                 Layout.maximumWidth: 550
@@ -74,12 +89,6 @@ Item {
                 Layout.fillWidth: true
                 cache: true
                 baselineOffset: 0
-                antialiasing: true
-                mirror: false
-                mipmap: false
-                sourceSize.width: 0
-                autoTransform: true
-                asynchronous: false
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 fillMode: Image.PreserveAspectFit
             }
@@ -110,7 +119,6 @@ Item {
                 rows: 2
                 columns: 3
 
-
                 ButtonMainMenu {
                     id: buttonC
                     x: 81
@@ -134,9 +142,6 @@ Item {
                         shadowBlur: 1
                     }
                 }
-
-
-
 
                 ButtonMainMenu {
                     id: buttonQtC
@@ -257,6 +262,25 @@ Item {
                         colorizationColor: "#ffffff"
                         shadowEnabled: true
                         shadowBlur: 1
+                    }
+                }
+                Row{
+                    id: row
+
+                    Text {
+                        id: switchText
+                        text: qsTr("Explore the file system")
+                        anchors.verticalCenter: parent.verticalCenter
+                        color: "white"
+                    }
+
+                    Switch{
+                        id: switchFileSystem
+                        onCheckedChanged: {
+                            Settings.sendDisplayFileSystemView(switchFileSystem.checked)
+                            communicationObject.displayFileSystemTreeView()
+                            console.log("Switch activado");
+                        }
                     }
                 }
             }
